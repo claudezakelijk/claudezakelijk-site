@@ -1,0 +1,19 @@
+---
+import { render } from 'astro:content';
+import UseCaseLayout from '../../layouts/UseCaseLayout.astro';
+import { getPublished } from '../../lib/content';
+
+export async function getStaticPaths() {
+  const pages = await getPublished('usecases');
+  return pages.map(page => ({
+    params: { slug: page.id },
+    props: { entry: page },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+<UseCaseLayout entry={entry} pagePath={`/use-cases/${entry.id}`}>
+  <Content />
+</UseCaseLayout>

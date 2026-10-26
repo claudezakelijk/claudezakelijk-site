@@ -1,0 +1,42 @@
+---
+import { getEntry, render } from 'astro:content';
+import BasisLayout from '../layouts/BasisLayout.astro';
+import CtaBlok from '../components/CtaBlok.astro';
+import Broodkruimel from '../components/Broodkruimel.astro';
+import { dienstNode, dienstId } from '../lib/schema';
+
+const dienst = await getEntry('diensten', 'retainer');
+if (!dienst) throw new Error('Diensten-entry retainer ontbreekt');
+const { Content } = await render(dienst);
+const beschrijving = 'Claude-begeleiding na de rollout: een workshop per maand, twee uur beschikbaar via Slack of Teams, een groeiende promptbibliotheek en een kwartaalreview.';
+const breadcrumbs = [{ name: 'Home', url: '/' }, { name: 'Claude Compagnon', url: dienst.data.pad }];
+---
+<BasisLayout
+  titel={dienst.data.titleTag ?? dienst.data.titel}
+  beschrijving={beschrijving}
+  pad={dienst.data.pad}
+  schema={{
+    breadcrumbs,
+    hoofdonderwerp: dienstId(dienst.data.pad),
+    nodes: [dienstNode({ pad: dienst.data.pad, naam: dienst.data.titel, beschrijving, serviceType: 'Doorlopende Claude-begeleiding', aanbod: { naam: dienst.data.titel, prijsTekst: dienst.data.prijs, url: dienst.data.pad } })],
+  }}
+>
+  <div class="max-w-3xl mx-auto px-6 pt-16"><Broodkruimel items={breadcrumbs} /></div>
+  <article class="max-w-3xl mx-auto px-6 pt-6 pb-8 prose prose-lg">
+    <p class="text-xs uppercase tracking-widest text-inkt-zacht">{dienst.data.ondertitel}</p>
+    <h1>{dienst.data.h1 ?? dienst.data.titel}</h1>
+    <dl class="grid grid-cols-2 gap-4 text-sm mt-6 not-prose">
+      <div><dt class="text-inkt-zacht">Prijs</dt><dd class="font-semibold">{dienst.data.prijs}</dd></div>
+      <div><dt class="text-inkt-zacht">Termijn</dt><dd class="font-semibold">{dienst.data.duur}</dd></div>
+    </dl>
+    <div class="mt-8">
+      <Content />
+    </div>
+  </article>
+  <CtaBlok
+    kop="Wil je doorlopende begeleiding?"
+    tekst="De retainer start na een geslaagde rollout. Nog geen rollout gedaan? Begin bij de Readiness Scan."
+    link="/claude-readiness-scan"
+    linkTekst="Begin bij de Readiness Scan"
+  />
+</BasisLayout>

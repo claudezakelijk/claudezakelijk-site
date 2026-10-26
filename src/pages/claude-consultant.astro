@@ -1,0 +1,330 @@
+---
+import { getEntry } from 'astro:content';
+import { readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
+import BasisLayout from '../layouts/BasisLayout.astro';
+import Broodkruimel from '../components/Broodkruimel.astro';
+import { dienstNode, dienstId, faqNode } from '../lib/schema';
+import { site, auteurs } from '../site';
+
+// Prijzen komen rechtstreeks uit de diensten-content (één bron van waarheid).
+const scan = await getEntry('diensten', 'readiness-scan');
+const rollout = await getEntry('diensten', 'rollout');
+const retainer = await getEntry('diensten', 'retainer');
+if (!scan || !rollout || !retainer) throw new Error('Diensten-content ontbreekt');
+
+const breadcrumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'Claude consultant', url: '/claude-consultant' },
+];
+
+const werk = [
+  {
+    kop: 'Processen doorlichten en use cases ranken',
+    tekst: 'We lopen je afdelingen langs en zoeken de taken waar Claude echt tijd oplevert. Je krijgt een lijst van vijf tot tien concrete use cases, gerangschikt op ROI.',
+  },
+  {
+    kop: 'Claude Team of Enterprise veilig inrichten',
+    tekst: 'Seats, SSO, verwerkersovereenkomst en duidelijke afspraken over welke data wel en niet in Claude gaat. De saaie kant, maar wel de kant waar het misgaat als niemand ernaar kijkt.',
+  },
+  {
+    kop: 'Een promptbibliotheek op maat bouwen',
+    tekst: 'Tien tot dertig prompts, toegespitst op jouw use cases en geschreven met je echte documenten en processen. Geen generieke voorbeelden uit een cursus.',
+  },
+  {
+    kop: 'Koppelingen met je stack',
+    tekst: 'Waar het zin heeft, koppelen we Claude aan je eigen systemen via een MCP-server: je CRM, je rapportage-omgeving, je kennisbank. Alleen als de scan aantoont dat het de investering waard is.',
+  },
+  {
+    kop: 'Champions trainen',
+    tekst: 'Twee tot vier mensen uit je eigen team worden intensief getraind als kennisdragers. Zij houden het draaiend als wij weg zijn.',
+  },
+];
+
+const prijzen = [
+  { naam: scan.data.titel, prijs: scan.data.prijs, duur: scan.data.duur, link: '/claude-readiness-scan' },
+  { naam: rollout.data.titel, prijs: rollout.data.prijs, duur: rollout.data.duur, link: '/claude-in-30-dagen' },
+  { naam: retainer.data.titel, prijs: retainer.data.prijs, duur: retainer.data.duur, link: '/claude-compagnon' },
+];
+
+const voorbeelden = [
+  {
+    cijfer: '5 min',
+    kop: 'Vergadernotities naar actiepunten bij een IT-consultancy',
+    tekst: 'Klantgesprekken van een uur werden opgenomen maar niemand keek ze echt terug. Nu maakt een Claude Code-skill er in vijf minuten een gestructureerde brief van, met de videoclips op de juiste plek. Dat was 45 minuten handwerk.',
+    slug: 'consultant-brief',
+  },
+  {
+    cijfer: '€0',
+    kop: 'Een eigen CRM-stack in één weekend',
+    tekst: 'Drie losse tools, 180 euro per maand, en data die nergens samenkwam. In één weekend vervangen door een eigen open-source CRM-stack: nul euro licentiekosten en volledige controle over de klantdata.',
+    slug: 'crm-weekend',
+  },
+  {
+    cijfer: '38',
+    kop: 'Achtergrondprocessen doorgelicht bij een SaaS-bedrijf',
+    tekst: 'Een dagelijkse data-sync bleek al twee weken stil te staan zonder dat iemand het merkte. We inventariseerden alle 38 achtergrondprocessen; 9 bleken kapot en zijn gerepareerd én gedocumenteerd.',
+    slug: 'automation-audit',
+  },
+];
+
+// Case-diagrammen als stand-in voor de nog aan te leveren projectbeelden
+// (zelfde inlaadpatroon als cases/[slug].astro).
+const diagrams = Object.fromEntries(
+  voorbeelden.map((v) => [v.slug, readFileSync(resolve('src/assets/diagrams', `${v.slug}.svg`), 'utf-8')])
+);
+
+const faqItems = [
+  {
+    question: 'Wat doet een Claude-consultant precies?',
+    answer: 'Een Claude-consultant helpt je bedrijf om Claude van experiment naar dagelijks gereedschap te brengen: use cases vinden en ranken, de omgeving veilig inrichten, een promptbibliotheek bouwen, koppelingen met je systemen maken en je team trainen. Bij ons is dat één traject van scan tot rollout, geen los advies.',
+  },
+  {
+    question: 'Wat kost een Claude-consultant?',
+    answer: `Wij werken met vaste prijzen per stap: de Readiness Scan kost ${scan.data.prijs.toLowerCase()}, de rollout van vier weken ${rollout.data.prijs.toLowerCase()} en doorlopende begeleiding ${retainer.data.prijs.toLowerCase()}. Na de scan krijg je een vaste offerte voor de rollout, dus je weet vooraf waar je aan toe bent.`,
+    linkHref: '/prijs',
+    linkTekst: 'Bekijk het prijzenoverzicht',
+  },
+  {
+    question: 'Werken jullie op uurbasis?',
+    answer: 'Nee, in principe niet. Elke stap heeft een vaste prijs en een helder eindresultaat. De enige uitzondering is integratie-coaching bovenop de rollout; die kan per uur. Zo weet je vooraf wat je betaalt en wat je krijgt.',
+  },
+  {
+    question: 'Wat is het verschil met een gewone AI-consultant?',
+    answer: 'Een generieke AI-consultant adviseert over elke tool tegelijk en levert een presentatie met een roadmap. Wij werken alleen met Claude en blijven tot en met het dagelijks gebruik: installatie, prompts, training, adoptiemeting. Het eindresultaat is een team dat zelfstandig met Claude werkt, geen rapport in een la.',
+  },
+  {
+    question: 'Kun je Claude zo inrichten dat je aan de AVG voldoet?',
+    answer: 'Ja. Via de zakelijke voorwaarden van Anthropic traint Claude niet op jouw data en is er een verwerkersovereenkomst (DPA). Wij richten dat in, samen met SSO en afspraken over welke data wel en niet in prompts gaat. Op onze compliance-pagina staat de uitleg in gewoon Nederlands.',
+    linkHref: '/compliance',
+    linkTekst: 'Naar het compliance-overzicht',
+  },
+  {
+    question: 'Kunnen we starten als niemand bij ons ervaring met AI heeft?',
+    answer: 'Ja, dat is juist de doelgroep. Alles wordt uitgelegd in het Nederlands, zonder jargon, en we werken met jouw echte documenten en processen. Begin met de gratis AI-check: die laat in twee minuten zien of je bedrijf er klaar voor is.',
+    linkHref: '/ai-enablement-scan',
+    linkTekst: 'Doe de gratis AI-check',
+  },
+];
+
+const schemaFaq = faqItems.map(({ question, answer }) => ({ question, answer }));
+---
+<BasisLayout
+  titel="Claude consultant: je vaste Claude-specialist"
+  beschrijving="Claude consultant voor het Nederlandse MKB: één vaste specialist die Claude met je team inricht, in gewoon Nederlands. Vaste prijzen vanaf €1.500."
+  pad="/claude-consultant"
+  schema={{
+    breadcrumbs,
+    // Geen Person-node hier: Service.provider blijft de organisatie; Camiels Person-node staat op /over.
+    hoofdonderwerp: dienstId('/claude-consultant'),
+    nodes: [
+      dienstNode({
+        pad: '/claude-consultant',
+        naam: 'Claude consultant',
+        beschrijving: 'Claude-consultant voor het Nederlandse MKB: implementatie, training en begeleiding met vaste prijzen.',
+        serviceType: 'Claude-consultancy',
+        catalogus: prijzen.map((r) => ({ naam: r.naam, prijsTekst: r.prijs, url: r.link, dienstPad: r.link })),
+      }),
+      faqNode('/claude-consultant', schemaFaq),
+    ],
+  }}
+>
+
+  <article class="max-w-[1060px] mx-auto px-6 min-[900px]:px-10 pt-16 pb-8">
+    <Broodkruimel items={breadcrumbs} />
+
+    <header class="mt-6 grid grid-cols-1 min-[900px]:grid-cols-[1.2fr_1fr] gap-10 min-[900px]:gap-12 items-center">
+      <div>
+        <p class="text-xs uppercase tracking-widest text-inkt-zacht">Dienst</p>
+        <h1 class="text-[length:clamp(2.375rem,2.8vw+1rem,3.125rem)] leading-[1.08] mt-3">Claude consultant voor het Nederlandse MKB</h1>
+        <p class="mt-5 text-lg text-inkt-zacht">
+          Een Claude consultant kent één tool goed en blijft tot je team er zelfstandig mee werkt: installeren, inrichten, trainen en meekijken tot het dagelijks gebruik loopt.
+        </p>
+        <p class="mt-4 text-lg text-inkt-zacht">
+          We werken voor Nederlandse MKB-bedrijven van tien tot tweehonderd mensen,
+          in gewoon Nederlands, voor teams die vaak nog nooit serieus met AI hebben
+          gewerkt.
+        </p>
+      </div>
+      <div class="relative">
+        <img
+          src="/team/camiel-presentatie.jpg"
+          alt="Camiel Wits geeft een workshop met microfoon"
+          width="1280" height="852"
+          class="w-full h-[400px] rounded-xl border border-lijn object-cover"
+          style="object-position: 50% 15%;"
+          loading="eager"
+          fetchpriority="high"
+        />
+        <div class="absolute -right-3.5 -bottom-3.5 rounded-lg bg-ink-diep text-papier text-[13px] leading-snug font-semibold px-4 py-3">8+ jaar data &amp; AI</div>
+      </div>
+    </header>
+
+    <section class="mt-14 min-[900px]:mt-16">
+      <h2 class="text-[2rem] leading-tight">Wat een Claude consultant bij ons concreet doet</h2>
+      <div class="mt-6 grid grid-cols-1 min-[900px]:grid-cols-2 gap-4">
+        {werk.map((w, i) => (
+          i < 4 ? (
+            <div class="bg-white border border-lijn rounded-[10px] p-6">
+              <p class="font-serif font-bold text-[15px] text-accent-diep">{`0${i + 1}`}</p>
+              <h3 class="font-sans font-bold text-base leading-snug mt-2.5">{w.kop}</h3>
+              <p class="mt-2 text-sm leading-relaxed text-inkt-zacht">{w.tekst}</p>
+            </div>
+          ) : (
+            <div class="bg-white border border-lijn rounded-[10px] p-6 min-[900px]:col-span-2 min-[900px]:grid min-[900px]:grid-cols-[auto_1fr] min-[900px]:gap-5 min-[900px]:items-start">
+              <p class="font-serif font-bold text-[15px] text-accent-diep min-[900px]:pt-0.5">{`0${i + 1}`}</p>
+              <div>
+                <h3 class="font-sans font-bold text-base leading-snug mt-2.5 min-[900px]:mt-0">{w.kop}</h3>
+                <p class="mt-2 text-sm leading-relaxed text-inkt-zacht">{w.tekst}</p>
+              </div>
+            </div>
+          )
+        ))}
+      </div>
+      <p class="mt-6 max-w-3xl text-inkt-zacht">
+        Dat werk zit verpakt in twee stappen: eerst de
+        <a href="/claude-readiness-scan" class="text-accent-diep">Readiness Scan</a> (weten wat er kan en wat het oplevert),
+        daarna de rollout <a href="/claude-in-30-dagen" class="text-accent-diep">Claude in 30 dagen</a> (zorgen dat het echt gebeurt).
+        Wie daarna wil doorpakken, doet dat met de <a href="/claude-compagnon" class="text-accent-diep">Claude Compagnon</a>.
+      </p>
+    </section>
+
+    <section class="mt-14 min-[900px]:mt-16 bg-white border border-lijn rounded-xl p-6 min-[900px]:py-9 min-[900px]:px-10 grid grid-cols-1 min-[900px]:grid-cols-[220px_1fr] gap-8 items-center">
+      {/* FOTO: definitieve portretfoto van Camiel (staand, min. ~440×520; weergave 220×260, object-fit: cover) — nu de bestaande avatarfoto als stand-in. */}
+      <img
+        src="/team/camiel-avatar.jpg"
+        alt="Portret van Camiel Wits"
+        width="220" height="260"
+        class="foto-warm w-[220px] h-[260px] rounded-[10px] border border-lijn object-cover max-[899px]:mx-auto"
+        loading="lazy"
+      />
+      <div>
+        <h2 class="text-[1.875rem] leading-tight">Wie je aan de lijn krijgt</h2>
+        <p class="mt-3.5 text-inkt-zacht">
+          Het werk doet {auteurs.camiel.naam}, {auteurs.camiel.functie.toLowerCase()} met meer dan 8 jaar ervaring met data en AI. Hij doet de Readiness Scan, geeft de workshops en zit bij de kwartaalreviews.
+        </p>
+        <p class="mt-3 text-sm">
+          <a href="/over" class="text-accent-diep">Lees meer over onze aanpak</a>
+          <span class="text-inkt-zacht"> of </span>
+          <a href={auteurs.camiel.linkedin} target="_blank" rel="noopener" class="text-accent-diep">bekijk Camiel op LinkedIn</a>
+        </p>
+        <p class="mt-2 text-sm">
+          <a
+            href="https://open.spotify.com/episode/5pxbh8B6VEwyhJFdB92PCQ"
+            target="_blank"
+            rel="noopener"
+            class="text-accent-diep font-semibold no-underline hover:underline"
+          >
+            Beluister Camiel in De Dataloog<span class="sr-only"> (opent in nieuw venster)</span> &rarr;
+          </a>
+        </p>
+      </div>
+      {/* MENS: (voor Camiel) één zin over waarom klanten meestal bellen — welke vraag stellen ze letterlijk als ze een "Claude consultant" zoeken? Dat maakt deze sectie herkenbaar. */}
+    </section>
+
+    <section class="mt-14 min-[900px]:mt-16">
+      <h2 class="text-[2rem] leading-tight">Wat kost een Claude consultant?</h2>
+      <p class="mt-3 max-w-3xl text-inkt-zacht">
+        Elke stap heeft een vaste prijs en een helder
+        eindresultaat, en de prijzen staan gewoon online:
+      </p>
+      <div class="mt-6 bg-white border border-lijn rounded-xl px-7 py-2 overflow-x-auto">
+        <table class="w-full text-left text-sm border-collapse">
+          <thead>
+            <tr class="border-b border-papier-dieper">
+              <th class="py-3.5 pr-4 font-semibold text-xs uppercase tracking-wider text-inkt-zacht">Stap</th>
+              <th class="py-3.5 pr-4 font-semibold text-xs uppercase tracking-wider text-inkt-zacht">Prijs</th>
+              <th class="py-3.5 font-semibold text-xs uppercase tracking-wider text-inkt-zacht">Duur</th>
+            </tr>
+          </thead>
+          <tbody>
+            {prijzen.map((rij) => (
+              <tr class="border-b border-papier-dieper last:border-b-0">
+                <td class="py-4 pr-4"><a href={rij.link} class="text-accent-diep no-underline hover:underline">{rij.naam}</a></td>
+                <td class="py-4 pr-4 font-semibold whitespace-nowrap">{rij.prijs}</td>
+                <td class="py-4 text-inkt-zacht">{rij.duur}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-5 max-w-3xl text-inkt-zacht">
+        Optioneel: een custom MCP-server voor je stack (&euro;2.000 tot &euro;5.000)
+        of integratie-coaching per uur. De Claude-licenties zelf lopen rechtstreeks
+        via Anthropic; zie het <a href="/prijs" class="text-accent-diep">prijzenoverzicht</a>.
+        Meer over wat een compleet traject inhoudt staat op de pagina over
+        <a href="/claude-implementatie" class="text-accent-diep">Claude-implementatie</a>.
+      </p>
+    </section>
+
+    <section class="mt-14 min-[900px]:mt-16">
+      <h2 class="text-[2rem] leading-tight">Werk dat we eerder deden</h2>
+      <p class="mt-3 text-inkt-zacht">Drie voorbeelden die ons team eerder bouwde bij Nederlandse IT-bedrijven, met cijfers.</p>
+      <div class="mt-6 grid grid-cols-1 min-[900px]:grid-cols-3 gap-4">
+        {voorbeelden.map((v) => (
+          <article class="bg-white border border-lijn rounded-[10px] overflow-hidden flex flex-col">
+            {/* FOTO: eigen foto of screenshot van het project (liggend 16:9, min. ~700×400; weergave 150px hoog, object-fit: cover) — nu het SVG-diagram van de case als stand-in. */}
+            <div
+              class="h-[150px] flex-none bg-papier-dieper border-b border-lijn overflow-hidden flex items-center [&>svg]:w-full [&>svg]:h-auto [&>svg]:block"
+              set:html={diagrams[v.slug]}
+            />
+            <div class="p-5 flex flex-col gap-2 flex-1">
+              <span class="font-serif font-bold text-xl text-accent-diep">{v.cijfer}</span>
+              <h3 class="font-sans font-bold text-[15px] leading-[1.35]">{v.kop}</h3>
+              <p class="text-[13px] leading-relaxed text-inkt-zacht flex-1">{v.tekst}</p>
+              <a href={`/cases/${v.slug}`} class="mt-1 inline-block text-[13px] text-accent-diep font-semibold no-underline hover:underline">Lees de case &rarr;</a>
+            </div>
+          </article>
+        ))}
+      </div>
+      <p class="mt-6 max-w-3xl text-inkt-zacht">
+        Alle projecten staan bij de <a href="/cases" class="text-accent-diep">cases</a>.
+        Hoe we werken staat op de <a href="/methodologie" class="text-accent-diep">methodologie-pagina</a>;
+        de AVG-kant leggen we uit op de <a href="/compliance" class="text-accent-diep">compliance-pagina&rsquo;s</a>.
+      </p>
+    </section>
+
+    <section class="mt-14 min-[900px]:mt-16">
+      <h2 class="text-[2rem] leading-tight">Veelgestelde vragen over een Claude consultant</h2>
+      <dl class="mt-6 divide-y divide-lijn">
+        {faqItems.map(item => (
+          <details class="group py-4">
+            <summary class="flex cursor-pointer items-center justify-between font-serif font-bold text-lg [&::-webkit-details-marker]:hidden list-none">
+              {item.question}
+              <span class="ml-4 text-inkt-zacht transition-transform group-open:rotate-45 flex-shrink-0">+</span>
+            </summary>
+            <dd class="mt-3 text-inkt-zacht pr-12">
+              {item.answer}
+              {item.linkHref && (
+                <a href={item.linkHref} class="block mt-2 text-sm text-accent-diep font-semibold no-underline hover:underline">{item.linkTekst} &rarr;</a>
+              )}
+            </dd>
+          </details>
+        ))}
+      </dl>
+    </section>
+  </article>
+
+  <section class="my-12 px-6 min-[900px]:px-10">
+    <div class="mx-auto w-full max-w-[980px] rounded-xl bg-accent-diep overflow-hidden grid grid-cols-1 min-[900px]:grid-cols-[1fr_320px]">
+      <div class="p-8 min-[900px]:py-10 min-[900px]:px-11">
+        <h2 class="text-3xl text-papier">Even sparren met een Claude consultant?</h2>
+        {/* volle text-papier: papier/80 op accent-diep haalt maar 3,7:1 (AA vraagt 4,5:1) */}
+        <p class="mt-3 text-papier">Vraag een intro-gesprek van 30 minuten aan, rechtstreeks met Camiel. Geen salesteam ertussen. Past het van beide kanten, dan begint het traject met de Readiness Scan.</p>
+        <a
+          href={site.introLink}
+          class="mt-6 inline-flex items-center rounded-full bg-papier text-accent-donkerst px-5 py-3 font-semibold no-underline hover:bg-papier-dieper focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-papier"
+        >
+          Vraag een intro-gesprek aan
+        </a>
+      </div>
+      {/* Onder 900px vervalt de foto (zelfde gedrag als de eerdere placeholder). */}
+      <img
+        src="/team/camiel-studio.jpg"
+        alt="Camiel Wits in gesprek aan de studiotafel"
+        class="hidden min-[900px]:block w-full h-full min-h-[220px] object-cover"
+        loading="lazy"
+      />
+    </div>
+  </section>
+</BasisLayout>

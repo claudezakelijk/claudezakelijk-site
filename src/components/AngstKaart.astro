@@ -1,0 +1,13 @@
+---
+interface Props {
+  label: string;
+  titel: string;
+  antwoord: string;
+}
+const { label, titel, antwoord } = Astro.props;
+---
+<article class="border border-lijn rounded-lg p-6 bg-papier flex flex-col gap-3 h-full card-shadow angst-hover reveal-target">
+  <p class="text-xs uppercase tracking-widest text-accent-diep">{label}</p>
+  <h3 class="text-xl font-serif">{titel}</h3>
+  <p class="text-inkt-zacht">{antwoord}</p>
+</article>

@@ -1,0 +1,45 @@
+---
+interface Props {
+  primaryText?: string;
+  primaryLink?: string;
+  secondaryText?: string;
+  secondaryLink?: string;
+  // Contextuele link naar de bijpassende dienstpagina, onderaan de strook.
+  // Alleen de artikel-layouts (prijs, compliance, vergelijkingen, verticalen) zetten dit.
+  dienst?: 'implementatie' | 'consultant';
+}
+const {
+  primaryText = 'Vraag een intro-call aan',
+  primaryLink = '/contact',
+  secondaryText = 'Doe de gratis AI-check',
+  secondaryLink = '/ai-enablement-scan',
+  dienst,
+} = Astro.props;
+---
+<section class="my-12 rounded-lg bg-teal p-8 md:p-10 text-papier">
+  <div class="max-w-2xl">
+    <p class="text-lg font-semibold text-papier">Wil je weten hoe dit voor jouw organisatie werkt?</p>
+    <div class="mt-4 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+      <a
+        href={primaryLink}
+        class="no-underline inline-flex items-center rounded-full bg-papier text-teal-diep px-5 py-3 font-semibold hover:bg-papier-dieper"
+      >
+        {primaryText} <span class="ml-2 cta-arrow">&rarr;</span>
+      </a>
+      {/* volle text-papier: papier/90 op teal zat met 4,47:1 nét onder AA */}
+      <a href={secondaryLink} class="text-papier underline underline-offset-4 hover:text-papier-dieper">
+        {secondaryText}
+      </a>
+    </div>
+    {dienst === 'implementatie' && (
+      <p class="mt-5 text-sm text-papier">
+        Eerst lezen hoe een traject loopt en wat het kost? Bekijk de pagina over <a href="/claude-implementatie" class="text-papier underline underline-offset-4 hover:text-papier-dieper">Claude-implementatie</a>.
+      </p>
+    )}
+    {dienst === 'consultant' && (
+      <p class="mt-5 text-sm text-papier">
+        Eerst weten wie het werk doet en wat het kost? Lees wat onze <a href="/claude-consultant" class="text-papier underline underline-offset-4 hover:text-papier-dieper">Claude-consultant</a> doet.
+      </p>
+    )}
+  </div>
+</section>

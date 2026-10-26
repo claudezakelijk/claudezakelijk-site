@@ -1,0 +1,48 @@
+{
+  "preLaunch": false,
+  "exact": [
+    "/",
+    "/ai-enablement-scan",
+    "/claude-compagnon",
+    "/claude-consultant",
+    "/claude-implementatie",
+    "/claude-in-30-dagen",
+    "/claude-readiness-scan",
+    "/contact",
+    "/hoe-claude-werkt",
+    "/methodologie",
+    "/over",
+    "/verticalen"
+  ],
+  "secties": [
+    "/cases",
+    "/gids",
+    "/tools",
+    "/compliance",
+    "/integraties",
+    "/nieuws",
+    "/prijs",
+    "/training",
+    "/use-cases",
+    "/vergelijken"
+  ],
+  "prefixen": [
+    "/claude-voor-"
+  ],
+  "assets": [
+    "/_astro/",
+    "/team/",
+    "/logos/",
+    "/icons/",
+    "/favicon.svg",
+    "/og-claudezakelijk.png",
+    "/robots.txt",
+    "/sitemap-"
+  ],
+  "legeHubs": [
+    "/use-cases",
+    "/integraties",
+    "/training",
+    "/nieuws"
+  ]
+}

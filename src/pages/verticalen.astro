@@ -1,0 +1,119 @@
+---
+import { itemListNode, lijstId, faqNode } from '../lib/schema';
+import BasisLayout from '../layouts/BasisLayout.astro';
+import Container from '../components/Container.astro';
+import { getPublished } from '../lib/content';
+import Broodkruimel from '../components/Broodkruimel.astro';
+import FaqSectie from '../components/FaqSectie.astro';
+
+// Let op: verticalen-detailpagina's leven op /claude-voor-[slug] (zie
+// src/pages/claude-voor-[slug].astro); de hub zelf staat op /verticalen,
+// precies zoals de breadcrumbs in VerticalLayout verwachten.
+// De intro staat in deze pagina zelf, geschreven vanuit de hubtekst in de
+// spec, en niet meer afgeleid van de kortAntwoord-velden van de branchepagina's.
+const tabel = [
+  { href: '/claude-voor-accountants', branche: 'Accountants', helpt: 'rapportages uit proefbalansen, samensteldossiers indexeren', mensenwerk: 'beoordelen en tekenen', regels: 'vertrouwelijkheid uit de VGBA' },
+  { href: '/claude-voor-advocaten', branche: 'Advocaten', helpt: 'contracten en dossiers doorlezen, jurisprudentie samenvatten', mensenwerk: 'pleiten, adviseren, elke verwijzing controleren', regels: 'geheimhoudingsplicht, artikel 11a Advocatenwet' },
+  { href: '/claude-voor-makelaars', branche: 'Makelaars', helpt: 'woningteksten, koperscommunicatie, marktrapportages', mensenwerk: 'taxeren en onderhandelen', regels: 'AVG voor persoonsgegevens en biedingen' },
+  { href: '/claude-voor-marketingbureaus', branche: 'Marketingbureaus', helpt: 'Google Ads-audits, SEO-analyses, klantrapportages', mensenwerk: 'analyses beoordelen, klantcontact', regels: 'artikel 28 AVG als verwerker' },
+];
+
+const faq = [
+  {
+    question: 'Mag een accountant of advocaat Claude gebruiken met klantgegevens?',
+    answer: 'Ja, als je het zakelijk inricht: een Team- of Enterprise-abonnement met verwerkersovereenkomst, afspraken over welke gegevens erin mogen en waar het kan gepseudonimiseerde data. De beroepsregels blijven gelden en de professional controleert het werk.',
+  },
+  {
+    question: 'Mijn branche staat er niet bij. Wat nu?',
+    answer: 'We voegen branches stap voor stap toe. Tot die tijd geldt de algemene aanpak uit de gids Claude voor bedrijven en mkb.',
+  },
+  {
+    question: 'Waar komen de voorbeelden vandaan?',
+    answer: 'Uit projecten die ons team bouwde bij software- en IT-bedrijven. Op de branchepagina\'s staat erbij als een voorbeeld uit een andere sector komt.',
+  },
+];
+
+const artikelen = (await getPublished('verticalen'))
+  .sort((a, b) => b.data.priority - a.data.priority || a.data.title.localeCompare(b.data.title));
+const breadcrumbs = [{ name: 'Home', url: '/' }, { name: 'Branches', url: '/verticalen' }];
+---
+<BasisLayout
+  titel="Claude per branche: zo werkt het in jouw vak"
+  beschrijving="Claude per branche: wat accountants, advocaten, makelaars en marketingbureaus ermee doen, wat mensenwerk blijft en welke regels er per sector meespelen."
+  pad="/verticalen"
+  schema={{ paginaType: 'CollectionPage', hoofdonderwerp: lijstId('/verticalen'), breadcrumbs, nodes: [itemListNode('/verticalen', artikelen.map((a) => ({ url: `/claude-voor-${a.id}`, naam: a.data.title }))), faqNode('/verticalen', faq)] }}
+>
+  <Container class="pt-16 pb-12">
+    <Broodkruimel items={breadcrumbs} />
+    <p class="mt-6 text-xs uppercase tracking-widest text-inkt-zacht reveal-target">Branches</p>
+    <h1 class="mt-3 text-[length:var(--text-h1)] reveal-target">Claude per branche</h1>
+
+    <div class="max-w-3xl">
+      <p class="mt-4 text-lg text-inkt-zacht reveal-target">
+        Claude werkt in elk vak anders, omdat elk vak eigen taken en eigen regels heeft. Per
+        branche lees je welk werk Claude overneemt, wat mensenwerk blijft en welke
+        beroepsregels meespelen, zoals de geheimhoudingsplicht van advocaten en de
+        vertrouwelijkheid uit de VGBA voor accountants. Eén ding geldt overal: werk met een
+        zakelijk abonnement met verwerkersovereenkomst en pseudonimiseer klantgegevens waar
+        het kan.
+      </p>
+      <p class="mt-4 text-inkt-zacht">
+        Op een accountantskantoor gaat het om rapportages en samensteldossiers. De
+        accountant beoordeelt en tekent zelf. Dat staat in
+        <a href="/claude-voor-accountants" class="text-accent-diep">Claude voor accountants</a>.
+        Bij <a href="/claude-voor-advocaten" class="text-accent-diep">Claude voor advocaten</a>
+        draait het om leeswerk in contracten en dossiers, binnen de geheimhoudingsplicht.
+        <a href="/claude-voor-makelaars" class="text-accent-diep">Claude voor makelaars</a>
+        gaat over woningteksten, klantcontact en marktrapportages. Taxeren en onderhandelen
+        blijven mensenwerk. En in
+        <a href="/claude-voor-marketingbureaus" class="text-accent-diep">Claude voor marketingbureaus</a>
+        lees je over Google Ads-audits, SEO-analyses en klantrapportages.
+      </p>
+    </div>
+
+    {artikelen.length > 0 && (
+      <>
+        <h2 class="mt-12 text-[length:var(--text-h2)]">Kies je branche</h2>
+        <div class="mt-6 grid gap-6 md:grid-cols-2">
+          {artikelen.map((a) => (
+            <a
+              href={`/claude-voor-${a.id}`}
+              class="no-underline block rounded-lg border border-lijn bg-papier p-6 card-shadow reveal-target"
+            >
+              <span class="text-xs uppercase tracking-widest text-inkt-zacht bg-papier-dieper rounded-full px-3 py-1">Branche</span>
+              <h3 class="mt-3 font-serif text-xl font-bold text-inkt">{a.data.title}</h3>
+              <p class="mt-2 text-sm text-inkt-zacht">{a.data.metaDescription}</p>
+              <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-accent-donkerst">Bekijk de branche<span class="cta-arrow">&rarr;</span></span>
+            </a>
+          ))}
+        </div>
+      </>
+    )}
+
+    <div class="my-10 overflow-x-auto">
+      <table class="w-full text-sm border-collapse">
+        <caption class="caption-top text-left text-sm text-inkt-zacht pb-2">Claude per branche, stand oktober 2026</caption>
+        <thead>
+          <tr class="border-b-2 border-lijn">
+            <th scope="col" class="text-left p-3 font-semibold">Branche</th>
+            <th scope="col" class="text-left p-3 font-semibold">Waar Claude helpt</th>
+            <th scope="col" class="text-left p-3 font-semibold">Wat mensenwerk blijft</th>
+            <th scope="col" class="text-left p-3 font-semibold">Regels die meespelen</th>
+          </tr>
+        </thead>
+        <tbody>
+          {tabel.map((r) => (
+            <tr class="border-b border-lijn">
+              <th scope="row" class="p-3 text-left font-medium"><a href={r.href} class="text-accent-diep">{r.branche}</a></th>
+              <td class="p-3 text-inkt-zacht">{r.helpt}</td>
+              <td class="p-3 text-inkt-zacht">{r.mensenwerk}</td>
+              <td class="p-3 text-inkt-zacht">{r.regels}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <FaqSectie titel="Vragen over Claude per branche" items={faq} />
+  </Container>
+</BasisLayout>

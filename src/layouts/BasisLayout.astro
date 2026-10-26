@@ -1,0 +1,89 @@
+---
+import '../styles/global.css';
+import { site } from '../site';
+import SeoMeta from '../components/SeoMeta.astro';
+import type { SchemaInvoer, ArtikelInvoer } from '../lib/schema';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { moetNoindex } from '../data/indexering.mjs';
+import BronMeting from '../components/BronMeting.astro';
+import interLatin400 from '@fontsource/inter/files/inter-latin-400-normal.woff2?url';
+import newsreaderLatin from '@fontsource-variable/newsreader/files/newsreader-latin-wght-normal.woff2?url';
+
+interface Props {
+  titel: string;
+  beschrijving: string;
+  pad: string;
+  ogType?: 'website' | 'article';
+  taal?: string;
+  /** Forceert noindex, ook na launch. */
+  noindex?: boolean;
+  /** Eigen deelplaatje voor WhatsApp/Slack/iMessage. */
+  ogImage?: string;
+  /** Titel in het deelvoorbeeld, zonder de sitenaam erachter. */
+  ogTitel?: string;
+  /** Site-navigatie tonen. Alleen uitzetten voor standalone pagina's. */
+  toonHeader?: boolean;
+  /** Site-footer tonen. Alleen uitzetten voor standalone pagina's. */
+  toonFooter?: boolean;
+  /** Structured data voor deze pagina (Spec B). Zie src/lib/schema.ts. */
+  schema?: SchemaInvoer;
+  /** Alleen voor artikelpagina's: zet og:type article, article:* en de Article-node. */
+  artikel?: ArtikelInvoer;
+  /** Alt-tekst voor het deelplaatje. */
+  ogImageAlt?: string;
+  /** Geen canonical en og:url (alleen de 404-pagina). */
+  geenCanonical?: boolean;
+}
+
+const { titel, beschrijving, pad, ogType = 'website', taal = site.taal, noindex, ogImage, ogTitel, toonHeader = true, toonFooter = true, schema, artikel, ogImageAlt, geenCanonical } = Astro.props;
+
+// Zolang preLaunch true staat is dit de hele site. Daarna alles buiten de zakelijke
+// site. Zie src/data/indexering.mjs.
+const geenIndex = noindex ?? moetNoindex(pad);
+---
+<!doctype html>
+<html lang={taal}>
+  <head>
+    <!-- Als allereerste: markeer dat JS draait. .reveal-target wordt alleen
+         onder html.js verborgen (global.css), zodat de site zonder JS
+         gewoon zichtbaar blijft (audit P1.10). -->
+    <script is:inline>document.documentElement.classList.add('js');</script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preload" href={interLatin400} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={newsreaderLatin} as="font" type="font/woff2" crossorigin />
+    {geenIndex && <meta name="robots" content="noindex, nofollow" />}
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <SeoMeta titel={titel} beschrijving={beschrijving} pad={pad} ogType={ogType} ogImage={ogImage} ogTitel={ogTitel} ogImageAlt={ogImageAlt} geenIndex={geenIndex} schema={schema} artikel={artikel} geenCanonical={geenCanonical} />
+  </head>
+  <body class="bg-papier text-inkt">
+    <a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:bg-accent-diep focus:text-papier focus:px-3 focus:py-2 focus:rounded">Naar inhoud</a>
+    {toonHeader && <Header />}
+    <main id="inhoud" tabindex="-1">
+      <slot />
+    </main>
+    {toonFooter && <Footer />}
+    <BronMeting />
+    <script>
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const parent = entry.target.parentElement;
+            const siblings = parent ? Array.from(parent.querySelectorAll(':scope > .reveal-target')) : [];
+            const index = siblings.indexOf(entry.target);
+            const delay = index >= 0 ? index * 80 : 0;
+            setTimeout(() => {
+              entry.target.classList.add('revealed');
+            }, delay);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+
+      document.querySelectorAll('.reveal-target').forEach((el) => {
+        observer.observe(el);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+---
+/**
+ * Gedeelde paginabreedte. Zorgt dat alle secties dezelfde linker-/rechtermarge
+ * en max-breedte delen, zodat de randen top-tot-onder uitlijnen.
+ * Gebruik: <Container class="py-12">...</Container>
+ */
+interface Props {
+  class?: string;
+  width?: string;
+}
+const { class: extra = '', width = 'max-w-5xl' } = Astro.props;
+---
+<section class:list={['mx-auto w-full px-6', width, extra]}>
+  <slot />
+</section>

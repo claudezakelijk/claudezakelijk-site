@@ -1,0 +1,21 @@
+---
+import BasisLayout from '../layouts/BasisLayout.astro';
+---
+<BasisLayout
+  titel="Pagina niet gevonden"
+  beschrijving="Deze pagina bestaat niet. Ga terug naar de homepagina."
+  pad="/404"
+  geenCanonical
+>
+  <section class="max-w-xl mx-auto px-6 py-24 text-center">
+    <p class="text-xs uppercase tracking-widest text-inkt-zacht">404</p>
+    <h1 class="mt-3 text-[length:var(--text-h1)]">Deze pagina bestaat niet</h1>
+    <p class="mt-4 text-inkt-zacht">Waarschijnlijk een oude link of een typfout. Terug naar het begin.</p>
+    <a
+      href="/"
+      class="mt-8 inline-flex rounded-full bg-accent-diep text-papier px-5 py-3 font-semibold no-underline hover:bg-accent-donkerst focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-donkerst"
+    >
+      Naar de homepagina
+    </a>
+  </section>
+</BasisLayout>

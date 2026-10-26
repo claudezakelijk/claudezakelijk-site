@@ -1,0 +1,20 @@
+---
+interface Props {
+  items: Array<{ name: string; url: string }>;
+}
+const { items } = Astro.props;
+---
+<nav aria-label="Broodkruimel" class="text-sm text-inkt-zacht">
+  <ol class="flex items-center gap-1.5 flex-wrap">
+    {items.map((item, i) => (
+      <li class="flex items-center gap-1.5">
+        {i > 0 && <span class="text-lijn" aria-hidden="true">/</span>}
+        {i < items.length - 1 ? (
+          <a href={item.url} class="no-underline hover:text-inkt">{item.name}</a>
+        ) : (
+          <span class="text-inkt font-medium">{item.name}</span>
+        )}
+      </li>
+    ))}
+  </ol>
+</nav>

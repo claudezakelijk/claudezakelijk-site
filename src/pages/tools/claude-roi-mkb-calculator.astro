@@ -1,0 +1,521 @@
+---
+import BasisLayout from '../../layouts/BasisLayout.astro';
+import Broodkruimel from '../../components/Broodkruimel.astro';
+import CtaStrook from '../../components/CtaStrook.astro';
+import FaqSectie from '../../components/FaqSectie.astro';
+import BronnenBlok from '../../components/BronnenBlok.astro';
+import { webAppNode, faqNode, toolId } from '../../lib/schema';
+
+// === PRIJZEN START ===
+// Licentieprijzen in USD per plek per maand, exclusief btw.
+// Bron: https://claude.com/pricing, gecheckt op 2 oktober 2026.
+// Pro jaarlijks is $200 per jaar vooruit, dus 200 / 12 per maand.
+// Pas bij een prijswijziging alleen dit object en de datum aan.
+const PRIJZEN = {
+  gecheckt: '2 oktober 2026',
+  bron: 'https://claude.com/pricing',
+  plannen: {
+    pro: { naam: 'Pro', maandelijks: 20, jaarlijks: 200 / 12 },
+    teamStandaard: { naam: 'Team standaard', maandelijks: 25, jaarlijks: 20 },
+    teamPremium: { naam: 'Team premium', maandelijks: 125, jaarlijks: 100 },
+  },
+};
+// === PRIJZEN EINDE ===
+
+// === BEREKENING START ===
+// Pure functie: draait in de browser en is los te testen met node.
+// wisselkoers = aantal dollar voor 1 euro. adoptie in procenten.
+function berekenRoi(invoer, prijzen) {
+  const prijsUsd = prijzen.plannen[invoer.plan][invoer.facturering];
+  const licentiePerPlekMaand = prijsUsd / invoer.wisselkoers;
+  const licentieMaand = invoer.medewerkers * licentiePerPlekMaand;
+  const licentieJaar = licentieMaand * 12;
+  const actieveGebruikers = (invoer.medewerkers * invoer.adoptie) / 100;
+  const urenPerJaar = actieveGebruikers * invoer.urenPerWeek * invoer.weken;
+  const waardeJaar = urenPerJaar * invoer.uurkosten;
+  const nettoVolgendeJaren = waardeJaar - licentieJaar;
+  const nettoJaar1 = nettoVolgendeJaren - invoer.implementatie;
+  const nettoPerMaand = nettoVolgendeJaren / 12;
+  let terugverdienMaanden = null;
+  if (nettoPerMaand > 0) terugverdienMaanden = invoer.implementatie / nettoPerMaand;
+  else if (nettoPerMaand === 0 && invoer.implementatie === 0) terugverdienMaanden = 0;
+  // Break-even: zoveel tijd per week moet elke plek opleveren om de eigen licentie te betalen.
+  const werkuurWaardePerPlekJaar = invoer.weken * invoer.uurkosten;
+  const breakEvenMinutenPerMedewerker = (licentiePerPlekMaand * 12 / werkuurWaardePerPlekJaar) * 60;
+  const breakEvenMinutenPerGebruiker =
+    invoer.adoptie > 0 ? breakEvenMinutenPerMedewerker * (100 / invoer.adoptie) : null;
+  return {
+    prijsUsd,
+    licentiePerPlekMaand,
+    licentieMaand,
+    licentieJaar,
+    actieveGebruikers,
+    urenPerJaar,
+    waardeJaar,
+    nettoJaar1,
+    nettoVolgendeJaren,
+    terugverdienMaanden,
+    breakEvenMinutenPerMedewerker,
+    breakEvenMinutenPerGebruiker,
+  };
+}
+// === BEREKENING EINDE ===
+
+// Standaardwaarden. Allemaal aannames die de lezer hoort aan te passen.
+const STANDAARD = {
+  medewerkers: 10,
+  uurkosten: 50,
+  urenPerWeek: 0.5,
+  weken: 46,
+  plan: 'teamStandaard',
+  facturering: 'jaarlijks',
+  implementatie: 1500,
+  adoptie: 60,
+  wisselkoers: 1.13,
+};
+const BESPARING = [
+  { id: 'voorzichtig', label: 'Voorzichtig', uren: 0.5 },
+  { id: 'midden', label: 'Midden', uren: 1.5 },
+  { id: 'optimistisch', label: 'Optimistisch', uren: 3 },
+];
+
+const voorbeeld = berekenRoi(STANDAARD, PRIJZEN);
+const eur = (n: number) =>
+  new Intl.NumberFormat('nl-NL', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 }).format(n);
+const getal = (n: number, d = 0) =>
+  new Intl.NumberFormat('nl-NL', { maximumFractionDigits: d, minimumFractionDigits: d }).format(n);
+const koers = getal(STANDAARD.wisselkoers, 2);
+const teamStd = PRIJZEN.plannen.teamStandaard;
+const breakEvenStd = getal(voorbeeld.breakEvenMinutenPerMedewerker, 1);
+
+const clientBron = `const PRIJZEN = ${JSON.stringify(PRIJZEN)};\n${berekenRoi.toString()}`;
+
+const titel = 'Claude ROI berekenen voor het mkb | ClaudeZakelijk';
+const beschrijving =
+  'Bereken of Claude zichzelf terugverdient. Vul je team, uurkosten en plan in en zie direct hoeveel minuten per week Claude moet besparen voor de licentie.';
+const pad = '/tools/claude-roi-mkb-calculator';
+
+const breadcrumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'Rekentools', url: '/tools' },
+  { name: 'Claude ROI calculator voor het mkb', url: pad },
+];
+
+const faq = [
+  {
+    question: 'Hoeveel tijd moet Claude besparen om de licentie terug te verdienen?',
+    answer: `Minder dan je denkt. Met ${teamStd.naam} bij jaarlijkse betaling (${'$'}${teamStd.jaarlijks} per plek per maand), uurkosten van ${eur(STANDAARD.uurkosten)} en ${STANDAARD.weken} werkweken is dat ongeveer ${breakEvenStd} minuten per medewerker per week. Bij lagere uurkosten of een duurder plan wordt dat meer. Vul je eigen cijfers in de calculator in.`,
+  },
+  {
+    question: 'Waarom telt de calculator de licentie voor iedereen, maar de besparing niet?',
+    answer: 'Je betaalt een plek voor elke medewerker die toegang krijgt. Niet iedereen gaat Claude ook echt gebruiken. Daarom rekent de besparing alleen met het deel van je team dat het gebruikt. Dat percentage stel je zelf in bij adoptie.',
+  },
+  {
+    question: 'Welk plan past bij mijn bedrijf?',
+    answer: 'Pro is een abonnement voor één persoon. Team is volgens Anthropic bedoeld voor teams van 2 tot 150 mensen. Een premium-plek kost vijf keer zoveel als een standaardplek. Neem die alleen voor mensen die er veel meer gebruik van nodig hebben, en reken het verschil door in de calculator.',
+  },
+  {
+    question: 'Zijn de bedragen inclusief btw?',
+    answer: 'Nee. Anthropic noemt de prijzen in dollars en exclusief belasting. De calculator rekent ze om met de koers die je zelf invult. Wat je echt betaalt, hangt ook af van de koers van je bank of creditcard.',
+  },
+];
+
+const bronnen = [
+  { titel: 'Anthropic, Claude prijzen (Pro en Team)', url: PRIJZEN.bron, geraadpleegd: PRIJZEN.gecheckt },
+  {
+    titel: 'Noy en Zhang, Experimental evidence on the productivity effects of generative artificial intelligence, Science 381 (2023)',
+    url: 'https://doi.org/10.1126/science.adh2586',
+    geraadpleegd: '2 oktober 2026',
+  },
+  { titel: 'Case: vergadernotities naar actiepunten in 5 minuten', url: '/cases/consultant-brief', geraadpleegd: null },
+  { titel: 'Case: kennisbank in een week', url: '/cases/knowledge-base', geraadpleegd: null },
+  {
+    titel: `Wisselkoers ${koers} dollar per euro: afgeronde marktkoers begin oktober 2026, pas aan naar je eigen koers`,
+    url: null,
+    geraadpleegd: null,
+  },
+];
+
+
+const veld = 'w-full border-[1.5px] border-lijn rounded-[14px] px-4 py-3 bg-white text-inkt';
+const hulp = 'mt-1.5 text-[13.5px] text-inkt-zacht';
+---
+<BasisLayout
+  titel={titel}
+  beschrijving={beschrijving}
+  pad={pad}
+  schema={{
+    breadcrumbs,
+    hoofdonderwerp: toolId(pad),
+    nodes: [webAppNode({ pad, naam: 'Claude ROI calculator voor het mkb', beschrijving }), faqNode(pad, faq)],
+  }}
+>
+  <article class="roi max-w-3xl mx-auto px-5 md:px-6 pt-16 pb-8">
+    <Broodkruimel items={breadcrumbs} />
+    <h1 class="mt-6 text-[length:var(--text-h1)]">Claude ROI calculator voor het mkb</h1>
+    <p class="mt-6 text-lg text-inkt-zacht">
+      Verdient Claude zichzelf terug in jouw bedrijf? Vul je eigen cijfers in en kijk vooral naar het
+      break-evenpunt: hoeveel minuten per week Claude moet besparen om de licentie te betalen.
+    </p>
+
+    <noscript>
+      <p class="mt-6 rounded-xl border border-lijn bg-papier-dieper p-4 text-inkt">
+        Zonder JavaScript kun je de velden niet doorrekenen. De uitkomsten hieronder horen bij de
+        standaardwaarden. Onder de calculator staat hoe de som werkt.
+      </p>
+    </noscript>
+
+    <form id="roi-form" class="mt-10 card-shadow rounded-xl border border-lijn bg-white p-5 md:p-8" novalidate onsubmit="return false">
+      <h2 class="sectie-lijn text-[length:var(--text-h2)] mt-0">Jouw cijfers</h2>
+      <div class="mt-6 grid gap-6 md:grid-cols-2">
+        <div>
+          <label for="medewerkers" class="font-semibold block mb-2">Medewerkers met een licentie</label>
+          <input id="medewerkers" name="medewerkers" class={veld} type="text" inputmode="numeric" autocomplete="off"
+            value={STANDAARD.medewerkers} data-min="1" data-max="1000" data-geheel="true" aria-describedby="medewerkers-fout" />
+          <p id="medewerkers-fout" class="fout" hidden></p>
+        </div>
+        <div>
+          <label for="uurkosten" class="font-semibold block mb-2">Uurkosten per medewerker (euro)</label>
+          <input id="uurkosten" name="uurkosten" class={veld} type="text" inputmode="decimal" autocomplete="off"
+            value={STANDAARD.uurkosten} data-min="5" data-max="500" aria-describedby="uurkosten-hulp uurkosten-fout" />
+          <p id="uurkosten-hulp" class={hulp}>Loon plus werkgeverslasten, per gewerkt uur. Aanname: pas aan.</p>
+          <p id="uurkosten-fout" class="fout" hidden></p>
+        </div>
+
+        <fieldset class="md:col-span-2">
+          <legend class="font-semibold mb-2">Bespaarde uren per gebruiker per week</legend>
+          <div class="flex flex-wrap gap-2" role="group">
+            {BESPARING.map((b) => (
+              <label class="keuze">
+                <input type="radio" name="besparing" value={b.id} data-uren={b.uren} checked={b.uren === STANDAARD.urenPerWeek} />
+                <span>{b.label} ({getal(b.uren, 1)} uur)</span>
+              </label>
+            ))}
+          </div>
+          <label for="urenPerWeek" class="block mt-4 mb-2 text-[15px]">Of vul je eigen schatting in (uren per week)</label>
+          <input id="urenPerWeek" name="urenPerWeek" class={veld} type="text" inputmode="decimal" autocomplete="off"
+            value={getal(STANDAARD.urenPerWeek, 1)} data-min="0" data-max="20" aria-describedby="uren-hulp urenPerWeek-fout" />
+          <p id="uren-hulp" class={hulp}>
+            Dit is een aanname, geen feit. De standaard staat bewust voorzichtig. Lees hieronder hoe je een
+            eerlijke schatting maakt.
+          </p>
+          <p id="urenPerWeek-fout" class="fout" hidden></p>
+        </fieldset>
+
+        <div>
+          <label for="adoptie" class="font-semibold block mb-2">Adoptie (procent)</label>
+          <input id="adoptie" name="adoptie" class={veld} type="text" inputmode="decimal" autocomplete="off"
+            value={STANDAARD.adoptie} data-min="0" data-max="100" aria-describedby="adoptie-hulp adoptie-fout" />
+          <p id="adoptie-hulp" class={hulp}>Het deel van je team dat Claude echt gebruikt. Aanname: pas aan.</p>
+          <p id="adoptie-fout" class="fout" hidden></p>
+        </div>
+        <div>
+          <label for="weken" class="font-semibold block mb-2">Werkweken per jaar</label>
+          <input id="weken" name="weken" class={veld} type="text" inputmode="numeric" autocomplete="off"
+            value={STANDAARD.weken} data-min="1" data-max="52" aria-describedby="weken-hulp weken-fout" />
+          <p id="weken-hulp" class={hulp}>52 weken min vakantie en feestdagen.</p>
+          <p id="weken-fout" class="fout" hidden></p>
+        </div>
+
+        <div>
+          <label for="plan" class="font-semibold block mb-2">Plan</label>
+          <select id="plan" name="plan" class={veld}>
+            {Object.entries(PRIJZEN.plannen).map(([id, p]) => (
+              <option value={id} selected={id === STANDAARD.plan}>{p.naam}</option>
+            ))}
+          </select>
+        </div>
+        <fieldset>
+          <legend class="font-semibold mb-2">Betaling</legend>
+          <div class="flex flex-wrap gap-2">
+            <label class="keuze"><input type="radio" name="facturering" value="jaarlijks" checked={STANDAARD.facturering === 'jaarlijks'} /><span>Per jaar</span></label>
+            <label class="keuze"><input type="radio" name="facturering" value="maandelijks" checked={STANDAARD.facturering === 'maandelijks'} /><span>Per maand</span></label>
+          </div>
+        </fieldset>
+
+        <div>
+          <label for="implementatie" class="font-semibold block mb-2">Eenmalige implementatie (euro)</label>
+          <input id="implementatie" name="implementatie" class={veld} type="text" inputmode="decimal" autocomplete="off"
+            value={STANDAARD.implementatie} data-min="0" data-max="1000000" aria-describedby="implementatie-hulp implementatie-fout" />
+          <p id="implementatie-hulp" class={hulp}>
+            Ter vergelijking: de <a href="/claude-readiness-scan">Readiness Scan</a> is vanaf €1.500,
+            <a href="/claude-in-30-dagen">Claude in 30 dagen</a> vanaf €7.500. Zet op 0 als je het zelf doet.
+          </p>
+          <p id="implementatie-fout" class="fout" hidden></p>
+        </div>
+        <div>
+          <label for="wisselkoers" class="font-semibold block mb-2">Wisselkoers: dollar voor 1 euro</label>
+          <input id="wisselkoers" name="wisselkoers" class={veld} type="text" inputmode="decimal" autocomplete="off"
+            value={koers} data-min="0.5" data-max="2" aria-describedby="koers-hulp wisselkoers-fout" />
+          <p id="koers-hulp" class={hulp}>Afgerond, begin oktober 2026. Vul de koers van je bank in als je die weet.</p>
+          <p id="wisselkoers-fout" class="fout" hidden></p>
+        </div>
+      </div>
+      <p class="mt-6 text-[13.5px] text-inkt-zacht">
+        Prijzen exclusief btw, in dollars van Anthropic.
+        <a href={PRIJZEN.bron} target="_blank" rel="noopener">Prijzen gecheckt op {PRIJZEN.gecheckt}<span class="sr-only"> (opent in nieuw venster)</span></a>.
+      </p>
+    </form>
+
+    <section id="roi-uitkomst" class="mt-8" aria-live="polite" aria-labelledby="uitkomst-kop">
+      <h2 id="uitkomst-kop" class="sectie-lijn text-[length:var(--text-h2)]">Uitkomst</h2>
+      <p id="roi-melding" class="fout mt-4" hidden></p>
+      <div id="roi-resultaten" class="mt-6 grid gap-4">
+        <div class="rounded-xl border-2 border-accent-diep bg-white p-5 md:p-6">
+          <p class="m-0 text-[15px] font-semibold text-accent-diep">Break-evenpunt</p>
+          <p class="m-0 mt-2 font-serif text-4xl md:text-5xl text-inkt"><span data-uit="breakEven">{breakEvenStd}</span> minuten</p>
+          <p class="m-0 mt-2 text-inkt-zacht">
+            per medewerker per week. Zoveel tijd moet Claude elke medewerker met een licentie besparen om die
+            licentie te betalen.
+          </p>
+          <p class="m-0 mt-2 text-inkt-zacht" data-uit="breakEvenGebruiker">
+            Gebruikt {getal(STANDAARD.adoptie)}% het echt? Dan moet elke echte gebruiker {getal(voorbeeld.breakEvenMinutenPerGebruiker ?? 0, 1)} minuten per week besparen.
+          </p>
+        </div>
+        <dl class="grid gap-4 sm:grid-cols-2 m-0">
+          <div class="rounded-xl border border-lijn bg-white p-5">
+            <dt class="text-[14.5px] text-inkt-zacht">Licentie per maand</dt>
+            <dd class="m-0 mt-1 text-2xl font-semibold" data-uit="licentieMaand">{eur(voorbeeld.licentieMaand)}</dd>
+          </div>
+          <div class="rounded-xl border border-lijn bg-white p-5">
+            <dt class="text-[14.5px] text-inkt-zacht">Licentie per jaar</dt>
+            <dd class="m-0 mt-1 text-2xl font-semibold" data-uit="licentieJaar">{eur(voorbeeld.licentieJaar)}</dd>
+          </div>
+          <div class="rounded-xl border border-lijn bg-white p-5">
+            <dt class="text-[14.5px] text-inkt-zacht">Waarde bespaarde uren per jaar</dt>
+            <dd class="m-0 mt-1 text-2xl font-semibold" data-uit="waardeJaar">{eur(voorbeeld.waardeJaar)}</dd>
+            <dd class="m-0 mt-1 text-[13.5px] text-inkt-zacht" data-uit="urenJaar">{getal(voorbeeld.urenPerJaar)} uur</dd>
+          </div>
+          <div class="rounded-xl border border-lijn bg-white p-5">
+            <dt class="text-[14.5px] text-inkt-zacht">Terugverdientijd</dt>
+            <dd class="m-0 mt-1 text-2xl font-semibold" data-uit="terugverdien">{getal(voorbeeld.terugverdienMaanden ?? 0, 1)} maanden</dd>
+          </div>
+          <div class="rounded-xl border border-lijn bg-white p-5">
+            <dt class="text-[14.5px] text-inkt-zacht">Netto in jaar 1</dt>
+            <dd class="m-0 mt-1 text-2xl font-semibold" data-uit="nettoJaar1">{eur(voorbeeld.nettoJaar1)}</dd>
+          </div>
+          <div class="rounded-xl border border-lijn bg-white p-5">
+            <dt class="text-[14.5px] text-inkt-zacht">Netto per jaar daarna</dt>
+            <dd class="m-0 mt-1 text-2xl font-semibold" data-uit="nettoVolgend">{eur(voorbeeld.nettoVolgendeJaren)}</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="mt-14">
+      <h2 class="sectie-lijn text-[length:var(--text-h2)]">Hoe de som werkt</h2>
+      <div class="prose prose-stone max-w-none mt-6">
+        <p>
+          De licentie is het aantal medewerkers keer de prijs per plek, omgerekend naar euro. De waarde is het
+          deel van je team dat Claude echt gebruikt, keer de bespaarde uren per week, keer de werkweken, keer
+          de uurkosten. Netto is de waarde min de licentie. In jaar 1 gaat de implementatie er ook nog af.
+        </p>
+        <p>
+          Met de standaardwaarden: {STANDAARD.medewerkers} medewerkers op {teamStd.naam},
+          per jaar betaald: {STANDAARD.medewerkers} × ${teamStd.jaarlijks} = ${STANDAARD.medewerkers * teamStd.jaarlijks} per maand.
+          Bij {koers} dollar per euro is dat {eur(voorbeeld.licentieMaand)} per maand en {eur(voorbeeld.licentieJaar)} per jaar.
+          {getal(STANDAARD.adoptie)}% gebruikt het, dus {getal(voorbeeld.actieveGebruikers)} mensen. Die besparen elk
+          {getal(STANDAARD.urenPerWeek, 1)} uur per week, {STANDAARD.weken} weken lang. Dat is {getal(voorbeeld.urenPerJaar)} uur,
+          bij {eur(STANDAARD.uurkosten)} per uur {eur(voorbeeld.waardeJaar)} per jaar. Na de licentie en {eur(STANDAARD.implementatie)}
+          implementatie blijft er in jaar 1 {eur(voorbeeld.nettoJaar1)} over.
+        </p>
+      </div>
+    </section>
+
+    <section class="mt-14">
+      <h2 class="sectie-lijn text-[length:var(--text-h2)]">Zo schat je bespaarde uren zonder jezelf voor de gek te houden</h2>
+      <div class="prose prose-stone max-w-none mt-6">
+        <p>
+          Begin bij taken, niet bij een percentage. Schrijf een week lang op welke taken veel schrijf- of
+          zoekwerk vragen, zoals mails, offertes en verslagen, en hoe lang ze duren. Reken met een klein deel
+          van die tijd als besparing. Verhoog dat pas als je het in de praktijk ziet.
+        </p>
+        <p>
+          In een experiment van Noy en Zhang (Science, 2023)
+          deden 453 hoogopgeleide professionals losse schrijfopdrachten, zoals een persbericht of een kort
+          rapport. Met ChatGPT waren ze gemiddeld 40% sneller klaar. Dat ging over afgebakende schrijftaken, niet
+          over een hele werkweek. Pas die 40% dus niet toe op al je uren.
+        </p>
+        <p>
+          In onze eigen cases, eerder gebouwd bij Nederlandse IT-bedrijven, zit de winst vooral in terugkerend werk. Bij een IT-consultancybureau ging het
+          uitwerken van een opgenomen klantgesprek <a href="/cases/consultant-brief">van 45 naar 5 minuten</a>.
+          Een supportteam <a href="/cases/knowledge-base">bespaart zes uur per week</a>, omdat het naar
+          kennisbankartikelen verwijst in plaats van antwoorden opnieuw te typen. Dat zijn uren voor een heel
+          team, en er zat bouwwerk met Claude Code achter. Een licentie alleen levert dat niet op.
+        </p>
+      </div>
+    </section>
+
+    <section class="mt-14">
+      <h2 class="sectie-lijn text-[length:var(--text-h2)]">Wat de som weglaat</h2>
+      <div class="prose prose-stone max-w-none mt-6">
+        <ul>
+          <li><strong>Leertijd.</strong> De eerste weken ben je langzamer, omdat je moet uitzoeken wat werkt.</li>
+          <li><strong>Controletijd.</strong> Iemand moet elke tekst van Claude lezen en verbeteren. Die tijd gaat van je besparing af.</li>
+          <li><strong>Taken die niet sneller worden.</strong> Denk aan overleg, telefoontjes en werk op locatie.</li>
+          <li><strong>Geld op de rekening.</strong> Bespaarde tijd levert pas iets op als je die uren aan ander werk besteedt.</li>
+          <li><strong>Btw en begeleiding.</strong> De prijzen zijn exclusief btw. Doorlopende begeleiding, zoals de <a href="/claude-compagnon">Claude Compagnon</a> vanaf €1.500 per maand, zit niet in de som.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="mt-14">
+      <h2 class="sectie-lijn text-[length:var(--text-h2)]">Wat doe je met de uitkomst?</h2>
+      <div class="prose prose-stone max-w-none mt-6">
+        <p>
+          Gaat het break-evenpunt om een paar minuten per week, dan is de licentie zelden het probleem. De
+          echte vraag is of je mensen Claude gaan gebruiken. Meet een maand lang hoe lang twee of drie taken
+          duren en vul daarna je eigen cijfers in. Wil je weten welke taken bij jou het meeste
+          opleveren? Doe dan de <a href="/ai-enablement-scan">gratis AI-check</a>. Wat de API kost, reken je uit met de <a href="/tools/claude-api-kosten-calculator">Claude API kosten calculator</a>. Alle rekentools staan bij <a href="/tools">Claude rekentools</a>.
+        </p>
+      </div>
+    </section>
+
+    <FaqSectie items={faq} />
+    <BronnenBlok bronnen={bronnen} />
+  </article>
+  <div class="max-w-3xl mx-auto px-5 md:px-6"><CtaStrook /></div>
+
+  <script is:inline set:html={clientBron}></script>
+  <script is:inline>
+    (function () {
+      var form = document.getElementById('roi-form');
+      if (!form || typeof berekenRoi !== 'function') return;
+      var eur = new Intl.NumberFormat('nl-NL', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 });
+      var getal = function (n, d) {
+        return new Intl.NumberFormat('nl-NL', { minimumFractionDigits: d, maximumFractionDigits: d }).format(n);
+      };
+      var velden = ['medewerkers', 'uurkosten', 'urenPerWeek', 'adoptie', 'weken', 'implementatie', 'wisselkoers'];
+      var namen = {
+        medewerkers: 'Medewerkers', uurkosten: 'Uurkosten', urenPerWeek: 'Bespaarde uren',
+        adoptie: 'Adoptie', weken: 'Werkweken', implementatie: 'Implementatie', wisselkoers: 'Wisselkoers'
+      };
+
+      // Accepteert 1.500, 1500, 0,5 en 0.5.
+      function leesGetal(tekst) {
+        var t = String(tekst).replace(/[\s€$%]/g, '');
+        if (t === '') return NaN;
+        if (t.indexOf(',') !== -1) t = t.replace(/\./g, '').replace(',', '.');
+        else if (/^\d{1,3}(\.\d{3})+$/.test(t)) t = t.replace(/\./g, '');
+        return /^-?\d*\.?\d+$/.test(t) ? Number(t) : NaN;
+      }
+
+      function controleer(id) {
+        var el = document.getElementById(id);
+        var fout = document.getElementById(id + '-fout');
+        var min = Number(el.dataset.min), max = Number(el.dataset.max);
+        var w = leesGetal(el.value);
+        var melding = '';
+        if (el.value.trim() === '') melding = 'Vul een getal in.';
+        else if (isNaN(w)) melding = 'Dit is geen getal.';
+        else if (w < min) melding = 'Minimaal ' + getal(min, min % 1 ? 1 : 0) + '.';
+        else if (w > max) melding = 'Maximaal ' + getal(max, max % 1 ? 1 : 0) + '.';
+        else if (el.dataset.geheel && w % 1 !== 0) melding = 'Vul een heel getal in.';
+        el.setAttribute('aria-invalid', melding ? 'true' : 'false');
+        fout.textContent = melding;
+        fout.hidden = !melding;
+        return melding ? null : w;
+      }
+
+      function zet(sleutel, tekst) {
+        var el = form.ownerDocument.querySelector('[data-uit="' + sleutel + '"]');
+        if (el) el.textContent = tekst;
+      }
+
+      function reken() {
+        var invoer = {}, fouten = [];
+        velden.forEach(function (id) {
+          var w = controleer(id);
+          if (w === null) fouten.push(namen[id]);
+          invoer[id] = w;
+        });
+        invoer.plan = form.plan.value;
+        invoer.facturering = form.querySelector('input[name="facturering"]:checked').value;
+        var melding = document.getElementById('roi-melding');
+        var resultaten = document.getElementById('roi-resultaten');
+        if (fouten.length) {
+          melding.textContent = 'Controleer: ' + fouten.join(', ') + '. De uitkomst is bijgewerkt zodra alles klopt.';
+          melding.hidden = false;
+          resultaten.classList.add('opacity-40');
+          return;
+        }
+        melding.hidden = true;
+        resultaten.classList.remove('opacity-40');
+
+        var r = berekenRoi(invoer, PRIJZEN);
+        zet('breakEven', getal(r.breakEvenMinutenPerMedewerker, 1));
+        zet('breakEvenGebruiker', r.breakEvenMinutenPerGebruiker === null
+          ? 'Bij 0% adoptie gebruikt niemand Claude. Dan verdien je de licentie nooit terug.'
+          : 'Gebruikt ' + getal(invoer.adoptie, 0) + '% het echt? Dan moet elke echte gebruiker ' +
+            getal(r.breakEvenMinutenPerGebruiker, 1) + ' minuten per week besparen.');
+        zet('licentieMaand', eur.format(r.licentieMaand));
+        zet('licentieJaar', eur.format(r.licentieJaar));
+        zet('waardeJaar', eur.format(r.waardeJaar));
+        zet('urenJaar', getal(r.urenPerJaar, 0) + ' uur');
+        zet('nettoJaar1', eur.format(r.nettoJaar1));
+        zet('nettoVolgend', eur.format(r.nettoVolgendeJaren));
+        var t = r.terugverdienMaanden;
+        zet('terugverdien', t === null ? 'Niet: de besparing dekt de licentie niet'
+          : t === 0 ? 'Direct' : t > 120 ? 'Meer dan 10 jaar' : getal(t, 1) + ' maanden');
+      }
+
+      form.addEventListener('input', function (e) {
+        var doel = e.target;
+        if (doel.name === 'besparing') {
+          var uren = document.getElementById('urenPerWeek');
+          uren.value = getal(Number(doel.dataset.uren), 1);
+        } else if (doel.id === 'urenPerWeek') {
+          var w = leesGetal(doel.value);
+          form.querySelectorAll('input[name="besparing"]').forEach(function (r) {
+            r.checked = Number(r.dataset.uren) === w;
+          });
+        }
+        reken();
+      });
+      form.addEventListener('change', reken);
+      reken();
+    })();
+  </script>
+</BasisLayout>
+
+<style>
+  .roi .fout {
+    margin: 0.375rem 0 0;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--color-rood);
+  }
+  .roi input[aria-invalid='true'] {
+    border-color: var(--color-rood);
+  }
+  .roi .keuze {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1.5px solid var(--color-lijn);
+    border-radius: 9999px;
+    padding: 0.5rem 1rem;
+    background: var(--color-papier);
+    cursor: pointer;
+    font-size: 15px;
+  }
+  .roi .keuze:has(input:checked) {
+    border-color: var(--color-accent-diep);
+    background: var(--color-papier-dieper);
+  }
+  .roi input[type='radio'] {
+    accent-color: var(--color-accent-diep);
+  }
+  .roi input:focus-visible,
+  .roi select:focus-visible,
+  .roi a:focus-visible {
+    outline: 3px solid var(--color-teal);
+    outline-offset: 2px;
+  }
+  .roi fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    min-width: 0;
+  }
+</style>

@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="Meeting to Brief" font-family="Inter, system-ui, sans-serif" fill="#2A2725">
+  <defs>
+    <marker id="ah2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#2A2725"></path>
+    </marker>
+    <filter id="cs2" x="-5%" y="-20%" width="110%" height="140%">
+      <feDropShadow dx="0" dy="1" stdDeviation="1.5" flood-color="#2A2725" flood-opacity=".08"></feDropShadow>
+    </filter>
+  </defs>
+
+  <rect width="800" height="450" fill="#FAF7F2"></rect>
+
+  
+  <rect x="40" y="36" width="48" height="2" rx="1" fill="#CC785C"></rect>
+  <text x="40" y="62" fill="#58524C" font-size="11" font-weight="600" letter-spacing="1.65">VERGADERING</text>
+
+  <rect x="335" y="36" width="48" height="2" rx="1" fill="#CC785C"></rect>
+  <text x="335" y="62" fill="#58524C" font-size="11" font-weight="600" letter-spacing="1.65">ANALYSE</text>
+
+  <rect x="675" y="36" width="48" height="2" rx="1" fill="#CC785C"></rect>
+  <text x="675" y="62" fill="#58524C" font-size="11" font-weight="600" letter-spacing="1.65">BRIEF</text>
+
+  
+  <rect x="40" y="135" width="135" height="76" rx="8" fill="#F2ECE0" stroke="#E6DFD2" stroke-width="1" filter="url(#cs2)"></rect>
+  <rect x="57" y="151" width="34" height="44" rx="3" fill="#FAF7F2" stroke="#E6DFD2"></rect>
+  <path d="M 57 151 L 57 159 L 65 159 L 65 151" fill="none" stroke="#E6DFD2"></path>
+  <text x="74" y="177" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="600" letter-spacing=".4" fill="#A35A41">mp4</text>
+  <text x="108" y="170" font-size="14" font-weight="600" fill="#2A2725">video</text>
+  <text x="108" y="188" font-size="13" fill="#58524C">opname</text>
+
+  <rect x="40" y="235" width="135" height="76" rx="8" fill="#F2ECE0" stroke="#E6DFD2" stroke-width="1" filter="url(#cs2)"></rect>
+  <rect x="57" y="251" width="34" height="44" rx="3" fill="#FAF7F2" stroke="#E6DFD2"></rect>
+  <path d="M 57 251 L 57 259 L 65 259 L 65 251" fill="none" stroke="#E6DFD2"></path>
+  <text x="74" y="277" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="600" letter-spacing=".4" fill="#A35A41">vtt</text>
+  <text x="108" y="270" font-size="14" font-weight="600" fill="#2A2725">transcript</text>
+  <text x="108" y="288" font-size="13" fill="#58524C">timecodes</text>
+
+  
+  <path d="M 180 173 L 205 173 L 205 225 L 222 225" fill="none" stroke="#2A2725" stroke-width="1.2" marker-end="url(#ah2)"></path>
+  <path d="M 180 273 L 205 273 L 205 225" fill="none" stroke="#2A2725" stroke-width="1.2"></path>
+
+  <rect x="228" y="200" width="118" height="50" rx="8" fill="#F2ECE0" stroke="#E6DFD2" stroke-width="1" filter="url(#cs2)"></rect>
+  <text x="287" y="222" text-anchor="middle" font-size="14" font-weight="600" fill="#2A2725">analyse</text>
+  <text x="287" y="240" text-anchor="middle" font-size="13" fill="#58524C">tekst + tijd</text>
+
+  <line x1="349" y1="225" x2="378" y2="225" stroke="#2A2725" stroke-width="1.2" marker-end="url(#ah2)"></line>
+
+  
+  <rect x="382" y="100" width="210" height="248" rx="8" fill="#FAF7F2" stroke="#A35A41" stroke-width="1.2"></rect>
+  <text x="398" y="124" fill="#A35A41" font-size="11" font-weight="600" letter-spacing="1.65">5 INHOUDSBLOKKEN</text>
+
+  <rect x="398" y="138" width="178" height="36" rx="6" fill="#F2ECE0" stroke="#E6DFD2"></rect>
+  <text x="412" y="161" font-family="&#34;Source Serif 4&#34;, ui-serif, Georgia, serif" font-weight="700" font-size="14" fill="#A35A41">01</text>
+  <text x="438" y="161" font-size="14" fill="#2A2725">probleem</text>
+
+  <rect x="398" y="180" width="178" height="36" rx="6" fill="#F2ECE0" stroke="#E6DFD2"></rect>
+  <text x="412" y="203" font-family="&#34;Source Serif 4&#34;, ui-serif, Georgia, serif" font-weight="700" font-size="14" fill="#A35A41">02</text>
+  <text x="438" y="203" font-size="14" fill="#2A2725">situatie</text>
+
+  <rect x="398" y="222" width="178" height="36" rx="6" fill="#F2ECE0" stroke="#E6DFD2"></rect>
+  <text x="412" y="245" font-family="&#34;Source Serif 4&#34;, ui-serif, Georgia, serif" font-weight="700" font-size="14" fill="#A35A41">03</text>
+  <text x="438" y="245" font-size="14" fill="#2A2725">gewenst resultaat</text>
+
+  <rect x="398" y="264" width="178" height="36" rx="6" fill="#F2ECE0" stroke="#E6DFD2"></rect>
+  <text x="412" y="287" font-family="&#34;Source Serif 4&#34;, ui-serif, Georgia, serif" font-weight="700" font-size="14" fill="#A35A41">04</text>
+  <text x="438" y="287" font-size="14" fill="#2A2725">randvoorwaarden</text>
+
+  <rect x="398" y="306" width="178" height="36" rx="6" fill="#F2ECE0" stroke="#E6DFD2"></rect>
+  <text x="412" y="329" font-family="&#34;Source Serif 4&#34;, ui-serif, Georgia, serif" font-weight="700" font-size="14" fill="#A35A41">05</text>
+  <text x="438" y="329" font-size="14" fill="#2A2725">afspraken</text>
+
+  <line x1="595" y1="225" x2="624" y2="225" stroke="#2A2725" stroke-width="1.2" marker-end="url(#ah2)"></line>
+
+  
+  <rect x="628" y="180" width="140" height="90" rx="8" fill="#F2ECE0" stroke="#E6DFD2" stroke-width="1" filter="url(#cs2)"></rect>
+  <text x="698" y="206" text-anchor="middle" font-size="14" font-weight="600" fill="#2A2725">videoclips</text>
+  <g fill="#FAF7F2" stroke="#E6DFD2">
+    <rect x="643" y="220" width="20" height="28" rx="2"></rect>
+    <rect x="668" y="220" width="20" height="28" rx="2"></rect>
+    <rect x="693" y="220" width="20" height="28" rx="2"></rect>
+    <rect x="718" y="220" width="20" height="28" rx="2"></rect>
+  </g>
+  <g fill="#A35A41" stroke="none">
+    <polygon points="651,230 651,238 658,234"></polygon>
+    <polygon points="676,230 676,238 683,234"></polygon>
+    <polygon points="701,230 701,238 708,234"></polygon>
+    <polygon points="726,230 726,238 733,234"></polygon>
+  </g>
+  <text x="698" y="262" text-anchor="middle" font-size="13" fill="#58524C">geknipt op timecode</text>
+
+  <path d="M 698 271 L 698 343" fill="none" stroke="#2A2725" stroke-width="1.2" marker-end="url(#ah2)"></path>
+
+  
+  <rect x="600" y="348" width="195" height="72" rx="8" fill="#0f766e" filter="url(#cs2)"></rect>
+  <rect x="615" y="363" width="34" height="42" rx="3" fill="#FAF7F2"></rect>
+  <text x="632" y="388" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="600" letter-spacing=".4" fill="#0f766e">html</text>
+  <text x="660" y="380" font-size="14" font-weight="600" fill="#FAF7F2">briefing</text>
+  <text x="660" y="398" font-size="12" fill="#FAF7F2" opacity=".82">met clips erin</text>
+</svg>

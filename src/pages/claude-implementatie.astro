@@ -1,0 +1,277 @@
+---
+import { getEntry } from 'astro:content';
+import BasisLayout from '../layouts/BasisLayout.astro';
+import Broodkruimel from '../components/Broodkruimel.astro';
+import { dienstNode, dienstId, faqNode } from '../lib/schema';
+import CtaBlok from '../components/CtaBlok.astro';
+import { site } from '../site';
+
+// Prijzen en duur komen rechtstreeks uit de diensten-content, zodat deze pagina
+// nooit uit de pas loopt met wat elders op de site staat.
+const scan = await getEntry('diensten', 'readiness-scan');
+const rollout = await getEntry('diensten', 'rollout');
+const retainer = await getEntry('diensten', 'retainer');
+if (!scan || !rollout || !retainer) throw new Error('Diensten-content ontbreekt');
+
+const breadcrumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'Claude implementatie', url: '/claude-implementatie' },
+];
+
+const stappen = [
+  {
+    naam: 'Gratis AI-check',
+    duur: '2 minuten, online',
+    tekst: 'Zeven vragen over je bedrijf en je processen. Je krijgt direct een score en ziet of een Claude-implementatie op dit moment zin heeft. Zo niet, dan weet je dat ook: scheelt ons allebei tijd.',
+    link: '/ai-enablement-scan',
+    linkTekst: 'Doe de gratis AI-check',
+  },
+  {
+    naam: scan.data.titel,
+    duur: scan.data.duur,
+    tekst: 'Een dag op locatie, een week waarin we je processen en tools uitdiepen. Je krijgt een Nederlands rapport met vijf tot tien use cases gerangschikt op ROI, een frictiekaart van je huidige stack en een vaste offerte voor de rollout. Je weet dus wat de implementatie kost voordat je beslist.',
+    link: '/claude-readiness-scan',
+    linkTekst: 'Bekijk de Readiness Scan',
+  },
+  {
+    naam: rollout.data.titel,
+    duur: rollout.data.duur,
+    tekst: 'De eigenlijke implementatie. Kickoff-workshop voor iedereen, twee tot vier collega’s worden getraind als champions, een promptbibliotheek op maat van jouw use cases, drie verdiepende workshops en hulp bij het opzetten van de seats voor Claude Team of Enterprise. Afsluiting met een adoptie-readout tegen de nulmeting.',
+    link: '/claude-in-30-dagen',
+    linkTekst: 'Bekijk Claude in 30 dagen',
+  },
+  {
+    naam: `${retainer.data.titel} (optioneel)`,
+    duur: retainer.data.duur,
+    tekst: 'Voor wie na de rollout wil doorpakken: elke maand een workshop en twee uur bereikbaarheid via Slack of Teams, plus uitbreiding van de promptbibliotheek en een kwartaalreview met het management.',
+    link: '/claude-compagnon',
+    linkTekst: 'Bekijk de Claude Compagnon',
+  },
+];
+
+const prijzen = [
+  { naam: scan.data.titel, prijs: scan.data.prijs, duur: scan.data.duur, link: '/claude-readiness-scan' },
+  { naam: rollout.data.titel, prijs: rollout.data.prijs, duur: rollout.data.duur, link: '/claude-in-30-dagen' },
+  { naam: retainer.data.titel, prijs: retainer.data.prijs, duur: retainer.data.duur, link: '/claude-compagnon' },
+];
+
+const voorbeelden = [
+  {
+    cijfer: '2 min',
+    kop: 'Rapportages op aanvraag bij een MSP-softwarebedrijf',
+    tekst: 'Klanten vroegen kwartaalrapportages aan en een medewerker was daar per rapport 30 tot 45 minuten mee bezig. Nu vragen klanten het zelf op in een chat en staat het rapport er binnen twee minuten, met validatie tegen het echte datamodel.',
+    slug: 'copilot-studio-agent',
+  },
+  {
+    kop: 'Kennisbank in vijf dagen bij een IT-dienstverlener',
+    cijfer: '13 artikelen',
+    tekst: 'Het supportteam typte dezelfde instructies steeds opnieuw, want een kennisbank bouwen kostte een werkweek per dertig vragen. In vijf dagen stonden er 13 artikelen met 27 screenshots live. Besparing: ruim zes uur per week.',
+    slug: 'knowledge-base',
+  },
+  {
+    kop: '872 Power BI-reports in drie maanden',
+    cijfer: '872 reports',
+    tekst: 'Anderhalf uur handwerk per rapport, keer 50 klanten, keer twee talen. Nu genereert een slash command complete reports met gevalideerde DAX-queries. Het team besteedt er nu minder dan een uur per week aan.',
+    slug: 'powerbi-reporting',
+  },
+];
+
+const faqItems = [
+  {
+    question: 'Wat kost een Claude-implementatie?',
+    answer: `De Readiness Scan kost ${scan.data.prijs.toLowerCase()}, de rollout (Claude in 30 dagen) ${rollout.data.prijs.toLowerCase()}. Een complete implementatie begint dus bij €9.000. Een custom MCP-server voor je eigen stack kost €2.000 tot €5.000 extra, maar alleen als de scan aantoont dat dat zin heeft. Na de scan krijg je een vaste offerte, dus je weet precies wat de rollout kost voordat je beslist.`,
+  },
+  {
+    question: 'Hoe lang duurt een Claude-implementatie?',
+    answer: 'De Readiness Scan duurt een dag op locatie plus een week uitwerken. De rollout duurt vier weken, met ongeveer twee dagen per week begeleiding. Van eerste kennismaking tot een team dat zelfstandig met Claude werkt zit je dus op zes tot acht weken.',
+    linkHref: '/claude-in-30-dagen',
+    linkTekst: 'Lees hoe de vier weken eruitzien',
+  },
+  {
+    question: 'Kan een Claude-implementatie aan de AVG voldoen?',
+    answer: 'Ja, mits je het goed inricht. We zetten Claude op via de zakelijke voorwaarden van Anthropic: geen training op jouw data en een verwerkersovereenkomst (DPA). Daarnaast maken we per implementatie afspraken over welke data wel en niet in Claude gaat, en richten we SSO in. Op onze compliance-pagina leggen we de details uit in gewoon Nederlands.',
+    linkHref: '/compliance',
+    linkTekst: 'Naar het compliance-overzicht',
+  },
+  {
+    question: 'Moeten we zelf technische kennis in huis hebben?',
+    answer: 'Nee. Alles wordt uitgelegd in het Nederlands, zonder jargon, en we werken met jouw echte documenten en processen. Twee tot vier mensen uit je eigen team worden tijdens de rollout getraind als champions; zij dragen de kennis verder nadat wij weg zijn.',
+  },
+  {
+    question: 'Welke Claude-licenties hebben we nodig en wat kosten die?',
+    answer: 'De licenties (meestal Claude Team) neem je rechtstreeks af bij Anthropic; wij helpen bij het opzetten van de seats tijdens de rollout. Op onze prijzen-pagina houden we een actueel overzicht bij van de abonnementen en kosten.',
+    linkHref: '/prijs',
+    linkTekst: 'Bekijk het prijzenoverzicht',
+  },
+  {
+    question: 'Verliezen mensen hun baan door de implementatie?',
+    answer: 'Nee. Het doel is dat je huidige team meer werk verzet, niet dat het kleiner wordt. De champions worden de interne kennisdragers, niet de vervangers van collega’s. Zoek je een implementatie om te bezuinigen op mensen, dan zijn wij niet de juiste partij.',
+  },
+];
+
+const schemaFaq = faqItems.map(({ question, answer }) => ({ question, answer }));
+---
+<BasisLayout
+  titel="Claude implementatie: kosten en doorlooptijd"
+  beschrijving="Wat een Claude-implementatie inhoudt en kost: scan vanaf €1.500, rollout in 30 dagen vanaf €7.500. Vaste prijzen, praktijkvoorbeelden, AVG-afspraken."
+  pad="/claude-implementatie"
+  schema={{
+    breadcrumbs,
+    hoofdonderwerp: dienstId('/claude-implementatie'),
+    nodes: [
+      dienstNode({
+        pad: '/claude-implementatie',
+        naam: 'Claude implementatie',
+        beschrijving: 'Claude-implementatie voor het Nederlandse MKB: van Readiness Scan tot rollout in 30 dagen, met vaste prijzen.',
+        serviceType: 'Claude-implementatie',
+        catalogus: prijzen.map((r) => ({ naam: r.naam, prijsTekst: r.prijs, url: r.link, dienstPad: r.link })),
+      }),
+      faqNode('/claude-implementatie', schemaFaq),
+    ],
+  }}
+>
+
+  <article class="max-w-3xl mx-auto px-6 pt-16 pb-8">
+    <Broodkruimel items={breadcrumbs} />
+
+    <header class="mt-6">
+      <p class="text-xs uppercase tracking-widest text-inkt-zacht">Dienst</p>
+      <h1 class="text-[length:var(--text-h1)] mt-3">Claude-implementatie voor het Nederlandse MKB</h1>
+      <p class="mt-5 text-lg text-inkt-zacht">
+        Een losse Claude-licentie kopen is vijf minuten werk. Zorgen dat je team er
+        dagelijks echt werk mee verzet, is een ander verhaal. Dat verschil heet een
+        implementatie: use cases kiezen die geld opleveren, de omgeving veilig
+        inrichten, mensen trainen en volhouden tot het gewoonte is.
+      </p>
+      <p class="mt-4 text-lg text-inkt-zacht">
+        Wij doen die implementatie voor Nederlandse MKB-bedrijven van tien tot
+        tweehonderd mensen. Je hoeft er niks van AI voor te weten; alles wordt
+        uitgelegd in gewoon Nederlands. Wie het werk doet, lees je op de pagina
+        over onze <a href="/claude-consultant" class="text-accent-diep">Claude-consultant</a>.
+        Ben je nog aan het oriënteren? Lees dan eerst de gids <a href="/gids/claude-voor-mkb" class="text-accent-diep">Claude voor bedrijven en mkb</a>.
+      </p>
+    </header>
+
+    <section class="mt-12">
+      <h2 class="text-[length:var(--text-h2)]">Zo pakken we een Claude-implementatie aan</h2>
+      <p class="mt-3 text-inkt-zacht">
+        Vier stappen, elk los af te nemen. Je gaat pas door als de vorige stap z&rsquo;n
+        geld waard was.
+      </p>
+      <ol class="mt-6 space-y-6 list-none p-0">
+        {stappen.map((stap, i) => (
+          <li class="rounded-lg border border-lijn p-6">
+            <div class="flex items-baseline gap-3">
+              <span class="text-sm font-semibold text-accent-diep flex-none">Stap {i + 1}</span>
+              <h3 class="font-serif font-bold text-lg">{stap.naam}</h3>
+            </div>
+            <p class="text-sm text-inkt-zacht mt-1">{stap.duur}</p>
+            <p class="mt-3 text-inkt-zacht">{stap.tekst}</p>
+            <a href={stap.link} class="mt-3 inline-block text-sm text-accent-diep font-semibold no-underline hover:underline">{stap.linkTekst} &rarr;</a>
+          </li>
+        ))}
+      </ol>
+      <p class="mt-5 text-inkt-zacht">Hoe we elke stap uitvoeren, staat in <a href="/methodologie" class="text-accent-diep">onze methode in vijf bouwstenen</a>.</p>
+    </section>
+
+    <section id="prijzen" class="mt-12">
+      <h2 class="text-[length:var(--text-h2)]">Wat kost een Claude-implementatie?</h2>
+      <p class="mt-3 text-inkt-zacht">
+        Onze prijzen staan online, zodat je zelf kunt rekenen.
+      </p>
+      <div class="mt-6 overflow-x-auto">
+        <table class="w-full text-left text-sm border-collapse">
+          <thead>
+            <tr class="border-b border-lijn">
+              <th class="py-3 pr-4 font-semibold">Stap</th>
+              <th class="py-3 pr-4 font-semibold">Prijs</th>
+              <th class="py-3 font-semibold">Duur</th>
+            </tr>
+          </thead>
+          <tbody>
+            {prijzen.map((rij) => (
+              <tr class="border-b border-lijn">
+                <td class="py-3 pr-4"><a href={rij.link} class="text-accent-diep no-underline hover:underline">{rij.naam}</a></td>
+                <td class="py-3 pr-4 font-semibold whitespace-nowrap">{rij.prijs}</td>
+                <td class="py-3 text-inkt-zacht">{rij.duur}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-5 text-inkt-zacht">
+        Een complete implementatie (scan plus rollout) begint dus bij &euro;9.000.
+        Optioneel erbij: een custom MCP-server voor je eigen stack (&euro;2.000 tot
+        &euro;5.000) of integratie-coaching per uur, allebei alleen als de scan
+        aantoont dat het zin heeft. De Claude-licenties zelf neem je rechtstreeks af
+        bij Anthropic. Wat die kosten, staat in <a href="/prijs" class="text-accent-diep">Claude kosten zakelijk</a>; welk abonnement je nodig hebt, lees je in <a href="/prijs/pro-vs-team-vs-enterprise" class="text-accent-diep">Claude Pro, Team of Enterprise</a>.
+      </p>
+      <p class="mt-4 text-inkt-zacht">
+        Belangrijkste afspraak: na de Readiness Scan krijg je een vaste offerte voor
+        de rollout.
+      </p>
+      {/* MENS: is er een afgerond traject waarvan we het totaalbedrag mogen noemen? Eén echt voorbeeld ("bedrijf X betaalde in totaal €Y") maakt deze sectie een stuk overtuigender. */}
+    </section>
+
+    <section class="mt-12">
+      <h2 class="text-[length:var(--text-h2)]">Hoe dat er in de praktijk uitziet</h2>
+      <p class="mt-3 text-inkt-zacht">
+        Drie voorbeelden die ons team eerder bouwde bij Nederlandse IT-bedrijven, met de cijfers erbij.
+      </p>
+      <div class="mt-6 space-y-5">
+        {voorbeelden.map((v) => (
+          <div class="rounded-lg border border-lijn p-6">
+            <div class="flex items-baseline gap-3 flex-wrap">
+              <span class="font-serif font-bold text-2xl text-accent-diep">{v.cijfer}</span>
+              <h3 class="font-serif font-bold text-lg">{v.kop}</h3>
+            </div>
+            <p class="mt-3 text-inkt-zacht">{v.tekst}</p>
+            <a href={`/cases/${v.slug}`} class="mt-3 inline-block text-sm text-accent-diep font-semibold no-underline hover:underline">Lees de case &rarr;</a>
+          </div>
+        ))}
+      </div>
+      <p class="mt-5 text-inkt-zacht">
+        Meer voorbeelden staan bij de <a href="/cases" class="text-accent-diep">cases</a>. Per branche uitgewerkt: <a href="/claude-voor-accountants" class="text-accent-diep">Claude voor accountants</a>, <a href="/claude-voor-advocaten" class="text-accent-diep">Claude voor advocaten</a>, <a href="/claude-voor-makelaars" class="text-accent-diep">Claude voor makelaars</a> en <a href="/claude-voor-marketingbureaus" class="text-accent-diep">Claude voor marketingbureaus</a>.
+      </p>
+      {/* MENS: welk implementatiemoment blijft jou het meest bij (een reactie van een medewerker, een use case die verrassend goed werkte)? Eén zin eigen ervaring hier maakt de pagina persoonlijker. */}
+    </section>
+
+    <section class="mt-12">
+      <h2 class="text-[length:var(--text-h2)]">Privacy en AVG-afspraken vanaf dag één</h2>
+      <p class="mt-3 text-inkt-zacht">
+        Elke implementatie begint met de saaie maar belangrijke kant: zakelijke
+        voorwaarden bij Anthropic (geen training op jouw data, <a href="/compliance/anthropic-dpa" class="text-accent-diep">verwerkersovereenkomst</a>
+        getekend), SSO, en heldere afspraken over welke data wel en niet in Claude
+        gaat. We zetten Claude eerst op in een afgeschermde testomgeving met review-stappen. Wijzigingen aan je systemen gaan pas live als jij akkoord geeft. Hoe dat juridisch zit, leggen we
+        uit op <a href="/compliance" class="text-accent-diep">Claude en de AVG: wat regel je als bedrijf?</a>. Moet je data in de EU blijven, lees dan <a href="/compliance/eu-hosting" class="text-accent-diep">Claude-data in de EU houden</a>. Wat de AI Act van je vraagt, staat in <a href="/compliance/ai-act-mkb" class="text-accent-diep">Claude en de EU AI Act voor het MKB</a>.
+      </p>
+    </section>
+
+    <section class="mt-12">
+      <h2 class="text-[length:var(--text-h2)]">Veelgestelde vragen over Claude-implementatie</h2>
+      <dl class="mt-6 divide-y divide-lijn">
+        {faqItems.map(item => (
+          <details class="group py-4">
+            <summary class="flex cursor-pointer items-center justify-between font-serif font-bold text-lg [&::-webkit-details-marker]:hidden list-none">
+              {item.question}
+              <span class="ml-4 text-inkt-zacht transition-transform group-open:rotate-45 flex-shrink-0">+</span>
+            </summary>
+            <dd class="mt-3 text-inkt-zacht pr-12">
+              {item.answer}
+              {item.linkHref && (
+                <a href={item.linkHref} class="block mt-2 text-sm text-accent-diep font-semibold no-underline hover:underline">{item.linkTekst} &rarr;</a>
+              )}
+            </dd>
+          </details>
+        ))}
+      </dl>
+    </section>
+  </article>
+
+  <CtaBlok
+    kop="Benieuwd of een Claude-implementatie past?"
+    tekst="Doe de gratis AI-check. Twee minuten werk, je krijgt direct een score. Past het, dan plannen we een gratis intro-gesprek en begint het traject met de Readiness Scan."
+    link="/ai-enablement-scan"
+    linkTekst="Doe de gratis AI-check"
+  />
+</BasisLayout>

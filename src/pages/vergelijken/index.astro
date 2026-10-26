@@ -1,0 +1,116 @@
+---
+import { itemListNode, lijstId, faqNode } from '../../lib/schema';
+import BasisLayout from '../../layouts/BasisLayout.astro';
+import Container from '../../components/Container.astro';
+import { getPublished } from '../../lib/content';
+import Broodkruimel from '../../components/Broodkruimel.astro';
+import FaqSectie from '../../components/FaqSectie.astro';
+
+// De uitspraken in de intro komen uit de kortAntwoord-velden van de vier
+// gepubliceerde vergelijkingen in src/content/vergelijkingen.
+const artikelen = (await getPublished('vergelijkingen'))
+  .sort((a, b) => b.data.priority - a.data.priority || a.data.title.localeCompare(b.data.title));
+
+const samenvatting = [
+  { pad: '/vergelijken/claude-vs-chatgpt', naam: 'Claude vs ChatGPT', claude: 'je veel lange documenten, schrijfwerk of code hebt', ander: 'je beeldgeneratie en spraak nodig hebt' },
+  { pad: '/vergelijken/claude-vs-copilot', naam: 'Claude vs Microsoft Copilot', claude: 'je zwaar denk- en schrijfwerk doet, zoals offertes en rapporten', ander: 'je vooral kleine versnellingen in Word, Excel, Outlook en Teams zoekt' },
+  { pad: '/vergelijken/claude-code-vs-cursor', naam: 'Claude Code vs Cursor', claude: 'je terugkerend werk wilt automatiseren, ook zonder ontwikkelteam', ander: 'je ontwikkelaars zelf coderen en tussen modellen willen wisselen' },
+];
+
+const faq = [
+  {
+    question: 'Welke AI-assistent is het best voor een mkb-bedrijf?',
+    answer: 'Dat hangt af van je werk. ChatGPT is de breedste allrounder, Copilot past bij organisaties in Microsoft 365 en Gemini zit in Google Workspace. ClaudeZakelijk kiest Claude voor schrijven, analyse en code. Test één tool twee weken op echte taken.',
+  },
+  {
+    question: 'Trainen deze AI-tools op mijn bedrijfsdata?',
+    answer: 'In de zakelijke abonnementen van Claude, ChatGPT, Copilot en Gemini standaard niet. Bij gratis en persoonlijke accounts ligt dat anders. Lees de voorwaarden van het abonnement dat je afsluit.',
+  },
+  {
+    question: 'Hoe vaak werken jullie de vergelijkingen bij?',
+    answer: 'Bij een prijswijziging van een van de makers, en anders minstens elk kwartaal. De datum van de laatste controle staat bovenaan elke vergelijking.',
+  },
+];
+const breadcrumbs = [{ name: 'Home', url: '/' }, { name: 'Vergelijkingen', url: '/vergelijken' }];
+---
+<BasisLayout
+  titel="Claude vergelijken: ChatGPT, Copilot en Cursor"
+  beschrijving="Claude vergelijken met ChatGPT, Microsoft Copilot en Cursor? Per vergelijking de verschillen in werk, prijs en AVG, en wanneer je voor de ander kiest."
+  pad="/vergelijken"
+  schema={{ paginaType: 'CollectionPage', hoofdonderwerp: lijstId('/vergelijken'), breadcrumbs, nodes: [itemListNode('/vergelijken', artikelen.map((a) => ({ url: `/vergelijken/${a.id}`, naam: a.data.title }))), faqNode('/vergelijken', faq)] }}
+>
+  <Container class="pt-16 pb-12">
+    <Broodkruimel items={breadcrumbs} />
+    <p class="mt-6 text-xs uppercase tracking-widest text-inkt-zacht reveal-target">Vergelijkingen</p>
+    <h1 class="mt-3 text-[length:var(--text-h1)] reveal-target">Claude vergelijken met ChatGPT, Copilot en Cursor</h1>
+
+    <div class="max-w-3xl">
+      <p class="mt-4 text-lg text-inkt-zacht reveal-target">
+        Wil je Claude vergelijken met de AI die je al kent? Kijk dan per taak. Elke vergelijking
+        zet werk, prijs en AVG naast elkaar en zegt ook wanneer de andere tool beter past.
+        ClaudeZakelijk kiest Claude voor lange documenten, analyses en code. Werk je vooral in
+        Microsoft 365, dan is Copilot vaak de kleinste stap. Bovenaan elke vergelijking staat
+        wanneer we de prijzen controleerden.
+      </p>
+      <p class="mt-4 text-inkt-zacht">
+        Weet je nog niet waar je moet beginnen? Lees dan eerst
+        <a href="/vergelijken/welke-ai-voor-mkb" class="text-accent-diep">welke AI bij jouw MKB past</a>.
+        Daarin staan Claude, ChatGPT, Copilot en Gemini naast elkaar. Twijfel je tussen twee
+        assistenten, kijk dan bij
+        <a href="/vergelijken/claude-vs-chatgpt" class="text-accent-diep">Claude vs ChatGPT</a>.
+        ChatGPT is breder, met beeldgeneratie en spraak. Werkt je bedrijf in Microsoft 365?
+        In <a href="/vergelijken/claude-vs-copilot" class="text-accent-diep">Claude vs Microsoft Copilot</a>
+        lees je dat Copilot past bij kleine versnellingen binnen Word, Excel, Outlook en Teams.
+        Voor ontwikkelteams is er
+        <a href="/vergelijken/claude-code-vs-cursor" class="text-accent-diep">Claude Code vs Cursor</a>:
+        een AI-agent die werk zelfstandig uitvoert tegenover een code-editor met AI-hulp.
+      </p>
+      <p class="mt-4 text-inkt-zacht">
+        Ons advies is in elke vergelijking hetzelfde: test de tools op je eigen taken
+        voordat je licenties afneemt.
+      </p>
+    </div>
+
+    {artikelen.length > 0 && (
+      <>
+        <h2 class="mt-12 text-[length:var(--text-h2)]">Alle vergelijkingen</h2>
+        <div class="mt-6 grid gap-6 md:grid-cols-2">
+          {artikelen.map((a) => (
+            <a
+              href={`/vergelijken/${a.id}`}
+              class="no-underline block rounded-lg border border-lijn bg-papier p-6 card-shadow reveal-target"
+            >
+              <span class="text-xs uppercase tracking-widest text-inkt-zacht bg-papier-dieper rounded-full px-3 py-1">Vergelijking</span>
+              <h3 class="mt-3 font-serif text-xl font-bold text-inkt">{a.data.title}</h3>
+              <p class="mt-2 text-sm text-inkt-zacht">{a.data.metaDescription}</p>
+              <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-accent-donkerst">Lees de vergelijking<span class="cta-arrow">&rarr;</span></span>
+            </a>
+          ))}
+        </div>
+      </>
+    )}
+    <div class="mt-12 max-w-4xl overflow-x-auto">
+      <table class="w-full text-sm border-collapse">
+        <caption class="caption-top text-left text-sm text-inkt-zacht pb-2">Claude vergeleken, samengevat, stand oktober 2026</caption>
+        <thead>
+          <tr class="border-b-2 border-lijn">
+            <th scope="col" class="text-left p-3 font-semibold">Vergelijking</th>
+            <th scope="col" class="text-left p-3 font-semibold">Kies Claude als</th>
+            <th scope="col" class="text-left p-3 font-semibold">Kies de ander als</th>
+          </tr>
+        </thead>
+        <tbody>
+          {samenvatting.map((r) => (
+            <tr class="border-b border-lijn align-top">
+              <th scope="row" class="p-3 text-left font-medium"><a href={r.pad}>{r.naam}</a></th>
+              <td class="p-3 text-inkt-zacht">{r.claude}</td>
+              <td class="p-3 text-inkt-zacht">{r.ander}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <div class="max-w-3xl"><FaqSectie titel="Vragen over AI-tools vergelijken" items={faq} /></div>
+  </Container>
+</BasisLayout>

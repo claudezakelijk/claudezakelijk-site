@@ -1,0 +1,54 @@
+---
+import { auteurs } from '../site';
+
+interface Props {
+  author: 'camiel';
+}
+const { author } = Astro.props;
+const info = auteurs[author];
+// Besluit M7: een auteur met zichtbaar: false wordt nooit bij naam getoond.
+// ArtikelMeta noemt dan "ClaudeZakelijk"; hier komt dan geen auteursblok.
+const tonen = info.zichtbaar;
+const initialen = info.naam
+  .split(' ')
+  .map((woord) => woord[0])
+  .join('')
+  .slice(0, 2)
+  .toUpperCase();
+---
+{tonen && (
+<aside class="mt-12 pt-8 border-t border-lijn flex items-start gap-4">
+  {info.foto ? (
+    <img
+      src={info.foto}
+      alt={info.naam}
+      width="64"
+      height="64"
+      class="rounded-full object-cover flex-shrink-0"
+      loading="lazy"
+    />
+  ) : (
+    <div
+      class="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-full bg-papier-dieper font-serif text-xl font-bold text-accent-diep"
+      aria-hidden="true"
+    >
+      {initialen}
+    </div>
+  )}
+  <div>
+    <p class="font-semibold text-inkt">{info.naam}</p>
+    <p class="text-sm text-inkt-zacht">{info.functie}</p>
+    <p class="text-sm text-inkt-zacht mt-1">{info.bio}</p>
+    {info.linkedin && (
+      <a
+        href={info.linkedin}
+        class="text-sm text-accent-diep no-underline hover:underline mt-1 inline-block"
+        target="_blank"
+        rel="noopener"
+      >
+        LinkedIn
+      </a>
+    )}
+  </div>
+</aside>
+)}

@@ -1,0 +1,493 @@
+---
+import BasisLayout from '../../layouts/BasisLayout.astro';
+import Broodkruimel from '../../components/Broodkruimel.astro';
+import FaqSectie from '../../components/FaqSectie.astro';
+import BronnenBlok from '../../components/BronnenBlok.astro';
+import CtaStrook from '../../components/CtaStrook.astro';
+import { webAppNode, faqNode, toolId } from '../../lib/schema';
+
+// ============================================================================
+// PRIJZEN: het enige blok dat je bijwerkt als Anthropic de prijzen wijzigt.
+// Bedragen in USD per miljoen tokens (MTok), standaard (global) API-prijs.
+// Bron: https://platform.claude.com/docs/en/about-claude/pricing en
+// https://claude.com/pricing, beide gecheckt op PRIJZEN_GECHECKT.
+//   input        basisprijs input
+//   cacheSchrijf 5-minuten cache write (1,25x input)
+//   cacheLees    cache hit (0,1x input; 0,05x Opus 5.5 en Sonnet 5.5; 0,025x Fable 5.1)
+//   lang         optioneel: hogere prijzen als de prompt boven LANG_DREMPEL
+//                tokens komt (alleen Haiku 5.5; telt alle input, ook cache)
+//   output       output
+// Batch API: 50% korting op alle tokens, stapelt met caching (BATCH_FACTOR).
+// Weggelaten: Mythos 5.1 en Mythos 5 (alleen op uitnodiging) en de modellen
+// die Anthropic als retired markeert (Opus 4.1, Opus 4, Sonnet 4, Haiku 3.5).
+// ============================================================================
+const PRIJZEN_GECHECKT = '2026-10-22';
+const BATCH_FACTOR = 0.5;
+const LANG_DREMPEL = 100000;
+const PRIJZEN = [
+  { id: 'fable-5-1', naam: 'Claude Fable 5.1', input: 10, cacheSchrijf: 12.5, cacheLees: 0.25, output: 50 },
+  { id: 'fable-5', naam: 'Claude Fable 5', input: 10, cacheSchrijf: 12.5, cacheLees: 1, output: 50 },
+  { id: 'opus-5-5', naam: 'Claude Opus 5.5', input: 4, cacheSchrijf: 5, cacheLees: 0.2, output: 20 },
+  { id: 'opus-5', naam: 'Claude Opus 5', input: 5, cacheSchrijf: 6.25, cacheLees: 0.5, output: 25 },
+  { id: 'opus-4-8', naam: 'Claude Opus 4.8', input: 5, cacheSchrijf: 6.25, cacheLees: 0.5, output: 25 },
+  { id: 'opus-4-7', naam: 'Claude Opus 4.7', input: 5, cacheSchrijf: 6.25, cacheLees: 0.5, output: 25 },
+  { id: 'opus-4-6', naam: 'Claude Opus 4.6', input: 5, cacheSchrijf: 6.25, cacheLees: 0.5, output: 25 },
+  { id: 'opus-4-5', naam: 'Claude Opus 4.5', input: 5, cacheSchrijf: 6.25, cacheLees: 0.5, output: 25 },
+  { id: 'sonnet-5-5', naam: 'Claude Sonnet 5.5', input: 2, cacheSchrijf: 2.5, cacheLees: 0.1, output: 10 },
+  { id: 'sonnet-5', naam: 'Claude Sonnet 5', input: 2, cacheSchrijf: 2.5, cacheLees: 0.2, output: 10 },
+  { id: 'sonnet-4-6', naam: 'Claude Sonnet 4.6', input: 3, cacheSchrijf: 3.75, cacheLees: 0.3, output: 15 },
+  { id: 'sonnet-4-5', naam: 'Claude Sonnet 4.5', input: 3, cacheSchrijf: 3.75, cacheLees: 0.3, output: 15 },
+  { id: 'haiku-5-5', naam: 'Claude Haiku 5.5', input: 0.1, cacheSchrijf: 0.125, cacheLees: 0.01, output: 0.5,
+    lang: { input: 0.5, cacheSchrijf: 0.625, cacheLees: 0.05, output: 2.5 } },
+  { id: 'haiku-4-5', naam: 'Claude Haiku 4.5', input: 1, cacheSchrijf: 1.25, cacheLees: 0.1, output: 5 },
+];
+// ============================================================================
+
+const PAD = '/tools/claude-api-kosten-calculator';
+const BRON_URL = 'https://platform.claude.com/docs/en/about-claude/pricing';
+const gechecktNl = new Date(PRIJZEN_GECHECKT).toLocaleDateString('nl-NL', { day: 'numeric', month: 'long', year: 'numeric' });
+const usd = (n: number) => '$' + n.toLocaleString('nl-NL', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+const breadcrumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'Rekentools', url: '/tools' },
+  { name: 'Claude API kosten calculator', url: PAD },
+];
+
+const faq = [
+  {
+    question: 'Rekent Anthropic in dollars of in euro?',
+    answer: 'De API-prijzen van Anthropic staan in dollars. Je bank of creditcard rekent het om naar euro. Daarom kun je in de calculator zelf de wisselkoers invullen.',
+  },
+  {
+    question: 'Zit de btw in deze bedragen?',
+    answer: 'Nee. De prijzen zijn exclusief btw. Hoe de btw op jouw factuur uitpakt, hangt af van je situatie. Vraag dat na bij je boekhouder.',
+  },
+  {
+    question: 'Waarom kost hetzelfde werk per model zo veel meer of minder?',
+    answer: 'Elk model heeft een eigen prijs per miljoen tokens. Haiku 5.5 is het goedkoopst, Fable het duurst. Bij Haiku 5.5 gaat de prijs omhoog als één verzoek meer dan 100.000 tokens input heeft. Voor korte, simpele taken is een klein model vaak goed genoeg. Test dat eerst met je eigen voorbeelden.',
+  },
+  {
+    question: 'Hoe precies is deze schatting?',
+    answer: 'Het is een schatting op basis van gemiddelden. De echte rekening hangt af van hoe lang je teksten zijn en hoe vaak de cache raakt. Draai een week op kleine schaal en vergelijk met het gebruik in de Claude Console.',
+  },
+];
+
+const bronnen = [
+  { titel: 'Anthropic: Pricing (API-documentatie)', url: BRON_URL, geraadpleegd: gechecktNl },
+  { titel: 'Anthropic: Claude pricing (abonnementen en API)', url: 'https://claude.com/pricing', geraadpleegd: gechecktNl },
+];
+
+const beschrijving = 'Reken uit wat de Claude API per maand kost. Kies een model, vul je verzoeken en tokens in en zie de kosten in dollar en euro, met caching en batch.';
+
+const veld = 'mt-1 block w-full rounded-md border border-lijn bg-white px-3 py-2 text-inkt focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-diep';
+const label = 'block text-sm font-semibold text-inkt';
+const hulp = 'mt-1 block text-xs text-inkt-zacht';
+const fout = 'mt-1 block text-xs font-semibold text-rood';
+---
+<BasisLayout
+  titel="Claude API kosten calculator | ClaudeZakelijk"
+  beschrijving={beschrijving}
+  pad={PAD}
+  schema={{
+    breadcrumbs,
+    hoofdonderwerp: toolId(PAD),
+    nodes: [
+      webAppNode({ pad: PAD, naam: 'Claude API kosten calculator', beschrijving, gecheckt: PRIJZEN_GECHECKT }),
+      faqNode(PAD, faq),
+    ],
+  }}
+>
+  <article class="max-w-3xl mx-auto px-6 pt-16 pb-8">
+    <Broodkruimel items={breadcrumbs} />
+    <h1 class="mt-6 text-[length:var(--text-h1)]">Claude API kosten calculator</h1>
+    <p class="mt-4 text-lg text-inkt-zacht">
+      Wat kost een Claude-koppeling per maand? Vul in hoeveel verzoeken je doet en hoe lang ze zijn. Je ziet meteen de kosten per verzoek, per dag, per maand en per jaar.
+    </p>
+    <p class="mt-3 text-sm text-inkt-zacht">
+      Prijzen gecheckt op <time datetime={PRIJZEN_GECHECKT}>{gechecktNl}</time> op
+      <a href={BRON_URL} target="_blank" rel="noopener" class="underline underline-offset-2">de prijspagina van Anthropic<span class="sr-only"> (opent in nieuw venster)</span></a>.
+    </p>
+
+    <noscript>
+      <p class="mt-8 rounded-xl border border-lijn bg-white p-5 text-inkt-zacht">
+        De calculator werkt met JavaScript. Zonder JavaScript kun je de som zelf maken met de prijstabel en de uitleg hieronder.
+      </p>
+    </noscript>
+
+    <section id="calculator" class="mt-10" aria-labelledby="calc-kop" hidden>
+      <h2 id="calc-kop" class="sectie-lijn text-[length:var(--text-h2)]">Bereken je kosten</h2>
+
+      <form id="calc-form" class="card-shadow mt-6 rounded-xl border border-lijn bg-white p-5 md:p-6" novalidate>
+        <fieldset>
+          <legend class={label}>Snel invullen met een voorbeeld</legend>
+          <div class="mt-2 flex flex-wrap gap-2">
+            <button type="button" data-preset="klantenservice" class="rounded-full border border-lijn bg-papier px-4 py-2 text-sm font-semibold text-inkt hover:bg-papier-dieper focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-diep">Klantenservice-antwoorden</button>
+            <button type="button" data-preset="samenvatten" class="rounded-full border border-lijn bg-papier px-4 py-2 text-sm font-semibold text-inkt hover:bg-papier-dieper focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-diep">Documenten samenvatten</button>
+            <button type="button" data-preset="rapportage" class="rounded-full border border-lijn bg-papier px-4 py-2 text-sm font-semibold text-inkt hover:bg-papier-dieper focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-diep">Rapporten maken</button>
+          </div>
+          <p id="preset-uitleg" class="mt-2 text-xs text-inkt-zacht"></p>
+        </fieldset>
+
+        <div class="mt-6 grid gap-5 sm:grid-cols-2">
+          <div class="sm:col-span-2">
+            <label for="model" class={label}>Model</label>
+            <select id="model" name="model" class={veld}>
+              {PRIJZEN.map((m) => <option value={m.id} selected={m.id === 'sonnet-5-5'}>{m.naam}</option>)}
+            </select>
+          </div>
+          <div>
+            <label for="verzoeken" class={label}>Verzoeken per dag</label>
+            <input id="verzoeken" name="verzoeken" type="number" inputmode="numeric" min="0" max="1000000" step="1" value="200" class={veld} aria-describedby="verzoeken-fout" />
+            <span id="verzoeken-fout" class={fout} aria-live="polite"></span>
+          </div>
+          <div>
+            <label for="werkdagen" class={label}>Werkdagen per maand</label>
+            <input id="werkdagen" name="werkdagen" type="number" inputmode="numeric" min="1" max="31" step="1" value="21" class={veld} aria-describedby="werkdagen-hulp werkdagen-fout" />
+            <span id="werkdagen-hulp" class={hulp}>Draait het ook in het weekend? Vul 30 in.</span>
+            <span id="werkdagen-fout" class={fout} aria-live="polite"></span>
+          </div>
+          <div>
+            <label for="input" class={label}>Input-tokens per verzoek</label>
+            <input id="input" name="input" type="number" inputmode="numeric" min="0" max="1000000" step="1" value="1500" class={veld} aria-describedby="input-hulp input-fout" />
+            <span id="input-hulp" class={hulp}>Alles wat je naar Claude stuurt: instructies, document, vraag.</span>
+            <span id="input-fout" class={fout} aria-live="polite"></span>
+          </div>
+          <div>
+            <label for="output" class={label}>Output-tokens per verzoek</label>
+            <input id="output" name="output" type="number" inputmode="numeric" min="0" max="128000" step="1" value="300" class={veld} aria-describedby="output-hulp output-fout" />
+            <span id="output-hulp" class={hulp}>De lengte van het antwoord.</span>
+            <span id="output-fout" class={fout} aria-live="polite"></span>
+          </div>
+        </div>
+
+        <details class="mt-6 rounded-lg border border-lijn bg-papier p-4">
+          <summary class="cursor-pointer font-semibold text-inkt focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-diep">Woorden omrekenen naar tokens</summary>
+          <div class="mt-4 grid gap-4 sm:grid-cols-2">
+            <div>
+              <label for="woorden" class={label}>Aantal woorden</label>
+              <input id="woorden" type="number" inputmode="numeric" min="0" max="500000" step="1" value="500" class={veld} aria-describedby="woorden-hulp" />
+              <span id="woorden-hulp" class={hulp}>Een A4 met gewone tekst is ongeveer 500 woorden.</span>
+            </div>
+            <div>
+              <p class={label}>Ongeveer</p>
+              <p id="woorden-tokens" class="mt-2 text-lg font-semibold text-inkt" aria-live="polite"></p>
+            </div>
+          </div>
+          <p class="mt-3 text-xs text-inkt-zacht">
+            Grove vuistregel, geen officieel getal: een Nederlands woord is ongeveer 1,5 tot 2 tokens. Modellen vanaf Claude 4.7 maken volgens Anthropic ongeveer 30% meer tokens van dezelfde tekst. De omrekening houdt rekening met het gekozen model.
+          </p>
+          <div class="mt-3 flex flex-wrap gap-2">
+            <button type="button" id="woorden-naar-input" class="rounded-full border border-lijn bg-white px-4 py-2 text-sm font-semibold text-inkt hover:bg-papier-dieper focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-diep">Gebruik als input</button>
+            <button type="button" id="woorden-naar-output" class="rounded-full border border-lijn bg-white px-4 py-2 text-sm font-semibold text-inkt hover:bg-papier-dieper focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-diep">Gebruik als output</button>
+          </div>
+        </details>
+
+        <fieldset class="mt-6 rounded-lg border border-lijn p-4">
+          <legend class="px-1 font-semibold text-inkt">Besparen (optioneel)</legend>
+          <div class="grid gap-5 sm:grid-cols-2">
+            <div>
+              <label for="cache" class={label}>Deel van de input uit de cache (%)</label>
+              <input id="cache" name="cache" type="number" inputmode="numeric" min="0" max="100" step="1" value="0" class={veld} aria-describedby="cache-hulp cache-fout" />
+              <span id="cache-hulp" class={hulp}>Vaste instructies die bij elk verzoek hetzelfde zijn.</span>
+              <span id="cache-fout" class={fout} aria-live="polite"></span>
+            </div>
+            <div>
+              <label for="schrijvingen" class={label}>Cache opnieuw geschreven, keer per dag</label>
+              <input id="schrijvingen" name="schrijvingen" type="number" inputmode="numeric" min="0" max="1000000" step="1" value="8" class={veld} aria-describedby="schrijvingen-hulp schrijvingen-fout" />
+              <span id="schrijvingen-hulp" class={hulp}>De cache vervalt na 5 minuten zonder gebruik. Bij rustig verkeer: vul een hoger getal in.</span>
+              <span id="schrijvingen-fout" class={fout} aria-live="polite"></span>
+            </div>
+            <div class="sm:col-span-2 flex items-start gap-3">
+              <input id="batch" name="batch" type="checkbox" class="mt-1 h-5 w-5 accent-teal focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-diep" aria-describedby="batch-hulp" />
+              <div>
+                <label for="batch" class={label}>Batch-verwerking (50% korting)</label>
+                <span id="batch-hulp" class={hulp}>Voor werk dat niet direct klaar hoeft. Antwoorden komen uiterlijk binnen 24 uur.</span>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+
+        <div class="mt-6 max-w-xs">
+          <label for="koers" class={label}>Wisselkoers: 1 dollar is ... euro</label>
+          <input id="koers" name="koers" type="number" inputmode="decimal" min="0.01" max="10" step="0.01" value="0.89" class={veld} aria-describedby="koers-hulp koers-fout" />
+          <span id="koers-hulp" class={hulp}>Afgeronde ECB-koers van 2 oktober 2026 (1,12 dollar per euro). Vul de koers van je bank in voor een precieser bedrag.</span>
+          <span id="koers-fout" class={fout} aria-live="polite"></span>
+        </div>
+      </form>
+
+      <div id="resultaat" class="mt-6 rounded-xl border border-lijn bg-papier-dieper p-5 md:p-6" aria-live="polite" aria-atomic="true">
+        <h3 class="font-serif text-xl font-bold text-inkt">Jouw kosten met <span id="res-model"></span></h3>
+        <dl class="mt-4 grid grid-cols-2 gap-4 md:grid-cols-4">
+          <div><dt class="text-xs uppercase tracking-[0.08em] text-inkt-zacht">Per verzoek</dt><dd class="mt-1"><span id="res-verzoek" class="block font-semibold text-inkt"></span><span id="res-verzoek-eur" class="block text-sm text-inkt-zacht"></span></dd></div>
+          <div><dt class="text-xs uppercase tracking-[0.08em] text-inkt-zacht">Per dag</dt><dd class="mt-1"><span id="res-dag" class="block font-semibold text-inkt"></span><span id="res-dag-eur" class="block text-sm text-inkt-zacht"></span></dd></div>
+          <div><dt class="text-xs uppercase tracking-[0.08em] text-inkt-zacht">Per maand</dt><dd class="mt-1"><span id="res-maand" class="block text-xl font-bold text-accent-diep"></span><span id="res-maand-eur" class="block text-sm text-inkt-zacht"></span></dd></div>
+          <div><dt class="text-xs uppercase tracking-[0.08em] text-inkt-zacht">Per jaar</dt><dd class="mt-1"><span id="res-jaar" class="block font-semibold text-inkt"></span><span id="res-jaar-eur" class="block text-sm text-inkt-zacht"></span></dd></div>
+        </dl>
+        <p id="res-tokens" class="mt-4 text-sm text-inkt-zacht"></p>
+      </div>
+
+      <h3 class="mt-10 font-serif text-xl font-bold text-inkt">Hetzelfde werk, per model</h3>
+      <p class="mt-2 text-sm text-inkt-zacht">Met dezelfde aantallen tokens. Let op: nieuwere modellen maken van dezelfde tekst meer tokens, zie de uitleg bij woorden omrekenen.</p>
+      <div class="mt-4 overflow-x-auto rounded-xl border border-lijn bg-white">
+        <table class="w-full text-sm">
+          <caption class="sr-only">Maandkosten per model voor hetzelfde gebruik</caption>
+          <thead class="bg-papier text-left">
+            <tr><th scope="col" class="px-4 py-3">Model</th><th scope="col" class="px-4 py-3 text-right">Per maand (USD)</th><th scope="col" class="px-4 py-3 text-right">Per maand (EUR)</th></tr>
+          </thead>
+          <tbody id="vergelijk" class="divide-y divide-lijn"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <div class="prose prose-stone max-w-none mt-12">
+      <h2 class="sectie-lijn">Wat zijn tokens?</h2>
+      <p>
+        Claude leest en schrijft tekst in kleine stukjes: tokens. Een token is een woord of een deel van een woord. Anthropic rekent per miljoen tokens. Wat je naar Claude stuurt heet input. Het antwoord heet output. Output is vijf keer zo duur als input.
+      </p>
+
+      <h2 class="sectie-lijn">Hoe schat je jouw gebruik?</h2>
+      <p>
+        Begin met één taak, bijvoorbeeld een mail beantwoorden. Tel hoeveel woorden de instructie, de mail en het antwoord samen hebben. Reken dat om met de knop hierboven. Vermenigvuldig met het aantal mails per dag. Je ontwikkelaar ziet het echte aantal tokens per verzoek terug in de API. Gebruik dat getal zodra je het hebt.
+      </p>
+      <p>
+        Stuur je bij elk verzoek dezelfde lange instructie mee? Dan helpt prompt caching. Een cache-hit kost een tiende van de inputprijs of minder. Werk dat geen haast heeft, zoals nachtelijke rapporten, kan via de Batch API. Dat scheelt de helft.
+      </p>
+
+      <h2 class="sectie-lijn">Wanneer is een abonnement goedkoper?</h2>
+      <p>
+        De API is voor koppelingen: Claude in je eigen software of workflow. Werken je collega's zelf met Claude in de chat? Dan is een abonnement vaak goedkoper en makkelijker. Wel geldt bij een abonnement een gebruikslimiet; hoe die werkt, staat in <a href="/prijs/credits-en-limieten">Claude gebruikslimieten en usage credits</a>. Een standaard Team-plek kost volgens Anthropic $25 per maand bij maandelijkse betaling, of $20 bij een jaarcontract. Kom je met de calculator per persoon ruim boven dat bedrag, dan loont een abonnement. Gaat het om automatisch werk zonder mens erbij, dan heb je de API nodig. In <a href="/gids/claude-voor-mkb">de gids Claude voor het mkb</a> lees je hoe je die keuze maakt.
+      </p>
+
+      <h2 class="sectie-lijn">Wat zit er niet in de berekening?</h2>
+      <p>
+        De bedragen zijn exclusief btw. Het bouwen en onderhouden van de koppeling zit er niet in, net als hosting en je eigen uren. Extra functies zoals web search, code execution, fast mode en US-only verwerking laten we weg. De 1-uurs cache rekenen we ook niet mee: de calculator gaat uit van de 5-minuten cache. Wil je weten wat het oplevert in plaats van wat het kost? Gebruik dan de <a href="/tools/claude-roi-mkb-calculator">ROI calculator voor het mkb</a>. Alle rekentools staan bij <a href="/tools">Claude rekentools</a>.
+      </p>
+
+      <h2 class="sectie-lijn" id="zelf-rekenen">Zo reken je het zelf uit</h2>
+      <p>
+        Kosten per verzoek in dollar = (input-tokens × inputprijs + output-tokens × outputprijs) ÷ 1.000.000. Doe dat keer het aantal verzoeken per dag en keer je werkdagen per maand. Met batch deel je het bedrag door twee. Met caching reken je het vaste deel van de input tegen de cache-prijs, plus af en toe een keer de schrijfprijs.
+      </p>
+      <p>
+        Voorbeeld met Claude Sonnet 5.5: 200 verzoeken per dag, 1.500 input-tokens en 300 output-tokens. Per verzoek is dat (1.500 × $2 + 300 × $10) ÷ 1.000.000 = $0,006. Per dag $1,20, per maand van 21 werkdagen $25,20.
+      </p>
+    </div>
+
+    <section class="mt-10" aria-labelledby="prijstabel-kop">
+      <h2 id="prijstabel-kop" class="sectie-lijn text-[length:var(--text-h2)]">Prijzen per model</h2>
+      <p class="mt-3 text-sm text-inkt-zacht">
+        In dollar per miljoen tokens, exclusief btw. Gecheckt op <time datetime={PRIJZEN_GECHECKT}>{gechecktNl}</time>. Batch: de helft van elk bedrag.
+      </p>
+      <div class="mt-4 overflow-x-auto rounded-xl border border-lijn bg-white">
+        <table class="w-full text-sm">
+          <caption class="sr-only">Claude API-prijzen per model in dollar per miljoen tokens</caption>
+          <thead class="bg-papier text-left">
+            <tr>
+              <th scope="col" class="px-4 py-3">Model</th>
+              <th scope="col" class="px-4 py-3 text-right">Input</th>
+              <th scope="col" class="px-4 py-3 text-right">Cache schrijven</th>
+              <th scope="col" class="px-4 py-3 text-right">Cache lezen</th>
+              <th scope="col" class="px-4 py-3 text-right">Output</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-lijn">
+            {PRIJZEN.map((m) => (
+              <Fragment>
+              <tr>
+                <th scope="row" class="px-4 py-2 text-left font-semibold">{m.naam}</th>
+                <td class="px-4 py-2 text-right tabular-nums">{usd(m.input)}</td>
+                <td class="px-4 py-2 text-right tabular-nums">{usd(m.cacheSchrijf)}</td>
+                <td class="px-4 py-2 text-right tabular-nums">{usd(m.cacheLees)}</td>
+                <td class="px-4 py-2 text-right tabular-nums">{usd(m.output)}</td>
+              </tr>
+              {m.lang && (
+                <tr>
+                  <th scope="row" class="px-4 py-2 text-left font-semibold">{m.naam}, prompt boven 100.000 tokens</th>
+                  <td class="px-4 py-2 text-right tabular-nums">{usd(m.lang.input)}</td>
+                  <td class="px-4 py-2 text-right tabular-nums">{usd(m.lang.cacheSchrijf)}</td>
+                  <td class="px-4 py-2 text-right tabular-nums">{usd(m.lang.cacheLees)}</td>
+                  <td class="px-4 py-2 text-right tabular-nums">{usd(m.lang.output)}</td>
+                </tr>
+              )}
+              </Fragment>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <FaqSectie items={faq} />
+    <BronnenBlok bronnen={bronnen} />
+  </article>
+  <div class="max-w-3xl mx-auto px-6"><CtaStrook /></div>
+</BasisLayout>
+
+<script is:inline define:vars={{ PRIJZEN, BATCH_FACTOR, LANG_DREMPEL }}>
+  // BEGIN rekenkern (ook los te draaien met node, zie de pull request)
+  function begrens(waarde, min, max) {
+    const n = Number(waarde);
+    if (!Number.isFinite(n)) return min;
+    return Math.min(max, Math.max(min, n));
+  }
+
+  // prijs: één regel uit PRIJZEN (USD per MTok).
+  // w: { verzoekenPerDag, inputTokens, outputTokens, werkdagen, cacheAandeel (0..1),
+  //      cacheSchrijvingenPerDag, batch (bool) }
+  function berekenKosten(model, w, batchFactor, langDrempel) {
+    const verzoeken = begrens(w.verzoekenPerDag, 0, 1e6);
+    const input = begrens(w.inputTokens, 0, 1e6);
+    const output = begrens(w.outputTokens, 0, 1e6);
+    const dagen = begrens(w.werkdagen, 1, 31);
+    const aandeel = begrens(w.cacheAandeel, 0, 1);
+    const gecached = input * aandeel;
+    const vers = input - gecached;
+    const schrijvingen = gecached > 0 ? Math.min(begrens(w.cacheSchrijvingenPerDag, 0, 1e6), verzoeken) : 0;
+    const hits = verzoeken - schrijvingen;
+    const factor = w.batch ? batchFactor : 1;
+    const prijs = model.lang && input > langDrempel ? model.lang : model;
+
+    const tokensDag = {
+      input: verzoeken * vers,
+      cacheSchrijf: schrijvingen * gecached,
+      cacheLees: hits * gecached,
+      output: verzoeken * output,
+    };
+    const perDag = factor * (
+      tokensDag.input * prijs.input +
+      tokensDag.cacheSchrijf * prijs.cacheSchrijf +
+      tokensDag.cacheLees * prijs.cacheLees +
+      tokensDag.output * prijs.output
+    ) / 1e6;
+    const perMaand = perDag * dagen;
+    return {
+      perVerzoek: verzoeken > 0 ? perDag / verzoeken : 0,
+      perDag,
+      perMaand,
+      perJaar: perMaand * 12,
+      tokensDag,
+    };
+  }
+  // END rekenkern
+
+  const PRESETS = {
+    klantenservice: { verzoeken: 200, input: 1500, output: 300, cache: 60, uitleg: 'Klantenservice: 200 mails per dag, een vaste instructie plus de mail, een kort antwoord.' },
+    samenvatten: { verzoeken: 40, input: 8000, output: 600, cache: 10, uitleg: 'Samenvatten: 40 documenten van zo’n 10 pagina’s per dag, samenvatting van een halve pagina.' },
+    rapportage: { verzoeken: 10, input: 20000, output: 2500, cache: 0, uitleg: 'Rapporten: 10 rapporten per dag op basis van veel brondata, elk een paar pagina’s lang.' },
+  };
+
+  // Ruwe tokens per woord; nieuwere tokenizer (Claude 4.7 en later) circa 1,3x.
+  const NIEUWE_TOKENIZER = ['fable-5-1', 'fable-5', 'opus-5-5', 'opus-5', 'opus-4-8', 'opus-4-7', 'sonnet-5-5', 'sonnet-5', 'haiku-5-5'];
+  const TOKENS_PER_WOORD = 1.75;
+
+  const $ = (id) => document.getElementById(id);
+  const sectie = $('calculator');
+  sectie.hidden = false;
+
+  const fmtUsd = (n) => new Intl.NumberFormat('nl-NL', {
+    style: 'currency', currency: 'USD',
+    minimumFractionDigits: n !== 0 && n < 0.01 ? 4 : 2,
+    maximumFractionDigits: n !== 0 && n < 0.01 ? 4 : 2,
+  }).format(n);
+  const fmtEur = (n) => '≈ ' + new Intl.NumberFormat('nl-NL', {
+    style: 'currency', currency: 'EUR',
+    minimumFractionDigits: n !== 0 && n < 0.01 ? 4 : 2,
+    maximumFractionDigits: n !== 0 && n < 0.01 ? 4 : 2,
+  }).format(n);
+  const fmtGetal = (n) => new Intl.NumberFormat('nl-NL', { maximumFractionDigits: 0 }).format(n);
+
+  // Leest een veld, toont een melding bij een lege, negatieve of absurde waarde
+  // en geeft dan een bruikbare waarde terug.
+  function lees(id, min, max, terugval) {
+    const el = $(id);
+    const melding = $(id + '-fout');
+    const ruw = el.value.trim().replace(',', '.');
+    let tekst = '';
+    let waarde = Number(ruw);
+    if (ruw === '' || !Number.isFinite(waarde)) {
+      tekst = 'Vul een getal in. We rekenen nu met ' + String(terugval).replace('.', ',') + '.';
+      waarde = terugval;
+    } else if (waarde < min) {
+      tekst = 'Minimaal ' + String(min).replace('.', ',') + '. We rekenen met ' + String(min).replace('.', ',') + '.';
+      waarde = min;
+    } else if (waarde > max) {
+      tekst = 'Maximaal ' + fmtGetal(max) + '. We rekenen met ' + fmtGetal(max) + '.';
+      waarde = max;
+    }
+    el.setAttribute('aria-invalid', tekst ? 'true' : 'false');
+    if (melding && melding.textContent !== tekst) melding.textContent = tekst;
+    return waarde;
+  }
+
+  function werkWoordenBij() {
+    const woorden = begrens($('woorden').value, 0, 500000);
+    const factor = NIEUWE_TOKENIZER.includes($('model').value) ? 1.3 : 1;
+    const tokens = Math.round(woorden * TOKENS_PER_WOORD * factor);
+    $('woorden-tokens').textContent = fmtGetal(tokens) + ' tokens';
+    return tokens;
+  }
+
+  function reken() {
+    const prijs = PRIJZEN.find((m) => m.id === $('model').value) || PRIJZEN[0];
+    const w = {
+      verzoekenPerDag: Math.round(lees('verzoeken', 0, 1e6, 0)),
+      inputTokens: Math.round(lees('input', 0, 1e6, 0)),
+      outputTokens: Math.round(lees('output', 0, 128000, 0)),
+      werkdagen: Math.round(lees('werkdagen', 1, 31, 21)),
+      cacheAandeel: lees('cache', 0, 100, 0) / 100,
+      cacheSchrijvingenPerDag: Math.round(lees('schrijvingen', 0, 1e6, 0)),
+      batch: $('batch').checked,
+    };
+    const koers = lees('koers', 0.01, 10, 0.89);
+    const r = berekenKosten(prijs, w, BATCH_FACTOR, LANG_DREMPEL);
+
+    $('res-model').textContent = prijs.naam + (w.batch ? ' (batch)' : '');
+    for (const [id, bedrag] of [['verzoek', r.perVerzoek], ['dag', r.perDag], ['maand', r.perMaand], ['jaar', r.perJaar]]) {
+      $('res-' + id).textContent = fmtUsd(bedrag);
+      $('res-' + id + '-eur').textContent = fmtEur(bedrag * koers);
+    }
+    const t = r.tokensDag;
+    $('res-tokens').textContent = 'Per dag: ' + fmtGetal(t.input + t.cacheSchrijf + t.cacheLees) + ' input-tokens (waarvan ' +
+      fmtGetal(t.cacheLees) + ' uit de cache) en ' + fmtGetal(t.output) + ' output-tokens. Exclusief btw.';
+
+    const rijen = PRIJZEN.map((m) => {
+      const k = berekenKosten(m, w, BATCH_FACTOR, LANG_DREMPEL);
+      const tr = document.createElement('tr');
+      if (m.id === prijs.id) tr.className = 'bg-papier font-semibold';
+      const th = document.createElement('th');
+      th.scope = 'row';
+      th.className = 'px-4 py-2 text-left font-normal';
+      th.textContent = m.naam + (m.id === prijs.id ? ' (gekozen)' : '');
+      const td1 = document.createElement('td');
+      td1.className = 'px-4 py-2 text-right tabular-nums whitespace-nowrap';
+      td1.textContent = fmtUsd(k.perMaand);
+      const td2 = document.createElement('td');
+      td2.className = 'px-4 py-2 text-right tabular-nums whitespace-nowrap';
+      td2.textContent = fmtEur(k.perMaand * koers);
+      tr.append(th, td1, td2);
+      return tr;
+    });
+    $('vergelijk').replaceChildren(...rijen);
+    werkWoordenBij();
+  }
+
+  $('calc-form').addEventListener('input', reken);
+  $('calc-form').addEventListener('change', reken);
+  $('calc-form').addEventListener('submit', (e) => e.preventDefault());
+
+  document.querySelectorAll('[data-preset]').forEach((knop) => {
+    knop.addEventListener('click', () => {
+      const p = PRESETS[knop.dataset.preset];
+      $('verzoeken').value = p.verzoeken;
+      $('input').value = p.input;
+      $('output').value = p.output;
+      $('cache').value = p.cache;
+      $('preset-uitleg').textContent = p.uitleg + ' Pas de getallen gerust aan.';
+      reken();
+    });
+  });
+
+  $('woorden-naar-input').addEventListener('click', () => { $('input').value = werkWoordenBij(); reken(); });
+  $('woorden-naar-output').addEventListener('click', () => { $('output').value = werkWoordenBij(); reken(); });
+
+  reken();
+</script>

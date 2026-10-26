@@ -1,0 +1,930 @@
+---
+import BasisLayout from '../layouts/BasisLayout.astro';
+import Broodkruimel from '../components/Broodkruimel.astro';
+const breadcrumbs = [{ name: 'Home', url: '/' }, { name: 'Hoe Claude werkt', url: '/hoe-claude-werkt' }];
+---
+<BasisLayout
+  titel="Hoe werkt Claude? Uitleg voor ondernemers"
+  beschrijving="Hoe werkt Claude? Uitleg voor ondernemers over modellen, werkgeheugen en training, in gewoon Nederlands en zonder technisch jargon."
+  pad="/hoe-claude-werkt"
+  schema={{ breadcrumbs }}
+>
+  <div class="max-w-3xl mx-auto px-6 pt-8">
+    <Broodkruimel items={breadcrumbs} />
+  </div>
+  <!-- HERO -->
+  <div class="hero-wrap">
+    <section class="hero">
+      <p class="eyebrow">Achtergrond</p>
+      <h1>Hoe Claude werkt</h1>
+      <p class="hero-lede">Claude is geen magische zwarte doos. Het werkt als een brein, met dezelfde verrassende regels en beperkingen. Scroll door vijf concepten die laten zien hoe.</p>
+    </section>
+  </div>
+
+  <!-- PANEL 1 — BRAIN SHAPE -->
+  <section class="panel reveal-target">
+    <div class="panel-inner">
+      <div class="panel-copy">
+        <p class="panel-step">01 · Drie lagen</p>
+        <h2>Het Claude-brein</h2>
+        <p>Jouw brein heeft drie grote lagen, elk uit een andere tijd. De neocortex denkt bewust. Het limbisch systeem herkent patronen. Het reptielenbrein regelt reflexen.</p>
+        <p class="dim">Claude heeft drie modellen die hier precies op mappen. Grondig redeneren, dagelijks werk, reflexmatige classificatie.</p>
+        <div class="callout"><strong>Praktisch:</strong> kies Opus voor strategie, Sonnet voor standaard werk, Haiku voor routine op schaal.</div>
+      </div>
+
+      <div class="panel-visual">
+        <div class="visual-card">
+          <div class="vc-label">Drie regio's, drie modellen</div>
+          <div class="brain-vis">
+            <svg class="brain-svg" viewBox="0 0 480 400" xmlns="http://www.w3.org/2000/svg" aria-label="Doorsnede van het brein">
+              <defs>
+                <clipPath id="brainClip2">
+                  <path d="M 90 165 Q 80 70 200 55 Q 340 45 400 110 Q 430 140 420 195 Q 410 255 355 280 L 330 280 Q 325 300 340 320 Q 310 330 295 310 L 240 310 Q 220 330 200 320 Q 205 300 198 285 Q 155 278 125 250 Q 90 220 90 165 Z"/>
+                </clipPath>
+              </defs>
+
+              <g clip-path="url(#brainClip2)">
+                <rect x="0" y="0" width="480" height="400" fill="#f0e4d3"/>
+                <ellipse cx="270" cy="195" rx="95" ry="58" fill="#f4c6d5"/>
+                <path d="M 240 275 L 345 275 L 350 335 L 225 335 Z" fill="#d0bfae"/>
+              </g>
+
+              <path d="M 90 165 Q 80 70 200 55 Q 340 45 400 110 Q 430 140 420 195 Q 410 255 355 280 L 330 280 Q 325 300 340 320 Q 310 330 295 310 L 240 310 Q 220 330 200 320 Q 205 300 198 285 Q 155 278 125 250 Q 90 220 90 165 Z" fill="none" stroke="#2A2725" stroke-width="2.8" stroke-linejoin="round"/>
+              <path d="M 240 275 L 345 275" fill="none" stroke="#2A2725" stroke-width="1.8" opacity="0.6"/>
+
+              <text x="210" y="108" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#2A2725" letter-spacing="0.12em">NEOCORTEX</text>
+              <text x="270" y="200" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#862e44" letter-spacing="0.12em">LIMBISCH</text>
+              <text x="285" y="307" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#5c4033" letter-spacing="0.12em">REPTIEL</text>
+            </svg>
+
+            <div class="brain-legend">
+              <div class="legend-row legend-opus">
+                <span class="legend-swatch"></span>
+                <span>
+                  <span class="legend-name">Neocortex</span>
+                  <span class="legend-sub">bewust denken</span>
+                </span>
+                <span class="legend-model">Opus</span>
+              </div>
+              <div class="legend-row legend-sonnet">
+                <span class="legend-swatch"></span>
+                <span>
+                  <span class="legend-name">Limbisch</span>
+                  <span class="legend-sub">patroonherkenning</span>
+                </span>
+                <span class="legend-model">Sonnet</span>
+              </div>
+              <div class="legend-row legend-haiku">
+                <span class="legend-swatch"></span>
+                <span>
+                  <span class="legend-name">Reptiel</span>
+                  <span class="legend-sub">reflexen</span>
+                </span>
+                <span class="legend-model">Haiku</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PANEL 2 — WORKING MEMORY -->
+  <section class="panel reveal-target">
+    <div class="panel-inner reverse">
+      <div class="panel-copy">
+        <p class="panel-step">02 · Werkgeheugen</p>
+        <h2>Zeven plekken in de spotlight</h2>
+        <p>Probeer 7392846152 te onthouden. Lastig. Je werkgeheugen houdt maar een handvol dingen tegelijk vast. Nieuwe input duwt oude informatie eruit.</p>
+        <p class="dim">Claude heeft een context window van 200.000 tokens. Groot, maar niet oneindig. Hoe langer het gesprek, hoe vager het begin wordt.</p>
+        <div class="callout"><strong>Praktisch:</strong> start nieuwe gesprekken voor nieuwe onderwerpen. Marathon-sessies verliezen scherpte, net als bij mensen.</div>
+      </div>
+
+      <div class="panel-visual">
+        <div class="visual-card">
+          <div class="vc-label">Actieve aandacht</div>
+          <div class="wm">
+            <div class="wm-row">
+              <div class="wm-inout wm-in">In →</div>
+              <div class="wm-slot fade">1</div>
+              <div class="wm-slot dim">2</div>
+              <div class="wm-slot active">3</div>
+              <div class="wm-slot active">4</div>
+              <div class="wm-slot active">5</div>
+              <div class="wm-slot dim">6</div>
+              <div class="wm-slot fade">7</div>
+              <div class="wm-inout wm-out">→ Weg</div>
+            </div>
+            <div class="wm-caption"><b>Drie actieve slots</b> · vier in de periferie, vervagend</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PANEL 3 — PAVED PATH -->
+  <section class="panel reveal-target">
+    <div class="panel-inner">
+      <div class="panel-copy">
+        <p class="panel-step">03 · Skills</p>
+        <h2>Eén gebaand pad tussen duizend alternatieven</h2>
+        <p>Je neuronen kunnen honderd kanten op. De meeste paden leiden nergens heen, of naar verkeerde antwoorden. Alleen via oefenen wordt er één route gekozen, gebaand, en na duizend herhalingen gewikkeld in myeline.</p>
+        <p class="dim">De andere paden verdwijnen niet, ze worden alleen niet meer gekozen. Je brein weet nu wat werkt.</p>
+        <div class="callout"><strong>Bij Claude:</strong> skill-bestanden en CLAUDE.md regels leggen dat gebaande pad al voor je klaar. Geen zoektocht meer, gewoon volgen.</div>
+      </div>
+
+      <div class="panel-visual">
+        <div class="visual-card">
+          <div class="vc-label">Alle paden zichtbaar, één wordt bewandeld</div>
+          <svg class="path-svg" viewBox="0 0 600 340" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <marker id="arrRaw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+                <path d="M0,0 L10,5 L0,10 Z" fill="#e8590c" opacity="0.6"/>
+              </marker>
+            </defs>
+
+            <circle cx="60" cy="170" r="22" fill="#2A2725"/>
+            <text x="60" y="175" text-anchor="middle" fill="#FAF7F2" font-family="Inter, sans-serif" font-size="11" font-weight="700">START</text>
+
+            <circle cx="540" cy="170" r="22" fill="#2f9e44"/>
+            <text x="540" y="175" text-anchor="middle" fill="#FAF7F2" font-family="Inter, sans-serif" font-size="11" font-weight="700">DOEL</text>
+
+            <circle cx="505" cy="45"  r="11" fill="none" stroke="#ced4da" stroke-width="1.5" stroke-dasharray="3 3"/>
+            <circle cx="535" cy="95"  r="11" fill="none" stroke="#ced4da" stroke-width="1.5" stroke-dasharray="3 3"/>
+            <circle cx="535" cy="245" r="11" fill="none" stroke="#ced4da" stroke-width="1.5" stroke-dasharray="3 3"/>
+            <circle cx="505" cy="295" r="11" fill="none" stroke="#ced4da" stroke-width="1.5" stroke-dasharray="3 3"/>
+
+            <path d="M 82 170 Q 260 55  494 45"  fill="none" stroke="#e8590c" stroke-width="1.8" opacity="0.55" marker-end="url(#arrRaw)"/>
+            <path d="M 82 170 Q 280 85  524 95"  fill="none" stroke="#e8590c" stroke-width="1.8" opacity="0.55" marker-end="url(#arrRaw)"/>
+            <path d="M 82 170 Q 280 245 524 245" fill="none" stroke="#e8590c" stroke-width="1.8" opacity="0.55" marker-end="url(#arrRaw)"/>
+            <path d="M 82 170 Q 260 285 494 295" fill="none" stroke="#e8590c" stroke-width="1.8" opacity="0.55" marker-end="url(#arrRaw)"/>
+
+            <rect x="82" y="155" width="436" height="30" rx="15" fill="#d3f9d8" stroke="#2f9e44" stroke-width="2"/>
+            <g fill="#2f9e44">
+              <polygon points="120,160 120,180 135,170"/>
+              <polygon points="170,160 170,180 185,170"/>
+              <polygon points="220,160 220,180 235,170"/>
+              <polygon points="270,160 270,180 285,170"/>
+              <polygon points="320,160 320,180 335,170"/>
+              <polygon points="370,160 370,180 385,170"/>
+              <polygon points="420,160 420,180 435,170"/>
+              <polygon points="470,160 470,180 485,170"/>
+            </g>
+            <text x="300" y="143" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#2f9e44" letter-spacing="0.1em">GEBAAND PAD</text>
+          </svg>
+
+          <div class="path-legend">
+            <div class="path-legend-item fast">
+              <span class="swatch"></span>
+              <div>
+                <strong>Gekozen route</strong>
+                <div>Gemyeliniseerd, signaal volgt het pad.</div>
+              </div>
+            </div>
+            <div class="path-legend-item raw">
+              <span class="swatch"></span>
+              <div>
+                <strong>Alternatieve paden</strong>
+                <div>Bestaan nog, worden niet meer bewandeld.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PANEL 4 — UNIFIED MEMORY -->
+  <section class="panel reveal-target">
+    <div class="panel-inner reverse">
+      <div class="panel-copy">
+        <p class="panel-step">04 · Langetermijn</p>
+        <h2>Geheugen buiten het gesprek</h2>
+        <p>Zonder hippocampus geen nieuwe herinneringen. Standaard werkt Claude net zo: sessie dicht is alles weg. Daarom hangt er een extern geheugen aan Claude. Open Brain. Een notitieboek dat Claude zelf kan lezen en schrijven tussen sessies door.</p>
+        <p class="dim">Dat notitieboek is geen spreadsheet, het is een vector-database. Elk begrip krijgt een plek in een ruimte van betekenissen. Verwante begrippen liggen dicht bij elkaar. Zoek je "fietsen", dan vist Open Brain ook Tour de France, zomer en training op. Precies zoals jouw brein associeert.</p>
+        <div class="callout"><strong>Waarom dit werkt:</strong> je hoeft niet elk detail te onthouden, zolang je het weer terug kunt vinden via verwante begrippen.</div>
+      </div>
+
+      <div class="panel-visual">
+        <div class="visual-card">
+          <div class="vc-label">Claude + extern geheugen</div>
+          <div class="mem2">
+            <div class="mem2-claude">
+              Claude-sessie
+              <small>stelt vraag, schrijft resultaat weg</small>
+            </div>
+
+            <div class="mem2-arrow">
+              <svg width="24" height="44" viewBox="0 0 24 44" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="7"  y1="4"  x2="7"  y2="38"/>
+                <polyline points="2 32 7 38 12 32"/>
+                <line x1="17" y1="4"  x2="17" y2="38"/>
+                <polyline points="12 10 17 4 22 10"/>
+              </svg>
+              <span>lees / schrijf</span>
+            </div>
+
+            <div class="mem2-brain">
+              <div class="mem2-brain-head">
+                <div>
+                  <div class="mem2-brain-label">Open Brain</div>
+                  <div class="mem2-brain-title">Vector-geheugen</div>
+                </div>
+                <div class="mem2-brain-sub">verwante begrippen liggen dichtbij</div>
+              </div>
+
+              <div class="assoc2">
+                <svg viewBox="0 0 600 300" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                  <line x1="300" y1="150" x2="110" y2="60"  stroke="#f59f00" stroke-width="1.6" opacity="0.95"/>
+                  <line x1="300" y1="150" x2="500" y2="60"  stroke="#f59f00" stroke-width="1.6" opacity="0.95"/>
+                  <line x1="300" y1="150" x2="90"  y2="225" stroke="#b197fc" stroke-width="1.3" stroke-dasharray="4 4"/>
+                  <line x1="300" y1="150" x2="520" y2="225" stroke="#b197fc" stroke-width="1.3" stroke-dasharray="4 4"/>
+                  <line x1="300" y1="150" x2="300" y2="270" stroke="#b197fc" stroke-width="1.3" stroke-dasharray="4 4"/>
+                </svg>
+                <span class="assoc2-node close"  style="left: 18%; top: 20%;">Tour de France</span>
+                <span class="assoc2-node close"  style="left: 83%; top: 20%;">Zomer</span>
+                <span class="assoc2-node"        style="left: 15%; top: 75%;">Frankrijk</span>
+                <span class="assoc2-node"        style="left: 86%; top: 75%;">Training</span>
+                <span class="assoc2-node"        style="left: 50%; top: 90%;">Kind leren</span>
+                <span class="assoc2-node center" style="left: 50%; top: 50%;">Fietsen</span>
+              </div>
+
+              <div class="assoc2-caption"><b>Geel</b> = dichtbij · gestippeld paars = verderaf in betekenisruimte</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PANEL 5 — GENERATION CLOUDS -->
+  <section class="panel reveal-target">
+    <div class="panel-inner">
+      <div class="panel-copy">
+        <p class="panel-step">05 · Oorsprong</p>
+        <h2>Training werkt zoals evolutie</h2>
+        <p>In de natuur: DNA maakt miljoenen nakomelingen met kleine mutaties, de omgeving selecteert de overlevers, die produceren weer miljoenen nieuwe varianten. Vier miljard jaar later heb je complexe organismen.</p>
+        <p class="dim">AI-training werkt hetzelfde. Miljoenen gewichts-varianten per generatie, een verliesfunctie filtert de beste eruit, die worden de basis voor de volgende generatie met opnieuw miljoenen varianten. Herhaal genoeg keer en je hebt een model dat redeneert.</p>
+        <div class="callout"><strong>Waarom dit ertoe doet:</strong> een AI-model is niet geschreven zoals vroeger software. Het is geëvolueerd onder druk van data. Dat verklaart waarom het soms onvoorspelbaar is, net als alles in de natuur.</div>
+      </div>
+
+      <div class="panel-visual">
+        <div class="visual-card">
+          <div class="vc-label">Veel kandidaten → weinig winnaars → opnieuw veel kandidaten</div>
+          <div class="gens">
+
+            <div class="gens-row dna">
+              <div class="gens-row-label">DNA</div>
+              <svg class="gens-svg" viewBox="0 0 800 310" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <marker id="arrDna" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                    <path d="M0,0 L10,5 L0,10 Z" fill="#2f9e44"/>
+                  </marker>
+                </defs>
+
+                <g transform="translate(20, 38)">
+                  <text x="90" y="-12" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" font-weight="700" fill="#2f9e44" letter-spacing="0.12em">GENERATIE 1</text>
+                  <g fill="#d3f9d8" stroke="#2f9e44" stroke-width="1">
+                    <circle cx="30" cy="20" r="7"/><circle cx="58" cy="10" r="7"/><circle cx="86" cy="22" r="7"/><circle cx="114" cy="12" r="7"/><circle cx="142" cy="25" r="7"/>
+                    <circle cx="20" cy="48" r="7"/><circle cx="50" cy="58" r="7"/><circle cx="80" cy="52" r="7"/><circle cx="110" cy="60" r="7"/><circle cx="142" cy="52" r="7"/>
+                    <circle cx="38" cy="82" r="7"/><circle cx="68" cy="86" r="7"/><circle cx="98" cy="84" r="7"/><circle cx="128" cy="90" r="7"/>
+                    <circle cx="25" cy="112" r="7"/><circle cx="58" cy="118" r="7"/><circle cx="90" cy="114" r="7"/><circle cx="120" cy="122" r="7"/>
+                  </g>
+                  <text x="90" y="162" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#58524C">honderdduizenden varianten</text>
+                </g>
+
+                <text x="225" y="83" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#2f9e44" letter-spacing="0.12em">SELECTIE</text>
+                <line x1="185" y1="100" x2="260" y2="100" stroke="#2f9e44" stroke-width="2.2" marker-end="url(#arrDna)"/>
+                <text x="225" y="124" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#58524C">overlevers</text>
+
+                <g transform="translate(278, 78)">
+                  <circle cx="15" cy="15" r="10" fill="#2f9e44" stroke="#2f9e44" stroke-width="2"/>
+                  <circle cx="42" cy="32" r="10" fill="#2f9e44" stroke="#2f9e44" stroke-width="2"/>
+                  <circle cx="15" cy="48" r="10" fill="#2f9e44" stroke="#2f9e44" stroke-width="2"/>
+                </g>
+
+                <text x="390" y="83" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#2f9e44" letter-spacing="0.12em">REPRODUCEER</text>
+                <line x1="348" y1="100" x2="432" y2="100" stroke="#2f9e44" stroke-width="2.2" marker-end="url(#arrDna)"/>
+
+                <g transform="translate(450, 38)">
+                  <text x="90" y="-12" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" font-weight="700" fill="#2f9e44" letter-spacing="0.12em">GENERATIE 2</text>
+                  <g fill="#d3f9d8" stroke="#2f9e44" stroke-width="1">
+                    <circle cx="35" cy="18" r="7"/><circle cx="63" cy="12" r="7"/><circle cx="92" cy="24" r="7"/><circle cx="120" cy="14" r="7"/><circle cx="148" cy="22" r="7"/>
+                    <circle cx="22" cy="50" r="7"/><circle cx="52" cy="58" r="7"/><circle cx="82" cy="50" r="7"/><circle cx="112" cy="62" r="7"/><circle cx="145" cy="55" r="7"/>
+                    <circle cx="42" cy="82" r="7"/><circle cx="72" cy="88" r="7"/><circle cx="102" cy="84" r="7"/><circle cx="132" cy="90" r="7"/>
+                    <circle cx="28" cy="114" r="7"/><circle cx="62" cy="118" r="7"/><circle cx="94" cy="114" r="7"/><circle cx="124" cy="122" r="7"/>
+                  </g>
+                  <text x="90" y="162" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#58524C">fittere varianten, opnieuw veel</text>
+                </g>
+
+                <path d="M 610 210 Q 400 248 170 248 Q 90 248 90 232" fill="none" stroke="#2f9e44" stroke-width="2" stroke-dasharray="5 5" marker-end="url(#arrDna)"/>
+                <text x="400" y="285" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#2f9e44" letter-spacing="0.1em">HERHAAL</text>
+              </svg>
+            </div>
+
+            <div class="gens-row ai">
+              <div class="gens-row-label">AI-model</div>
+              <svg class="gens-svg" viewBox="0 0 800 310" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <marker id="arrAi" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                    <path d="M0,0 L10,5 L0,10 Z" fill="#1971c2"/>
+                  </marker>
+                </defs>
+
+                <g transform="translate(20, 38)">
+                  <text x="90" y="-12" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" font-weight="700" fill="#1971c2" letter-spacing="0.12em">GENERATIE 1</text>
+                  <g fill="#d0ebff" stroke="#1971c2" stroke-width="1">
+                    <circle cx="30" cy="20" r="7"/><circle cx="58" cy="10" r="7"/><circle cx="86" cy="22" r="7"/><circle cx="114" cy="12" r="7"/><circle cx="142" cy="25" r="7"/>
+                    <circle cx="20" cy="48" r="7"/><circle cx="50" cy="58" r="7"/><circle cx="80" cy="52" r="7"/><circle cx="110" cy="60" r="7"/><circle cx="142" cy="52" r="7"/>
+                    <circle cx="38" cy="82" r="7"/><circle cx="68" cy="86" r="7"/><circle cx="98" cy="84" r="7"/><circle cx="128" cy="90" r="7"/>
+                    <circle cx="25" cy="112" r="7"/><circle cx="58" cy="118" r="7"/><circle cx="90" cy="114" r="7"/><circle cx="120" cy="122" r="7"/>
+                  </g>
+                  <text x="90" y="162" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#58524C">miljoenen gewichts-varianten</text>
+                </g>
+
+                <text x="225" y="83" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#1971c2" letter-spacing="0.12em">VERLIESFUNCTIE</text>
+                <line x1="185" y1="100" x2="260" y2="100" stroke="#1971c2" stroke-width="2.2" marker-end="url(#arrAi)"/>
+                <text x="225" y="124" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#58524C">beste scores</text>
+
+                <g transform="translate(278, 78)">
+                  <circle cx="15" cy="15" r="10" fill="#1971c2" stroke="#1971c2" stroke-width="2"/>
+                  <circle cx="42" cy="32" r="10" fill="#1971c2" stroke="#1971c2" stroke-width="2"/>
+                  <circle cx="15" cy="48" r="10" fill="#1971c2" stroke="#1971c2" stroke-width="2"/>
+                </g>
+
+                <text x="390" y="83" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#1971c2" letter-spacing="0.12em">NIEUWE EPOCH</text>
+                <line x1="348" y1="100" x2="432" y2="100" stroke="#1971c2" stroke-width="2.2" marker-end="url(#arrAi)"/>
+
+                <g transform="translate(450, 38)">
+                  <text x="90" y="-12" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" font-weight="700" fill="#1971c2" letter-spacing="0.12em">GENERATIE 2</text>
+                  <g fill="#d0ebff" stroke="#1971c2" stroke-width="1">
+                    <circle cx="35" cy="18" r="7"/><circle cx="63" cy="12" r="7"/><circle cx="92" cy="24" r="7"/><circle cx="120" cy="14" r="7"/><circle cx="148" cy="22" r="7"/>
+                    <circle cx="22" cy="50" r="7"/><circle cx="52" cy="58" r="7"/><circle cx="82" cy="50" r="7"/><circle cx="112" cy="62" r="7"/><circle cx="145" cy="55" r="7"/>
+                    <circle cx="42" cy="82" r="7"/><circle cx="72" cy="88" r="7"/><circle cx="102" cy="84" r="7"/><circle cx="132" cy="90" r="7"/>
+                    <circle cx="28" cy="114" r="7"/><circle cx="62" cy="118" r="7"/><circle cx="94" cy="114" r="7"/><circle cx="124" cy="122" r="7"/>
+                  </g>
+                  <text x="90" y="162" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#58524C">betere scores, opnieuw miljoenen</text>
+                </g>
+
+                <path d="M 610 210 Q 400 248 170 248 Q 90 248 90 232" fill="none" stroke="#1971c2" stroke-width="2" stroke-dasharray="5 5" marker-end="url(#arrAi)"/>
+                <text x="400" y="285" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#1971c2" letter-spacing="0.1em">HERHAAL</text>
+              </svg>
+            </div>
+
+            <div class="gens-caption">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>
+              <span><b>Dezelfde loop, miljoen keer</b> · miljarden jaren voor DNA, maanden voor een AI-model</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUMMARY TABLE -->
+  <div class="table-wrap">
+    <div class="table-inner reveal-target">
+      <h3>Kort samengevat</h3>
+      <table class="sum-table">
+        <thead>
+          <tr>
+            <th style="width: 26%;">Begrip</th>
+            <th style="width: 34%;">In jouw brein</th>
+            <th>Bij Claude</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Bewust denken</td><td>Neocortex</td><td>Opus, voor grondig werk</td></tr>
+          <tr><td>Patroonherkenning</td><td>Limbisch systeem</td><td>Sonnet, voor dagelijks werk</td></tr>
+          <tr><td>Reflexen</td><td>Reptielenbrein, cerebellum</td><td>Haiku, voor classificatie op schaal</td></tr>
+          <tr><td>Werkgeheugen</td><td>~7 items in prefrontale cortex</td><td>Context window, 200.000 tokens</td></tr>
+          <tr><td>Skills</td><td>Myeline, basale ganglia, spiergeheugen</td><td>Slash-commando's, CLAUDE.md, skill-bestanden</td></tr>
+          <tr><td>Langetermijngeheugen</td><td>Hippocampus schrijft naar cortex, associatief ophalen</td><td>Open Brain, vector-databases</td></tr>
+          <tr><td>Oorsprong</td><td>DNA-variatie, selectie, reproductie, miljarden jaren</td><td>Gewichts-variatie, verliesfunctie, nieuwe generatie, maanden</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-wrap">
+    <div class="cta-inner reveal-target">
+      <h3>Wil je Claude inzetten in jouw werk?</h3>
+      <p>We helpen je stap voor stap, van eerste experiment tot dagelijks gebruik.</p>
+      <a href="/ai-enablement-scan" class="cta-btn">Doe de gratis AI-check</a>
+    </div>
+  </div>
+</BasisLayout>
+
+<style>
+  /* Local design tokens (mirror global) */
+  :root {
+    --pg-papier: var(--color-papier, #FAF7F2);
+    --pg-papier-dieper: var(--color-papier-dieper, #F2ECE0);
+    --pg-inkt: var(--color-inkt, #2A2725);
+    --pg-inkt-zacht: var(--color-inkt-zacht, #58524C);
+    --pg-accent-diep: var(--color-accent-diep, #A35A41);
+    --pg-teal: var(--color-teal, #0f766e);
+    --pg-teal-diep: var(--color-teal-diep, #115e58);
+    --pg-lijn: var(--color-lijn, #E6DFD2);
+  }
+
+  /* HERO */
+  .hero-wrap {
+    background: linear-gradient(180deg, var(--pg-papier-dieper) 0%, var(--pg-papier) 100%);
+    padding: 88px 24px 48px;
+  }
+  .hero {
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+  .eyebrow {
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--pg-inkt-zacht);
+    margin: 0 0 20px 0;
+  }
+  .hero h1 {
+    font-size: clamp(2.5rem, 4.5vw + 1rem, 4rem);
+    letter-spacing: -0.035em;
+    margin-bottom: 24px;
+    max-width: 780px;
+  }
+  .hero-lede {
+    font-size: 1.3rem;
+    color: var(--pg-inkt-zacht);
+    max-width: 680px;
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  /* PANELS */
+  .panel {
+    padding: 104px 24px;
+    border-bottom: 1px solid var(--pg-lijn);
+  }
+  .panel:nth-child(even) { background: var(--pg-papier-dieper); }
+
+  .panel-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+    gap: 72px;
+    align-items: center;
+  }
+  .panel-inner.reverse .panel-copy { order: 2; }
+  .panel-inner.reverse .panel-visual { order: 1; }
+
+  .panel-step {
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--pg-accent-diep);
+    margin-bottom: 18px;
+  }
+  .panel-copy h2 {
+    font-size: clamp(2rem, 2.6vw + 1rem, 2.75rem);
+    margin-bottom: 24px;
+  }
+  .panel-copy p {
+    color: var(--pg-inkt);
+    margin: 0 0 18px 0;
+    font-size: 1.2rem;
+    line-height: 1.7;
+  }
+  .panel-copy p.dim { color: var(--pg-inkt-zacht); }
+  .callout {
+    background: var(--pg-papier);
+    border: 1px solid var(--pg-lijn);
+    border-left: 3px solid var(--pg-accent-diep);
+    padding: 18px 22px;
+    border-radius: 0 10px 10px 0;
+    font-size: 1.05rem;
+    margin-top: 24px;
+    line-height: 1.6;
+  }
+  .panel:nth-child(even) .callout { background: white; }
+  .callout strong { color: var(--pg-inkt); font-weight: 700; }
+
+  /* VISUAL CONTAINER */
+  .visual-card {
+    background: white;
+    border: 1px solid var(--pg-lijn);
+    border-radius: 16px;
+    padding: 36px;
+    box-shadow: 0 2px 14px rgba(0,0,0,0.04);
+  }
+  .panel:nth-child(even) .visual-card { background: var(--pg-papier); }
+  .vc-label {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--pg-inkt-zacht);
+    margin-bottom: 22px;
+  }
+
+  /* VISUAL 1 — BRAIN */
+  .brain-vis {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 32px;
+    align-items: center;
+  }
+  .brain-svg { width: 100%; height: auto; display: block; }
+  .brain-legend {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    font-family: var(--font-sans);
+  }
+  .legend-row {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 14px;
+  }
+  .legend-swatch { width: 18px; height: 18px; border-radius: 5px; }
+  .legend-name {
+    font-family: var(--font-serif);
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--pg-inkt);
+  }
+  .legend-sub {
+    font-size: 0.9rem;
+    color: var(--pg-inkt-zacht);
+    margin-top: 2px;
+    display: block;
+  }
+  .legend-model {
+    padding: 8px 18px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.92rem;
+    color: #FAF7F2;
+    white-space: nowrap;
+  }
+  .legend-opus   .legend-swatch { background: #2A2725; }
+  .legend-sonnet .legend-swatch { background: #c2185b; }
+  .legend-haiku  .legend-swatch { background: #8b4513; }
+  .legend-opus   .legend-model  { background: #2A2725; }
+  .legend-sonnet .legend-model  { background: #c2185b; }
+  .legend-haiku  .legend-model  { background: #8b4513; }
+
+  /* VISUAL 2 — WORKING MEMORY */
+  .wm {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+  }
+  .wm-row {
+    display: grid;
+    grid-template-columns: auto repeat(7, 1fr) auto;
+    gap: 12px;
+    align-items: center;
+    width: 100%;
+  }
+  .wm-inout {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  .wm-in { color: #2f9e44; }
+  .wm-out { color: #e03131; }
+  .wm-slot {
+    aspect-ratio: 1;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-serif);
+    font-weight: 700;
+    font-size: 1.7rem;
+    background: #f8f9fa;
+    color: #adb5bd;
+    border: 1px solid #E6DFD2;
+  }
+  .wm-slot.dim { opacity: 0.55; }
+  .wm-slot.fade { opacity: 0.25; }
+  .wm-slot.active {
+    background: #fff8dc;
+    color: #7a5600;
+    border: 1.5px solid #f59f00;
+    box-shadow: 0 0 0 3px rgba(245, 159, 0, 0.15);
+  }
+  .wm-caption {
+    font-size: 1rem;
+    color: var(--pg-inkt-zacht);
+    text-align: center;
+  }
+  .wm-caption b { color: #7a5600; font-weight: 700; }
+
+  /* VISUAL 3 — PAVED PATH */
+  .path-svg { width: 100%; height: auto; display: block; }
+  .path-legend {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 22px;
+  }
+  .path-legend-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 16px;
+    border-radius: 10px;
+    border: 1px solid var(--pg-lijn);
+    background: var(--pg-papier);
+  }
+  .panel:nth-child(even) .path-legend-item { background: white; }
+  .path-legend-item .swatch {
+    width: 22px;
+    min-width: 22px;
+    height: 6px;
+    border-radius: 3px;
+    margin-top: 9px;
+  }
+  .path-legend-item.raw  .swatch { background: #e8590c; opacity: 0.55; }
+  .path-legend-item.fast .swatch { background: #2f9e44; }
+  .path-legend-item strong {
+    font-family: var(--font-serif);
+    font-weight: 700;
+    color: var(--pg-inkt);
+    font-size: 1rem;
+  }
+  .path-legend-item div {
+    font-size: 0.88rem;
+    color: var(--pg-inkt-zacht);
+    line-height: 1.5;
+  }
+
+  /* VISUAL 4 — UNIFIED MEMORY */
+  .mem2 {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    align-items: center;
+  }
+  .mem2-claude {
+    background: var(--pg-inkt);
+    color: var(--pg-papier);
+    border-radius: 12px;
+    padding: 14px 28px;
+    font-family: var(--font-serif);
+    font-weight: 700;
+    font-size: 1.15rem;
+    min-width: 240px;
+    text-align: center;
+  }
+  .mem2-claude small {
+    display: block;
+    font-family: var(--font-sans);
+    font-weight: 400;
+    font-size: 0.82rem;
+    color: rgba(250,247,242,0.65);
+    margin-top: 2px;
+  }
+  .mem2-arrow {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    color: #7048e8;
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .mem2-brain {
+    width: 100%;
+    background: #f7f2ff;
+    border: 1.5px solid #7048e8;
+    border-radius: 22px;
+    padding: 22px 24px 26px;
+  }
+  .mem2-brain-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 14px;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .mem2-brain-label {
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #7048e8;
+  }
+  .mem2-brain-title {
+    font-family: var(--font-serif);
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--pg-inkt);
+  }
+  .mem2-brain-sub {
+    font-size: 0.85rem;
+    color: var(--pg-inkt-zacht);
+  }
+  .assoc2 {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 2 / 1;
+    min-height: 260px;
+  }
+  .assoc2 svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .assoc2-node {
+    position: absolute;
+    padding: 9px 16px;
+    border-radius: 999px;
+    font-family: var(--font-sans);
+    font-size: 0.92rem;
+    font-weight: 600;
+    border: 1px solid var(--pg-lijn);
+    background: white;
+    color: var(--pg-inkt-zacht);
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    z-index: 2;
+  }
+  .assoc2-node.close {
+    border-color: #f59f00;
+    color: var(--pg-inkt);
+    background: #fff8dc;
+  }
+  .assoc2-node.center {
+    background: #fff4d6;
+    color: #7a5600;
+    border: 2px solid #f59f00;
+    font-weight: 700;
+    font-size: 1.05rem;
+    padding: 12px 22px;
+    box-shadow: 0 0 0 5px rgba(245, 159, 0, 0.15);
+  }
+  .assoc2-caption {
+    text-align: center;
+    font-size: 0.88rem;
+    color: var(--pg-inkt-zacht);
+    margin-top: 4px;
+  }
+  .assoc2-caption b { color: var(--pg-inkt); }
+
+  /* VISUAL 5 — GENERATIONS */
+  .gens {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+  }
+  .gens-row {
+    display: grid;
+    grid-template-columns: 96px 1fr;
+    gap: 18px;
+    align-items: center;
+  }
+  .gens-row-label {
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+  .gens-row.dna .gens-row-label { color: #2f9e44; }
+  .gens-row.ai  .gens-row-label { color: #1971c2; }
+  .gens-svg { width: 100%; height: auto; display: block; }
+  .gens-caption {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 20px;
+    border: 1px dashed var(--pg-lijn);
+    border-radius: 999px;
+    justify-content: center;
+    font-size: 0.95rem;
+    color: var(--pg-inkt-zacht);
+  }
+  .gens-caption b { color: var(--pg-inkt); font-weight: 700; }
+
+  /* SUMMARY TABLE (DARK) */
+  .table-wrap {
+    background: var(--pg-inkt);
+    color: var(--pg-papier);
+    padding: 104px 24px;
+  }
+  .table-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .table-inner h3 {
+    color: var(--pg-papier);
+    font-size: clamp(1.75rem, 2.2vw + 0.8rem, 2.5rem);
+    margin-bottom: 40px;
+  }
+  .sum-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1.02rem;
+  }
+  .sum-table th {
+    text-align: left;
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 0.82rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(250,247,242,0.55);
+    padding: 14px 18px;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+  }
+  .sum-table td {
+    padding: 22px 18px;
+    border-bottom: 1px solid rgba(255,255,255,0.09);
+    vertical-align: top;
+    color: rgba(250,247,242,0.85);
+    line-height: 1.6;
+  }
+  .sum-table td:first-child {
+    font-family: var(--font-serif);
+    font-weight: 700;
+    color: var(--pg-papier);
+    font-size: 1.1rem;
+  }
+
+  /* CTA */
+  .cta-wrap {
+    padding: 96px 24px 128px;
+    background: var(--pg-papier);
+  }
+  .cta-inner {
+    max-width: 840px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 64px 40px;
+    background: white;
+    border: 1px solid var(--pg-lijn);
+    border-radius: 16px;
+  }
+  .cta-inner h3 {
+    font-size: 1.9rem;
+    margin-bottom: 14px;
+  }
+  .cta-inner p {
+    color: var(--pg-inkt-zacht);
+    margin-bottom: 32px;
+    font-size: 1.15rem;
+  }
+  .cta-btn {
+    display: inline-block;
+    padding: 18px 38px;
+    background: var(--pg-teal);
+    color: #FAF7F2;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1.05rem;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .cta-btn:hover {
+    background: var(--pg-teal-diep);
+    transform: translateY(-1px);
+    color: #FAF7F2;
+  }
+
+  @media (max-width: 960px) {
+    .panel-inner {
+      grid-template-columns: 1fr;
+      gap: 44px;
+    }
+    .panel-inner.reverse .panel-copy { order: 0; }
+    .panel-inner.reverse .panel-visual { order: 0; }
+    .panel { padding: 72px 20px; }
+    .hero-wrap { padding: 56px 20px 32px; }
+    .brain-vis { grid-template-columns: 1fr; }
+    .panel-copy p { font-size: 1.08rem; }
+    .gens-row { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 520px) {
+    .wm-row { grid-template-columns: repeat(7, 1fr); }
+    .wm-inout { display: none; }
+    .visual-card { padding: 22px; }
+  }
+</style>

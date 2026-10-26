@@ -1,0 +1,84 @@
+---
+import BasisLayout from './BasisLayout.astro';
+import { seoVoorEntry } from '../lib/schema';
+import KortAntwoord from '../components/KortAntwoord.astro';
+import ArtikelMeta from '../components/ArtikelMeta.astro';
+import Broodkruimel from '../components/Broodkruimel.astro';
+import AuthorBio from '../components/AuthorBio.astro';
+import FaqSectie from '../components/FaqSectie.astro';
+import BronnenBlok from '../components/BronnenBlok.astro';
+import CtaStrook from '../components/CtaStrook.astro';
+import GerelateerdeLinks from '../components/GerelateerdeLinks.astro';
+
+interface Props {
+  entry: {
+    data: {
+      title: string;
+      titleTag: string;
+      metaDescription: string;
+      h1: string;
+      schemaTypes: string[];
+      author: 'camiel';
+      internalLinks: string[];
+      publishDate: Date | null;
+      updatedDate: Date | null;
+      reviewedBy: string | null;
+      reviewedDate: Date | null;
+      disclaimer: 'juridisch' | 'fiscaal' | 'juridisch-fiscaal' | null;
+      changelogLine: string | null;
+      kortAntwoord: string | null;
+      bronnen: Array<{ titel: string; url: string | null; geraadpleegd: string | null }>;
+      faq: Array<{ question: string; answer: string }>;
+      softwareName: string;
+      softwareUrl: string;
+    };
+    id: string;
+  };
+  pagePath: string;
+}
+
+const { entry, pagePath } = Astro.props;
+const { data } = entry;
+
+const breadcrumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'Integraties', url: '/integraties' },
+  { name: data.title, url: pagePath },
+];
+const seo = seoVoorEntry({ pad: pagePath, sectie: 'Integraties', breadcrumbs, data });
+---
+<BasisLayout titel={data.titleTag} beschrijving={data.metaDescription} pad={pagePath} schema={seo.schema} artikel={seo.artikel}>
+  <article class="max-w-3xl mx-auto px-6 pt-16 pb-8">
+    <Broodkruimel items={breadcrumbs} />
+
+    <header class="mt-6">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="text-[13px] font-semibold uppercase tracking-[0.1em] text-terracotta">
+          Integratie
+        </span>
+        <a href={data.softwareUrl} target="_blank" rel="noopener" class="text-sm text-accent-diep no-underline hover:underline">
+          {data.softwareName}
+        </a>
+      </div>
+      <h1 class="font-newsreader font-medium leading-[1.12] tracking-[-0.015em] text-[length:var(--text-h1)] text-balance">{data.h1}</h1>
+      <ArtikelMeta publishDate={data.publishDate} updatedDate={data.updatedDate} author={data.author} reviewedBy={data.reviewedBy} reviewedDate={data.reviewedDate} disclaimer={data.disclaimer} />
+    </header>
+
+    <KortAntwoord tekst={data.kortAntwoord} stand={data.updatedDate ?? data.publishDate} />
+
+    <div class="mt-10 prose prose-lg max-w-none">
+      <slot />
+    </div>
+
+    <BronnenBlok bronnen={data.bronnen} />
+
+    {data.faq.length > 0 && <FaqSectie items={data.faq} />}
+
+    <AuthorBio author={data.author} />
+  </article>
+
+  <div class="max-w-3xl mx-auto px-6">
+    <CtaStrook />
+    <GerelateerdeLinks links={data.internalLinks} />
+  </div>
+</BasisLayout>

@@ -1,0 +1,317 @@
+---
+import BasisLayout from '../../layouts/BasisLayout.astro';
+import Broodkruimel from '../../components/Broodkruimel.astro';
+import KortAntwoord from '../../components/KortAntwoord.astro';
+import BronnenBlok from '../../components/BronnenBlok.astro';
+import FaqSectie from '../../components/FaqSectie.astro';
+import AuthorBio from '../../components/AuthorBio.astro';
+import CtaStrook from '../../components/CtaStrook.astro';
+import { faqNode } from '../../lib/schema';
+
+// Overstapgids (besluit D-C3). De keuzevraag "Claude of ChatGPT" hoort bij
+// src/content/vergelijkingen/claude-vs-chatgpt.md; deze pagina gaat over de overstap.
+const pad = '/gids/overstappen-van-chatgpt-naar-claude';
+const titel = 'Overstappen van ChatGPT naar Claude: zakelijk stappenplan';
+const h1 = 'Van ChatGPT naar Claude overstappen: kosten en stappenplan';
+const beschrijving =
+  'Overstappen van ChatGPT naar Claude? Wanneer het loont en wanneer niet, wat het echt kost en hoe je Claude in twee weken test met één team.';
+const gepubliceerd = '2026-10-02';
+const bijgewerkt = '2026-10-02';
+const geraadpleegd = '2 oktober 2026';
+
+const datumNl = (iso: string) =>
+  new Date(iso).toLocaleDateString('nl-NL', { day: 'numeric', month: 'long', year: 'numeric' });
+
+const kortAntwoord =
+  'Gebruikt je team ChatGPT vooral voor beeld en korte losse vragen, dan levert overstappen weinig op. Werk je veel met lange teksten, documenten of automatisering, test dan Claude. De licentie kost hetzelfde: 20 dollar per gebruiker per maand bij jaarbetaling (stand 2 oktober 2026). De echte overstapkosten zitten in gewoontes, prompts en twee weken testen.';
+
+const faq = [
+  {
+    question: 'Is overstappen van ChatGPT naar Claude duur?',
+    answer:
+      'De licentie niet. Claude Team en ChatGPT Business kosten allebei 20 dollar per gebruiker per maand bij jaarbetaling en 25 dollar bij maandbetaling, zonder btw. De kosten zitten in tijd: prompts en eigen GPT\'s overzetten, mensen inwerken en een korte periode waarin je beide tools betaalt.',
+  },
+  {
+    question: 'Kan ik mijn ChatGPT-gesprekken meenemen naar Claude?',
+    answer:
+      'Nee. De import van Claude is alleen voor geheugen. Je laat ChatGPT opschrijven wat het over je werk heeft onthouden en plakt dat in Claude. Anthropic noemt die functie nog experimenteel. In een ChatGPT Business-werkruimte kun je gesprekken ook niet zelf exporteren. Met een los Plus-account kan dat wel.',
+  },
+  {
+    question: 'Kun je Claude en ChatGPT naast elkaar gebruiken?',
+    answer:
+      'Ja. Dat kan op twee manieren. Iedereen krijgt tijdelijk beide tools, dan betaal je per persoon dubbel. Of je verdeelt per rol: bijvoorbeeld ChatGPT voor wie veel beeld maakt en Claude voor de rest. Dan betaal je per persoon één licentie.',
+  },
+  {
+    question: 'Gebruiken Claude en ChatGPT mijn bedrijfsdata om te trainen?',
+    answer:
+      'Op de zakelijke abonnementen standaard niet. Dat geldt voor Claude Team en Enterprise en voor ChatGPT Business en Enterprise. Gebruik voor bedrijfsdata daarom geen losse privéaccounts, en spreek met je team af wat wel en niet in een chat mag.',
+  },
+  {
+    question: 'Kan Claude afbeeldingen maken zoals ChatGPT?',
+    answer:
+      'Nee. Volgens Anthropic maakt Claude geen foto\'s of illustraties zoals beeldgeneratoren dat doen. Claude kan wel grafieken, diagrammen en schema\'s bouwen en afbeeldingen lezen die je uploadt. Maakt je team dagelijks beeld, dan is dat een reden om ChatGPT te houden, in elk geval voor die mensen.',
+  },
+];
+
+const bronnen = [
+  { titel: 'Anthropic: Claude pricing (claude.com/pricing)', url: 'https://claude.com/pricing', geraadpleegd },
+  { titel: 'Anthropic Help Center: What is the Team plan?', url: 'https://support.claude.com/en/articles/9266767-what-is-the-team-plan', geraadpleegd },
+  { titel: 'Anthropic Help Center: Import and export your memory from Claude', url: 'https://support.claude.com/en/articles/12123587-import-and-export-your-memory-from-claude', geraadpleegd },
+  { titel: 'Anthropic Help Center: Can Claude produce images?', url: 'https://support.claude.com/en/articles/9002504-can-claude-produce-images', geraadpleegd },
+  { titel: "Anthropic Help Center: Export your organization's data", url: 'https://support.claude.com/en/articles/13346720-export-your-organization-s-data', geraadpleegd },
+  { titel: 'OpenAI: ChatGPT Business pricing', url: 'https://openai.com/business/chatgpt-pricing/', geraadpleegd },
+  { titel: 'OpenAI Help Center: Managing data, sharing, and privacy in ChatGPT Business', url: 'https://help.openai.com/en/articles/8798634-managing-data-sharing-and-privacy-in-chatgpt-business', geraadpleegd },
+  { titel: 'OpenAI Help Center: ChatGPT Business General FAQ', url: 'https://help.openai.com/en/articles/8542115-chatgpt-business-general-faq', geraadpleegd },
+  { titel: 'OpenAI Help Center: Exporting your ChatGPT history and data', url: 'https://help.openai.com/en/articles/7260999-exporting-your-chatgpt-history-and-data', geraadpleegd },
+  { titel: 'OpenAI Help Center: SharePoint app in ChatGPT', url: 'https://help.openai.com/en/articles/12143177-sharepoint-apps-in-chatgpt', geraadpleegd },
+  { titel: 'OpenAI Help Center: ChatGPT Business release notes', url: 'https://help.openai.com/en/articles/11391654-chatgpt-business-release-notes', geraadpleegd },
+];
+
+const breadcrumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'Gidsen', url: '/gids' },
+  { name: 'Overstappen van ChatGPT naar Claude', url: pad },
+];
+
+---
+<BasisLayout
+  titel={titel}
+  beschrijving={beschrijving}
+  pad={pad}
+  schema={{ breadcrumbs, nodes: [faqNode(pad, faq)], personen: ['camiel'] }}
+  artikel={{ headline: h1, gepubliceerd, bijgewerkt, auteur: 'camiel', sectie: 'Gids' }}
+>
+  <article class="max-w-3xl mx-auto px-6 pt-16 pb-8">
+    <Broodkruimel items={breadcrumbs} />
+
+    <header class="mt-6">
+      <span class="text-[13px] font-semibold uppercase tracking-[0.1em] text-terracotta">Gids</span>
+      <h1 class="font-newsreader font-medium leading-[1.12] tracking-[-0.015em] text-[length:var(--text-h1)] mt-4 text-balance">{h1}</h1>
+      <p class="text-sm text-inkt-zacht mt-3">
+        Gepubliceerd op <time datetime={gepubliceerd}>{datumNl(gepubliceerd)}</time>
+        <span aria-hidden="true"> · </span>
+        Bijgewerkt op <time datetime={bijgewerkt}>{datumNl(bijgewerkt)}</time>
+      </p>
+    </header>
+
+    <KortAntwoord tekst={kortAntwoord} />
+
+    <div class="mt-10 prose prose-lg max-w-none">
+      <p>
+        Betaal je al voor ChatGPT en hoor je steeds vaker over Claude? Dan wil je weten of overstappen iets
+        oplevert, en wat het kost. Deze gids helpt je kiezen. Je leest wanneer ChatGPT de betere keuze blijft,
+        wanneer Claude beter past en wat een overstap in de praktijk vraagt van je team.
+      </p>
+      <p>
+        Eerlijk vooraf: wij implementeren alleen Claude. Dat is onze specialisatie. Toch raden we een overstap
+        lang niet altijd aan. Soms is blijven bij ChatGPT verstandiger, en dat staat hieronder ook.
+      </p>
+      <p>Wil je eerst weten welke van de twee bij je werk past? Lees dan <a href="/vergelijken/claude-vs-chatgpt">Claude vs ChatGPT zakelijk</a>. Deze gids gaat over de overstap zelf.</p>
+
+      <h2>Welke vraag stel je eigenlijk?</h2>
+      <p>
+        Voor een bedrijf dat al ChatGPT gebruikt, gaat het zelden om de vraag welke tool slimmer is. Beide zijn
+        sterke AI-assistenten en ze worden allebei snel beter. De echte vraag is of het verschil op jouw werk groot
+        genoeg is om een overstap te betalen. Die overstap kost vooral tijd van jou en van je team.
+      </p>
+      <p>
+        Je hebt drie opties. Je blijft bij ChatGPT, je stapt over naar Claude, of je gebruikt ze een tijd naast
+        elkaar. Elke optie kan de goede zijn. Dat hangt af van wat je team de hele dag doet.
+      </p>
+
+      <h2>Wanneer blijf je beter bij ChatGPT?</h2>
+      <p>Er zijn goede redenen om niet over te stappen. Herken je er twee of meer, dan is blijven vaak de beste keuze.</p>
+      <ul>
+        <li>
+          <strong>Je team maakt veel beeld.</strong> ChatGPT kan afbeeldingen genereren. Claude maakt volgens
+          Anthropic zelf geen foto's of illustraties. Claude bouwt wel grafieken, diagrammen en schema's. Maakt je
+          marketingteam elke dag beelden, dan lever je daar iets in.
+        </li>
+        <li>
+          <strong>Je hebt veel eigen GPT's gebouwd.</strong> Een custom GPT gaat niet vanzelf mee naar Claude. Je
+          kunt de instructies en bestanden overzetten naar een project in Claude, maar dat is handwerk per GPT. Bij
+          twintig GPT's die dagelijks draaien is dat een flinke klus.
+        </li>
+        <li>
+          <strong>Het werk bestaat uit korte, losse vragen.</strong> Denk aan een mail herschrijven, iets uitzoeken of
+          een idee uitwerken, en daarvoor zijn beide tools prima. Het verschil weegt dan niet op tegen de moeite van wennen.
+        </li>
+        <li>
+          <strong>Iedereen gebruikt het al en is tevreden.</strong> Een tool die het hele team echt gebruikt, levert
+          meer op dan een betere tool die half blijft liggen.
+        </li>
+      </ul>
+      <p>
+        Herken je je bedrijf vooral hierin? Blijf dan bij ChatGPT. Steek de tijd liever in betere prompts en in
+        afspraken over wat wel en niet in een chat mag.
+      </p>
+
+      <h2>Wanneer past Claude beter bij je bedrijf?</h2>
+      <p>Claude wordt interessant als je team veel schrijft, lange stukken leest of werk wil automatiseren.</p>
+      <ul>
+        <li>
+          <strong>Lange documenten en dossiers.</strong> Op het Team-abonnement heeft Claude een contextvenster van
+          200.000 tokens. Dat is de hoeveelheid tekst die Claude in één gesprek kan meenemen. Er past een flink
+          contract, rapport of dossier in.
+        </li>
+        <li>
+          <strong>Teksten die naar klanten gaan.</strong> Offertes, adviesrapporten, beleidsstukken. In ons werk
+          zien we dat teksten uit Claude minder nabewerking vragen. Dat is onze ervaring en geen meting. Test het
+          daarom zelf op je eigen documenten, zoals verderop beschreven.
+        </li>
+        <li>
+          <strong>Automatiseren en bouwen.</strong> Claude Code zit bij elke Team-plek inbegrepen. Daarmee bouwde
+          ons team eerder bij een Nederlandse IT-dienstverlener in vijf werkdagen een
+          <a href="/cases/knowledge-base">kennisbank van 13 artikelen met 27 screenshots</a>. Bij een
+          IT-consultancybureau zette ons team opgenomen klantgesprekken om in korte briefs:
+          <a href="/cases/consultant-brief">van 45 naar 5 minuten uitwerktijd per gesprek</a>. Eerlijk is eerlijk:
+          ChatGPT Business heeft met Codex ook een programmeeragent. Kijk dus vooral naar wat je wilt bouwen en wie
+          in je team dat gaat doen.
+        </li>
+      </ul>
+      <p>
+        Werk je in Microsoft 365 of Google Workspace? Beide tools hebben koppelingen met die omgevingen, zoals
+        SharePoint en Google Drive. Controleer vooraf of de koppeling die jij nodig hebt bij beide bestaat. Dat
+        verschilt per systeem en verandert vaak.
+      </p>
+
+      <h2>Wat kost Claude naast of in plaats van ChatGPT?</h2>
+      <p>
+        De lijstprijzen liggen gelijk. Beide aanbieders rekenen in dollars en tonen prijzen zonder btw. Dit zijn de
+        prijzen op {geraadpleegd}:
+      </p>
+      <ul>
+        <li>
+          <strong>Claude Team, standaardplek:</strong> 20 dollar per gebruiker per maand bij jaarbetaling, 25 dollar
+          bij maandbetaling. Minimaal 2 en maximaal 150 plekken.
+        </li>
+        <li>
+          <strong>ChatGPT Business, standaardplek:</strong> 20 dollar per gebruiker per maand bij jaarbetaling, 25
+          dollar bij maandbetaling. Minimaal 2 plekken.
+        </li>
+        <li>
+          <strong>Premiumplek bij allebei:</strong> vijf keer zoveel gebruik als een standaardplek, voor 100 dollar
+          per maand bij jaarbetaling of 125 dollar bij maandbetaling.
+        </li>
+      </ul>
+      <p>
+        Een overstap bespaart dus niets op de licentie, en kost er ook niets extra op. Naast elkaar draaien kost wel
+        geld. Een team van tien mensen op maandbetaling betaalt 250 dollar per maand voor één tool. Met beide tools
+        erbij is dat 500 dollar per maand. Houd die periode kort en zet er vooraf een einddatum op.
+      </p>
+      <p>
+        Het meeste geld zit in uren. Reken op inwerktijd per medewerker en op tijd om prompts en GPT's over te
+        zetten. Reken ook op een paar weken waarin mensen nog zoeken waar alles zit. Die uren zijn vaak meer waard
+        dan een maand licenties.
+      </p>
+
+      <h2>Wat regel je als je overstapt van ChatGPT naar Claude?</h2>
+
+      <h3>Accounts</h3>
+      <p>
+        Kies Claude Team of Enterprise en geen losse Pro-accounts. Op Team traint Anthropic standaard niet op je
+        gegevens. Je hebt centrale facturatie en beheer, en je kunt single sign-on (SSO) instellen. Dan loggen
+        medewerkers in met hun bestaande werkaccount. Zo voorkom je dat iemand met een privéaccount en klantdata aan
+        de slag gaat. Voor de volledigheid: ook ChatGPT Business traint standaard niet op bedrijfsdata. Op dit punt
+        hoef je dus niet te kiezen.
+      </p>
+
+      <h3>Oude gesprekken en data</h3>
+      <p>
+        Dit punt missen veel bedrijven. In een ChatGPT Business-werkruimte bestaat geen zelfbediening voor
+        data-export, ook niet voor de eigenaar. Losse accounts (Free, Go, Plus en Pro) kunnen wel exporteren via
+        Instellingen, Gegevensbeheer, Exporteren. Je krijgt dan een mail met een zip-bestand. De downloadlink werkt
+        24 uur.
+      </p>
+      <p>
+        Een export brengt je gesprekken nog niet naar Claude. De import van Anthropic is alleen voor geheugen. Je
+        laat ChatGPT met een vaste prompt opschrijven wat het over je werk heeft onthouden. Dat
+        plak je in Claude bij Instellingen, Geheugen. Die import werkt op Free, Pro, Max en Team. Anthropic noemt
+        hem nog experimenteel, dus controleer na afloop wat er is overgekomen.
+      </p>
+      <p>
+        In de praktijk begin je in Claude met een schone lei. Zet belangrijke uitkomsten uit ChatGPT vóór het
+        opzeggen in gewone documenten. Wil je later toch weg bij Claude, dan kan de primaire eigenaar van een Team-
+        of Enterprise-account de gegevens van de organisatie exporteren.
+      </p>
+
+      <h3>Prompts en eigen GPT's</h3>
+      <p>
+        Prompts zijn gewoon tekst, die neem je mee. Verzamel de prompts die je team echt gebruikt in één gedeeld
+        document. Een custom GPT bestaat uit instructies en bestanden. Die zet je in Claude in een project. Test elk
+        project daarna met een paar echte vragen, want dezelfde instructie kan in een andere tool net anders
+        uitpakken.
+      </p>
+
+      <h3>Gewoontes</h3>
+      <p>
+        Dit is het lastigste deel. ChatGPT staat bij veel mensen vastgezet in de browser en op hun telefoon. Spreek
+        af vanaf welke datum Claude de standaard is. Wijs per team één persoon aan die vragen beantwoordt en goede
+        prompts deelt. Een korte training in de eerste week scheelt veel losse vragen; dat doen we in <a href="/claude-in-30-dagen">Claude in 30 dagen</a>.
+      </p>
+
+      <h2>Hoe test je Claude in twee weken met één team?</h2>
+      <p>Neem geen besluit op basis van een demo. Test het op je eigen werk, met dit schema.</p>
+      <ol>
+        <li>
+          <strong>Kies één team van drie tot acht mensen.</strong> Liefst een team dat veel schrijft of met documenten
+          werkt. Eén persoon trekt de proef.
+        </li>
+        <li>
+          <strong>Kies drie taken die elke week terugkomen.</strong> Bijvoorbeeld een offerte, een rapportage en het
+          beantwoorden van klantvragen. Schrijf op hoe lang die nu duren.
+        </li>
+        <li>
+          <strong>Zet Claude Team op maandbetaling op.</strong> Voor vijf mensen is dat 125 dollar voor de eerste
+          maand, zonder btw. ChatGPT blijft gewoon aan staan.
+        </li>
+        <li>
+          <strong>Week 1: dezelfde taak in beide tools.</strong> Gebruik dezelfde input en dezelfde prompt. Noteer
+          per taak hoeveel minuten nabewerking het resultaat kost voordat het de deur uit kan.
+        </li>
+        <li>
+          <strong>Week 2: alleen Claude voor die drie taken.</strong> Zo merk je hoe het werkt als Claude de
+          standaard is, ook op de momenten dat mensen iets missen.
+        </li>
+        <li>
+          <strong>Dag 10: korte evaluatie.</strong> Bespreek met het team welke tool minder nabewerking vroeg, wat
+          mensen misten en wie terug wil naar ChatGPT, en waarom.
+        </li>
+      </ol>
+      <p>
+        Tel de minuten nabewerking. Een antwoord dat er goed uitziet en toch herschreven moet worden, kost gewoon
+        tijd. Wil je zo'n proef samen opzetten, met het team en de taken die bij jouw bedrijf horen? Dat doen we in
+        <a href="/claude-in-30-dagen">Claude in 30 dagen</a>.
+      </p>
+
+      <h2>Overstappen, naast elkaar of blijven: hoe beslis je?</h2>
+      <p>Na twee weken heb je genoeg gezien. Gebruik dan deze vuistregels.</p>
+      <ul>
+        <li>
+          <strong>Claude wint op twee of drie taken en het team wil door:</strong> stap over. Zet een einddatum op
+          ChatGPT en bewaar vooraf wat je nog nodig hebt.
+        </li>
+        <li>
+          <strong>Het beeld is gemengd:</strong> verdeel per rol. Wie veel beeld maakt houdt ChatGPT, de rest gaat
+          naar Claude. Iedereen heeft dan één licentie, dus je betaalt niet dubbel.
+        </li>
+        <li>
+          <strong>ChatGPT wint of niemand merkt verschil:</strong> blijf. Je hebt dan voor ongeveer 125 dollar
+          zekerheid gekocht, en je weet waarom je bij ChatGPT blijft.
+        </li>
+      </ul>
+      <p>
+        Wil je eerst begrijpen wat Claude doet en hoe het met je gegevens omgaat? Lees dan
+        <a href="/hoe-claude-werkt">hoe Claude werkt</a>. Of check met de
+        <a href="/ai-enablement-scan">gratis AI-check</a> in twee minuten waar je bedrijf staat. Meer gidsen vind je bij <a href="/gids">Claude gidsen voor bedrijven</a>.
+      </p>
+    </div>
+
+    <BronnenBlok bronnen={bronnen} />
+
+    <FaqSectie items={faq} />
+
+    <AuthorBio author="camiel" />
+  </article>
+  <div class="max-w-3xl mx-auto px-6"><CtaStrook /></div>
+</BasisLayout>

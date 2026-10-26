@@ -1,0 +1,113 @@
+---
+import { site, auteurs } from '../site';
+
+interface Props {
+  schemaTypes: string[];
+  title: string;
+  description: string;
+  url: string;
+  author: 'camiel';
+  publishDate?: Date | null;
+  updatedDate?: Date | null;
+  faqItems?: Array<{ question: string; answer: string }>;
+  breadcrumbs?: Array<{ name: string; url: string }>;
+  areaServed?: string;
+  /** Verplicht voor een geldige HowTo; zonder steps wordt het type overgeslagen. */
+  howToSteps?: Array<{ name: string; text: string }>;
+}
+
+const props = Astro.props;
+const fullUrl = new URL(props.url, site.url).toString();
+const authorInfo = auteurs[props.author];
+
+const schemas: unknown[] = [];
+
+for (const type of props.schemaTypes) {
+  if (type === 'Article') {
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: props.title,
+      description: props.description,
+      url: fullUrl,
+      image: new URL('/og-claudezakelijk.png', site.url).toString(),
+      inLanguage: 'nl-NL',
+      author: {
+        '@type': 'Person',
+        name: authorInfo.naam,
+        url: new URL(authorInfo.overAnker, site.url).toString(),
+        ...(authorInfo.foto && { image: new URL(authorInfo.foto, site.url).toString() }),
+        ...(authorInfo.linkedin && { sameAs: [authorInfo.linkedin] }),
+        jobTitle: authorInfo.functie,
+        worksFor: { '@type': 'Organization', name: site.naam },
+      },
+      publisher: { '@type': 'Organization', name: site.naam, url: site.url },
+      ...(props.publishDate && { datePublished: props.publishDate.toISOString() }),
+      ...(props.updatedDate && { dateModified: props.updatedDate.toISOString() }),
+    });
+  }
+
+  if (type === 'Service') {
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      name: props.title,
+      description: props.description,
+      url: fullUrl,
+      // Verwijst naar de sitewide organisatie-node uit SeoMeta/EntiteitSchema.
+      provider: { '@id': `${site.url}/#organisatie` },
+      areaServed: { '@type': 'Country', name: props.areaServed || 'NL' },
+    });
+  }
+
+  if (type === 'FAQPage' && props.faqItems && props.faqItems.length > 0) {
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: props.faqItems.map(item => ({
+        '@type': 'Question',
+        name: item.question,
+        acceptedAnswer: { '@type': 'Answer', text: item.answer },
+      })),
+    });
+  }
+
+  if (type === 'BreadcrumbList' && props.breadcrumbs && props.breadcrumbs.length > 0) {
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: props.breadcrumbs.map((crumb, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        name: crumb.name,
+        item: new URL(crumb.url, site.url).toString(),
+      })),
+    });
+  }
+
+  // HowTo vereist `step` (audit P1.13): alleen renderen als er echte steps-data
+  // is, anders overslaan — een HowTo zonder steps geeft Search Console-errors.
+  if (type === 'HowTo' && props.howToSteps && props.howToSteps.length > 0) {
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'HowTo',
+      name: props.title,
+      description: props.description,
+      inLanguage: 'nl-NL',
+      step: props.howToSteps.map((s, i) => ({
+        '@type': 'HowToStep',
+        position: i + 1,
+        name: s.name,
+        text: s.text,
+      })),
+    });
+  }
+
+  // De schemaTypes-enum in content.config.ts loopt sinds 12 juli 2026 1-op-1 met
+  // wat hier geïmplementeerd is (Article, Service, FAQPage, HowTo, BreadcrumbList).
+  // Nieuw type toevoegen? Eerst hier implementeren, dan pas in de enum opnemen.
+}
+---
+{schemas.map(schema => (
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+))}

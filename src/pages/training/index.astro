@@ -1,0 +1,32 @@
+---
+import { itemListNode, lijstId } from '../../lib/schema';
+import BasisLayout from '../../layouts/BasisLayout.astro';
+import Container from '../../components/Container.astro';
+import CollectieHub from '../../components/CollectieHub.astro';
+import { getPublished } from '../../lib/content';
+
+const artikelen = (await getPublished('training'))
+  .sort((a, b) => b.data.priority - a.data.priority || a.data.title.localeCompare(b.data.title));
+const items = artikelen.map((a) => ({
+      href: `/training/${a.id}`,
+      titel: a.data.title,
+      beschrijving: a.data.metaDescription,
+}));
+---
+<BasisLayout
+  titel="Training"
+  beschrijving="Claude-trainingen en workshops voor Nederlandse teams: van eerste kennismaking tot gevorderd gebruik in het dagelijkse werk."
+  pad="/training"
+  schema={{ paginaType: 'CollectionPage', hoofdonderwerp: lijstId('/training'), nodes: [itemListNode('/training', items.map((i) => ({ url: i.href, naam: i.titel })))] }}
+>
+  <Container class="pt-16 pb-12">
+    <CollectieHub
+      label="Training"
+      titel="Leer je team met Claude werken"
+      intro="Een tool die niemand gebruikt levert niets op. Trainingen en workshops die je team van eerste kennismaking naar dagelijks, zelfverzekerd gebruik brengen."
+      leesTekst="Bekijk de training"
+      leegTekst="Binnenkort meer: het trainingsaanbod wordt op dit moment uitgewerkt."
+      items={items}
+    />
+  </Container>
+</BasisLayout>

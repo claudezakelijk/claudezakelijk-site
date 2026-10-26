@@ -1,0 +1,42 @@
+---
+interface Props {
+  headers: string[];
+  rows: Array<{
+    feature: string;
+    values: string[];
+  }>;
+  verdict?: string;
+  caption: string;
+  stand?: string;
+}
+const { headers, rows, verdict, caption, stand } = Astro.props;
+---
+<div class="my-8 overflow-x-auto">
+  <table class="w-full text-sm border-collapse">
+    <caption class="caption-top text-left text-sm text-inkt-zacht pb-2">{caption}{stand ? `, stand ${stand}` : ''}</caption>
+    <thead>
+      <tr class="border-b-2 border-lijn">
+        <th scope="col" class="text-left p-3 font-semibold"><span class="sr-only">Onderdeel</span></th>
+        {headers.map(h => (
+          <th scope="col" class="text-center p-3 font-semibold">{h}</th>
+        ))}
+      </tr>
+    </thead>
+    <tbody>
+      {rows.map(row => (
+        <tr class="border-b border-lijn hover:bg-papier-dieper">
+          <th scope="row" class="p-3 text-left text-inkt font-medium">{row.feature}</th>
+          {row.values.map(v => (
+            <td class="p-3 text-center text-inkt-zacht">{v}</td>
+          ))}
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
+{verdict && (
+  <div class="my-6 rounded-lg bg-teal/5 border border-teal/20 p-6">
+    <p class="font-semibold text-teal-diep">Ons oordeel</p>
+    <p class="mt-2 text-inkt-zacht">{verdict}</p>
+  </div>
+)}

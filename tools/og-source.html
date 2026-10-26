@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@700&family=Inter:wght@600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1200px; height: 630px; overflow: hidden; }
+  .og {
+    width: 1200px; height: 630px;
+    background: #FAF7F2;
+    position: relative; overflow: hidden;
+    font-family: 'Inter', sans-serif;
+  }
+  .pattern {
+    position: absolute; inset: 0; opacity: 0.04;
+    background-image: repeating-linear-gradient(45deg, #2A2725 0, #2A2725 1px, transparent 0, transparent 50%);
+    background-size: 20px 20px;
+  }
+  .accent-bar {
+    position: absolute; top: 0; left: 0; width: 8px; height: 100%;
+    background: #CC785C;
+  }
+  .content {
+    position: absolute; inset: 0; padding: 60px 80px;
+    display: flex; flex-direction: column; justify-content: center;
+  }
+  .tagline {
+    font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 3px; color: #A35A41;
+    margin-bottom: 20px;
+  }
+  .headline {
+    font-family: 'Source Serif 4', serif; font-size: 72px; font-weight: 700;
+    line-height: 1.1; color: #2A2725; margin-bottom: 16px; letter-spacing: -0.5px;
+  }
+  .divider { width: 60px; height: 3px; background: #CC785C; margin: 20px 0; }
+  .subtitle {
+    font-family: 'Inter', sans-serif; font-size: 28px; color: #58524C; line-height: 1.4;
+  }
+  .brand {
+    position: absolute; bottom: 50px; left: 80px;
+    font-family: 'Source Serif 4', serif; font-size: 24px; font-weight: 700; color: #2A2725;
+  }
+</style>
+</head>
+<body>
+<div class="og">
+  <div class="pattern"></div>
+  <div class="accent-bar"></div>
+  <div class="content">
+    <div class="tagline">Claude voor het Nederlandse MKB</div>
+    <div class="headline">Uw team, 10× zo productief.</div>
+    <div class="divider"></div>
+    <div class="subtitle">Zonder angst. Zonder ontslagen. In het Nederlands.</div>
+  </div>
+  <div class="brand">ClaudeZakelijk</div>
+</div>
+</body>
+</html>

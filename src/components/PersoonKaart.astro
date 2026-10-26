@@ -1,0 +1,47 @@
+---
+/**
+ * Herbruikbaar persoon-blok: foto (of initialen-fallback) + quote + naam +
+ * functie + LinkedIn-knop. Te gebruiken op homepage, /over, artikelen, enz.
+ */
+interface Props {
+  naam: string;
+  functie: string;
+  quote: string;
+  linkedin: string;
+  foto?: string;
+  initialen?: string;
+}
+const { naam, functie, quote, linkedin, foto, initialen } = Astro.props;
+---
+<div class="flex flex-col gap-6 rounded-lg border border-lijn bg-papier p-6 card-shadow sm:flex-row sm:items-center md:p-8">
+  {foto ? (
+    <img
+      src={foto}
+      alt={`Foto van ${naam}`}
+      width="112"
+      height="112"
+      loading="lazy"
+      class="h-28 w-28 flex-shrink-0 rounded-full object-cover"
+    />
+  ) : (
+    <div
+      class="flex h-28 w-28 flex-shrink-0 items-center justify-center rounded-full bg-papier-dieper font-serif text-3xl font-bold text-accent-diep"
+      aria-hidden="true"
+    >
+      {initialen}
+    </div>
+  )}
+  <div>
+    <p class="text-lg leading-relaxed text-inkt">{quote}</p>
+    <p class="mt-4 font-serif text-xl font-bold text-inkt">{naam}</p>
+    <p class="text-sm text-inkt-zacht">{functie}</p>
+    <a
+      href={linkedin}
+      target="_blank"
+      rel="noopener"
+      class="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-accent-donkerst"
+    >
+      Bekijk op LinkedIn<span class="cta-arrow">&rarr;</span>
+    </a>
+  </div>
+</div>

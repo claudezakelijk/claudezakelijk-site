@@ -1,0 +1,30 @@
+{
+  "name": "claudezakelijk-site",
+  "type": "module",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "node scripts/gen-edge.mjs && node scripts/check-pages.mjs && astro dev",
+    "build": "node scripts/gen-edge.mjs && node scripts/check-pages.mjs && astro build && node scripts/check-dist.mjs",
+    "check": "node scripts/gen-edge.mjs && node scripts/check-pages.mjs",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/markdown-remark": "^7.3.2",
+    "@astrojs/sitemap": "^3.7.2",
+    "@fontsource-variable/newsreader": "^5.2.10",
+    "@fontsource/inter": "^5.2.8",
+    "@fontsource/source-serif-4": "^5.2.9",
+    "@tailwindcss/typography": "^0.5.19",
+    "@tailwindcss/vite": "^4.2.2",
+    "astro": "^7.3.6",
+    "tailwindcss": "^4.2.2",
+    "unist-util-visit": "^5.1.0"
+  },
+  "devDependencies": {
+    "wrangler": "^4.98.0"
+  }
+}

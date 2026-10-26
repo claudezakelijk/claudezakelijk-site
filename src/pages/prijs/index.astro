@@ -1,0 +1,105 @@
+---
+import { getEntry, render } from 'astro:content';
+import PrijsLayout from '../../layouts/PrijsLayout.astro';
+import { getPublished, isPublished } from '../../lib/content';
+import { claudePrijzen } from '../../data/claude-prijzen';
+import { itemListNode } from '../../lib/schema';
+
+// /prijs is eigenaar van "claude kosten zakelijk" (besluit D-C2, oktober 2026). Het artikel
+// src/content/prijs/kosten-zakelijk.md wordt hier gerenderd; /prijs/kosten-zakelijk wordt
+// niet meer gebouwd (zie [slug].astro) en stuurt met een 301 hierheen (public/_redirects).
+// Het kort antwoord bovenaan wordt uit src/data/claude-prijzen.ts opgebouwd: pas bij de maandelijkse
+// prijscontrole alleen dat bestand aan. De tabel in het artikel zelf (kosten-zakelijk.md) staat los daarvan.
+const entry = await getEntry('prijs', 'kosten-zakelijk');
+if (!entry || !isPublished(entry)) throw new Error('prijs/kosten-zakelijk ontbreekt of is niet live (published met publishDate op of voor vandaag)');
+const { Content } = await render(entry);
+
+// Eerste getal (dollars) uit een prijsregel in claudePrijzen, bijvoorbeeld '$25/gebruiker/maand' wordt '25'.
+const dollars = (tekst: string): string => {
+  const m = tekst.match(/\$(\d+)/);
+  if (!m) throw new Error(`Geen dollarbedrag in claudePrijzen: ${tekst}`);
+  return m[1];
+};
+const plan = (naam: string) => {
+  const p = claudePrijzen.plannen.find((x) => x.naam === naam);
+  if (!p) throw new Error(`Plan ${naam} ontbreekt in claudePrijzen`);
+  return p;
+};
+const pro = plan('Pro');
+const team = plan('Team');
+const enterprise = plan('Enterprise');
+// Het gebruikersbereik van Team ('2 tot 150 gebruikers') zoeken we op inhoud, niet op positie.
+// Staat het er niet meer (of niet precies zo), dan faalt de build met een duidelijke melding.
+const teamBereik = team.features
+  .map((f) => f.match(/^(\d+ tot \d+) gebruikers$/))
+  .find((m) => m !== null)?.[1];
+if (!teamBereik) throw new Error("claudePrijzen: Team heeft geen feature in de vorm '<n> tot <m> gebruikers'; het kort antwoord op /prijs kan het gebruikersbereik niet opbouwen");
+const kortAntwoord =
+  `Claude Pro kost ${dollars(pro.prijs)} dollar per maand, of ${dollars(pro.features[0])} dollar bij jaarbetaling. ` +
+  `Claude Max kost ${dollars(claudePrijzen.max.vijfx)} of ${dollars(claudePrijzen.max.twintigx)} dollar per maand. ` +
+  `Een Team-seat kost ${dollars(team.prijs)} dollar per gebruiker per maand, of ${dollars(team.features[0])} dollar bij jaarbetaling, ` +
+  `voor ${teamBereik} gebruikers. ` +
+  `Enterprise kost ${dollars(enterprise.prijs)} dollar per seat (minimaal 20 seats) plus verbruik tegen API-tarieven. Alle prijzen zijn exclusief btw.`;
+
+const extraFaq = [
+  {
+    question: 'Waarom staan de prijzen in dollars?',
+    answer: 'Anthropic rekent in Amerikaanse dollars. In de gids Claude kosten zakelijk staan de bedragen ook in euro, met de ECB-koers en de datum van die koers erbij.',
+  },
+  {
+    question: 'Wat kost een Claude-implementatie?',
+    answer: 'Bij ClaudeZakelijk begint een traject met een Claude Readiness Scan vanaf €1.500. De begeleide uitrol in 30 dagen kost vanaf €7.500. Die bedragen komen bovenop de licenties die je bij Anthropic betaalt.',
+  },
+];
+// Het kort antwoord en de extra vragen komen uit dit bestand; layout, bronnen en FAQPage-schema blijven die van het artikel.
+const hubEntry = {
+  ...entry,
+  data: { ...entry.data, kortAntwoord, faq: [...entry.data.faq, ...extraFaq] },
+};
+
+const gidsOverzicht = [
+  { pad: null, gids: 'Claude kosten zakelijk: alle prijzen in 2026', vraag: 'Wat betaal je per abonnement, in dollar en in euro?' },
+  { pad: '/prijs/pro-vs-team-vs-enterprise', gids: 'Claude Pro, Team of Enterprise: wat past bij jouw bedrijf', vraag: 'Welk abonnement past bij jouw bedrijf?' },
+  { pad: '/prijs/credits-en-limieten', gids: 'Claude gebruikslimieten en usage credits uitgelegd', vraag: 'Wat gebeurt er als je team tegen de limiet aanloopt?' },
+];
+const andere = (await getPublished('prijs'))
+  .filter((a) => a.id !== 'kosten-zakelijk')
+  .sort((a, b) => b.data.priority - a.data.priority || a.data.title.localeCompare(b.data.title));
+// ItemList van dezelfde kaarten als "Meer over Claude-prijzen" hieronder (Spec B, S-15).
+const lijst = itemListNode('/prijs', andere.map((a) => ({ url: `/prijs/${a.id}`, naam: a.data.title })));
+---
+<PrijsLayout entry={hubEntry} pagePath="/prijs" hub stand={claudePrijzen.peildatumTekst} schemaNodes={[lijst]}>
+  <Content />
+  <section slot="na-artikel" class="max-w-3xl mx-auto px-6 pb-8">
+    <h2 class="text-[length:var(--text-h2)]">Meer over Claude-prijzen</h2>
+    <div class="mt-6 grid gap-6 md:grid-cols-2">
+      {andere.map((a) => (
+        <a href={`/prijs/${a.id}`} class="no-underline block rounded-lg border border-lijn bg-papier p-6 card-shadow">
+          <h3 class="font-serif text-xl font-bold text-inkt">{a.data.title}</h3>
+          <p class="mt-2 text-sm text-inkt-zacht">{a.data.metaDescription}</p>
+          <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-accent-donkerst">Lees de gids<span class="cta-arrow">&rarr;</span></span>
+        </a>
+      ))}
+    </div>
+    <div class="mt-10 overflow-x-auto">
+      <table class="w-full text-sm border-collapse">
+        <caption class="caption-top text-left text-sm text-inkt-zacht pb-2">De prijsgidsen, stand oktober 2026</caption>
+        <thead>
+          <tr class="border-b-2 border-lijn">
+            <th scope="col" class="text-left p-3 font-semibold">Gids</th>
+            <th scope="col" class="text-left p-3 font-semibold">Beantwoordt</th>
+          </tr>
+        </thead>
+        <tbody>
+          {gidsOverzicht.map((r) => (
+            <tr class="border-b border-lijn align-top">
+              <th scope="row" class="p-3 text-left font-medium">{r.pad ? <a href={r.pad}>{r.gids}</a> : r.gids}</th>
+              <td class="p-3 text-inkt-zacht">{r.vraag}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p class="mt-6 text-inkt-zacht">Zelf rekenen? Gebruik de <a href="/tools" class="text-accent-diep">Claude rekentools</a>.</p>
+  </section>
+</PrijsLayout>

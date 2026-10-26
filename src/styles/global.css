@@ -1,0 +1,495 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@import "@fontsource/source-serif-4/400.css";
+@import "@fontsource/source-serif-4/700.css";
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/500.css";
+@import "@fontsource/inter/600.css";
+@import "@fontsource/inter/700.css";
+@import "@fontsource-variable/newsreader/wght.css";
+@import "@fontsource-variable/newsreader/wght-italic.css";
+
+@theme {
+  --color-papier: #FAF7F2;
+  --color-papier-dieper: #F2ECE0;
+  --color-inkt: #2A2725;
+  --color-inkt-zacht: #58524C;
+  --color-accent: #CC785C;         /* decoratief, alleen voor vlakken en grote koppen; niet voor tekst en niet voor knop-achtergrond */
+  --color-accent-diep: #A35A41;    /* tekstvariant en knop-achtergrond, voldoet AA (4.80:1) op papier */
+  --color-accent-donkerst: #7B3D2F; /* hover-variant van knoppen, voldoet AAA op papier */
+  --color-teal: #0f766e;            /* primaire actie-kleur voor Readiness Scan CTA; AA (4.8:1) op papier */
+  --color-teal-diep: #115e58;       /* hover-variant; AAA op papier */
+  --color-lijn: #E6DFD2;
+
+  --font-serif: "Source Serif 4", ui-serif, Georgia, serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --text-h1: clamp(2.75rem, 5vw + 1rem, 4.5rem);
+  --text-h2: clamp(1.75rem, 2vw + 1rem, 2.5rem);
+
+  /* Zachte easing-curves voor consistente, natuurlijke animaties */
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-out-back: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* Redesign 1b — warm & persoonlijk */
+  --color-paper-tint: #F1EBE0;
+  --color-ink-diep: #26221C;
+  --color-ink-2: #6E655A;
+  --color-ink-muted: #A69B8A;
+  --color-terracotta: #C25E3C;
+  --color-terracotta-h: #A84E30;
+  --color-salmon: #E8A288;
+  --color-border-2: #D6CDBD;
+  /* Voor/na-vergelijking (ontwerpronde 2, 22 juli): gedempt rood/groen op het
+     warme palet; tekst op de tinten haalt AA. */
+  --color-rood: #A8433B;
+  --color-rood-tint: #F6E7E4;
+  --color-rood-lijn: #E4C8C3;
+  --color-groen: #3E7C4F;
+  --color-groen-tint: #E9F1E9;
+  --color-groen-lijn: #C6D9C8;
+  --font-newsreader: "Newsreader Variable", "Newsreader", Georgia, serif;
+}
+
+.prose {
+  --tw-prose-body: var(--color-inkt);
+  --tw-prose-headings: var(--color-inkt);
+  --tw-prose-links: var(--color-accent-donkerst);
+  --tw-prose-bold: var(--color-inkt);
+  --tw-prose-counters: var(--color-inkt-zacht);
+  --tw-prose-bullets: var(--color-inkt-zacht);
+  --tw-prose-hr: var(--color-lijn);
+  --tw-prose-quotes: var(--color-inkt);
+  --tw-prose-quote-borders: var(--color-lijn);
+  --tw-prose-captions: var(--color-inkt-zacht);
+  --tw-prose-code: var(--color-inkt);
+  --tw-prose-th-borders: var(--color-lijn);
+  --tw-prose-td-borders: var(--color-lijn);
+}
+
+/* Warme leesstijl: Newsreader-koppen in alle prose-content. Alleen opmaak —
+   de SEO-tekst en koppen-hiërarchie blijven ongewijzigd. */
+.prose :is(h2, h3, h4) {
+  font-family: var(--font-newsreader);
+  letter-spacing: -0.01em;
+}
+.prose :is(h2, h3, h4) { font-weight: 600; }
+.prose h2 { font-weight: 500; }
+
+html {
+  background-color: var(--color-papier);
+  color: var(--color-inkt);
+  font-family: var(--font-sans);
+  font-size: 17px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  min-height: 100vh;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+h1 {
+  letter-spacing: -0.035em;
+}
+
+@layer base {
+  a {
+    color: var(--color-accent-donkerst);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+}
+
+/* Shadow cards with rich hover */
+.card-shadow {
+  border-color: transparent;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  transition: box-shadow 0.3s, transform 0.3s, border-color 0.3s;
+}
+.card-shadow:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08), 0 1px 3px rgba(0,0,0,0.06);
+  transform: translateY(-2px);
+  border-color: var(--color-accent-diep);
+}
+
+/* Section accent line */
+.sectie-lijn::before {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 2px;
+  background: var(--color-accent-diep);
+  margin-bottom: 1rem;
+  border-radius: 1px;
+}
+
+/* Sticky header */
+.sticky-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(250, 247, 242, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Nav link underline slide-in */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background: var(--color-inkt);
+  transition: width 0.3s ease;
+}
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* CTA arrow slide-in on hover */
+.cta-arrow {
+  display: inline-block;
+  transform: translateX(-8px);
+  opacity: 0;
+  transition: transform 0.3s, opacity 0.3s;
+}
+a:hover > .cta-arrow,
+button:hover > .cta-arrow {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* Proof card gradient number */
+.proof-gradient {
+  background: linear-gradient(135deg, var(--color-accent-diep), var(--color-accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Proof card left accent border */
+.proof-rand {
+  border-left: 3px solid var(--color-accent-diep);
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+/* Proof storytelling layout */
+.proof-story-item {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--color-lijn);
+}
+.proof-story-item:last-child {
+  border-bottom: none;
+}
+.proof-story-number {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 5rem;
+  line-height: 1;
+  flex-shrink: 0;
+  min-width: 140px;
+  text-align: right;
+  background: linear-gradient(135deg, var(--color-accent-diep), var(--color-accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Angst card hover: accent left border */
+.angst-hover {
+  transition: border-color 0.3s, border-left-width 0.3s, transform 0.3s;
+}
+.angst-hover:hover {
+  border-left: 3px solid var(--color-accent);
+}
+
+/* Proof card hover: subtle scale */
+.proof-scale:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+}
+
+/* Dienst card connector line */
+.dienst-connector {
+  position: absolute;
+  top: 42px;
+  left: calc(33.33% / 2 + 18px);
+  right: calc(33.33% / 2 + 18px);
+  height: 0;
+  border-top: 2px dashed var(--color-lijn);
+  z-index: 0;
+}
+
+/* Scroll reveal — inhoud alleen verbergen als JS draait (html.js wordt als
+   allereerste inline script gezet in BasisLayout); zonder JS blijft alles
+   gewoon zichtbaar (audit P1.10). */
+.reveal-target {
+  transition: opacity 0.6s var(--ease-out-soft), transform 0.6s var(--ease-out-soft);
+}
+html.js .reveal-target {
+  opacity: 0;
+  transform: translateY(24px);
+}
+html.js .reveal-target.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hero typing cursor */
+.typing-cursor {
+  font-weight: 300;
+  color: var(--color-accent-diep);
+  animation: blink-cursor 1s step-end infinite, fade-cursor 3s ease forwards;
+}
+@keyframes blink-cursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+@keyframes fade-cursor {
+  0%, 80% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* Subtiele, langzaam pulserende gloed achter de hero */
+.hero-glow {
+  position: absolute;
+  top: -6rem;
+  right: -6rem;
+  width: 32rem;
+  height: 32rem;
+  max-width: 90vw;
+  border-radius: 9999px;
+  background: radial-gradient(circle, rgba(204, 120, 92, 0.16), transparent 70%);
+  pointer-events: none;
+  z-index: -1;
+  animation: hero-pulse 9s var(--ease-out-soft) infinite;
+}
+@keyframes hero-pulse {
+  0%, 100% { opacity: 0.65; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.1); }
+}
+
+/* Dark warm footer */
+.footer-warm {
+  background: #3D3530;
+  border-top-color: #4a443e;
+}
+.footer-warm,
+.footer-warm a,
+.footer-warm p {
+  color: rgba(250, 247, 242, 0.7);
+}
+.footer-warm a:hover {
+  color: var(--color-accent);
+}
+.footer-warm .footer-logo {
+  color: var(--color-papier);
+}
+.footer-warm .footer-copy {
+  /* alpha 0.65 i.p.v. 0.5: 0.5 haalde maar 4,1:1 op #3D3530 (AA vraagt 4,5:1) */
+  color: rgba(250, 247, 242, 0.65);
+  border-top-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Hamburger menu */
+.hamburger-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 200;
+}
+.hamburger-btn span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--color-inkt);
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+.mobile-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 150;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.mobile-overlay.open {
+  display: block;
+  opacity: 1;
+}
+.mobile-nav-panel {
+  position: fixed;
+  top: 0;
+  right: -80vw;
+  bottom: 0;
+  width: 80vw;
+  max-width: 360px;
+  background: var(--color-papier);
+  z-index: 200;
+  padding: 1.5rem;
+  /* visibility als transitie mee: zichtbaar tijdens het uitschuiven, daarna
+     echt hidden — gesloten paneel is zo niet tabbaar/leesbaar (a11y P1.7).
+     JS zet daarnaast `inert` op het gesloten paneel. */
+  visibility: hidden;
+  transition: right 0.35s ease, visibility 0.35s;
+  box-shadow: -4px 0 24px rgba(0, 0, 0, 0.1);
+}
+.mobile-nav-panel.open {
+  right: 0;
+  visibility: visible;
+}
+.mobile-nav-panel .close-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  /* raakvlak >= 44x44px (WCAG 2.5.5) */
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--color-inkt);
+  line-height: 1;
+}
+.mobile-nav-panel nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 3rem;
+}
+.mobile-nav-panel nav a {
+  font-size: 1.125rem;
+  color: var(--color-inkt);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none !important;
+  }
+  .hamburger-btn {
+    display: flex;
+  }
+  .proof-story-item {
+    flex-direction: column;
+    text-align: center;
+  }
+  .proof-story-number {
+    text-align: center;
+    min-width: auto;
+    font-size: 3.5rem;
+  }
+}
+
+/* Respecteer 'verminder beweging': zet animaties/overgangen uit en toon
+   scroll-inhoud direct, zodat niets verborgen blijft. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal-target {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* ============================================================
+   Foto's van Camiel — warmtecorrectie voor koele foto's
+   (camiel-water, camiel-tafel; presentatie-foto is al warm)
+   ============================================================ */
+.foto-warm { filter: saturate(0.9) sepia(0.06); }
+
+/* ============================================================
+   Homepage redesign 1b — warm & persoonlijk
+   ============================================================ */
+.hp h1 {
+  font-family: var(--font-newsreader);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.02;
+  font-size: clamp(2.75rem, 5.5vw + 0.5rem, 84px);
+}
+.hp h2 {
+  font-family: var(--font-newsreader);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.12;
+  font-size: clamp(1.9rem, 2.2vw + 1rem, 40px);
+}
+.hp h2.h2-cta { font-size: clamp(2rem, 2.6vw + 1rem, 44px); line-height: 1.15; }
+.hp h2.h2-person { font-size: clamp(1.6rem, 1.5vw + 1rem, 32px); }
+.hp h3 { font-family: var(--font-newsreader); font-weight: 600; }
+.hp-italic { font-family: var(--font-newsreader); font-style: italic; }
+
+/* Gecentreerde inhoudsbreedte, breder dan de standaard Container (design = 1280) */
+.wrap { max-width: 1280px; margin-inline: auto; padding-inline: 56px; }
+
+/* Pill-knoppen */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border-radius: 100px;
+  font-weight: 600;
+  font-size: 15.5px;
+  padding: 16px 30px;
+  text-decoration: none;
+  transition: background-color 0.18s var(--ease-out-soft), color 0.18s var(--ease-out-soft), border-color 0.18s var(--ease-out-soft);
+}
+.pill-sm { padding: 10px 20px; font-size: 14px; }
+.pill-primary { background: var(--color-terracotta); color: #fff; }
+.pill-primary:hover { background: var(--color-terracotta-h); }
+.pill-outline { border: 1.5px solid var(--color-border-2); color: var(--color-ink-diep); }
+.pill-outline:hover { background: var(--color-paper-tint); }
+
+/* Terracotta tekstlink met onderstreping */
+.link-terra {
+  font-weight: 600;
+  color: var(--color-terracotta);
+  border-bottom: 1.5px solid var(--color-terracotta);
+  padding-bottom: 1px;
+  text-decoration: none;
+}
+.link-terra:hover { color: var(--color-terracotta-h); border-color: var(--color-terracotta-h); }
+.link-salmon { color: var(--color-salmon); border-bottom-color: var(--color-salmon); }
+
+@media (max-width: 768px) {
+  .wrap { padding-inline: 22px; }
+}

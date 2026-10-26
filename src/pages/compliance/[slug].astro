@@ -1,0 +1,19 @@
+---
+import { render } from 'astro:content';
+import ComplianceLayout from '../../layouts/ComplianceLayout.astro';
+import { getPublished } from '../../lib/content';
+
+export async function getStaticPaths() {
+  const pages = await getPublished('compliance');
+  return pages.map(page => ({
+    params: { slug: page.id },
+    props: { entry: page },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+<ComplianceLayout entry={entry} pagePath={`/compliance/${entry.id}`}>
+  <Content />
+</ComplianceLayout>

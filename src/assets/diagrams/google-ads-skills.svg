@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="32 skills library" font-family="Inter, system-ui, sans-serif" fill="#2A2725">
+  <defs>
+    <filter id="cs10" x="-5%" y="-20%" width="110%" height="140%">
+      <feDropShadow dx="0" dy="1" stdDeviation="1.5" flood-color="#2A2725" flood-opacity=".08"></feDropShadow>
+    </filter>
+  </defs>
+
+  <rect width="800" height="450" fill="#FAF7F2"></rect>
+
+  <rect x="40" y="36" width="48" height="2" rx="1" fill="#CC785C"></rect>
+  <text x="40" y="62" fill="#58524C" font-size="11" font-weight="600" letter-spacing="1.65">SKILLS LIBRARY</text>
+
+  <text x="760" y="62" text-anchor="end" font-size="13" fill="#58524C">één catalogus · drie platformen</text>
+
+  
+  <rect x="285" y="92" width="230" height="92" rx="8" fill="#CC785C" filter="url(#cs10)"></rect>
+  <text x="305" y="138" font-family="&#34;Source Serif 4&#34;, ui-serif, Georgia, serif" font-weight="700" font-size="44" letter-spacing="-1" fill="#FAF7F2">32</text>
+  <text x="365" y="129" font-size="15" font-weight="600" fill="#FAF7F2">Advertentie Skills</text>
+  <text x="365" y="147" font-size="12" fill="#FAF7F2" opacity=".82">voor drie platformen</text>
+  <rect x="365" y="156" width="118" height="18" rx="9" fill="#FAF7F2" opacity=".18"></rect>
+  <text x="424" y="169" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" font-weight="600" letter-spacing=".5" fill="#FAF7F2">CLAUDE · SKILLS</text>
+
+  
+  <path d="M 400 184 L 400 210 L 130 210 L 130 232" fill="none" stroke="#2A2725" stroke-width="1.2"></path>
+  <path d="M 400 184 L 400 232" fill="none" stroke="#2A2725" stroke-width="1.2"></path>
+  <path d="M 400 184 L 400 210 L 670 210 L 670 232" fill="none" stroke="#2A2725" stroke-width="1.2"></path>
+
+  
+  
+  <rect x="40" y="234" width="180" height="180" rx="8" fill="#F2ECE0" stroke="#E6DFD2" stroke-width="1" filter="url(#cs10)"></rect>
+  <text x="58" y="262" font-size="14" font-weight="600" fill="#2A2725">Google Ads</text>
+  <text x="58" y="290" font-family="&#34;Source Serif 4&#34;, ui-serif, Georgia, serif" font-weight="700" font-size="30" letter-spacing="-.7" fill="#0f766e">20</text>
+  <text x="100" y="287" font-size="12" fill="#58524C">skills</text>
+
+  <line x1="58" y1="302" x2="202" y2="302" stroke="#E6DFD2"></line>
+
+  <text x="58" y="322" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#58524C">campaign-audit</text>
+  <text x="58" y="342" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#58524C">keyword-mining</text>
+  <text x="58" y="362" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#58524C">negatives-sweep</text>
+  <text x="58" y="382" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#58524C">bidding-strategy</text>
+  <text x="58" y="402" font-size="11" fill="#A4A6AA">+ 16 meer</text>
+
+  
+  <rect x="310" y="234" width="180" height="180" rx="8" fill="#F2ECE0" stroke="#E6DFD2" stroke-width="1" filter="url(#cs10)"></rect>
+  <text x="328" y="262" font-size="14" font-weight="600" fill="#2A2725">Meta</text>
+  <text x="328" y="290" font-family="&#34;Source Serif 4&#34;, ui-serif, Georgia, serif" font-weight="700" font-size="30" letter-spacing="-.7" fill="#0f766e">6</text>
+  <text x="354" y="287" font-size="12" fill="#58524C">skills</text>
+
+  <line x1="328" y1="302" x2="472" y2="302" stroke="#E6DFD2"></line>
+
+  <text x="328" y="322" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#58524C">lookalike-build</text>
+  <text x="328" y="342" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#58524C">ad-creative-test</text>
+  <text x="328" y="362" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#58524C">retargeting-segments</text>
+  <text x="328" y="382" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#58524C">conversie-API</text>
+  <text x="328" y="402" font-size="11" fill="#A4A6AA">+ 2 meer</text>
+
+  
+  <rect x="580" y="234" width="180" height="180" rx="8" fill="#F2ECE0" stroke="#E6DFD2" stroke-width="1" filter="url(#cs10)"></rect>
+  <text x="598" y="262" font-size="14" font-weight="600" fill="#2A2725">LinkedIn</text>
+  <text x="598" y="290" font-family="&#34;Source Serif 4&#34;, ui-serif, Georgia, serif" font-weight="700" font-size="30" letter-spacing="-.7" fill="#0f766e">6</text>
+  <text x="624" y="287" font-size="12" fill="#58524C">skills</text>
+
+  <line x1="598" y1="302" x2="742" y2="302" stroke="#E6DFD2"></line>
+
+  <text x="598" y="322" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#58524C">abm-targeting</text>
+  <text x="598" y="342" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#58524C">lead-gen-form</text>
+  <text x="598" y="362" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#58524C">sponsored-content</text>
+  <text x="598" y="382" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#58524C">audience-build</text>
+  <text x="598" y="402" font-size="11" fill="#A4A6AA">+ 2 meer</text>
+</svg>

@@ -1,0 +1,141 @@
+---
+import BasisLayout from '../layouts/BasisLayout.astro';
+import CtaBlok from '../components/CtaBlok.astro';
+import Broodkruimel from '../components/Broodkruimel.astro';
+import { Picture } from 'astro:assets';
+import studioBreed from '../assets/team/studio-breed.jpg';
+import { site, auteurs } from '../site';
+import { ID } from '../lib/schema';
+
+// Camiel is het zichtbare gezicht/aanspreekpunt; het bredere team blijft
+// bewust naamloos. Anker #camiel matcht auteurs.camiel.overAnker (Person-schema).
+const camiel = auteurs.camiel;
+const breadcrumbs = [{ name: 'Home', url: '/' }, { name: 'Over ons', url: '/over' }];
+---
+<BasisLayout
+  titel="Over ClaudeZakelijk: wie we zijn en hoe we werken"
+  beschrijving="Claude-implementatie voor het Nederlandse MKB. Gebouwd vanuit dagelijks eigen gebruik, niet vanuit theorie."
+  pad="/over"
+  schema={{ paginaType: 'AboutPage', hoofdonderwerp: ID.organisatie, breadcrumbs, personen: ['camiel'] }}
+>
+  <div class="max-w-3xl mx-auto px-6 pt-16">
+    <Broodkruimel items={breadcrumbs} />
+  </div>
+  <section class="max-w-3xl mx-auto px-6 pt-6 pb-8 prose prose-lg">
+    <p class="text-xs uppercase tracking-widest text-inkt-zacht">Over</p>
+    <h1>Waarom ClaudeZakelijk</h1>
+    <p>
+      Ons team draait zelf dagelijks op Claude: klantrapporten, offertes, content, code, analyses, support. Geen experiment, gewoon hoe we werken.
+    </p>
+    <p>
+      We zagen Nederlandse MKB-bedrijven worstelen met generiek AI-advies dat drie tools tegelijk aanprees en nergens concreet werd. Wij werken met één tool, Claude, en leggen die uit in het Nederlands.
+    </p>
+    <h2>Waarom MKB</h2>
+    <p>
+      Klein genoeg om snel te schakelen, groot genoeg om er serieus wat aan te hebben. Bedrijven van tien tot tweehonderd mensen, vaak familiebedrijven of tweede-generatie. De cultuur is vertrouwd, de problemen ook.
+    </p>
+    <h2>Onze belofte</h2>
+    <p>
+      Twee dingen liggen vooraf vast. Een: niemand hoeft z'n baan op te geven omdat je Claude gaat gebruiken. Claude moet je huidige team meer laten doen, niet kleiner maken. Twee: we leggen uit wat werkt en waarom, zodat je het daarna zelf kunt.
+    </p>
+    <h2>Hoe we werken</h2>
+    <p>
+      We houden de caseload bewust klein: maximaal drie klanten tegelijk. Daardoor krijg je persoonlijke aandacht, geen doorgeschoven junior. We werken met je echte documenten, je echte processen, je echte team.
+    </p>
+    <p>
+      Hoe een traject stap voor stap loopt en wat het kost, staat op de pagina over <a href="/claude-implementatie">Claude-implementatie</a>. Wat je van ons als <a href="/claude-consultant">Claude-consultant</a> kunt verwachten, lees je daar apart. Ben je nog aan het oriënteren? Lees dan eerst de gids <a href="/gids/claude-voor-mkb">Claude voor bedrijven en mkb</a>.
+    </p>
+    <h2>Contact</h2>
+    <p>
+      <a href="/ai-enablement-scan">Doe de gratis AI-check</a> en ontdek of Claude-begeleiding bij je bedrijf past. Zo ja, plannen we een gratis intro van dertig minuten.
+    </p>
+  </section>
+
+  <section class="max-w-3xl mx-auto px-6 pt-8 pb-8">
+    <h2 class="text-[2rem] leading-tight">Het team</h2>
+    <p class="mt-3 text-inkt-zacht">
+      Achter ClaudeZakelijk werkt een team van consultants en engineers dat dagelijks met Claude bouwt. Je vaste aanspreekpunt is Camiel; je werkt direct met het team dat het werk doet, niet met een salesteam.
+    </p>
+    <article id="camiel" class="mt-6 bg-white border border-lijn rounded-xl overflow-hidden grid grid-cols-1 sm:grid-cols-[240px_1fr]">
+      <img
+        src={camiel.foto}
+        alt={`Portret van ${camiel.naam}`}
+        class="w-full h-64 sm:h-full object-cover"
+        loading="lazy"
+      />
+      <div class="p-6 sm:p-8">
+        <h3 class="font-sans font-bold text-lg leading-snug">{camiel.naam}</h3>
+        <p class="mt-1 text-sm uppercase tracking-widest text-inkt-zacht">{camiel.functie}</p>
+        <p class="mt-3 text-inkt-zacht">{camiel.bio}</p>
+        {camiel.linkedin && (
+          <a
+            href={camiel.linkedin}
+            target="_blank"
+            rel="noopener"
+            class="mt-5 inline-flex items-center rounded-full bg-accent-diep text-papier px-5 py-2.5 font-semibold no-underline hover:bg-accent-donkerst focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-diep"
+          >
+            LinkedIn van {camiel.naam.split(' ')[0]}<span class="sr-only"> (opent in nieuw venster)</span>
+          </a>
+        )}
+      </div>
+    </article>
+  </section>
+
+  <section class="max-w-3xl mx-auto px-6 pt-8 pb-8">
+    <h2 class="text-[2rem] leading-tight">In de media</h2>
+    <div class="mt-6 bg-white border border-lijn rounded-xl overflow-hidden grid grid-cols-1 sm:grid-cols-[240px_1fr]">
+      <img
+        src="/team/camiel-dataloog.jpg"
+        alt="Camiel Wits met headset bij de opname van podcast De Dataloog"
+        class="w-full h-64 sm:h-full object-cover"
+        loading="lazy"
+      />
+      <div class="p-6 sm:p-8">
+        <h3 class="font-sans font-bold text-lg leading-snug">Te gast in De Dataloog</h3>
+        <p class="mt-2 text-inkt-zacht">
+          Camiel was te gast in De Dataloog, dé Nederlandse podcast over data en AI,
+          over AI in de praktijk bij Nederlandse bedrijven.
+        </p>
+        <a
+          href="https://open.spotify.com/episode/5pxbh8B6VEwyhJFdB92PCQ"
+          target="_blank"
+          rel="noopener"
+          class="mt-5 inline-flex items-center rounded-full bg-accent-diep text-papier px-5 py-2.5 font-semibold no-underline hover:bg-accent-donkerst focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-diep"
+        >
+          Beluister op Spotify<span class="sr-only"> (opent in nieuw venster)</span>
+        </a>
+      </div>
+    </div>
+    <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <figure class="bg-white border border-lijn rounded-xl overflow-hidden m-0">
+        <img
+          src="/team/camiel-congres.jpg"
+          alt="Congreszaal met publiek; Camiel Wits zit lachend op de eerste rij"
+          class="w-full h-52 object-cover"
+          loading="lazy"
+        />
+        <figcaption class="px-5 py-3 text-sm text-inkt-zacht">Op de eerste rij bij een AI-congres</figcaption>
+      </figure>
+      <figure class="bg-white border border-lijn rounded-xl overflow-hidden m-0">
+        <Picture
+          src={studioBreed}
+          alt="Vier mensen aan een ovale tafel in een studio aan het water tijdens een panelgesprek"
+          formats={['avif', 'webp']}
+          widths={[400, 640, 800, 1080]}
+          sizes="(min-width: 768px) 352px, calc(100vw - 48px)"
+          class="w-full h-52 object-cover"
+          loading="lazy"
+          decoding="async"
+        />
+        <figcaption class="px-5 py-3 text-sm text-inkt-zacht">Opname van een panelgesprek over data en AI</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="onafhankelijk" class="max-w-3xl mx-auto px-6 pt-8 pb-8">
+    <h2 class="text-[2rem] leading-tight">Onafhankelijk van Anthropic</h2>
+    <p class="mt-3 text-inkt-zacht">{site.onafhankelijkheidLang}</p>
+  </section>
+
+  <CtaBlok />
+</BasisLayout>

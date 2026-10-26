@@ -1,0 +1,19 @@
+---
+import { render } from 'astro:content';
+import IntegratieLayout from '../../layouts/IntegratieLayout.astro';
+import { getPublished } from '../../lib/content';
+
+export async function getStaticPaths() {
+  const pages = await getPublished('integraties');
+  return pages.map(page => ({
+    params: { slug: page.id },
+    props: { entry: page },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+<IntegratieLayout entry={entry} pagePath={`/integraties/${entry.id}`}>
+  <Content />
+</IntegratieLayout>

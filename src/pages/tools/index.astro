@@ -1,0 +1,90 @@
+---
+import { itemListNode, lijstId, faqNode } from '../../lib/schema';
+import BasisLayout from '../../layouts/BasisLayout.astro';
+import Container from '../../components/Container.astro';
+import CollectieHub from '../../components/CollectieHub.astro';
+import Broodkruimel from '../../components/Broodkruimel.astro';
+import FaqSectie from '../../components/FaqSectie.astro';
+
+// Tools zijn statische .astro-pagina's (geen content-collectie); de hub
+// bestaat omdat de breadcrumbs op elke tool-pagina naar /tools verwijzen.
+const tools = [
+  {
+    href: '/tools/claude-roi-mkb-calculator',
+    titel: 'Claude ROI-calculator voor het MKB',
+    beschrijving: 'Bereken de ROI van Claude voor jouw bedrijf. Besparing op uren, licenties en externe kosten.',
+    vraag: 'Wat levert Claude mijn team op?',
+    invoer: 'medewerkers met een licentie, uurkosten per medewerker, bespaarde uren per gebruiker per week, adoptie, werkweken per jaar, plan, betaling, eenmalige implementatie en wisselkoers',
+    resultaat: 'licentiekosten per maand en per jaar, waarde van de bespaarde uren, terugverdientijd en netto resultaat',
+  },
+  {
+    href: '/tools/claude-api-kosten-calculator',
+    titel: 'Claude API-kostencalculator',
+    beschrijving: 'Bereken wat de Claude API kost voor jouw gebruik. Tokens, modellen en maandelijkse kosten in euro.',
+    vraag: 'Wat kost de Claude API voor mijn gebruik?',
+    invoer: 'model, verzoeken per dag, werkdagen per maand, input-tokens per verzoek, output-tokens per verzoek, deel van de input uit de cache, cache opnieuw geschreven per dag, batch-verwerking en wisselkoers',
+    resultaat: 'kosten per verzoek en per maand, in dollar en euro',
+  },
+];
+
+const faq = [
+  {
+    question: 'Hoe nauwkeurig zijn de uitkomsten?',
+    answer: 'Het zijn schattingen. De prijzen komen van Anthropic. De tijdsbesparing in de ROI-calculator is een aanname die je zelf aanpast. Reken met je eigen cijfers voordat je beslist.',
+  },
+  {
+    question: 'Rekenen de tools in euro of in dollar?',
+    answer: 'Anthropic rekent in dollars. Beide tools tonen ook euro\'s en noemen de wisselkoers en de datum waarop die is vastgesteld.',
+  },
+  {
+    question: 'Worden mijn ingevulde gegevens opgeslagen?',
+    answer: 'Nee. De berekening gebeurt in je browser en de tools versturen niets.',
+  },
+];
+const breadcrumbs = [{ name: 'Home', url: '/' }, { name: 'Rekentools', url: '/tools' }];
+---
+<BasisLayout
+  titel="Claude rekentools: ROI en API-kosten berekenen"
+  beschrijving="Twee gratis Claude rekentools: bereken of Claude zichzelf terugverdient in je team en wat de Claude API per maand kost, in dollar en euro."
+  pad="/tools"
+  schema={{ paginaType: 'CollectionPage', hoofdonderwerp: lijstId('/tools'), breadcrumbs, nodes: [itemListNode('/tools', tools.map((t) => ({ url: t.href, naam: t.titel }))), faqNode('/tools', faq)] }}
+>
+  <Container class="pt-16 pb-12">
+    <Broodkruimel items={breadcrumbs} />
+    <div class="mt-6">
+    <CollectieHub
+      label="Tools"
+      titel="Claude rekentools voor je bedrijf"
+      intro="Met deze gratis rekentools reken je zelf uit wat Claude je bedrijf kost en oplevert. De ROI-calculator zet de licentiekosten van Claude Pro of Team af tegen de uren die je team bespaart. De API-kostencalculator rekent voor dertien modellen uit wat een verzoek en een maand gebruik kosten, met korting voor batch en caching. Beide tonen welke wisselkoers ze gebruiken."
+      leesTekst="Open de tool"
+      items={tools}
+    />
+    </div>
+
+    <div class="my-10 overflow-x-auto">
+      <table class="w-full text-sm border-collapse">
+        <caption class="caption-top text-left text-sm text-inkt-zacht pb-2">De rekentools</caption>
+        <thead>
+          <tr class="border-b-2 border-lijn">
+            <th scope="col" class="text-left p-3 font-semibold">Tool</th>
+            <th scope="col" class="text-left p-3 font-semibold">Beantwoordt</th>
+            <th scope="col" class="text-left p-3 font-semibold">Jij vult in</th>
+            <th scope="col" class="text-left p-3 font-semibold">Je krijgt</th>
+          </tr>
+        </thead>
+        <tbody>
+          {tools.map((t) => (
+            <tr class="border-b border-lijn">
+              <th scope="row" class="p-3 text-left font-medium"><a href={t.href} class="text-accent-diep">{t.titel}</a></th>
+              <td class="p-3 text-inkt-zacht">{t.vraag}</td>
+              <td class="p-3 text-inkt-zacht">{t.invoer}</td>
+              <td class="p-3 text-inkt-zacht">{t.resultaat}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <FaqSectie titel="Vragen over de rekentools" items={faq} />
+  </Container>
+</BasisLayout>

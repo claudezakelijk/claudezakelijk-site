@@ -1,0 +1,253 @@
+---
+import BasisLayout from '../../layouts/BasisLayout.astro';
+import Broodkruimel from '../../components/Broodkruimel.astro';
+import KortAntwoord from '../../components/KortAntwoord.astro';
+import FaqSectie from '../../components/FaqSectie.astro';
+import BronnenBlok from '../../components/BronnenBlok.astro';
+import AuthorBio from '../../components/AuthorBio.astro';
+import CtaStrook from '../../components/CtaStrook.astro';
+import { faqNode } from '../../lib/schema';
+
+const breadcrumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'Gidsen', url: '/gids' },
+  { name: 'Claude Code voor bedrijven', url: '/gids/claude-code-voor-bedrijven' },
+];
+
+const titel = 'Claude Code voor bedrijven: wat kan het? | ClaudeZakelijk';
+const headline = 'Claude Code voor bedrijven: wat het is, wat het kost en hoe je het veilig inzet';
+const beschrijving =
+  'Claude Code zakelijk inzetten zonder eigen developers: wat het is, wat je ermee bouwt, wat het kost en hoe je de risico\'s beperkt. Met echte cases.';
+
+const gepubliceerd = '2026-10-02';
+const bijgewerkt = '2026-10-22';
+const datumTekst = (iso: string) =>
+  new Date(iso).toLocaleDateString('nl-NL', { day: 'numeric', month: 'long', year: 'numeric' });
+
+const kortAntwoord =
+  'Claude Code is een AI-assistent van Anthropic die op je computer of in de browser zelf bestanden leest, aanpast en programma\'s draait. Je beschrijft in gewone taal wat je wilt, zoals een rapport, een interne tool of een koppeling. Het zit in alle betaalde abonnementen (stand oktober 2026). Laat altijd een mens controleren wat het bouwt.';
+
+const faq = [
+  {
+    question: 'Moet ik kunnen programmeren om Claude Code te gebruiken?',
+    answer:
+      'Nee. Je beschrijft in gewone taal wat je wilt en Claude Code schrijft en test de code. Je moet wel goed kunnen uitleggen wat het resultaat moet zijn en kunnen controleren of de uitkomst klopt. Bij grotere of gevoelige klussen is het verstandig iemand met technische kennis te laten meekijken.',
+  },
+  {
+    question: 'Zit Claude Code in het gratis abonnement?',
+    answer:
+      'Nee. Op de prijspagina van Anthropic (gecontroleerd op 22 oktober 2026) zit Claude Code in Pro, Max, Team en Enterprise. Het gratis abonnement heeft geen Claude Code. Pro begint bij 17 dollar per maand bij jaarbetaling, zonder btw.',
+  },
+  {
+    question: 'Welk abonnement past bij een mkb-bedrijf?',
+    answer:
+      'Voor zakelijk gebruik ligt Team het meest voor de hand. Daar gelden de zakelijke voorwaarden van Anthropic en heb je centrale facturering en beheerinstellingen. Een standaardplek kost 20 dollar per gebruiker per maand bij jaarbetaling of 25 dollar bij maandbetaling, zonder btw. Voor wie veel met Claude Code werkt, is er een premiumplek met vijf keer zoveel gebruik.',
+  },
+  {
+    question: 'Gebruikt Anthropic mijn bedrijfsdata om modellen te trainen?',
+    answer:
+      'Bij Team en Enterprise niet, tenzij je daar zelf voor kiest. Bij Pro en Max (consumentenvoorwaarden) bepaal je dat zelf met een instelling. Staat die aan, dan bewaart Anthropic de gegevens vijf jaar. Staat die uit, dan is dat 30 dagen. Bij Team en Enterprise is de standaard bewaartermijn 30 dagen.',
+  },
+  {
+    question: 'Kan Claude Code zomaar dingen op mijn computer veranderen?',
+    answer:
+      'Dat hangt af van de stand die je kiest. In de handmatige stand mag Claude Code eerst alleen lezen en vraagt het toestemming voordat het bestanden aanpast of opdrachten uitvoert. In de automatische stand beoordeelt een apart model de acties en blokkeert het wat onveilig lijkt. Werk daarom in een aparte map en geef nooit meer toegang dan de klus nodig heeft.',
+  },
+];
+
+const bronnen = [
+  { titel: 'Anthropic: Claude plans & pricing', url: 'https://claude.com/pricing', geraadpleegd: '2 oktober 2026' },
+  { titel: 'Claude Code docs: Overview', url: 'https://code.claude.com/docs/en/overview', geraadpleegd: '2 oktober 2026' },
+  { titel: 'Claude Code docs: Security', url: 'https://code.claude.com/docs/en/security', geraadpleegd: '2 oktober 2026' },
+  { titel: 'Claude Code docs: Data usage', url: 'https://code.claude.com/docs/en/data-usage', geraadpleegd: '2 oktober 2026' },
+];
+
+---
+<BasisLayout
+  titel={titel}
+  beschrijving={beschrijving}
+  pad="/gids/claude-code-voor-bedrijven"
+  schema={{ breadcrumbs, nodes: [faqNode('/gids/claude-code-voor-bedrijven', faq)], personen: ['camiel'] }}
+  artikel={{ headline, gepubliceerd, bijgewerkt, auteur: 'camiel', sectie: 'Gids' }}
+>
+  <article class="max-w-3xl mx-auto px-6 pt-16 pb-8">
+    <Broodkruimel items={breadcrumbs} />
+
+    <header class="mt-6">
+      <span class="text-[13px] font-semibold uppercase tracking-[0.1em] text-terracotta">Gids</span>
+      <h1 class="font-newsreader font-medium leading-[1.12] tracking-[-0.015em] text-[length:var(--text-h1)] mt-4 text-balance">{headline}</h1>
+      <p class="text-sm text-inkt-zacht mt-3">
+        Gepubliceerd op <time datetime={gepubliceerd}>{datumTekst(gepubliceerd)}</time>
+        <span aria-hidden="true"> · </span>
+        Bijgewerkt op <time datetime={bijgewerkt}>{datumTekst(bijgewerkt)}</time>
+      </p>
+    </header>
+
+    <KortAntwoord tekst={kortAntwoord} />
+
+    <div class="mt-10 prose prose-lg max-w-none">
+      <p>
+        Over Claude Code lees je vooral verhalen van programmeurs. Deze gids is voor bedrijven zonder eigen ontwikkelteam. De voorbeelden komen uit projecten die wij zelf met Claude Code hebben gedaan.
+      </p>
+
+      <h2>Wat is Claude Code, in gewone taal?</h2>
+      <p>
+        Claude Code is een product van Anthropic, het bedrijf achter Claude. De gewone Claude-chat geeft je tekst terug. Claude Code werkt in een map op je computer of in een omgeving in de cloud. Het leest de bestanden daarin, past ze aan en voert opdrachten uit.
+      </p>
+      <p>
+        Voor een ondernemer komt het hierop neer. Je beschrijft wat je nodig hebt, en Claude Code schrijft en test de software die dat doet. Denk aan een script dat elke maandag een Excel-export omzet in een net rapport. Je hoeft de code niet zelf te schrijven. Je moet wel goed kunnen uitleggen wat je wilt, en kunnen beoordelen of het resultaat klopt.
+      </p>
+      <p>
+        In de chat kopieer je zelf tekst heen en weer. Claude Code werkt direct in de bestanden en kan een programma draaien om te zien of het werkt. Daarvoor heeft het wel meer toegang nodig, zie het hoofdstuk over risico's.
+      </p>
+
+      <h3>Waar draait het?</h3>
+      <p>Volgens de documentatie van Anthropic (gecontroleerd op 2 oktober 2026) kun je Claude Code op vier manieren gebruiken:</p>
+      <ul>
+        <li><strong>In de terminal</strong>, het tekstvenster op je computer. Dit is de meest complete versie.</li>
+        <li><strong>In de desktop-app van Claude</strong> voor Mac en Windows, via het tabblad Code. Je hoeft dan niets apart te installeren. Je hebt wel een betaald abonnement nodig.</li>
+        <li><strong>In de browser</strong> via claude.ai/code. Het werk draait dan in de cloud en je kunt later terugkomen voor het resultaat.</li>
+        <li><strong>In programmeeromgevingen</strong> zoals VS Code en JetBrains, als uitbreiding.</li>
+      </ul>
+      <p>Voor iemand zonder technische achtergrond is de desktop-app meestal het makkelijkste begin.</p>
+
+      <h2>Wat kun je ermee als je geen developer bent?</h2>
+      <p>
+        Hieronder vier soorten werk die ons team eerder met Claude Code bouwde, bij Nederlandse IT-bedrijven. De cijfers komen uit de cases zelf.
+      </p>
+
+      <h3>Rapportages die zichzelf maken</h3>
+      <p>
+        Een MSP-softwarebedrijf met meer dan 50 klanten maakte elk klantrapport met de hand. Dat kostte anderhalf uur per rapport. Ons team bouwde daar met Claude Code een opdracht die een compleet rapport maakt op basis van een klantnaam en een rapporttype. Er staan nu 872 rapporten live, in het Nederlands en het Engels. Het rapportagewerk ging van 20 uur per week naar minder dan 1 uur. <a href="/cases/powerbi-reporting">Lees de case over 872 Power BI-rapporten</a>.
+      </p>
+      <p>
+        Bij een ander bedrijf maakte Claude Code 173 dashboards die elke ochtend om 07:00 vanzelf verversen. Kijkers hebben daarvoor geen BI-licentie nodig. <a href="/cases/dashboard-automation">Bekijk de dashboard-case</a>.
+      </p>
+
+      <h3>Interne tools voor één specifiek probleem</h3>
+      <p>
+        Een IT-dienstverlener met 200+ klanten had geen kennisbank, omdat het vullen ervan een werkweek leek te kosten. Met Claude Code stonden er na vijf werkdagen 13 artikelen met 27 screenshots online. Het supportteam bespaart nu zes uur per week aan steeds dezelfde antwoorden. <a href="/cases/knowledge-base">Lees de kennisbank-case</a>.
+      </p>
+      <p>
+        Bij een consultancybureau zette ons team opnames van klantgesprekken om in korte briefs met videofragmenten. De verwerking van een gesprek ging van 45 naar 5 minuten (<a href="/cases/consultant-brief">case</a>). Een softwarebedrijf vult een demo-omgeving nu in 15 minuten, waar dat eerst twee weken handwerk was (<a href="/cases/demo-data-seeder">case</a>).
+      </p>
+
+      <h3>Data en processen doorlichten en opschonen</h3>
+      <p>
+        Bij een SaaS-bedrijf bleek een dagelijkse data-sync al twee weken stil te staan zonder dat iemand het merkte. Claude Code zette alle automatische processen op twee machines op een rij. Van de 38 processen werkten er 9 niet meer. Die zijn gerepareerd en alle 38 staan nu beschreven. <a href="/cases/automation-audit">Lees de case over 38 achtergrondprocessen</a>.
+      </p>
+      <p>
+        Een ander bedrijf had 311.000 vertoningen per maand in Google, maar bijna geen kliks. Claude Code las de Search Console-data in en binnen een uur lag er een diagnose, met 14 pagina's die elkaar in de weg zaten (<a href="/cases/seo-overhaul">case</a>).
+      </p>
+
+      <h3>Koppelingen tussen systemen</h3>
+      <p>
+        Een team betaalde 180 euro per maand voor drie losse tools voor CRM, e-mail en leads, en niets was gekoppeld. In één weekend kwam er een eigen CRM met e-mailmarketing op de eigen server voor in de plaats. Claude Code schreef de configuratie en de koppeling tussen de twee programma's. De licentiekosten gingen naar 0 euro. <a href="/cases/crm-weekend">Lees de CRM-case</a>.
+      </p>
+      <p>
+        Een salesteam moest vroeger in vier systemen inloggen en twintig minuten zoeken om een klant voor te bereiden. Nu stellen ze één vraag en krijgen ze een compleet klantprofiel uit CRM, Search Console, Power BI en LinkedIn (<a href="/cases/customer-intelligence">case</a>).
+      </p>
+      <p>
+        In alle voorbeelden ging het om terugkerend werk met duidelijke regels, en kende iemand het proces goed. Dat is ook een goed startpunt voor jouw eerste project. <a href="/cases">Bekijk alle cases</a>.
+      </p>
+
+      <h2>Wat heb je nodig om te beginnen?</h2>
+      <ul>
+        <li><strong>Een abonnement met Claude Code.</strong> Het gratis abonnement heeft het niet, de prijzen staan hieronder.</li>
+        <li><strong>Een computer.</strong> De desktop-app is er voor Mac en Windows. Op Ubuntu en Debian is de app nog in bèta. De terminalversie werkt ook op Linux. Wil je niets installeren, dan gebruik je de browserversie.</li>
+        <li><strong>Een afgebakende eerste klus.</strong> Kies één terugkerende taak waarvan je precies weet hoe het resultaat eruit moet zien. Een rapport dat je elke week met de hand maakt, is een goed voorbeeld.</li>
+        <li><strong>Iemand die het proces kent.</strong> Die persoon beschrijft wat er moet gebeuren en controleert of de uitkomst klopt.</li>
+        <li><strong>Wat begeleiding.</strong> De eerste weken leer je opdrachten goed omschrijven en resultaten controleren. Dat gaat sneller met iemand die het al vaker heeft gedaan.</li>
+      </ul>
+      <p>
+        Een handige gewoonte: leg vaste afspraken vast in een bestand met de naam CLAUDE.md in je projectmap. Claude Code leest dat bestand aan het begin van elke sessie. Een techbedrijf met 36+ projecten liet zo elke sessie met dezelfde teamregels starten. Een nieuw project opzetten ging daar van 30+ naar 5 minuten (<a href="/cases/devops-monorepo">case</a>).
+      </p>
+
+      <h2>Wat kost Claude Code zakelijk?</h2>
+      <p>
+        Je betaalt niet apart voor Claude Code. Het zit in de abonnementen van Claude. Dit zijn de prijzen zoals Anthropic ze op 2 oktober 2026 op de prijspagina toonde, in dollars en zonder btw:
+      </p>
+      <table>
+        <thead>
+          <tr><th>Abonnement</th><th>Prijs per maand</th><th>Claude Code</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Free</td><td>$0</td><td>Nee</td></tr>
+          <tr><td>Pro</td><td>$17 bij jaarbetaling, $20 per maand</td><td>Ja</td></tr>
+          <tr><td>Max</td><td>Vanaf $100, met 5 of 20 keer zoveel gebruik als Pro</td><td>Ja</td></tr>
+          <tr><td>Team, standaardplek</td><td>$20 per gebruiker bij jaarbetaling, $25 per maand</td><td>Ja</td></tr>
+          <tr><td>Team, premiumplek</td><td>$100 per gebruiker bij jaarbetaling, $125 per maand, 5 keer zoveel gebruik als standaard</td><td>Ja</td></tr>
+          <tr><td>Enterprise</td><td>$20 per gebruiker bij jaarbetaling, minimaal 20 gebruikers, plus gebruik tegen API-tarieven</td><td>Ja</td></tr>
+        </tbody>
+      </table>
+      <p>
+        Voor een bedrijf ligt Team het meest voor de hand. Pro en Max vallen onder de consumentenvoorwaarden van Anthropic. Team en Enterprise vallen onder de zakelijke voorwaarden, en dat maakt verschil voor wat er met je data gebeurt (zie hieronder). Team heeft daarnaast centrale facturering, single sign-on en beheerinstellingen. Voor wie veel met Claude Code werkt, is er de premiumplek met vijf keer zoveel gebruik.
+      </p>
+      <p>
+        Reken ook de tijd mee. Iemand moet opdrachten omschrijven, resultaten controleren en de gebouwde tools bijhouden.
+      </p>
+
+      <h2>Welke risico's zijn er, en hoe houd je ze in de hand?</h2>
+      <p>Claude Code kan meer dan een chatvenster. Daarom zijn er drie risico's waar je vooraf over moet nadenken.</p>
+
+      <h3>Toegang tot bestanden en systemen</h3>
+      <p>
+        Claude Code werkt met de rechten van de gebruiker op die computer. Anthropic heeft twee hoofdstanden. In de handmatige stand begint Claude Code met alleen leesrechten. Wil het een bestand aanpassen of een opdracht uitvoeren, dan vraagt het eerst toestemming. In de automatische stand beoordeelt een apart model de acties en blokkeert het wat onveilig lijkt. Volgens de documentatie is dat de standaard bij het starten in de terminal en in VS Code.
+      </p>
+      <p>
+        In de handmatige stand vraagt Claude Code ook toestemming voordat het buiten de startmap leest of schrijft. Een opdracht die je goedkeurt, kan volgens Anthropic wel overal schrijven waar jouw account bij kan. Zo houd je het in de hand:
+      </p>
+      <ul>
+        <li>Werk in een aparte map met kopieën, niet in je echte administratie.</li>
+        <li>Gebruik voor koppelingen een account met alleen leesrechten, of eerst een testomgeving.</li>
+        <li>Geef nooit beheerwachtwoorden mee in een opdracht.</li>
+        <li>Koppel alleen MCP-servers (koppelingen met andere software) van partijen die je vertrouwt. Anthropic controleert die zelf niet op beveiliging.</li>
+      </ul>
+
+      <h3>Controle van wat het bouwt</h3>
+      <p>
+        Claude Code kan fouten maken die er op het eerste gezicht goed uitzien. Anthropic zegt het zelf ook: je bent zelf verantwoordelijk voor het controleren van voorgestelde code en opdrachten voordat je ze goedkeurt.
+      </p>
+      <p>
+        In onze cases zat die controle in het ontwerp. Bij de Power BI-rapporten wordt elke query tegen het echte datamodel getoetst. Na de eerste 200 rapporten volgde een controle op structuur, en die vond 30 problemen die in één ronde zijn opgelost. Bij het <a href="/cases/sdr-sales-agent">sales-systeem</a> zet het systeem elke ochtend 25 e-mails klaar, maar gaat er niets de deur uit zonder goedkeuring van een medewerker. Test dus met cijfers waarvan je de uitkomst al kent, en laat een tweede persoon meekijken voordat iets live gaat.
+      </p>
+
+      <h3>Wat gebeurt er met je data?</h3>
+      <p>
+        Wat Claude Code leest om een taak uit te voeren, gaat als onderdeel van de opdracht naar Anthropic. Wat daarna gebeurt, hangt af van je abonnement:
+      </p>
+      <ul>
+        <li><strong>Pro en Max:</strong> je kiest zelf of je data gebruikt mag worden om nieuwe modellen te trainen. Staat dat aan, dan bewaart Anthropic de gegevens vijf jaar. Staat het uit, dan 30 dagen.</li>
+        <li><strong>Team en Enterprise:</strong> Anthropic traint geen modellen op code of opdrachten onder de zakelijke voorwaarden, tenzij je daar zelf voor kiest. De standaard bewaartermijn is 30 dagen.</li>
+      </ul>
+      <p>
+        Claude Code bewaart gesprekken ook op je eigen computer, standaard 30 dagen. Spreek daarom af welke gegevens wel en niet in Claude Code mogen, zeker als het om klantgegevens gaat.
+      </p>
+      <p>
+        Wat je bouwt, kan de data ook binnen houden. Ons team bouwde eerder bij een Nederlands softwarebedrijf met Claude Code een rapportagesysteem dat op de eigen server draait. De ruwe data verlaat die server niet en alleen de rapporten gaan naar de klant. Twee prospects die eerder afhaakten op de cloud, stapten daardoor alsnog in (<a href="/cases/report-engine">case</a>).
+      </p>
+
+      <h2>Wanneer haal je hulp erbij?</h2>
+      <p>
+        Een klein script voor je eigen werk kun je prima zelf proberen. Hulp is verstandig zodra een van deze dingen speelt:
+      </p>
+      <ul>
+        <li>De tool werkt met klantgegevens, personeelsgegevens of betalingen.</li>
+        <li>De tool schrijft in systemen waar een fout geld kost, zoals je boekhouding.</li>
+        <li>Meerdere collega's gaan erop vertrouwen, dus iemand moet het onderhouden.</li>
+        <li>Er is niemand in huis die kan beoordelen of het resultaat klopt.</li>
+        <li>Je wilt Claude Code voor een heel team inrichten, met afspraken en rechten.</li>
+      </ul>
+      <p>
+        Wij helpen mkb-bedrijven daarbij met vaste prijzen, vanaf €1.500 voor een scan. Lees hoe een <a href="/claude-implementatie">Claude-implementatie</a> verloopt, wat een <a href="/claude-consultant">Claude consultant</a> voor je doet, of hoe we een team <a href="/claude-in-30-dagen">in 30 dagen</a> op weg helpen. Wil je eerst weten waar je staat? Doe dan de gratis <a href="/ai-enablement-scan">AI-check</a>. Twijfel je tussen Claude Code en een code-editor met AI? Lees dan <a href="/vergelijken/claude-code-vs-cursor">Claude Code vs Cursor</a>. Meer achtergrond staat in <a href="/gids">Claude gidsen voor bedrijven</a>.
+      </p>
+    </div>
+
+    <BronnenBlok bronnen={bronnen} />
+
+    <FaqSectie items={faq} />
+
+    <AuthorBio author="camiel" />
+  </article>
+  <div class="max-w-3xl mx-auto px-6"><CtaStrook /></div>
+</BasisLayout>

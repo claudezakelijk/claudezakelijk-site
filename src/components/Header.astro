@@ -1,0 +1,89 @@
+---
+import { site, navigatie as alleNavigatie, dienstenNavigatie } from '../site';
+import { legeHubs } from '../data/indexering.mjs';
+
+// Lege hubs ("Binnenkort meer", noindex) krijgen geen link; zie Footer.astro.
+const navigatie = alleNavigatie.filter((i) => !legeHubs.includes(i.pad));
+const huidigPad = Astro.url.pathname.replace(/\/$/, '') || '/';
+---
+<header class="sticky-header flex items-center justify-between h-[72px] px-6 md:px-14 border-b border-lijn">
+  <a href="/" class="no-underline hp-italic text-[21px] font-semibold text-ink-diep">{site.naam}</a>
+  <nav aria-label="Hoofdnavigatie" class="desktop-nav">
+    <ul class="hidden md:flex items-center gap-7 text-sm font-medium">
+      {navigatie.map((item) => (
+        <li>
+          <a
+            href={item.pad}
+            class="no-underline text-ink-2 hover:text-ink-diep transition-colors"
+            aria-current={huidigPad === item.pad ? 'page' : undefined}
+          >
+            {item.label}
+          </a>
+        </li>
+      ))}
+      <li>
+        <a href="/ai-enablement-scan" class="pill pill-sm pill-primary no-underline">
+          Gratis AI-check <span aria-hidden="true">&rarr;</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <button
+    class="hamburger-btn"
+    id="hamburgerBtn"
+    aria-label="Menu openen"
+    aria-expanded="false"
+    aria-controls="mobileNav"
+  >
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- Mobile nav overlay + panel. Gesloten paneel is `inert` + visibility:hidden
+     (zie global.css), zodat de off-screen links niet tabbaar zijn. -->
+<div class="mobile-overlay" id="mobileOverlay"></div>
+<div class="mobile-nav-panel" id="mobileNav" inert>
+  <button class="close-btn" id="mobileCloseBtn" aria-label="Menu sluiten">&times;</button>
+  <nav aria-label="Mobiele navigatie">
+    {navigatie.map((item) => (<a href={item.pad}>{item.label}</a>))}
+    {dienstenNavigatie.map((item) => (<a href={item.pad}>{item.label}</a>))}
+    <a href="/ai-enablement-scan" class="pill pill-primary no-underline" style="justify-content:center">
+      Gratis AI-check
+    </a>
+  </nav>
+</div>
+
+<script>
+  const hamburger = document.getElementById('hamburgerBtn');
+  const overlay = document.getElementById('mobileOverlay');
+  const panel = document.getElementById('mobileNav');
+  const closeBtn = document.getElementById('mobileCloseBtn');
+
+  function setMenu(open: boolean) {
+    overlay?.classList.toggle('open', open);
+    panel?.classList.toggle('open', open);
+    hamburger?.setAttribute('aria-expanded', String(open));
+    if (open) {
+      panel?.removeAttribute('inert');
+      closeBtn?.focus();
+    } else {
+      panel?.setAttribute('inert', '');
+    }
+  }
+
+  hamburger?.addEventListener('click', () => setMenu(true));
+  closeBtn?.addEventListener('click', () => {
+    setMenu(false);
+    hamburger?.focus();
+  });
+  overlay?.addEventListener('click', () => {
+    setMenu(false);
+    hamburger?.focus();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && panel?.classList.contains('open')) {
+      setMenu(false);
+      hamburger?.focus();
+    }
+  });
+</script>

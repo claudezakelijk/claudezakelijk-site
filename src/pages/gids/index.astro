@@ -1,0 +1,93 @@
+---
+import { itemListNode, lijstId, faqNode } from '../../lib/schema';
+import BasisLayout from '../../layouts/BasisLayout.astro';
+import Container from '../../components/Container.astro';
+import CollectieHub from '../../components/CollectieHub.astro';
+import Broodkruimel from '../../components/Broodkruimel.astro';
+import FaqSectie from '../../components/FaqSectie.astro';
+
+// Gidsen zijn statische .astro-pagina's (geen content-collectie); de hub
+// bestaat omdat de breadcrumbs op elke gidspagina naar /gids verwijzen.
+const gidsen = [
+  {
+    href: '/gids/claude-voor-mkb',
+    titel: 'Claude voor bedrijven en mkb',
+    beschrijving: 'Welk abonnement past, wat het kost, wat je team ermee doet, hoe het zit met de AVG en hoe je de invoering aanpakt.',
+    vraag: 'Welk abonnement past, wat kost het en hoe begin je?',
+    bijgewerkt: '2 oktober 2026',
+  },
+  {
+    href: '/gids/overstappen-van-chatgpt-naar-claude',
+    titel: 'Overstappen van ChatGPT naar Claude',
+    beschrijving: 'Wanneer overstappen loont en wanneer niet, wat het echt kost en hoe je Claude in twee weken test met één team.',
+    vraag: 'Wanneer loont overstappen van ChatGPT naar Claude en hoe test je dat?',
+    bijgewerkt: '2 oktober 2026',
+  },
+  {
+    href: '/gids/claude-code-voor-bedrijven',
+    titel: 'Claude Code voor bedrijven',
+    beschrijving: 'Claude Code inzetten zonder eigen developers: wat het is, wat je ermee bouwt, wat het kost en hoe je de risico\'s beperkt.',
+    vraag: 'Wat kan Claude Code zonder eigen developers, en wat kost het?',
+    bijgewerkt: '2 oktober 2026',
+  },
+];
+
+const faq = [
+  {
+    question: 'Voor wie zijn deze gidsen?',
+    answer: 'Voor ondernemers en managers in het mkb die Claude zakelijk willen inzetten. De gidsen gaan uit van een team van 5 tot 150 mensen en van Nederlandse regels, zoals de AVG en de btw.',
+  },
+  {
+    question: 'Hoe actueel zijn de prijzen en voorwaarden?',
+    answer: 'Elke gids toont bovenaan wanneer hij is bijgewerkt. Onderaan staan de bronnen, met de datum waarop we ze lazen. Prijzen en abonnementen controleren we elke maand bij Anthropic.',
+  },
+  {
+    question: 'Is ClaudeZakelijk onderdeel van Anthropic?',
+    answer: 'Nee. ClaudeZakelijk is een onafhankelijk Nederlands adviesbureau. Claude is een product en handelsmerk van Anthropic.',
+  },
+];
+const breadcrumbs = [{ name: 'Home', url: '/' }, { name: 'Gidsen', url: '/gids' }];
+---
+<BasisLayout
+  titel="Claude gidsen voor bedrijven"
+  beschrijving="Gidsen over Claude voor bedrijven en mkb: van kiezen en kosten tot overstappen van ChatGPT en Claude Code inzetten. In gewoon Nederlands, met bronnen."
+  pad="/gids"
+  schema={{ paginaType: 'CollectionPage', hoofdonderwerp: lijstId('/gids'), breadcrumbs, nodes: [itemListNode('/gids', gidsen.map((g) => ({ url: g.href, naam: g.titel }))), faqNode('/gids', faq)] }}
+>
+  <Container class="pt-16 pb-12">
+    <Broodkruimel items={breadcrumbs} />
+    <div class="mt-6">
+    <CollectieHub
+      label="Gids"
+      titel="Claude gidsen voor bedrijven"
+      intro="Een gids legt één onderwerp over Claude helemaal uit, voor bedrijven met 5 tot 150 medewerkers. Je leest welk abonnement past en wat het kost, wanneer overstappen van ChatGPT naar Claude loont en wat Claude Code kan zonder eigen developers. Elke gids toont wanneer hij is bijgewerkt en noemt zijn bronnen met de datum waarop we ze controleerden. Oriënteer je je nog? Begin dan bij de gids Claude voor bedrijven en mkb."
+      leesTekst="Lees de gids"
+      items={gidsen}
+    />
+    </div>
+
+    <div class="my-10 overflow-x-auto">
+      <table class="w-full text-sm border-collapse">
+        <caption class="caption-top text-left text-sm text-inkt-zacht pb-2">Alle gidsen, stand oktober 2026</caption>
+        <thead>
+          <tr class="border-b-2 border-lijn">
+            <th scope="col" class="text-left p-3 font-semibold">Gids</th>
+            <th scope="col" class="text-left p-3 font-semibold">Beantwoordt</th>
+            <th scope="col" class="text-left p-3 font-semibold">Bijgewerkt</th>
+          </tr>
+        </thead>
+        <tbody>
+          {gidsen.map((g) => (
+            <tr class="border-b border-lijn">
+              <th scope="row" class="p-3 text-left font-medium"><a href={g.href} class="text-accent-diep">{g.titel}</a></th>
+              <td class="p-3 text-inkt-zacht">{g.vraag}</td>
+              <td class="p-3 text-inkt-zacht">{g.bijgewerkt}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <FaqSectie titel="Vragen over de gidsen" items={faq} />
+  </Container>
+</BasisLayout>

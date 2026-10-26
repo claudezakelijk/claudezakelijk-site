@@ -1,0 +1,20 @@
+---
+import { render } from 'astro:content';
+import PrijsLayout from '../../layouts/PrijsLayout.astro';
+import { getPublished } from '../../lib/content';
+
+export async function getStaticPaths() {
+  // kosten-zakelijk wordt op /prijs gerenderd (besluit D-C2); /prijs/kosten-zakelijk is een 301.
+  const pages = (await getPublished('prijs')).filter((p) => p.id !== 'kosten-zakelijk');
+  return pages.map(page => ({
+    params: { slug: page.id },
+    props: { entry: page },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+<PrijsLayout entry={entry} pagePath={`/prijs/${entry.id}`}>
+  <Content />
+</PrijsLayout>

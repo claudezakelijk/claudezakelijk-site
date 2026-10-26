@@ -1,0 +1,107 @@
+---
+import BasisLayout from '../layouts/BasisLayout.astro';
+import { site } from '../site';
+import Broodkruimel from '../components/Broodkruimel.astro';
+const breadcrumbs = [{ name: 'Home', url: '/' }, { name: 'Privacyverklaring', url: '/privacy' }];
+---
+<BasisLayout
+  titel="Privacyverklaring"
+  beschrijving="Welke gegevens claudezakelijk.nl verwerkt, waarom, hoe lang we ze bewaren en welke rechten je hebt onder de AVG."
+  pad="/privacy"
+  schema={{ breadcrumbs }}
+>
+  <section class="max-w-2xl mx-auto px-6 pt-16 pb-24">
+    <Broodkruimel items={breadcrumbs} />
+    <p class="mt-6 text-xs uppercase tracking-widest text-inkt-zacht">Privacy</p>
+    <h1 class="mt-3 text-[length:var(--text-h1)]">Privacyverklaring</h1>
+    <p class="mt-4 text-sm text-inkt-zacht">Laatst bijgewerkt: 22 oktober 2026</p>
+
+    <div class="mt-8 prose prose-stone max-w-none">
+      <p>
+        Deze verklaring gaat over claudezakelijk.nl.
+        Kort samengevat: we zetten geen cookies, we bouwen geen bezoekersprofielen, en de enige persoonsgegevens die we ontvangen zijn de gegevens die je zelf invult of mailt.
+      </p>
+
+      <h2>Wie is verantwoordelijk</h2>
+      <p>
+        {site.naam} is een handelsnaam van {site.juridisch.handelsnaamVan}, ingeschreven bij de Kamer van Koophandel onder nummer {site.juridisch.kvk}.
+        Wij zijn de verwerkingsverantwoordelijke voor de gegevens die via deze site binnenkomen.
+        Vragen over privacy stuur je naar <a href={`mailto:${site.email}`}>{site.email}</a>.
+      </p>
+
+      <h2>De AI-check en e-mail</h2>
+      <p>
+        Vul je de <a href="/ai-enablement-scan">gratis AI-check</a> in, dan verwerken we je naam, je werk-e-mailadres, je bedrijfsnaam, je antwoorden op de zeven vragen en de score die daaruit volgt.
+        Vraag je daarna om de tips per mail, dan worden dezelfde gegevens nog een keer verstuurd, met die vraag erbij.
+      </p>
+      <p>
+        De inzending loopt via Web3Forms, een formulierdienst die het bericht bij ons in de mailbox aflevert.
+        We gebruiken je gegevens alleen om op je aanvraag te reageren: je resultaat toelichten, de tips sturen als je daarom vraagt, of een intro-gesprek inplannen als je dat wilt.
+        De grondslag is de uitvoering van jouw verzoek.
+        We verkopen of delen je gegevens niet voor andere doelen.
+      </p>
+      <p>
+        Mail je ons rechtstreeks, dan bewaren we je e-mailadres en je bericht om te kunnen antwoorden.
+      </p>
+
+      <h2>Herkomst van je bezoek</h2>
+      <p>
+        We willen weten via welk kanaal aanvragen binnenkomen, bijvoorbeeld via een zoekmachine, LinkedIn of een AI-assistent.
+        Daarvoor bewaart je browser tijdens je bezoek een klein pakketje in sessionStorage, onder de naam czk-bron.
+        Daarin staat: de verwijzende site (alleen domein en pad; zoektermen alleen bij een zoekmachine), de pagina waarop je binnenkwam, eventuele utm-campagnecodes uit de link, of de link een advertentie-klikcode bevatte (alleen ja of nee, nooit de code zelf), het tijdstip van je eerste pageview, en de laatste paden die je op deze site bekeek, met een teller.
+      </p>
+      <p>
+        Dit pakketje blijft in jouw browser, in dat ene tabblad, en verdwijnt zodra je het tabblad sluit.
+        Het is geen cookie, er zit geen identificatienummer in, en het wordt tijdens het surfen met niemand gedeeld.
+        Alleen als je de AI-check verstuurt gaat deze herkomst met je inzending mee, samen met de vermelding of je op mobiel of desktop zat.
+        De grondslag hiervoor is ons gerechtvaardigd belang: meten welke kanalen aanvragen opleveren, zonder bezoekers te volgen.
+      </p>
+
+      <h2>Websitestatistieken en hosting</h2>
+      <p>
+        Voor bezoekersaantallen gebruiken we Cloudflare Web Analytics.
+        Dat werkt zonder cookies en zonder volgtechnieken: wij zien alleen geaggregeerde cijfers, zoals het aantal bezoeken per pagina, en geen individuele bezoekers.
+      </p>
+      <p>
+        De site draait op Cloudflare Pages.
+        Zoals elke hostingpartij verwerkt Cloudflare bij het uitleveren van de site technische gegevens, waaronder je IP-adres, voor beveiliging en logging.
+      </p>
+      <p>
+        Verder laadt de site niets van derden: geen advertentienetwerken, geen social-media-pixels, geen externe lettertypen.
+        De rekentools op deze site draaien volledig in je eigen browser; wat je daar invult verlaat je apparaat niet.
+      </p>
+
+      <h2>Een intro-gesprek boeken</h2>
+      <p>
+        Plan je een intro-gesprek, dan kom je op een afsprakenpagina van Google Agenda (calendar.app.google).
+        Wat je daar invult verwerkt Google; daarop is het <a href="https://policies.google.com/privacy" rel="noopener">privacybeleid van Google</a> van toepassing.
+        Wij ontvangen de afspraak en je ingevulde gegevens in onze agenda.
+      </p>
+
+      <h2>Geen cookies, geen banner</h2>
+      <p>
+        Deze site zet geen cookies, ook geen analytische of advertentiecookies.
+        Daarom zie je hier geen cookiebanner: er valt niets te accepteren of te weigeren.
+      </p>
+
+      <h2>Hoe lang we gegevens bewaren</h2>
+      <p>
+        Inzendingen van de AI-check en e-mailcorrespondentie bewaren we tot 24 maanden na het laatste contact, daarna verwijderen we ze.
+        Worden we het eens over een opdracht, dan bewaren we de gegevens die bij de administratie horen, zoals offertes en facturen, 7 jaar vanwege de wettelijke fiscale bewaarplicht.
+        De herkomstgegevens in je browser verdwijnen vanzelf zodra je het tabblad sluit.
+      </p>
+
+      <h2>Jouw rechten</h2>
+      <p>
+        Je hebt onder de AVG het recht op inzage, correctie, verwijdering, bezwaar en overdraagbaarheid van je gegevens.
+        Mail daarvoor naar <a href={`mailto:${site.email}`}>{site.email}</a>; je hoort binnen een werkdag van ons, en we handelen je verzoek binnen een maand af.
+        Vind je dat we niet goed met je gegevens omgaan, dan kun je een klacht indienen bij de <a href="https://www.autoriteitpersoonsgegevens.nl" rel="noopener">Autoriteit Persoonsgegevens</a>.
+      </p>
+
+      <h2>Wijzigingen</h2>
+      <p>
+        Verandert er iets aan hoe de site met gegevens omgaat, dan passen we deze verklaring aan en werken we de datum bovenaan bij.
+      </p>
+    </div>
+  </section>
+</BasisLayout>

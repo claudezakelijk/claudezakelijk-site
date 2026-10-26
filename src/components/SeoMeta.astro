@@ -1,0 +1,80 @@
+---
+import { site } from '../site';
+import {
+  bouwGraph, canonicalUrl, isoNl, zichtbarePersoonId, ogAfbeelding,
+  OG_GEGENEREERD, OG_STANDAARD,
+  type SchemaInvoer, type ArtikelInvoer,
+} from '../lib/schema';
+
+interface Props {
+  titel: string;
+  beschrijving: string;
+  pad: string;
+  /** Wordt automatisch 'article' als `artikel` is meegegeven. */
+  ogType?: 'website' | 'article';
+  /** Eigen deelplaatje (privé-pagina's). Zonder dit: gegenereerd of het standaardplaatje. */
+  ogImage?: string;
+  ogTitel?: string;
+  ogImageAlt?: string;
+  /** Uit BasisLayout. Noindex-pagina's krijgen geen JSON-LD. */
+  geenIndex: boolean;
+  schema?: SchemaInvoer;
+  artikel?: ArtikelInvoer;
+  /** Geen canonical en geen og:url (bv. de 404-pagina). */
+  geenCanonical?: boolean;
+}
+
+const { titel, beschrijving, pad, ogType = 'website', ogImage: eigenOg, ogTitel, ogImageAlt, geenIndex, schema, artikel, geenCanonical = false } = Astro.props;
+
+// Titelsjabloon (O-17, S-20): " | ClaudeZakelijk" alleen als het geheel binnen
+// 60 tekens blijft. De formulering van titels zelf is van Spec C.
+const SUFFIX = ` | ${site.naam}`;
+const MAX_TITEL = 60;
+const kaleTitel = titel.endsWith(SUFFIX) ? titel.slice(0, -SUFFIX.length) : titel;
+const metSuffix = `${kaleTitel}${SUFFIX}`;
+// Homepage: titel zoals gegeven, nooit achtervoegsel en nooit gestript.
+const volledigeTitel = pad === '/' ? titel : kaleTitel.includes(site.naam) || metSuffix.length > MAX_TITEL ? kaleTitel : metSuffix;
+const deelTitel = ogTitel ?? volledigeTitel;
+const canonical = canonicalUrl(pad);
+const type = artikel ? 'article' : ogType;
+
+const og = eigenOg
+  ? { url: new URL(eigenOg, site.url).toString(), breedte: null as number | null, hoogte: null as number | null, alt: ogImageAlt ?? null }
+  : !geenIndex && OG_GEGENEREERD
+    ? { url: ogAfbeelding(pad), breedte: 1200, hoogte: 630, alt: ogImageAlt ?? `${kaleTitel}, ${site.naam}` }
+    : { url: OG_STANDAARD.url, breedte: OG_STANDAARD.breedte, hoogte: OG_STANDAARD.hoogte, alt: ogImageAlt ?? site.naam };
+
+const graph = geenIndex ? null : bouwGraph({ pad, naam: kaleTitel, beschrijving, schema, artikel });
+const ldJson = graph ? JSON.stringify(graph).replace(/</g, '\\u003c') : null;
+---
+<title>{volledigeTitel}</title>
+<meta name="description" content={beschrijving} />
+{!geenCanonical && <link rel="canonical" href={canonical} />}
+
+<meta property="og:type" content={type} />
+<meta property="og:site_name" content={site.naam} />
+<meta property="og:locale" content="nl_NL" />
+<meta property="og:title" content={deelTitel} />
+<meta property="og:description" content={beschrijving} />
+{!geenCanonical && <meta property="og:url" content={canonical} />}
+<meta property="og:image" content={og.url} />
+{og.breedte && <meta property="og:image:width" content={String(og.breedte)} />}
+{og.hoogte && <meta property="og:image:height" content={String(og.hoogte)} />}
+{og.url.endsWith('.png') && <meta property="og:image:type" content="image/png" />}
+{og.alt && <meta property="og:image:alt" content={og.alt} />}
+{artikel && (
+  <>
+    <meta property="article:published_time" content={isoNl(artikel.gepubliceerd)} />
+    <meta property="article:modified_time" content={isoNl(artikel.bijgewerkt ?? artikel.gepubliceerd)} />
+    <meta property="article:author" content={artikel.auteur === 'organisatie' ? `${site.url}/over` : zichtbarePersoonId(artikel.auteur)} />
+    <meta property="article:section" content={artikel.sectie} />
+  </>
+)}
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={deelTitel} />
+<meta name="twitter:description" content={beschrijving} />
+<meta name="twitter:image" content={og.url} />
+{og.alt && <meta name="twitter:image:alt" content={og.alt} />}
+
+{ldJson && <script type="application/ld+json" set:html={ldJson} />}

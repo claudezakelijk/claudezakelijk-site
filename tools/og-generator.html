@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OG Image Generator - ClaudeZakelijk</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; background: #1a1a1a; color: #eee; padding: 2rem; }
+  h1 { font-size: 1.25rem; margin-bottom: 1.5rem; color: #ccc; }
+
+  .layout { display: flex; gap: 2rem; flex-wrap: wrap; }
+  .preview-wrap { flex: 1; min-width: 600px; }
+  .controls { width: 320px; display: flex; flex-direction: column; gap: 0.75rem; }
+
+  /* The OG canvas */
+  .og-frame {
+    width: 100%; max-width: 1200px; aspect-ratio: 1200/630;
+    border: 2px solid #333; border-radius: 4px; overflow: hidden;
+    position: relative;
+  }
+  .og {
+    width: 1200px; height: 630px;
+    transform-origin: top left;
+    position: relative; overflow: hidden;
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* Toggle row */
+  .toggle-row {
+    display: flex; align-items: center; gap: 0.75rem;
+    background: #252525; padding: 0.6rem 0.75rem; border-radius: 6px;
+    cursor: pointer; user-select: none;
+  }
+  .toggle-row:hover { background: #2a2a2a; }
+  .toggle-row input { display: none; }
+  .toggle-switch {
+    width: 40px; height: 22px; background: #444; border-radius: 11px;
+    position: relative; flex-shrink: 0; transition: background 0.2s;
+  }
+  .toggle-switch::after {
+    content: ''; position: absolute; top: 3px; left: 3px;
+    width: 16px; height: 16px; background: #999; border-radius: 50%;
+    transition: transform 0.2s, background 0.2s;
+  }
+  .toggle-row input:checked + .toggle-switch { background: #A35A41; }
+  .toggle-row input:checked + .toggle-switch::after { transform: translateX(18px); background: #FAF7F2; }
+  .toggle-label { font-size: 0.85rem; line-height: 1.3; }
+  .toggle-label small { display: block; color: #888; font-size: 0.75rem; }
+
+  /* Download button */
+  .download-btn {
+    margin-top: 1rem; padding: 0.75rem 1.5rem;
+    background: #A35A41; color: #FAF7F2; border: none; border-radius: 6px;
+    font-size: 0.9rem; font-weight: 600; cursor: pointer;
+  }
+  .download-btn:hover { background: #7B3D2F; }
+
+  /* OG elements */
+  .og { background: var(--og-bg, #FAF7F2); }
+  .og .accent-bar { position: absolute; top: 0; left: 0; width: 8px; height: 100%; background: #CC785C; }
+  .og .accent-bottom { position: absolute; bottom: 0; left: 0; width: 100%; height: 6px; background: #CC785C; }
+  .og .pattern {
+    position: absolute; inset: 0; opacity: 0.04;
+    background-image: repeating-linear-gradient(45deg, #2A2725 0, #2A2725 1px, transparent 0, transparent 50%);
+    background-size: 20px 20px;
+  }
+  .og .content { position: absolute; inset: 0; padding: 60px 80px; display: flex; flex-direction: column; justify-content: center; }
+  .og .tagline {
+    font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 3px; color: #A35A41; margin-bottom: 20px;
+  }
+  .og .headline {
+    font-family: 'Source Serif 4', serif; font-size: 72px; font-weight: 700;
+    line-height: 1.1; color: #2A2725; margin-bottom: 16px; letter-spacing: -0.5px;
+  }
+  .og .subtitle {
+    font-family: 'Inter', sans-serif; font-size: 28px; color: #58524C; line-height: 1.4;
+  }
+  .og .brand {
+    position: absolute; bottom: 50px; left: 80px;
+    font-family: 'Source Serif 4', serif; font-size: 24px; font-weight: 700; color: #2A2725;
+  }
+  .og .byline {
+    position: absolute; bottom: 52px; right: 80px;
+    font-family: 'Inter', sans-serif; font-size: 16px; color: #58524C;
+  }
+  .og .url {
+    position: absolute; bottom: 24px; left: 80px;
+    font-family: 'Inter', sans-serif; font-size: 14px; color: #A35A41;
+    letter-spacing: 1px;
+  }
+  .og .divider {
+    width: 60px; height: 3px; background: #CC785C; margin: 20px 0;
+  }
+
+  /* Dark variant overrides */
+  .og.dark { background: #2A2725; }
+  .og.dark .headline { color: #FAF7F2; }
+  .og.dark .subtitle { color: #d4cfc7; }
+  .og.dark .tagline { color: #CC785C; }
+  .og.dark .brand { color: #FAF7F2; }
+  .og.dark .byline { color: #d4cfc7; }
+  .og.dark .url { color: #CC785C; }
+  .og.dark .pattern { opacity: 0.06; }
+  .og.dark .pattern { background-image: repeating-linear-gradient(45deg, #FAF7F2 0, #FAF7F2 1px, transparent 0, transparent 50%); }
+  .og.dark .divider { background: #CC785C; }
+  .og.dark .accent-bar { background: #CC785C; }
+  .og.dark .accent-bottom { background: #CC785C; }
+</style>
+</head>
+<body>
+
+<h1>OG Image Generator / ClaudeZakelijk (1200 x 630)</h1>
+
+<div class="layout">
+  <div class="preview-wrap">
+    <div class="og-frame">
+      <div class="og" id="og">
+        <div class="pattern" data-toggle="pattern"></div>
+        <div class="accent-bar" data-toggle="accent-bar"></div>
+        <div class="accent-bottom" data-toggle="accent-bottom"></div>
+        <div class="content">
+          <div class="tagline" data-toggle="tagline">Claude voor het Nederlandse MKB</div>
+          <div class="headline" data-toggle="headline">Uw team, 10× zo productief.</div>
+          <div class="divider" data-toggle="divider"></div>
+          <div class="subtitle" data-toggle="subtitle">Zonder angst. Zonder ontslagen. In het Nederlands.</div>
+        </div>
+        <div class="brand" data-toggle="brand">ClaudeZakelijk</div>
+        <div class="byline" data-toggle="byline">Max de Kwaasteniet</div>
+        <div class="url" data-toggle="url">claudezakelijk.nl</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="controls">
+    <label class="toggle-row">
+      <input type="checkbox" checked data-target="headline">
+      <span class="toggle-switch"></span>
+      <span class="toggle-label">Headline<small>Uw team, 10x zo productief.</small></span>
+    </label>
+    <label class="toggle-row">
+      <input type="checkbox" checked data-target="subtitle">
+      <span class="toggle-switch"></span>
+      <span class="toggle-label">Subtitel<small>Zonder angst. Zonder ontslagen.</small></span>
+    </label>
+    <label class="toggle-row">
+      <input type="checkbox" checked data-target="tagline">
+      <span class="toggle-switch"></span>
+      <span class="toggle-label">Tagline<small>Claude voor het Nederlandse MKB</small></span>
+    </label>
+    <label class="toggle-row">
+      <input type="checkbox" checked data-target="brand">
+      <span class="toggle-switch"></span>
+      <span class="toggle-label">Merknaam<small>ClaudeZakelijk in linkerhoek</small></span>
+    </label>
+    <label class="toggle-row">
+      <input type="checkbox" checked data-target="byline">
+      <span class="toggle-switch"></span>
+      <span class="toggle-label">Byline<small>Max de Kwaasteniet rechtsonder</small></span>
+    </label>
+    <label class="toggle-row">
+      <input type="checkbox" checked data-target="url">
+      <span class="toggle-switch"></span>
+      <span class="toggle-label">URL<small>claudezakelijk.nl onderaan</small></span>
+    </label>
+    <label class="toggle-row">
+      <input type="checkbox" checked data-target="divider">
+      <span class="toggle-switch"></span>
+      <span class="toggle-label">Scheidingsstreep<small>Accentkleur onder headline</small></span>
+    </label>
+    <label class="toggle-row">
+      <input type="checkbox" checked data-target="accent-bar">
+      <span class="toggle-switch"></span>
+      <span class="toggle-label">Accent links<small>Verticale streep linkerrand</small></span>
+    </label>
+    <label class="toggle-row">
+      <input type="checkbox" data-target="accent-bottom">
+      <span class="toggle-switch"></span>
+      <span class="toggle-label">Accent onder<small>Horizontale streep onderrand</small></span>
+    </label>
+    <label class="toggle-row">
+      <input type="checkbox" data-target="pattern">
+      <span class="toggle-switch"></span>
+      <span class="toggle-label">Patroon<small>Subtiel diagonaal raster</small></span>
+    </label>
+    <label class="toggle-row" id="dark-toggle">
+      <input type="checkbox" id="dark-check">
+      <span class="toggle-switch"></span>
+      <span class="toggle-label">Donkere variant<small>Inkt-achtergrond i.p.v. papier</small></span>
+    </label>
+
+    <button class="download-btn" id="download">Download als PNG (1200 x 630)</button>
+    <button class="download-btn" id="copy-selection" style="background:#444">Kopieer selectie naar clipboard</button>
+    <p id="copy-feedback" style="font-size:0.75rem;color:#888;margin-top:0.25rem;display:none"></p>
+  </div>
+</div>
+
+<script>
+  const og = document.getElementById('og');
+  const frame = document.querySelector('.og-frame');
+
+  // Scale the 1200px canvas to fit the container
+  function scalePreview() {
+    const w = frame.clientWidth;
+    const s = Math.min(w / 1200, 1);
+    og.style.transform = `scale(${s})`;
+    frame.style.height = `${630 * s}px`;
+  }
+  window.addEventListener('resize', scalePreview);
+  scalePreview();
+
+  // Toggles
+  document.querySelectorAll('[data-target]').forEach(input => {
+    input.addEventListener('change', () => {
+      const target = input.dataset.target;
+      const els = og.querySelectorAll(`[data-toggle="${target}"]`);
+      els.forEach(el => el.style.display = input.checked ? '' : 'none');
+    });
+    // Apply initial state
+    if (!input.checked) {
+      const target = input.dataset.target;
+      og.querySelectorAll(`[data-toggle="${target}"]`).forEach(el => el.style.display = 'none');
+    }
+  });
+
+  // Dark mode toggle
+  document.getElementById('dark-check').addEventListener('change', function() {
+    og.classList.toggle('dark', this.checked);
+  });
+
+  // Download as PNG using canvas
+  document.getElementById('download').addEventListener('click', async () => {
+    const btn = document.getElementById('download');
+    btn.textContent = 'Renderen...';
+    btn.disabled = true;
+
+    // Use html2canvas from CDN
+    if (!window.html2canvas) {
+      const script = document.createElement('script');
+      script.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js';
+      document.head.appendChild(script);
+      await new Promise(r => script.onload = r);
+    }
+
+    // Reset scale for capture
+    og.style.transform = 'none';
+
+    const canvas = await html2canvas(og, {
+      width: 1200, height: 630, scale: 1,
+      useCORS: true, allowTaint: true,
+      backgroundColor: null,
+    });
+
+    // Restore scale
+    scalePreview();
+
+    const link = document.createElement('a');
+    link.download = 'og-claudezakelijk.png';
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+
+    btn.textContent = 'Download als PNG (1200 x 630)';
+    btn.disabled = false;
+  });
+
+  // Copy selection to clipboard
+  document.getElementById('copy-selection').addEventListener('click', () => {
+    const toggles = [...document.querySelectorAll('[data-target]')].map(input => {
+      const name = input.closest('.toggle-row').querySelector('.toggle-label').childNodes[0].textContent.trim();
+      return `${input.checked ? 'AAN' : 'UIT'}: ${name}`;
+    });
+    const dark = document.getElementById('dark-check').checked;
+    toggles.push(`${dark ? 'AAN' : 'UIT'}: Donkere variant`);
+    const text = `OG-selectie:\n${toggles.join('\n')}`;
+    navigator.clipboard.writeText(text);
+    const fb = document.getElementById('copy-feedback');
+    fb.textContent = 'Gekopieerd! Plak in Claude Code.';
+    fb.style.display = 'block';
+    setTimeout(() => fb.style.display = 'none', 3000);
+  });
+</script>
+</body>
+</html>

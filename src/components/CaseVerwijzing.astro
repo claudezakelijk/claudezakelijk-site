@@ -1,0 +1,16 @@
+---
+interface Props {
+  maand: string;
+  jaar: string | number;
+  wat: string;
+  sector: string;
+  cijfer: string;
+  duur: string;
+  caseSlug: string;
+}
+const { maand, jaar, wat, sector, cijfer, duur, caseSlug } = Astro.props;
+---
+<blockquote class="my-6 pl-4 border-l-2 border-teal text-inkt-zacht not-italic">
+  In {maand} {jaar} bouwden we {wat} voor een {sector} bedrijf. {cijfer}. {duur}.
+  <a href={`/cases/${caseSlug}`} class="text-accent-diep">Lees de case</a>.
+</blockquote>

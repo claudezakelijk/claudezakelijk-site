@@ -1,0 +1,211 @@
+---
+import { getCollection, render } from 'astro:content';
+import BasisLayout from '../layouts/BasisLayout.astro';
+import CtaWarm from '../components/CtaWarm.astro';
+import Broodkruimel from '../components/Broodkruimel.astro';
+
+const blocks = (await getCollection('methodologie'))
+  .sort((a, b) => a.data.volgorde - b.data.volgorde);
+
+const gerenderd = await Promise.all(
+  blocks.map(async (b) => ({ data: b.data, Content: (await render(b)).Content }))
+);
+
+// Band per vorm (goedgekeurd ontwerp 21 juli): afwisselend papier/paper-tint,
+// de bibliotheek als donkere band. Vormloos blok valt terug op papier + prose.
+const bandKlasse: Record<string, string> = {
+  dimensies: 'bg-paper-tint',
+  lagen: '',
+  tweeluik: 'bg-paper-tint',
+  bibliotheek: 'bg-ink-diep text-papier',
+  ritme: '',
+};
+
+const check = `<svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true" class="flex-none mt-0.5"><circle cx="10" cy="10" r="9" fill="#C25E3C"/><path d="M6 10.2l2.6 2.6L14 7.4" stroke="#FAF7F2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+const breadcrumbs = [{ name: 'Home', url: '/' }, { name: 'Methodologie', url: '/methodologie' }];
+---
+<BasisLayout
+  titel="Claude invoeren in je bedrijf: onze methode"
+  beschrijving="Onze methodologie in vijf bouwstenen: Readiness Scan-raamwerk, veilige installatie, Champions-programma, promptbibliotheek en de Wekelijkse Use-Case Drop."
+  pad="/methodologie"
+  schema={{ breadcrumbs }}
+>
+  <div class="hp text-ink-diep bg-papier">
+
+    <!-- Hero -->
+    <header class="mx-auto max-w-[1040px] px-6 pt-16 pb-16">
+      <Broodkruimel items={breadcrumbs} />
+      <p class="mt-6 text-[13px] font-semibold uppercase tracking-[0.1em] text-terracotta">Methodologie</p>
+      <h1 class="mt-3.5 font-newsreader font-medium leading-[1.08] tracking-[-0.015em] text-[clamp(40px,6vw,64px)] text-balance">Onze methode in vijf bouwstenen</h1>
+      <p class="mt-5 max-w-[620px] text-[clamp(17px,2.2vw,20px)] leading-[1.6] text-ink-2 text-pretty">
+        Vijf dingen die bij elke klant terugkomen. De inhoud verschilt, de structuur niet. Zo blijft het voorspelbaar voor jou en schaalbaar voor ons.
+      </p>
+    </header>
+
+    {gerenderd.map(({ data, Content }) => (
+      <section class:list={['py-16 md:py-[72px]', bandKlasse[data.vorm ?? ''] ?? '']}>
+        <div class="mx-auto max-w-[1040px] px-6">
+          {data.kicker && (
+            <p class:list={['text-[13px] font-semibold uppercase tracking-[0.1em]', data.vorm === 'bibliotheek' ? 'text-salmon' : 'text-terracotta']}>{data.kicker}</p>
+          )}
+          <h2 class="mt-3.5 font-newsreader font-medium leading-[1.15] tracking-[-0.015em] text-[clamp(28px,4vw,40px)] text-balance">{data.titel}</h2>
+          <p class:list={['mt-4 max-w-[620px] text-[clamp(16px,2vw,19px)] leading-[1.6] text-pretty', data.vorm === 'bibliotheek' ? 'text-papier/75' : 'text-ink-2']}>{data.samenvatting}</p>
+
+          {/* — Vorm: dimensies (Readiness Scan) — */}
+          {data.vorm === 'dimensies' && (
+            <div class="mt-10 grid gap-10 md:grid-cols-[300px_1fr] items-start">
+              <figure class="m-0 rounded-[20px] border border-lijn bg-papier p-6 text-center">
+                <svg viewBox="0 0 200 190" class="w-full h-auto" aria-label="Voorbeeld van de radarchart met vijf dimensies">
+                  <g stroke="var(--color-border-2)" fill="none">
+                    <polygon points="100,20 176,75 147,165 53,165 24,75" />
+                    <polygon points="100,47 150,84 131,144 69,144 50,84" opacity="0.6" />
+                    <polygon points="100,74 125,92 115,122 85,122 75,92" opacity="0.4" />
+                  </g>
+                  <polygon points="100,32 160,80 128,150 62,138 40,82" fill="#C25E3C" fill-opacity="0.18" stroke="#C25E3C" stroke-width="2" />
+                  <g fill="#C25E3C"><circle cx="100" cy="32" r="4" /><circle cx="160" cy="80" r="4" /><circle cx="128" cy="150" r="4" /><circle cx="62" cy="138" r="4" /><circle cx="40" cy="82" r="4" /></g>
+                </svg>
+                <figcaption class="mt-2.5 text-[13px] text-ink-2">De vijf scores samen bepalen de route.</figcaption>
+              </figure>
+              <div class="grid gap-5 sm:grid-cols-2">
+                {data.punten.map((p, i) => (
+                  <div class:list={['flex gap-4 items-start rounded-[20px] border border-lijn bg-papier px-6 py-5', i === data.punten.length - 1 && data.punten.length % 2 === 1 && 'sm:col-span-2']}>
+                    <span class="flex-none grid place-items-center w-[34px] h-[34px] rounded-full bg-terracotta text-papier font-newsreader font-semibold text-[17px]">{i + 1}</span>
+                    <div>
+                      <h3 class="m-0 font-newsreader font-semibold text-[20px] leading-[1.3]">{p.kop}</h3>
+                      <p class="mt-1 text-[15px] leading-[1.55] text-ink-2">{p.tekst}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* — Vorm: lagen (veilige installatie) — */}
+          {data.vorm === 'lagen' && (
+            <>
+              <div class="mt-10 grid">
+                {data.punten.map((p, i) => (
+                  <div class:list={[
+                    'flex gap-4 items-baseline rounded-[20px] border px-7 py-6',
+                    i === 0 && 'bg-paper-tint border-border-2',
+                    i === 1 && 'bg-papier border-border-2 md:ml-7 -mt-1.5',
+                    i === 2 && 'bg-ink-diep text-papier border-ink-diep md:ml-14 -mt-1.5',
+                  ]}>
+                    <span class:list={['font-newsreader font-medium text-[26px]', i === 2 ? 'text-salmon' : 'text-terracotta']}>{i + 1}</span>
+                    <div>
+                      <h3 class="m-0 font-newsreader font-semibold text-[20px] leading-[1.3]">{p.kop}</h3>
+                      <p class:list={['mt-1 text-[15px] leading-[1.55]', i === 2 ? 'text-papier/70' : 'text-ink-2']}>{p.tekst}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              {data.notities.length > 0 && (
+                <div class="mt-9 grid gap-5 sm:grid-cols-2">
+                  {data.notities.map((n) => (
+                    <div class="border-t-2 border-terracotta pt-3.5">
+                      {n.kop && <p class="m-0 text-xs font-semibold uppercase tracking-[0.1em] text-ink-muted">{n.kop}</p>}
+                      <p class="mt-1.5 text-[15px] leading-[1.6] text-ink-2">{n.tekst}</p>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </>
+          )}
+
+          {/* — Vorm: tweeluik (champions) — */}
+          {data.vorm === 'tweeluik' && (
+            <>
+              <div class="mt-10 grid gap-12 md:grid-cols-[1fr_1.4fr] items-start">
+                {data.grootGetal && (
+                  <div>
+                    <p class="m-0 font-newsreader font-medium leading-[0.95] tracking-[-0.02em] text-[clamp(80px,12vw,128px)]">{data.grootGetal}</p>
+                    {data.grootLabel && <p class="mt-2.5 max-w-[280px] text-base text-ink-2">{data.grootLabel}</p>}
+                  </div>
+                )}
+                <div class="grid gap-8 sm:grid-cols-2">
+                  {data.groepen.map((g) => (
+                    <div>
+                      <p class="m-0 text-xs font-semibold uppercase tracking-[0.1em] text-ink-muted">{g.label}</p>
+                      <ul class="list-none m-0 mt-3.5 p-0 grid gap-3">
+                        {g.items.map((item) => (
+                          <li class="flex gap-3 items-start text-[15px] leading-[1.5]">
+                            <Fragment set:html={check} />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              {data.notities.map((n) => (
+                <p class="mt-9 max-w-[560px] border-t border-border-2 pt-3.5 text-sm text-ink-2">{n.tekst}</p>
+              ))}
+            </>
+          )}
+
+          {/* — Vorm: bibliotheek (donkere band) — */}
+          {data.vorm === 'bibliotheek' && (
+            <>
+              {data.groepen.map((g) => (
+                <div class="mt-6 flex flex-wrap gap-2.5" aria-label={g.label}>
+                  {g.items.map((item) => (
+                    <span class="rounded-full border border-papier/35 px-4 py-2 text-sm font-medium text-papier">{item}</span>
+                  ))}
+                </div>
+              ))}
+              <div class="mt-9 grid gap-10 md:grid-cols-2 items-start">
+                <ul class="list-none m-0 p-0 grid gap-3.5 rounded-[20px] border border-papier/15 bg-papier/5 p-6">
+                  {data.punten.map((p) => (
+                    <li class="flex gap-3 items-start text-[15px] leading-[1.55] text-papier/85">
+                      <span class="text-salmon font-semibold" aria-hidden="true">&#9656;</span>
+                      <span>{p.kop}</span>
+                    </li>
+                  ))}
+                </ul>
+                {data.notities.map((n) => (
+                  <div>
+                    {n.kop && <p class="m-0 text-xs font-semibold uppercase tracking-[0.1em] text-ink-muted">{n.kop}</p>}
+                    <p class="mt-2 text-[15px] leading-[1.65] text-papier/75">{n.tekst}</p>
+                  </div>
+                ))}
+              </div>
+            </>
+          )}
+
+          {/* — Vorm: ritme (weekly drop) — */}
+          {data.vorm === 'ritme' && (
+            <div class="mt-10 grid gap-5 md:grid-cols-[1fr_auto_1fr] items-stretch">
+              {data.punten.map((p, i) => (
+                <>
+                  {i > 0 && <span class="self-center justify-self-center font-newsreader text-[34px] text-terracotta max-md:rotate-90" aria-hidden="true">&rarr;</span>}
+                  <div class="rounded-[20px] border border-lijn bg-papier px-7 py-6">
+                    {p.label && <p class="m-0 text-xs font-semibold uppercase tracking-[0.1em] text-terracotta">{p.label}</p>}
+                    <h3 class="mt-2 font-newsreader font-semibold text-[20px] leading-[1.3]">{p.kop}</h3>
+                    <p class="mt-1.5 text-[15px] leading-[1.55] text-ink-2">{p.tekst}</p>
+                  </div>
+                </>
+              ))}
+            </div>
+          )}
+
+          {/* Fallback: blok zonder vorm rendert als het oude prose-blok */}
+          {!data.vorm && (
+            <div class="mt-6 prose prose-lg">
+              <Content />
+            </div>
+          )}
+        </div>
+      </section>
+    ))}
+
+    <div class="mx-auto max-w-[1040px] px-6 pt-16 pb-24">
+      <CtaWarm
+        titel="Zien waar jouw bedrijf staat?"
+        secundairLabel="Bekijk de Readiness Scan"
+        secundairHref="/claude-readiness-scan"
+      />
+    </div>
+
+  </div>
+</BasisLayout>

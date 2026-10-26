@@ -1,0 +1,51 @@
+---
+import { getCollection } from 'astro:content';
+import { isIndexeerbaarPad } from '../data/indexering.mjs';
+import { paginaLabels, omgeleid } from '../data/paginalabels';
+import { isPublished } from '../lib/content';
+
+interface Props {
+  links: string[];
+}
+const { links } = Astro.props;
+const huidig = Astro.url.pathname.replace(/\/$/, '') || '/';
+
+// Label = echte titel van de doelpagina (Spec C, C-08). Artikelen: data.titleTag uit de
+// collectie (= <title> zonder site-suffix, wat onpage-check als label eist); cases: data.title (= H1); statische pagina's: src/data/paginalabels.ts.
+const routes = {
+  verticalen: (id: string) => `/claude-voor-${id}`,
+  compliance: (id: string) => `/compliance/${id}`,
+  prijs: (id: string) => `/prijs/${id}`,
+  vergelijkingen: (id: string) => `/vergelijken/${id}`,
+  integraties: (id: string) => `/integraties/${id}`,
+  usecases: (id: string) => `/use-cases/${id}`,
+  training: (id: string) => `/training/${id}`,
+  nieuws: (id: string) => `/nieuws/${id}`,
+} as const;
+
+const labels = new Map<string, string>(Object.entries(paginaLabels));
+for (const [collectie, route] of Object.entries(routes)) {
+  for (const e of await getCollection(collectie as keyof typeof routes)) {
+    if (isPublished(e) && !omgeleid[route(e.id)]) labels.set(route(e.id), e.data.titleTag);
+  }
+}
+for (const c of await getCollection('cases')) labels.set(`/cases/${c.id}`, c.data.title);
+
+const items = [...new Set(links.map((l) => l.replace(/\/$/, '') || '/'))]
+  .filter((pad) => pad !== huidig && isIndexeerbaarPad(pad))
+  .map((pad) => {
+    if (omgeleid[pad]) throw new Error(`GerelateerdeLinks op ${huidig}: ${pad} is omgeleid, gebruik ${omgeleid[pad]}`);
+    const label = labels.get(pad);
+    if (!label) throw new Error(`GerelateerdeLinks op ${huidig}: geen label voor ${pad}. Publiceer het doel of voeg het toe aan src/data/paginalabels.ts`);
+    return { pad, label };
+  });
+---
+{items.length > 0 && (
+  <section class="mt-12 pt-8 border-t border-lijn" data-gerelateerd>
+    <h2 class="text-lg font-serif font-bold">Gerelateerd</h2>
+    <div class="mt-4 grid gap-3 sm:grid-cols-2">
+      {/* Astro 7 bewaart witruimte binnen expressies; strak houden zoals de output onder Astro 6. */}
+      {items.map(({ pad, label }) => (<a href={pad} class="no-underline block rounded-lg border border-lijn p-4 hover:border-accent-diep hover:bg-papier-dieper transition-colors"><span class="text-sm text-accent-diep font-semibold">{label}</span></a>))}
+    </div>
+  </section>
+)}

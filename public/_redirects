@@ -1,0 +1,8 @@
+# Redirects voor claudezakelijk.nl. Alleen statische regels: geen * en geen :placeholder.
+# scripts/gen-prive.mjs zet ze ook in functions/_redirects.json, want de middleware draait op
+# elke route en Cloudflare past _redirects niet toe op requests die een Function afhandelt.
+# Formaat: <van> <naar> <status>
+/sitemap.xml /sitemap-index.xml 301
+/gids/claude-avg-gdpr-voor-mkb /compliance 301
+/gids/claude-vs-chatgpt-voor-bedrijven /gids/overstappen-van-chatgpt-naar-claude 301
+/prijs/kosten-zakelijk /prijs 301

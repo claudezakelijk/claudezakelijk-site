@@ -1,0 +1,35 @@
+---
+// Zichtbare artikelmeta (spec E, E-04): datums, auteur en (optioneel) de leesronde
+// onder de H1. Wat hier staat, mag het schema ook zeggen (en niet meer).
+import { auteurs } from '../site';
+
+interface Props {
+  publishDate: Date | null;
+  updatedDate: Date | null;
+  author: 'camiel';
+  reviewedBy: string | null;
+  reviewedDate: Date | null;
+  disclaimer: 'juridisch' | 'fiscaal' | 'juridisch-fiscaal' | null;
+}
+
+// disclaimer wordt bewust niet hier gerenderd: AdviesDisclaimer.astro zet de waarde om in tekst.
+const { publishDate, updatedDate, author, reviewedBy, reviewedDate } = Astro.props;
+
+const nl = (d: Date) => d.toLocaleDateString('nl-NL', { day: 'numeric', month: 'long', year: 'numeric' });
+const iso = (d: Date) => d.toISOString().slice(0, 10);
+
+// Besluit M7: een auteur met zichtbaar: false wordt nooit bij naam getoond.
+const info = auteurs[author];
+const naam = info?.zichtbaar ? info.naam : 'ClaudeZakelijk';
+const href = info?.overAnker ?? '/over';
+---
+<div class="text-sm text-inkt-zacht mt-3 space-y-1">
+  {(publishDate || updatedDate) && (
+    <p class="m-0">
+      {publishDate && <>Gepubliceerd op <time datetime={iso(publishDate)}>{nl(publishDate)}</time></>}
+      {publishDate && updatedDate && <span aria-hidden="true"> · </span>}
+      {updatedDate && <>Bijgewerkt op <time datetime={iso(updatedDate)}>{nl(updatedDate)}</time></>}
+    </p>
+  )}
+  <p class="m-0">Geschreven door <a href={href} class="text-accent-diep">{naam}</a>{reviewedBy && <>, nagelezen door {reviewedBy}{reviewedDate && <> op {nl(reviewedDate)}</>}</>}.</p>
+</div>

@@ -1,0 +1,32 @@
+---
+import { itemListNode, lijstId } from '../../lib/schema';
+import BasisLayout from '../../layouts/BasisLayout.astro';
+import Container from '../../components/Container.astro';
+import CollectieHub from '../../components/CollectieHub.astro';
+import { getPublished } from '../../lib/content';
+
+const artikelen = (await getPublished('usecases'))
+  .sort((a, b) => b.data.priority - a.data.priority || a.data.title.localeCompare(b.data.title));
+const items = artikelen.map((a) => ({
+      href: `/use-cases/${a.id}`,
+      titel: a.data.title,
+      beschrijving: a.data.metaDescription,
+}));
+---
+<BasisLayout
+  titel="Use cases"
+  beschrijving="Concrete Claude-toepassingen voor het Nederlandse MKB: van offertes en rapportages tot klantcommunicatie, met praktijkvoorbeelden."
+  pad="/use-cases"
+  schema={{ paginaType: 'CollectionPage', hoofdonderwerp: lijstId('/use-cases'), nodes: [itemListNode('/use-cases', items.map((i) => ({ url: i.href, naam: i.titel })))] }}
+>
+  <Container class="pt-16 pb-12">
+    <CollectieHub
+      label="Use cases"
+      titel="Wat je met Claude doet"
+      intro="Concrete toepassingen per taak: offertes, rapportages, klantcommunicatie, analyse. Per use case zie je wat het oplevert en hoe je ermee begint."
+      leesTekst="Bekijk de use case"
+      leegTekst="Binnenkort meer: de eerste use cases worden op dit moment geredigeerd."
+      items={items}
+    />
+  </Container>
+</BasisLayout>

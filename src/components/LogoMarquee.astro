@@ -1,0 +1,65 @@
+---
+// Doorlopende logo-strook (verzoek Sweder 22 juli, naar voorbeeld van
+// fractionalaiteam.nl): de lijst wordt verdubbeld en oneindig doorgeschoven.
+// Bij prefers-reduced-motion staat de strook stil en verdwijnt het duplicaat.
+interface Props {
+  logos: Array<{ naam: string; logo: string }>;
+  label?: string;
+}
+
+const { logos, label = 'Logo’s van eerdere opdrachtgevers' } = Astro.props;
+---
+<div class="marquee" aria-label={label}>
+  <div class="marquee-baan">
+    <ul class="marquee-lijst">
+      {logos.map((o) => (
+        <li><img src={o.logo} alt={`Logo van ${o.naam}`} loading="lazy" /></li>
+      ))}
+    </ul>
+    <ul class="marquee-lijst" aria-hidden="true">
+      {logos.map((o) => (
+        <li><img src={o.logo} alt="" loading="lazy" /></li>
+      ))}
+    </ul>
+  </div>
+</div>
+
+<style>
+  .marquee {
+    overflow: hidden;
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  }
+  .marquee-baan {
+    display: flex;
+    gap: 64px;
+    width: max-content;
+    animation: marquee-schuif 35s linear infinite;
+  }
+  .marquee-baan:hover { animation-play-state: paused; }
+  .marquee-lijst {
+    display: flex;
+    align-items: center;
+    gap: 64px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .marquee-lijst img {
+    height: 36px;
+    width: auto;
+    filter: grayscale(1);
+    opacity: 0.6;
+    transition: opacity 0.2s;
+  }
+  .marquee-lijst li:hover img { opacity: 0.9; }
+  @keyframes marquee-schuif {
+    to { transform: translateX(calc(-50% - 32px)); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .marquee { mask-image: none; -webkit-mask-image: none; }
+    .marquee-baan { animation: none; width: auto; justify-content: center; flex-wrap: wrap; }
+    .marquee-lijst { flex-wrap: wrap; justify-content: center; }
+    .marquee-lijst[aria-hidden] { display: none; }
+  }
+</style>

@@ -1,0 +1,23 @@
+---
+interface Props {
+  titel: string;
+  ondertitel: string;
+  prijs: string;
+  samenvatting: string;
+  pad: string;
+  nummer?: number;
+}
+const { titel, ondertitel, prijs, samenvatting, pad, nummer } = Astro.props;
+---
+<article class="border border-lijn rounded-lg p-6 bg-papier flex flex-col gap-3 card-shadow reveal-target" style="position:relative;z-index:1;">
+  <div class="flex items-center gap-3">
+    {nummer && <span class="flex items-center justify-center w-8 h-8 rounded-full bg-accent-diep text-papier font-serif font-bold text-sm shadow-sm">{nummer}</span>}
+    <p class="text-xs uppercase tracking-widest text-inkt-zacht">{ondertitel}</p>
+  </div>
+  <h3 class="text-2xl">{titel}</h3>
+  <p class="text-inkt-zacht">{samenvatting}</p>
+  <p class="font-semibold">{prijs}</p>
+  <a href={pad} class="mt-auto inline-block no-underline text-accent-diep font-semibold">
+    Lees details →
+  </a>
+</article>

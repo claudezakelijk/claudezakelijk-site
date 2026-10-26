@@ -1,0 +1,22 @@
+---
+// Zichtbare adviesdisclaimer op juridische en fiscale pagina's (spec D, D-42).
+// De waarde komt uit de frontmatter (`disclaimer`); ArtikelMeta rendert hem bewust niet.
+// Er is geen reviewer-regel: wie juridische pagina's nakijkt is nog niet besloten.
+interface Props {
+  soort: 'juridisch' | 'fiscaal' | 'juridisch-fiscaal';
+}
+
+const { soort } = Astro.props;
+
+const teksten = {
+  juridisch:
+    'Deze pagina geeft algemene informatie, geen juridisch advies. We controleren de feiten aan de hand van de bronnen onderaan. Twijfel je over jouw situatie, vraag het dan aan een jurist of aan je functionaris gegevensbescherming.',
+  fiscaal:
+    'Deze pagina geeft algemene informatie, geen fiscaal advies. Bedragen en regels kunnen veranderen. Twijfel je over btw of aftrek, vraag het dan aan je boekhouder of belastingadviseur.',
+  'juridisch-fiscaal':
+    'Deze pagina geeft algemene informatie, geen juridisch of fiscaal advies. We controleren de feiten aan de hand van de bronnen onderaan. Twijfel je over jouw situatie, vraag het dan aan een jurist, je boekhouder of je functionaris gegevensbescherming.',
+};
+---
+<aside role="note" aria-label="Disclaimer" class="mt-6 rounded-lg border border-lijn bg-papier-dieper px-5 py-4 text-sm text-inkt-zacht">
+  <p class="m-0">{teksten[soort]}</p>
+</aside>

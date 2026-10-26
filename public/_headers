@@ -1,0 +1,16 @@
+# Cloudflare Pages header-regels.
+#
+# Twee dingen: lange caching voor de gehashte Astro-bestanden, en drie beveiligingsheaders op
+# alles. Bewust geen Cache-Control-regel voor een pad achter de privé-poort: wat de middleware
+# doorlaat krijgt daar 'private, no-store', en een 'public'-regel hier zou dat tegenspreken.
+
+# Gehashte bestanden van Astro veranderen nooit onder dezelfde naam.
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Beveiliging voor bestanden die niet door de middleware gaan (zie public/_routes.json).
+# De middleware zet dezelfde drie headers op alles wat wel door de Function gaat.
+/*
+  Strict-Transport-Security: max-age=15552000
+  X-Frame-Options: SAMEORIGIN
+  Permissions-Policy: camera=(), microphone=(), geolocation=()

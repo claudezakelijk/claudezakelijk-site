@@ -1,0 +1,398 @@
+---
+import BasisLayout from '../layouts/BasisLayout.astro';
+import Broodkruimel from '../components/Broodkruimel.astro';
+import { dienstNode, dienstId } from '../lib/schema';
+import { site } from '../site';
+
+// Stap 1.2 (lead-capture): de scan post naar Web3Forms. De access key is een
+// alias voor het ontvangstadres en hoort bij info@claudezakelijk.nl; hij is
+// publiek en mag in client-code staan (docs.web3forms.com). Zetten als
+// build-variabele WEB3FORMS_KEY in de Cloudflare Pages-projectinstellingen.
+// Productie: zonder build-variabele valt de pagina terug op de key die sinds
+// 30 juli 2026 live staat, zodat de lead-capture nooit stil uitvalt.
+const web3formsKey = import.meta.env.WEB3FORMS_KEY || '4234d8b4-1648-4f0b-b4b3-374fcb3ed630';
+
+// Ontwerpronde 2 (goedgekeurd door Sweder, 22 juli 2026): begeleide check in
+// warme 1b-stijl. Vragen, antwoordwaarden en scoringslogica zijn 1-op-1 gelijk
+// aan de vorige versie; alleen de vorm veranderde (radio-kaarten i.p.v.
+// dropdowns, voortgangsbalk, score-ring).
+const vragen = [
+  {
+    id: 'q1',
+    vraag: 'Hoeveel mensen werken er in je bedrijf?',
+    opties: [
+      { waarde: 1, tekst: 'Minder dan 10' },
+      { waarde: 4, tekst: '10 tot 50' },
+      { waarde: 5, tekst: '50 tot 200' },
+      { waarde: 3, tekst: 'Meer dan 200' },
+    ],
+  },
+  {
+    id: 'q2',
+    vraag: 'Hoeveel van je team werkt aan kenniswerk (tekst, analyse, klantcommunicatie)?',
+    opties: [
+      { waarde: 1, tekst: 'Minder dan 20%' },
+      { waarde: 3, tekst: '20% tot 50%' },
+      { waarde: 5, tekst: '50% tot 80%' },
+      { waarde: 5, tekst: 'Meer dan 80%' },
+    ],
+  },
+  {
+    id: 'q3',
+    vraag: 'Gebruik je nu al AI-tools (ChatGPT, Copilot, Claude)?',
+    opties: [
+      { waarde: 1, tekst: 'Nee, nog helemaal niet' },
+      { waarde: 3, tekst: 'Een paar mensen, ongestructureerd' },
+      { waarde: 4, tekst: 'Ja, actief maar willen meer' },
+      { waarde: 5, tekst: 'Ja, en we willen het echt goed doen' },
+    ],
+  },
+  {
+    id: 'q4',
+    vraag: 'Hoe staat het management tegenover AI?',
+    opties: [
+      { waarde: 1, tekst: 'Sceptisch, wil eerst bewijs' },
+      { waarde: 3, tekst: 'Nieuwsgierig, maar geen prioriteit' },
+      { waarde: 5, tekst: 'Enthousiast, willen investeren' },
+      { waarde: 4, tekst: 'Onder druk om iets te doen' },
+    ],
+  },
+  {
+    id: 'q5',
+    vraag: 'Hoe zit het met AVG en gevoelige data?',
+    opties: [
+      { waarde: 5, tekst: 'Belangrijk: klantdata, medische data, of juridisch' },
+      { waarde: 4, tekst: 'Redelijk belangrijk' },
+      { waarde: 3, tekst: 'Weinig gevoelige data' },
+    ],
+  },
+  {
+    id: 'q6',
+    vraag: 'Welk budget heb je ruwweg beschikbaar voor AI?',
+    opties: [
+      { waarde: 1, tekst: 'Minder dan €1.000' },
+      { waarde: 3, tekst: '€1.000 tot €5.000' },
+      { waarde: 5, tekst: '€5.000 tot €15.000' },
+      { waarde: 5, tekst: 'Meer dan €15.000' },
+    ],
+  },
+  {
+    id: 'q7',
+    vraag: 'Wat is je belangrijkste doel?',
+    opties: [
+      { waarde: 5, tekst: 'Team productiever maken' },
+      { waarde: 4, tekst: 'Betere output (kwaliteit, snelheid)' },
+      { waarde: 5, tekst: 'Schalen zonder personeel aan te nemen' },
+      { waarde: 2, tekst: 'Mensen vervangen door AI' },
+    ],
+  },
+];
+const breadcrumbs = [{ name: 'Home', url: '/' }, { name: 'Gratis AI-check', url: '/ai-enablement-scan' }];
+---
+<BasisLayout
+  titel="Gratis AI-check: is je bedrijf klaar voor Claude?"
+  beschrijving="Doe de gratis AI-check en ontdek in 2 minuten of jouw bedrijf klaar is voor Claude. Past het? Dan krijg je een gratis intro-gesprek aangeboden."
+  pad="/ai-enablement-scan"
+  schema={{
+    breadcrumbs,
+    hoofdonderwerp: dienstId('/ai-enablement-scan'),
+    nodes: [dienstNode({ pad: '/ai-enablement-scan', naam: 'Gratis AI-check', beschrijving: 'Online check van twee minuten die laat zien of je bedrijf klaar is voor Claude.', serviceType: 'AI-readiness-check', aanbod: { naam: 'Gratis AI-check', prijsTekst: 'Gratis', url: '/ai-enablement-scan' } })],
+  }}
+>
+  <div class="hp text-ink-diep bg-papier">
+    <section class="mx-auto max-w-[680px] px-6 pt-16 pb-24">
+      <div class="mb-8 text-left"><Broodkruimel items={breadcrumbs} /></div>
+
+      <!-- Hero -->
+      <header class="text-center">
+        <p class="text-[13px] font-semibold tracking-[0.1em] uppercase text-terracotta">Gratis AI-check · 2 minuten · direct resultaat</p>
+        <h1 class="mt-4 font-newsreader font-medium leading-[1.1] tracking-[-0.015em] text-[clamp(32px,4.6vw,48px)] text-balance">Is jouw bedrijf klaar voor Claude?</h1>
+        <p class="mt-5 text-[17px] leading-[1.6] text-ink-2 text-pretty">Zeven vragen, direct je AI-check-score. Is je score hoog genoeg? Dan bieden we een gratis intro-gesprek aan.</p>
+        <p class="mt-3 text-[14px] text-ink-muted">Dit is de gratis check. Wil je weten wat Claude in jouw bedrijf oplevert, met een rapport en een vaste offerte? Dat doet de betaalde <a href="/claude-readiness-scan" class="link-terra">Claude Readiness Scan</a>.</p>
+        <ul class="list-none m-0 mt-5 p-0 flex justify-center gap-2.5 flex-wrap">
+          <li class="text-[13px] font-semibold border border-border-2 rounded-full px-3.5 py-1.5 bg-white">✓ Direct je score</li>
+          <li class="text-[13px] font-semibold border border-border-2 rounded-full px-3.5 py-1.5 bg-white">✓ Geen account nodig</li>
+          <li class="text-[13px] font-semibold border border-border-2 rounded-full px-3.5 py-1.5 bg-white">✓ Zeven vragen</li>
+        </ul>
+      </header>
+
+      <!-- De check -->
+      <form id="scanForm" class="mt-10 rounded-[24px] border border-lijn bg-white p-[clamp(24px,4vw,40px)] shadow-[0_1px_2px_rgba(38,34,28,0.04)]">
+        <input type="hidden" name="access_key" value={web3formsKey} />
+        <input type="hidden" name="subject" value="Nieuwe AI-check via claudezakelijk.nl" />
+        <input type="hidden" name="from_name" value="ClaudeZakelijk AI-check" />
+        <!-- Honeypot (Web3Forms-conventie): onzichtbaar voor mensen, bots vullen hem. -->
+        <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
+        <div class="flex items-center gap-3 text-[13px] text-ink-2" aria-hidden="true">
+          <span id="voortgangLabel">Vraag 1 van {vragen.length}</span>
+          <div class="flex-1 h-1.5 rounded-full bg-paper-tint overflow-hidden">
+            <div id="voortgangBalk" class="h-full w-0 bg-terracotta rounded-full transition-[width] duration-300 motion-reduce:transition-none"></div>
+          </div>
+        </div>
+
+        {vragen.map((v, i) => (
+          <fieldset class="scan-vraag border-0 m-0 mt-8 p-0 reveal-target">
+            <legend class="flex gap-3.5 items-start p-0">
+              <span class="flex-none grid place-items-center w-[30px] h-[30px] rounded-full bg-terracotta text-papier font-newsreader font-semibold text-[15px]" aria-hidden="true">{i + 1}</span>
+              <span class="font-semibold text-[16px] pt-0.5">{v.vraag}</span>
+            </legend>
+            <div class="grid gap-2.5 mt-3.5 ml-0 sm:ml-11">
+              {v.opties.map((o, j) => (
+                <label class="antwoord relative flex items-center border-[1.5px] border-lijn rounded-[14px] px-4 py-3 text-[15px] bg-papier cursor-pointer transition-colors hover:border-border-2">
+                  <input type="radio" name={v.id} value={o.waarde} required={j === 0} class="sr-only" />
+                  <span>{o.tekst}</span>
+                  <span class="vinkje absolute right-4 text-terracotta font-bold opacity-0" aria-hidden="true">✓</span>
+                </label>
+              ))}
+            </div>
+          </fieldset>
+        ))}
+
+        <div class="mt-9 pt-7 border-t border-lijn grid gap-5">
+          <p class="m-0 font-semibold text-[16px]">Waar mogen we het resultaat heen sturen?</p>
+          <div class="scan-vraag">
+            <label for="naam" class="font-semibold block mb-2 text-[14.5px]">Je naam</label>
+            <input id="naam" name="naam" type="text" required class="w-full border-[1.5px] border-lijn rounded-[14px] px-4 py-3 bg-papier" />
+          </div>
+          <div class="scan-vraag">
+            <label for="email" class="font-semibold block mb-2 text-[14.5px]">Werk-e-mail</label>
+            <input id="email" name="email" type="email" required class="w-full border-[1.5px] border-lijn rounded-[14px] px-4 py-3 bg-papier" />
+          </div>
+          <div class="scan-vraag">
+            <label for="bedrijf" class="font-semibold block mb-2 text-[14.5px]">Bedrijfsnaam</label>
+            <input id="bedrijf" name="bedrijf" type="text" required class="w-full border-[1.5px] border-lijn rounded-[14px] px-4 py-3 bg-papier" />
+          </div>
+          <button type="submit" class="mt-1 rounded-full bg-terracotta text-papier px-6 py-4 font-semibold hover:bg-terracotta-h focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta-h">
+            Bereken mijn score &rarr;
+          </button>
+          <p id="scanStatus" class="m-0 text-[14px] text-ink-2 min-h-[1.25rem]" role="status" aria-live="polite"></p>
+          <p class="m-0 text-[13px] text-ink-muted">We gebruiken je gegevens alleen om op je aanvraag te reageren. Lees onze <a href="/privacy" class="link-terra">privacyverklaring</a>.</p>
+        </div>
+      </form>
+
+      <!-- Resultaat -->
+      <div id="scanResultaat" class="mt-8 hidden" role="status">
+        <div class="rounded-[24px] bg-paper-tint p-[clamp(28px,5vw,44px)] grid gap-7 sm:grid-cols-[auto_1fr] items-center">
+          <svg class="w-[120px] h-[120px] mx-auto" viewBox="0 0 120 120" aria-hidden="true">
+            <circle cx="60" cy="60" r="52" fill="none" stroke="var(--color-lijn)" stroke-width="10" />
+            <circle id="scoreRing" cx="60" cy="60" r="52" fill="none" stroke="var(--color-terracotta)" stroke-width="10" stroke-linecap="round" stroke-dasharray="0 327" transform="rotate(-90 60 60)" style="transition: stroke-dasharray 1s ease-out" class="motion-reduce:transition-none" />
+            <text id="scoreRingGetal" x="60" y="70" text-anchor="middle" class="font-newsreader" font-size="30" font-weight="600" fill="var(--color-ink-diep)"></text>
+          </svg>
+          <div>
+            <h2 class="m-0 font-newsreader font-medium text-[clamp(22px,3vw,27px)] leading-[1.25]">AI-check-score: <span id="scoreGetal"></span>/100</h2>
+            <p id="scoreTekst" class="mt-3 text-[15.5px] leading-[1.6] text-ink-2"></p>
+          </div>
+        </div>
+
+        <div id="scorePasVak" class="mt-5 rounded-[24px] bg-ink-diep p-[clamp(28px,5vw,40px)] text-papier hidden">
+          <h3 class="m-0 font-newsreader font-medium text-[24px] text-papier">Je bedrijf past bij ons</h3>
+          <p class="mt-3 text-papier/85">Je komt in aanmerking voor een gratis intro-gesprek van 30 minuten. We bespreken de uitkomst, beantwoorden je vragen en kijken of een Readiness Scan past.</p>
+          <a id="introLink" href={site.introLink} class="mt-6 inline-flex items-center rounded-full bg-terracotta text-papier px-6 py-3 font-semibold no-underline hover:bg-terracotta-h">
+            Vraag gratis intro-gesprek aan &rarr;
+          </a>
+        </div>
+        <div id="scorePasNietVak" class="mt-5 rounded-[24px] border border-lijn bg-white p-[clamp(28px,5vw,40px)] hidden">
+          <h3 class="m-0 font-newsreader font-medium text-[24px]">Nu misschien nog niet het juiste moment</h3>
+          <p class="mt-3 text-ink-2">Op basis van je antwoorden is Claude-implementatie waarschijnlijk nog niet de volgende stap. Dat is oké. Drie dingen waarmee je vandaag al kunt beginnen:</p>
+          <ul class="mt-4 space-y-3 text-ink-2 list-disc pl-5">
+            <li>Laat twee of drie collega's een paar weken gratis experimenteren met <a href="https://claude.ai" target="_blank" rel="noopener" class="text-accent-donkerst underline">claude.ai</a> op taken zonder gevoelige data, zoals e-mails en samenvattingen.</li>
+            <li>Breng samen in kaart welke terugkerende schrijf- en denkklussen de meeste tijd kosten. Dat wordt later je eerste use case.</li>
+            <li>Lees onze gids <a href="/gids/claude-voor-mkb" class="text-accent-donkerst underline">Claude voor het MKB</a> voor een realistisch beeld van wat er kan.</li>
+          </ul>
+          <div class="mt-6 pt-5 border-t border-lijn">
+            <p class="m-0 font-semibold text-[15.5px]">Liever rustig nalezen?</p>
+            <p class="mt-2 text-ink-2 text-[15px]">We sturen deze drie tips en je score eenmalig naar het e-mailadres dat je hierboven invulde. Geen nieuwsbrief, geen vervolgmails.</p>
+            <button id="tipsKnop" type="button" class="mt-4 inline-flex items-center rounded-full border-[1.5px] border-lijn bg-papier px-5 py-3 font-semibold hover:border-border-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta-h">
+              Mail mij de tips
+            </button>
+            <p id="tipsStatus" class="mt-3 mb-0 text-[14px] text-ink-2 min-h-[1.25rem]" role="status" aria-live="polite"></p>
+          </div>
+          <p class="mt-4 text-ink-2">Toch sparren? Stuur een mailtje naar <a href={`mailto:${site.email}`} class="text-accent-donkerst underline">{site.email}</a>.</p>
+        </div>
+      </div>
+
+    </section>
+  </div>
+</BasisLayout>
+
+<style>
+  .scan-vraag input:focus-visible {
+    outline: 2px solid var(--color-terracotta-h);
+    outline-offset: 2px;
+  }
+  /* Gekozen antwoord-kaart (radio zit sr-only in het label). */
+  .antwoord:has(input:checked) {
+    border-color: var(--color-terracotta);
+    background: #FDF3EF;
+    font-weight: 600;
+  }
+  .antwoord:has(input:checked) .vinkje { opacity: 1; }
+  .antwoord:has(input:focus-visible) {
+    outline: 2px solid var(--color-terracotta-h);
+    outline-offset: 2px;
+  }
+</style>
+
+<script>
+  import { bronVelden } from '../scripts/bron';
+
+  const form = document.getElementById('scanForm') as HTMLFormElement;
+  const resultaat = document.getElementById('scanResultaat');
+  const scoreGetal = document.getElementById('scoreGetal');
+  const scoreRing = document.getElementById('scoreRing');
+  const scoreRingGetal = document.getElementById('scoreRingGetal');
+  const scoreTekst = document.getElementById('scoreTekst');
+  const scorePasVak = document.getElementById('scorePasVak');
+  const scorePasNietVak = document.getElementById('scorePasNietVak');
+  const voortgangLabel = document.getElementById('voortgangLabel');
+  const voortgangBalk = document.getElementById('voortgangBalk') as HTMLElement | null;
+  const scanStatus = document.getElementById('scanStatus');
+  const tipsKnop = document.getElementById('tipsKnop') as HTMLButtonElement | null;
+  const tipsStatus = document.getElementById('tipsStatus');
+  const TOTAAL_VRAGEN = 7;
+  const WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit';
+
+  // Vastgehouden na een inzending, zodat de tips-mailknop dezelfde gegevens
+  // kan meesturen zonder het formulier opnieuw te lezen.
+  let laatsteInzending: Record<string, unknown> | null = null;
+
+  // Web3Forms verwacht JSON op /submit. De access_key bepaalt het
+  // ontvangstadres; is hij leeg (niet gezet in de build), dan slaan we de
+  // verzending over en blijft de score gewoon zichtbaar.
+  async function stuurNaarWeb3Forms(payload: Record<string, unknown>) {
+    const key = payload.access_key;
+    if (!key || typeof key !== 'string') {
+      console.warn('[ai-check] WEB3FORMS_KEY ontbreekt in deze build; inzending niet verstuurd.');
+      return { ok: false, reden: 'geen-key' as const };
+    }
+    try {
+      const res = await fetch(WEB3FORMS_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const json = await res.json().catch(() => null);
+      return { ok: res.ok && json?.success === true, reden: 'api' as const };
+    } catch {
+      return { ok: false, reden: 'netwerk' as const };
+    }
+  }
+
+  // Voortgangsbalk: telt beantwoorde vragen (decoratief, aria-hidden).
+  form?.addEventListener('change', () => {
+    const data = new FormData(form);
+    let beantwoord = 0;
+    for (let i = 1; i <= TOTAAL_VRAGEN; i++) {
+      if (data.get('q' + i)) beantwoord++;
+    }
+    if (voortgangBalk) voortgangBalk.style.width = (beantwoord / TOTAAL_VRAGEN) * 100 + '%';
+    if (voortgangLabel) {
+      voortgangLabel.textContent = beantwoord >= TOTAAL_VRAGEN
+        ? 'Alle vragen beantwoord'
+        : `Vraag ${Math.min(beantwoord + 1, TOTAAL_VRAGEN)} van ${TOTAAL_VRAGEN}`;
+    }
+  });
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+    let totaal = 0;
+    let maxTotaal = 0;
+    for (let i = 1; i <= TOTAAL_VRAGEN; i++) {
+      const val = Number(data.get('q' + i));
+      totaal += val;
+      maxTotaal += 5;
+    }
+    const score = Math.round((totaal / maxTotaal) * 100);
+
+    if (scoreGetal) scoreGetal.textContent = String(score);
+    if (scoreRingGetal) scoreRingGetal.textContent = String(score);
+    // Ringomtrek 2π·52 ≈ 327.
+    if (scoreRing) scoreRing.setAttribute('stroke-dasharray', `${(score / 100) * 327} 327`);
+
+    let tekst = '';
+    let past = false;
+    if (score >= 70) {
+      tekst = 'Sterke match. Je bedrijf heeft de ingrediënten om snel veel uit Claude te halen.';
+      past = true;
+    } else if (score >= 50) {
+      tekst = 'Goede basis. Met wat voorbereiding kan een Readiness Scan hier duidelijkheid geven.';
+      past = true;
+    } else if (score >= 35) {
+      tekst = 'Er zijn nog wat puzzelstukjes die eerst moeten vallen. Laten we eerst wat drempels wegnemen.';
+      past = false;
+    } else {
+      tekst = 'De fundamenten zijn er nog niet. Geen zorg: hieronder staan een paar tips om alvast te beginnen.';
+      past = false;
+    }
+    if (scoreTekst) scoreTekst.textContent = tekst;
+
+    if (past) {
+      scorePasVak?.classList.remove('hidden');
+      scorePasNietVak?.classList.add('hidden');
+    } else {
+      scorePasVak?.classList.add('hidden');
+      scorePasNietVak?.classList.remove('hidden');
+    }
+
+    resultaat?.classList.remove('hidden');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    resultaat?.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+
+    // Lead-capture: alle formuliervelden (incl. access_key, subject en de
+    // botcheck-honeypot) plus de berekende score naar Web3Forms.
+    const payload: Record<string, unknown> = {};
+    data.forEach((waarde, sleutel) => {
+      payload[sleutel] = waarde;
+    });
+    // Antwoorden leesbaar in de lead-mail: vraag als veldnaam, gekozen
+    // optietekst plus punten als waarde, in plaats van alleen "q1: 5".
+    for (let i = 1; i <= TOTAAL_VRAGEN; i++) {
+      const gekozen = form.querySelector<HTMLInputElement>(`input[name="q${i}"]:checked`);
+      if (!gekozen) continue;
+      const vraag = gekozen.closest('fieldset')?.querySelector('legend span:last-child')?.textContent?.trim();
+      const antwoord = gekozen.closest('label')?.querySelector('span')?.textContent?.trim();
+      delete payload['q' + i];
+      payload[`${i}. ${vraag || 'Vraag ' + i}`] = `${antwoord || '?'} (${gekozen.value} punten)`;
+    }
+    payload.score = score;
+    payload.uitkomst = past ? 'past' : 'past-nog-niet';
+    payload.toelichting = tekst;
+    payload.subject = `AI-check: ${data.get('bedrijf') || 'onbekend bedrijf'} scoorde ${score}/100`;
+    payload.tips_per_mail = 'nee';
+    // Lead-bron: kanaal, referrer, landingspagina, utm en paden van deze sessie
+    // (src/scripts/bron.ts). bronVelden() gooit nooit; de try/catch is een tweede vangnet.
+    try {
+      Object.assign(payload, bronVelden());
+    } catch {
+      payload.bron_kanaal = 'onbekend';
+    }
+    laatsteInzending = payload;
+
+    if (scanStatus) scanStatus.textContent = 'Je antwoorden worden verstuurd…';
+    const uitkomst = await stuurNaarWeb3Forms(payload);
+    if (scanStatus) {
+      scanStatus.textContent = uitkomst.ok
+        ? 'Je score is naar ons verstuurd. We nemen alleen contact op als je dat hierboven vraagt.'
+        : 'Je score staat hieronder. Het versturen naar ons lukte niet. Mail ons gerust rechtstreeks.';
+    }
+  });
+
+  // "Mail mij de tips" bij een lage score (optie behouden, besluit 8 juli 2026).
+  tipsKnop?.addEventListener('click', async () => {
+    if (!laatsteInzending) return;
+    tipsKnop.disabled = true;
+    if (tipsStatus) tipsStatus.textContent = 'Versturen…';
+    const uitkomst = await stuurNaarWeb3Forms({
+      ...laatsteInzending,
+      tips_per_mail: 'ja',
+      subject: `AI-check: tips gevraagd door ${laatsteInzending.bedrijf || 'onbekend bedrijf'}`,
+    });
+    if (tipsStatus) {
+      tipsStatus.textContent = uitkomst.ok
+        ? 'Genoteerd. Je krijgt de tips op het adres dat je invulde.'
+        : 'Versturen lukte niet. Mail ons gerust rechtstreeks, dan sturen we ze alsnog.';
+    }
+    if (!uitkomst.ok) tipsKnop.disabled = false;
+  });
+</script>

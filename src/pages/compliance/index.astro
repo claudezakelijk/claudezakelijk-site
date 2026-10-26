@@ -1,0 +1,387 @@
+---
+import BasisLayout from '../../layouts/BasisLayout.astro';
+import Container from '../../components/Container.astro';
+import { itemListNode, faqNode } from '../../lib/schema';
+import Broodkruimel from '../../components/Broodkruimel.astro';
+import KortAntwoord from '../../components/KortAntwoord.astro';
+import FaqSectie from '../../components/FaqSectie.astro';
+import BronnenBlok from '../../components/BronnenBlok.astro';
+import AuthorBio from '../../components/AuthorBio.astro';
+import CtaStrook from '../../components/CtaStrook.astro';
+import AdviesDisclaimer from '../../components/AdviesDisclaimer.astro';
+import { getPublished } from '../../lib/content';
+
+// Eigenaar van "claude avg", "is claude avg-proof" en "claude gdpr" (besluit D-C1, oktober 2026).
+// De gids /gids/claude-avg-gdpr-voor-mkb is hierin opgegaan en stuurt met een 301 hierheen.
+// Feiten gecontroleerd op 2 oktober 2026, zie de bronnen hieronder.
+const artikelen = (await getPublished('compliance'))
+  .sort((a, b) => b.data.priority - a.data.priority || a.data.title.localeCompare(b.data.title));
+
+const titel = 'Claude en de AVG: is Claude AVG-proof?';
+const beschrijving =
+  'Is Claude AVG-proof? Welk abonnement je nodig hebt, wat de verwerkersovereenkomst regelt, waar je data staat en wat je intern regelt. Met checklist.';
+const gepubliceerd = '2026-10-02';
+const bijgewerkt = '2026-10-06';
+const datumNl = (iso: string) =>
+  new Date(iso).toLocaleDateString('nl-NL', { day: 'numeric', month: 'long', year: 'numeric' });
+
+const breadcrumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'Compliance', url: '/compliance' },
+];
+
+const kortAntwoord =
+  'Claude kan aan de AVG voldoen, maar alleen met een zakelijk abonnement: Team, Enterprise of de API. Daar hoort de verwerkersovereenkomst van Anthropic automatisch bij en traint Anthropic niet op je data. Free, Pro en Max vallen erbuiten. Een Europese dataregio biedt Anthropic zelf niet (stand oktober 2026). Die krijg je via AWS Bedrock of Google Vertex AI.';
+
+const faqItems = [
+  {
+    question: 'Is Claude AVG-proof?',
+    answer:
+      'Geen enkele tool is uit zichzelf AVG-proof. Of je aan de AVG voldoet, hangt af van hoe je Claude inricht. Met Claude Team, Enterprise of de API traint Anthropic standaard niet op je data en hoort de verwerkersovereenkomst bij de zakelijke voorwaarden. Zelf leg je het gebruik vast in je verwerkingsregister en spreek je af welke data in prompts mag.',
+  },
+  {
+    question: 'Heb ik een verwerkersovereenkomst met Anthropic nodig?',
+    answer:
+      'Ja, zodra er persoonsgegevens door Claude gaan. Artikel 28 van de AVG verplicht dat. De Anthropic DPA is automatisch onderdeel van de Commercial Terms of Service en dekt de API en de zakelijke abonnementen Claude Team en Enterprise. Apart ondertekenen hoeft niet. Claude Free, Pro en Max vallen erbuiten.',
+  },
+  {
+    question: 'Traint Anthropic op onze bedrijfsdata?',
+    answer:
+      'Bij de zakelijke producten standaard niet. De Commercial Terms zeggen dat Anthropic geen modellen mag trainen op klantcontent. Uitzonderingen zijn feedback die je zelf instuurt en data die je zelf kiest te delen. Bij consumentenaccounts (Free, Pro en Max) kiest de gebruiker of gesprekken voor training worden gebruikt.',
+  },
+  {
+    question: 'Blijft Claude-data binnen de EU?',
+    answer:
+      'Standaard niet. Op het eigen platform van Anthropic wordt data opgeslagen in de Verenigde Staten. De verwerking kan standaard plaatsvinden in de VS, Europa, Azië en Australië. De AVG staat dat toe als de doorgifte juridisch is afgedekt, en dat gebeurt met de Standard Contractual Clauses in de DPA. Moet data in de EU blijven, dan gebruik je Claude via AWS Bedrock of Google Vertex AI met een EU-endpoint.',
+  },
+  {
+    question: 'Mogen medewerkers hun eigen Claude Pro-account gebruiken voor werk?',
+    answer:
+      'Voor bedrijfs- of klantdata raden we dat af. Pro valt, net als Free en Max, onder de consumentenvoorwaarden van Anthropic. Daar hoort geen verwerkersovereenkomst bij en mag Anthropic chats gebruiken voor training, tenzij de gebruiker dat uitzet. Jij hebt als werkgever geen beheer over die accounts.',
+  },
+];
+
+const gidsOverzicht = [
+  { pad: '/compliance/anthropic-dpa', gids: 'Anthropic verwerkersovereenkomst', vraag: 'Heb ik een verwerkersovereenkomst nodig?', antwoord: 'Ja, zodra er persoonsgegevens door Claude gaan. De DPA hoort automatisch bij de zakelijke voorwaarden.' },
+  { pad: '/compliance/eu-hosting', gids: 'Claude-data in de EU houden', vraag: 'Blijft mijn data in de EU?', antwoord: 'Standaard niet. EU-verwerking kan via AWS Bedrock of Google Vertex AI.' },
+  { pad: '/compliance/is-claude-veilig', gids: 'Is Claude veilig voor bedrijfsdata?', vraag: 'Is Claude veilig voor bedrijfsdata?', antwoord: 'Met een zakelijk abonnement wel: geen training op je data, een DPA en SOC 2 Type II, ISO 27001 en ISO 42001.' },
+  { pad: '/compliance/ai-act-mkb', gids: 'Claude en de EU AI Act voor het MKB', vraag: 'Wat vraagt de AI Act nu van mijn bedrijf?', antwoord: 'Artikel 4 en artikel 50 gelden al. De regels voor hoog-risicosystemen volgen vanaf 2 december 2027.' },
+];
+
+const bronnen = [
+  { titel: 'Anthropic, Commercial Terms of Service (ingangsdatum 17 juni 2025)', url: 'https://www.anthropic.com/legal/commercial-terms', geraadpleegd: '2 oktober 2026' },
+  { titel: 'Anthropic, Data Processing Addendum (ingangsdatum 24 februari 2025)', url: 'https://www.anthropic.com/legal/data-processing-addendum', geraadpleegd: '2 oktober 2026' },
+  { titel: 'Anthropic, Consumer Terms of Service', url: 'https://www.anthropic.com/legal/consumer-terms', geraadpleegd: '2 oktober 2026' },
+  { titel: 'Anthropic, Updates to Consumer Terms and Privacy Policy (28 augustus 2025)', url: 'https://www.anthropic.com/news/updates-to-our-consumer-terms', geraadpleegd: '2 oktober 2026' },
+  { titel: 'Claude, abonnementen en prijzen', url: 'https://claude.com/pricing', geraadpleegd: '2 oktober 2026' },
+  { titel: 'Claude API Docs, Data residency', url: 'https://platform.claude.com/docs/en/manage-claude/data-residency', geraadpleegd: '2 oktober 2026' },
+  { titel: 'Claude API Docs, API and data retention', url: 'https://platform.claude.com/docs/en/manage-claude/api-and-data-retention', geraadpleegd: '2 oktober 2026' },
+  { titel: 'Claude Help Center, Enable US-only inference for your organization', url: 'https://support.claude.com/en/articles/15422948-enable-us-only-inference-for-your-organization', geraadpleegd: '2 oktober 2026' },
+  { titel: 'Claude Help Center, Configure custom data retention controls for Enterprise plans', url: 'https://support.claude.com/en/articles/10440198-configure-custom-data-retention-controls-for-enterprise-plans', geraadpleegd: '2 oktober 2026' },
+  { titel: 'Claude Help Center, What certifications has Anthropic obtained?', url: 'https://support.claude.com/en/articles/10015870-what-certifications-has-anthropic-obtained', geraadpleegd: '2 oktober 2026' },
+  { titel: 'Claude Code Docs, Data usage', url: 'https://code.claude.com/docs/en/data-usage', geraadpleegd: '2 oktober 2026' },
+  { titel: 'Claude, Regional compliance', url: 'https://claude.com/regional-compliance', geraadpleegd: '2 oktober 2026' },
+  { titel: 'Claude API Docs, Claude in Amazon Bedrock', url: 'https://platform.claude.com/docs/en/build-with-claude/claude-in-amazon-bedrock', geraadpleegd: '2 oktober 2026' },
+  { titel: 'Claude API Docs, Claude on Vertex AI', url: 'https://platform.claude.com/docs/en/build-with-claude/claude-on-vertex-ai', geraadpleegd: '2 oktober 2026' },
+  { titel: 'Anthropic, Anthropic to sign the EU Code of Practice (21 juli 2025)', url: 'https://www.anthropic.com/news/eu-code-practice', geraadpleegd: '2 oktober 2026' },
+];
+const h1 = 'Claude, de AVG en de GDPR: wat regel je als bedrijf?';
+---
+<BasisLayout
+  titel={titel}
+  beschrijving={beschrijving}
+  pad="/compliance"
+  schema={{
+    breadcrumbs,
+    personen: ['camiel'],
+    nodes: [
+      itemListNode('/compliance', artikelen.map((a) => ({ url: `/compliance/${a.id}`, naam: a.data.title }))),
+      faqNode('/compliance', faqItems),
+    ],
+  }}
+  artikel={{ headline: h1, gepubliceerd, bijgewerkt, auteur: 'camiel', sectie: 'Compliance' }}
+>
+
+  <Container class="pt-16 pb-12">
+    <Broodkruimel items={breadcrumbs} />
+    <p class="mt-6 text-xs uppercase tracking-widest text-inkt-zacht">Compliance</p>
+    <h1 class="mt-3 text-[length:var(--text-h1)]">{h1}</h1>
+    <p class="text-sm text-inkt-zacht mt-3">Gepubliceerd op <time datetime={gepubliceerd}>{datumNl(gepubliceerd)}</time><span aria-hidden="true"> · </span>Bijgewerkt op <time datetime={bijgewerkt}>{datumNl(bijgewerkt)}</time></p>
+    <AdviesDisclaimer soort="juridisch" />
+
+    <div class="max-w-3xl">
+      <KortAntwoord tekst={kortAntwoord} />
+
+      <div class="mt-10 prose prose-lg max-w-none">
+      <h2>Is Claude AVG-proof?</h2>
+      <p>Geen enkele tool is uit zichzelf AVG-proof. Of je aan de AVG voldoet, hangt af van hoe je Claude inricht: welk abonnement je team gebruikt, welke data erin gaat en wat je vastlegt. Met een zakelijk abonnement (Claude Team, Enterprise of de API) staat de basis er. Anthropic traint dan standaard niet op je data en de verwerkersovereenkomst hoort bij de zakelijke voorwaarden.</p>
+
+      <p>
+        Je medewerkers willen Claude gebruiken, of doen het al. Als eigenaar, directeur of privacyverantwoordelijke wil je weten of dat mag met
+        bedrijfsdata en klantgegevens. Het antwoord hangt vooral af van twee dingen: het abonnement en de afspraken die je intern maakt. In deze
+        gids lopen we het stap voor stap door. Alles over Anthropic hebben we op 2 oktober 2026 gecontroleerd in de voorwaarden en documentatie
+        van Anthropic zelf.
+      </p>
+      <p>
+        Dit is informatie, geen juridisch advies. Twijfel je over jouw situatie, leg het dan voor aan een privacyjurist of aan je functionaris
+        gegevensbescherming.
+      </p>
+
+      <h2>Stap 1: welk Claude-abonnement geeft welke bescherming?</h2>
+      <p>
+        Anthropic werkt met twee soorten voorwaarden. Free, Pro en Max vallen onder de consumentenvoorwaarden. Team, Enterprise en de API vallen
+        onder de zakelijke voorwaarden, de Commercial Terms. Die tweedeling bepaalt bijna alles: of er een verwerkersovereenkomst geldt, of je
+        chats voor training gebruikt mogen worden en welke beheeropties je hebt.
+      </p>
+      <div class="overflow-x-auto">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col"></th>
+              <th scope="col">Free, Pro, Max</th>
+              <th scope="col">Team</th>
+              <th scope="col">Enterprise</th>
+              <th scope="col">API</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Voorwaarden</th><td>Consument</td><td>Zakelijk</td><td>Zakelijk</td><td>Zakelijk</td></tr>
+            <tr><th scope="row">Verwerkersovereenkomst (DPA)</th><td>Nee</td><td>Ja, automatisch</td><td>Ja, automatisch</td><td>Ja, automatisch</td></tr>
+            <tr><th scope="row">Training op je chats</th><td>Ja, tenzij je het uitzet</td><td>Standaard niet</td><td>Standaard niet</td><td>Nee</td></tr>
+            <tr><th scope="row">Single sign-on (SSO)</th><td>Nee</td><td>Ja</td><td>Ja</td><td>n.v.t.</td></tr>
+            <tr><th scope="row">Auditlogs</th><td>Nee</td><td>Nee</td><td>Ja</td><td>n.v.t.</td></tr>
+            <tr><th scope="row">Eigen bewaartermijn</th><td>Nee</td><td>Nee</td><td>Ja, minimaal 30 dagen</td><td>Zero Data Retention op aanvraag</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        Team is bedoeld voor 2 tot 150 gebruikers. Enterprise voegt onder meer rolgebaseerde rechten, SCIM-koppeling met je gebruikersbeheer en
+        een Compliance API toe. Wat de abonnementen kosten, lees je op onze pagina over <a href="/prijs">wat Claude kost</a>.
+      </p>
+      <p>
+        Onze vuistregel: laat niemand met bedrijfs- of klantdata werken in een privéaccount. Ook een betaald Pro- of Max-abonnement valt onder de
+        consumentenvoorwaarden, en jij hebt als werkgever geen zicht op wat daar gebeurt.
+      </p>
+
+      <h2>Stap 2: hoe zit het met de verwerkersovereenkomst?</h2>
+      <p>
+        Laat je Claude persoonsgegevens verwerken voor je bedrijf, dan ben jij de verwerkingsverantwoordelijke en Anthropic de verwerker. Zo staat
+        het ook in de Data Processing Addendum (DPA) van Anthropic: de klant is controller, Anthropic is processor.
+      </p>
+      <p>
+        Je hoeft de DPA niet apart te tekenen. De Commercial Terms zeggen dat de DPA er door verwijzing deel van uitmaakt. Neem je Team, Enterprise
+        of de API af, dan geldt hij dus. De belangrijkste punten uit de versie van 24 februari 2025:
+      </p>
+      <ul>
+        <li>Klanten in de Europese Economische Ruimte, Zwitserland en het Verenigd Koninkrijk sluiten het contract met Anthropic Ireland, Limited.</li>
+        <li>
+          De standaardcontractbepalingen (SCC's) van de Europese Commissie voor doorgifte buiten de EU zijn opgenomen, in de varianten
+          verwerkingsverantwoordelijke naar verwerker en verwerker naar verwerker.
+        </li>
+        <li>
+          Je geeft algemene toestemming voor de subverwerkers in de bijlage. Wil Anthropic een nieuwe subverwerker inschakelen, dan krijg je daar
+          vooraf bericht van.
+        </li>
+        <li>
+          Na afloop van het contract kun je binnen 30 dagen een kopie van je data opvragen. Daarna verwijdert Anthropic de klantdata, tenzij de
+          wet of bijvoorbeeld een geschil bewaren nodig maakt.
+        </li>
+      </ul>
+      <p>
+        Download de DPA als pdf en bewaar hem bij je contracten, met de datum erbij. Dan kun je later laten zien welke versie gold toen je begon.
+      </p>
+      <p>Wat de DPA precies dekt en wat je zelf nog regelt, lees je in <a href="/compliance/anthropic-dpa">Anthropic verwerkersovereenkomst (DPA)</a>.</p>
+
+      <h2>Stap 3: waar wordt je data verwerkt?</h2>
+      <p>
+        Hier lees je online veel tegenstrijdige dingen. Wat Anthropic zelf schrijft, verschilt per product.
+      </p>
+      <p>
+        <strong>De API.</strong> Anthropic onderscheidt twee instellingen. De workspace geo bepaalt waar data in rust wordt opgeslagen. Daarvoor is
+        "us" op dit moment de enige optie. De inference geo bepaalt waar het model je verzoek verwerkt. Standaard staat die op "global": de
+        verwerking kan dan in elke beschikbare regio plaatsvinden. Je kunt ook "us" kiezen. Een Europese optie is er op het eigen platform van
+        Anthropic niet.
+      </p>
+      <p>
+        <strong>Claude Team en Enterprise.</strong> Ook hier biedt Anthropic geen Europese regio. Op Enterprise-abonnementen met
+        verbruiksafrekening kan een beheerder "US-only inference" aanzetten. Staat die instelling uit, dan kan de verwerking volgens Anthropic naar
+        servers in andere regio's gaan. Op Team bestaat deze instelling niet.
+      </p>
+      <p>
+        <strong>Data in de EU houden.</strong> Dat loopt via een cloudpartner. Anthropic noemt daarvoor zelf AWS Bedrock en Google Vertex AI. Bij
+        Bedrock kies je een Europese regio, zoals Frankfurt (eu-central-1), of een EU-inferentieprofiel dat binnen Europese regio's blijft. Bij
+        Vertex AI kies je een Europese regio zoals europe-west1, of het eu-endpoint dat over meerdere EU-regio's verdeelt. Bij beide betaal je voor
+        zo'n regionaal endpoint 10 procent meer dan voor het wereldwijde endpoint. Niet elk model is in elke regio beschikbaar, dus check dat per
+        model. Je werkt dan via de omgeving van AWS of Google en niet via claude.ai.
+      </p>
+      <p>
+        Gaat je data naar de Verenigde Staten, dan regelt de DPA die doorgifte met de SCC's. Of dat voor jouw soort gegevens voldoende is, neem je
+        mee in je eigen risicoafweging.
+      </p>
+      <p>Alle routes naar verwerking in de EU staan op een rij in <a href="/compliance/eu-hosting">Claude-data in de EU houden</a>.</p>
+
+      <h2>Stap 4: gebruikt Anthropic je data om Claude te trainen?</h2>
+      <p>
+        Bij zakelijke abonnementen niet. De Commercial Terms zeggen letterlijk dat Anthropic geen modellen mag trainen op klantcontent. Er zijn twee
+        uitzonderingen. Feedback die je zelf aan Anthropic stuurt, mag Anthropic gebruiken. En een beheerder kan de organisatie aanmelden voor het
+        Development Partner Program van Claude Code, waarmee je wel materiaal voor training aanlevert. Spreek af dat niemand dat doet zonder
+        overleg.
+      </p>
+      <p>
+        Bij Free, Pro en Max mag Anthropic chats wel gebruiken voor training, tenzij je dat uitzet in je instellingen. Sta je training toe, dan
+        bewaart Anthropic die chats vijf jaar. Zet je het uit, dan blijft het bij 30 dagen. Ook met training uit kan Anthropic feedback en chats
+        die voor een veiligheidscontrole zijn gemarkeerd voor training gebruiken.
+      </p>
+      <p>
+        En hoe lang blijft je data staan? Bij Team en Enterprise volgen chats en bestanden de bewaarinstelling van je organisatie. Enterprise kan
+        een eigen termijn instellen van minimaal 30 dagen. Zonder ingestelde termijn bewaart Enterprise data voor onbepaalde tijd. Voor de API kun
+        je bij Anthropic Zero Data Retention aanvragen. De chatomgeving van Team en Enterprise komt daar niet voor in aanmerking. Chats die de
+        veiligheidssystemen van Anthropic markeren, kunnen tot twee jaar bewaard blijven.
+      </p>
+      <p>
+        Voor je leveranciersbeoordeling: Anthropic noemt als certificeringen ISO 27001:2022, ISO/IEC 42001:2023 en SOC 2 Type I en Type II. De
+        rapporten vraag je op via het Trust Portal van Anthropic.
+      </p>
+      <p>Welke risico's er in het dagelijks gebruik zitten, lees je in <a href="/compliance/is-claude-veilig">Is Claude veilig voor bedrijfsdata?</a></p>
+
+      <h2>Stap 5: wat mag je wel en niet in Claude zetten?</h2>
+      <p>
+        Ook met een zakelijk abonnement zet je er niet zomaar alles in. Gebruik niet meer persoonsgegevens dan je voor de taak nodig hebt. Wij
+        werken met drie groepen.
+      </p>
+      <ul>
+        <li>
+          <strong>Prima:</strong> openbare informatie, je eigen teksten en sjablonen, cijfers zonder namen, code zonder klantdata.
+        </li>
+        <li>
+          <strong>Alleen in het zakelijke account en volgens je beleid:</strong> klantnamen en contactgegevens, e-mails, offertes, contracten en
+          notulen met namen. Haal eruit wat je voor de taak niet nodig hebt.
+        </li>
+        <li>
+          <strong>Niet invoeren, tenzij je DPIA en je jurist het goedkeuren:</strong> gezondheidsgegevens en andere bijzondere persoonsgegevens,
+          strafrechtelijke gegevens, BSN's, wachtwoorden en API-sleutels, en data die je volgens het contract met een klant niet bij een andere
+          partij mag neerleggen.
+        </li>
+      </ul>
+      <p>
+        Een simpele toets voor je team: zou je dit stuk zonder overleg naar een externe leverancier mailen? Zo niet, dan hoort het ook niet in
+        Claude.
+      </p>
+      <p>Hoe dat per beroep uitpakt, staat in <a href="/claude-voor-accountants">Claude voor accountants</a> en <a href="/claude-voor-advocaten">Claude voor advocaten</a>.</p>
+
+      <h2>Stap 6: wat regel je intern?</h2>
+      <p>
+        Het contract met Anthropic is één kant. De andere kant ligt bij jou. Dit zijn de stappen die we bij klanten doorlopen.
+      </p>
+      <ol>
+        <li>
+          <strong>Kies één zakelijk account.</strong> Sluit privéaccounts uit voor werk en zeg dat ook hardop. Mensen gebruiken anders gewoon wat
+          ze thuis al hebben.
+        </li>
+        <li>
+          <strong>Schrijf een kort AI-beleid.</strong> Eén pagina is genoeg: welke tools mogen, welke data erin mag, wie vragen beantwoordt en wat
+          je doet als het misgaat.
+        </li>
+        <li>
+          <strong>Richt het account in.</strong> Zet SSO aan, laat training uit staan, beperk de connectors die medewerkers mogen koppelen en stel
+          op Enterprise een bewaartermijn in.
+        </li>
+        <li>
+          <strong>Werk je register van verwerkingen bij.</strong> Zet erin dat Anthropic verwerker is, welke gegevens je verwerkt, met welk doel,
+          hoe lang en dat er doorgifte buiten de EU is op basis van de SCC's.
+        </li>
+        <li>
+          <strong>Toets of je een DPIA nodig hebt.</strong> De Autoriteit Persoonsgegevens legt uit wanneer een DPIA verplicht is. Gebruik je
+          Claude voor gezondheidsgegevens, voor het beoordelen van mensen of voor grote hoeveelheden klantdata, ga er dan van uit dat je er een
+          moet doen.
+        </li>
+        <li>
+          <strong>Leg het je team uit.</strong> Beleid werkt pas als mensen weten wat erin staat en waarom. Een korte sessie met voorbeelden uit
+          het eigen werk helpt meer dan een document. Dat doen we in <a href="/claude-in-30-dagen">Claude in 30 dagen</a>.
+        </li>
+        <li>
+          <strong>Plan een herziening.</strong> Anthropic past voorwaarden en instellingen regelmatig aan, dus kijk minstens bij elke verlenging opnieuw naar je afspraken.
+        </li>
+      </ol>
+
+      <h2>Wat betekent de EU AI Act voor jouw mkb?</h2>
+      <p>
+        Naast de AVG is er de Europese AI-verordening, de AI Act. Die maakt onderscheid tussen de aanbieder van een AI-model en de organisatie die
+        het gebruikt. Anthropic is de aanbieder. In juli 2025 kondigde Anthropic aan dat het de Europese gedragscode voor algemene AI-modellen
+        (General-Purpose AI Code of Practice) zou ondertekenen.
+      </p>
+      <p>
+        Wat de AI Act van jouw bedrijf vraagt, hangt af van waarvoor je Claude inzet. Teksten schrijven, samenvatten en analyseren valt in een
+        andere categorie dan Claude laten meebeslissen over sollicitanten of kredietaanvragen. Voor dat soort toepassingen gelden strengere regels.
+        Overweeg je zoiets, laat het dan eerst toetsen.
+      </p>
+      <p>Naast de AVG geldt de AI Act. Artikel 4 over AI-geletterdheid geldt al sinds 2 februari 2025, ook voor kleine bedrijven. Wat dat van je vraagt, lees je in <a href="/compliance/ai-act-mkb">Claude en de EU AI Act voor het MKB</a>.</p>
+      <p>
+        Wil je hulp bij de inrichting, van account tot beleid? Dat doen we in onze <a href="/claude-implementatie">Claude-implementatie</a>. Een breder overzicht staat in de gids <a href="/gids/claude-voor-mkb">Claude voor bedrijven en mkb</a>.
+      </p>
+
+      <h2>Checklist: Claude AVG-proof inzetten</h2>
+      <ul>
+        <li>Je gebruikt Claude Team, Enterprise of de API, en geen Free-, Pro- of Max-accounts voor werk.</li>
+        <li>Je hebt de DPA van Anthropic gedownload en met datum bij je contracten opgeslagen.</li>
+        <li>Je weet waar je data wordt opgeslagen en verwerkt, en of dat voor jouw data acceptabel is. Zo niet: Bedrock of Vertex AI in een EU-regio.</li>
+        <li>Training staat uit en niemand meldt de organisatie zonder overleg aan voor een dataprogramma.</li>
+        <li>SSO staat aan en connectors zijn beperkt tot wat nodig is.</li>
+        <li>Op Enterprise heb je een bewaartermijn ingesteld.</li>
+        <li>Er is een AI-beleid van één pagina met de drie datagroepen uit stap 5.</li>
+        <li>Claude staat in je register van verwerkingen.</li>
+        <li>Je hebt getoetst of een DPIA nodig is en die conclusie vastgelegd.</li>
+        <li>Je team heeft uitleg gehad over het beleid en over de beperkingen van Claude.</li>
+        <li>Je hebt een datum in de agenda staan om dit opnieuw te bekijken.</li>
+      </ul>
+      </div>
+    </div>
+
+    {artikelen.length > 0 && (
+      <>
+        <h2 class="mt-12 text-[length:var(--text-h2)]">De compliance-gidsen</h2>
+        <div class="mt-6 max-w-3xl overflow-x-auto">
+          <table class="w-full text-sm border-collapse">
+            <caption class="caption-top text-left text-sm text-inkt-zacht pb-2">De compliance-gidsen in één oogopslag, stand oktober 2026</caption>
+            <thead>
+              <tr class="border-b-2 border-lijn">
+                <th scope="col" class="text-left p-3 font-semibold">Gids</th>
+                <th scope="col" class="text-left p-3 font-semibold">Vraag</th>
+                <th scope="col" class="text-left p-3 font-semibold">Kort antwoord</th>
+              </tr>
+            </thead>
+            <tbody>
+              {gidsOverzicht.map((r) => (
+                <tr class="border-b border-lijn align-top">
+                  <th scope="row" class="p-3 text-left font-medium"><a href={r.pad}>{r.gids}</a></th>
+                  <td class="p-3 text-inkt-zacht">{r.vraag}</td>
+                  <td class="p-3 text-inkt-zacht">{r.antwoord}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <div class="mt-6 grid gap-6 md:grid-cols-2">
+          {artikelen.map((a) => (
+            <a
+              href={`/compliance/${a.id}`}
+              class="no-underline block rounded-lg border border-lijn bg-papier p-6 card-shadow reveal-target"
+            >
+              <span class="text-xs uppercase tracking-widest text-inkt-zacht bg-papier-dieper rounded-full px-3 py-1">Compliance</span>
+              <h3 class="mt-3 font-serif text-xl font-bold text-inkt">{a.data.title}</h3>
+              <p class="mt-2 text-sm text-inkt-zacht">{a.data.metaDescription}</p>
+              <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-accent-donkerst">Lees de gids<span class="cta-arrow">&rarr;</span></span>
+            </a>
+          ))}
+        </div>
+      </>
+    )}
+
+    <div class="max-w-3xl"><BronnenBlok bronnen={bronnen} /></div>
+
+    <div class="max-w-3xl"><FaqSectie titel="Veelgestelde vragen over Claude en de AVG" items={faqItems} /></div>
+
+    <div class="max-w-3xl"><AuthorBio author="camiel" /></div>
+  </Container>
+  <div class="max-w-3xl mx-auto px-6"><CtaStrook /></div>
+</BasisLayout>

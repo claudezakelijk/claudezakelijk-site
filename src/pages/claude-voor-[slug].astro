@@ -1,0 +1,19 @@
+---
+import { render } from 'astro:content';
+import VerticalLayout from '../layouts/VerticalLayout.astro';
+import { getPublished } from '../lib/content';
+
+export async function getStaticPaths() {
+  const pages = await getPublished('verticalen');
+  return pages.map(page => ({
+    params: { slug: page.id },
+    props: { entry: page },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+<VerticalLayout entry={entry} pagePath={`/claude-voor-${entry.id}`}>
+  <Content />
+</VerticalLayout>

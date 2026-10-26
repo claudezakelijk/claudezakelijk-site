@@ -1,0 +1,38 @@
+---
+import { itemListNode, lijstId } from '../../lib/schema';
+import BasisLayout from '../../layouts/BasisLayout.astro';
+import Container from '../../components/Container.astro';
+import CollectieHub from '../../components/CollectieHub.astro';
+import { getPublished } from '../../lib/content';
+
+const artikelen = (await getPublished('nieuws'))
+  .sort((a, b) => {
+    const da = a.data.publishDate ? a.data.publishDate.getTime() : 0;
+    const db = b.data.publishDate ? b.data.publishDate.getTime() : 0;
+    if (db !== da) return db - da;
+    return a.data.title.localeCompare(b.data.title);
+  });
+const items = artikelen.map((a) => ({
+      href: `/nieuws/${a.id}`,
+      titel: a.data.title,
+      beschrijving: a.data.metaDescription,
+      datum: a.data.publishDate,
+}));
+---
+<BasisLayout
+  titel="Nieuws"
+  beschrijving="Nieuws en analyses over Claude voor het Nederlandse MKB: releases, praktijkervaring en wat het voor jouw bedrijf betekent."
+  pad="/nieuws"
+  schema={{ paginaType: 'CollectionPage', hoofdonderwerp: lijstId('/nieuws'), nodes: [itemListNode('/nieuws', items.map((i) => ({ url: i.href, naam: i.titel })))] }}
+>
+  <Container class="pt-16 pb-12">
+    <CollectieHub
+      label="Nieuws"
+      titel="Nieuws & analyses"
+      intro="Hier lees je wat er bij Claude verandert en wat dat betekent voor een Nederlands mkb-bedrijf: nieuwe modellen, nieuwe functies en nieuwe regels. Elk artikel noemt de bron bij Anthropic of de toezichthouder en de datum waarop we die lazen. Stukken die blijven gelden, zoals welk Claude-model je kiest, werken we bij als er iets verandert."
+      leesTekst="Lees verder"
+      leegTekst="Binnenkort meer: de eerste artikelen worden op dit moment geredigeerd."
+      items={items}
+    />
+  </Container>
+</BasisLayout>

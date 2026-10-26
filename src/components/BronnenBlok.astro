@@ -1,0 +1,32 @@
+---
+// Zichtbaar bronnenblok (review 23 juli, B6): maakt het bronwerk dat eerst in
+// HTML-comments zat zichtbaar voor lezer, Google en LLM's. Rendert niets
+// zonder bronnen.
+interface Props {
+  bronnen: Array<{ titel: string; url: string | null; geraadpleegd: string | null }>;
+  peildatum?: string | null;
+}
+
+const { bronnen, peildatum = null } = Astro.props;
+
+if (bronnen.length > 0 && bronnen.length < 3) console.warn('[BronnenBlok] minder dan 3 bronnen');
+---
+{/* Astro 7 (Rust-compiler) bewaart witruimte binnen expressies: geen regelovergang tussen
+    de link en ", geraadpleegd", anders staat er een spatie voor de komma. */}
+{bronnen.length > 0 && (
+  <section id="bronnen" class="mt-12 border-t border-lijn pt-6">
+    <h2 class="m-0 text-xs font-semibold uppercase tracking-[0.1em] text-inkt-zacht">Bronnen</h2>
+    {peildatum && <p class="m-0 mt-2 text-[13.5px] text-inkt-zacht">Feiten gecontroleerd op {peildatum}.</p>}
+    <ol class="list-none m-0 mt-3.5 p-0 grid gap-2 text-[13.5px] leading-[1.55] text-inkt-zacht">
+      {bronnen.map((b) => (
+        <li>
+          {b.url ? (
+            <a href={b.url} target="_blank" rel="noopener" class="underline decoration-lijn underline-offset-2 hover:text-inkt">{b.titel}<span class="sr-only"> (opent in nieuw venster)</span></a>
+          ) : (
+            <span>{b.titel}</span>
+          )}{b.geraadpleegd && <span>, geraadpleegd {b.geraadpleegd}</span>}
+        </li>
+      ))}
+    </ol>
+  </section>
+)}

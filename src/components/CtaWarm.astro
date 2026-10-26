@@ -1,0 +1,28 @@
+---
+// Warme afsluit-CTA in 1b-stijl (paper-tint vlak, pills). Geëxtraheerd uit
+// cases.astro en cases/[slug].astro (stond daar 2x gedupliceerd); de primaire
+// knop is altijd de gratis AI-check, de secundaire is per pagina instelbaar.
+interface Props {
+  titel: string;
+  tekst?: string;
+  secundairLabel?: string;
+  secundairHref?: string;
+}
+
+const {
+  titel,
+  tekst = 'Doe de gratis AI-check en ontdek of Claude ook voor jouw situatie het verschil maakt.',
+  secundairLabel,
+  secundairHref,
+} = Astro.props;
+---
+<section class="mx-auto max-w-[840px] rounded-[24px] bg-paper-tint p-[clamp(36px,6vw,64px)] text-center">
+  <h2 class="m-0 font-newsreader font-medium leading-[1.2] tracking-[-0.015em] text-[clamp(26px,4vw,36px)]">{titel}</h2>
+  <p class="mt-3.5 text-base leading-[1.6] text-ink-2">{tekst}</p>
+  <div class="mt-7 flex justify-center gap-3.5 flex-wrap">
+    <a href="/ai-enablement-scan" class="pill pill-primary no-underline">Doe de gratis AI-check <span aria-hidden="true">&rarr;</span></a>
+    {secundairLabel && secundairHref && (
+      <a href={secundairHref} class="pill pill-outline no-underline">{secundairLabel}</a>
+    )}
+  </div>
+</section>

@@ -1,0 +1,41 @@
+---
+import { getEntry, render } from 'astro:content';
+import BasisLayout from '../layouts/BasisLayout.astro';
+import CtaBlok from '../components/CtaBlok.astro';
+import Broodkruimel from '../components/Broodkruimel.astro';
+import { dienstNode, dienstId } from '../lib/schema';
+
+const dienst = await getEntry('diensten', 'rollout');
+if (!dienst) throw new Error('Diensten-entry rollout ontbreekt');
+const { Content } = await render(dienst);
+const breadcrumbs = [{ name: 'Home', url: '/' }, { name: 'Claude in 30 dagen', url: dienst.data.pad }];
+---
+<BasisLayout
+  titel={dienst.data.titleTag ?? dienst.data.titel}
+  beschrijving={dienst.data.samenvatting}
+  pad={dienst.data.pad}
+  schema={{
+    breadcrumbs,
+    hoofdonderwerp: dienstId(dienst.data.pad),
+    nodes: [dienstNode({ pad: dienst.data.pad, naam: dienst.data.titel, beschrijving: dienst.data.samenvatting, serviceType: 'Claude-uitrol in vier weken', aanbod: { naam: dienst.data.titel, prijsTekst: dienst.data.prijs, url: dienst.data.pad } })],
+  }}
+>
+  <div class="max-w-3xl mx-auto px-6 pt-16"><Broodkruimel items={breadcrumbs} /></div>
+  <article class="max-w-3xl mx-auto px-6 pt-6 pb-8 prose prose-lg">
+    <p class="text-xs uppercase tracking-widest text-inkt-zacht">{dienst.data.ondertitel}</p>
+    <h1>{dienst.data.h1 ?? dienst.data.titel}</h1>
+    <dl class="grid grid-cols-2 gap-4 text-sm mt-6 not-prose">
+      <div><dt class="text-inkt-zacht">Prijs</dt><dd class="font-semibold">{dienst.data.prijs}</dd></div>
+      <div><dt class="text-inkt-zacht">Duur</dt><dd class="font-semibold">{dienst.data.duur}</dd></div>
+    </dl>
+    <div class="mt-8">
+      <Content />
+    </div>
+  </article>
+  <CtaBlok
+    kop="Klaar voor de rollout?"
+    tekst="Een rollout volgt altijd op een Readiness Scan. Begin daar."
+    link="/claude-readiness-scan"
+    linkTekst="Bekijk de Readiness Scan"
+  />
+</BasisLayout>

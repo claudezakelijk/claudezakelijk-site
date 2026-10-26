@@ -1,0 +1,79 @@
+---
+import { itemListNode, lijstId, faqNode } from '../../lib/schema';
+import BasisLayout from '../../layouts/BasisLayout.astro';
+import Container from '../../components/Container.astro';
+import CollectieHub from '../../components/CollectieHub.astro';
+import FaqSectie from '../../components/FaqSectie.astro';
+import { getPublished } from '../../lib/content';
+
+const artikelen = (await getPublished('integraties'))
+  .sort((a, b) => b.data.priority - a.data.priority || a.data.title.localeCompare(b.data.title));
+const items = artikelen.map((a) => ({
+      href: `/integraties/${a.id}`,
+      titel: a.data.title,
+      beschrijving: a.data.metaDescription,
+}));
+
+// Tabel en FAQ volgens spec E, R-8 "/integraties" (E-15). De tabel komt uit de live entries,
+// dus een nieuwe koppeling staat er vanzelf in op de dag dat hij live gaat.
+const nl = (d: Date) => d.toLocaleDateString('nl-NL', { day: 'numeric', month: 'long', year: 'numeric' });
+const rijen = artikelen.map((a) => ({
+  software: a.data.softwareName,
+  href: `/integraties/${a.id}`,
+  titel: a.data.title,
+  gecontroleerd: a.data.updatedDate ?? a.data.publishDate,
+}));
+const faq = [
+  {
+    question: 'Wat is een MCP-server?',
+    answer: 'MCP (Model Context Protocol) is een open standaard waarmee Claude met andere software praat. Een MCP-server geeft Claude toegang tot de gegevens en acties van één systeem, zoals je boekhouding of je CRM.',
+  },
+  {
+    question: 'Kan Claude dingen aanpassen in mijn software?',
+    answer: 'Dat hangt af van de koppeling. Moneybird heeft bijvoorbeeld een variant die alleen leest en een variant die ook schrijft. Kies waar het kan de variant die alleen leest.',
+  },
+];
+---
+<BasisLayout
+  titel="Integraties"
+  beschrijving="Claude koppelen aan de tools die je al gebruikt: Microsoft 365, Exact Online, HubSpot en meer. Praktische integratiegidsen voor het MKB."
+  pad="/integraties"
+  schema={{ paginaType: 'CollectionPage', hoofdonderwerp: lijstId('/integraties'), nodes: [itemListNode('/integraties', items.map((i) => ({ url: i.href, naam: i.titel }))), faqNode('/integraties', faq)] }}
+>
+  <Container class="pt-16 pb-12">
+    <CollectieHub
+      label="Integraties"
+      titel="Claude gekoppeld aan je tools"
+      intro="Claude koppel je aan je eigen software via connectors en MCP-servers. Sommige koppelingen bouwt Anthropic zelf, andere komen van de leverancier van je software of van een derde partij. Per koppeling lees je wie hem levert, wat Claude ermee kan lezen en doen, wat je moet instellen en wat dat betekent voor de AVG. Bovenaan elke pagina staat wanneer we de koppeling het laatst controleerden."
+      leesTekst="Bekijk de integratie"
+      leegTekst="Binnenkort meer: de eerste integratiegidsen worden op dit moment geredigeerd."
+      items={items}
+    />
+
+    {rijen.length > 0 && (
+      <div class="my-10 overflow-x-auto">
+        <table class="w-full text-sm border-collapse">
+          <caption class="caption-top text-left text-sm text-inkt-zacht pb-2">Koppelingen, met datum van de laatste controle</caption>
+          <thead>
+            <tr class="border-b-2 border-lijn">
+              <th scope="col" class="text-left p-3 font-semibold">Software</th>
+              <th scope="col" class="text-left p-3 font-semibold">Pagina</th>
+              <th scope="col" class="text-left p-3 font-semibold">Gecontroleerd</th>
+            </tr>
+          </thead>
+          <tbody>
+            {rijen.map((r) => (
+              <tr class="border-b border-lijn">
+                <th scope="row" class="p-3 text-left font-medium">{r.software}</th>
+                <td class="p-3"><a href={r.href} class="text-accent-diep">{r.titel}</a></td>
+                <td class="p-3 text-inkt-zacht">{r.gecontroleerd && <time datetime={r.gecontroleerd.toISOString().slice(0, 10)}>{nl(r.gecontroleerd)}</time>}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    )}
+
+    <FaqSectie titel="Vragen over koppelingen" items={faq} />
+  </Container>
+</BasisLayout>

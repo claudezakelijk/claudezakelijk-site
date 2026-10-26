@@ -1,0 +1,18 @@
+{
+  "/sitemap.xml": {
+    "naar": "/sitemap-index.xml",
+    "status": 301
+  },
+  "/gids/claude-avg-gdpr-voor-mkb": {
+    "naar": "/compliance",
+    "status": 301
+  },
+  "/gids/claude-vs-chatgpt-voor-bedrijven": {
+    "naar": "/gids/overstappen-van-chatgpt-naar-claude",
+    "status": 301
+  },
+  "/prijs/kosten-zakelijk": {
+    "naar": "/prijs",
+    "status": 301
+  }
+}

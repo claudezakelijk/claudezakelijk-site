@@ -1,0 +1,349 @@
+---
+import BasisLayout from '../../layouts/BasisLayout.astro';
+import Broodkruimel from '../../components/Broodkruimel.astro';
+import KortAntwoord from '../../components/KortAntwoord.astro';
+import FaqSectie from '../../components/FaqSectie.astro';
+import BronnenBlok from '../../components/BronnenBlok.astro';
+import AuthorBio from '../../components/AuthorBio.astro';
+import CtaStrook from '../../components/CtaStrook.astro';
+import { faqNode } from '../../lib/schema';
+
+const titel = 'Claude voor bedrijven en mkb';
+const titleTag = 'Claude voor bedrijven en mkb: de gids | ClaudeZakelijk';
+const beschrijving =
+  'Claude voor bedrijven en mkb: welk abonnement past, wat het kost, wat je team ermee doet, hoe het zit met de AVG en hoe je de invoering aanpakt.';
+const pad = '/gids/claude-voor-mkb';
+
+const gepubliceerd = new Date('2026-10-02');
+const bijgewerkt = new Date('2026-10-02');
+const datumNl = (d: Date) => d.toLocaleDateString('nl-NL', { day: 'numeric', month: 'long', year: 'numeric' });
+const datumIso = (d: Date) => d.toISOString().slice(0, 10);
+
+const kortAntwoord =
+  'Claude is de AI-assistent van Anthropic. Voor een bedrijf met 5 tot 150 mensen is Claude Team meestal de beste keuze: 25 dollar per gebruiker per maand (20 dollar bij jaarbetaling, stand 2 oktober 2026), met centraal beheer en SSO. Anthropic traint niet op zakelijke data. Begin met één of twee concrete taken en een paar heldere afspraken over data.';
+
+const breadcrumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'Gidsen', url: '/gids' },
+  { name: titel, url: pad },
+];
+
+const faq = [
+  {
+    question: 'Wat kost Claude voor een bedrijf met tien medewerkers?',
+    answer:
+      'Met Claude Team en standaard seats betaal je 25 dollar per gebruiker per maand, of 20 dollar bij jaarbetaling. Voor tien mensen is dat 250 dollar per maand, of 200 dollar per maand bij een jaarcontract. Dat is exclusief btw. Een implementatie met begeleiding komt daar los bij.',
+  },
+  {
+    question: 'Mag ik Claude Pro gebruiken voor mijn werk?',
+    answer:
+      'Dat kan, maar Pro valt onder de consumentenvoorwaarden van Anthropic. Daarin kies je zelf of je gesprekken gebruikt mogen worden om Claude te verbeteren. Er is geen centraal beheer en geen verwerkersovereenkomst voor je bedrijf. Werk je met klant- of personeelsgegevens, kies dan Team of Enterprise.',
+  },
+  {
+    question: 'Traint Anthropic Claude op onze bedrijfsgegevens?',
+    answer:
+      'Niet bij zakelijke diensten. De commerciële voorwaarden van Anthropic zeggen dat Anthropic geen modellen mag trainen op de content van klanten. Dat geldt voor Claude Team, Enterprise en de API. De verwerkersovereenkomst (DPA) is onderdeel van die voorwaarden.',
+  },
+  {
+    question: 'Blijven onze gegevens in de EU?',
+    answer:
+      'Dat is niet gegarandeerd. Bij de API van Anthropic kun je op dit moment alleen kiezen tussen wereldwijd en de VS, en voor Claude Team en Enterprise vonden we geen EU-toezegging. Wie verwerking in de EU wil afdwingen, gebruikt Claude via Amazon Bedrock of Google Cloud Vertex AI met een Europese regio.',
+  },
+  {
+    question: 'Hoe lang duurt het om Claude in te voeren?',
+    answer:
+      'Bij ons duurt een volledig traject zes tot acht weken. Eerst een Readiness Scan van een dag op locatie plus een week uitwerken. Daarna een rollout van vier weken met ongeveer twee dagen per week begeleiding. Daarna werkt je team zelfstandig.',
+  },
+];
+
+const bronnen = [
+  { titel: 'Anthropic, prijspagina Claude (claude.com/pricing)', url: 'https://claude.com/pricing', geraadpleegd: '2 oktober 2026' },
+  { titel: 'Anthropic, Commercial Terms of Service (ingangsdatum 17 juni 2025)', url: 'https://www.anthropic.com/legal/commercial-terms', geraadpleegd: '2 oktober 2026' },
+  { titel: 'Anthropic, Updates to Consumer Terms and Privacy Policy (28 augustus 2025)', url: 'https://www.anthropic.com/news/updates-to-our-consumer-terms', geraadpleegd: '2 oktober 2026' },
+  { titel: 'Anthropic, documentatie Data residency (inference geo en workspace geo)', url: 'https://platform.claude.com/docs/en/manage-claude/data-residency', geraadpleegd: '2 oktober 2026' },
+  { titel: 'Anthropic, Regional compliance (Claude via Bedrock, Vertex AI en Foundry)', url: 'https://claude.com/regional-compliance', geraadpleegd: '2 oktober 2026' },
+];
+---
+<BasisLayout
+  titel={titleTag}
+  beschrijving={beschrijving}
+  pad={pad}
+  schema={{ breadcrumbs, nodes: [faqNode(pad, faq)], personen: ['camiel'] }}
+  artikel={{ headline: titel, gepubliceerd, bijgewerkt, auteur: 'camiel', sectie: 'Gids' }}
+>
+
+  <article class="max-w-3xl mx-auto px-6 pt-16 pb-8">
+    <Broodkruimel items={breadcrumbs} />
+
+    <header class="mt-6">
+      <span class="text-[13px] font-semibold uppercase tracking-[0.1em] text-terracotta">Gids</span>
+      <h1 class="font-newsreader font-medium leading-[1.12] tracking-[-0.015em] text-[length:var(--text-h1)] mt-4 text-balance">{titel}</h1>
+      <p class="text-sm text-inkt-zacht mt-3">
+        Gepubliceerd op <time datetime={datumIso(gepubliceerd)}>{datumNl(gepubliceerd)}</time>
+        <span aria-hidden="true"> · </span>
+        Bijgewerkt op <time datetime={datumIso(bijgewerkt)}>{datumNl(bijgewerkt)}</time>
+      </p>
+    </header>
+
+    <KortAntwoord tekst={kortAntwoord} />
+
+    <div class="mt-10 prose prose-lg max-w-none">
+      <p>
+        Je hebt gehoord dat collega-ondernemers Claude gebruiken. Misschien gebruikt een paar van je eigen
+        mensen het al, op een privéaccount. Nu wil je weten of het iets is voor je hele bedrijf, wat het kost
+        en waar je op moet letten. Deze gids zet dat op een rij voor bedrijven met 5 tot 150 medewerkers.
+        Alle prijzen en voorwaarden hebben we op 2 oktober 2026 gecontroleerd bij Anthropic zelf.
+      </p>
+
+      <h2>Wat is Claude voor een bedrijf?</h2>
+      <p>
+        Claude is een AI-assistent van het Amerikaanse bedrijf Anthropic. Je typt een vraag of opdracht, en
+        Claude schrijft, vat samen, rekent, analyseert documenten of schrijft code. Je gebruikt het in de
+        browser, als app op je computer of telefoon, en via extensies in Chrome en Microsoft 365.
+      </p>
+      <p>
+        Voor een bedrijf is vooral interessant dat Claude met je eigen materiaal werkt. Je geeft een offerte,
+        een contract, een export uit je boekhouding of de notulen van een overleg, en Claude werkt daarmee
+        verder. Met koppelingen (connectors) haalt Claude ook gegevens op uit andere systemen. Met <a href="/gids/claude-code-voor-bedrijven">Claude Code</a>
+        bouwt een technisch iemand kleine toepassingen en automatiseringen, zoals de meeste voorbeelden
+        verderop in deze gids.
+      </p>
+      <p>
+        Wil je eerst begrijpen hoe het werkt en wanneer je welk model kiest? Lees dan
+        <a href="/hoe-claude-werkt">hoe Claude werkt</a>.
+      </p>
+
+      <h2>Welk abonnement past bij mijn bedrijf?</h2>
+      <p>
+        Anthropic heeft vier abonnementen die voor bedrijven relevant zijn. Ze verschillen vooral in beheer,
+        gebruikslimieten en de voorwaarden die gelden voor je data.
+      </p>
+      <div class="not-prose overflow-x-auto my-8">
+        <table class="w-full text-left text-[15px] border-collapse">
+          <thead>
+            <tr class="border-b border-lijn">
+              <th class="py-2 pr-4 font-semibold">Abonnement</th>
+              <th class="py-2 pr-4 font-semibold">Prijs (excl. btw)</th>
+              <th class="py-2 font-semibold">Voor wie</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-lijn">
+            <tr>
+              <td class="py-3 pr-4 align-top font-semibold">Pro</td>
+              <td class="py-3 pr-4 align-top">$20 per maand, of $17 per maand bij jaarbetaling</td>
+              <td class="py-3 align-top">Een zelfstandige of één persoon die wil proberen. Valt onder de consumentenvoorwaarden.</td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-4 align-top font-semibold">Max</td>
+              <td class="py-3 pr-4 align-top">Vanaf $100 per maand</td>
+              <td class="py-3 align-top">Eén zware gebruiker die meer nodig heeft dan Pro. Ook consumentenvoorwaarden.</td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-4 align-top font-semibold">Team</td>
+              <td class="py-3 pr-4 align-top">Standaard seat $25 per gebruiker per maand, of $20 bij jaarbetaling. Premium seat $125, of $100 bij jaarbetaling.</td>
+              <td class="py-3 align-top">Organisaties van 2 tot 150 mensen. Centraal beheer, SSO, geen training op je data.</td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-4 align-top font-semibold">Enterprise</td>
+              <td class="py-3 pr-4 align-top">$20 per seat per maand bij jaarbetaling, plus verbruik</td>
+              <td class="py-3 align-top">Grotere organisaties die audit logs, SCIM, rolgebaseerde rechten of eigen bewaartermijnen nodig hebben.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        Voor de meeste bedrijven in onze doelgroep is <strong>Claude Team</strong> de logische keuze. Je
+        beheert alle accounts vanuit één plek, je betaalt één factuur en medewerkers loggen in met hun
+        bestaande zakelijke account via SSO. Een premium seat geeft meer gebruiksruimte. Die is alleen zinvol
+        voor de paar mensen die er de hele dag mee werken.
+      </p>
+      <p>
+        Enterprise wordt interessant als je moet kunnen aantonen wie wat heeft gedaan (audit logs), als je
+        gebruikers automatisch wilt aanmaken en verwijderen vanuit je identity-systeem (SCIM), of als je per
+        afdeling andere rechten wilt geven. Let op: bij Enterprise betaal je naast de seat ook voor het
+        verbruik. De rekening hangt dus af van hoeveel je team ermee doet.
+      </p>
+      <p>
+        Een uitgebreidere vergelijking staat in
+        <a href="/prijs/pro-vs-team-vs-enterprise">Claude Pro, Team of Enterprise</a>. Hoe de gebruikslimieten per abonnement werken, lees je in
+        <a href="/prijs/credits-en-limieten">Claude gebruikslimieten en usage credits</a>.
+      </p>
+
+      <h2>Wat kost Claude voor een team van tien mensen?</h2>
+      <p>
+        Een rekenvoorbeeld met tien standaard seats op Claude Team:
+      </p>
+      <ul>
+        <li>Maandelijks opzegbaar: 10 × $25 = $250 per maand.</li>
+        <li>Met een jaarcontract: 10 × $20 = $200 per maand, dus $2.400 per jaar.</li>
+        <li>Geef je twee mensen een premium seat (jaarbetaling): 8 × $20 + 2 × $100 = $360 per maand.</li>
+      </ul>
+      <p>
+        Anthropic rekent in dollars en de bedragen zijn exclusief btw. Reken je om naar euro's, gebruik dan de
+        koers op het moment van betalen. Alle prijzen, met btw en wisselkoers, staan in <a href="/prijs">Claude kosten zakelijk</a>. Of het voor jouw team uit kan, reken je uit met de <a href="/tools/claude-roi-mkb-calculator">Claude ROI-calculator</a>.
+      </p>
+      <p>
+        De licentie is meestal het kleinste deel van de investering. De echte kosten zitten in de tijd die je
+        mensen nodig hebben om er goed mee te leren werken. Die tijd kun je zelf investeren of laten
+        begeleiden. Een begeleid traject bij ons begint bij €9.000 voor scan en rollout samen. Wat daar precies
+        in zit, lees je op de pagina over <a href="/claude-implementatie">Claude-implementatie</a>.
+      </p>
+
+      <h2>Wat doet een team in de praktijk met Claude?</h2>
+      <p>
+        De meeste teams beginnen met schrijfwerk: e-mails, offertes, samenvattingen en verslagen. Dat levert
+        snel tijd op en je hebt er geen koppelingen voor nodig. Wie verder gaat, laat Claude terugkerend werk
+        overnemen dat nu veel handwerk kost. Vier voorbeelden die ons team eerder zelf bouwde, bij Nederlandse IT-bedrijven:
+      </p>
+      <h3>Van vergadering naar actiepunten</h3>
+      <p>
+        Een IT-consultancybureau neemt elke week een assessment-gesprek van een uur op. Een collega keek de
+        opname terug en schreef een samenvatting. Dat kostte 45 minuten per gesprek. Nu zet een skill in
+        Claude Code de opname om in een brief met kernpunten, vervolgacties en korte videoclips. Dat duurt vijf
+        minuten. Lees de <a href="/cases/consultant-brief">case over vergadernotities</a>.
+      </p>
+      <h3>Een kennisbank in een week</h3>
+      <p>
+        Het supportteam van een IT-dienstverlener met meer dan 200 klanten typte dezelfde antwoorden steeds
+        opnieuw. Claude Code schreef artikelen op basis van bestaande tickets en zette ze via de API live. Na
+        vijf werkdagen stonden er 13 artikelen met 27 screenshots. Het team bespaart nu zes uur per week. Zie de
+        <a href="/cases/knowledge-base">case over de kennisbank</a>.
+      </p>
+      <h3>Persoonlijke sales-e-mails</h3>
+      <p>
+        Een B2B-softwarebedrijf had twee salesmensen en drieduizend prospects. Elke ochtend staan nu 25
+        persoonlijke concept-e-mails klaar. Het team keurt ze in tien minuten goed, past ze aan of wijst ze af.
+        Niets gaat de deur uit zonder menselijke controle. De open rate steeg van 8% naar 34%. Lees de
+        <a href="/cases/sdr-sales-agent">case over de sales agent</a>.
+      </p>
+      <h3>Rapportages voor klanten</h3>
+      <p>
+        Een MSP-softwarebedrijf met meer dan 50 klanten maakte rapportages met de hand, in twee talen. In drie maanden kwamen er
+        872 Power BI-rapporten live, met automatische controle op de berekeningen. Zie de
+        <a href="/cases/powerbi-reporting">case over Power BI-rapportages</a>.
+      </p>
+      <p>
+        Alle voorbeelden staan in ons <a href="/cases">overzicht van cases</a>. Per sector lees je wat Claude doet in
+        <a href="/claude-voor-accountants">Claude voor accountants</a>, <a href="/claude-voor-advocaten">Claude voor advocaten</a>,
+        <a href="/claude-voor-makelaars">Claude voor makelaars</a> en <a href="/claude-voor-marketingbureaus">Claude voor marketingbureaus</a>. Alle branches staan bij <a href="/verticalen">Claude per branche</a>.
+      </p>
+
+      <h2>Is Claude veilig en past het bij de AVG?</h2>
+      <p>
+        Dat hangt af van het abonnement. Zakelijke diensten van Anthropic (Claude Team, Enterprise en de API)
+        vallen onder de Commercial Terms. Daarin staat dat Anthropic geen modellen mag trainen op de content
+        van klanten. De <a href="/compliance/anthropic-dpa">verwerkersovereenkomst (DPA)</a> is onderdeel van die voorwaarden. Dat heb je voor de AVG
+        nodig als je medewerkers persoonsgegevens in Claude zetten.
+      </p>
+      <p>
+        Free, Pro en Max vallen onder de consumentenvoorwaarden. Sinds de update van augustus 2025 kiest de
+        gebruiker daar zelf of gesprekken gebruikt mogen worden om Claude te verbeteren. Als werkgever heb je
+        daar geen zicht op. Dat is de belangrijkste reden om voor je team een zakelijk abonnement te nemen.
+      </p>
+      <p>
+        Dan de vraag waar je data staat. Voor de API kun je bij Anthropic op dit moment kiezen tussen
+        wereldwijde verwerking en verwerking in de VS. Opgeslagen data staat daar in de VS. Voor Claude Team en
+        Enterprise vonden we bij Anthropic geen toezegging dat data in de EU blijft. Wil je verwerking binnen de
+        EU afdwingen, dan gebruik je <a href="/compliance/eu-hosting">Claude via Amazon Bedrock of Google Cloud Vertex AI met een Europese regio</a>.
+        Dat vraagt technisch werk en past vooral bij maatwerk via de API.
+      </p>
+      <p>
+        Voor de meeste mkb-bedrijven is Claude Team met een verwerkersovereenkomst en goede interne afspraken
+        voldoende. Wel moet je zelf vastleggen welke gegevens wel en niet in Claude mogen. Bij gevoelige
+        gegevens, zoals medische dossiers, is een DPIA verstandig. Welke risico's er in het dagelijks gebruik zitten, lees je in <a href="/compliance/is-claude-veilig">Is Claude veilig voor bedrijfsdata?</a> Alles hierover staat in
+        <a href="/compliance">Claude en de AVG: wat regel je als bedrijf?</a>.
+      </p>
+
+      <h2>Hoe verloopt een implementatie?</h2>
+      <p>
+        Je kunt Claude Team vandaag afsluiten en morgen accounts uitdelen. Bij kleine teams werkt dat soms
+        prima. Vaker zien we dat iedereen het een paar keer probeert en dan teruggaat naar de oude manier van
+        werken. Een implementatie zorgt dat Claude in de dagelijkse processen terechtkomt. Wij werken in vier
+        stappen, die je elk los kunt afnemen:
+      </p>
+      <ol>
+        <li>
+          <strong><a href="/ai-enablement-scan">Gratis AI-check</a>.</strong> Twee minuten vragen invullen. Je
+          ziet direct of Claude bij je bedrijf past.
+        </li>
+        <li>
+          <strong><a href="/claude-readiness-scan">Readiness Scan</a>, vanaf €1.500.</strong> Een dag op
+          locatie, een week uitwerken en een uur bespreken. Je krijgt vijf tot tien use cases, gerangschikt op
+          opbrengst, en een vaste offerte voor de volgende stap.
+        </li>
+        <li>
+          <strong><a href="/claude-in-30-dagen">Claude in 30 dagen</a>, vanaf €7.500.</strong> Vier weken,
+          ongeveer twee dagen per week. We richten Claude in, bouwen de eerste toepassingen en trainen je team
+          op hun eigen werk.
+        </li>
+        <li>
+          <strong><a href="/claude-compagnon">Claude Compagnon</a>, vanaf €1.500 per maand.</strong>
+          Doorlopende begeleiding, minimaal drie maanden. Voor bedrijven die steeds nieuwe toepassingen willen
+          toevoegen.
+        </li>
+      </ol>
+      <p>
+        Van eerste gesprek tot een team dat zelfstandig met Claude werkt, zit je zo op zes tot acht weken.
+        Hoe we elke stap aanpakken, lees je in onze <a href="/methodologie">methodologie</a>. Zoek je vooral
+        iemand om mee te denken, kijk dan bij de <a href="/claude-consultant">Claude-consultant</a>.
+      </p>
+
+      <h2>Welke fouten zien we vaak?</h2>
+      <p>
+        <strong>Medewerkers op privéaccounts.</strong> Mensen betalen zelf een Pro-abonnement en plakken
+        klantgegevens in hun chat. Dan valt die data onder consumentenvoorwaarden en heb je als werkgever geen
+        overzicht. Neem dit serieus, want het gebeurt vaker dan directies denken.
+      </p>
+      <p>
+        <strong>Geen afspraken over data.</strong> Zonder regels gokt iedereen wat mag. Een korte AI-richtlijn
+        van één A4 met voorbeelden werkt beter dan een lang beleidsstuk dat niemand leest.
+      </p>
+      <p>
+        <strong>Te breed beginnen.</strong> "Iedereen krijgt een account, kijk maar wat je ermee doet" levert
+        weinig op. Kies één of twee taken die veel tijd kosten en meet wat het oplevert.
+      </p>
+      <p>
+        <strong>Geen eigenaar.</strong> Als niemand verantwoordelijk is, zakt het gebruik na een paar weken
+        weg. Wijs iemand aan die voorbeelden verzamelt, vragen beantwoordt en nieuwe toepassingen oppakt.
+      </p>
+      <p>
+        <strong>Blind vertrouwen op de uitkomst.</strong> Claude maakt soms fouten en kan dingen verzinnen die
+        overtuigend klinken. Bouw controle in, zeker bij cijfers, juridische teksten en alles wat naar klanten
+        gaat. In de sales-case hierboven keurt een mens elke e-mail goed voordat die verstuurd wordt.
+      </p>
+
+      <h2>Claude of een andere AI-assistent?</h2>
+      <p>
+        Veel bedrijven twijfelen tussen Claude, ChatGPT en Microsoft Copilot. De keuze hangt af van je
+        bestaande software en van het werk dat je wilt versnellen. Onze
+        <a href="/vergelijken">vergelijkingen</a> zetten de verschillen naast elkaar: <a href="/vergelijken/claude-vs-chatgpt">Claude vs ChatGPT</a>, <a href="/vergelijken/claude-vs-copilot">Claude vs Microsoft Copilot</a>, <a href="/vergelijken/welke-ai-voor-mkb">welke AI past bij het MKB</a> en, voor ontwikkelteams, <a href="/vergelijken/claude-code-vs-cursor">Claude Code vs Cursor</a>. Gebruik je al ChatGPT en denk je aan overstappen? Lees dan <a href="/gids/overstappen-van-chatgpt-naar-claude">Overstappen van ChatGPT naar Claude</a>.
+      </p>
+
+      <h2>Waar begin ik?</h2>
+      <p>
+        Begin klein en concreet. Deze vijf stappen kun je deze maand zetten:
+      </p>
+      <ol>
+        <li>Vraag je team wie Claude of een andere AI-assistent al gebruikt, en waarvoor.</li>
+        <li>Kies twee taken die nu veel tijd kosten en die vaak terugkomen.</li>
+        <li>Sluit Claude Team af voor een kleine groep, zodat de zakelijke voorwaarden gelden.</li>
+        <li>Spreek op één A4 af welke gegevens wel en niet in Claude mogen.</li>
+        <li>Meet na vier weken hoeveel tijd het scheelt, en beslis dan over uitbreiden.</li>
+      </ol>
+      <p>
+        Wil je weten of je bedrijf er klaar voor is? Doe de <a href="/ai-enablement-scan">gratis AI-check</a>.
+        Liever direct praten? Neem <a href="/contact">contact</a> op. Meer achtergrond vind je in onze andere
+        <a href="/gids">gidsen</a>.
+      </p>
+    </div>
+
+    <BronnenBlok bronnen={bronnen} />
+
+    <FaqSectie items={faq} />
+
+    <AuthorBio author="camiel" />
+  </article>
+  <div class="max-w-3xl mx-auto px-6">
+    <CtaStrook />
+  </div>
+</BasisLayout>
