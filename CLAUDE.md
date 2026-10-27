@@ -7,8 +7,9 @@ If a merge does not go live, check the Actions run (`gh run list`) before anythi
 ## How changes go live
 
 Nobody pushes to `main`. Every change is a branch plus a pull request, and `main` only accepts a
-merge once both Max and Camiel have approved it (repository ruleset). Camiel is the face of the
-site, so nothing reaches it without his approval. Open the PR, let Cloudflare build the preview,
+merge after a code owner who is not the author has approved it (repository ruleset plus
+`.github/CODEOWNERS`, which lists Max and Camiel). A PR from Max needs Camiel and one from Camiel
+needs Max. Camiel is the face of the site, so nothing reaches it without one of the two signing off. Open the PR, let Cloudflare build the preview,
 and post the preview link in the PR so the reviewers can look at the real page.
 
 ## Adding a page
