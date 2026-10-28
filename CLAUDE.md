@@ -15,6 +15,23 @@ ruleset plus `.github/CODEOWNERS`, which lists Max and Camiel). A PR from Max ne
 from Camiel needs Max. Camiel is the face of the site, so nothing reaches it without one of the two signing off. Open the PR, let Cloudflare build the preview,
 and post the preview link in the PR so the reviewers can look at the real page.
 
+Break-glass, for a production regression only (the live site is broken or losing data) while the
+required reviewers cannot approve in time. An org admin adds a temporary bypass to ruleset
+`25944613` ("main: reviewed PRs only"), merges, and removes the bypass straight away:
+
+```bash
+R=implementeren-ai/implementeren-ai-site
+gh api -X PUT repos/$R/rulesets/25944613 --input <(echo '{"bypass_actors":[{"actor_id":1,"actor_type":"OrganizationAdmin","bypass_mode":"always"}]}')
+gh pr merge <nr> -R $R --squash --admin --delete-branch
+gh api -X PUT repos/$R/rulesets/25944613 --input <(echo '{"bypass_actors":[]}')
+gh api repos/$R/rulesets/25944613 --jq .bypass_actors   # must print []
+```
+
+The PR still goes through the normal flow (branch, build, preview link), and gets a comment saying
+why it skipped review. Never use this for ordinary content or design changes. First use: PR #5 on
+2026-10-28, restoring the Cloudflare Web Analytics beacon while Camiel and Sweder had not yet
+joined the org.
+
 ## Adding a page
 
 1. Create the page under `src/pages/` wrapping `BasisLayout`

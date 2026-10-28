@@ -24,6 +24,7 @@ npm run preview
 - Elke PR heeft 2 goedkeuringen nodig, waarvan minstens een van een code owner. De code owners zijn Max en Camiel (`.github/CODEOWNERS`).
 - Cloudflare bouwt per PR een preview. Zet de link in de PR, zodat de reviewers de echte pagina zien.
 - Na de merge deployt GitHub Actions `main` naar implementeren.ai (`.github/workflows/deploy.yml`).
+- Noodprocedure: alleen als de live site kapot is en er niet genoeg reviewers beschikbaar zijn, mag een org-admin de regel tijdelijk omzeilen. Zet een bypass voor org-admins op de ruleset, merge de PR, haal de bypass meteen weer weg en noteer in de PR waarom. De commando's staan in `CLAUDE.md`.
 
 ## Structuur
 
