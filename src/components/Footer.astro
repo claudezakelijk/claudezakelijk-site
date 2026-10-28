@@ -1,6 +1,7 @@
 ---
 import { site, navigatie as alleNavigatie, dienstenNavigatie, kennisNavigatie as alleKennis } from '../site';
 import { legeHubs } from '../data/indexering.mjs';
+import LogoMerk from '../assets/logo/logo-mark.svg';
 
 // Lege hubs ("Binnenkort meer", noindex) krijgen geen link. Zodra een collectie een
 // gepubliceerd artikel heeft valt de hub uit legeHubs en komt de link vanzelf terug.
@@ -17,7 +18,7 @@ const linkClass = 'v2-voet-link';
 <footer class="v2-voet">
   <div class="v2-wrap v2-voet-boven">
     <div class="flex flex-col gap-2 max-w-xs">
-      <span class="v2-logo v2-logo-licht">{logoMerk}<span>{logoStaart}</span></span>
+      <span class="v2-logo v2-logo-licht"><LogoMerk class="v2-logo-merk" aria-hidden="true" focusable="false" />{logoMerk}<span>{logoStaart}</span></span>
       <span>{site.tagline}.</span>
       <span class="mt-2">© {jaar} {site.naam}. Alle rechten voorbehouden.</span>
     </div>

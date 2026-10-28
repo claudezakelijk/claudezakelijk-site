@@ -56,6 +56,8 @@ body.v2 { background: var(--color-v2-creme); color: var(--color-v2-inkt); }
 }
 .v2 .v2-logo { font-family: var(--font-v2-kop); font-weight: 700; font-size: 19px; letter-spacing: -0.02em; color: var(--color-v2-inkt); text-decoration: none; }
 .v2 .v2-logo span { color: var(--color-v2-olijf); }
+/* Beeldmerk (src/assets/logo/logo-mark.svg) voor het woordmerk, op de maat van de letters. */
+.v2-logo-merk { display: inline-block; width: 1.3em; height: 1.3em; margin-right: .4em; vertical-align: -0.3em; border-radius: .3em; }
 .v2-kop ul { display: flex; align-items: center; gap: 26px; list-style: none; margin: 0; padding: 0; font-size: 15px; }
 .v2 .v2-kop ul a:not(.v2-knop) { color: var(--color-v2-inkt-2); text-decoration: none; }
 .v2 .v2-kop ul a:not(.v2-knop):hover, .v2 .v2-kop ul a[aria-current="page"] { color: var(--color-v2-inkt); }

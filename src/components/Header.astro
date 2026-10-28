@@ -1,6 +1,7 @@
 ---
 import { site, navigatie as alleNavigatie, dienstenNavigatie } from '../site';
 import { legeHubs } from '../data/indexering.mjs';
+import LogoMerk from '../assets/logo/logo-mark.svg';
 
 // Lege hubs ("Binnenkort meer", noindex) krijgen geen link; zie Footer.astro.
 const navigatie = alleNavigatie.filter((i) => !legeHubs.includes(i.pad));
@@ -11,7 +12,7 @@ const [logoMerk, logoStaart] = punt > 0 ? [site.naam.slice(0, punt), site.naam.s
 ---
 <header class="v2-kop">
   <div class="v2-kop-balk">
-    <a href="/" class="v2-logo">{logoMerk}<span>{logoStaart}</span></a>
+    <a href="/" class="v2-logo"><LogoMerk class="v2-logo-merk" aria-hidden="true" focusable="false" />{logoMerk}<span>{logoStaart}</span></a>
     <nav aria-label="Hoofdnavigatie" class="desktop-nav">
       <ul>
         {navigatie.map((item) => (

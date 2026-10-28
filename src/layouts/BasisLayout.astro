@@ -55,7 +55,12 @@ const geenIndex = noindex ?? moetNoindex(pad);
     <link rel="preload" href={interLatin400} as="font" type="font/woff2" crossorigin />
     <link rel="preload" href={instrumentLatin} as="font" type="font/woff2" crossorigin />
     {geenIndex && <meta name="robots" content="noindex, nofollow" />}
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/brand/icon-96.png" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#F4F1E8" />
     <SeoMeta titel={titel} beschrijving={beschrijving} pad={pad} ogType={ogType} ogImage={ogImage} ogTitel={ogTitel} ogImageAlt={ogImageAlt} geenIndex={geenIndex} schema={schema} artikel={artikel} geenCanonical={geenCanonical} />
   </head>
   <body class="v2 bg-papier text-inkt">
