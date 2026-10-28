@@ -1,5 +1,5 @@
 // Linklabels voor statische pagina's in het "Gerelateerd"-blok (Spec C, C-08).
-// Elke waarde is gelijk aan de H1 of aan de <title> zonder " | ClaudeZakelijk" van die pagina;
+// Elke waarde is gelijk aan de H1 of aan de <title> zonder " | Implementeren.ai" van die pagina;
 // scripts/onpage-check.mjs controleert dat. Artikelen en cases staan hier niet: hun label komt
 // uit de content collection (data.titleTag). Een nieuwe statische pagina krijgt hier een regel.
 // Verandert de titel of H1 van een pagina hier, pas dan ook de regel aan.
@@ -22,7 +22,7 @@ export const paginaLabels: Record<string, string> = {
   '/integraties': 'Claude koppelen aan je software',
   '/nieuws': 'Nieuws over Claude voor het mkb',
   '/methodologie': 'Onze methode in vijf bouwstenen',
-  '/over': 'Over ClaudeZakelijk: wie we zijn en hoe we werken',
+  '/over': 'Over Implementeren.ai: wie we zijn en hoe we werken',
   '/prijs': 'Claude kosten zakelijk: alle prijzen 2026',
   '/tools': 'Claude rekentools voor je bedrijf',
   '/tools/claude-api-kosten-calculator': 'Claude API kosten calculator',

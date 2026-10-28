@@ -12,8 +12,8 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
-const { Content } = await render(entry);
+const { Content, headings } = await render(entry);
 ---
-<ComplianceLayout entry={entry} pagePath={`/compliance/${entry.id}`}>
+<ComplianceLayout entry={entry} pagePath={`/compliance/${entry.id}`} koppen={headings}>
   <Content />
 </ComplianceLayout>

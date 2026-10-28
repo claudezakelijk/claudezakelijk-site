@@ -1,6 +1,6 @@
 ---
 title: "Claude contractanalyse"
-titleTag: "Claude contractanalyse: NDA en contracten screenen | ClaudeZakelijk"
+titleTag: "Claude contractanalyse: NDA en contracten screenen | Implementeren.ai"
 metaDescription: "Claude contractanalyse voor NDA-screening, due diligence en risico-flagging. Van 1 uur naar 5 minuten per contract. AVG-compliant."
 h1: "Claude contractanalyse: NDA en contracten screenen"
 targetKeywords:
@@ -37,7 +37,7 @@ faq:
     answer: "Ja. Claude werkt in meer dan 50 talen. Engelstalige contracten analyseert het zelfs sterker dan Nederlandstalige, omdat het trainingsmateriaal overwegend Engelstalig is. Je kunt de output in het Nederlands laten genereren, ook als het broncontract Engels is."
 ---
 
-Claude contractanalyse bespaart uren op werk dat juristen, consultants en bedrijfseigenaren dagelijks doen: contracten lezen, NDA's vergelijken, risicoclausules markeren en due diligence uitvoeren. Contractscreening was een van de eerste workflows die we automatiseerden. Wij bij ClaudeZakelijk helpen bedrijven van 5 tot 500 medewerkers om juridisch voorwerk te versnellen zonder concessies op zorgvuldigheid.
+Claude contractanalyse bespaart uren op werk dat juristen, consultants en bedrijfseigenaren dagelijks doen: contracten lezen, NDA's vergelijken, risicoclausules markeren en due diligence uitvoeren. Contractscreening was een van de eerste workflows die we automatiseerden. Wij bij Implementeren.ai helpen bedrijven van 5 tot 500 medewerkers om juridisch voorwerk te versnellen zonder concessies op zorgvuldigheid.
 
 ## Het probleem: claude contractanalyse als antwoord op tijdverlies
 
@@ -149,7 +149,7 @@ Contracten bevatten regelmatig persoonsgegevens: namen van contactpersonen, hand
 | Notariele akte (persoonsgegevens) | Rood | Alleen lokaal model |
 | Licentieovereenkomst (bedrijfsnamen) | Oranje | Pseudonimiseer namen |
 
-Wij bij ClaudeZakelijk helpen bedrijven met het opzetten van die scheiding. De pseudonimiseringslaag is geautomatiseerd: namen worden vervangen voor het contract naar Claude gaat, en teruggezet in de output. Het contract zelf verlaat je eigen systeem niet. Alleen de geanonimiseerde tekst gaat naar de Anthropic API.
+Wij bij Implementeren.ai helpen bedrijven met het opzetten van die scheiding. De pseudonimiseringslaag is geautomatiseerd: namen worden vervangen voor het contract naar Claude gaat, en teruggezet in de output. Het contract zelf verlaat je eigen systeem niet. Alleen de geanonimiseerde tekst gaat naar de Anthropic API.
 
 Het verschil met ChatGPT van OpenAI: Claude biedt een Data Processing Addendum voor zakelijk gebruik via de API. Bij een DPIA leg je vast hoe de verwerking werkt. Wil je weten hoe dit past binnen de AVG voor jouw organisatie? Lees [Claude AVG en GDPR voor MKB](/compliance). De NOvA en KvK stellen aanvullende eisen aan AI-gebruik in juridisch werk. Zie ook ons [AI-beleid template](/compliance/ai-beleid-template).
 

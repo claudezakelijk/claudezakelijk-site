@@ -1,6 +1,6 @@
 ---
 title: "Claude klantenservice"
-titleTag: "Claude klantenservice: support automatiseren | ClaudeZakelijk"
+titleTag: "Claude klantenservice: support automatiseren | Implementeren.ai"
 metaDescription: "Claude klantenservice voor support automatisering. Ticketafhandeling, kennisbank en chatbot. Cases: 13 artikelen in 5 dagen, rapportage van 45 naar 2 minuten."
 h1: "Claude klantenservice: support automatiseren"
 targetKeywords:

@@ -2,6 +2,7 @@
 import BasisLayout from './BasisLayout.astro';
 import { seoVoorEntry, type Node } from '../lib/schema';
 import KortAntwoord from '../components/KortAntwoord.astro';
+import ArtikelBeeld from '../components/ArtikelBeeld.astro';
 import ArtikelMeta from '../components/ArtikelMeta.astro';
 import AdviesDisclaimer from '../components/AdviesDisclaimer.astro';
 import Broodkruimel from '../components/Broodkruimel.astro';
@@ -10,6 +11,8 @@ import FaqSectie from '../components/FaqSectie.astro';
 import BronnenBlok from '../components/BronnenBlok.astro';
 import CtaStrook from '../components/CtaStrook.astro';
 import GerelateerdeLinks from '../components/GerelateerdeLinks.astro';
+import ArtikelInhoud from '../components/ArtikelInhoud.astro';
+import type { MarkdownHeading } from 'astro';
 import PrijsTabel from '../components/PrijsTabel.astro';
 
 interface Props {
@@ -36,6 +39,8 @@ interface Props {
     id: string;
   };
   pagePath: string;
+  /** Koppen uit render(entry), voor de inhoudsopgave. */
+  koppen?: MarkdownHeading[];
   hub?: boolean;
   // Optioneel: datum voor het Stand-regeltje van het kort antwoord. Standaard de artikeldatum.
   stand?: Date | string | null;
@@ -43,7 +48,7 @@ interface Props {
   schemaNodes?: Node[];
 }
 
-const { entry, pagePath, hub = false, stand = null, schemaNodes = [] } = Astro.props;
+const { entry, pagePath, hub = false, stand = null, schemaNodes = [], koppen = [] } = Astro.props;
 const { data } = entry;
 
 const breadcrumbs = hub ? [{ name: 'Home', url: '/' }, { name: 'Prijzen', url: '/prijs' }] : [{ name: 'Home', url: '/' }, { name: 'Prijzen', url: '/prijs' }, { name: data.title, url: pagePath }];
@@ -51,41 +56,53 @@ const seo = seoVoorEntry({ pad: pagePath, sectie: 'Prijzen', breadcrumbs, data }
 const schema = { ...seo.schema, nodes: [...(seo.schema.nodes ?? []), ...schemaNodes] };
 ---
 <BasisLayout titel={data.titleTag} beschrijving={data.metaDescription} pad={pagePath} schema={schema} artikel={seo.artikel}>
-  <article class="max-w-3xl mx-auto px-6 pt-16 pb-8">
-    <Broodkruimel items={breadcrumbs} />
-
-    <header class="mt-6">
-      <span class="text-[13px] font-semibold uppercase tracking-[0.1em] text-terracotta">
-        Prijzen
-      </span>
-      <h1 class="font-newsreader font-medium leading-[1.12] tracking-[-0.015em] text-[length:var(--text-h1)] mt-4 text-balance">{data.h1}</h1>
-      <ArtikelMeta publishDate={data.publishDate} updatedDate={data.updatedDate} author={data.author} reviewedBy={data.reviewedBy} reviewedDate={data.reviewedDate} disclaimer={data.disclaimer} />
-      {data.disclaimer && <AdviesDisclaimer soort={data.disclaimer} />}
+  <article class="v2-artikel">
+    <div class="v2-voortgang" aria-hidden="true"></div>
+    <header class="v2-artikel-kop">
+      <div class="v2-artikel-kop-binnen">
+        <Broodkruimel items={breadcrumbs} />
+        <span class="v2-chip">
+          Prijzen
+        </span>
+        <h1 class="v2-artikel-h1">{data.h1}</h1>
+        <ArtikelMeta publishDate={data.publishDate} updatedDate={data.updatedDate} author={data.author} reviewedBy={data.reviewedBy} reviewedDate={data.reviewedDate} disclaimer={data.disclaimer} />
+      </div>
     </header>
 
-    <KortAntwoord tekst={data.kortAntwoord} stand={stand ?? data.updatedDate ?? data.publishDate} />
+    <div class="v2-artikel-raster">
+      <ArtikelInhoud soort="zijkant" koppen={koppen} faq={data.faq.length > 0} />
+      <div class="v2-artikel-tekst">
+        {data.disclaimer && <AdviesDisclaimer soort={data.disclaimer} />}
 
-    <PrijsTabel />
+        <ArtikelBeeld collectie="prijs" id={entry.id} />
 
-    <div class="mt-10 prose prose-lg max-w-none">
-      <slot />
-    </div>
+        <KortAntwoord tekst={data.kortAntwoord} stand={stand ?? data.updatedDate ?? data.publishDate} />
 
-    {data.hasCalculator && (
-      <div id="calculator-slot" class="my-8 rounded-lg border-2 border-dashed border-lijn p-8 text-center text-inkt-zacht">
-        <p>Calculator wordt in een volgende fase gebouwd.</p>
+        <PrijsTabel />
+
+        <ArtikelInhoud soort="mobiel" koppen={koppen} faq={data.faq.length > 0} />
+
+        <div class="prose prose-lg max-w-none v2-prose">
+          <slot />
+        </div>
+
+        {data.hasCalculator && (
+        <div id="calculator-slot" class="my-8 rounded-lg border-2 border-dashed border-lijn p-8 text-center text-inkt-zacht">
+          <p>Calculator wordt in een volgende fase gebouwd.</p>
+        </div>
+        )}
+
+        <BronnenBlok bronnen={data.bronnen} />
+
+        {data.faq.length > 0 && <FaqSectie items={data.faq} />}
+
+        <AuthorBio author={data.author} />
       </div>
-    )}
-
-    <BronnenBlok bronnen={data.bronnen} />
-
-    {data.faq.length > 0 && <FaqSectie items={data.faq} />}
-
-    <AuthorBio author={data.author} />
+    </div>
   </article>
   <slot name="na-artikel" />
 
-  <div class="max-w-3xl mx-auto px-6">
+  <div class="v2-artikel-na">
     <CtaStrook dienst="implementatie" />
     <GerelateerdeLinks links={data.internalLinks} />
   </div>

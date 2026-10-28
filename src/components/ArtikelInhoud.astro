@@ -1,0 +1,57 @@
+---
+// Inhoudsopgave voor artikelpagina's (redesign v2). Twee varianten van dezelfde
+// lijst: 'mobiel' (inklapbaar boven de tekst) en 'zijkant' (meelopend rechts,
+// alleen op brede schermen). CSS toont er altijd maar één. De koppen komen uit
+// render(entry).headings; de tekst ervan staat al op de pagina.
+import type { MarkdownHeading } from 'astro';
+
+interface Props {
+  koppen?: MarkdownHeading[];
+  /** FaqSectie staat buiten de markdown; voeg hem dan los toe. */
+  faq?: boolean;
+  soort: 'mobiel' | 'zijkant';
+}
+
+const { koppen = [], faq = false, soort } = Astro.props;
+const items = koppen.filter((k) => k.depth === 2).map((k) => ({ id: k.slug, tekst: k.text }));
+if (faq) items.push({ id: 'veelgestelde-vragen', tekst: 'Veelgestelde vragen' });
+---
+{items.length >= 3 && (soort === 'mobiel' ? (
+  <details class="v2-inhoud-mobiel">
+    <summary>Op deze pagina <span aria-hidden="true">+</span></summary>
+    <ol>{items.map((i) => (<li><a href={`#${i.id}`}>{i.tekst}</a></li>))}</ol>
+  </details>
+) : (
+  <aside class="v2-inhoud">
+    <nav aria-label="Op deze pagina" data-inhoud>
+      <p>Op deze pagina</p>
+      <ol>{items.map((i) => (<li><a href={`#${i.id}`}>{i.tekst}</a></li>))}</ol>
+    </nav>
+  </aside>
+))}
+
+{soort === 'zijkant' && items.length >= 3 && (
+  <script>
+    // Markeer de sectie waarin je nu leest. Zonder JS blijft het een gewone lijst.
+    const nav = document.querySelector<HTMLElement>('[data-inhoud]');
+    if (nav) {
+      const links = new Map(
+        Array.from(nav.querySelectorAll<HTMLAnchorElement>('a')).map((a) => [decodeURIComponent(a.hash.slice(1)), a]),
+      );
+      const koppen = Array.from(links.keys())
+        .map((id) => document.getElementById(id))
+        .filter((el): el is HTMLElement => el !== null);
+      const zet = (id: string) =>
+        links.forEach((a, k) => (k === id ? a.setAttribute('aria-current', 'location') : a.removeAttribute('aria-current')));
+      const kijker = new IntersectionObserver(
+        (entries) => {
+          // De bovenste kop die de bovenste 30% van het scherm net is gepasseerd.
+          const zichtbaar = entries.filter((e) => e.isIntersecting);
+          if (zichtbaar.length) zet((zichtbaar[0].target as HTMLElement).id);
+        },
+        { rootMargin: '-96px 0px -70% 0px' },
+      );
+      koppen.forEach((k) => kijker.observe(k));
+    }
+  </script>
+)}

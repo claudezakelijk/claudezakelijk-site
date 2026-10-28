@@ -1,6 +1,6 @@
 ---
 title: "Claude voor MSP's"
-titleTag: "Claude voor MSP's: Autotask, Power BI workflows | ClaudeZakelijk"
+titleTag: "Claude voor MSP's: Autotask, Power BI workflows | Implementeren.ai"
 metaDescription: "MSP's gebruiken Claude voor ticket-triage, klantrapportages en Autotask-integraties. Cases met 173 dashboards en 872 reports."
 h1: "Claude voor Managed Service Providers"
 targetKeywords:

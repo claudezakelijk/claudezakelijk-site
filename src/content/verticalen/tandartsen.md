@@ -1,6 +1,6 @@
 ---
 title: "Claude voor tandartsen"
-titleTag: "Claude voor tandartspraktijk | ClaudeZakelijk"
+titleTag: "Claude voor tandartspraktijk | Implementeren.ai"
 metaDescription: "Tandartspraktijken gebruiken Claude voor patientcommunicatie, behandelplan-concepten en no-show-opvolging. AVG-veilig, NZa-conform."
 h1: "Claude voor tandartspraktijk"
 targetKeywords:
@@ -32,7 +32,7 @@ areaServed: NL
 brancheOrganisatie: null
 ---
 
-Claude voor tandartspraktijk bespaart tijd op alles wat geen tandheelkunde is: patientcommunicatie, behandelplan-concepten schrijven, no-show-opvolging, en de FAQ op je website. Bij ClaudeZakelijk richten we die workflows in voor praktijken in Nederland. Geen vervanging van de tandarts, maar ondersteuning van het werk eromheen. Hieronder de toepassingen die het meest opleveren.
+Claude voor tandartspraktijk bespaart tijd op alles wat geen tandheelkunde is: patientcommunicatie, behandelplan-concepten schrijven, no-show-opvolging, en de FAQ op je website. Bij Implementeren.ai richten we die workflows in voor praktijken in Nederland. Geen vervanging van de tandarts, maar ondersteuning van het werk eromheen. Hieronder de toepassingen die het meest opleveren.
 
 ## Claude voor tandarts praktijk: patientcommunicatie
 
@@ -78,7 +78,7 @@ De praktische oplossing: gebruik Claude niet voor patientdata. Groene data: webs
 
 De KNMT (Koninklijke Nederlandse Maatschappij tot bevordering der Tandheelkunde) adviseert terughoudendheid met AI-tools voor medische data. Volg dat advies. Gebruik Claude voor het generieke werk, niet voor het patientspecifieke. Zo combineer je productiviteit met privacy.
 
-De IGJ (Inspectie Gezondheidszorg en Jeugd) houdt toezicht op de kwaliteit van zorg, inclusief informatiebeveiliging. Als je AI-tools inzet, documenteer dan welke taken Claude uitvoert en welke data erbij betrokken is. Bij ClaudeZakelijk helpen we praktijken met het opzetten van die documentatie. Het kost een halve dag en beschermt je bij een eventuele inspectie.
+De IGJ (Inspectie Gezondheidszorg en Jeugd) houdt toezicht op de kwaliteit van zorg, inclusief informatiebeveiliging. Als je AI-tools inzet, documenteer dan welke taken Claude uitvoert en welke data erbij betrokken is. Bij Implementeren.ai helpen we praktijken met het opzetten van die documentatie. Het kost een halve dag en beschermt je bij een eventuele inspectie.
 
 ## Wat levert het op
 

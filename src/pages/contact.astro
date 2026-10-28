@@ -13,64 +13,61 @@ const breadcrumbs = [{ name: 'Home', url: '/' }, { name: 'Contact', url: '/conta
   pad="/contact"
   schema={{ paginaType: 'ContactPage', hoofdonderwerp: ID.organisatie, breadcrumbs, overClaude: false }}
 >
-  <section class="max-w-2xl mx-auto px-6 pt-16 pb-16">
-    <Broodkruimel items={breadcrumbs} />
-    <p class="mt-6 text-xs uppercase tracking-widest text-inkt-zacht">Contact</p>
-    <h1 class="mt-3 text-[length:var(--text-h1)]">Even kennismaken?</h1>
-    <p class="mt-6 text-lg text-inkt-zacht">
-      Begin met de gratis AI-check. Past het? Dan krijg je daarna direct een gratis intro-gesprek aangeboden. Zo weet je zeker dat een gesprek zin heeft voor jou.
-    </p>
-
-    <div class="mt-8 border border-lijn rounded-lg p-6 bg-papier-dieper">
-      <p class="font-semibold">Start met de gratis AI-check</p>
-      <p class="mt-2 text-sm text-inkt-zacht">Twee minuten invullen. Je krijgt direct je AI-check-score en een concreet advies.</p>
-      <a
-        href="/ai-enablement-scan"
-        class="mt-4 inline-flex items-center rounded-full bg-accent-diep text-papier px-5 py-3 font-semibold no-underline hover:bg-accent-donkerst focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-donkerst"
-      >
-        Doe de AI-check
-      </a>
-    </div>
-
-    <div class="mt-8">
-      <p class="font-semibold">Liever eerst mailen?</p>
-      <p class="mt-2 text-inkt-zacht">
-        Stuur een mailtje naar <a href={`mailto:${site.email}`}>{site.email}</a>. Je hoort binnen een werkdag terug.
+  <section class="v2-contact">
+    <div class="v2-contact-tekst">
+      <Broodkruimel items={breadcrumbs} />
+      <p class="v2-chip">Contact</p>
+      <h1 class="v2-artikel-h1">Even kennismaken?</h1>
+      <p class="v2-check-lead">
+        Begin met de gratis AI-check. Past het? Dan krijg je daarna direct een gratis intro-gesprek aangeboden. Zo weet je zeker dat een gesprek zin heeft voor jou.
       </p>
     </div>
 
-    <div class="mt-12 text-sm text-inkt-zacht">
+    <div class="v2-contact-kaart">
+      <p class="v2-contact-kaart-kop">Start met de gratis AI-check</p>
+      <p>Twee minuten invullen. Je krijgt direct je AI-check-score en een concreet advies.</p>
+      <a href="/ai-enablement-scan" class="v2-knop v2-knop-donker">Doe de AI-check</a>
+    </div>
+
+    <div class="v2-contact-mail">
+      <p class="v2-contact-mail-kop">Liever eerst mailen?</p>
+      <p>
+        Stuur een mailtje naar <a href={`mailto:${site.email}`}>{site.email}</a>. Je hoort binnen een werkdag terug.
+        Wat we met je gegevens doen, staat in onze <a href="/privacy">privacyverklaring</a>.
+      </p>
+    </div>
+
+    <div class="v2-contact-gebied">
       <p>Werkgebied: Nederland. Werktaal: Nederlands (Engels op verzoek).</p>
     </div>
   </section>
 
   <!-- 2e: contactblok met foto -->
-  <section class="max-w-6xl mx-auto px-6 py-16 grid items-center gap-10 md:gap-14 md:grid-cols-[0.85fr_1.15fr] reveal-target">
-    <Picture
-      src={camielWater}
-      alt="Camiel Wits, lachend in gesprek aan het water"
-      formats={['avif', 'webp']}
-      widths={[480, 640, 828, 1080, 1280]}
-      sizes="(min-width: 1152px) 460px, (min-width: 768px) 40vw, calc(100vw - 48px)"
-      class="foto-warm w-full rounded-lg border border-lijn object-cover"
-      style="aspect-ratio: 4 / 3.4; object-position: 58% 22%;"
-      loading="lazy"
-      decoding="async"
-    />
-    <div class="flex flex-col gap-4 items-start">
-      <p class="text-xs uppercase tracking-widest font-semibold text-accent-diep">Contact</p>
-      <h2 class="font-serif font-bold text-[36px] leading-[1.15]">Vraag een kennismaking aan</h2>
-      <p class="text-[17px] text-inkt-zacht">Een half uur, online of op locatie. Je spreekt direct met een van de mensen die het werk doet, geen salesteam ertussen.</p>
-      <ul class="grid gap-1.5 text-[15px]">
-        <li class="flex items-center gap-2"><span class="text-teal font-semibold">&#10003;</span> Binnen één werkdag antwoord</li>
-        <li class="flex items-center gap-2"><span class="text-teal font-semibold">&#10003;</span> Een eerlijk advies, ook als het antwoord 'nog niet' is</li>
-      </ul>
-      <a
-        href={`mailto:${site.email}`}
-        class="mt-2 inline-flex items-center gap-2 rounded-full bg-accent-diep text-papier px-6 py-3 font-semibold no-underline hover:bg-accent-donkerst focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-donkerst"
-      >
-        Neem contact op<span class="cta-arrow">&rarr;</span>
-      </a>
+  <section class="v2-sectie v2-contact-foto reveal-target">
+    <div class="v2-persoon">
+      <Picture
+        src={camielWater}
+        alt="Camiel Wits, lachend in gesprek aan het water"
+        formats={['avif', 'webp']}
+        widths={[480, 640, 828, 1080, 1280]}
+        sizes="(min-width: 1152px) 460px, (min-width: 768px) 40vw, calc(100vw - 48px)"
+        class="foto-warm"
+        style="object-position: 58% 22%;"
+        loading="lazy"
+        decoding="async"
+      />
+      <div>
+        <p class="v2-label">Contact</p>
+        <h2>Vraag een kennismaking aan</h2>
+        <p>Een half uur, online of op locatie. Je spreekt direct met een van de mensen die het werk doet, geen salesteam ertussen.</p>
+        <ul class="v2-resultaten">
+          <li><span class="v2-vink" aria-hidden="true">&#10003;</span> Binnen één werkdag antwoord</li>
+          <li><span class="v2-vink" aria-hidden="true">&#10003;</span> Een eerlijk advies, ook als het antwoord 'nog niet' is</li>
+        </ul>
+        <a href={`mailto:${site.email}`} class="v2-knop v2-knop-olijf mt-6">
+          Neem contact op<span class="cta-arrow">&rarr;</span>
+        </a>
+      </div>
     </div>
   </section>
 </BasisLayout>

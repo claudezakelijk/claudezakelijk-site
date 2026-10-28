@@ -1,6 +1,6 @@
 ---
 title: "Claude CV screenen"
-titleTag: "Claude CV screenen en vacatureteksten schrijven | ClaudeZakelijk"
+titleTag: "Claude CV screenen en vacatureteksten schrijven | Implementeren.ai"
 metaDescription: "Claude CV screenen en vacatureteksten schrijven. Match-scores, AVG-veilige screening en discriminatievrije selectie. Praktijkcase met 25 kandidaten/dag."
 h1: "Claude CV screenen en vacatureteksten schrijven"
 targetKeywords:
@@ -139,7 +139,7 @@ CV's bevatten per definitie persoonsgegevens. Naam, adres, geboortedatum, werkge
 
 De oplossing: pseudonimiseer voor verwerking. Vervang namen door codes (Kandidaat-001), verwijder adressen en geboortedata, behoud alleen de relevante ervaring en vaardigheden. Claude screent op competenties, niet op identiteit.
 
-Bij ClaudeZakelijk bouwen we die anonimiseringslaag in de workflow. De persoonsgegevens verlaten je eigen systeem niet. Claude ziet alleen de gepseudonimiseerde versie. Na de screening koppel je de scores terug aan de originele kandidaten in je eigen ATS.
+Bij Implementeren.ai bouwen we die anonimiseringslaag in de workflow. De persoonsgegevens verlaten je eigen systeem niet. Claude ziet alleen de gepseudonimiseerde versie. Na de screening koppel je de scores terug aan de originele kandidaten in je eigen ATS.
 
 De GDPR vereist een DPIA bij geautomatiseerde besluitvorming over personen. CV-screening met AI valt daar ondubbelzinnig onder. Documenteer welke criteria je hanteert, wie toezicht houdt en hoe kandidaten bezwaar kunnen maken. Lees meer over de stappen: [DPIA stappenplan](/compliance/dpia-stappenplan). En bekijk onze [AVG-gids voor Claude](/compliance).
 

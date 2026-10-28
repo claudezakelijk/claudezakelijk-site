@@ -1,6 +1,6 @@
 ---
 title: "Claude voor fysiotherapie"
-titleTag: "Claude voor fysiotherapie praktijk | ClaudeZakelijk"
+titleTag: "Claude voor fysiotherapie praktijk | Implementeren.ai"
 metaDescription: "Hoe fysiotherapeuten Claude inzetten voor SOAP-rapportages, verwijsbrieven en patientcommunicatie. KNGF-conform, AVG-veilig."
 h1: "Claude voor fysiotherapie praktijk"
 targetKeywords:
@@ -36,7 +36,7 @@ areaServed: NL
 brancheOrganisatie: KNGF
 ---
 
-Claude voor fysiotherapie praktijk richt zich op het grootste knelpunt in de eerstelijnszorg: administratie. SOAP-rapportages schrijven na elke behandeling, brieven naar verwijzers opstellen, patientcommunicatie verzorgen, behandelplan-concepten documenteren. Fysiotherapeuten besteden 30 tot 40% van hun werktijd aan schrijfwerk. Claude brengt dat terug. Wij bij ClaudeZakelijk begeleiden praktijken door het hele implementatietraject.
+Claude voor fysiotherapie praktijk richt zich op het grootste knelpunt in de eerstelijnszorg: administratie. SOAP-rapportages schrijven na elke behandeling, brieven naar verwijzers opstellen, patientcommunicatie verzorgen, behandelplan-concepten documenteren. Fysiotherapeuten besteden 30 tot 40% van hun werktijd aan schrijfwerk. Claude brengt dat terug. Wij bij Implementeren.ai begeleiden praktijken door het hele implementatietraject.
 
 ## Claude voor fysio: SOAP-rapportages versnellen
 
@@ -82,7 +82,7 @@ Patientgegevens zijn de meest gevoelige categorie: medische gegevens, BSN-nummer
 
 De oplossing is strikt: pseudonimiseer alle identificerende gegevens. Vervang namen door "Patiënt A", BSN door codes, en geboortedatums door leeftijdscategorieën. Claude verwerkt de gepseudonimiseerde tekst, de therapeut vertaalt terug in de praktijksoftware. Voor praktijken die nul risico willen: draai een lokaal model via Ollama. Geen data verlaat de praktijk. Lees onze [AVG-handleiding voor het MKB](/compliance) voor de volledige richtlijnen.
 
-De KNGF-richtlijnen en het tuchtrecht vereisen dat de therapeut verantwoordelijk blijft voor de verslaglegging. Claude levert concepten, de therapeut tekent af. Dat is de juiste verdeling: AI doet het structureerwerk, de mens doet de klinische beoordeling. Bij ClaudeZakelijk richten we die GDPR-configuratie in zodat de praktijk voldoet aan zowel de AVG als de WGBO. OpenAI, Microsoft en Google bieden vergelijkbare AI-diensten, maar missen de specifieke zakelijke garanties rond dataretentie die Anthropic biedt via de Claude API.
+De KNGF-richtlijnen en het tuchtrecht vereisen dat de therapeut verantwoordelijk blijft voor de verslaglegging. Claude levert concepten, de therapeut tekent af. Dat is de juiste verdeling: AI doet het structureerwerk, de mens doet de klinische beoordeling. Bij Implementeren.ai richten we die GDPR-configuratie in zodat de praktijk voldoet aan zowel de AVG als de WGBO. OpenAI, Microsoft en Google bieden vergelijkbare AI-diensten, maar missen de specifieke zakelijke garanties rond dataretentie die Anthropic biedt via de Claude API.
 
 ## Wat levert het op
 
@@ -94,7 +94,7 @@ De ROI voor een fysiotherapiepraktijk (3 tot 6 therapeuten):
 - **Behandelplannen:** 15 tot 20 minuten per nieuw traject. Bij 20 nieuwe patienten per maand: 5 tot 7 uur.
 - **Claude Pro licenties:** 20 dollar per therapeut per maand.
 
-Wij bij ClaudeZakelijk begeleiden fysiotherapiepraktijken door het hele traject. De implementatie kost 1 tot 3 weken. Een praktijk met 4 therapeuten haalt 50 tot 60 uur besparing per week. Dat is tijd die terugkeert naar patientenzorg. De terugverdientijd: minder dan een week.
+Wij bij Implementeren.ai begeleiden fysiotherapiepraktijken door het hele traject. De implementatie kost 1 tot 3 weken. Een praktijk met 4 therapeuten haalt 50 tot 60 uur besparing per week. Dat is tijd die terugkeert naar patientenzorg. De terugverdientijd: minder dan een week.
 
 ## Veelgestelde vragen
 

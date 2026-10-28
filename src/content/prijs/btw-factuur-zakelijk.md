@@ -1,6 +1,6 @@
 ---
 title: "Claude BTW factuur zakelijk ophalen"
-titleTag: "Claude BTW factuur zakelijk ophalen | ClaudeZakelijk"
+titleTag: "Claude BTW factuur zakelijk ophalen | Implementeren.ai"
 metaDescription: "Claude BTW factuur zakelijk ophalen: stap-voor-stap voor Nederlandse ondernemers. Factuur downloaden vanuit Anthropic billing, BTW-nummer toevoegen."
 h1: "Claude BTW factuur zakelijk ophalen"
 targetKeywords:
@@ -90,7 +90,7 @@ Voor een Nederlandse onderneming zijn de API-kosten identiek qua boekhouding: ve
 
 Maak een apart Anthropic-account aan voor zakelijk gebruik. Gebruik je zakelijke e-mailadres, niet je persoonlijke Gmail of Outlook. Dat voorkomt discussies met de Belastingdienst over de zakelijkheid van de kosten. Bij een controle wil je een account tonen dat uitsluitend zakelijk wordt gebruikt.
 
-OpenAI en Microsoft hanteren vergelijkbare facturatieprocessen voor ChatGPT en Copilot. Het verschil is dat Microsoft via een CSP-partner (Cloud Solution Provider) kan factureren, wat voor sommige bedrijven eenvoudiger is qua inkoop. Anthropic biedt die optie niet. Claude-kosten gaan altijd direct via Anthropic. ClaudeZakelijk adviseert om een zakelijke creditcard te gebruiken, bij voorkeur een met automatische boekhoudkoppeling.
+OpenAI en Microsoft hanteren vergelijkbare facturatieprocessen voor ChatGPT en Copilot. Het verschil is dat Microsoft via een CSP-partner (Cloud Solution Provider) kan factureren, wat voor sommige bedrijven eenvoudiger is qua inkoop. Anthropic biedt die optie niet. Claude-kosten gaan altijd direct via Anthropic. Implementeren.ai adviseert om een zakelijke creditcard te gebruiken, bij voorkeur een met automatische boekhoudkoppeling.
 
 Bekijk het [complete overzicht van Claude kosten per maand](/prijs) voor alle plannen en prijzen. Twijfel je welk plan past? Lees de [vergelijking van Pro vs Team vs Enterprise](/prijs/pro-vs-team-vs-enterprise). En voor bedrijven die werken met persoonsgegevens is ons [AVG-privacybeleid voor Claude](/compliance) relevant.
 

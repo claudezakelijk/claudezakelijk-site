@@ -25,7 +25,7 @@ const items = artikelen.map((a) => ({
   pad="/nieuws"
   schema={{ paginaType: 'CollectionPage', hoofdonderwerp: lijstId('/nieuws'), nodes: [itemListNode('/nieuws', items.map((i) => ({ url: i.href, naam: i.titel })))] }}
 >
-  <Container class="pt-16 pb-12">
+  <Container class="pt-12 pb-20" width="max-w-[1288px]">
     <CollectieHub
       label="Nieuws"
       titel="Nieuws & analyses"

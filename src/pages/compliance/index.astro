@@ -102,17 +102,17 @@ const h1 = 'Claude, de AVG en de GDPR: wat regel je als bedrijf?';
   artikel={{ headline: h1, gepubliceerd, bijgewerkt, auteur: 'camiel', sectie: 'Compliance' }}
 >
 
-  <Container class="pt-16 pb-12">
+  <Container class="pt-12 pb-20" width="max-w-[1288px]">
     <Broodkruimel items={breadcrumbs} />
-    <p class="mt-6 text-xs uppercase tracking-widest text-inkt-zacht">Compliance</p>
-    <h1 class="mt-3 text-[length:var(--text-h1)]">{h1}</h1>
-    <p class="text-sm text-inkt-zacht mt-3">Gepubliceerd op <time datetime={gepubliceerd}>{datumNl(gepubliceerd)}</time><span aria-hidden="true"> · </span>Bijgewerkt op <time datetime={bijgewerkt}>{datumNl(bijgewerkt)}</time></p>
+    <p class="mt-7 v2-chip">Compliance</p>
+    <h1 class="v2-artikel-h1">{h1}</h1>
+    <p class="v2-gids-meta">Gepubliceerd op <time datetime={gepubliceerd}>{datumNl(gepubliceerd)}</time><span aria-hidden="true"> · </span>Bijgewerkt op <time datetime={bijgewerkt}>{datumNl(bijgewerkt)}</time></p>
     <AdviesDisclaimer soort="juridisch" />
 
     <div class="max-w-3xl">
       <KortAntwoord tekst={kortAntwoord} />
 
-      <div class="mt-10 prose prose-lg max-w-none">
+      <div class="mt-10 prose prose-lg max-w-none v2-prose">
       <h2>Is Claude AVG-proof?</h2>
       <p>Geen enkele tool is uit zichzelf AVG-proof. Of je aan de AVG voldoet, hangt af van hoe je Claude inricht: welk abonnement je team gebruikt, welke data erin gaat en wat je vastlegt. Met een zakelijk abonnement (Claude Team, Enterprise of de API) staat de basis er. Anthropic traint dan standaard niet op je data en de verwerkersovereenkomst hoort bij de zakelijke voorwaarden.</p>
 
@@ -339,8 +339,8 @@ const h1 = 'Claude, de AVG en de GDPR: wat regel je als bedrijf?';
 
     {artikelen.length > 0 && (
       <>
-        <h2 class="mt-12 text-[length:var(--text-h2)]">De compliance-gidsen</h2>
-        <div class="mt-6 max-w-3xl overflow-x-auto">
+        <h2 class="v2-hub-h2">De compliance-gidsen</h2>
+        <div class="my-12 v2-tabelkaart v2-hubtabel">
           <table class="w-full text-sm border-collapse">
             <caption class="caption-top text-left text-sm text-inkt-zacht pb-2">De compliance-gidsen in één oogopslag, stand oktober 2026</caption>
             <thead>
@@ -361,16 +361,16 @@ const h1 = 'Claude, de AVG en de GDPR: wat regel je als bedrijf?';
             </tbody>
           </table>
         </div>
-        <div class="mt-6 grid gap-6 md:grid-cols-2">
+        <div class="v2-hub-kaarten">
           {artikelen.map((a) => (
             <a
               href={`/compliance/${a.id}`}
-              class="no-underline block rounded-lg border border-lijn bg-papier p-6 card-shadow reveal-target"
+              class="v2-hubkaart reveal-target"
             >
-              <span class="text-xs uppercase tracking-widest text-inkt-zacht bg-papier-dieper rounded-full px-3 py-1">Compliance</span>
-              <h3 class="mt-3 font-serif text-xl font-bold text-inkt">{a.data.title}</h3>
-              <p class="mt-2 text-sm text-inkt-zacht">{a.data.metaDescription}</p>
-              <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-accent-donkerst">Lees de gids<span class="cta-arrow">&rarr;</span></span>
+              <span class="v2-casekaart-meta">Compliance</span>
+              <h3>{a.data.title}</h3>
+              <p>{a.data.metaDescription}</p>
+              <span class="v2-hubkaart-lees">Lees de gids<span class="cta-arrow">&rarr;</span></span>
             </a>
           ))}
         </div>
@@ -383,5 +383,5 @@ const h1 = 'Claude, de AVG en de GDPR: wat regel je als bedrijf?';
 
     <div class="max-w-3xl"><AuthorBio author="camiel" /></div>
   </Container>
-  <div class="max-w-3xl mx-auto px-6"><CtaStrook /></div>
+  <div class="v2-artikel-na"><CtaStrook /></div>
 </BasisLayout>

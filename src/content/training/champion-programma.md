@@ -1,6 +1,6 @@
 ---
 title: "Claude Champion programma voor MKB-teams"
-titleTag: "Claude Champion programma voor MKB-teams | ClaudeZakelijk"
+titleTag: "Claude Champion programma voor MKB-teams | Implementeren.ai"
 metaDescription: "Train 2 tot 4 interne champions die Claude-kennis verspreiden in je MKB-team. Programma-opzet, selectiecriteria en resultaten uit de praktijk."
 h1: "Claude Champion programma voor MKB-teams"
 targetKeywords:
@@ -39,7 +39,7 @@ faq:
 
 Claude champion programma is de schakel die bepaalt of AI-adoptie in je MKB-team beklijft of na twee maanden wegzakt. De consultant vertrekt, de initiële opwinding ebt weg, en zonder iemand intern die het draagt, keert het team terug naar de oude werkwijze. Champions voorkomen dat. Ze zijn het interne aanspreekpunt, de promptbibliotheek-eigenaar, en het bewijs dat Claude werkt voor jullie specifieke processen.
 
-Bij ClaudeZakelijk is het champion programma onderdeel van elke rollout. Niet theoretisch, maar gebouwd op wat werkt bij Nederlandse bedrijven van 10 tot 100 medewerkers.
+Bij Implementeren.ai is het champion programma onderdeel van elke rollout. Niet theoretisch, maar gebouwd op wat werkt bij Nederlandse bedrijven van 10 tot 100 medewerkers.
 
 ## Waarom een ai champion mkb nodig heeft
 

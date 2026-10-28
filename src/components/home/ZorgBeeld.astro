@@ -1,0 +1,42 @@
+---
+// Illustratief beeld per zorg op de homepage (redesign v2). Puur versiering:
+// aria-hidden, de echte antwoorden staan als tekst naast het beeld.
+// Voorbeeldteksten goedgekeurd door Sweder (27 okt); verzonnen namen, geen klantdata.
+interface Props { nr: 0 | 1 | 2 | 3 }
+const { nr } = Astro.props;
+const team = ['AS', 'MB', 'JK', 'LV', 'RD'];
+---
+<div class="v2-paneel" aria-hidden="true">
+  {nr === 0 && (
+    <>
+      <p class="v2-paneel-kop">Claude wil 3 regels aanpassen <span>Klantenlijst.xlsx</span></p>
+      <p class="v2-oud"><s>Bakkerij De Vries · Utrecht</s></p>
+      <p class="v2-nieuw">Bakkerij De Vries · Amersfoort</p>
+      <div class="v2-paneel-knoppen"><span>Bekijk alle 3</span><span>Terugdraaien</span><span>Goedkeuren</span></div>
+    </>
+  )}
+  {nr === 1 && (
+    <>
+      <p class="v2-paneel-kop">Claude for Work <span>Gegevens</span></p>
+      <ul class="v2-check">
+        <li>Geen training op je data <b>✓</b></li>
+        <li>Verwerkersovereenkomst <b>✓</b></li>
+        <li>SSO <b>✓</b></li>
+        <li>Opslag <span>Verenigde Staten</span></li>
+        <li>EU-optie <span>AWS Bedrock / Google Vertex AI</span></li>
+      </ul>
+    </>
+  )}
+  {nr === 2 && (
+    <>
+      <div class="v2-team">{team.map((t) => <span class="v2-lid">{t}</span>)}</div>
+      <p class="v2-paneel-noot">Iedereen blijft · iedereen krijgt Claude erbij</p>
+    </>
+  )}
+  {nr === 3 && (
+    <>
+      <div class="v2-team">{team.map((t, i) => <span class:list={['v2-lid', i < 3 && 'v2-lid-champ']}>{t}</span>)}</div>
+      <p class="v2-paneel-noot">Champions uit je eigen team dragen de kennis verder</p>
+    </>
+  )}
+</div>

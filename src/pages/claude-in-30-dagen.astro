@@ -2,12 +2,14 @@
 import { getEntry, render } from 'astro:content';
 import BasisLayout from '../layouts/BasisLayout.astro';
 import CtaBlok from '../components/CtaBlok.astro';
-import Broodkruimel from '../components/Broodkruimel.astro';
+import DienstKop from '../components/DienstKop.astro';
+import DienstBeeld from '../components/DienstBeeld.astro';
+import ArtikelInhoud from '../components/ArtikelInhoud.astro';
 import { dienstNode, dienstId } from '../lib/schema';
 
 const dienst = await getEntry('diensten', 'rollout');
 if (!dienst) throw new Error('Diensten-entry rollout ontbreekt');
-const { Content } = await render(dienst);
+const { Content, headings } = await render(dienst);
 const breadcrumbs = [{ name: 'Home', url: '/' }, { name: 'Claude in 30 dagen', url: dienst.data.pad }];
 ---
 <BasisLayout
@@ -20,16 +22,24 @@ const breadcrumbs = [{ name: 'Home', url: '/' }, { name: 'Claude in 30 dagen', u
     nodes: [dienstNode({ pad: dienst.data.pad, naam: dienst.data.titel, beschrijving: dienst.data.samenvatting, serviceType: 'Claude-uitrol in vier weken', aanbod: { naam: dienst.data.titel, prijsTekst: dienst.data.prijs, url: dienst.data.pad } })],
   }}
 >
-  <div class="max-w-3xl mx-auto px-6 pt-16"><Broodkruimel items={breadcrumbs} /></div>
-  <article class="max-w-3xl mx-auto px-6 pt-6 pb-8 prose prose-lg">
-    <p class="text-xs uppercase tracking-widest text-inkt-zacht">{dienst.data.ondertitel}</p>
-    <h1>{dienst.data.h1 ?? dienst.data.titel}</h1>
-    <dl class="grid grid-cols-2 gap-4 text-sm mt-6 not-prose">
-      <div><dt class="text-inkt-zacht">Prijs</dt><dd class="font-semibold">{dienst.data.prijs}</dd></div>
-      <div><dt class="text-inkt-zacht">Duur</dt><dd class="font-semibold">{dienst.data.duur}</dd></div>
-    </dl>
-    <div class="mt-8">
-      <Content />
+  <article class="v2-artikel">
+    <DienstKop
+      breadcrumbs={breadcrumbs}
+      label={dienst.data.ondertitel}
+      h1={dienst.data.h1 ?? dienst.data.titel}
+      feiten={[{ term: 'Prijs', waarde: dienst.data.prijs }, { term: 'Duur', waarde: dienst.data.duur }]}
+    >
+      <DienstBeeld slot="beeld" soort="rollout" />
+    </DienstKop>
+
+    <div class="v2-artikel-raster">
+      <ArtikelInhoud soort="zijkant" koppen={headings} />
+      <div class="v2-artikel-tekst">
+        <ArtikelInhoud soort="mobiel" koppen={headings} />
+        <div class="prose prose-lg max-w-none v2-prose">
+          <Content />
+        </div>
+      </div>
     </div>
   </article>
   <CtaBlok

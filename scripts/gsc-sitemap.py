@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""Search Console sitemap helper for claudezakelijk.nl (seo-werklijst task 17).
+"""Search Console sitemap helper for implementeren.ai (seo-werklijst task 17).
 
     python3 scripts/gsc-sitemap.py            # list the property's sitemaps and their state
     python3 scripts/gsc-sitemap.py --submit   # (re)submit the sitemap index, then list again
 
 Runs on the M1 Pro, where the service-account key lives outside git at
 ~/.config/gsc/claudezakelijk-sa.json (override with GSC_SA_KEY). The service account
-must be a user on sc-domain:claudezakelijk.nl. Requesting indexing for single URLs is
+must be a user on sc-domain:implementeren.ai. Requesting indexing for single URLs is
 not possible through this API; that stays a manual step in the Search Console UI.
 """
 import json
@@ -17,8 +17,8 @@ from pathlib import Path
 import google.auth.transport.requests
 from google.oauth2 import service_account
 
-PROPERTY = "sc-domain:claudezakelijk.nl"
-SITEMAP = "https://claudezakelijk.nl/sitemap-index.xml"
+PROPERTY = "sc-domain:implementeren.ai"
+SITEMAP = "https://implementeren.ai/sitemap-index.xml"
 SCOPE = ["https://www.googleapis.com/auth/webmasters"]
 KEY = Path(os.environ.get("GSC_SA_KEY", "~/.config/gsc/claudezakelijk-sa.json")).expanduser()
 API = "https://www.googleapis.com/webmasters/v3/sites/" + PROPERTY.replace(":", "%3A")

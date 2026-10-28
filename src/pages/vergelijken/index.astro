@@ -20,7 +20,7 @@ const samenvatting = [
 const faq = [
   {
     question: 'Welke AI-assistent is het best voor een mkb-bedrijf?',
-    answer: 'Dat hangt af van je werk. ChatGPT is de breedste allrounder, Copilot past bij organisaties in Microsoft 365 en Gemini zit in Google Workspace. ClaudeZakelijk kiest Claude voor schrijven, analyse en code. Test één tool twee weken op echte taken.',
+    answer: 'Dat hangt af van je werk. ChatGPT is de breedste allrounder, Copilot past bij organisaties in Microsoft 365 en Gemini zit in Google Workspace. Implementeren.ai kiest Claude voor schrijven, analyse en code. Test één tool twee weken op echte taken.',
   },
   {
     question: 'Trainen deze AI-tools op mijn bedrijfsdata?',
@@ -39,30 +39,30 @@ const breadcrumbs = [{ name: 'Home', url: '/' }, { name: 'Vergelijkingen', url: 
   pad="/vergelijken"
   schema={{ paginaType: 'CollectionPage', hoofdonderwerp: lijstId('/vergelijken'), breadcrumbs, nodes: [itemListNode('/vergelijken', artikelen.map((a) => ({ url: `/vergelijken/${a.id}`, naam: a.data.title }))), faqNode('/vergelijken', faq)] }}
 >
-  <Container class="pt-16 pb-12">
+  <Container class="pt-12 pb-20" width="max-w-[1288px]">
     <Broodkruimel items={breadcrumbs} />
-    <p class="mt-6 text-xs uppercase tracking-widest text-inkt-zacht reveal-target">Vergelijkingen</p>
-    <h1 class="mt-3 text-[length:var(--text-h1)] reveal-target">Claude vergelijken met ChatGPT, Copilot en Cursor</h1>
+    <p class="mt-7 v2-chip">Vergelijkingen</p>
+    <h1 class="v2-artikel-h1">Claude vergelijken met ChatGPT, Copilot en Cursor</h1>
 
     <div class="max-w-3xl">
-      <p class="mt-4 text-lg text-inkt-zacht reveal-target">
+      <p class="v2-hub-lead reveal-target">
         Wil je Claude vergelijken met de AI die je al kent? Kijk dan per taak. Elke vergelijking
         zet werk, prijs en AVG naast elkaar en zegt ook wanneer de andere tool beter past.
-        ClaudeZakelijk kiest Claude voor lange documenten, analyses en code. Werk je vooral in
+        Implementeren.ai kiest Claude voor lange documenten, analyses en code. Werk je vooral in
         Microsoft 365, dan is Copilot vaak de kleinste stap. Bovenaan elke vergelijking staat
         wanneer we de prijzen controleerden.
       </p>
       <p class="mt-4 text-inkt-zacht">
         Weet je nog niet waar je moet beginnen? Lees dan eerst
-        <a href="/vergelijken/welke-ai-voor-mkb" class="text-accent-diep">welke AI bij jouw MKB past</a>.
+        <a href="/vergelijken/welke-ai-voor-mkb">welke AI bij jouw MKB past</a>.
         Daarin staan Claude, ChatGPT, Copilot en Gemini naast elkaar. Twijfel je tussen twee
         assistenten, kijk dan bij
-        <a href="/vergelijken/claude-vs-chatgpt" class="text-accent-diep">Claude vs ChatGPT</a>.
+        <a href="/vergelijken/claude-vs-chatgpt">Claude vs ChatGPT</a>.
         ChatGPT is breder, met beeldgeneratie en spraak. Werkt je bedrijf in Microsoft 365?
-        In <a href="/vergelijken/claude-vs-copilot" class="text-accent-diep">Claude vs Microsoft Copilot</a>
+        In <a href="/vergelijken/claude-vs-copilot">Claude vs Microsoft Copilot</a>
         lees je dat Copilot past bij kleine versnellingen binnen Word, Excel, Outlook en Teams.
         Voor ontwikkelteams is er
-        <a href="/vergelijken/claude-code-vs-cursor" class="text-accent-diep">Claude Code vs Cursor</a>:
+        <a href="/vergelijken/claude-code-vs-cursor">Claude Code vs Cursor</a>:
         een AI-agent die werk zelfstandig uitvoert tegenover een code-editor met AI-hulp.
       </p>
       <p class="mt-4 text-inkt-zacht">
@@ -73,23 +73,23 @@ const breadcrumbs = [{ name: 'Home', url: '/' }, { name: 'Vergelijkingen', url: 
 
     {artikelen.length > 0 && (
       <>
-        <h2 class="mt-12 text-[length:var(--text-h2)]">Alle vergelijkingen</h2>
-        <div class="mt-6 grid gap-6 md:grid-cols-2">
+        <h2 class="v2-hub-h2">Alle vergelijkingen</h2>
+        <div class="v2-hub-kaarten">
           {artikelen.map((a) => (
             <a
               href={`/vergelijken/${a.id}`}
-              class="no-underline block rounded-lg border border-lijn bg-papier p-6 card-shadow reveal-target"
+              class="v2-hubkaart reveal-target"
             >
-              <span class="text-xs uppercase tracking-widest text-inkt-zacht bg-papier-dieper rounded-full px-3 py-1">Vergelijking</span>
-              <h3 class="mt-3 font-serif text-xl font-bold text-inkt">{a.data.title}</h3>
-              <p class="mt-2 text-sm text-inkt-zacht">{a.data.metaDescription}</p>
-              <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-accent-donkerst">Lees de vergelijking<span class="cta-arrow">&rarr;</span></span>
+              <span class="v2-casekaart-meta">Vergelijking</span>
+              <h3>{a.data.title}</h3>
+              <p>{a.data.metaDescription}</p>
+              <span class="v2-hubkaart-lees">Lees de vergelijking<span class="cta-arrow">&rarr;</span></span>
             </a>
           ))}
         </div>
       </>
     )}
-    <div class="mt-12 max-w-4xl overflow-x-auto">
+    <div class="my-12 v2-tabelkaart v2-hubtabel">
       <table class="w-full text-sm border-collapse">
         <caption class="caption-top text-left text-sm text-inkt-zacht pb-2">Claude vergeleken, samengevat, stand oktober 2026</caption>
         <thead>

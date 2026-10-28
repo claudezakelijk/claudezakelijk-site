@@ -1,6 +1,6 @@
 ---
 title: "Claude voor verzekeringsadviseurs"
-titleTag: "Claude voor verzekeringsadviseur & intermediair | ClaudeZakelijk"
+titleTag: "Claude voor verzekeringsadviseur & intermediair | Implementeren.ai"
 metaDescription: "Verzekeringsadviseurs gebruiken Claude voor polisvergelijkingen, klantbrieven en KIFID-bezwaren. AVG-veilig, AFM-conform."
 h1: "Claude voor verzekeringsadviseur en intermediair"
 targetKeywords:
@@ -33,7 +33,7 @@ areaServed: NL
 brancheOrganisatie: null
 ---
 
-Claude voor verzekeringsadviseur en intermediair bespaart tijd op polisvergelijkingen, klantbrieven, bezwaarschriften en rapportages. Het advieswerk zelf blijft mensenwerk, maar het voorbereidende en administratieve werk versnelt Claude met 60 tot 80%. Bij ClaudeZakelijk richten we die workflows in voor financieel adviseurs in Nederland.
+Claude voor verzekeringsadviseur en intermediair bespaart tijd op polisvergelijkingen, klantbrieven, bezwaarschriften en rapportages. Het advieswerk zelf blijft mensenwerk, maar het voorbereidende en administratieve werk versnelt Claude met 60 tot 80%. Bij Implementeren.ai richten we die workflows in voor financieel adviseurs in Nederland.
 
 ## Claude voor financieel adviseur: polisvergelijkingen
 
@@ -79,7 +79,7 @@ De AFM (Autoriteit Financiële Markten) houdt toezicht op financieel adviseurs. 
 
 Claude genereert klantprofielformulieren op basis van de gespreksinformatie. Het controleert of het adviesrapport alle wettelijk verplichte onderdelen bevat: risicobereidheid, financiële positie, kennis en ervaring, doelstellingen. Het signaleert ontbrekende elementen voordat je het advies uitbrengt.
 
-De GDPR en de Wft hebben overlap bij het verwerken van klantdata. Financiële gegevens zijn oranje data: pseudonimiseer voordat je ze aan Claude voorlegt. Medische gegevens (bij AOV-advies) zijn rode data: die gaan niet naar de cloud. Bij ClaudeZakelijk helpen we adviseurs met het opzetten van die classificatie. Het kost een halve dag om in te richten.
+De GDPR en de Wft hebben overlap bij het verwerken van klantdata. Financiële gegevens zijn oranje data: pseudonimiseer voordat je ze aan Claude voorlegt. Medische gegevens (bij AOV-advies) zijn rode data: die gaan niet naar de cloud. Bij Implementeren.ai helpen we adviseurs met het opzetten van die classificatie. Het kost een halve dag om in te richten.
 
 De Wft-adviesdocumentatie die Claude genereert is bovendien controleerbaar. Elk gegenereerd document bevat de bron (welke polisvoorwaarden, welke klantgegevens, welke berekening) en de stappen die zijn gevolgd. Bij een AFM-controle of KIFID-procedure heb je een compleet dossier. Dat is een voordeel ten opzichte van handmatige werkprocessen waar de onderbouwing vaak ontbreekt of inconsistent is. De adviseur besteedt minder tijd aan administratie en meer aan het adviesgesprek zelf.
 

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" role="img" aria-label="Alleen de handleiding laten lezen werkt vaak niet; AI-geletterdheid is een terugkerende ronde van identificeren, doel bepalen, uitvoeren en evalueren, vastgelegd in een intern overzicht" font-family="Inter, system-ui, sans-serif" fill="#23261D"><defs>
+<filter id="agl-g" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 .16  0 0 0 0 .15  0 0 0 0 .14  .16 0 0 0 -.03"/></filter>
+<marker id="agl-a" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#23261D"/></marker>
+</defs><rect width="1200" height="600" fill="#F4F1E8"/><rect x="64" y="48" width="64" height="4" rx="2" fill="#3D5220"/><text x="64" y="92" fill="#565A4C" font-size="22" font-weight="600" letter-spacing="3">VIER FASEN, STEEDS OPNIEUW</text>
+<g>
+<rect x="76" y="154" width="150" height="190" rx="12" fill="#E9EBDC" stroke="#23261D" stroke-width="4" transform="rotate(-7 151 249)"/>
+<rect x="64" y="166" width="150" height="190" rx="12" fill="#FFFFFF" stroke="#23261D" stroke-width="4"/>
+<g stroke-width="9" stroke-linecap="round"><line x1="90" y1="206" x2="180" y2="206" stroke="#3D5220"/><line x1="90" y1="236" x2="188" y2="236" stroke="#E1DED2"/><line x1="90" y1="266" x2="166" y2="266" stroke="#E1DED2"/><line x1="90" y1="296" x2="180" y2="296" stroke="#E1DED2"/></g>
+<path d="M238 261 L 378 261" fill="none" stroke="#3D5220" stroke-width="7" stroke-dasharray="1 18" stroke-linecap="round"/>
+<path d="M398 241 l40 40 M438 241 l-40 40" fill="none" stroke="#3D5220" stroke-width="8" stroke-linecap="round"/>
+<path d="M963 200 A232 165 0 0 1 1029 258" fill="none" stroke="#23261D" stroke-width="5" stroke-linecap="round" marker-end="url(#agl-a)"/>
+<path d="M1029 402 A232 165 0 0 1 963 460" fill="none" stroke="#23261D" stroke-width="5" stroke-linecap="round" marker-end="url(#agl-a)"/>
+<path d="M677 460 A232 165 0 0 1 611 402" fill="none" stroke="#23261D" stroke-width="5" stroke-linecap="round" marker-end="url(#agl-a)"/>
+<path d="M611 258 A232 165 0 0 1 677 200" fill="none" stroke="#23261D" stroke-width="5" stroke-linecap="round" marker-end="url(#agl-a)"/>
+<rect x="690" y="133" width="260" height="64" rx="32" fill="#FFFFFF" stroke="#23261D" stroke-width="4"/>
+<rect x="936" y="298" width="232" height="64" rx="32" fill="#FFFFFF" stroke="#23261D" stroke-width="4"/>
+<rect x="720" y="463" width="200" height="64" rx="32" fill="#FFFFFF" stroke="#23261D" stroke-width="4"/>
+<rect x="492" y="298" width="192" height="64" rx="32" fill="#FFFFFF" stroke="#23261D" stroke-width="4"/>
+<rect x="728" y="268" width="184" height="124" rx="20" fill="#23261D"/>
+</g>
+<text x="64" y="412" font-size="32" font-weight="600">handleiding lezen</text>
+<text x="64" y="458" font-size="32" font-weight="600" fill="#3D5220">werkt vaak niet</text>
+<text x="820" y="177" text-anchor="middle" font-size="32" font-weight="600">identificeren</text>
+<text x="1052" y="342" text-anchor="middle" font-size="32" font-weight="600">doel bepalen</text>
+<text x="820" y="507" text-anchor="middle" font-size="32" font-weight="600">uitvoeren</text>
+<text x="588" y="342" text-anchor="middle" font-size="32" font-weight="600">evalueren</text>
+<text x="820" y="322" text-anchor="middle" font-size="32" font-weight="600" fill="#F4F1E8">intern</text>
+<text x="820" y="362" text-anchor="middle" font-size="32" font-weight="600" fill="#F4F1E8">overzicht</text>
+<rect width="1200" height="600" filter="url(#agl-g)"/></svg>

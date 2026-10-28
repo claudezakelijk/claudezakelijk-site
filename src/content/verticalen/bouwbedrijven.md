@@ -1,6 +1,6 @@
 ---
 title: "Claude voor bouwbedrijven"
-titleTag: "Claude voor bouwbedrijf en aannemer | ClaudeZakelijk"
+titleTag: "Claude voor bouwbedrijf en aannemer | Implementeren.ai"
 metaDescription: "Hoe bouwbedrijven Claude inzetten voor offertes, werkbrieven en veiligheidsrapportages. Praktisch, AVG-veilig."
 h1: "Claude voor bouwbedrijf en aannemer"
 targetKeywords:
@@ -37,7 +37,7 @@ areaServed: NL
 brancheOrganisatie: null
 ---
 
-Claude voor bouwbedrijf en aannemer richt zich op het werk dat na de bouwplaats komt: offertes schrijven, werkbrieven opstellen, klant-e-mails beantwoorden, planningen communiceren, veiligheidsrapportages invullen. Bouwbedrijven besteden 20 tot 30% van hun tijd aan administratie. Claude brengt dat terug. Wij bij ClaudeZakelijk begeleiden aannemers en bouwbedrijven door het hele implementatietraject.
+Claude voor bouwbedrijf en aannemer richt zich op het werk dat na de bouwplaats komt: offertes schrijven, werkbrieven opstellen, klant-e-mails beantwoorden, planningen communiceren, veiligheidsrapportages invullen. Bouwbedrijven besteden 20 tot 30% van hun tijd aan administratie. Claude brengt dat terug. Wij bij Implementeren.ai begeleiden aannemers en bouwbedrijven door het hele implementatietraject.
 
 ## Claude voor offertes bouw: sneller en completer
 
@@ -63,7 +63,7 @@ Opdrachtgevers willen weten hoe hun project ervoor staat. Die communicatie kost 
 
 Je voert de weekstatus in (welke werkzaamheden zijn uitgevoerd, welke staan gepland, zijn er vertragingen), en Claude schrijft een professionele statusmail aan de opdrachtgever. De toon past bij je bedrijf: zakelijk maar toegankelijk. Bij meerwerk genereert Claude een onderbouwing op basis van het bestek en de wijziging. De projectleider controleert en verstuurt.
 
-Bij 20 lopende projecten met wekelijkse statusmails bespaar je 10 tot 15 uur per week. Dat is een halve FTE op jaarbasis. De kwaliteit stijgt ook: professionele, consistente communicatie in plaats van haastig getypte mails vanaf de bouwplaats. Wij bij ClaudeZakelijk zetten die e-mailflows op. De integratie werkt met Microsoft Teams en Outlook: de projectleider stuurt de statusgegevens, Claude genereert de mail, de medewerker verstuurt via Outlook. Geen aparte tool, geen extra logins.
+Bij 20 lopende projecten met wekelijkse statusmails bespaar je 10 tot 15 uur per week. Dat is een halve FTE op jaarbasis. De kwaliteit stijgt ook: professionele, consistente communicatie in plaats van haastig getypte mails vanaf de bouwplaats. Wij bij Implementeren.ai zetten die e-mailflows op. De integratie werkt met Microsoft Teams en Outlook: de projectleider stuurt de statusgegevens, Claude genereert de mail, de medewerker verstuurt via Outlook. Geen aparte tool, geen extra logins.
 
 ## Veiligheidsrapportages en V&G-plannen
 
@@ -97,7 +97,7 @@ De ROI voor een gemiddeld bouwbedrijf (10 tot 30 medewerkers, 20+ projecten per 
 - **Veiligheidsrapportages:** 80 tot 120 uur per jaar.
 - **Claude Pro licenties:** 20 dollar per gebruiker per maand.
 
-Wij bij ClaudeZakelijk begeleiden bouwbedrijven door het hele traject. Een middelgroot bouwbedrijf haalt met drie tot vier workflows een besparing van 800 tot 1.500 uur per jaar. De implementatie kost 2 tot 4 weken. De terugverdientijd: minder dan een maand.
+Wij bij Implementeren.ai begeleiden bouwbedrijven door het hele traject. Een middelgroot bouwbedrijf haalt met drie tot vier workflows een besparing van 800 tot 1.500 uur per jaar. De implementatie kost 2 tot 4 weken. De terugverdientijd: minder dan een maand.
 
 ## Veelgestelde vragen
 

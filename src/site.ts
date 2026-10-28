@@ -1,19 +1,19 @@
 export const site = {
-  naam: 'ClaudeZakelijk',
+  naam: 'Implementeren.ai',
   tagline: 'Onafhankelijke Claude-implementatie voor het MKB',
   onafhankelijkheid:
-    'ClaudeZakelijk is een onafhankelijk adviesbureau. We zijn geen onderdeel of partner van Anthropic, en Anthropic heeft deze site niet goedgekeurd. Claude en Anthropic zijn handelsmerken van Anthropic, PBC.',
+    'Implementeren.ai is een onafhankelijk adviesbureau. We zijn geen onderdeel of partner van Anthropic, en Anthropic heeft deze site niet goedgekeurd. Claude en Anthropic zijn handelsmerken van Anthropic, PBC.',
   onafhankelijkheidLang:
-    'ClaudeZakelijk is een onafhankelijk Nederlands adviesbureau. We zijn geen onderdeel, partner of vertegenwoordiger van Anthropic, het bedrijf dat Claude maakt. Anthropic sponsort ons niet en heeft deze site niet goedgekeurd. Wij adviseren over Claude en richten het in bij bedrijven. De licenties koop je rechtstreeks bij Anthropic. Claude en Anthropic zijn handelsmerken van Anthropic, PBC.',
+    'Implementeren.ai is een onafhankelijk Nederlands adviesbureau. We zijn geen onderdeel, partner of vertegenwoordiger van Anthropic, het bedrijf dat Claude maakt. Anthropic sponsort ons niet en heeft deze site niet goedgekeurd. Wij adviseren over Claude en richten het in bij bedrijven. De licenties koop je rechtstreeks bij Anthropic. Claude en Anthropic zijn handelsmerken van Anthropic, PBC.',
   wieZijnWij:
-    'ClaudeZakelijk is een onafhankelijk Nederlands adviesbureau dat Claude van Anthropic inricht bij MKB-bedrijven van 10 tot 200 medewerkers. Lead consultant is Camiel Wits. Vaste prijzen: de Readiness Scan kost vanaf €1.500. ClaudeZakelijk is een handelsnaam van Wits SustAInable Solutions B.V. (KvK 99455390).',
+    'Implementeren.ai is een onafhankelijk Nederlands adviesbureau dat Claude van Anthropic inricht bij MKB-bedrijven van 10 tot 200 medewerkers. Lead consultant is Camiel Wits. Vaste prijzen: de Readiness Scan kost vanaf €1.500. Implementeren.ai is een handelsnaam van Wits SustAInable Solutions B.V. (KvK 99455390).',
   // Domein ook in astro.config.mjs — houd synchroon
-  url: 'https://claudezakelijk.nl',
+  url: 'https://implementeren.ai',
   taal: 'nl-NL',
   // Intro-CTA: Google-afsprakenpagina (agenda van Max, tijdelijk). Later vervangen door die van Camiel.
   // De footer-link "Neem contact op" wijst los hiervan naar /contact.
   introLink: 'https://calendar.app.google/na8Z13rCPAkexaoz9',
-  email: 'hallo@claudezakelijk.nl',
+  email: 'hallo@implementeren.ai',
   // Juridische gegevens (footer) — bevestigd door Sweder 22 juli 2026:
   // zelfde entiteit als fractionalaiteam.nl (Camiels B.V.).
   juridisch: {
@@ -32,7 +32,7 @@ export const entiteit = {
   legalName: site.juridisch.handelsnaamVan,
   kvk: site.juridisch.kvk,
   btw: site.juridisch.btw,
-  alternateName: ['Claude Zakelijk', 'claudezakelijk.nl'] as string[],
+  alternateName: ['Implementeren AI', 'implementeren.ai'] as string[],
   beschrijving:
     'Nederlands adviesbureau dat Claude implementeert bij mkb-bedrijven: scan, rollout, training en begeleiding.',
   // Pas op true als de zichtbare onafhankelijkheidszin (site.onafhankelijkheid) live staat.

@@ -1,6 +1,6 @@
 ---
 title: "Claude voor managers en directie"
-titleTag: "Claude voor managers en directie | ClaudeZakelijk"
+titleTag: "Claude voor managers en directie | Implementeren.ai"
 metaDescription: "Hoe managers en directie Claude gebruiken voor besluitvorming, briefings en planning. Geen promptvaardigheden nodig. Directe waarde vanaf dag 1."
 h1: "Claude voor managers en directie"
 targetKeywords:
@@ -41,7 +41,7 @@ faq:
 
 Claude voor managers is geen technische training. Het is een manier om sneller en beter geinformeerde beslissingen te nemen. Geen prompts leren, geen cursus AI, geen technische setup. Je opent Claude, je stelt je vraag in gewone taal, en je krijgt een antwoord dat je direct kunt gebruiken in je vergadering, je kwartaalrapport, of je strategiesessie.
 
-Bij ClaudeZakelijk begeleiden we directeuren en managementteams van Nederlandse MKB-bedrijven die Claude willen inzetten voor hun eigen werk. Niet voor het hele bedrijf, niet voor automatisering, maar voor de 20 procent van hun taken die 80 procent van hun tijd opslokt: informatie verwerken, documenten maken, en beslissingen voorbereiden.
+Bij Implementeren.ai begeleiden we directeuren en managementteams van Nederlandse MKB-bedrijven die Claude willen inzetten voor hun eigen werk. Niet voor het hele bedrijf, niet voor automatisering, maar voor de 20 procent van hun taken die 80 procent van hun tijd opslokt: informatie verwerken, documenten maken, en beslissingen voorbereiden.
 
 ## Claude voor directeur: de vijf toepassingen die direct werken
 
@@ -103,7 +103,7 @@ Claude voor managers is meer dan persoonlijke productiviteit. Het is een voorwaa
 
 Het mechanisme is simpel: medewerkers kijken naar boven. Als de directeur in het teamoverleg vertelt dat hij zijn vergadervoorbereiding met Claude doet, geeft dat een krachtiger signaal dan welke trainingsmail dan ook. Als de manager een besluit onderbouwt met een analyse die deels door Claude is gemaakt, normaliseert dat het gebruik voor het hele team.
 
-Daarom adviseren we bij ClaudeZakelijk om de managementlaag altijd in de eerste fase mee te nemen. Niet als deelnemer aan de technische [in-company training](/training/training-medewerkers), maar als zichtbare gebruiker die het mandaat geeft en zelf het voorbeeld stelt.
+Daarom adviseren we bij Implementeren.ai om de managementlaag altijd in de eerste fase mee te nemen. Niet als deelnemer aan de technische [in-company training](/training/training-medewerkers), maar als zichtbare gebruiker die het mandaat geeft en zelf het voorbeeld stelt.
 
 Het [champion programma](/training/champion-programma) werkt alleen als het managementteam het actief steunt. Champions zonder mandaat zijn vrijwilligers die tegen de cultuur in werken. Champions met zichtbare steun van de directie zijn leiders van een beweging.
 

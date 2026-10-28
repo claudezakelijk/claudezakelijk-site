@@ -12,6 +12,9 @@ const huidig = Astro.url.pathname.replace(/\/$/, '') || '/';
 
 // Label = echte titel van de doelpagina (Spec C, C-08). Artikelen: data.titleTag uit de
 // collectie (= <title> zonder site-suffix, wat onpage-check als label eist); cases: data.title (= H1); statische pagina's: src/data/paginalabels.ts.
+// Sommige titleTags dragen het site-suffix al; SeoMeta stript dat voor de <title>, dus hier ook.
+const SUFFIX = ' | Implementeren.ai';
+const zonderSuffix = (t: string) => (t.endsWith(SUFFIX) ? t.slice(0, -SUFFIX.length) : t);
 const routes = {
   verticalen: (id: string) => `/claude-voor-${id}`,
   compliance: (id: string) => `/compliance/${id}`,
@@ -26,7 +29,7 @@ const routes = {
 const labels = new Map<string, string>(Object.entries(paginaLabels));
 for (const [collectie, route] of Object.entries(routes)) {
   for (const e of await getCollection(collectie as keyof typeof routes)) {
-    if (isPublished(e) && !omgeleid[route(e.id)]) labels.set(route(e.id), e.data.titleTag);
+    if (isPublished(e) && !omgeleid[route(e.id)]) labels.set(route(e.id), zonderSuffix(e.data.titleTag));
   }
 }
 for (const c of await getCollection('cases')) labels.set(`/cases/${c.id}`, c.data.title);
@@ -41,11 +44,11 @@ const items = [...new Set(links.map((l) => l.replace(/\/$/, '') || '/'))]
   });
 ---
 {items.length > 0 && (
-  <section class="mt-12 pt-8 border-t border-lijn" data-gerelateerd>
-    <h2 class="text-lg font-serif font-bold">Gerelateerd</h2>
-    <div class="mt-4 grid gap-3 sm:grid-cols-2">
+  <section class="v2-gerelateerd" data-gerelateerd>
+    <h2>Gerelateerd</h2>
+    <div class="v2-gerelateerd-raster">
       {/* Astro 7 bewaart witruimte binnen expressies; strak houden zoals de output onder Astro 6. */}
-      {items.map(({ pad, label }) => (<a href={pad} class="no-underline block rounded-lg border border-lijn p-4 hover:border-accent-diep hover:bg-papier-dieper transition-colors"><span class="text-sm text-accent-diep font-semibold">{label}</span></a>))}
+      {items.map(({ pad, label }) => (<a href={pad}>{label}</a>))}
     </div>
   </section>
 )}

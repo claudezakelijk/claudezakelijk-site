@@ -1,6 +1,6 @@
 ---
 title: "Claude prompting cursus voor MKB-teams"
-titleTag: "Claude prompting cursus voor MKB-teams | ClaudeZakelijk"
+titleTag: "Claude prompting cursus voor MKB-teams | Implementeren.ai"
 metaDescription: "Praktische claude prompting cursus voor MKB-medewerkers. Prompt templates per functie, hands-on oefeningen op eigen werkprocessen. In-company in Nederland."
 h1: "Claude prompting cursus voor MKB-teams"
 targetKeywords:
@@ -42,7 +42,7 @@ faq:
 
 Claude prompting cursus die werkt voor Nederlandse MKB-teams. Geen abstracte theorie over hoe AI taal verwerkt. Geen generieke tips die je ook op Reddit vindt. Je brengt je eigen werkprocessen mee, bouwt een promptbibliotheek voor je functie, en verlaat de cursus met tools die je de volgende ochtend gebruikt.
 
-Bij ClaudeZakelijk trainen we teams van 5 tot 20 medewerkers op hun eigen taken. Sales, HR, finance, marketing, operations, support. Elke functie krijgt eigen prompts. Elke medewerker leert wat werkt voor hun specifieke werk, niet voor een kunstmatig oefenproject.
+Bij Implementeren.ai trainen we teams van 5 tot 20 medewerkers op hun eigen taken. Sales, HR, finance, marketing, operations, support. Elke functie krijgt eigen prompts. Elke medewerker leert wat werkt voor hun specifieke werk, niet voor een kunstmatig oefenproject.
 
 ## Waarom een prompt training claude specifiek
 

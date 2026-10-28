@@ -10,11 +10,13 @@
  *   5. breadcrumb on every page except "/" (nav[aria-label="Broodkruimel"], first item "Home" -> "/")
  *   6. every internal <a href> on the page (header, main, footer) points at a sitemap URL or at a
  *      file (has an extension); never at a built page outside the sitemap (noindex, empty hub,
- *      private) and never at a path that does not exist in dist
+ *      private) and never at a path that does not exist in dist. Exception: routes that are
+ *      registered public in src/data/public-pages.json but deliberately outside the zakelijk
+ *      allowlist (public is not the same as indexable, e.g. /privacy in the footer) may be linked
  *   7. every sitemap URL except "/" gets links from at least MIN_INBOUND distinct other sitemap
  *      pages inside <main>, breadcrumb excluded
  *   8. labels in the "Gerelateerd" block (section[data-gerelateerd]) equal the target page's h1,
- *      its title without " | ClaudeZakelijk", or the last item of its breadcrumb
+ *      its title without " | Implementeren.ai", or the last item of its breadcrumb
  *   9. the homepage h1 contains "Claude zakelijk"
  *
  * Usage: node scripts/onpage-check.mjs [--min-inbound=3] [--verbose]
@@ -25,9 +27,11 @@ import { join, resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
+process.chdir(ROOT);
+const { isZakelijkPad } = await import('../src/data/indexering.mjs');
 const DIST = join(ROOT, 'dist');
-const SITE = 'https://claudezakelijk.nl';
-const SUFFIX = ' | ClaudeZakelijk';
+const SITE = 'https://implementeren.ai';
+const SUFFIX = ' | Implementeren.ai';
 const args = process.argv.slice(2);
 const MIN_INBOUND = Number((args.find((a) => a.startsWith('--min-inbound=')) || '--min-inbound=3').split('=')[1]);
 const VERBOSE = args.includes('--verbose');
@@ -57,6 +61,16 @@ const decode = (s) =>
 const sitemapXml = readFileSync(join(DIST, 'sitemap-0.xml'), 'utf8');
 const urls = [...sitemapXml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => norm(m[1].replace(SITE, '')));
 const inSitemap = new Set(urls);
+
+// Bewust openbaar maar nooit indexeerbaar (CLAUDE.md: "Public is not the same as indexable"):
+// geregistreerd in public-pages.json en buiten de zakelijk-allowlist. Links hierheen zijn
+// by design (de footer wijst naar /privacy). Zakelijke paden buiten de sitemap (noindex,
+// lege hub) blijven gewoon een fout.
+const openbaarOngeindexeerd = new Set(
+  JSON.parse(readFileSync(join(ROOT, 'src/data/public-pages.json'), 'utf8'))
+    .map(norm)
+    .filter((p) => !isZakelijkPad(p)),
+);
 
 function fileFor(p) {
   if (p === '/') return join(DIST, 'index.html');
@@ -128,7 +142,7 @@ for (const [url, p] of pages) {
   for (const { href } of hrefs(p.html)) {
     const t = internalPath(href);
     if (t === null || isFile(t) || t.startsWith('/cdn-cgi/')) continue;
-    if (inSitemap.has(t)) continue;
+    if (inSitemap.has(t) || openbaarOngeindexeerd.has(t)) continue;
     fail(url, fileFor(t) ? `link naar ${t}: gebouwd maar niet in de sitemap (noindex, lege hub of privé)` : `link naar ${t}: bestaat niet in dist`);
   }
   for (const { href } of hrefs(p.main)) {

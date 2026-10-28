@@ -1,6 +1,6 @@
 ---
 title: "Claude Design tool: wat het is en voor wie het werkt"
-titleTag: "Claude Design tool voor MKB | ClaudeZakelijk"
+titleTag: "Claude Design tool voor MKB | Implementeren.ai"
 metaDescription: "Claude Design tool van Anthropic uitgelegd voor zakelijk gebruik. Wat het doet, voor wie het is en eerste praktijkervaringen. Met vergelijking Figma en Canva."
 h1: "Claude Design tool voor MKB"
 targetKeywords:
@@ -40,7 +40,7 @@ faq:
     answer: "Ja, met een kanttekening. De output is van jou en je mag het commercieel gebruiken. Maar Claude Design genereert concepten, geen productiebestanden. Je hebt een designer of developer nodig om het concept om te zetten naar een werkend product. Voor snelle prototypes, interne presentaties en concept-validatie is het direct inzetbaar."
 ---
 
-Het claude design tool van Anthropic brengt visueel ontwerp naar de AI-conversatie. Voor het MKB is dat interessant: veel kleine bedrijven hebben geen designer in dienst maar wel regelmatig behoefte aan professionele visuele output. Een landingspagina, een dashboard concept, een presentatie-layout. Claude Design belooft dat je die kunt maken door te beschrijven wat je wilt, in plaats van pixels te schuiven. Dit artikel legt uit wat het claude design product doet, voor wie het werkt en waar de grenzen liggen. Gebaseerd op onze eerste ervaringen bij ClaudeZakelijk.
+Het claude design tool van Anthropic brengt visueel ontwerp naar de AI-conversatie. Voor het MKB is dat interessant: veel kleine bedrijven hebben geen designer in dienst maar wel regelmatig behoefte aan professionele visuele output. Een landingspagina, een dashboard concept, een presentatie-layout. Claude Design belooft dat je die kunt maken door te beschrijven wat je wilt, in plaats van pixels te schuiven. Dit artikel legt uit wat het claude design product doet, voor wie het werkt en waar de grenzen liggen. Gebaseerd op onze eerste ervaringen bij Implementeren.ai.
 
 ## Claude design tool: wat het doet
 
@@ -73,10 +73,10 @@ Een professioneel ogende offerte is verkoopargument. Claude Design kan offertete
 
 ## Praktijkervaringen
 
-Bij ClaudeZakelijk gebruikten we Claude Design voor twee concrete taken:
+Bij Implementeren.ai gebruikten we Claude Design voor twee concrete taken:
 
 **Case 1: SEO-pagina layouts**
-Tijdens de [SEO-overhaul](/use-cases/seo-content) van claudezakelijk.nl moesten we 14 pagina's herstructureren. In plaats van elke pagina eerst in HTML te coderen, beschreven we de gewenste layout in Claude Design. Het resultaat: een visueel prototype per pagina in gemiddeld 3 minuten. De SEO-analyse die we eerder deden (311.000 impressies, 14 kannibaliserende pagina's gevonden in 1 uur) werd zo vertaald naar concrete pagina-ontwerpen.
+Tijdens de [SEO-overhaul](/use-cases/seo-content) van implementeren.ai moesten we 14 pagina's herstructureren. In plaats van elke pagina eerst in HTML te coderen, beschreven we de gewenste layout in Claude Design. Het resultaat: een visueel prototype per pagina in gemiddeld 3 minuten. De SEO-analyse die we eerder deden (311.000 impressies, 14 kannibaliserende pagina's gevonden in 1 uur) werd zo vertaald naar concrete pagina-ontwerpen.
 
 **Case 2: Dashboard concepten voor klanten**
 Een klant wilde zien hoe hun rapportage-dashboard eruit zou zien voor ze investeerden. Met Claude Design genereerden we een interactief concept op basis van hun specificaties. De klant kon klikken, scrollen en de layout beoordelen zonder dat er een regel code geschreven was. Doorlooptijd: 20 minuten inclusief twee iteraties.
@@ -94,7 +94,7 @@ Claude Design is geen vervanging voor professioneel design. De beperkingen:
 
 ## Workflow: Claude Design in je proces inpassen
 
-De meest effectieve manier om Claude Design te gebruiken is als eerste stap in een design-workflow, niet als eindproduct. Zo zetten we het in bij ClaudeZakelijk:
+De meest effectieve manier om Claude Design te gebruiken is als eerste stap in een design-workflow, niet als eindproduct. Zo zetten we het in bij Implementeren.ai:
 
 1. **Briefing in tekst.** Beschrijf wat je nodig hebt: "Een landingspagina voor een Power BI rapportage-dienst, gericht op MSP's, met hero section, drie features en een CTA."
 2. **Eerste concept in Claude Design.** Claude genereert een interactief prototype. Beoordeel de grote lijnen: layout, hiërarchie, tone.
@@ -127,7 +127,7 @@ Voor het MKB is de sweet spot duidelijk: Claude Design lost het probleem op van 
 
 ## Lees ook
 
-Claude Design is een van de nieuwere producten van Anthropic. Als je Claude al gebruikt voor tekst en code, voegt het design-product een visuele laag toe aan je workflow. Voor bedrijven die hun [SEO-content](/use-cases/seo-content) visueel willen ondersteunen, voor teams die hun [offertes](/use-cases/offerte-maken) professioneler willen presenteren, en voor directeuren die snel een concept willen valideren voor ze budget toewijzen. Bij ClaudeZakelijk zien we dat de combinatie van Claude Code voor development en Claude Design voor visuele concepten de doorlooptijd van nieuwe pagina's en dashboards met 40 tot 60 procent verkort. Vergelijk de [kosten voor Claude zakelijk](/prijs) en het verschil met [Copilot](/vergelijken/claude-vs-copilot) om te bepalen welke aanpak past bij jouw team.
+Claude Design is een van de nieuwere producten van Anthropic. Als je Claude al gebruikt voor tekst en code, voegt het design-product een visuele laag toe aan je workflow. Voor bedrijven die hun [SEO-content](/use-cases/seo-content) visueel willen ondersteunen, voor teams die hun [offertes](/use-cases/offerte-maken) professioneler willen presenteren, en voor directeuren die snel een concept willen valideren voor ze budget toewijzen. Bij Implementeren.ai zien we dat de combinatie van Claude Code voor development en Claude Design voor visuele concepten de doorlooptijd van nieuwe pagina's en dashboards met 40 tot 60 procent verkort. Vergelijk de [kosten voor Claude zakelijk](/prijs) en het verschil met [Copilot](/vergelijken/claude-vs-copilot) om te bepalen welke aanpak past bij jouw team.
 
 ## Veelgestelde vragen
 

@@ -12,7 +12,7 @@ import { itemListNode } from '../../lib/schema';
 // prijscontrole alleen dat bestand aan. De tabel in het artikel zelf (kosten-zakelijk.md) staat los daarvan.
 const entry = await getEntry('prijs', 'kosten-zakelijk');
 if (!entry || !isPublished(entry)) throw new Error('prijs/kosten-zakelijk ontbreekt of is niet live (published met publishDate op of voor vandaag)');
-const { Content } = await render(entry);
+const { Content, headings } = await render(entry);
 
 // Eerste getal (dollars) uit een prijsregel in claudePrijzen, bijvoorbeeld '$25/gebruiker/maand' wordt '25'.
 const dollars = (tekst: string): string => {
@@ -48,7 +48,7 @@ const extraFaq = [
   },
   {
     question: 'Wat kost een Claude-implementatie?',
-    answer: 'Bij ClaudeZakelijk begint een traject met een Claude Readiness Scan vanaf €1.500. De begeleide uitrol in 30 dagen kost vanaf €7.500. Die bedragen komen bovenop de licenties die je bij Anthropic betaalt.',
+    answer: 'Bij Implementeren.ai begint een traject met een Claude Readiness Scan vanaf €1.500. De begeleide uitrol in 30 dagen kost vanaf €7.500. Die bedragen komen bovenop de licenties die je bij Anthropic betaalt.',
   },
 ];
 // Het kort antwoord en de extra vragen komen uit dit bestand; layout, bronnen en FAQPage-schema blijven die van het artikel.
@@ -68,9 +68,9 @@ const andere = (await getPublished('prijs'))
 // ItemList van dezelfde kaarten als "Meer over Claude-prijzen" hieronder (Spec B, S-15).
 const lijst = itemListNode('/prijs', andere.map((a) => ({ url: `/prijs/${a.id}`, naam: a.data.title })));
 ---
-<PrijsLayout entry={hubEntry} pagePath="/prijs" hub stand={claudePrijzen.peildatumTekst} schemaNodes={[lijst]}>
+<PrijsLayout entry={hubEntry} pagePath="/prijs" hub stand={claudePrijzen.peildatumTekst} schemaNodes={[lijst]} koppen={headings}>
   <Content />
-  <section slot="na-artikel" class="max-w-3xl mx-auto px-6 pb-8">
+  <section slot="na-artikel" class="v2-artikel-na">
     <h2 class="text-[length:var(--text-h2)]">Meer over Claude-prijzen</h2>
     <div class="mt-6 grid gap-6 md:grid-cols-2">
       {andere.map((a) => (

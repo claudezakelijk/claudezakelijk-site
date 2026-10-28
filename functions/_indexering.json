@@ -12,6 +12,7 @@
     "/hoe-claude-werkt",
     "/methodologie",
     "/over",
+    "/privacy",
     "/verticalen"
   ],
   "secties": [
@@ -34,8 +35,12 @@
     "/team/",
     "/logos/",
     "/icons/",
+    "/brand/",
     "/favicon.svg",
-    "/og-claudezakelijk.png",
+    "/favicon.ico",
+    "/apple-touch-icon.png",
+    "/site.webmanifest",
+    "/og-implementeren.png",
     "/robots.txt",
     "/sitemap-"
   ],

@@ -2,13 +2,15 @@
 import { getEntry, render } from 'astro:content';
 import BasisLayout from '../layouts/BasisLayout.astro';
 import CtaBlok from '../components/CtaBlok.astro';
-import Broodkruimel from '../components/Broodkruimel.astro';
+import DienstKop from '../components/DienstKop.astro';
+import DienstBeeld from '../components/DienstBeeld.astro';
+import ArtikelInhoud from '../components/ArtikelInhoud.astro';
 import { site } from '../site';
 import { dienstNode, dienstId } from '../lib/schema';
 
 const dienst = await getEntry('diensten', 'readiness-scan');
 if (!dienst) throw new Error('Diensten-entry readiness-scan ontbreekt');
-const { Content } = await render(dienst);
+const { Content, headings } = await render(dienst);
 const beschrijving = 'Claude Readiness Scan vanaf €1.500: een dag op locatie, binnen een week een Nederlands rapport met gerangschikte use cases en een heldere vervolgofferte.';
 const breadcrumbs = [{ name: 'Home', url: '/' }, { name: 'Claude Readiness Scan', url: dienst.data.pad }];
 ---
@@ -22,18 +24,26 @@ const breadcrumbs = [{ name: 'Home', url: '/' }, { name: 'Claude Readiness Scan'
     nodes: [dienstNode({ pad: dienst.data.pad, naam: dienst.data.titel, beschrijving, serviceType: 'AI-readiness-assessment voor Claude', aanbod: { naam: dienst.data.titel, prijsTekst: dienst.data.prijs, url: dienst.data.pad } })],
   }}
 >
-  <div class="max-w-3xl mx-auto px-6 pt-16"><Broodkruimel items={breadcrumbs} /></div>
-  <article class="max-w-3xl mx-auto px-6 pt-6 pb-8 prose prose-lg">
-    <p class="text-xs uppercase tracking-widest text-inkt-zacht">{dienst.data.ondertitel}</p>
-    <h1>{dienst.data.h1 ?? dienst.data.titel}</h1>
-    <dl class="grid grid-cols-2 gap-4 text-sm mt-6 not-prose">
-      <div><dt class="text-inkt-zacht">Prijs</dt><dd class="font-semibold">{dienst.data.prijs}</dd></div>
-      <div><dt class="text-inkt-zacht">Duur</dt><dd class="font-semibold">{dienst.data.duur}</dd></div>
-    </dl>
-    <div class="mt-8">
-      <Content />
+  <article class="v2-artikel">
+    <DienstKop
+      breadcrumbs={breadcrumbs}
+      label={dienst.data.ondertitel}
+      h1={dienst.data.h1 ?? dienst.data.titel}
+      feiten={[{ term: 'Prijs', waarde: dienst.data.prijs }, { term: 'Duur', waarde: dienst.data.duur }]}
+    >
+      <DienstBeeld slot="beeld" soort="scan" />
+    </DienstKop>
+
+    <div class="v2-artikel-raster">
+      <ArtikelInhoud soort="zijkant" koppen={headings} />
+      <div class="v2-artikel-tekst">
+        <ArtikelInhoud soort="mobiel" koppen={headings} />
+        <div class="prose prose-lg max-w-none v2-prose">
+          <Content />
+        </div>
+        <p class="mt-10 text-inkt-zacht">Eerst zelf kijken of je bedrijf er klaar voor is? De <a href="/ai-enablement-scan">gratis AI-check</a> duurt twee minuten.</p>
+      </div>
     </div>
-    <p class="mt-8 text-sm text-inkt-zacht">Eerst zelf kijken of je bedrijf er klaar voor is? De <a href="/ai-enablement-scan">gratis AI-check</a> duurt twee minuten.</p>
   </article>
   <CtaBlok
     kop="Scan aanvragen?"

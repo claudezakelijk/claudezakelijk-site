@@ -1,6 +1,6 @@
 ---
 title: "Claude e-mail automatiseren"
-titleTag: "Claude e-mail automatiseren voor MKB | ClaudeZakelijk"
+titleTag: "Claude e-mail automatiseren voor MKB | Implementeren.ai"
 metaDescription: "Claude e-mail automatiseren: inbox triage, gepersonaliseerde antwoorden en follow-ups. Case: 8% naar 34% open rate met 25 e-mails per dag."
 h1: "Claude e-mail automatiseren voor MKB"
 targetKeywords:
@@ -134,6 +134,6 @@ E-mail bevat persoonsgegevens: namen, e-mailadressen, soms telefoonnummers en ad
 
 Claude e-mail automatiseren vereist bewuste omgang met data. Wij configureren de workflow zo dat persoonsgegevens niet onnodig in de Claude context terechtkomen. De e-mail zelf gaat niet naar Anthropic. Claude genereert de concepttekst op basis van gepseudonimiseerde metadata.
 
-We hebben de e-mail workflow gecombineerd met CRM-data uit HubSpot en website-analytics uit Google Search Console. De prospect-profielen die Claude gebruikt voor personalisatie bevatten geen persoonsgegevens, alleen gedragsdata: welke pagina's bezocht, welke content gedownload, welke mails eerder geopend. Die data is groen en vrij te gebruiken. De contactgegevens (naam, e-mailadres) worden pas in de laatste stap gekoppeld, buiten Claude om. Wij bij ClaudeZakelijk helpen bedrijven met het opzetten van die scheiding. Lees meer: [Claude AVG en GDPR voor MKB](/compliance).
+We hebben de e-mail workflow gecombineerd met CRM-data uit HubSpot en website-analytics uit Google Search Console. De prospect-profielen die Claude gebruikt voor personalisatie bevatten geen persoonsgegevens, alleen gedragsdata: welke pagina's bezocht, welke content gedownload, welke mails eerder geopend. Die data is groen en vrij te gebruiken. De contactgegevens (naam, e-mailadres) worden pas in de laatste stap gekoppeld, buiten Claude om. Wij bij Implementeren.ai helpen bedrijven met het opzetten van die scheiding. Lees meer: [Claude AVG en GDPR voor MKB](/compliance).
 
 ## Veelgestelde vragen

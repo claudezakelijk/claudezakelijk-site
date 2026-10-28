@@ -1,6 +1,6 @@
 ---
 title: "Claude sales outreach"
-titleTag: "Claude sales outreach: gepersonaliseerd en op schaal | ClaudeZakelijk"
+titleTag: "Claude sales outreach: gepersonaliseerd en op schaal"
 metaDescription: "Claude sales outreach: 25 gepersonaliseerde e-mails per dag, open rate van 8% naar 34%. Zelflerend systeem met menselijke controle."
 h1: "Claude sales outreach: gepersonaliseerd en op schaal"
 targetKeywords:
@@ -91,7 +91,7 @@ Schalen is eenvoudig. Van 25 naar 50 e-mails per dag is een configuratiewijzigin
 
 De hele sales pipeline wordt afgedekt als je het combineert met andere Claude-workflows. Outreach genereert het eerste contact. De [offerte-automatisering](/use-cases/offerte-maken) versnelt het voorstel. De rapportage-generatie levert de klant na ondertekening direct waarde. Dat is een keten van prospecting tot klantrapportage zonder handmatige overdracht.
 
-Wij bij ClaudeZakelijk begeleiden bedrijven door het hele sales-traject. Anthropic's Claude biedt via de API voordelen boven ChatGPT van OpenAI: het grotere context window maakt betere personalisatie mogelijk. De AVG (GDPR) stelt eisen aan prospectdata in prompts. Combineer outreach met [e-mail automatisering](/use-cases/e-mail-automatiseren) en [offertes](/use-cases/offerte-maken) voor een complete sales pipeline. Sales outreach levert binnen de eerste week meetbaar resultaat.
+Wij bij Implementeren.ai begeleiden bedrijven door het hele sales-traject. Anthropic's Claude biedt via de API voordelen boven ChatGPT van OpenAI: het grotere context window maakt betere personalisatie mogelijk. De AVG (GDPR) stelt eisen aan prospectdata in prompts. Combineer outreach met [e-mail automatisering](/use-cases/e-mail-automatiseren) en [offertes](/use-cases/offerte-maken) voor een complete sales pipeline. Sales outreach levert binnen de eerste week meetbaar resultaat.
 
 ## Veelgestelde vragen
 

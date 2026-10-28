@@ -1,62 +1,62 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="4 sources to 1 profile" font-family="Inter, system-ui, sans-serif" fill="#2A2725">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="4 sources to 1 profile" font-family="Inter, system-ui, sans-serif" fill="#23261D">
   <defs>
     <marker id="ah5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-      <path d="M0,0 L10,5 L0,10 Z" fill="#2A2725"></path>
+      <path d="M0,0 L10,5 L0,10 Z" fill="#23261D"></path>
     </marker>
     <filter id="cs5" x="-5%" y="-20%" width="110%" height="140%">
-      <feDropShadow dx="0" dy="1" stdDeviation="1.5" flood-color="#2A2725" flood-opacity=".08"></feDropShadow>
+      <feDropShadow dx="0" dy="1" stdDeviation="1.5" flood-color="#23261D" flood-opacity=".08"></feDropShadow>
     </filter>
   </defs>
 
-  <rect width="800" height="450" fill="#FAF7F2"></rect>
+  <rect width="800" height="450" fill="#F4F1E8"></rect>
 
-  <rect x="40" y="36" width="48" height="2" rx="1" fill="#CC785C"></rect>
-  <text x="40" y="62" fill="#58524C" font-size="11" font-weight="600" letter-spacing="1.65">KLANTBEELD</text>
+  <rect x="40" y="36" width="48" height="2" rx="1" fill="#3D5220"></rect>
+  <text x="40" y="62" fill="#565A4C" font-size="11" font-weight="600" letter-spacing="1.65">KLANTBEELD</text>
 
-  <text x="760" y="62" text-anchor="end" fill="#58524C" font-size="13">4 bronnen · 1 profiel</text>
-
-  
-  
-  <rect x="40" y="100" width="180" height="80" rx="8" fill="#F2ECE0" stroke="#E6DFD2" stroke-width="1" filter="url(#cs5)"></rect>
-  <circle cx="60" cy="124" r="5" fill="#CC785C" opacity=".75"></circle>
-  <text x="74" y="129" font-size="14" font-weight="600" fill="#2A2725">HubSpot CRM</text>
-  <text x="60" y="148" font-size="12" fill="#58524C">contacten · deals</text>
-  <rect x="60" y="156" width="42" height="16" rx="8" fill="#FAF7F2" stroke="#E6DFD2"></rect>
-  <text x="81" y="168" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="9" font-weight="600" letter-spacing=".5" fill="#A35A41">MCP</text>
+  <text x="760" y="62" text-anchor="end" fill="#565A4C" font-size="13">4 bronnen · 1 profiel</text>
 
   
-  <rect x="580" y="100" width="180" height="80" rx="8" fill="#F2ECE0" stroke="#E6DFD2" stroke-width="1" filter="url(#cs5)"></rect>
-  <circle cx="600" cy="124" r="5" fill="#CC785C" opacity=".75"></circle>
-  <text x="614" y="129" font-size="14" font-weight="600" fill="#2A2725">Search Console</text>
-  <text x="600" y="148" font-size="12" fill="#58524C">zoekgedrag · CTR</text>
-  <rect x="600" y="156" width="42" height="16" rx="8" fill="#FAF7F2" stroke="#E6DFD2"></rect>
-  <text x="621" y="168" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="9" font-weight="600" letter-spacing=".5" fill="#A35A41">MCP</text>
+  
+  <rect x="40" y="100" width="180" height="80" rx="8" fill="#E9EBDC" stroke="#E1DED2" stroke-width="1" filter="url(#cs5)"></rect>
+  <circle cx="60" cy="124" r="5" fill="#3D5220" opacity=".75"></circle>
+  <text x="74" y="129" font-size="14" font-weight="600" fill="#23261D">HubSpot CRM</text>
+  <text x="60" y="148" font-size="12" fill="#565A4C">contacten · deals</text>
+  <rect x="60" y="156" width="42" height="16" rx="8" fill="#F4F1E8" stroke="#E1DED2"></rect>
+  <text x="81" y="168" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="9" font-weight="600" letter-spacing=".5" fill="#3D5220">MCP</text>
 
   
-  <rect x="40" y="290" width="180" height="80" rx="8" fill="#F2ECE0" stroke="#E6DFD2" stroke-width="1" filter="url(#cs5)"></rect>
-  <circle cx="60" cy="314" r="5" fill="#CC785C" opacity=".75"></circle>
-  <text x="74" y="319" font-size="14" font-weight="600" fill="#2A2725">Power BI</text>
-  <text x="60" y="338" font-size="12" fill="#58524C">omzet · retentie</text>
-  <rect x="60" y="346" width="42" height="16" rx="8" fill="#FAF7F2" stroke="#E6DFD2"></rect>
-  <text x="81" y="358" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="9" font-weight="600" letter-spacing=".5" fill="#A35A41">MCP</text>
+  <rect x="580" y="100" width="180" height="80" rx="8" fill="#E9EBDC" stroke="#E1DED2" stroke-width="1" filter="url(#cs5)"></rect>
+  <circle cx="600" cy="124" r="5" fill="#3D5220" opacity=".75"></circle>
+  <text x="614" y="129" font-size="14" font-weight="600" fill="#23261D">Search Console</text>
+  <text x="600" y="148" font-size="12" fill="#565A4C">zoekgedrag · CTR</text>
+  <rect x="600" y="156" width="42" height="16" rx="8" fill="#F4F1E8" stroke="#E1DED2"></rect>
+  <text x="621" y="168" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="9" font-weight="600" letter-spacing=".5" fill="#3D5220">MCP</text>
 
   
-  <rect x="580" y="290" width="180" height="80" rx="8" fill="#F2ECE0" stroke="#E6DFD2" stroke-width="1" filter="url(#cs5)"></rect>
-  <circle cx="600" cy="314" r="5" fill="#CC785C" opacity=".75"></circle>
-  <text x="614" y="319" font-size="14" font-weight="600" fill="#2A2725">LinkedIn</text>
-  <text x="600" y="338" font-size="12" fill="#58524C">functie · branche</text>
-  <rect x="600" y="346" width="42" height="16" rx="8" fill="#FAF7F2" stroke="#E6DFD2"></rect>
-  <text x="621" y="358" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="9" font-weight="600" letter-spacing=".5" fill="#A35A41">MCP</text>
+  <rect x="40" y="290" width="180" height="80" rx="8" fill="#E9EBDC" stroke="#E1DED2" stroke-width="1" filter="url(#cs5)"></rect>
+  <circle cx="60" cy="314" r="5" fill="#3D5220" opacity=".75"></circle>
+  <text x="74" y="319" font-size="14" font-weight="600" fill="#23261D">Power BI</text>
+  <text x="60" y="338" font-size="12" fill="#565A4C">omzet · retentie</text>
+  <rect x="60" y="346" width="42" height="16" rx="8" fill="#F4F1E8" stroke="#E1DED2"></rect>
+  <text x="81" y="358" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="9" font-weight="600" letter-spacing=".5" fill="#3D5220">MCP</text>
 
   
-  <path d="M 220 140 Q 290 175 320 200" fill="none" stroke="#2A2725" stroke-width="1.2" marker-end="url(#ah5)"></path>
-  <path d="M 580 140 Q 510 175 480 200" fill="none" stroke="#2A2725" stroke-width="1.2" marker-end="url(#ah5)"></path>
-  <path d="M 220 330 Q 290 295 320 270" fill="none" stroke="#2A2725" stroke-width="1.2" marker-end="url(#ah5)"></path>
-  <path d="M 580 330 Q 510 295 480 270" fill="none" stroke="#2A2725" stroke-width="1.2" marker-end="url(#ah5)"></path>
+  <rect x="580" y="290" width="180" height="80" rx="8" fill="#E9EBDC" stroke="#E1DED2" stroke-width="1" filter="url(#cs5)"></rect>
+  <circle cx="600" cy="314" r="5" fill="#3D5220" opacity=".75"></circle>
+  <text x="614" y="319" font-size="14" font-weight="600" fill="#23261D">LinkedIn</text>
+  <text x="600" y="338" font-size="12" fill="#565A4C">functie · branche</text>
+  <rect x="600" y="346" width="42" height="16" rx="8" fill="#F4F1E8" stroke="#E1DED2"></rect>
+  <text x="621" y="358" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="9" font-weight="600" letter-spacing=".5" fill="#3D5220">MCP</text>
 
   
-  <rect x="295" y="185" width="210" height="100" rx="8" fill="#0f766e" filter="url(#cs5)"></rect>
-  <text x="400" y="222" text-anchor="middle" font-family="&#34;Source Serif 4&#34;, ui-serif, Georgia, serif" font-weight="700" font-size="26" letter-spacing="-.5" fill="#FAF7F2">Klantprofiel</text>
-  <text x="400" y="244" text-anchor="middle" font-size="13" fill="#FAF7F2" opacity=".82">één verenigd beeld per klant</text>
-  <text x="400" y="266" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" letter-spacing="1.6" fill="#FAF7F2" opacity=".7">CLAUDE · MERGE</text>
+  <path d="M 220 140 Q 290 175 320 200" fill="none" stroke="#23261D" stroke-width="1.2" marker-end="url(#ah5)"></path>
+  <path d="M 580 140 Q 510 175 480 200" fill="none" stroke="#23261D" stroke-width="1.2" marker-end="url(#ah5)"></path>
+  <path d="M 220 330 Q 290 295 320 270" fill="none" stroke="#23261D" stroke-width="1.2" marker-end="url(#ah5)"></path>
+  <path d="M 580 330 Q 510 295 480 270" fill="none" stroke="#23261D" stroke-width="1.2" marker-end="url(#ah5)"></path>
+
+  
+  <rect x="295" y="185" width="210" height="100" rx="8" fill="#23261D" filter="url(#cs5)"></rect>
+  <text x="400" y="222" text-anchor="middle" font-family="&#34;Instrument Sans Variable&#34;, Inter, system-ui, sans-serif" font-weight="700" font-size="26" letter-spacing="-.5" fill="#F4F1E8">Klantprofiel</text>
+  <text x="400" y="244" text-anchor="middle" font-size="13" fill="#F4F1E8" opacity=".82">één verenigd beeld per klant</text>
+  <text x="400" y="266" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" letter-spacing="1.6" fill="#F4F1E8" opacity=".7">CLAUDE · MERGE</text>
 </svg>

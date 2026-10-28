@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" role="img" aria-label="Een open envelop voor een privéaccount tegenover een verzegelde envelop voor een zakelijk account" font-family="Inter, system-ui, sans-serif" fill="#2A2725"><defs>
+<filter id="bg" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 .16  0 0 0 0 .15  0 0 0 0 .14  .16 0 0 0 -.03"/></filter>
+<marker id="ba" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#0f766e"/></marker>
+</defs><rect width="1200" height="600" fill="#FAF7F2"/>
+<g>
+<path d="M120 170 L310 60 L500 170 Z" fill="#F2ECE0" stroke="#2A2725" stroke-width="4" stroke-linejoin="round"/>
+<rect x="190" y="90" width="220" height="170" rx="6" fill="#FFFDF8" stroke="#2A2725" stroke-width="4" transform="rotate(-8 300 175)"/>
+<g stroke-width="9" stroke-linecap="round" transform="rotate(-8 300 175)"><line x1="215" y1="125" x2="330" y2="125" stroke="#CC785C"/><line x1="215" y1="155" x2="380" y2="155" stroke="#E6DFD2"/></g>
+<g fill="#FFFDF8" stroke="#CC785C" stroke-width="4"><rect x="470" y="70" width="44" height="56" rx="4" transform="rotate(14 492 98)"/><rect x="545" y="28" width="38" height="48" rx="4" transform="rotate(-10 564 52)"/><rect x="600" y="96" width="32" height="40" rx="4" transform="rotate(22 616 116)"/></g>
+<rect x="120" y="170" width="380" height="240" rx="14" fill="#FFFDF8" stroke="#2A2725" stroke-width="4"/>
+<path d="M120 410 L285 290 M500 410 L335 290" stroke="#2A2725" stroke-width="4" stroke-linecap="round"/>
+<rect x="700" y="170" width="380" height="240" rx="14" fill="#FFFDF8" stroke="#2A2725" stroke-width="4"/>
+<path d="M700 410 L865 290 M1080 410 L915 290" stroke="#2A2725" stroke-width="4" stroke-linecap="round"/>
+<path d="M704 174 L890 300 L1076 174" fill="#F2ECE0" stroke="#2A2725" stroke-width="4" stroke-linejoin="round"/>
+<circle cx="890" cy="300" r="50" fill="#A35A41"/><circle cx="890" cy="300" r="34" fill="none" stroke="#CC785C" stroke-width="4"/>
+<path d="M872 300 l12 12 l22 -26" fill="none" stroke="#FAF7F2" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<text x="310" y="448" text-anchor="middle" font-size="22" font-weight="600" letter-spacing="3" fill="#58524C">PRIVÉ-ACCOUNT</text>
+<text x="310" y="538" text-anchor="middle" font-family="'Source Serif 4', Georgia, serif" font-size="76" font-weight="700">open</text>
+<text x="890" y="448" text-anchor="middle" font-size="22" font-weight="600" letter-spacing="3" fill="#58524C">ZAKELIJK ACCOUNT</text>
+<text x="890" y="538" text-anchor="middle" font-family="'Source Serif 4', Georgia, serif" font-size="76" font-weight="700" fill="#0f766e">verzegeld</text>
+<rect width="1200" height="600" filter="url(#bg)"/></svg>

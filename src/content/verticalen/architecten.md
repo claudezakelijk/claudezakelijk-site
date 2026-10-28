@@ -1,6 +1,6 @@
 ---
 title: "Claude voor architecten"
-titleTag: "Claude voor architect en ingenieursbureau | ClaudeZakelijk"
+titleTag: "Claude voor architect en ingenieursbureau | Implementeren.ai"
 metaDescription: "Hoe architectenbureaus Claude inzetten voor PvE-documenten, bouwrapportages en bestekken. BNA-conform, AVG-veilig."
 h1: "Claude voor architect en ingenieursbureau"
 targetKeywords:
@@ -27,7 +27,7 @@ faq:
   - question: "Kan Claude technische bestekken schrijven?"
     answer: "Claude genereert conceptbestekken op basis van je input: materiaalspecificaties, NEN-normen en eerder gebruikte bestekteksten. De architect controleert en tekent af. Claude vervangt geen bestekschrijver, maar bespaart 60 tot 70% van het schrijfwerk door herhalende passages en standaardbepalingen over te nemen uit eerdere projecten."
   - question: "Is Claude-gebruik veilig voor vertrouwelijke bouwprojecten?"
-    answer: "Claude (Anthropic) bewaart geen prompts na de sessie bij zakelijk gebruik via de API. Voor gevoelige projectgegevens adviseren wij pseudonimisering: vervang projectnamen en adressen door codes. Wij bij ClaudeZakelijk helpen bureaus die scheiding in te richten, conform de AVG en BNA-richtlijnen."
+    answer: "Claude (Anthropic) bewaart geen prompts na de sessie bij zakelijk gebruik via de API. Voor gevoelige projectgegevens adviseren wij pseudonimisering: vervang projectnamen en adressen door codes. Wij bij Implementeren.ai helpen bureaus die scheiding in te richten, conform de AVG en BNA-richtlijnen."
   - question: "Hoeveel tijd bespaart Claude bij een Programma van Eisen?"
     answer: "Op basis van onze projecten: 3 tot 5 uur per PvE-document. De winst zit in het samenvoegen van klantgesprekken, referentieprojecten en normverwijzingen tot een gestructureerd concept. Bij 30 projecten per jaar is dat 90 tot 150 uur besparing."
   - question: "Werkt Claude met Revit, ArchiCAD of BIM-software?"
@@ -36,7 +36,7 @@ areaServed: NL
 brancheOrganisatie: BNA
 ---
 
-Claude voor architect en ingenieursbureau begint waar het meeste tijd verloren gaat: bij het schrijven. Programma's van Eisen, bouwrapportages, klantbrieven, bestekken en aanbestedingsdocumenten. Stuk voor stuk teksten die patronen volgen. Claude versnelt dat patroonmatige schrijfwerk. Niet door de architect te vervangen, maar door concepten te leveren die je beoordeelt en bijschaaft. Wij bij ClaudeZakelijk begeleiden architectenbureaus door het hele traject.
+Claude voor architect en ingenieursbureau begint waar het meeste tijd verloren gaat: bij het schrijven. Programma's van Eisen, bouwrapportages, klantbrieven, bestekken en aanbestedingsdocumenten. Stuk voor stuk teksten die patronen volgen. Claude versnelt dat patroonmatige schrijfwerk. Niet door de architect te vervangen, maar door concepten te leveren die je beoordeelt en bijschaaft. Wij bij Implementeren.ai begeleiden architectenbureaus door het hele traject.
 
 ## Claude voor architectenbureau: Programma van Eisen opstellen
 
@@ -96,7 +96,7 @@ De ROI hangt af van de bureaugrootte en het projectvolume. Op basis van onze imp
 - **Vergaderverslagen:** 40 minuten per vergadering. Bij 5 vergaderingen per week: 170 uur per jaar.
 - **Aanbestedingen:** 1,5 tot 2,5 dag per inschrijving. Bij 8 aanbestedingen: 12 tot 20 dagen per jaar.
 
-Wij bij ClaudeZakelijk begeleiden architecten- en ingenieursbureaus door het hele traject. Claude Pro kost 20 dollar per gebruiker per maand. Een middelgroot bureau (5 tot 15 medewerkers) haalt met drie workflows een besparing van 500 tot 1.000 uur per jaar. De implementatie kost 2 tot 4 weken. De terugverdientijd is minder dan een maand.
+Wij bij Implementeren.ai begeleiden architecten- en ingenieursbureaus door het hele traject. Claude Pro kost 20 dollar per gebruiker per maand. Een middelgroot bureau (5 tot 15 medewerkers) haalt met drie workflows een besparing van 500 tot 1.000 uur per jaar. De implementatie kost 2 tot 4 weken. De terugverdientijd is minder dan een maand.
 
 ## Veelgestelde vragen
 
@@ -106,7 +106,7 @@ Claude genereert conceptbestekken op basis van je input: materiaalspecificaties,
 
 ### Is Claude-gebruik veilig voor vertrouwelijke bouwprojecten?
 
-Claude (Anthropic) bewaart geen prompts na de sessie bij zakelijk gebruik via de API. Voor gevoelige projectgegevens adviseren wij pseudonimisering: vervang projectnamen en adressen door codes. Wij bij ClaudeZakelijk helpen bureaus die scheiding in te richten, conform de AVG en BNA-richtlijnen.
+Claude (Anthropic) bewaart geen prompts na de sessie bij zakelijk gebruik via de API. Voor gevoelige projectgegevens adviseren wij pseudonimisering: vervang projectnamen en adressen door codes. Wij bij Implementeren.ai helpen bureaus die scheiding in te richten, conform de AVG en BNA-richtlijnen.
 
 ### Hoeveel tijd bespaart Claude bij een Programma van Eisen?
 

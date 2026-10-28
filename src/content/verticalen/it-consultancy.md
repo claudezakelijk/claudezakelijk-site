@@ -1,6 +1,6 @@
 ---
 title: "Claude voor IT consultancy"
-titleTag: "Claude voor IT consultancy en adviseurs | ClaudeZakelijk"
+titleTag: "Claude voor IT consultancy en adviseurs | Implementeren.ai"
 metaDescription: "Hoe IT-consultants Claude inzetten voor klantgesprekken, proposals en kennismanagement."
 h1: "Claude voor IT consultancy en adviseurs"
 targetKeywords:
@@ -104,7 +104,7 @@ De ROI voor een IT-consultancybureau (3 tot 15 consultants):
 - **Statusrapporten:** 250 tot 400 uur per jaar bij 5 projecten met wekelijkse rapportages.
 - **Claude Pro licenties:** 20 dollar per consultant per maand.
 
-Wij bij ClaudeZakelijk hebben dit traject zelf doorlopen. De implementatie kost 2 tot 4 weken. Een bureau met 5 consultants haalt 200 tot 300 uur besparing per maand. Tegen een gemiddeld consultancy-uurtarief van 120 tot 175 euro is de ROI niet in weken maar in dagen zichtbaar. De terugverdientijd: minder dan een week.
+Wij bij Implementeren.ai hebben dit traject zelf doorlopen. De implementatie kost 2 tot 4 weken. Een bureau met 5 consultants haalt 200 tot 300 uur besparing per maand. Tegen een gemiddeld consultancy-uurtarief van 120 tot 175 euro is de ROI niet in weken maar in dagen zichtbaar. De terugverdientijd: minder dan een week.
 
 ChatGPT levert vergelijkbare conceptteksten, maar Claude's grotere context window en Claude Code-integratie geven IT-consultants een voorsprong. Je werkt in je development-omgeving, niet in een chatvenster.
 

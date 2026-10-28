@@ -1,6 +1,6 @@
 ---
 title: "Claude koppelen aan Slack"
-titleTag: "Claude Slack koppelen voor teams | ClaudeZakelijk"
+titleTag: "Claude Slack koppelen voor teams | Implementeren.ai"
 metaDescription: "Hoe je Claude in Slack inzet voor teamworkflows, vraag-baken en automatische samenvattingen."
 h1: "Claude Slack koppelen: AI voor je team"
 targetKeywords:

@@ -1,135 +1,180 @@
 ---
-title: "Shadow AI beleid MKB"
-titleTag: "Shadow AI MKB: hoe je grip krijgt op AI-gebruik | ClaudeZakelijk"
-metaDescription: "Medewerkers gebruiken Claude en ChatGPT zonder beleid. Zo krijg je grip zonder AI te verbieden."
-h1: "Shadow AI MKB: hoe je grip krijgt"
+title: "Shadow AI in het MKB: grip op AI-gebruik van medewerkers"
+titleTag: "Shadow AI MKB: grip op AI-gebruik van medewerkers | Implementeren.ai"
+metaDescription: "Medewerkers gebruiken Claude of ChatGPT op eigen houtje. Wat de AP en de AI Act ervan vinden en hoe een kort AI-beleid grip geeft. Stand: 27 oktober 2026."
+h1: "Shadow AI in het MKB: zo krijg je grip op het AI-gebruik van je medewerkers"
 targetKeywords:
-  - claude shadow ai
   - shadow ai mkb
-  - ai beleid medewerkers
-wordCountTarget: 1500
+  - shadow ai
+  - ai-beleid medewerkers
+  - claude shadow ai
+wordCountTarget: 1700
 priority: 1
 tier: 7
 cases:
   - automation-audit
 internalLinks:
-  - /compliance/ai-beleid-template
+  - /compliance
   - /compliance/ai-act-mkb
-  - /compliance/hallucinatie-voorkomen
-  - /compliance/dpia-stappenplan
+  - /compliance/anthropic-dpa
+  - /compliance/zero-data-retention
+  - /compliance/is-claude-veilig
+  - /prijs/pro-vs-team-vs-enterprise
+  - /cases/automation-audit
+  - /claude-readiness-scan
 schemaTypes:
   - Article
   - FAQPage
+  - BreadcrumbList
 author: camiel
 competitors:
   - computable.nl
   - managementsite.nl
   - kvk.nl
-status: draft
+disclaimer: juridisch
+status: review
 publishDate: null
-updatedDate: null
+updatedDate: 2026-10-27
 changelogLine: null
+reviewedBy: null
+reviewedDate: null
+kortAntwoord: "Shadow AI is AI-gebruik door medewerkers buiten het zicht van de organisatie, zoals klantdata in een privéaccount van ChatGPT of Claude. Volgens de Autoriteit Persoonsgegevens is dat een datalek zodra er persoonsgegevens in gaan. De oplossing is een zakelijk abonnement met verwerkersovereenkomst plus een kort AI-beleid. Stand: 27 oktober 2026."
+bronnen:
+  - titel: "Autoriteit Persoonsgegevens, Caution: use of AI chatbot may lead to data breaches (6 augustus 2024)"
+    url: "https://www.autoriteitpersoonsgegevens.nl/en/current/caution-use-of-ai-chatbot-may-lead-to-data-breaches"
+    geraadpleegd: "27 oktober 2026"
+  - titel: "Autoriteit Persoonsgegevens, De AVG in het kort (boetes)"
+    url: "https://autoriteitpersoonsgegevens.nl/themas/basis-avg/avg-algemeen/de-avg-in-het-kort"
+    geraadpleegd: "27 oktober 2026"
+  - titel: "Europese Commissie, AI Act Service Desk: artikel 4 (AI-geletterdheid), geconsolideerde tekst per 27 juli 2026"
+    url: "https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-4"
+    geraadpleegd: "27 oktober 2026"
+  - titel: "Europese Commissie, AI Act Service Desk: tijdlijn invoering AI Act"
+    url: "https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act"
+    geraadpleegd: "27 oktober 2026"
+  - titel: "Europese Commissie, AI Omnibus treedt in werking (27 juli 2026)"
+    url: "https://digital-strategy.ec.europa.eu/en/news/ai-omnibus-enters-force"
+    geraadpleegd: "27 oktober 2026"
+  - titel: "Anthropic Privacy Center, wordt mijn data gebruikt voor training? (18 augustus 2026)"
+    url: "https://privacy.claude.com/en/articles/7996868-is-my-data-used-for-training"
+    geraadpleegd: "27 oktober 2026"
+  - titel: "Anthropic Privacy Center, de DPA is onderdeel van de Commercial Terms (16 maart 2026)"
+    url: "https://privacy.claude.com/en/articles/7996862-how-do-i-view-and-sign-your-data-processing-addendum-dpa"
+    geraadpleegd: "27 oktober 2026"
+  - titel: "Anthropic, Updates to Consumer Terms and Privacy Policy (28 augustus 2025)"
+    url: "https://www.anthropic.com/news/updates-to-our-consumer-terms"
+    geraadpleegd: "27 oktober 2026"
 faq:
   - question: "Wat is shadow AI precies?"
-    answer: "Shadow AI is het gebruik van AI-tools door medewerkers zonder medeweten of goedkeuring van de organisatie. Denk aan een medewerker die klantmails door ChatGPT haalt om sneller te antwoorden, of een financieel medewerker die Excel-formules laat genereren door Claude met bedrijfsdata. Het probleem is niet dat ze AI gebruiken. Het probleem is dat niemand weet welke data erin gaat en er geen beleid voor bestaat."
-  - question: "Hoe ontdek ik shadow AI in mijn organisatie?"
-    answer: "Vraag het. Niet in een vergadering waar niemand durft te antwoorden, maar anoniem of in een-op-een gesprekken. Vraag niet of ze AI gebruiken, maar welke AI-tools ze op hun laptop hebben staan. Controleer ook je netwerkverkeer: DNS-queries naar api.openai.com, anthropic.com en gemini.google.com geven een indicatie. En kijk naar browserextensies: veel AI-tools draaien als extensie."
+    answer: "Shadow AI is het gebruik van AI-tools door medewerkers zonder dat de organisatie het weet of heeft goedgekeurd. Een voorbeeld is een medewerker die klantmails via een privéaccount van ChatGPT of Claude laat beantwoorden. Het gebruik zelf is vaak nuttig. Het risico zit in de data die erin gaat en in output die niemand controleert."
+  - question: "Is shadow AI een datalek volgens de AVG?"
+    answer: "Vaak wel. De Autoriteit Persoonsgegevens schrijft dat een medewerker die op eigen initiatief en tegen de afspraken in persoonsgegevens in een AI-chatbot invoert, een datalek veroorzaakt. Je moet zo'n lek dan in veel gevallen melden bij de AP en bij de mensen om wie het gaat."
   - question: "Moet ik AI verbieden totdat ik een beleid heb?"
-    answer: "Nee. Een verbod duwt AI-gebruik ondergronds, precies het tegenovergestelde van wat je wilt. Communiceer dat je bezig bent met een beleid en geef in de tussentijd drie simpele regels: geen persoonsgegevens invoeren, geen bedrijfsgevoelige financiële data invoeren, en geen AI-output gebruiken zonder controle. Dat is beter dan een verbod dat niemand naleeft."
-  - question: "Welke risico's loopt mijn bedrijf bij shadow AI?"
-    answer: "Vier concrete risico's. AVG-overtredingen als persoonsgegevens in een AI-tool worden verwerkt zonder verwerkersovereenkomst. Datalekken als bedrijfsgevoelige informatie in trainingsdata van een model terechtkomt. Kwaliteitsproblemen als ongevalideerde AI-output in klantcommunicatie of rapportages belandt. En vanaf 2 augustus 2026 overtreding van de EU AI Act als je niet kunt aantonen dat medewerkers AI-geletterd zijn."
+    answer: "Dat hoeft niet, en het werkt meestal slecht. Wie AI nuttig vindt, blijft het vaak gewoon gebruiken, alleen minder zichtbaar. Geef in de tussentijd twee regels mee: geen persoonsgegevens of vertrouwelijke bedrijfsdata in een privéaccount, en geen AI-tekst naar buiten zonder dat een mens hem heeft gecontroleerd."
+  - question: "Wat vraagt de AI Act van mijn bedrijf als medewerkers AI gebruiken?"
+    answer: "Artikel 4 vraagt dat je maatregelen neemt om de AI-geletterdheid van je medewerkers te ondersteunen. Sinds de AI Omnibus van juli 2026 staat erbij dat je geen bepaald niveau per persoon hoeft te garanderen. Volgens de Europese Commissie begint het toezicht hierop vanaf 2 augustus 2026."
+  - question: "Traint Anthropic op wat mijn medewerkers in Claude invoeren?"
+    answer: "Op een zakelijk product (Claude Team, Enterprise of de API) gebruikt Anthropic je invoer en output standaard niet voor training, behalve feedback die je zelf instuurt. Bij Free, Pro en Max beslist de gebruiker dat met een instelling. Staat die aan, dan bewaart Anthropic de data tot vijf jaar."
 deadline: null
 hasTemplate: false
 ---
 
-Shadow AI MKB is een groeiend probleem dat de meeste bedrijfsleiders onderschatten. Je medewerkers gebruiken Claude, ChatGPT, Gemini of Copilot. Sommigen al maanden. Niet omdat ze kwaad willen, maar omdat het hun werk sneller maakt. Het probleem: jij weet niet welke data erin gaat, er is geen ai beleid medewerkers, en je bent niet compliant met de AVG of de EU AI Act. Bij ClaudeZakelijk zien we dit bij vrijwel elke organisatie die we begeleiden met Claude Code. De oplossing is niet verbieden. De oplossing is formaliseren.
+<!--
+  Bronnen voor "Shadow AI in het MKB" (geverifieerd 27 oktober 2026, zie bronnen in de frontmatter):
+  - AP-waarschuwing 6 aug 2024: datalek bij invoer persoonsgegevens tegen afspraken in; huisartsenpraktijk en telecombedrijf;
+    beleidsmatig gebruik geen datalek maar vaak niet toegestaan; meldplicht in veel gevallen.
+  - AVG-boete: AP "De AVG in het kort": maximaal 20 miljoen euro of 4% van de wereldwijde jaaromzet.
+  - AI Act art. 4: tekst na Digital Omnibus (geconsolideerd per 27 juli 2026), "does not require ... guarantee any specific level".
+    Tijdlijn Service Desk: art. 4 sinds 2 feb 2025, handhaving (o.a. AI-geletterdheid) vanaf 2 aug 2026, bijlage III 2 dec 2027.
+  - Anthropic: geen training op commerciële producten (Privacy Center, 18 aug 2026); DPA met SCC's automatisch in Commercial Terms
+    (16 mrt 2026); consumentenaccounts: training als instelling aan staat, dan 5 jaar retentie, anders 30 dagen (28 aug 2025).
+  - Ervaringspassage komt uitsluitend uit src/content/cases/automation-audit.md.
+  - Niet gelinkt omdat ze op 27 okt 2026 nog niet live zijn: /compliance/ai-beleid-template (12 nov),
+    /compliance/dpia-stappenplan (2 nov), /compliance/ai-geletterdheid (5 nov). /compliance/hallucinatie-voorkomen bestaat niet live.
+-->
 
-## Waarom shadow AI een probleem is
+Shadow AI in het MKB is AI-gebruik waar de directie geen zicht op heeft. Een medewerker plakt een klantmail in een privéaccount van ChatGPT. Een collega laat Claude een offerte samenvatten op een gratis account. Dat gebeurt meestal met goede bedoelingen, want het werk gaat sneller. Het risico zit in wat er in die tools terechtkomt en wie dat controleert. Op deze pagina lees je wat de Autoriteit Persoonsgegevens (AP) en de EU AI Act erover zeggen, en hoe je met een kort AI-beleid grip krijgt. Alle feiten zijn gecontroleerd op 27 oktober 2026 bij de bronnen onderaan.
 
-Shadow AI is het AI-equivalent van shadow IT: medewerkers die tools gebruiken buiten het zicht van de organisatie. Tien jaar geleden was het Dropbox en WhatsApp. Nu is het Claude, ChatGPT en Gemini. Het patroon is identiek. Medewerkers willen productiever zijn, ontdekken een tool die werkt, en beginnen die te gebruiken zonder te vragen of het mag.
+## Wat is shadow AI, en waarom is het voor het MKB een risico?
 
-Het verschil met shadow IT is de data. Bij Dropbox ging het om bestanden. Bij AI-tools gaat het om de inhoud van die bestanden. Een medewerker die een klantmail door ChatGPT haalt om een antwoord te formuleren, stuurt die klantdata naar OpenAI. Een consultant die een rapport door Claude laat samenvatten, stuurt bedrijfsgevoelige informatie naar Anthropic. Zonder verwerkersovereenkomst. Zonder controle. Zonder dat jij het weet.
+Shadow AI is de AI-variant van shadow IT: medewerkers die tools gebruiken buiten het zicht van de organisatie. Vroeger ging het om een eigen Dropbox of een WhatsApp-groep met klanten. Nu gaat het om AI-chatbots zoals Claude, ChatGPT, Gemini en Copilot.
 
-De Autoriteit Persoonsgegevens heeft in handhavingsbesluit ECLI:NL:RBDHA:2023:19467 bevestigd dat organisaties verantwoordelijk zijn voor dataverwerkingen door hun medewerkers, ook als die verwerkingen niet geautoriseerd waren. "Wij wisten niet dat ze dat deden" is geen verweer.
+Het verschil zit in de inhoud. Wie een document in een AI-tool plakt, stuurt de tekst zelf naar de aanbieder van die tool. Staan daar namen, adressen of klantgegevens in, dan verwerk je persoonsgegevens bij een partij waar je geen afspraken mee hebt. En als een medewerker het antwoord ongecontroleerd naar een klant stuurt, draag jij de gevolgen van een fout in die tekst.
 
-## Wat wij tegenkwamen bij de automation audit
+In een klein bedrijf is de kans groot dat niemand het overzicht heeft. Er is geen IT-afdeling die het netwerkverkeer bekijkt, en mensen kiezen hun eigen tools.
 
-Bij onze [automation audit](/cases/automation-audit) inventariseerden we alle achtergrondprocessen op twee machines. Het resultaat: 38 scripts waarvan niemand een volledig overzicht had. 9 daarvan werkten niet meer correct. Het kostte 2 dagen om alles in kaart te brengen en te herstellen. Niemand wist dat 9 scripts waren gestopt.
+## Wat zegt de Autoriteit Persoonsgegevens over shadow AI?
 
-Die ervaring is direct toepasbaar op shadow AI in het MKB. Het gaat niet om kwade opzet. Het gaat om processen die groeien zonder structuur. Eén medewerker begint met Claude voor e-mails. Een ander ontdekt dat ChatGPT goed werkt voor Excel-formules. Een derde gebruikt Gemini voor vertalingen. Na zes maanden heb je een wildgroei aan AI-gebruik zonder overzicht, zonder beleid, zonder controle.
+De AP waarschuwde op 6 augustus 2024 dat ze meerdere datalekmeldingen had gekregen van organisaties waar medewerkers persoonsgegevens in een AI-chatbot hadden ingevoerd. Twee voorbeelden uit die melding: een medewerker van een huisartsenpraktijk voerde medische gegevens van patiënten in, en bij een telecombedrijf ging een bestand met onder meer klantadressen in een chatbot.
 
-## Van shadow AI naar AI beleid medewerkers
+De AP maakt daarbij een onderscheid dat voor elk MKB-bedrijf relevant is.
 
-De aanpak is niet ingewikkeld. Het vereist drie stappen die je in twee weken kunt uitvoeren.
+Tabel: hoe de AP AI-chatbotgebruik met persoonsgegevens beoordeelt, stand 27 oktober 2026.
 
-### Stap 1: inventariseren zonder te oordelen
+| Situatie | Oordeel van de AP | Wat jij moet doen |
+|----------|-------------------|-------------------|
+| Medewerker voert op eigen initiatief, tegen de afspraken in, persoonsgegevens in | Datalek | In veel gevallen melden bij de AP en bij de betrokkenen |
+| Chatbotgebruik is beleid van de organisatie | Geen datalek, maar vaak niet toegestaan volgens de wet | Zorgen dat de verwerking een grondslag en goede afspraken met de aanbieder heeft |
+| Organisatie heeft niets afgesproken | Beide risico's tegelijk | Afspraken maken over welke tools en welke data mogen |
 
-Stuur geen e-mail met "gebruik je AI-tools zonder toestemming?" Dat levert defensieve reacties op. Doe het anders.
+Het advies van de AP is concreet: maak duidelijke afspraken met medewerkers. Mogen ze chatbots gebruiken? Zo ja, welke data wel en welke niet? De AP noemt ook de mogelijkheid om met de aanbieder af te spreken dat die de ingevoerde data niet opslaat. Bij Anthropic heet dat zero data retention. Wat daar wel en niet onder valt, lees je in [Claude Zero Data Retention: wat het is en wie het krijgt](/compliance/zero-data-retention).
 
-Organiseer een informele sessie van 30 minuten. Noem het geen audit, noem het een "AI-inventarisatie". Begin met het delen dat het management zelf ook AI gebruikt. Normaliseer het. Vraag vervolgens per persoon: welke AI-tools gebruik je, waarvoor, en welke data voer je in?
+Gaat het mis, dan kan de AP boetes opleggen. Het maximum onder de AVG is 20 miljoen euro of 4% van de wereldwijde jaaromzet. Dat is het plafond, de AP bepaalt de hoogte per geval. Voor de bredere AVG-kant van Claude-gebruik lees je [Claude en de AVG](/compliance).
 
-Documenteer alles in een spreadsheet: tool, gebruiker, toepassing, type data. Dit is dezelfde discipline die de EU AI Act vraagt in artikel 4 over AI-geletterdheid. Je begint met inventariseren en je eindigt met een register dat je kunt tonen aan de Autoriteit Persoonsgegevens of een toezichthouder als dat nodig is. Zie onze [AI Act MKB-gids](/compliance/ai-act-mkb) voor de bredere context.
+## Welk Claude-abonnement voorkomt claude shadow AI?
 
-### Stap 2: directe risicobeperking
+Een groot deel van het risico verdwijnt als medewerkers op een zakelijk account werken in plaats van op een privéaccount. Bij Anthropic is het verschil tussen consumenten- en zakelijke producten groot.
 
-Na de inventarisatie weet je waar de risico's zitten. Pak de twee grootste direct aan.
+Tabel: data-afspraken bij privé- en zakelijke Claude-accounts, stand 27 oktober 2026.
 
-**Persoonsgegevens in AI-tools.** Als medewerkers klantdata in Claude of ChatGPT invoeren zonder verwerkersovereenkomst, is dat een AVG-overtreding. De oplossing: schakel over op een zakelijk AI-abonnement met DPA (verwerkersovereenkomst). Bij Claude Team of Enterprise is de DPA standaard inbegrepen. Bij ChatGPT moet je de Enterprise-versie gebruiken. Lees ons [DPIA-stappenplan](/compliance/dpia-stappenplan) als je persoonsgegevens verwerkt.
+| | Claude Free, Pro en Max | Claude Team, Enterprise en API |
+|---|---|---|
+| Voorwaarden | Consumer Terms | Commercial Terms |
+| Training op je invoer | Alleen als de instelling voor modelverbetering aan staat | Standaard niet, behalve feedback die je zelf instuurt |
+| Bewaartermijn | Tot 5 jaar als training aan staat, anders 30 dagen | Volgens de zakelijke afspraken |
+| Verwerkersovereenkomst (DPA) | Nee | Ja, automatisch onderdeel van de Commercial Terms, met standaardcontractbepalingen |
+| Beheer door de organisatie | Nee, het account is van de medewerker | Ja, via een beheerder |
 
-**Ongevalideerde output.** Als medewerkers AI-output gebruiken in klantcommunicatie of rapportages zonder controle, is het een kwestie van tijd voordat een hallucinatie bij een klant terechtkomt. De oplossing: maak duidelijk dat AI-output altijd gecontroleerd wordt voordat het naar buiten gaat. Lees onze gids over [hallucinatie voorkomen](/compliance/hallucinatie-voorkomen) voor concrete validatieprocessen.
+Een privé Pro-account is dus geen oplossing, ook als de medewerker het zelf betaalt. Het account valt onder de consumentenvoorwaarden en jij hebt er geen verwerkersovereenkomst voor. Hoe de DPA van Anthropic in elkaar zit, staat in [Anthropic verwerkersovereenkomst](/compliance/anthropic-dpa). Welk zakelijk plan bij je past, lees je in [Claude Pro, Team of Enterprise](/prijs/pro-vs-team-vs-enterprise). Voor het bredere beveiligingsverhaal: [Is Claude veilig voor bedrijfsdata?](/compliance/is-claude-veilig)
 
-### Stap 3: beleid schrijven en communiceren
+Voor andere AI-tools geldt dezelfde vraag. Kijk per tool of er een zakelijk plan is met een verwerkersovereenkomst en zonder training op je data.
 
-Na de inventarisatie en directe risicovermindering schrijf je een formeel AI-beleid. Niet 20 pagina's die niemand leest. Een werkbaar document van 3 tot 5 pagina's dat vier vragen beantwoordt.
+## Wat vraagt de AI Act sinds de AI Omnibus?
 
-**Welke tools zijn goedgekeurd?** Noem ze bij naam. Claude Team via het bedrijfsaccount. Geen persoonlijke ChatGPT-accounts voor werkgerelateerde taken. Geen onbekende AI-tools zonder goedkeuring.
+Oudere artikelen over shadow AI noemen 2 augustus 2026 als grote deadline voor alles. Dat beeld klopt niet meer. De AI Omnibus is op 27 juli 2026 in werking getreden en heeft een deel van de AI Act gewijzigd.
 
-**Welke data mag erin?** Gebruik een classificatiesysteem. Bij ClaudeZakelijk hanteren we drie zones: groen (publieke informatie, eigen code), oranje (bedrijfsdata na pseudonimisering), rood (persoonsgegevens en financiële data, alleen met specifieke toestemming en verwerkersovereenkomst).
+Voor shadow AI is artikel 4 over AI-geletterdheid het belangrijkste. Dat artikel geldt sinds 2 februari 2025. Na de omnibus luidt de kern: aanbieders en gebruikers van AI-systemen nemen maatregelen om de AI-geletterdheid van hun personeel te ondersteunen. Je houdt rekening met kennis, ervaring en opleiding, en met de context waarin het systeem wordt gebruikt. Je hoeft geen bepaald niveau per persoon te garanderen. De Europese Commissie en de lidstaten moeten vooral het MKB hierbij helpen met praktische voorbeelden.
 
-**Wie is verantwoordelijk?** Wijs een AI-verantwoordelijke aan. Bij klein MKB kan dat de IT-verantwoordelijke of de directeur zijn. Bij groter MKB een aparte rol.
+Volgens de tijdlijn van de Commissie begint het toezicht op onder meer AI-geletterdheid vanaf 2 augustus 2026. De zwaardere regels voor hoog-risicosystemen, zoals AI bij werving of kredietbeoordeling, zijn uitgesteld naar 2 december 2027. Voor een MKB-bedrijf dat Claude gebruikt om teksten en analyses te maken, is artikel 4 dus de verplichting die er nu toe doet. Een medewerker die in het geheim een tool gebruikt, valt buiten elke training en elke afspraak. Daarom raakt shadow AI direct aan artikel 4. De volledige tijdlijn staat in [Claude en de EU AI Act voor het MKB](/compliance/ai-act-mkb).
 
-**Wat doe je bij twijfel?** Een escalatieprocedure van twee regels: als je niet zeker weet of data in een AI-tool mag, vraag het eerst aan de AI-verantwoordelijke. Gebruik ons [AI-beleid template](/compliance/ai-beleid-template) als startpunt.
+## Hoe breng je shadow AI in het MKB in kaart?
 
-## Niet verbieden, formaliseren
+Eerst wil je weten wat er gebeurt. Doe dat zonder dat het als een controle voelt, anders hoor je alleen wat mensen veilig vinden om te zeggen.
 
-De verleiding is groot om AI-gebruik te verbieden totdat je alles hebt uitgewerkt. Doe dat niet. Drie redenen.
+1. Zeg vooraf dat er geen sancties volgen op wat mensen vertellen. Het doel is een overzicht.
+2. Vraag per medewerker welke AI-tools hij of zij gebruikt, met welk account (privé of zakelijk) en waarvoor.
+3. Vraag welk soort data erin gaat: openbare tekst, interne documenten, klantgegevens of financiële cijfers.
+4. Zet alles in één overzicht: tool, account, toepassing, soort data.
+5. Markeer de regels waar persoonsgegevens in een privéaccount terechtkomen. Die pak je als eerste aan.
 
-**Een verbod werkt niet.** Medewerkers die productief zijn met AI gaan niet stoppen omdat het management het verbiedt. Ze gaan het verbergen. Dat is erger dan gecontroleerd gebruik.
+Dat het overzicht vaak groter is dan je denkt, kennen we uit ander werk. Bij een [doorlichting van achtergrondprocessen](/cases/automation-audit) bij een Nederlands softwarebedrijf vond ons team 38 geautomatiseerde processen op twee machines. Niemand had daar een volledig overzicht van, en 9 ervan werkten niet meer. In 2 dagen stond alles gedocumenteerd en gerepareerd. Die case ging over scripts. Bij AI-tools zie je hetzelfde patroon: er komt er steeds één bij, en pas een volledige inventarisatie laat zien wat er draait. Een doorlichting van AI-gebruik bij medewerkers hebben we nog niet als aparte case beschreven.
 
-**Je verliest productiviteit.** AI-tools maken medewerkers meetbaar sneller. Een verbod kost je die productiviteit. Dat is geen luxe, dat is operationeel voordeel.
+## Hoe maak je van shadow AI een AI-beleid voor medewerkers?
 
-**De AI Act vraagt geen verbod.** De EU AI Act vraagt geletterdheid, transparantie en beleid. Niet een ban op AI. Je kunt volledig compliant zijn en tegelijkertijd AI intensief gebruiken. De wet vraagt dat je het bewust en gedocumenteerd doet.
+Met het overzicht in de hand schrijf je een kort beleid. Een paar pagina's die mensen echt lezen, werken beter dan een dik document. Beantwoord in elk geval deze vragen:
 
-## Shadow AI MKB: de kosten van niets doen
+1. **Welke tools mogen?** Noem ze bij naam, met het account. Bijvoorbeeld: Claude via het zakelijke Team-account, geen privéaccounts voor werk.
+2. **Welke data mag erin?** Deel je data in categorieën in. Openbare informatie mag overal in. Interne bedrijfsdata alleen in de goedgekeurde zakelijke tool. Persoonsgegevens alleen als daar een grondslag en een verwerkersovereenkomst voor is, en liefst gepseudonimiseerd.
+3. **Wie controleert de output?** Leg vast dat AI-tekst die naar een klant of de buitenwereld gaat altijd door een mens is gelezen.
+4. **Wie is aanspreekpunt?** Wijs één persoon aan. In een klein bedrijf is dat vaak de directeur of degene die IT regelt.
+5. **Wat doe je bij twijfel of een fout?** Bij twijfel eerst vragen. Is er toch iets misgegaan met persoonsgegevens, meld het dan direct intern, zodat jij binnen de termijn een datalek kunt melden.
 
-Shadow AI is niet gratis. Het lijkt goedkoop omdat medewerkers zelf gratis tools gebruiken. Maar de verborgen kosten zijn reeel.
+Vul dit aan met een korte uitleg of training over hoe de tools werken en waar ze fouten maken. Dat is ook je bewijs voor artikel 4 van de AI Act. Een uitgewerkt sjabloon voor zo'n AI-beleid verschijnt binnenkort als apart artikel op deze site.
 
-**Compliance-risico.** De Autoriteit Persoonsgegevens kan boetes opleggen voor ongeautoriseerde dataverwerkingen. De AVG kent boetes tot 20 miljoen euro of 4% van de jaaromzet. Voor MKB zijn die maxima theoretisch, maar de AP heeft in 2023 en 2024 meerdere boetes opgelegd aan kleinere organisaties. Het gaat dan niet om miljoenen, maar om bedragen die een MKB-bedrijf wel degelijk raken.
+## Werkt een verbod op AI-tools?
 
-**Reputatieschade.** Een datalek via een AI-tool die een medewerker op eigen houtje gebruikte, is een PR-nachtmerrie. "Klantdata gelekt via ChatGPT" is een kop die je niet wilt zien. Een incident met ongeautoriseerd AI-gebruik ondermijnt het vertrouwen direct.
+De AP laat de keuze aan jou: je mag AI-chatbots toestaan of liever niet. Een verbod is dus toegestaan. In de praktijk werkt het vaak slecht als medewerkers de tools al nuttig vinden. Ze blijven ze dan gebruiken, alleen minder zichtbaar, en dan heb je juist het datalekrisico waar de AP voor waarschuwt.
 
-**Verborgen inefficiëntie.** Zonder standaard tooling en prompttemplates vindt elke medewerker zelf het wiel uit. Tien medewerkers die ieder op hun eigen manier Claude of ChatGPT gebruiken, zijn samen minder productief dan tien medewerkers met een gestandaardiseerde aanpak. Bij ClaudeZakelijk zien we keer op keer dat formalisering niet alleen veiliger is, maar ook productiever.
+Een zakelijk account met duidelijke regels is meestal de veiligere route. Je weet dan welke tool er wordt gebruikt, en er ligt een verwerkersovereenkomst onder.
 
-## Van shadow naar strategie
-
-Het pad van shadow AI naar gecontroleerd AI-gebruik is korter dan de meeste MKB-directeuren denken. Twee weken voor inventarisatie en directe risicovermindering. Nog twee weken voor beleid en communicatie. Na een maand heb je een werkend systeem dat compliant is met de AVG (GDPR) en klaar voor de EU AI Act-deadline van 2 augustus 2026.
-
-Bij ClaudeZakelijk hebben wij dit traject doorlopen met onze eigen organisatie en bij klanten. De kennis die we daarbij opdeden, de inventarisatieaanpak, de dataclassificatie, de beleidsstructuur, die stellen we beschikbaar als dienst. Niet omdat het ingewikkeld is. Maar omdat het sneller gaat als iemand het al een keer heeft gedaan.
-
-## Veelgestelde vragen
-
-### Wat is shadow AI precies?
-
-Shadow AI is het gebruik van AI-tools door medewerkers zonder medeweten of goedkeuring van de organisatie. Denk aan een medewerker die klantmails door ChatGPT haalt om sneller te antwoorden, of een financieel medewerker die Excel-formules laat genereren door Claude met bedrijfsdata. Het probleem is niet dat ze AI gebruiken. Het probleem is dat niemand weet welke data erin gaat en er geen beleid voor bestaat.
-
-### Hoe ontdek ik shadow AI in mijn organisatie?
-
-Vraag het. Niet in een vergadering waar niemand durft te antwoorden, maar anoniem of in een-op-een gesprekken. Vraag niet of ze AI gebruiken, maar welke AI-tools ze op hun laptop hebben staan. Controleer ook je netwerkverkeer: DNS-queries naar api.openai.com, anthropic.com en gemini.google.com geven een indicatie. En kijk naar browserextensies: veel AI-tools draaien als extensie.
-
-### Moet ik AI verbieden totdat ik een beleid heb?
-
-Nee. Een verbod duwt AI-gebruik ondergronds, precies het tegenovergestelde van wat je wilt. Communiceer dat je bezig bent met een beleid en geef in de tussentijd drie simpele regels: geen persoonsgegevens invoeren, geen bedrijfsgevoelige financiële data invoeren, en geen AI-output gebruiken zonder controle. Dat is beter dan een verbod dat niemand naleeft.
-
-### Welke risico's loopt mijn bedrijf bij shadow AI?
-
-Vier concrete risico's. AVG-overtredingen als persoonsgegevens in een AI-tool worden verwerkt zonder verwerkersovereenkomst. Datalekken als bedrijfsgevoelige informatie in trainingsdata van een model terechtkomt. Kwaliteitsproblemen als ongevalideerde AI-output in klantcommunicatie of rapportages belandt. En vanaf 2 augustus 2026 overtreding van de EU AI Act als je niet kunt aantonen dat medewerkers AI-geletterd zijn.
+Wil je weten welke AI-toepassingen in jouw organisatie echt iets opleveren voordat je een abonnement en beleid kiest, dan begint dat met de [Claude Readiness Scan](/claude-readiness-scan).

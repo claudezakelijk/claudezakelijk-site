@@ -1,2 +1,3 @@
-# Every PR to main needs approval from one of these code owners who is not the PR author.
+# Code owners of the Implementeren.ai site. Every PR to main needs 2 approvals, at least one
+# from a code owner here who is not the PR author.
 * @maxkwaaste @Camielwits

@@ -1,6 +1,6 @@
 ---
 title: "Claude voor zorginstellingen"
-titleTag: "Claude voor zorginstelling & huisarts | ClaudeZakelijk"
+titleTag: "Claude voor zorginstelling & huisarts | Implementeren.ai"
 metaDescription: "Zorginstellingen gebruiken Claude voor consultverslagen, brieven en onderzoek. NEN-7510, BIG-registratie, AVG-compliant."
 h1: "Claude voor zorginstelling en huisarts"
 targetKeywords:
@@ -37,7 +37,7 @@ areaServed: NL
 brancheOrganisatie: null
 ---
 
-Claude voor zorg is waar privacy en productiviteit op scherp staan. Zorginstellingen en huisartsenpraktijken verwerken de gevoeligste data die er is: medische persoonsgegevens. Claude kan tijd besparen op consultverslagen, brieven aan specialisten, onderzoekssamenvattingen en interne protocollen. Maar alleen als je de dataclassificatie goed inricht. Bij ClaudeZakelijk helpen we zorginstellingen dat te doen.
+Claude voor zorg is waar privacy en productiviteit op scherp staan. Zorginstellingen en huisartsenpraktijken verwerken de gevoeligste data die er is: medische persoonsgegevens. Claude kan tijd besparen op consultverslagen, brieven aan specialisten, onderzoekssamenvattingen en interne protocollen. Maar alleen als je de dataclassificatie goed inricht. Bij Implementeren.ai helpen we zorginstellingen dat te doen.
 
 ## Claude voor zorginstelling: consultverslagen en correspondentie
 
@@ -83,7 +83,7 @@ Zorginstellingen publiceren patientinformatie op hun website. Uitleg over aandoe
 
 Claude genereert patientinformatieteksten op basis van de medische richtlijn. Je voert de NHG-standaard in en Claude schrijft een patientvriendelijke tekst: wat is de aandoening, wat zijn de symptomen, wanneer naar de huisarts, wat is de behandeling. De arts controleert op medische correctheid, de communicatiemedewerker publiceert.
 
-Dit is groene data: generieke medische informatie zonder patientgegevens. Bij ClaudeZakelijk hebben we vergelijkbare contentprojecten gedaan voor andere sectoren. De structuur is altijd dezelfde: bron invoeren, Claude genereert de tekst, de specialist controleert.
+Dit is groene data: generieke medische informatie zonder patientgegevens. Bij Implementeren.ai hebben we vergelijkbare contentprojecten gedaan voor andere sectoren. De structuur is altijd dezelfde: bron invoeren, Claude genereert de tekst, de specialist controleert.
 
 Meertalige patientinformatie is een extra toepassing. In wijken met veel niet-Nederlandstalige patienten genereert Claude dezelfde informatie in het Arabisch, Turks of Engels. De arts controleert de Nederlandse versie, een taalkundige checkt de vertaling. Bij een gezondheidscentrum met 30% niet-Nederlandstalige patienten verbetert dat de therapietrouw en vermindert het de uitval bij behandelingen.
 

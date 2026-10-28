@@ -26,45 +26,64 @@ const breadcrumbs = [{ name: 'Home', url: '/' }, { name: 'Cases', url: '/cases' 
   pad="/cases"
   schema={{ paginaType: 'CollectionPage', hoofdonderwerp: lijstId('/cases'), breadcrumbs, nodes: [itemListNode('/cases', perSector.flatMap((g) => g.cases).map((c) => ({ url: `/cases/${c.id}`, naam: c.data.title })))] }}
 >
-  <div class="hp text-ink-diep bg-papier">
-    <div class="mx-auto max-w-[1040px] px-6 pt-16 pb-24">
-
-      <header class="mx-auto max-w-[720px]">
-        <Broodkruimel items={breadcrumbs} />
-        <p class="mt-6 text-[13px] font-semibold uppercase tracking-[0.1em] text-terracotta">Praktijkvoorbeelden</p>
-        <h1 class="mt-4 font-newsreader font-medium leading-[1.12] tracking-[-0.015em] text-[clamp(34px,5vw,52px)] text-balance">Wat we met Claude gebouwd hebben</h1>
-        <p class="mt-6 text-[clamp(18px,2.4vw,21px)] leading-[1.6] text-ink-2 text-pretty">
-          Geen hypothetische scenario's. Dit zijn echte projecten, met echte resultaten. Elke case beschrijft het probleem, de aanpak en wat het opleverde.
-        </p>
-        <p class="mt-4 text-[15.5px] text-ink-2">Wil je eerst weten wat Claude voor een bedrijf kan? Lees de gids <a href="/gids/claude-voor-mkb" class="link-terra">Claude voor bedrijven en mkb</a>. Wie deze projecten bouwde, lees je bij <a href="/over" class="link-terra">over ons</a>.</p>
-      </header>
-
-      <div class="mt-14 flex flex-col gap-14">
-        {perSector.map(({ sector, cases }) => (
-          <section>
-            <h2 class="font-newsreader font-medium text-[clamp(24px,3.4vw,32px)] leading-[1.2] tracking-[-0.01em] pb-3 border-b border-lijn">{sector}</h2>
-            <div class="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {cases.map((c) => (
-                <CaseKaart
-                  title={c.data.title}
-                  description={c.data.description}
-                  sector={c.data.sector}
-                  duration={c.data.duration}
-                  tools={c.data.tools}
-                  results={c.data.results}
-                  kernwinst={c.data.kernwinst}
-                  slug={c.id}
-                />
-              ))}
-            </div>
-          </section>
-        ))}
-      </div>
-
-      <div class="mt-20">
-        <CtaWarm titel="Herken je een van deze uitdagingen?" secundairLabel="Vraag een intro-gesprek aan" secundairHref="/contact" />
-      </div>
-
+  <header class="v2-artikel-kop">
+    <div class="v2-artikel-kop-binnen">
+      <Broodkruimel items={breadcrumbs} />
+      <p class="v2-chip">Praktijkvoorbeelden</p>
+      <h1 class="v2-artikel-h1">Wat we met Claude gebouwd hebben</h1>
+      <p class="v2-hub-lead">
+        Geen hypothetische scenario's. Dit zijn echte projecten, met echte resultaten. Elke case beschrijft het probleem, de aanpak en wat het opleverde.
+      </p>
+      <p class="v2-hub-noot">Wil je eerst weten wat Claude voor een bedrijf kan? Lees de gids <a href="/gids/claude-voor-mkb">Claude voor bedrijven en mkb</a>. Wie deze projecten bouwde, lees je bij <a href="/over">over ons</a>.</p>
     </div>
+  </header>
+
+  <div class="v2-sectie v2-hub" data-filter>
+    {/* Filter: alleen met JS zichtbaar; zonder JS staan gewoon alle sectoren onder elkaar. */}
+    <div class="v2-filter" role="group" aria-label="Filter op sector" hidden>
+      <button type="button" aria-pressed="true" data-sector="">Alle <span>{allCases.length}</span></button>
+      {perSector.map(({ sector, cases }) => (
+        <button type="button" aria-pressed="false" data-sector={sector}>{sector} <span>{cases.length}</span></button>
+      ))}
+    </div>
+
+    {perSector.map(({ sector, cases }) => (
+      <section class="v2-hub-groep" data-groep={sector}>
+        <h2>{sector}</h2>
+        <div class="v2-case-raster-kaarten">
+          {cases.map((c) => (
+            <CaseKaart
+              title={c.data.title}
+              description={c.data.description}
+              sector={c.data.sector}
+              duration={c.data.duration}
+              tools={c.data.tools}
+              results={c.data.results}
+              kernwinst={c.data.kernwinst}
+              slug={c.id}
+            />
+          ))}
+        </div>
+      </section>
+    ))}
   </div>
+
+  <div class="v2-sectie v2-hub-slot">
+    <CtaWarm titel="Herken je een van deze uitdagingen?" secundairLabel="Vraag een intro-gesprek aan" secundairHref="/contact" />
+  </div>
+
+  <script>
+    const hub = document.querySelector<HTMLElement>('[data-filter]');
+    const balk = hub?.querySelector<HTMLElement>('.v2-filter');
+    if (hub && balk) {
+      balk.hidden = false;
+      const knoppen = Array.from(balk.querySelectorAll<HTMLButtonElement>('button'));
+      const groepen = Array.from(hub.querySelectorAll<HTMLElement>('[data-groep]'));
+      knoppen.forEach((knop) => knop.addEventListener('click', () => {
+        const sector = knop.dataset.sector;
+        knoppen.forEach((k) => k.setAttribute('aria-pressed', String(k === knop)));
+        groepen.forEach((g) => { g.hidden = Boolean(sector) && g.dataset.groep !== sector; });
+      }));
+    }
+  </script>
 </BasisLayout>

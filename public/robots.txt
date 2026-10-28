@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://claudezakelijk.nl/sitemap-index.xml
+Sitemap: https://implementeren.ai/sitemap-index.xml

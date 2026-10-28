@@ -4,15 +4,15 @@ import { claudePrijzen } from '../data/claude-prijzen';
 const plans = claudePrijzen.plannen;
 ---
 <figure class="my-8">
-<div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+<div class="grid gap-3 sm:grid-cols-2">
   {plans.map(plan => (
-    <div class="rounded-lg border border-lijn p-5 bg-papier">
-      <p class="font-serif font-bold text-lg m-0">{plan.naam}</p>
-      <p class="text-xl font-semibold mt-2 text-accent-diep">{plan.prijs}</p>
+    <div class="v2-plan">
+      <p class="v2-plan-naam">{plan.naam}</p>
+      <p class="v2-plan-prijs">{plan.prijs}</p>
       <ul class="mt-4 space-y-2 text-sm text-inkt-zacht">
         {plan.features.map(f => (
           <li class="flex items-start gap-2">
-            <span class="text-teal flex-shrink-0 mt-0.5">&#10003;</span>
+            <span class="text-teal flex-shrink-0 mt-0.5 font-bold">&#10003;</span>
             <span>{f}</span>
           </li>
         ))}

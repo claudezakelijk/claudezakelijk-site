@@ -18,7 +18,7 @@ voorJou: "Geef jij demo's met verzonnen data waar prospects zich weinig bij kunn
 
 ## "Stelt u zich voor dat dit uw data is"
 
-Ons team bouwde dit eerder bij een Nederlands softwarebedrijf. Ons team bouwde dit eerder bij een Nederlands softwarebedrijf. De demo's van dit SaaS-bedrijf hadden een bekend probleem: de demo-data was verzonnen. Fictieve bedrijfsnamen, onrealistische ticketaantallen en scenario's die nergens op sloegen. Een MSP met 200 klanten kreeg een demo te zien met drie klanten en tien tickets. De prospect moest zich er zelf maar bij voorstellen hoe het product er met echte data uit zou zien.
+Ons team bouwde dit eerder bij een Nederlands softwarebedrijf. De demo's van dit SaaS-bedrijf hadden een bekend probleem: de demo-data was verzonnen. Fictieve bedrijfsnamen, onrealistische ticketaantallen en scenario's die nergens op sloegen. Een MSP met 200 klanten kreeg een demo te zien met drie klanten en tien tickets. De prospect moest zich er zelf maar bij voorstellen hoe het product er met echte data uit zou zien.
 
 Een goede demo-omgeving opzetten kostte twee weken handmatig werk: bedrijven aanmaken, tickets vullen, SLA-configuraties instellen, contracten kopiëren. Dat werk begon bij elke nieuwe prospect opnieuw.
 

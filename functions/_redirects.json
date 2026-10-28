@@ -3,6 +3,10 @@
     "naar": "/sitemap-index.xml",
     "status": 301
   },
+  "/og-claudezakelijk.png": {
+    "naar": "/og-implementeren.png",
+    "status": 301
+  },
   "/gids/claude-avg-gdpr-voor-mkb": {
     "naar": "/compliance",
     "status": 301

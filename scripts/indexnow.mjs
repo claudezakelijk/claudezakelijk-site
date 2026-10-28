@@ -14,7 +14,7 @@ import { execFileSync } from 'node:child_process';
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { leesPublicatie, vandaag } from '../src/lib/publicatie.mjs';
 
-const HOST = 'claudezakelijk.nl';
+const HOST = 'implementeren.ai';
 const ORIGIN = `https://${HOST}`;
 const ENDPOINT = 'https://api.indexnow.org/indexnow';
 const MAX_URLS = 10000;

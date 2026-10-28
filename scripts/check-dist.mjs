@@ -60,15 +60,15 @@ for (const f of alle) {
   const adressen = new Set(
     (tekst.match(EMAIL) || [])
       .map((a) => a.toLowerCase())
-      .filter((a) => !a.endsWith('@claudezakelijk.nl') && !GEEN_ADRES.test(a) && !ALLOW.has(a)),
+      .filter((a) => !a.endsWith('@claudezakelijk.nl') && !a.endsWith('@implementeren.ai') && !GEEN_ADRES.test(a) && !ALLOW.has(a)),
   );
   if (adressen.size > (UITZONDERINGEN[f.pad] ?? 0)) fouten.push(`file ${f.pad}: ${adressen.size} email address(es) on an ungated path`);
 }
 
 // 2b. Naam op openbare paden (besluit M7, S3): de openbare site noemt alleen Camiel. Elk
 // tekstbestand, ook JSON-LD, sitemap, robots en manifest. max@claudezakelijk.nl
-// telt ook mee, al is een claudezakelijk.nl-adres in check 2 verder vrijgesteld.
-const NAAM = /kwaasteniet|maxdekwaasteniet|max@claudezakelijk\.nl/i;
+// en max@implementeren.ai tellen ook mee, al is een adres op beide domeinen in check 2 verder vrijgesteld.
+const NAAM = /kwaasteniet|maxdekwaasteniet|max@claudezakelijk\.nl|max@implementeren\.ai/i;
 for (const f of alle) {
   if (!/\.(html|js|mjs|css|json|md|txt|xml|csv|svg|webmanifest)$/i.test(f.pad)) continue;
   if (NAAM.test(readFileSync(f.bestand, 'utf-8'))) fouten.push(`file ${f.pad}: names a person who must not appear on the public site (M7)`);

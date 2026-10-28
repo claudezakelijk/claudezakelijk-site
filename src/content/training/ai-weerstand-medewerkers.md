@@ -42,7 +42,7 @@ faq:
 
 AI weerstand medewerkers is het probleem waar de meeste MKB-bedrijven tegenaan lopen bij de introductie van Claude of andere AI-tools. De licentie is geregeld, de directie is enthousiast, en dan gebeurt er niets. Medewerkers loggen niet in, of loggen in en stoppen na twee dagen. De investering levert niets op. Niet omdat de technologie niet werkt, maar omdat de adoptie vastloopt op menselijke patronen die je kunt herkennen en doorbreken.
 
-Bij ClaudeZakelijk begeleiden we bedrijven door dit proces. We herkennen zes terugkerende patronen van weerstand. Elk patroon vraagt een andere aanpak. In dit artikel beschrijven we alle zes met concrete interventies voor Nederlandse MKB-omgevingen.
+Bij Implementeren.ai begeleiden we bedrijven door dit proces. We herkennen zes terugkerende patronen van weerstand. Elk patroon vraagt een andere aanpak. In dit artikel beschrijven we alle zes met concrete interventies voor Nederlandse MKB-omgevingen.
 
 ## Patroon 1: baanangst
 
@@ -96,7 +96,7 @@ Culturele weerstand doorbreek je niet met training of tools. Je doorbreekt het d
 
 ## Ai change management nederland: de praktische aanpak
 
-AI cultuurverandering bedrijf is geen project met een begin en een eind. Het is een proces dat je in fasen doorloopt. Bij ClaudeZakelijk hanteren we een aanpak van acht weken, ingedeeld in drie fasen.
+AI cultuurverandering bedrijf is geen project met een begin en een eind. Het is een proces dat je in fasen doorloopt. Bij Implementeren.ai hanteren we een aanpak van acht weken, ingedeeld in drie fasen.
 
 ### Fase 1: verkenning en draagvlak (week 1-2)
 
@@ -130,7 +130,7 @@ Hoe weet je of je ai change management nederland-aanpak werkt? Niet door te tell
 
 ## Drie fouten die bedrijven maken bij AI-adoptie
 
-**Te veel tools tegelijk.** Claude, ChatGPT van OpenAI, Copilot van Microsoft, Gemini van Google Workspace, en dan ook nog Cursor voor developers. Kies een tool, word er goed in, en breid pas uit als de basis staat. Bij ClaudeZakelijk adviseren we om te starten met Claude Team als primaire AI-tool voor het hele bedrijf, en Claude Code toe te voegen voor technische teams.
+**Te veel tools tegelijk.** Claude, ChatGPT van OpenAI, Copilot van Microsoft, Gemini van Google Workspace, en dan ook nog Cursor voor developers. Kies een tool, word er goed in, en breid pas uit als de basis staat. Bij Implementeren.ai adviseren we om te starten met Claude Team als primaire AI-tool voor het hele bedrijf, en Claude Code toe te voegen voor technische teams.
 
 **Training overslaan.** "Het is zo intuitief, medewerkers komen er zelf wel uit." Dat is dezelfde drogreden als bij elke andere software-implementatie. Sommige mensen komen er inderdaad zelf uit. Het merendeel niet. De AVG (GDPR) en EU AI Act versterken dit: medewerkers moeten aantoonbaar getraind zijn in het gebruik van AI-systemen. Anthropic biedt via Claude Enterprise uitgebreide onboarding, maar de interne adoptie blijft jouw verantwoordelijkheid.
 

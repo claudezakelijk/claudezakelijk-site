@@ -61,7 +61,7 @@ const cases = defineCollection({
     title: z.string(),
     description: z.string(),
     // Alleen voor <title> en meta description; H1 en intro blijven title/description.
-    // Titel max 48 tekens: met " | ClaudeZakelijk" erachter is dat 65.
+    // Titel max 48 tekens: met " | Implementeren.ai" erachter is dat 67.
     titleTag: z.string().max(48).optional(),
     metaDescription: z.string().max(158).optional(),
     sector: z.string(),

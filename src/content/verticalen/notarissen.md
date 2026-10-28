@@ -173,7 +173,7 @@ Voor de meeste kantoren is Claude Team het startpunt: SSO, centraal beheer en ge
 
 ## Hoe begin je als notariskantoor?
 
-ClaudeZakelijk heeft nog geen notariskantoor begeleid. De aanpak hieronder volgt het KNB-kader en patronen uit cases in andere sectoren.
+Implementeren.ai heeft nog geen notariskantoor begeleid. De aanpak hieronder volgt het KNB-kader en patronen uit cases in andere sectoren.
 
 1. Leg in een AI-beleid vast welke taken buiten en welke binnen een zaak vallen. Ons [AI-beleid-template](/compliance/ai-beleid-template) is een startpunt.
 2. Begin met taken buiten een zaak, zoals een interne kennisbank. Bij een IT-dienstverlener schreven we 13 kennisbankartikelen met 27 screenshots in vijf werkdagen, en het supportteam bespaart ruim 6 uur per week aan herhaalde vragen ([kennisbank-case](/cases/knowledge-base)).

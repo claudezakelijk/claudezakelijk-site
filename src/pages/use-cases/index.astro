@@ -19,7 +19,7 @@ const items = artikelen.map((a) => ({
   pad="/use-cases"
   schema={{ paginaType: 'CollectionPage', hoofdonderwerp: lijstId('/use-cases'), nodes: [itemListNode('/use-cases', items.map((i) => ({ url: i.href, naam: i.titel })))] }}
 >
-  <Container class="pt-16 pb-12">
+  <Container class="pt-12 pb-20" width="max-w-[1288px]">
     <CollectieHub
       label="Use cases"
       titel="Wat je met Claude doet"

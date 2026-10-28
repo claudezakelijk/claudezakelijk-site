@@ -19,7 +19,7 @@ const items = artikelen.map((a) => ({
   pad="/training"
   schema={{ paginaType: 'CollectionPage', hoofdonderwerp: lijstId('/training'), nodes: [itemListNode('/training', items.map((i) => ({ url: i.href, naam: i.titel })))] }}
 >
-  <Container class="pt-16 pb-12">
+  <Container class="pt-12 pb-20" width="max-w-[1288px]">
     <CollectieHub
       label="Training"
       titel="Leer je team met Claude werken"

@@ -42,8 +42,8 @@ const faq = [
     answer: 'Elke gids toont bovenaan wanneer hij is bijgewerkt. Onderaan staan de bronnen, met de datum waarop we ze lazen. Prijzen en abonnementen controleren we elke maand bij Anthropic.',
   },
   {
-    question: 'Is ClaudeZakelijk onderdeel van Anthropic?',
-    answer: 'Nee. ClaudeZakelijk is een onafhankelijk Nederlands adviesbureau. Claude is een product en handelsmerk van Anthropic.',
+    question: 'Is Implementeren.ai onderdeel van Anthropic?',
+    answer: 'Nee. Implementeren.ai is een onafhankelijk Nederlands adviesbureau. Claude is een product en handelsmerk van Anthropic.',
   },
 ];
 const breadcrumbs = [{ name: 'Home', url: '/' }, { name: 'Gidsen', url: '/gids' }];
@@ -54,7 +54,7 @@ const breadcrumbs = [{ name: 'Home', url: '/' }, { name: 'Gidsen', url: '/gids' 
   pad="/gids"
   schema={{ paginaType: 'CollectionPage', hoofdonderwerp: lijstId('/gids'), breadcrumbs, nodes: [itemListNode('/gids', gidsen.map((g) => ({ url: g.href, naam: g.titel }))), faqNode('/gids', faq)] }}
 >
-  <Container class="pt-16 pb-12">
+  <Container class="pt-12 pb-20" width="max-w-[1288px]">
     <Broodkruimel items={breadcrumbs} />
     <div class="mt-6">
     <CollectieHub
@@ -66,7 +66,7 @@ const breadcrumbs = [{ name: 'Home', url: '/' }, { name: 'Gidsen', url: '/gids' 
     />
     </div>
 
-    <div class="my-10 overflow-x-auto">
+    <div class="my-12 v2-tabelkaart v2-hubtabel">
       <table class="w-full text-sm border-collapse">
         <caption class="caption-top text-left text-sm text-inkt-zacht pb-2">Alle gidsen, stand oktober 2026</caption>
         <thead>
@@ -79,7 +79,7 @@ const breadcrumbs = [{ name: 'Home', url: '/' }, { name: 'Gidsen', url: '/gids' 
         <tbody>
           {gidsen.map((g) => (
             <tr class="border-b border-lijn">
-              <th scope="row" class="p-3 text-left font-medium"><a href={g.href} class="text-accent-diep">{g.titel}</a></th>
+              <th scope="row" class="p-3 text-left font-medium"><a href={g.href} >{g.titel}</a></th>
               <td class="p-3 text-inkt-zacht">{g.vraag}</td>
               <td class="p-3 text-inkt-zacht">{g.bijgewerkt}</td>
             </tr>

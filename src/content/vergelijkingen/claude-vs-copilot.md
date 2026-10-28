@@ -29,7 +29,7 @@ status: published
 publishDate: 2026-10-02
 updatedDate: null
 changelogLine: null
-kortAntwoord: "Copilot past bij kleine versnellingen binnen Word, Excel, Outlook en Teams. ClaudeZakelijk kiest Claude voor het zware denk- en schrijfwerk, zoals offertes, rapporten en lange documenten. Copilot voor bedrijven kost 18,20 euro per gebruiker per maand bovenop Microsoft 365. Claude Team kost 20 dollar bij jaarbetaling (stand 2 oktober 2026). Test beide op drie echte taken."
+kortAntwoord: "Copilot past bij kleine versnellingen binnen Word, Excel, Outlook en Teams. Implementeren.ai kiest Claude voor het zware denk- en schrijfwerk, zoals offertes, rapporten en lange documenten. Copilot voor bedrijven kost 18,20 euro per gebruiker per maand bovenop Microsoft 365. Claude Team kost 20 dollar bij jaarbetaling (stand 2 oktober 2026). Test beide op drie echte taken."
 bronnen:
   - titel: "Microsoft, prijzen van Microsoft 365 Copilot voor bedrijven"
     url: "https://www.microsoft.com/nl-nl/microsoft-365-copilot/pricing"

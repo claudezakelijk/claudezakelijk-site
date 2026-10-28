@@ -11,7 +11,7 @@ import { fileURLToPath } from 'node:url';
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 process.chdir(ROOT);
 const { isZakelijkPad } = await import('../src/data/indexering.mjs');
-const SITE = 'https://claudezakelijk.nl';
+const SITE = 'https://implementeren.ai';
 const DIST = join(ROOT, 'dist');
 const args = process.argv.slice(2);
 const alleenPad = args.includes('--pad') ? args[args.indexOf('--pad') + 1] : null;
@@ -122,7 +122,7 @@ for (const pg of paginas.filter((x) => !x.alleenIds)) {
     }
   }
   const ws = get(`${SITE}/#website`);
-  if (!ws || ws.name !== 'ClaudeZakelijk' || ws.url !== `${SITE}/` || !Array.isArray(ws.alternateName)) fout(p, 'WebSite-node ontbreekt of mist name/url/alternateName');
+  if (!ws || ws.name !== 'Implementeren.ai' || ws.url !== `${SITE}/` || !Array.isArray(ws.alternateName)) fout(p, 'WebSite-node ontbreekt of mist name/url/alternateName');
 
   // Paginanode
   const pagina = graph.filter((n) => typen(n).some((t) => PAGINA_TYPEN.includes(t)) && n['@id'] === canonical);

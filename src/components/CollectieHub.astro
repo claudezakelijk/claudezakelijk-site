@@ -33,30 +33,29 @@ const {
   items,
 } = Astro.props;
 ---
-<p class="text-xs uppercase tracking-widest text-inkt-zacht reveal-target">{label}</p>
-<h1 class="mt-3 text-[length:var(--text-h1)] reveal-target">{titel}</h1>
-<p class="mt-4 text-lg text-inkt-zacht max-w-2xl reveal-target">{intro}</p>
+<div class="v2-hub-kop">
+  <p class="v2-chip">{label}</p>
+  <h1 class="v2-artikel-h1">{titel}</h1>
+  <p class="v2-hub-lead">{intro}</p>
+</div>
 
 {items.length === 0 ? (
   <p class="mt-10 text-inkt-zacht reveal-target">{leegTekst}</p>
 ) : (
-  <div class="mt-10 grid gap-6 md:grid-cols-2">
+  <div class="v2-hub-kaarten">
     {items.map((item) => (
-      <a
-        href={item.href}
-        class="no-underline block rounded-lg border border-lijn bg-papier p-6 card-shadow reveal-target"
-      >
-        <div class="flex items-center gap-3">
-          <span class="text-xs uppercase tracking-widest text-inkt-zacht bg-papier-dieper rounded-full px-3 py-1">{label}</span>
+      <a href={item.href} class="v2-hubkaart reveal-target">
+        <div class="v2-casekaart-meta">
+          <span>{label}</span>
           {item.datum && (
-            <time class="text-xs text-inkt-zacht" datetime={item.datum.toISOString()}>
+            <time datetime={item.datum.toISOString()}>
               {item.datum.toLocaleDateString('nl-NL', { day: 'numeric', month: 'long', year: 'numeric' })}
             </time>
           )}
         </div>
-        <h2 class="mt-3 font-serif text-xl font-bold text-inkt">{item.titel}</h2>
-        <p class="mt-2 text-sm text-inkt-zacht">{item.beschrijving}</p>
-        <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-accent-donkerst">{leesTekst}<span class="cta-arrow">&rarr;</span></span>
+        <h2>{item.titel}</h2>
+        <p>{item.beschrijving}</p>
+        <span class="v2-hubkaart-lees">{leesTekst}<span class="cta-arrow">&rarr;</span></span>
       </a>
     ))}
   </div>

@@ -1,6 +1,6 @@
 ---
 title: "Claude voor hypotheekadviseurs"
-titleTag: "Claude voor hypotheekadviseur en financieel adviseur | ClaudeZakelijk"
+titleTag: "Claude voor hypotheekadviseur en financieel adviseur"
 metaDescription: "Hoe hypotheekadviseurs Claude inzetten voor klantdossiers, NHG-checks en marktupdates. AFM-compliant, AVG-veilig."
 h1: "Claude voor hypotheekadviseur en financieel adviseur"
 targetKeywords:
@@ -33,7 +33,7 @@ areaServed: NL
 brancheOrganisatie: null
 ---
 
-Claude voor hypotheekadviseur en financieel adviseur richt zich op het schrijfwerk rondom het adviesproces: klantdossiers opbouwen, correspondentie met geldverstrekkers, NHG-documentatie voorbereiden, marktupdates samenvatten, en klantrapportages schrijven. Hypotheekadviseurs besteden 40 tot 50% van hun tijd aan documentatie. Claude brengt dat terug. Wij bij ClaudeZakelijk begeleiden advieskantoren door het hele implementatietraject.
+Claude voor hypotheekadviseur en financieel adviseur richt zich op het schrijfwerk rondom het adviesproces: klantdossiers opbouwen, correspondentie met geldverstrekkers, NHG-documentatie voorbereiden, marktupdates samenvatten, en klantrapportages schrijven. Hypotheekadviseurs besteden 40 tot 50% van hun tijd aan documentatie. Claude brengt dat terug. Wij bij Implementeren.ai begeleiden advieskantoren door het hele implementatietraject.
 
 ## Claude voor hypotheekadviseur: klantdossiers opbouwen
 
@@ -59,7 +59,7 @@ Na het adviesgesprek stuur je een adviesbevestiging. Bij acceptatie een felicita
 
 Je selecteert de fase (orienterend gesprek, advies uitgebracht, aanvraag ingediend, goedgekeurd, passeren), Claude schrijft de bijbehorende mail aan de klant. De toon is professioneel en persoonlijk. De adviseur controleert en verstuurt. Bij 15 trajecten per maand met gemiddeld 6 contactmomenten bespaar je 7 tot 10 uur per maand aan e-mailverkeer.
 
-Bij kantoren met meerdere adviseurs zorgt Claude voor consistente communicatie. Elke klant krijgt dezelfde kwaliteit correspondentie, ongeacht welke adviseur het traject begeleidt. Dat versterkt de merkbeleving en voorkomt miscommunicatie. Bij ClaudeZakelijk zetten we die e-mailflows op met vaste templates per fase. De integratie werkt met Microsoft Outlook en Teams: de adviseur stuurt de fase-informatie, Claude genereert de mail, de medewerker verstuurt via Outlook. ChatGPT en Google Gemini bieden vergelijkbare conceptteksten, maar Claude Code integreert direct in je werkomgeving. Geen apart chatvenster, geen kopieerwerk.
+Bij kantoren met meerdere adviseurs zorgt Claude voor consistente communicatie. Elke klant krijgt dezelfde kwaliteit correspondentie, ongeacht welke adviseur het traject begeleidt. Dat versterkt de merkbeleving en voorkomt miscommunicatie. Bij Implementeren.ai zetten we die e-mailflows op met vaste templates per fase. De integratie werkt met Microsoft Outlook en Teams: de adviseur stuurt de fase-informatie, Claude genereert de mail, de medewerker verstuurt via Outlook. ChatGPT en Google Gemini bieden vergelijkbare conceptteksten, maar Claude Code integreert direct in je werkomgeving. Geen apart chatvenster, geen kopieerwerk.
 
 ## Marktupdates en rentevergelijkingen
 
@@ -96,7 +96,7 @@ De ROI voor een hypotheekadvieskantoor (2 tot 6 adviseurs):
 - **Klantreviews:** 100 tot 200 uur per jaar bij 200 klanten.
 - **Claude Pro licenties:** 20 dollar per adviseur per maand.
 
-Wij bij ClaudeZakelijk begeleiden hypotheekadvieskantoren door het hele traject. De implementatie kost 2 tot 4 weken. Een kantoor met 3 adviseurs haalt 30 tot 50 uur besparing per maand. De terugverdientijd: minder dan twee weken.
+Wij bij Implementeren.ai begeleiden hypotheekadvieskantoren door het hele traject. De implementatie kost 2 tot 4 weken. Een kantoor met 3 adviseurs haalt 30 tot 50 uur besparing per maand. De terugverdientijd: minder dan twee weken.
 
 ## Veelgestelde vragen
 

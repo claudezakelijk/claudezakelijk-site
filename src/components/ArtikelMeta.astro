@@ -20,7 +20,7 @@ const iso = (d: Date) => d.toISOString().slice(0, 10);
 
 // Besluit M7: een auteur met zichtbaar: false wordt nooit bij naam getoond.
 const info = auteurs[author];
-const naam = info?.zichtbaar ? info.naam : 'ClaudeZakelijk';
+const naam = info?.zichtbaar ? info.naam : 'Implementeren.ai';
 const href = info?.overAnker ?? '/over';
 ---
 <div class="text-sm text-inkt-zacht mt-3 space-y-1">

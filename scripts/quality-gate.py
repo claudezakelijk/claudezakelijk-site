@@ -240,7 +240,7 @@ def check_experience_injection(fm: dict, body: str) -> tuple[bool, str]:
 
 def check_entity_density(body: str) -> tuple[bool, str]:
     known = {'Claude', 'Claude Code', 'Claude Pro', 'Claude Team', 'Claude Enterprise',
-             'Anthropic', 'ClaudeZakelijk', 'Proxuma', 'Dxfferent',
+             'Anthropic', 'ClaudeZakelijk', 'Implementeren.ai', 'Proxuma', 'Dxfferent',
              'Exact Online', 'Moneybird', 'Twinfield', 'Yuki', 'Autotask',
              'HubSpot', 'Power BI', 'Microsoft 365', 'Google Workspace', 'Salesforce',
              'NBA', 'NOvA', 'KNGF', 'NVM', 'KvK',

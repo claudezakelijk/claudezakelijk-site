@@ -1,0 +1,65 @@
+---
+// Nagemaakt venster per dienst (redesign v2). Puur versiering: aria-hidden,
+// de echte informatie staat als tekst op de pagina. Voorbeeldteksten ter
+// goedkeuring bij Sweder; geen klantnamen, geen cijferclaims.
+import { site } from '../site';
+
+interface Props { soort: 'scan' | 'rollout' | 'compagnon' | 'route' }
+const { soort } = Astro.props;
+
+// Vijf dimensies uit de Readiness Scan-pagina; de balklengtes zijn een voorbeeld.
+const dimensies = [['Use-case-dichtheid', 84], ['Data-hygiëne', 62], ['Eigenaarschap van processen', 70], ['Veranderingsbereidheid', 48], ['Technische omgeving', 76]] as const;
+const weken = [
+  ['Week 1', 'Omgeving inrichten · kickoff-workshop'],
+  ['Week 2', 'Champions-programma'],
+  ['Week 3', 'Verdiepende workshops · promptbibliotheek'],
+  ['Week 4', 'Coaching · adoptie-readout'],
+] as const;
+const route = [
+  ['1', 'Gratis AI-check', '2 minuten'],
+  ['2', 'Readiness Scan', '1 dag + 1 week'],
+  ['3', 'Claude in 30 dagen', '4 weken'],
+  ['4', 'Claude Compagnon', 'optioneel'],
+] as const;
+---
+<div class:list={['v2-venster', soort === 'compagnon' && 'v2-venster-donker']} aria-hidden="true">
+  <div class="v2-venster-balk"><i></i><i></i><i></i><span class="v2-voorbeeld">Voorbeeld</span></div>
+
+  {soort === 'scan' && (
+    <div class="v2-venster-inhoud">
+      <p class="v2-venster-kop">Readiness-rapport</p>
+      <div class="v2-dimensies">
+        {dimensies.map(([naam, w], i) => (
+          <div class="v2-dimensie"><span>{naam}</span><b><i style={`--w: ${w}%; --d: ${i * 90}ms`}></i></b></div>
+        ))}
+      </div>
+      <div class="v2-venster-voet"><span>Top 3 use cases</span><span>Offertes · Klantmail · Notulen</span></div>
+    </div>
+  )}
+
+  {soort === 'rollout' && (
+    <div class="v2-venster-inhoud">
+      <p class="v2-venster-kop">Claude in 30 dagen</p>
+      <ol class="v2-tijdlijn">
+        {weken.map(([w, t], i) => (<li style={`--d: ${i * 110}ms`}><b>{w}</b><span>{t}</span></li>))}
+      </ol>
+    </div>
+  )}
+
+  {soort === 'compagnon' && (
+    <div class="v2-venster-inhoud v2-gesprek">
+      <div class="v2-bubbel"><small>Medewerker</small>Kan Claude ook onze inkoopfacturen controleren?</div>
+      <div class="v2-bubbel v2-bubbel-ons"><small>Camiel · {site.naam}</small>Ja. We zetten er deze week een vaste prompt voor in de bibliotheek.</div>
+      <div class="v2-agenda"><span>Workshop · deze maand</span><span>Kwartaalreview</span></div>
+    </div>
+  )}
+
+  {soort === 'route' && (
+    <div class="v2-venster-inhoud">
+      <p class="v2-venster-kop">Jouw route</p>
+      <ol class="v2-route">
+        {route.map(([n, naam, duur], i) => (<li style={`--d: ${i * 110}ms`}><b>{n}</b><span>{naam}</span><small>{duur}</small></li>))}
+      </ol>
+    </div>
+  )}
+</div>

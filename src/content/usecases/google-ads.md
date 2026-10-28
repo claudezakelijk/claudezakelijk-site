@@ -1,6 +1,6 @@
 ---
 title: "Claude Google Ads"
-titleTag: "Claude Google Ads: campagnes beheren en optimaliseren | ClaudeZakelijk"
+titleTag: "Claude Google Ads: campagnes beheren en optimaliseren"
 metaDescription: "Claude Google Ads voor campagne-analyse, bidding-optimalisatie en ad copy. Cases met budget waste audit en Claude skills voor advertentiebeheer."
 h1: "Claude Google Ads: campagnes beheren en optimaliseren"
 targetKeywords:
@@ -147,6 +147,6 @@ Let op bij:
 - **Conversiedata met klantinformatie**: als je conversie-tracking klantgegevens meestuurt (naam, e-mail, telefoonnummer), pseudonimiseer die gegevens.
 - **Google Analytics koppelingen**: als je GA-data combineert met Ads-data en daar gebruikersprofielen in zitten, classificeer dan per veld.
 
-Standaard campagnebeheer met Claude is AVG-groen. Alleen bij het werken met klantlijsten of gedetailleerde conversiedata is extra zorgvuldigheid nodig. Wij bij ClaudeZakelijk configureren de Google Ads MCP server zo dat alleen geaggregeerde campagnedata naar Claude gaat, nooit klantlijsten of individuele conversiegegevens. De API-calls draaien lokaal op je machine, de data gaat via de Anthropic API voor analyse. Lees meer: [Claude AVG en GDPR voor MKB](/compliance).
+Standaard campagnebeheer met Claude is AVG-groen. Alleen bij het werken met klantlijsten of gedetailleerde conversiedata is extra zorgvuldigheid nodig. Wij bij Implementeren.ai configureren de Google Ads MCP server zo dat alleen geaggregeerde campagnedata naar Claude gaat, nooit klantlijsten of individuele conversiegegevens. De API-calls draaien lokaal op je machine, de data gaat via de Anthropic API voor analyse. Lees meer: [Claude AVG en GDPR voor MKB](/compliance).
 
 ## Veelgestelde vragen

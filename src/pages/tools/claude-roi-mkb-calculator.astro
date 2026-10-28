@@ -90,7 +90,7 @@ const breakEvenStd = getal(voorbeeld.breakEvenMinutenPerMedewerker, 1);
 
 const clientBron = `const PRIJZEN = ${JSON.stringify(PRIJZEN)};\n${berekenRoi.toString()}`;
 
-const titel = 'Claude ROI berekenen voor het mkb | ClaudeZakelijk';
+const titel = 'Claude ROI berekenen voor het mkb | Implementeren.ai';
 const beschrijving =
   'Bereken of Claude zichzelf terugverdient. Vul je team, uurkosten en plan in en zie direct hoeveel minuten per week Claude moet besparen voor de licentie.';
 const pad = '/tools/claude-roi-mkb-calculator';
@@ -152,20 +152,20 @@ const hulp = 'mt-1.5 text-[13.5px] text-inkt-zacht';
 >
   <article class="roi max-w-3xl mx-auto px-5 md:px-6 pt-16 pb-8">
     <Broodkruimel items={breadcrumbs} />
-    <h1 class="mt-6 text-[length:var(--text-h1)]">Claude ROI calculator voor het mkb</h1>
+    <h1 class="mt-6 v2-artikel-h1">Claude ROI calculator voor het mkb</h1>
     <p class="mt-6 text-lg text-inkt-zacht">
       Verdient Claude zichzelf terug in jouw bedrijf? Vul je eigen cijfers in en kijk vooral naar het
       break-evenpunt: hoeveel minuten per week Claude moet besparen om de licentie te betalen.
     </p>
 
     <noscript>
-      <p class="mt-6 rounded-xl border border-lijn bg-papier-dieper p-4 text-inkt">
+      <p class="mt-6 rounded-[24px] border border-lijn bg-papier-dieper p-4 text-inkt">
         Zonder JavaScript kun je de velden niet doorrekenen. De uitkomsten hieronder horen bij de
         standaardwaarden. Onder de calculator staat hoe de som werkt.
       </p>
     </noscript>
 
-    <form id="roi-form" class="mt-10 card-shadow rounded-xl border border-lijn bg-white p-5 md:p-8" novalidate onsubmit="return false">
+    <form id="roi-form" class="mt-10 card-shadow rounded-[24px] border border-lijn bg-white p-5 md:p-8" novalidate onsubmit="return false">
       <h2 class="sectie-lijn text-[length:var(--text-h2)] mt-0">Jouw cijfers</h2>
       <div class="mt-6 grid gap-6 md:grid-cols-2">
         <div>
@@ -261,7 +261,7 @@ const hulp = 'mt-1.5 text-[13.5px] text-inkt-zacht';
       <h2 id="uitkomst-kop" class="sectie-lijn text-[length:var(--text-h2)]">Uitkomst</h2>
       <p id="roi-melding" class="fout mt-4" hidden></p>
       <div id="roi-resultaten" class="mt-6 grid gap-4">
-        <div class="rounded-xl border-2 border-accent-diep bg-white p-5 md:p-6">
+        <div class="rounded-[24px] border-2 border-accent-diep bg-white p-5 md:p-6">
           <p class="m-0 text-[15px] font-semibold text-accent-diep">Break-evenpunt</p>
           <p class="m-0 mt-2 font-serif text-4xl md:text-5xl text-inkt"><span data-uit="breakEven">{breakEvenStd}</span> minuten</p>
           <p class="m-0 mt-2 text-inkt-zacht">
@@ -273,28 +273,28 @@ const hulp = 'mt-1.5 text-[13.5px] text-inkt-zacht';
           </p>
         </div>
         <dl class="grid gap-4 sm:grid-cols-2 m-0">
-          <div class="rounded-xl border border-lijn bg-white p-5">
+          <div class="rounded-[24px] border border-lijn bg-white p-5">
             <dt class="text-[14.5px] text-inkt-zacht">Licentie per maand</dt>
             <dd class="m-0 mt-1 text-2xl font-semibold" data-uit="licentieMaand">{eur(voorbeeld.licentieMaand)}</dd>
           </div>
-          <div class="rounded-xl border border-lijn bg-white p-5">
+          <div class="rounded-[24px] border border-lijn bg-white p-5">
             <dt class="text-[14.5px] text-inkt-zacht">Licentie per jaar</dt>
             <dd class="m-0 mt-1 text-2xl font-semibold" data-uit="licentieJaar">{eur(voorbeeld.licentieJaar)}</dd>
           </div>
-          <div class="rounded-xl border border-lijn bg-white p-5">
+          <div class="rounded-[24px] border border-lijn bg-white p-5">
             <dt class="text-[14.5px] text-inkt-zacht">Waarde bespaarde uren per jaar</dt>
             <dd class="m-0 mt-1 text-2xl font-semibold" data-uit="waardeJaar">{eur(voorbeeld.waardeJaar)}</dd>
             <dd class="m-0 mt-1 text-[13.5px] text-inkt-zacht" data-uit="urenJaar">{getal(voorbeeld.urenPerJaar)} uur</dd>
           </div>
-          <div class="rounded-xl border border-lijn bg-white p-5">
+          <div class="rounded-[24px] border border-lijn bg-white p-5">
             <dt class="text-[14.5px] text-inkt-zacht">Terugverdientijd</dt>
             <dd class="m-0 mt-1 text-2xl font-semibold" data-uit="terugverdien">{getal(voorbeeld.terugverdienMaanden ?? 0, 1)} maanden</dd>
           </div>
-          <div class="rounded-xl border border-lijn bg-white p-5">
+          <div class="rounded-[24px] border border-lijn bg-white p-5">
             <dt class="text-[14.5px] text-inkt-zacht">Netto in jaar 1</dt>
             <dd class="m-0 mt-1 text-2xl font-semibold" data-uit="nettoJaar1">{eur(voorbeeld.nettoJaar1)}</dd>
           </div>
-          <div class="rounded-xl border border-lijn bg-white p-5">
+          <div class="rounded-[24px] border border-lijn bg-white p-5">
             <dt class="text-[14.5px] text-inkt-zacht">Netto per jaar daarna</dt>
             <dd class="m-0 mt-1 text-2xl font-semibold" data-uit="nettoVolgend">{eur(voorbeeld.nettoVolgendeJaren)}</dd>
           </div>
@@ -304,7 +304,7 @@ const hulp = 'mt-1.5 text-[13.5px] text-inkt-zacht';
 
     <section class="mt-14">
       <h2 class="sectie-lijn text-[length:var(--text-h2)]">Hoe de som werkt</h2>
-      <div class="prose prose-stone max-w-none mt-6">
+      <div class="prose prose-stone max-w-none v2-prose mt-6">
         <p>
           De licentie is het aantal medewerkers keer de prijs per plek, omgerekend naar euro. De waarde is het
           deel van je team dat Claude echt gebruikt, keer de bespaarde uren per week, keer de werkweken, keer
@@ -324,7 +324,7 @@ const hulp = 'mt-1.5 text-[13.5px] text-inkt-zacht';
 
     <section class="mt-14">
       <h2 class="sectie-lijn text-[length:var(--text-h2)]">Zo schat je bespaarde uren zonder jezelf voor de gek te houden</h2>
-      <div class="prose prose-stone max-w-none mt-6">
+      <div class="prose prose-stone max-w-none v2-prose mt-6">
         <p>
           Begin bij taken, niet bij een percentage. Schrijf een week lang op welke taken veel schrijf- of
           zoekwerk vragen, zoals mails, offertes en verslagen, en hoe lang ze duren. Reken met een klein deel
@@ -348,7 +348,7 @@ const hulp = 'mt-1.5 text-[13.5px] text-inkt-zacht';
 
     <section class="mt-14">
       <h2 class="sectie-lijn text-[length:var(--text-h2)]">Wat de som weglaat</h2>
-      <div class="prose prose-stone max-w-none mt-6">
+      <div class="prose prose-stone max-w-none v2-prose mt-6">
         <ul>
           <li><strong>Leertijd.</strong> De eerste weken ben je langzamer, omdat je moet uitzoeken wat werkt.</li>
           <li><strong>Controletijd.</strong> Iemand moet elke tekst van Claude lezen en verbeteren. Die tijd gaat van je besparing af.</li>
@@ -361,7 +361,7 @@ const hulp = 'mt-1.5 text-[13.5px] text-inkt-zacht';
 
     <section class="mt-14">
       <h2 class="sectie-lijn text-[length:var(--text-h2)]">Wat doe je met de uitkomst?</h2>
-      <div class="prose prose-stone max-w-none mt-6">
+      <div class="prose prose-stone max-w-none v2-prose mt-6">
         <p>
           Gaat het break-evenpunt om een paar minuten per week, dan is de licentie zelden het probleem. De
           echte vraag is of je mensen Claude gaan gebruiken. Meet een maand lang hoe lang twee of drie taken

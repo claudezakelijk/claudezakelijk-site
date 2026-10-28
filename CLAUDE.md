@@ -1,15 +1,18 @@
-# claudezakelijk-site — repo guide for Claude
+# implementeren-ai-site: repo guide for Claude
 
-Astro site for claudezakelijk.nl on Cloudflare Pages. Branch `main` auto-deploys (~60-90s) via the
-GitHub Actions workflow `.github/workflows/deploy.yml`; that is the only production deploy path.
+Astro site for Implementeren.ai (https://implementeren.ai) on Cloudflare Pages. The company was
+called ClaudeZakelijk until October 2026; the old domain claudezakelijk.nl 301-redirects to
+implementeren.ai. Branch `main` auto-deploys (~60-90s) via the GitHub Actions workflow
+`.github/workflows/deploy.yml`, whose deploy job runs in the `production` environment (only
+`main` may use it); that is the only production deploy path.
 If a merge does not go live, check the Actions run (`gh run list`) before anything else.
 
 ## How changes go live
 
 Nobody pushes to `main`. Every change is a branch plus a pull request, and `main` only accepts a
-merge after a code owner who is not the author has approved it (repository ruleset plus
-`.github/CODEOWNERS`, which lists Max and Camiel). A PR from Max needs Camiel and one from Camiel
-needs Max. Camiel is the face of the site, so nothing reaches it without one of the two signing off. Open the PR, let Cloudflare build the preview,
+merge after 2 approvals, at least one of them from a code owner who is not the author (repository
+ruleset plus `.github/CODEOWNERS`, which lists Max and Camiel). A PR from Max needs Camiel and one
+from Camiel needs Max. Camiel is the face of the site, so nothing reaches it without one of the two signing off. Open the PR, let Cloudflare build the preview,
 and post the preview link in the PR so the reviewers can look at the real page.
 
 ## Adding a page
@@ -27,7 +30,8 @@ and post the preview link in the PR so the reviewers can look at the real page.
 
 ## Content rules the build enforces
 
-`scripts/check-dist.mjs` fails the build on: e-mail addresses other than @claudezakelijk.nl, the
+`scripts/check-dist.mjs` fails the build on: e-mail addresses other than @implementeren.ai
+(and the old @claudezakelijk.nl during the transition), the
 names of people other than Camiel, the names Proxuma or Dxfferent, placeholders or HTML comments
 on indexable pages, and a page H1 inside `.reveal-target`. `scripts/quality-gate.py --all` checks
 published content and runs in the deploy workflow before the build.

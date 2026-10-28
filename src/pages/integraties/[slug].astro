@@ -12,8 +12,8 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
-const { Content } = await render(entry);
+const { Content, headings } = await render(entry);
 ---
-<IntegratieLayout entry={entry} pagePath={`/integraties/${entry.id}`}>
+<IntegratieLayout entry={entry} pagePath={`/integraties/${entry.id}`} koppen={headings}>
   <Content />
 </IntegratieLayout>

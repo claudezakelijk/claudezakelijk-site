@@ -49,7 +49,7 @@ const breadcrumbs = [{ name: 'Home', url: '/' }, { name: 'Rekentools', url: '/to
   pad="/tools"
   schema={{ paginaType: 'CollectionPage', hoofdonderwerp: lijstId('/tools'), breadcrumbs, nodes: [itemListNode('/tools', tools.map((t) => ({ url: t.href, naam: t.titel }))), faqNode('/tools', faq)] }}
 >
-  <Container class="pt-16 pb-12">
+  <Container class="pt-12 pb-20" width="max-w-[1288px]">
     <Broodkruimel items={breadcrumbs} />
     <div class="mt-6">
     <CollectieHub
@@ -61,7 +61,7 @@ const breadcrumbs = [{ name: 'Home', url: '/' }, { name: 'Rekentools', url: '/to
     />
     </div>
 
-    <div class="my-10 overflow-x-auto">
+    <div class="my-12 v2-tabelkaart v2-hubtabel">
       <table class="w-full text-sm border-collapse">
         <caption class="caption-top text-left text-sm text-inkt-zacht pb-2">De rekentools</caption>
         <thead>
@@ -75,7 +75,7 @@ const breadcrumbs = [{ name: 'Home', url: '/' }, { name: 'Rekentools', url: '/to
         <tbody>
           {tools.map((t) => (
             <tr class="border-b border-lijn">
-              <th scope="row" class="p-3 text-left font-medium"><a href={t.href} class="text-accent-diep">{t.titel}</a></th>
+              <th scope="row" class="p-3 text-left font-medium"><a href={t.href} >{t.titel}</a></th>
               <td class="p-3 text-inkt-zacht">{t.vraag}</td>
               <td class="p-3 text-inkt-zacht">{t.invoer}</td>
               <td class="p-3 text-inkt-zacht">{t.resultaat}</td>

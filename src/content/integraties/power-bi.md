@@ -1,6 +1,6 @@
 ---
 title: "Claude koppelen aan Power BI"
-titleTag: "Claude Power BI: dashboards genereren en analyseren | ClaudeZakelijk"
+titleTag: "Claude Power BI: dashboards genereren en analyseren | Implementeren.ai"
 metaDescription: "872 Power BI rapporten in 12 weken. Hoe Claude Code dashboards genereert en valideert via MCP."
 h1: "Claude Power BI dashboard genereren en koppelen"
 targetKeywords:

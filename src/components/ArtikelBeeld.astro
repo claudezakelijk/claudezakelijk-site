@@ -1,0 +1,21 @@
+---
+// Kopbeeld boven een artikel, in dezelfde diagramstijl als de cases (src/assets/diagrams).
+// Bestand: src/assets/diagrams/artikelen/<collectie>/<id>.svg. Geen bestand, geen beeld.
+interface Props {
+  collectie: string;
+  id: string;
+}
+
+const { collectie, id } = Astro.props;
+const beelden = import.meta.glob('../assets/diagrams/artikelen/*/*.svg', {
+  query: '?raw',
+  import: 'default',
+  eager: true,
+}) as Record<string, string>;
+const svg = beelden[`../assets/diagrams/artikelen/${collectie}/${id}.svg`];
+---
+{svg && (
+  <figure class="v2-kopbeeld">
+    <div set:html={svg} />
+  </figure>
+)}

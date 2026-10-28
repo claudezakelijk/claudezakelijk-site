@@ -1,12 +1,17 @@
 ---
 // Merkregel: nooit "officieel", "partner" of "specialist" in relatie tot Anthropic of Claude; zie docs/seo-improvement/specs/D-trust-legal-entity.md (D-11).
+// Redesign v2 (27 okt): tekst
+// letterlijk gelijk aan 1b, alleen vormgeving en sectievolgorde gewijzigd.
 import { getCollection } from 'astro:content';
 import { Picture } from 'astro:assets';
 import camielWater from '../assets/team/camiel-water.jpg';
 import studioBreed from '../assets/team/studio-breed.jpg';
+import camielPresentatie from '../assets/team/camiel-presentatie.jpg';
 import BasisLayout from '../layouts/BasisLayout.astro';
 import LogoMarquee from '../components/LogoMarquee.astro';
-import { site, auteurs } from '../site';
+import ZorgBeeld from '../components/home/ZorgBeeld.astro';
+import { auteurs, site } from '../site';
+import '../styles/home-v2.css';
 
 const diensten = (await getCollection('diensten'))
   .filter((d) => d.data.opnemenOpHome)
@@ -16,10 +21,10 @@ const stapLabels = ['Stap één', 'Stap twee', 'Stap drie'];
 
 const zorgen = [
   { cat: 'Veiligheid', q: 'Bang dat Claude dingen sloopt', a: "Claude draait in een afgesloten omgeving. Je ziet elke wijziging voordat die doorgaat en je kunt alles terugdraaien. Geen verrassingen." },
-  { cat: 'Compliance', q: 'Hoe zit het met AVG?', a: "Claude for Work traint niet op je data en heeft SSO en een verwerkersovereenkomst. Je data wordt opgeslagen in de Verenigde Staten. Moet alles in de EU blijven, dan kan dat via AWS Bedrock of Google Vertex AI. We leggen het in gewoon Nederlands uit, zonder juridisch geneuzel." },
+  { cat: 'Compliance', q: 'Hoe zit het met AVG?', a: "Claude for Work traint niet op je data en heeft SSO en een verwerkersovereenkomst. Je data wordt opgeslagen in de Verenigde Staten. Moet alles in de EU blijven, dan kan dat via AWS Bedrock of Google Vertex AI. We leggen het in gewoon Nederlands uit, zonder juridisch geneuzel. En mogen klantnamen en persoonsgegevens Anthropic helemaal niet bereiken? Dan pseudonimiseren we je data op je eigen systemen voordat die naar Claude gaat, en zetten we de echte namen pas terug als het antwoord binnen is. Dat richten we voor je in." },
   { cat: 'Ontslagen', q: 'Moet ik mensen ontslaan?', a: "Nee. Het hele punt is 10x je huidige team, niet een kleiner team. Niemand eruit, iedereen wordt beter in z'n werk." },
   { cat: 'Complexiteit', q: 'Te technisch voor mijn team', a: "We leggen het uit zodat iedereen het snapt, ook zonder AI-ervaring. We werken met jouw echte documenten en processen, geen neppe voorbeelden. Twee tot vier mensen uit je team worden champion en dragen de kennis verder." },
-];
+] as const;
 
 const vergelijking = [
   ['Advies over elke tool tegelijk', 'Een tool, tot op het bot'],
@@ -47,224 +52,278 @@ const opdrachtgevers = [
   { naam: 'Visma | Raet', logo: '/logos/visma-raet.png' },
   { naam: 'TheRippleCo', logo: '/logos/therippleco.png' },
 ];
+
+// Illustratieve taken in het werkplek-venster van de hero (goedgekeurd door Sweder, 27 okt).
+const taken = [
+  ['Offertes samenvatten', 'Alle aanvragen van deze week op een rij'],
+  ['Klantmail beantwoorden', 'In jullie eigen toon'],
+  ['Notulen uitwerken', 'Met actiepunten per persoon'],
+  ['Contract nalopen', 'Afwijkingen gemarkeerd'],
+];
+const weken = [['Week 1', 'Kickoff-workshop'], ['Week 2', 'Champions'], ['Week 3', 'Promptbibliotheek'], ['Week 4', 'Verdieping']];
 ---
 <BasisLayout
-  titel="Claude zakelijk inzetten voor het MKB | ClaudeZakelijk"
+  titel="Claude zakelijk inzetten voor het MKB | Implementeren.ai"
   beschrijving="Claude zakelijk inzetten in je MKB? Wij richten Claude veilig in, trainen je team op eigen werk en werken met vaste prijzen. Begin met de gratis AI-check."
   pad="/"
   schema={{ personen: ['camiel'] }}
 >
-  <div class="hp text-ink-diep">
-    <!-- Hero (1a: met portret van Camiel) -->
-    <section class="wrap grid items-center gap-10 md:gap-14 md:grid-cols-[1.1fr_0.9fr] pt-14 md:pt-20 pb-20">
-      <div class="flex flex-col gap-6">
-        <p class="m-0 font-newsreader font-medium leading-none text-ink-diep" style="font-size: clamp(1.75rem, 2.4vw + 0.75rem, 2.5rem)">Jouw team <em class="hp-italic text-terracotta">×</em> AI</p>
-        <h1 class="max-w-[760px]" style="font-size: clamp(2.25rem, 4.2vw + 0.5rem, 4rem)">Claude zakelijk inzetten in jouw MKB</h1>
-        <p class="text-[21px] text-ink-2 max-w-[560px]">Wij richten Claude in bij je bedrijf en blijven tot je team er zelf mee werkt.</p>
-        <div class="flex flex-wrap gap-3.5 mt-1.5">
-          <a href="/ai-enablement-scan" class="pill pill-primary no-underline">Doe de gratis AI-check <span aria-hidden="true">&rarr;</span></a>
-          <a href="/claude-readiness-scan" class="pill pill-outline no-underline">Bekijk de Readiness Scan</a>
+  <div class="v2-home">
+    <!-- 1. Hero: kop statisch (LCP), werkplek-venster schuift omhoog -->
+    <section class="v2-hero">
+      <div class="v2-gloed" aria-hidden="true"></div>
+      <div class="v2-hero-tekst">
+        <p class="v2-pil"><img src={auteurs.camiel.foto} alt="" width="28" height="28" />Jouw team × AI</p>
+        <h1>Claude zakelijk inzetten in jouw <span class="v2-accent">MKB</span></h1>
+        <p class="v2-hero-lead">Wij richten Claude in bij je bedrijf en blijven tot je team er zelf mee werkt.</p>
+        <div class="v2-knoppen">
+          <a href="/ai-enablement-scan" class="v2-knop v2-knop-olijf">Doe de gratis AI-check <span aria-hidden="true">&rarr;</span></a>
+          <a href="/claude-readiness-scan" class="v2-knop v2-knop-licht">Bekijk de Readiness Scan</a>
         </div>
-        <p class="text-[14px] text-ink-muted max-w-[440px]">Doe de gratis AI-check en kijk of AI-coaching past bij je bedrijf. Zo ja, dan volgt een gratis intro-gesprek.</p>
+        <p class="v2-hero-noot">Doe de gratis AI-check en kijk of AI-coaching past bij je bedrijf. Zo ja, dan volgt een gratis intro-gesprek.</p>
       </div>
-      <figure class="m-0">
+      <div class="v2-werkplek">
+        <div class="v2-werkplek-rand">
+          <div class="v2-werkplek-scherm">
+            <div class="v2-werkplek-taak" aria-hidden="true">
+              <p class="v2-werkplek-groet"><span class="v2-bol"></span>Goedemorgen. Waar zal ik mee helpen?<span class="v2-voorbeeld">Voorbeeld</span></p>
+              <div class="v2-taken">
+                {taken.map(([t, s]) => <div><strong>{t}</strong><span>{s}</span></div>)}
+              </div>
+              <div class="v2-invoer">
+                <span class="v2-invoer-tekst"><span data-typ="Zet de offerteaanvragen op een rij">Zet de offerteaanvragen op een rij</span><span class="v2-caret"></span></span>
+                <span class="v2-verstuur">↑</span>
+              </div>
+            </div>
+            <figure class="v2-werkplek-foto">
+              <Picture
+                src={camielWater}
+                alt="Camiel Wits, lachend in gesprek aan het water"
+                formats={['avif', 'webp']}
+                widths={[320, 480, 640, 828]}
+                sizes="(min-width: 1080px) 340px, (min-width: 768px) 40vw, calc(100vw - 64px)"
+                loading="eager"
+                fetchpriority="high"
+                decoding="async"
+              />
+              <figcaption>Camiel Wits, lead consultant</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Logo-band (sociaal bewijs direct onder de hero) -->
+    <section class="v2-logos">
+      <div class="v2-wrap">
+        <p class="v2-logos-label"><strong>Eerdere opdrachtgevers van ons team</strong>Ons team werkte bij deze organisaties eerder aan AI- en dataprojecten, vóór Implementeren.ai.</p>
+        <LogoMarquee logos={opdrachtgevers} />
+      </div>
+    </section>
+
+    <!-- 3. Drie manieren: links vast, rechts stapelkaarten -->
+    <section class="v2-wrap v2-stappen">
+      <div class="v2-stappen-intro">
+        <h2>Drie manieren om te beginnen</h2>
+        <p class="v2-zacht">Eerst een audit, dan rollout, dan retainer. Elke stap staat los. Je gaat pas door als de vorige stap z'n geld waard was.</p>
+        <p class="v2-stappen-noot"><strong>Audit</strong> <span aria-hidden="true">&rarr;</span> <strong>Rollout</strong> <span aria-hidden="true">&rarr;</span> <strong>Retainer</strong> &nbsp;·&nbsp; elke stap staat los, doorgaan is altijd jouw keuze</p>
+        <p class="v2-stappen-noot">Hoe de stappen op elkaar aansluiten en wat het samen kost, lees je bij <a href="/claude-implementatie">Claude-implementatie</a>. Wie het werk doet, staat bij <a href="/claude-consultant">Claude-consultant</a>.</p>
+      </div>
+      <div class="v2-kaarten">
+        {diensten.map((d, i) => {
+          // "Vanaf €1.500 per maand" → groot "€1.500" + klein "per maand, vanaf".
+          const kaal = d.data.prijs.replace(/^Vanaf\s+/i, '');
+          const perMaand = /per maand/i.test(kaal);
+          const bedrag = kaal.replace(/\s*per maand/i, '');
+          return (
+            <article class:list={['v2-kaart', i === 2 && 'v2-kaart-donker']}>
+              <div class="v2-kaart-tekst">
+                <p class="v2-kaart-stap">{stapLabels[i]}: {d.data.ondertitel.toLowerCase()}{i === 1 && <span class="v2-meest">Meest gekozen</span>}</p>
+                <h3>{d.data.titel}</h3>
+                <p class="v2-kaart-prijs"><strong>{bedrag}</strong> {perMaand ? 'per maand, vanaf' : 'eenmalig, vanaf'}</p>
+                <ul>
+                  {d.data.punten.map((punt) => (
+                    <li><span aria-hidden="true">&#10003;</span><span>{punt}</span></li>
+                  ))}
+                </ul>
+                <a href={d.data.pad} class="v2-kaart-link">Lees details</a>
+              </div>
+              <div class="v2-kaart-beeld" aria-hidden="true">
+                {i === 0 && (
+                  <div class="v2-rapport">
+                    <p class="v2-rapport-kop">Readiness Scan</p>
+                    <div class="v2-balk">1 <i style="width: 88%"></i></div>
+                    <div class="v2-balk">2 <i style="width: 70%"></i></div>
+                    <div class="v2-balk">3 <i style="width: 54%"></i></div>
+                    <div class="v2-balk">4 <i style="width: 36%"></i></div>
+                  </div>
+                )}
+                {i === 1 && (
+                  <div class="v2-weken">
+                    {weken.map(([w, t]) => <div class="v2-week"><b>{w}</b>{t}</div>)}
+                  </div>
+                )}
+                {i === 2 && (
+                  <div class="v2-gesprek">
+                    <div class="v2-bubbel"><small>Medewerker</small>Kan Claude ook onze inkoopfacturen controleren?</div>
+                    <div class="v2-bubbel v2-bubbel-ons"><small>Camiel · {site.naam}</small>Ja. We zetten er deze week een vaste prompt voor in de bibliotheek.</div>
+                  </div>
+                )}
+              </div>
+            </article>
+          );
+        })}
+      </div>
+    </section>
+
+    <!-- 4. Wat houdt je tegen: stappenverhaal, beeld wisselt mee -->
+    <section class="v2-zorgen-sectie">
+      <div class="v2-wrap v2-zorgen" data-actief="0">
+        <div>
+          <div class="v2-zorgen-kop reveal-target">
+            <h2>Wat houdt je tegen?</h2>
+            <p class="v2-zacht">Vier zorgen die bijna elke ondernemer heeft over AI. En vier eerlijke antwoorden.</p>
+          </div>
+          <ol class="v2-zorg-lijst">
+            {zorgen.map((z, i) => (
+              <li class="v2-zorg" data-actief={i === 0 ? '' : undefined}>
+                <p class="v2-zorg-cat">{z.cat}</p>
+                <h3>{z.q}</h3>
+                <p class="v2-zorg-antwoord">{z.a}</p>
+                <div class="v2-zorg-beeld-mobiel"><ZorgBeeld nr={i as 0 | 1 | 2 | 3} /></div>
+              </li>
+            ))}
+          </ol>
+        </div>
+        <div class="v2-zorg-podium" aria-hidden="true">
+          {zorgen.map((_, i) => (
+            <div class="v2-podium-beeld" data-beeld={i}><ZorgBeeld nr={i as 0 | 1 | 2 | 3} /></div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Wie zijn wij: citaat kleurt woord voor woord in -->
+    <section class="v2-wrap v2-wie">
+      <div>
+        <p class="v2-label">Wie zijn wij</p>
+        <p class="v2-citaat"><span class="v2-onthul">Geen bureau dat een rapport aflevert. Een team dat Claude bij je installeert en blijft tot het werkt.</span></p>
+        <div class="v2-persoon">
+          <img src={auteurs.camiel.foto} alt="" width="56" height="56" loading="lazy" />
+          <p>
+            <span class="v2-zacht" style="font-size: 13px">Je vaste aanspreekpunt</span><br />
+            <strong>{auteurs.camiel.naam}</strong><br />
+            <span class="v2-zacht">{auteurs.camiel.functie}</span>
+            {auteurs.camiel.linkedin && (
+              <><br /><a href={auteurs.camiel.linkedin} target="_blank" rel="noopener" style="font-size: 14px">LinkedIn<span class="sr-only"> (opent in nieuw venster)</span></a></>
+            )}
+          </p>
+        </div>
+        <p class="v2-zacht" style="margin: 24px 0 0">Je werkt direct met de mensen die het bouwen. Geen salesteam, geen junior die het rapport schrijft.</p>
+        <a href="/over" style="display: inline-block; margin-top: 14px; font-weight: 600">Lees meer over ons <span class="cta-arrow">&rarr;</span></a>
+      </div>
+      <figure class="v2-wie-foto reveal-target">
         <Picture
-          src={camielWater}
-          alt="Camiel Wits, lachend in gesprek aan het water"
+          src={studioBreed}
+          alt="Panelgesprek over data en AI aan een studiotafel"
           formats={['avif', 'webp']}
-          widths={[480, 640, 828, 1080, 1280, 1600]}
-          sizes="(min-width: 1280px) 520px, (min-width: 768px) 42vw, calc(100vw - 44px)"
-          class="foto-warm w-full rounded-lg border border-lijn object-cover"
-          style="aspect-ratio: 4 / 4.6; object-position: 62% 20%;"
-          loading="eager"
-          fetchpriority="high"
+          widths={[480, 640, 828, 1080]}
+          sizes="(min-width: 1240px) 480px, (min-width: 900px) 40vw, calc(100vw - 48px)"
+          loading="lazy"
           decoding="async"
         />
-        <figcaption class="mt-2.5 text-[13px] text-ink-2">Camiel Wits, lead consultant</figcaption>
       </figure>
     </section>
 
-    <!-- Drie manieren om te beginnen -->
-    <section class="bg-paper-tint">
-      <div class="wrap py-20">
-        <div class="flex flex-col items-center text-center gap-3 mb-11 reveal-target">
-          <h2>Drie manieren om te beginnen</h2>
-          <p class="text-base text-ink-2 max-w-[560px]">Eerst een audit, dan rollout, dan retainer. Elke stap staat los. Je gaat pas door als de vorige stap z'n geld waard was.</p>
-        </div>
-        <div class="grid gap-[22px] md:grid-cols-3 items-stretch">
-          {diensten.map((d, i) => {
-            // "Vanaf €1.500 per maand" → groot "€1.500" + klein "per maand, vanaf".
-            const kaal = d.data.prijs.replace(/^Vanaf\s+/i, '');
-            const perMaand = /per maand/i.test(kaal);
-            const bedrag = kaal.replace(/\s*per maand/i, '');
-            return (
-              <div class:list={["relative rounded-[24px] px-[28px] py-[30px] flex flex-col reveal-target", i === 1 ? "bg-ink-diep text-papier" : "bg-papier border border-lijn"]}>
-                {i === 1 && (
-                  <span class="absolute -top-[13px] left-1/2 -translate-x-1/2 bg-terracotta text-papier text-[11.5px] font-bold tracking-[0.08em] uppercase rounded-full px-3.5 py-[5px] whitespace-nowrap">Meest gekozen</span>
-                )}
-                <div class:list={["hp-italic text-[15px]", i === 1 ? "text-salmon" : "text-terracotta"]}>{stapLabels[i]}: {d.data.ondertitel.toLowerCase()}</div>
-                <h3 class="text-[24px] mt-2">{d.data.titel}</h3>
-                <p class="mt-3.5 font-newsreader font-medium text-[30px] leading-none tracking-[-0.01em]">
-                  {bedrag} <span class:list={["font-sans text-[13px] font-normal tracking-normal", i === 1 ? "text-[rgba(250,247,242,0.6)]" : "text-ink-muted"]}>{perMaand ? 'per maand, vanaf' : 'eenmalig, vanaf'}</span>
-                </p>
-                <ul class:list={["list-none m-0 mt-4.5 p-0 pt-4.5 grid gap-2.5 text-[14.5px] flex-1 border-t", i === 1 ? "border-[rgba(250,247,242,0.18)]" : "border-lijn"]}>
-                  {d.data.punten.map((punt) => (
-                    <li class="flex gap-2.5 items-start">
-                      <span class:list={["font-extrabold", i === 1 ? "text-salmon" : "text-terracotta"]} aria-hidden="true">&#10003;</span>
-                      <span class:list={i === 1 ? "text-[rgba(250,247,242,0.85)]" : "text-ink-2"}>{punt}</span>
-                    </li>
-                  ))}
-                </ul>
-                <a href={d.data.pad} class:list={["mt-5 text-center rounded-full py-[11px] text-[14.5px] font-semibold no-underline", i === 1 ? "bg-terracotta text-papier hover:bg-terracotta-h" : "border-[1.5px] border-border-2 text-ink-diep hover:border-ink-muted"]}>Lees details</a>
+    <!-- 6. Bewezen ervaring: foto met glazen cijferkaarten -->
+    <section class="v2-wrap">
+      <div class="v2-ervaring">
+        <Picture
+          src={camielPresentatie}
+          alt="Camiel Wits geeft een workshop met microfoon"
+          formats={['avif', 'webp']}
+          widths={[640, 960, 1280]}
+          sizes="(min-width: 1240px) 1192px, calc(100vw - 48px)"
+          loading="lazy"
+          decoding="async"
+        />
+        <div class="v2-ervaring-in">
+          <h2>Bewezen ervaring</h2>
+          <p class="v2-ervaring-lead">Geen theorie: ons team bouwde jarenlang AI- en dataprojecten bij grote en kleine organisaties.</p>
+          <div class="v2-cijfers">
+            {ervaring.map((e) => (
+              <div class="v2-cijfer reveal-target">
+                <p class="v2-cijfer-num" data-tel>{e.num}</p>
+                <p class="v2-cijfer-titel">{e.title}</p>
+                <p class="v2-cijfer-sub">{e.sub}</p>
               </div>
-            );
-          })}
-        </div>
-        <p class="mt-6 text-center text-[13px] text-ink-muted">
-          <strong class="text-ink-2 font-semibold">Audit</strong> <span aria-hidden="true">&rarr;</span> <strong class="text-ink-2 font-semibold">Rollout</strong> <span aria-hidden="true">&rarr;</span> <strong class="text-ink-2 font-semibold">Retainer</strong> &nbsp;·&nbsp; elke stap staat los, doorgaan is altijd jouw keuze
-        </p>
-        <p class="mt-3 text-center text-[14.5px] text-ink-2 max-w-[620px] mx-auto">
-          Hoe de stappen op elkaar aansluiten en wat het samen kost, lees je bij <a href="/claude-implementatie" class="link-terra">Claude-implementatie</a>. Wie het werk doet, staat bij <a href="/claude-consultant" class="link-terra">Claude-consultant</a>.
-        </p>
-      </div>
-    </section>
-
-    <!-- Wat houdt je tegen? -->
-    <section class="wrap py-20 grid gap-10 md:gap-16 md:grid-cols-[380px_1fr]">
-      <div class="flex flex-col gap-3.5 reveal-target">
-        <h2 style="line-height:1.15">Wat houdt je tegen?</h2>
-        <p class="text-base text-ink-2 max-w-[560px]">Vier zorgen die bijna elke ondernemer heeft over AI. En vier eerlijke antwoorden.</p>
-      </div>
-      <div>
-        {zorgen.map((z) => (
-          <div class="py-6 border-b border-lijn last:border-b-0 reveal-target">
-            <div class="flex items-baseline gap-3.5">
-              <span class="hp-italic text-[15px] text-terracotta w-[100px] flex-none">{z.cat}</span>
-              <span class="text-lg font-semibold">{z.q}</span>
-            </div>
-            <p class="text-[14.5px] leading-[1.65] text-ink-2 mt-2 pl-[114px] max-md:pl-0">{z.a}</p>
+            ))}
           </div>
-        ))}
+        </div>
       </div>
+      <p class="v2-ervaring-onder">Workshop op locatie: Claude uitleggen aan mensen die er morgen mee moeten werken</p>
     </section>
 
-    <!-- Eerst zelf lezen: kennispijlers (Spec C, C-09) -->
-    <section class="wrap pb-20">
-      <h2 class="mb-6">Eerst zelf lezen?</h2>
-      <ul class="list-none m-0 p-0 grid gap-3 md:grid-cols-2 text-[15.5px] text-ink-2">
-        <li><a href="/gids/claude-voor-mkb" class="link-terra">Claude voor bedrijven en mkb</a>: welk abonnement past, wat het kost en hoe je begint.</li>
-        <li><a href="/prijs" class="link-terra">Wat kost Claude zakelijk?</a> De prijzen van Pro, Team, Enterprise en de API.</li>
-        <li><a href="/compliance" class="link-terra">Is Claude AVG-proof?</a> Wat Anthropic regelt en wat jij zelf vastlegt.</li>
-        <li><a href="/verticalen" class="link-terra">Claude per branche</a>: voor accountants, advocaten, makelaars en marketingbureaus.</li>
-        <li><a href="/vergelijken" class="link-terra">Claude vergelijken</a> met ChatGPT, Microsoft Copilot en Cursor.</li>
+    <!-- 7. Waarom niet gewoon een AI-consultant? -->
+    <section class="v2-wrap v2-verschil">
+      <div class="v2-verschil-kop reveal-target">
+        <h2>Waarom niet gewoon een AI-consultant?</h2>
+        <p class="v2-zacht">Er zijn genoeg consultants die iets over AI roepen. Dit is wat hier anders is.</p>
+      </div>
+      <div class="v2-kolommen">
+        <div class="v2-kolom v2-kolom-oud reveal-target">
+          <h3>De standaard AI-consultant</h3>
+          <ul>{vergelijking.map(([oud]) => <li><span class="v2-teken" aria-hidden="true">&#10005;</span>{oud}</li>)}</ul>
+        </div>
+        <div class="v2-kolom v2-kolom-nieuw reveal-target">
+          <h3>Hoe wij het doen</h3>
+          <ul>{vergelijking.map(([, nieuw]) => <li><span class="v2-teken" aria-hidden="true">&#10003;</span>{nieuw}</li>)}</ul>
+        </div>
+      </div>
+      <p class="v2-verschil-citaat reveal-target">"Dit werkt omdat het uit de praktijk komt, niet uit een whitepaper. Ons team draait zelf dagelijks op Claude, en dezelfde werkwijze zetten we bij jou neer."</p>
+    </section>
+
+    <!-- 8. Eerst zelf lezen: kennispijlers als bento (Spec C, C-09) -->
+    <section class="v2-wrap v2-lezen">
+      <h2>Eerst zelf lezen?</h2>
+      <ul class="v2-bento">
+        <li class="v2-groot reveal-target">
+          <span class="v2-chips" aria-hidden="true"><span>Pro</span><span>Team</span><span class="v2-chip-olijf">Enterprise</span></span>
+          <span><a href="/gids/claude-voor-mkb">Claude voor bedrijven en mkb</a>: welk abonnement past, wat het kost en hoe je begint.</span>
+        </li>
+        <li class="reveal-target">
+          <span class="v2-teken-groot" aria-hidden="true">€</span>
+          <span><a href="/prijs">Wat kost Claude zakelijk?</a> De prijzen van Pro, Team, Enterprise en de API.</span>
+        </li>
+        <li class="v2-donker reveal-target">
+          <span class="v2-eu" aria-hidden="true">EU</span>
+          <span><a href="/compliance">Is Claude AVG-proof?</a> Wat Anthropic regelt en wat jij zelf vastlegt.</span>
+        </li>
+        <li class="reveal-target">
+          <span class="v2-chips" aria-hidden="true"><span>accountants</span><span>advocaten</span><span>makelaars</span></span>
+          <span><a href="/verticalen">Claude per branche</a>: voor accountants, advocaten, makelaars en marketingbureaus.</span>
+        </li>
+        <li class="reveal-target">
+          <span class="v2-vs" aria-hidden="true">Claude <b>vs</b> ChatGPT</span>
+          <span><a href="/vergelijken">Claude vergelijken</a> met ChatGPT, Microsoft Copilot en Cursor.</span>
+        </li>
       </ul>
     </section>
 
-    <!-- Wie zijn wij (bedrijf + team, Camiel als gezicht) -->
-    <section class="bg-paper-tint">
-      <div class="wrap py-16 grid items-center gap-10 md:gap-14 md:grid-cols-[1.1fr_0.9fr] reveal-target">
-        <div class="flex flex-col gap-5">
-          <p class="text-[13px] font-semibold tracking-[0.1em] uppercase text-terracotta">Wie zijn wij</p>
-          <p class="font-newsreader font-semibold text-[30px] leading-[1.25]">Geen bureau dat een rapport aflevert. Een team dat Claude bij je installeert en blijft tot het werkt.</p>
-          <div class="flex flex-col gap-0.5 mt-1">
-            <span class="text-[13px] text-ink-muted">Je vaste aanspreekpunt</span>
-            <strong class="text-[15.5px]">{auteurs.camiel.naam}</strong>
-            <span class="text-sm text-ink-muted">{auteurs.camiel.functie}</span>
-            {auteurs.camiel.linkedin && (
-              <a href={auteurs.camiel.linkedin} target="_blank" rel="noopener" class="link-terra text-[13px] mt-0.5">LinkedIn<span class="sr-only"> (opent in nieuw venster)</span></a>
-            )}
-          </div>
-          <p class="text-[15px] text-ink-2">Je werkt direct met de mensen die het bouwen. Geen salesteam, geen junior die het rapport schrijft.</p>
-          <a href="/over" class="link-terra text-[15px] self-start">Lees meer over ons <span class="cta-arrow">&rarr;</span></a>
+    <!-- 9. Slot-band -->
+    <section class="v2-slot">
+      <div class="v2-slot-band">
+        <h2>Nieuwsgierig of Claude bij je bedrijf <span class="v2-accent">past</span>?</h2>
+        <p>Doe de gratis AI-check. Je spreekt direct met de mensen die het werk doen, geen salesteam ertussen.</p>
+        <div class="v2-slot-invoer">
+          <span class="v2-invoer-tekst" aria-hidden="true"><span data-typ="Past Claude bij ons kantoor">Past Claude bij ons kantoor</span><span class="v2-caret"></span></span>
+          <a href="/ai-enablement-scan" class="v2-knop v2-knop-donker">Doe de gratis AI-check</a>
         </div>
-        <figure class="m-0">
-          <Picture
-            src={studioBreed}
-            alt="Panelgesprek over data en AI aan een studiotafel"
-            formats={['avif', 'webp']}
-            widths={[480, 640, 828, 1080, 1280, 1600]}
-            sizes="(min-width: 1280px) 520px, (min-width: 768px) 42vw, calc(100vw - 44px)"
-            class="w-full rounded-lg border border-lijn object-cover"
-            style="aspect-ratio: 4 / 3.4; object-position: 50% 40%;"
-            loading="lazy"
-            decoding="async"
-          />
-        </figure>
-      </div>
-    </section>
-
-    <!-- Waarom niet gewoon een AI-consultant? -->
-    <section class="wrap py-20 border-t border-lijn text-center">
-      <div class="flex flex-col items-center gap-3 reveal-target">
-        <h2>Waarom niet gewoon een AI-consultant?</h2>
-        <p class="text-base text-ink-2 max-w-[560px]">Er zijn genoeg consultants die iets over AI roepen. Dit is wat hier anders is.</p>
-      </div>
-      <div class="max-w-[880px] mx-auto mt-11 text-left">
-        <div class="hidden md:grid gap-5 md:grid-cols-2 mb-3.5">
-          <span class="text-[12.5px] font-bold tracking-[0.1em] uppercase text-rood">De standaard AI-consultant</span>
-          <span class="text-[12.5px] font-bold tracking-[0.1em] uppercase text-groen">Hoe wij het doen</span>
-        </div>
-        <div class="flex flex-col gap-3.5">
-          {vergelijking.map(([oud, nieuw]) => (
-            <div class="grid gap-3.5 md:gap-5 md:grid-cols-2 reveal-target">
-              <div class="flex items-center gap-3 bg-rood-tint border border-rood-lijn rounded-[16px] px-5 py-[16px] text-[14.5px] text-ink-2">
-                <span class="flex-none grid place-items-center w-[22px] h-[22px] rounded-full bg-rood text-white text-[11px] font-extrabold" aria-hidden="true">&#10005;</span>
-                <s class="[text-decoration-color:rgba(168,67,59,0.55)]">{oud}</s>
-              </div>
-              <div class="flex items-center gap-3 bg-groen-tint border border-groen-lijn rounded-[16px] px-5 py-[16px] text-[14.5px] font-semibold">
-                <span class="flex-none grid place-items-center w-[22px] h-[22px] rounded-full bg-groen text-white text-[11px] font-extrabold" aria-hidden="true">&#10003;</span>
-                <span>{nieuw}</span>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-      <p class="hp-italic text-[19px] leading-[1.6] text-ink-2 max-w-[620px] mx-auto mt-9 reveal-target">"Dit werkt omdat het uit de praktijk komt, niet uit een whitepaper. Ons team draait zelf dagelijks op Claude, en dezelfde werkwijze zetten we bij jou neer."</p>
-    </section>
-
-    <!-- Bewezen ervaring (team-credentials + eerdere opdrachtgevers) -->
-    <section class="bg-paper-tint">
-      <div class="wrap py-20 text-center">
-        <div class="flex flex-col items-center gap-3 mb-11 reveal-target">
-          <h2>Bewezen ervaring</h2>
-          <p class="text-base text-ink-2 max-w-[600px]">Geen theorie: ons team bouwde jarenlang AI- en dataprojecten bij grote en kleine organisaties.</p>
-        </div>
-        <!-- 1c: brede praktijkfoto -->
-        <figure class="m-0 mb-9 reveal-target">
-          <img
-            src="/team/camiel-presentatie.jpg"
-            alt="Camiel Wits geeft een workshop met microfoon"
-            width="1280" height="852"
-            class="w-full rounded-lg border border-lijn object-cover"
-            style="aspect-ratio: 21 / 9; object-position: 50% 10%;"
-            loading="lazy"
-          />
-          <figcaption class="mt-2.5 text-[13px] text-ink-2 text-center">Workshop op locatie: Claude uitleggen aan mensen die er morgen mee moeten werken</figcaption>
-        </figure>
-        <div class="grid gap-[22px] md:grid-cols-3">
-          {ervaring.map((e) => (
-            <div class="bg-papier rounded-[20px] px-[30px] py-[34px] flex flex-col items-center gap-2.5 reveal-target">
-              <div class="font-newsreader font-medium text-terracotta text-[clamp(44px,5vw,58px)] leading-none">{e.num}</div>
-              <div class="text-base font-semibold">{e.title}</div>
-              <div class="text-[13.5px] text-ink-2">{e.sub}</div>
-            </div>
-          ))}
-        </div>
-        <div class="flex flex-col gap-4 mt-12 reveal-target">
-          <span class="text-xs font-semibold tracking-[0.1em] uppercase text-ink-muted">Eerdere opdrachtgevers van ons team</span>
-          <LogoMarquee logos={opdrachtgevers} />
-          <p class="text-[13px] text-ink-muted max-w-[460px] mx-auto">Ons team werkte bij deze organisaties eerder aan AI- en dataprojecten, vóór ClaudeZakelijk.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="bg-ink-diep text-papier">
-      <div class="wrap py-[88px] flex flex-col items-center text-center gap-4">
-        <h2 class="h2-cta max-w-[600px]">Nieuwsgierig of Claude bij je bedrijf <em class="hp-italic text-salmon">past</em>?</h2>
-        <p class="text-[rgba(250,247,242,0.7)] max-w-[520px]">Doe de gratis AI-check. Je spreekt direct met de mensen die het werk doen, geen salesteam ertussen.</p>
-        <a href="/ai-enablement-scan" class="pill pill-primary no-underline mt-2">Doe de gratis AI-check</a>
       </div>
     </section>
   </div>
 </BasisLayout>
+
+<script>
+  import '../scripts/home-v2.ts';
+</script>

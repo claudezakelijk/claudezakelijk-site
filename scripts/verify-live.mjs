@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Live check of claudezakelijk.nl against the indexing rules (seo-werklijst task 16).
+// Live check of implementeren.ai against the indexing rules (seo-werklijst task 16).
 //
 //   node scripts/verify-live.mjs            # after the flip: every sitemap URL must be indexable
 //   node scripts/verify-live.mjs --prelaunch # before the flip: every sitemap URL must be noindex
@@ -22,7 +22,7 @@ import { fileURLToPath } from 'node:url';
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 process.chdir(ROOT);
 
-const SITE = 'https://claudezakelijk.nl';
+const SITE = 'https://implementeren.ai';
 const HOST = new URL(SITE).hostname;
 const PRELAUNCH = process.argv.includes('--prelaunch');
 
@@ -69,7 +69,7 @@ if (PRELAUNCH) {
   if (!/^Disallow: \/\s*$/m.test(robots)) fail('robots.txt no longer has Disallow: / while in prelaunch mode');
 } else {
   if (/^Disallow: \/\s*$/m.test(robots)) fail('robots.txt still has Disallow: /');
-  if (!/^Sitemap: https:\/\/claudezakelijk\.nl\/sitemap-index\.xml/m.test(robots)) fail('robots.txt has no Sitemap line');
+  if (!/^Sitemap: https:\/\/implementeren\.ai\/sitemap-index\.xml/m.test(robots)) fail('robots.txt has no Sitemap line');
   if (AI_TRAINING_POLICY === 'allow' && /Content-Signal|GPTBot|ClaudeBot|Google-Extended/i.test(robots)) fail('robots.txt carries a managed AI-bot block or Content-Signal line');
 }
 
@@ -237,12 +237,12 @@ else {
   r = await head('/apple-touch-icon.png');
   if (r.status !== 200 || !/image\/png/.test(r.headers.get('content-type') || '')) fail(`/apple-touch-icon.png: status ${r.status}`);
   r = await head('/site.webmanifest');
-  if (r.status !== 200 || !/"name":\s*"ClaudeZakelijk"/.test(await r.text())) fail(`/site.webmanifest: status ${r.status} or wrong name`);
+  if (r.status !== 200 || !/"name":\s*"Implementeren.ai"/.test(await r.text())) fail(`/site.webmanifest: status ${r.status} or wrong name`);
 }
 if (!EXPECT_LLMS_TXT) pend('llms.txt', 'A-21');
 else {
   r = await head('/llms.txt');
-  if (r.status !== 200 || !(r.headers.get('content-type') || '').startsWith('text/plain') || !(await r.text()).startsWith('# ClaudeZakelijk')) fail(`/llms.txt: status ${r.status} or wrong type/start`);
+  if (r.status !== 200 || !(r.headers.get('content-type') || '').startsWith('text/plain') || !(await r.text()).startsWith('# Implementeren.ai')) fail(`/llms.txt: status ${r.status} or wrong type/start`);
 }
 if (!EXPECT_404_STATUS) pend('/404 status 404', 'A-13');
 else {
@@ -268,7 +268,7 @@ else {
   for (const p of ['/', '/contact']) {
     const t = await (await fetch(SITE + p + '?v=' + Date.now())).text();
     if (t.includes('/cdn-cgi/l/email-protection')) fail(`${p} still has Cloudflare e-mail obfuscation`);
-    if (!t.includes('hallo@claudezakelijk.nl')) fail(`${p} has no plain contact address`);
+    if (!t.includes('hallo@implementeren.ai')) fail(`${p} has no plain contact address`);
   }
 }
 
