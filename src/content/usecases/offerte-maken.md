@@ -1,6 +1,6 @@
 ---
 title: "Claude offerte maken"
-titleTag: "Claude offerte maken: sneller schrijven | ClaudeZakelijk"
+titleTag: "Claude offerte maken: sneller schrijven | Implementeren.ai"
 metaDescription: "Claude offerte maken en schrijven: gepersonaliseerde offertes met AI. Case: 10 offertes per week met zelfverbeterende schrijfregels."
 h1: "Claude offerte maken: sneller schrijven, betere conversie"
 targetKeywords:
@@ -98,4 +98,4 @@ Alleen als je Claude als een tekstgenerator gebruikt. De sdr-sales-agent case la
 
 ### Kan Claude offertes schrijven in mijn huisstijl?
 
-Ja. Je voert je bestaande offertes en proposals in als referentiemateriaal. Claude leert de structuur, de toon, de woordkeuze en het format. Na 5 tot 10 referentie-offertes produceert Claude output die nauwelijks van je eigen schrijfstijl te onderscheiden is. Wij bij ClaudeZakelijk bouwen dit soort workflows met Claude Code en Anthropic's API. ChatGPT of OpenAI alternatieven missen het grote context window dat je nodig hebt voor complete referentie-offertes. De AVG (GDPR) stelt eisen aan klantdata in prompts. Wij helpen bedrijven via Microsoft 365 en [sales-workflows](/use-cases/sales-outreach) om die scheiding goed in te richten. Lees ook ons [DPIA-stappenplan](/compliance/dpia-stappenplan) als je klantdata verwerkt.
+Ja. Je voert je bestaande offertes en proposals in als referentiemateriaal. Claude leert de structuur, de toon, de woordkeuze en het format. Na 5 tot 10 referentie-offertes produceert Claude output die nauwelijks van je eigen schrijfstijl te onderscheiden is. Wij bij Implementeren.ai bouwen dit soort workflows met Claude Code en Anthropic's API. ChatGPT of OpenAI alternatieven missen het grote context window dat je nodig hebt voor complete referentie-offertes. De AVG (GDPR) stelt eisen aan klantdata in prompts. Wij helpen bedrijven via Microsoft 365 en [sales-workflows](/use-cases/sales-outreach) om die scheiding goed in te richten. Lees ook ons [DPIA-stappenplan](/compliance/dpia-stappenplan) als je klantdata verwerkt.

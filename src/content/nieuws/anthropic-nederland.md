@@ -1,6 +1,6 @@
 ---
 title: "Anthropic Nederland: Europese expansie en wat het betekent"
-titleTag: "Anthropic Nederland: expansie en impact | ClaudeZakelijk"
+titleTag: "Anthropic Nederland: expansie en impact | Implementeren.ai"
 metaDescription: "Anthropic breidt uit naar Europa en Nederland. Wat betekent dat voor Nederlandse bedrijven die Claude gebruiken? Kantoor, support, AVG en lokale impact."
 h1: "Anthropic Nederland: expansie en impact"
 targetKeywords:
@@ -75,7 +75,7 @@ Anthropic biedt nu EU-hosting als optie voor Enterprise-klanten. Met een EU-enti
 Nederlandse bedrijven betalen nu aan Anthropic Inc. in de VS. Dat valt onder de verleggingsregeling voor diensten van buiten de EU. Hoewel dat technisch correct afgehandeld kan worden, is een EUR-factuur van een EU-entiteit simpeler in de administratie. Zie de [kostenpagina](/prijs) voor de huidige prijsstructuur.
 
 **4. Partnerschappen met lokale integrators**
-Anthropic werkt in de VS al met system integrators en consultants. In Europa zijn die partnerschappen nog beperkt. Met een lokaal kantoor komt er ruimte voor gecertificeerde partners die Claude-implementaties doen. ClaudeZakelijk opereert nu als onafhankelijke specialist. Een formeel partnerprogramma zou dat formaliseren.
+Anthropic werkt in de VS al met system integrators en consultants. In Europa zijn die partnerschappen nog beperkt. Met een lokaal kantoor komt er ruimte voor gecertificeerde partners die Claude-implementaties doen. Implementeren.ai opereert nu als onafhankelijke specialist. Een formeel partnerprogramma zou dat formaliseren.
 
 ## De AI Act en lokale aanwezigheid
 
@@ -107,7 +107,7 @@ De context van het anthropic nederland kantoor verhaal is de bredere wedloop tus
 
 Anthropic loopt achter op fysieke aanwezigheid maar compenseert met modelkwaliteit. Claude Opus en Claude Sonnet scoren consistent hoger dan de concurrentie op code-taken en complexe redenering. Voor bedrijven die kiezen op basis van modelkwaliteit is Anthropic de logische keuze. Voor bedrijven die kiezen op basis van lokale support en integraties is Microsoft de veilige optie.
 
-Bij ClaudeZakelijk adviseren we op basis van de use case, niet op basis van kantoorlocaties. Maar we erkennen dat een Europese aanwezigheid van Anthropic de AVG (GDPR)-compliance vereenvoudigt en de drempel voor Claude Enterprise verlaagt. De EU AI Act versterkt het belang van een lokale vertegenwoordiger.
+Bij Implementeren.ai adviseren we op basis van de use case, niet op basis van kantoorlocaties. Maar we erkennen dat een Europese aanwezigheid van Anthropic de AVG (GDPR)-compliance vereenvoudigt en de drempel voor Claude Enterprise verlaagt. De EU AI Act versterkt het belang van een lokale vertegenwoordiger.
 
 ## Veelgestelde vragen
 

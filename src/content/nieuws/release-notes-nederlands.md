@@ -1,6 +1,6 @@
 ---
 title: "Claude release notes Nederlands: wekelijks bijgewerkt"
-titleTag: "Claude release notes Nederlands: wekelijks | ClaudeZakelijk"
+titleTag: "Claude release notes Nederlands: wekelijks | Implementeren.ai"
 metaDescription: "Claude release notes in het Nederlands. Wekelijks bijgewerkt met de belangrijkste updates voor zakelijk gebruik. Door practitioners, voor practitioners."
 h1: "Claude release notes Nederlands: wekelijks bijgewerkt"
 targetKeywords:
@@ -28,7 +28,7 @@ isRecurring: true
 faq: []
 ---
 
-Claude release notes Nederlands is wat je zoekt als je wilt weten wat er veranderd is zonder de Engelse changelog door te spitten. Deze pagina bundelt de claude updates 2026 die relevant zijn voor zakelijk gebruik. Geschreven door practitioners bij ClaudeZakelijk die de updates dagelijks testen in productie. Geen marketingversie, maar wat er daadwerkelijk verandert in je workflow.
+Claude release notes Nederlands is wat je zoekt als je wilt weten wat er veranderd is zonder de Engelse changelog door te spitten. Deze pagina bundelt de claude updates 2026 die relevant zijn voor zakelijk gebruik. Geschreven door practitioners bij Implementeren.ai die de updates dagelijks testen in productie. Geen marketingversie, maar wat er daadwerkelijk verandert in je workflow.
 
 ## Claude release notes Nederlands: hoe deze pagina werkt
 
@@ -50,4 +50,4 @@ Wekelijks checken we de Anthropic changelog, testen wijzigingen in onze workflow
 
 ## Claude updates 2026: over deze pagina
 
-Getest in productie, niet overgenomen uit persberichten. AVG (GDPR), AI Act en CBS/Eurostat publicaties nemen we mee wanneer relevant. OpenAI (ChatGPT), Google (Gemini) en Microsoft (Copilot, Azure) updates vermelden we alleen als ze je Claude-keuze beinvloeden. Anthropic publiceert hun eigen changelog in het Engels. Wij vertalen wat relevant is voor Nederlands MKB-gebruik en voegen onze eigen testresultaten toe. Neem contact op met ClaudeZakelijk voor vragen over eerdere releases of specifieke claude changelog bedrijf-impact.
+Getest in productie, niet overgenomen uit persberichten. AVG (GDPR), AI Act en CBS/Eurostat publicaties nemen we mee wanneer relevant. OpenAI (ChatGPT), Google (Gemini) en Microsoft (Copilot, Azure) updates vermelden we alleen als ze je Claude-keuze beinvloeden. Anthropic publiceert hun eigen changelog in het Engels. Wij vertalen wat relevant is voor Nederlands MKB-gebruik en voegen onze eigen testresultaten toe. Neem contact op met Implementeren.ai voor vragen over eerdere releases of specifieke claude changelog bedrijf-impact.

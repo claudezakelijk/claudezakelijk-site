@@ -18,9 +18,9 @@ const standTekst = stand instanceof Date
   : stand;
 ---
 {tekst && (
-  <div data-kort-antwoord class="mt-6 rounded-lg border-l-4 border-accent-diep bg-papier-dieper px-5 py-4">
-    <p class="text-xs font-semibold uppercase tracking-widest text-inkt-zacht">In het kort</p>
-    <p class="mt-2 text-lg leading-relaxed">{tekst}</p>
-    {standTekst && <p class="mt-2 text-xs text-inkt-zacht">Stand: {standTekst}</p>}
+  <div data-kort-antwoord class="v2-kort">
+    <p class="v2-kort-label">In het kort</p>
+    <p class="v2-kort-tekst">{tekst}</p>
+    {standTekst && <p class="v2-kort-stand">Stand: {standTekst}</p>}
   </div>
 )}

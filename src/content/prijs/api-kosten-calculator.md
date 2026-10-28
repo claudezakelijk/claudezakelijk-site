@@ -1,6 +1,6 @@
 ---
 title: "Claude API kosten berekenen"
-titleTag: "Claude API kosten berekenen: calculator | ClaudeZakelijk"
+titleTag: "Claude API kosten berekenen: calculator | Implementeren.ai"
 metaDescription: "Claude API kosten berekenen met onze calculator. Opus, Sonnet en Haiku token pricing in EUR. Inclusief concrete voorbeeldberekening met 872 reports."
 h1: "Claude API kosten berekenen: calculator"
 targetKeywords:
@@ -78,7 +78,7 @@ Haiku zet je in voor volume-taken met een laag foutrisico. E-mails classificeren
 
 Claude Pro kost EUR 18,50 per maand exclusief BTW via de webinterface. De API rekent per token. Beide lopen via dezelfde Anthropic account. Je betaalt BTW over beide producten als Nederlands bedrijf.
 
-ChatGPT van OpenAI en Microsoft Copilot bieden vergelijkbare API-modellen. ClaudeZakelijk publiceert vergelijkingen op de [prijzenpagina](/prijs). API-kosten zijn zelden de bottleneck. De AVG (GDPR) eisen gelden ook voor API-gebruik.
+ChatGPT van OpenAI en Microsoft Copilot bieden vergelijkbare API-modellen. Implementeren.ai publiceert vergelijkingen op de [prijzenpagina](/prijs). API-kosten zijn zelden de bottleneck. De AVG (GDPR) eisen gelden ook voor API-gebruik.
 
 Lees meer over [credits en gebruikslimieten](/prijs/credits-en-limieten) of bereken je terugverdientijd met de [ROI calculator](/prijs/roi-mkb-calculator).
 

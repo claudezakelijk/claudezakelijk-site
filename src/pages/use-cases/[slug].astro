@@ -12,8 +12,8 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
-const { Content } = await render(entry);
+const { Content, headings } = await render(entry);
 ---
-<UseCaseLayout entry={entry} pagePath={`/use-cases/${entry.id}`}>
+<UseCaseLayout entry={entry} pagePath={`/use-cases/${entry.id}`} koppen={headings}>
   <Content />
 </UseCaseLayout>

@@ -1,6 +1,6 @@
 ---
 title: "Claude voor transport en logistiek"
-titleTag: "Claude voor transportbedrijf & logistiek | ClaudeZakelijk"
+titleTag: "Claude voor transportbedrijf & logistiek | Implementeren.ai"
 metaDescription: "Transportbedrijven gebruiken Claude voor ritplanning, douanedocumenten en klantcommunicatie. Case: 38 scripts geaudit, 9 hersteld."
 h1: "Claude voor transportbedrijf en logistiek"
 targetKeywords:
@@ -34,7 +34,7 @@ areaServed: NL
 brancheOrganisatie: null
 ---
 
-Claude voor transportbedrijf en logistiek bespaart tijd op documentatie, klantcommunicatie en procesautomatisering. Ritplanning ondersteunen, douanepapieren genereren, CMR-vrachtbrieven invullen, chauffeurscommunicatie stroomlijnen: het zijn taken die patronen volgen en waar Claude uitblinkt. Bij ClaudeZakelijk hebben we die workflows ingericht voor expediteurs en transportbedrijven in Nederland.
+Claude voor transportbedrijf en logistiek bespaart tijd op documentatie, klantcommunicatie en procesautomatisering. Ritplanning ondersteunen, douanepapieren genereren, CMR-vrachtbrieven invullen, chauffeurscommunicatie stroomlijnen: het zijn taken die patronen volgen en waar Claude uitblinkt. Bij Implementeren.ai hebben we die workflows ingericht voor expediteurs en transportbedrijven in Nederland.
 
 ## Claude voor logistiek: ritplanning en routeoptimalisatie
 
@@ -66,7 +66,7 @@ Lees meer over [e-mail automatiseren met Claude](/use-cases/e-mail-automatiseren
 
 Chauffeurs ontvangen ritopdrachten, laadinstructies, contactgegevens van ontvangers, en bijzonderheden per adres. Die informatie verzamelen en in een leesbaar format naar de chauffeur sturen kost de planner tijd. Claude bundelt de informatie en genereert een ritopdracht die de chauffeur op zijn telefoon leest.
 
-Per rit: ophaaladres met contactpersoon en telefoonnummer, afleveradres met loslocatie en openingstijden, bijzonderheden (laadklep nodig, ADR-labeling, koelketen). Claude haalt die data uit je TMS of planningssysteem en formatteert het als een duidelijke instructie. Geen ellenlange e-mails die de chauffeur niet leest. Korte, gestructureerde informatie per stop. Bij ClaudeZakelijk bouwen we die communicatieflows op maat.
+Per rit: ophaaladres met contactpersoon en telefoonnummer, afleveradres met loslocatie en openingstijden, bijzonderheden (laadklep nodig, ADR-labeling, koelketen). Claude haalt die data uit je TMS of planningssysteem en formatteert het als een duidelijke instructie. Geen ellenlange e-mails die de chauffeur niet leest. Korte, gestructureerde informatie per stop. Bij Implementeren.ai bouwen we die communicatieflows op maat.
 
 Voor expediteurs met internationale ritten voegt Claude vertaalde instructies toe. Een Roemeense chauffeur krijgt de losinstructies in zijn taal, met dezelfde informatie die de planner in het Nederlands invoerde. Dat vermindert misverstanden en vertragingen bij loslocaties. Anthropic heeft Claude getraind in tientallen talen, waardoor de vertalingen direct bruikbaar zijn zonder tussenkomst van een vertaalbureau.
 
@@ -84,7 +84,7 @@ Transportbedrijven verwerken persoonsgegevens: namen en adressen van ontvangers,
 
 Zodra er namen en adressen in zitten, pseudonimiseer je die. Vervang "Jan Jansen, Keizersgracht 100" door "Ontvanger A, Adres A". Claude verwerkt de data, je de-pseudonimiseert de output. Voor chauffeurgegevens (rijbewijs, ADR-certificaten, BSN) geldt het rode regime: die gaan niet naar de cloud.
 
-De ILT (Inspectie Leefomgeving en Transport) en de Autoriteit Persoonsgegevens (AP) houden toezicht. Documenteer je AI-gebruik in je verwerkingsregister. Bij ClaudeZakelijk helpen we transportbedrijven met die classificatie. Het kost een halve dag om in te richten.
+De ILT (Inspectie Leefomgeving en Transport) en de Autoriteit Persoonsgegevens (AP) houden toezicht. Documenteer je AI-gebruik in je verwerkingsregister. Bij Implementeren.ai helpen we transportbedrijven met die classificatie. Het kost een halve dag om in te richten.
 
 De NIWO (Nationale en Internationale Wegvervoer Organisatie) en de KNV (Koninklijk Nederlands Vervoer) hebben nog geen specifieke richtlijnen voor AI-gebruik uitgebracht. Dat maakt het des te belangrijker dat je zelf de classificatie op orde hebt. Bedrijven die nu hun datahuishouding inrichten, lopen straks niet achter de feiten aan wanneer de regelgeving komt.
 

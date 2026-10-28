@@ -8,39 +8,42 @@ const zonderLegeHubs = <T extends { pad: string }>(items: readonly T[]) =>
   items.filter((i) => !legeHubs.includes(i.pad));
 const navigatie = zonderLegeHubs(alleNavigatie);
 const kennisNavigatie = zonderLegeHubs(alleKennis);
+// Logo: sitenaam met het laatste deel (bv. ".ai") in olijf.
+const punt = site.naam.lastIndexOf('.');
+const [logoMerk, logoStaart] = punt > 0 ? [site.naam.slice(0, punt), site.naam.slice(punt)] : [site.naam, ''];
 const jaar = new Date().getFullYear();
-const linkClass = 'no-underline text-[rgba(250,247,242,0.55)] hover:text-papier transition-colors';
+const linkClass = 'v2-voet-link';
 ---
-<footer class="bg-ink-diep text-[rgba(250,247,242,0.55)] border-t border-[rgba(250,247,242,0.12)]">
-  <div class="wrap py-10 flex flex-col gap-10 md:flex-row md:justify-between text-[13.5px]">
+<footer class="v2-voet">
+  <div class="v2-wrap v2-voet-boven">
     <div class="flex flex-col gap-2 max-w-xs">
-      <span class="hp-italic text-[17px] text-papier">{site.naam}</span>
+      <span class="v2-logo v2-logo-licht">{logoMerk}<span>{logoStaart}</span></span>
       <span>{site.tagline}.</span>
       <span class="mt-2">© {jaar} {site.naam}. Alle rechten voorbehouden.</span>
     </div>
     <div class="flex flex-wrap gap-10 md:gap-12">
       <div class="flex flex-col gap-2">
-        <strong class="text-papier font-semibold">Diensten</strong>
+        <strong>Diensten</strong>
         {dienstenNavigatie.map((i) => (<a href={i.pad} class={linkClass}>{i.label}</a>))}
       </div>
       <nav class="flex flex-col gap-2" aria-label="Voettekst-navigatie">
-        <strong class="text-papier font-semibold">Meer</strong>
+        <strong>Meer</strong>
         {navigatie.map((i) => (<a href={i.pad} class={linkClass}>{i.label}</a>))}
       </nav>
       <div class="flex flex-col gap-2">
-        <strong class="text-papier font-semibold">Kennis</strong>
+        <strong>Kennis</strong>
         {kennisNavigatie.map((i) => (<a href={i.pad} class={linkClass}>{i.label}</a>))}
       </div>
       <div class="flex flex-col gap-2">
-        <strong class="text-papier font-semibold">Contact</strong>
+        <strong>Contact</strong>
         <a href="/contact" class={linkClass}>Neem contact op</a>
         <a href={`mailto:${site.email}`} class={linkClass}>{site.email}</a>
         <a href={site.linkedin} target="_blank" rel="noopener" class={linkClass}>LinkedIn<span class="sr-only"> (opent in nieuw venster)</span></a>
       </div>
     </div>
   </div>
-  <div class="border-t border-[rgba(250,247,242,0.12)]">
-    <div class="wrap py-4 text-[12.5px] text-[rgba(250,247,242,0.55)]">
+  <div class="v2-voet-onder">
+    <div class="v2-wrap">
       <p class="m-0">
         {site.naam} is een handelsnaam van {site.juridisch.handelsnaamVan}
         <span aria-hidden="true"> · </span>KvK {site.juridisch.kvk}
@@ -50,4 +53,5 @@ const linkClass = 'no-underline text-[rgba(250,247,242,0.55)] hover:text-papier 
       <p class="mt-2 m-0">{site.onafhankelijkheid}</p>
     </div>
   </div>
+  <div class="v2-voet-merk" aria-hidden="true">{site.naam}</div>
 </footer>

@@ -1,24 +1,28 @@
 ---
-title: "Claude Managed Agents: wat ze zijn, kosten en wanneer inzetten"
-titleTag: "Claude Managed Agents voor bedrijven uitgelegd | ClaudeZakelijk"
-metaDescription: "Claude Managed Agents uitgelegd voor Nederlandse bedrijven. Wat ze kosten, hoe ze werken en wanneer je ze wel of niet inzet. Met twee concrete cases."
-h1: "Claude Managed Agents voor bedrijven uitgelegd"
+title: "Claude Managed Agents: wat het is, wat het kost en wanneer je het inzet"
+titleTag: "Claude Managed Agents uitgelegd: kosten en inzet | Implementeren.ai"
+metaDescription: "Wat Claude Managed Agents is, hoe je betaalt (tokens plus 0,08 dollar per sessie-uur), wat er met je data gebeurt en wanneer het past. Stand: 27 oktober 2026."
+h1: "Claude Managed Agents voor bedrijven: wat het is, wat het kost en wanneer je het inzet"
 targetKeywords:
   - claude managed agents
-  - claude managed agents nederland
-  - agentic ai mkb
-wordCountTarget: 1600
+  - managed agents
+  - claude managed agents prijs
+wordCountTarget: 1620
 priority: 1
 tier: 1
 cases:
   - automation-audit
   - copilot-studio-agent
 internalLinks:
-  - /use-cases/e-mail-automatiseren
-  - /prijs/api-kosten-calculator
-  - /prijs/credits-en-limieten
+  - /nieuws
+  - /tools/claude-api-kosten-calculator
+  - /compliance/zero-data-retention
+  - /compliance/eu-hosting
   - /compliance/ai-act-mkb
-  - /vergelijken/claude-vs-copilot
+  - /gids/claude-code-voor-bedrijven
+  - /cases/automation-audit
+  - /cases/copilot-studio-agent
+  - /claude-implementatie
 schemaTypes:
   - Article
   - FAQPage
@@ -27,154 +31,139 @@ author: camiel
 competitors:
   - openai.com
   - microsoft.com
-status: draft
+disclaimer: juridisch
+status: review
 publishDate: null
-updatedDate: null
+updatedDate: 2026-10-27
 changelogLine: null
+reviewedBy: null
+reviewedDate: null
 isRecurring: false
+kortAntwoord: "Claude Managed Agents is een dienst van Anthropic waarmee Claude zelfstandig taken uitvoert in een beheerde omgeving, met eigen tools, bestanden en sessies. Je betaalt de gewone API-tokenprijs plus 0,08 dollar per sessie-uur dat de agent actief werkt. De dienst is sinds 8 april 2026 in publieke bèta. Stand: 27 oktober 2026."
+bronnen:
+  - titel: "Claude Platform Docs, Claude Managed Agents overview (bèta, kernbegrippen, tools, ZDR)"
+    url: "https://platform.claude.com/docs/en/managed-agents/overview"
+    geraadpleegd: "27 oktober 2026"
+  - titel: "Claude Platform Docs, Pricing (modelprijzen en Claude Managed Agents pricing)"
+    url: "https://platform.claude.com/docs/en/about-claude/pricing"
+    geraadpleegd: "27 oktober 2026"
+  - titel: "Claude Platform Docs, Define your agent (ondersteunde modellen, standaard permission policy)"
+    url: "https://platform.claude.com/docs/en/managed-agents/agent-setup"
+    geraadpleegd: "27 oktober 2026"
+  - titel: "Claude Platform Docs, Scheduled deployments (geplande runs en budget per run)"
+    url: "https://platform.claude.com/docs/en/managed-agents/scheduled-deployments"
+    geraadpleegd: "27 oktober 2026"
+  - titel: "Claude Platform Docs, Self-hosted sandboxes (wat er bij jou draait en wat bij Anthropic)"
+    url: "https://platform.claude.com/docs/en/managed-agents/self-hosted-sandboxes"
+    geraadpleegd: "27 oktober 2026"
+  - titel: "Claude Platform Docs, Managed Agents reference (rate limits)"
+    url: "https://platform.claude.com/docs/en/managed-agents/reference"
+    geraadpleegd: "27 oktober 2026"
+  - titel: "Claude blog, Claude Managed Agents: get to production 10x faster (8 april 2026)"
+    url: "https://claude.com/blog/claude-managed-agents"
+    geraadpleegd: "27 oktober 2026"
+  - titel: "Europese Commissie, AI Act: regulatory framework en tijdlijn (update 19 oktober 2026)"
+    url: "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai"
+    geraadpleegd: "27 oktober 2026"
+  - titel: "Europese Centrale Bank, referentiekoers euro/dollar (27 oktober 2026: 1 euro = 1,1150 dollar)"
+    url: "https://data.ecb.europa.eu/data/datasets/EXR/EXR.D.USD.EUR.SP00.A"
+    geraadpleegd: "27 oktober 2026"
 faq:
-  - question: "Wat zijn Claude Managed Agents?"
-    answer: "Claude Managed Agents zijn autonome AI-processen die Anthropic host en beheert namens jou. In plaats van een chatgesprek te voeren, geef je een agent een opdracht en laat je hem zelfstandig werken. De agent kan tools aanroepen, beslissingen nemen, tussenresultaten opslaan en een eindresultaat opleveren. Anthropic beheert de infrastructuur: je hoeft geen servers te draaien."
-  - question: "Wat kosten Claude Managed Agents?"
-    answer: "Managed Agents worden afgerekend op basis van API-token gebruik. Elke stap die een agent zet, elk tool call dat hij maakt en elk antwoord dat hij genereert, verbruikt tokens. De kosten hangen af van het model (Opus is duurder dan Sonnet), de complexiteit van de taak en het aantal stappen. Een eenvoudige agent die dagelijks 5 taken uitvoert kost circa 2 tot 8 dollar per dag. Een complexe agent met 50 stappen per taak kan 20 tot 50 dollar per dag kosten."
+  - question: "Wat is het verschil tussen Claude Managed Agents en de gewone Claude API?"
+    answer: "Met de gewone Messages API bouw je de agent zelf: jij schrijft de loop die tools aanroept, jij regelt de server en jij bewaart de geschiedenis. Bij Managed Agents levert Anthropic die loop, de sandbox en de opslag van sessies. Jij definieert het model, de instructies en de tools. Je levert wat controle in en wint bouwtijd."
+  - question: "Wat kost Claude Managed Agents per maand?"
+    answer: "Er is geen abonnement. Je betaalt de tokens tegen de normale API-prijs per model, plus 0,08 dollar per sessie-uur dat de agent actief werkt. Wachttijd telt niet mee. Een dagelijkse taak van een halfuur op Sonnet 5.5 met 100.000 inputtokens en 10.000 outputtokens kost in ons rekenvoorbeeld 7,48 dollar per maand bij 22 werkdagen."
+  - question: "Valt Claude Managed Agents onder Zero Data Retention?"
+    answer: "Nee. Anthropic schrijft dat Managed Agents op dit moment niet in aanmerking komt voor Zero Data Retention of een HIPAA-overeenkomst. Sessies bewaren de gespreksgeschiedenis, de staat van de sandbox en de output op de servers van Anthropic. Je kunt sessies en geüploade bestanden wel zelf verwijderen via de API, op elk moment."
   - question: "Heb ik een developer nodig voor Managed Agents?"
-    answer: "Ja, voor de initiële opzet. Je moet de agent configureren: welke tools hij mag gebruiken, welke instructies hij volgt en welke output hij oplevert. Dat vereist kennis van de Anthropic API en vaak ook van de systemen die de agent aanstuurt. Na de opzet draait de agent autonoom."
-  - question: "Zijn Managed Agents AVG-compliant?"
-    answer: "Dat hangt af van je configuratie. De agents draaien op Anthropic's infrastructuur, wat betekent dat data naar hun servers gaat. Voor Enterprise-klanten biedt Anthropic EU-dataverwerking aan. Voor niet-Enterprise klanten geldt de standaard DPA van Anthropic met Standard Contractual Clauses voor datatransfer naar de VS. Als je persoonsgegevens verwerkt, moet je een DPIA uitvoeren en beoordelen of de bescherming voldoende is."
+    answer: "Ja. Je maakt een agent, een omgeving en sessies aan via de API, de SDK of de ant-commandoregel. Daar komt het koppelen van je eigen systemen bij, bijvoorbeeld via een MCP-server. Een medewerker zonder programmeerervaring kan dit niet zelf opzetten. Voor wie zonder code wil werken zijn Claude Team en Claude Code meestal de betere start."
+  - question: "Kan ik Claude Managed Agents gebruiken via AWS Bedrock of Google Vertex AI?"
+    answer: "Niet via de gewone partnerplatforms. De prijspagina van Anthropic noemt Managed Agents niet beschikbaar op clouds die door partners worden beheerd. De dienst draait wel op de Claude Platform on AWS en op Claude Models on Google Cloud, de varianten die Anthropic zelf beheert. Daar gelden enkele verschillen in functies."
+deadline: null
+hasTemplate: false
 ---
 
-Claude managed agents veranderen hoe bedrijven AI inzetten. In plaats van een medewerker die achter een chatvenster zit en vragen stelt, draait er een autonoom proces dat zelfstandig taken uitvoert. Anthropic host en beheert die processen. Voor het Nederlandse MKB is agentic ai mkb een verschuiving van "AI als assistent" naar "AI als medewerker." Dit artikel legt uit wat claude managed agents nederland concreet betekenen, wat ze kosten en wanneer je ze wel en niet inzet. Met twee cases uit de praktijk.
+Claude Managed Agents is een dienst van Anthropic waarmee Claude zelfstandig een taak uitvoert, in een omgeving die Anthropic voor je beheert. Je hoeft zelf geen agent-loop, server of sandbox te bouwen. Je betaalt de gewone tokenprijs van het model plus 0,08 dollar per uur dat een sessie actief werkt. De dienst staat sinds 8 april 2026 in publieke bèta. Op deze pagina lees je hoe het werkt, wat het kost, wat er met je data gebeurt en wanneer het past bij een Nederlands bedrijf. Alle feiten zijn gecheckt op 27 oktober 2026 bij de bronnen onderaan.
 
-## Claude Managed Agents: wat ze zijn
+## Wat zijn Claude Managed Agents?
 
-Een Managed Agent is een Claude-instantie die je configureert met een doel, tools en instructies, en die vervolgens zelfstandig werkt. Het verschil met een chatgesprek:
+Anthropic biedt twee manieren om met Claude te bouwen. Met de Messages API stuur je zelf elk verzoek en bouw je zelf de logica eromheen. Met Claude Managed Agents krijg je een kant-en-klaar raamwerk: Claude leest bestanden, voert commando's uit, zoekt op internet en draait code in een beveiligde omgeving. Anthropic noemt het zelf geschikt voor lange taken en werk dat op de achtergrond loopt.
 
-| Eigenschap | Chat | Managed Agent |
-|------------|------|---------------|
-| Initiatief | Gebruiker stuurt elk bericht | Agent werkt zelfstandig |
-| Looptijd | Minuten | Uren tot dagen |
-| Tools | Beperkt (web search, code) | Onbeperkt (API's, databases, bestanden) |
-| Tussenresultaten | Alleen in het gesprek | Opgeslagen, herbruikbaar |
-| Toezicht | Continu (je leest mee) | Periodiek (je checkt het resultaat) |
+De dienst rust op vier begrippen:
 
-Managed Agents draaien op Anthropic's infrastructuur. Je hoeft geen servers te beheren en geen crashes af te handelen. Anthropic regelt uptime, scaling en error recovery. Jij configureert het doel en de guardrails.
+1. **Agent.** De vaste configuratie: welk model, welke instructies (de system prompt), welke tools, MCP-servers en skills. Je maakt een agent één keer aan, en elke wijziging levert een nieuwe versie op.
+2. **Omgeving.** Waar de sessies draaien: in een cloudsandbox van Anthropic, of in een sandbox op je eigen infrastructuur.
+3. **Sessie.** Eén lopende opdracht van een agent in een omgeving. Een sessie houdt bestanden en geschiedenis vast, ook als je hem later hervat.
+4. **Events.** De berichten tussen jouw applicatie en de agent: jouw opdracht, de resultaten van tools en statusmeldingen.
 
-## Hoe ze werken: de technische basis
+Ingebouwd zijn een bash-shell, bestandsbewerking, zoeken en ophalen van webpagina's en koppelingen met MCP-servers. Alle modellen vanaf Claude 4.5 worden ondersteund, dus ook Fable 5.1, Opus 5.5, Sonnet 5.5 en Haiku 5.5. Toegang staat standaard aan voor elk API-account. Elk verzoek heeft wel de bèta-header `managed-agents-2026-04-01` nodig; de SDK zet die er zelf bij.
 
-Een Managed Agent bestaat uit vier componenten:
+## Managed agents of zelf bouwen: wat is het verschil?
 
-**1. System prompt**
-De instructies die bepalen wat de agent doet, hoe hij zich gedraagt en waar zijn grenzen liggen. Dit is het belangrijkste onderdeel. Een goed geschreven system prompt is het verschil tussen een agent die productief werkt en een agent die loopt vast.
+Het verschil zit in wie het werk rond het model doet. Bij een eigen agent op de Messages API regel jij de loop, de opslag en de foutafhandeling. Bij Managed Agents doet Anthropic dat, en betaal je daar per actief uur voor.
 
-**2. Tools**
-De externe systemen die de agent kan aanroepen. Denk aan API's (Jira, HubSpot, Slack), databases (PostgreSQL, Power BI), bestandssystemen of webhooks. Elke tool wordt gedefinieerd met een schema dat beschrijft welke input de tool verwacht en welke output hij retourneert.
+Tabel: Claude Managed Agents naast een eigen agent op de Messages API, stand 27 oktober 2026.
 
-**3. Orchestration loop**
-De logica die bepaalt in welke volgorde de agent stappen zet. Anthropic beheert de orchestration: de agent beslist zelf welke tool hij wanneer aanroept, op basis van de tussenresultaten. Dit is het "managed" deel: je hoeft de loop niet zelf te bouwen.
+| Onderdeel | Eigen agent (Messages API) | Claude Managed Agents |
+|-----------|----------------------------|-----------------------|
+| Agent-loop en toolaanroepen | Bouw je zelf | Geregeld door Anthropic |
+| Sandbox voor code en bestanden | Regel je zelf | Cloudsandbox of eigen sandbox |
+| Geschiedenis van sessies | Bewaar je zelf | Opgeslagen bij Anthropic |
+| Geplande runs | Eigen scheduler | Ingebouwd, met cron en tijdzone |
+| Batch-korting van 50 procent | Beschikbaar | Niet beschikbaar |
+| Zero Data Retention | Mogelijk, op aanvraag | Niet beschikbaar |
+| Extra kosten bovenop tokens | Hosting die je zelf betaalt | 0,08 dollar per actief sessie-uur |
 
-**4. Output en logging**
-Elk resultaat, elke toolaanroep en elke beslissing wordt gelogd. Je kunt achteraf precies zien wat de agent gedaan heeft, waarom en met welk resultaat. Dat is relevant voor compliance en voor debugging.
+Geplande runs werken met een cron-expressie en een tijdzone. Elke organisatie kan maximaal 1.000 geplande deployments hebben. Per run kun je een budget instellen: bereikt de sessie dat bedrag, dan pauzeert hij. Voor het aanmaken van agents, sessies en omgevingen geldt een limiet van 300 verzoeken per minuut per organisatie.
 
-## Case 1: achtergrondprocessen doorlichten (automation-audit)
+## Wat kosten Claude Managed Agents?
 
-Bij een tech-bedrijf met 38 geautomatiseerde scripts waren er 9 stilgevallen. Niemand wist welke scripts nog draaiden, welke waren gecrasht en welke overbodig waren geworden. Een Managed Agent kreeg de opdracht om alle 38 scripts te inventariseren, te testen en te rapporteren.
+Je betaalt op twee dingen: tokens en looptijd. De tokens kosten hetzelfde als bij de gewone API, met dezelfde korting op prompt caching. De looptijd kost 0,08 dollar per sessie-uur (ongeveer 0,07 euro). Anthropic meet die tot op de milliseconde en telt alleen de tijd waarin de sessie de status running heeft. Wacht de agent op jouw volgende bericht of op een goedkeuring, dan loopt de meter niet. Webzoekopdrachten binnen een sessie kosten 10 dollar per 1.000 zoekopdrachten (8,97 euro).
 
-De agent deed het volgende:
-- Alle scripts geidentificeerd via het bestandssysteem en de cron-configuratie
-- Elke script uitgevoerd in een sandbox en de output geanalyseerd
-- Foutmeldingen geclassificeerd (configuratiefout, API-wijziging, data-probleem)
-- Een rapport gegenereerd met status per script en herstelvoorstel
+Anthropic geeft zelf dit voorbeeld: een sessie van een uur op Opus 5.5 met 50.000 inputtokens en 15.000 outputtokens kost 0,58 dollar (0,52 euro). Daarvan is 0,08 dollar looptijd. De tokens zijn dus het grootste deel van de rekening.
 
-Resultaat: 38 scripts geïnventariseerd, 9 gerepareerd, doorlooptijd 2 dagen. Handmatig had dit een developer een volle week gekost. De agent werkte 's nachts door en leverde 's ochtends het rapport op.
+Om de modellen te vergelijken rekenen we één taak door. Die taak draait elke werkdag een halfuur, met in totaal 100.000 inputtokens en 10.000 outputtokens. Dat is een rekenvoorbeeld, geen meting bij een klant.
 
-Dit is een typische use case voor agents bij rapportage-automatisering: taken die veel herhaling vereisen, geen creativiteit maar wel nauwkeurigheid.
+Tabel: rekenvoorbeeld voor één dagelijkse agent-taak, prijzen van Anthropic en ECB-koers van 27 oktober 2026 (1 euro = 1,1150 dollar), stand 27 oktober 2026.
 
-## Case 2: rapportage-agent met Copilot Studio (copilot-studio-agent)
+| Model | Prijs input / output per miljoen tokens | Kosten per run | Per maand (22 werkdagen) |
+|-------|------------------------------------------|----------------|--------------------------|
+| Haiku 5.5 | 0,10 / 0,50 dollar | 0,055 dollar (0,05 euro) | 1,21 dollar (1,09 euro) |
+| Sonnet 5.5 | 2 / 10 dollar | 0,34 dollar (0,30 euro) | 7,48 dollar (6,71 euro) |
+| Opus 5.5 | 4 / 20 dollar | 0,64 dollar (0,57 euro) | 14,08 dollar (12,63 euro) |
+| Fable 5.1 | 10 / 50 dollar | 1,54 dollar (1,38 euro) | 33,88 dollar (30,39 euro) |
 
-Een MSP, klant van een Nederlands IT-consultancybureau, wilde dat klanten zelf rapportages konden opvragen via een chatinterface. Ons team bouwde daarvoor eerder een agent die gekoppeld is aan het Power BI semantisch model via Azure AD OAuth. De klant typt "geef me de SLA-rapportage van vorige maand" en de agent genereert het rapport.
+Twee kanttekeningen. Een agent leest bij elke stap zijn eerdere context opnieuw in, dus het aantal inputtokens loopt bij lange taken snel op. Prompt caching drukt dat: op Opus 5.5 en Sonnet 5.5 kost een cache-hit 5 procent van de normale inputprijs. Pin je de agent op verwerking in de VS, dan betaal je 1,1 keer het normale tarief. Reken je eigen situatie door met de [Claude API-kostencalculator](/tools/claude-api-kosten-calculator).
 
-De technische opzet:
-- Copilot Studio als frontend (de chatinterface)
-- Claude als de redeneer-engine achter de agent
-- Power BI MCP server als tool voor data-queries
-- Azure AD OAuth voor authenticatie en autorisatie
+## Wat gebeurt er met je data bij managed agents?
 
-Resultaat: rapportagetijd daalde van 45 minuten naar 2 minuten. De klant hoeft geen Power BI te openen, geen filters in te stellen en geen exportknop te zoeken. De agent doet het allemaal.
+Hier zit voor de meeste Nederlandse bedrijven de belangrijkste afweging. Managed Agents bewaart bewust veel: de gespreksgeschiedenis, de staat van de sandbox en de output staan op de servers van Anthropic, zodat je een sessie later kunt hervatten. Daarom komt de dienst op dit moment niet in aanmerking voor Zero Data Retention. Je kunt sessies en bestanden wel op elk moment zelf verwijderen via de API. Hoe ZDR werkt en voor welke producten wel, lees je in [Claude Zero Data Retention uitgelegd](/compliance/zero-data-retention).
 
-De kosten per rapportage: circa EUR 0,12 aan API-tokens. Bij 100 rapportages per maand is dat EUR 12. Vergelijk dat met 45 minuten medewerkerkosten per rapport. De [API-kostencalculator](/prijs/api-kosten-calculator) helpt bij het berekenen van de verwachte kosten voor jouw situatie.
+Een eigen sandbox lost niet alles op. De tools draaien dan op je eigen server, maar Claude zelf draait nog bij Anthropic. De invoer en uitvoer van elke toolaanroep gaan naar Anthropic, zodat het model kan bepalen wat de volgende stap is. Over de plek van verwerking: je kunt een agent vastzetten op `us` of `global`. Een EU-optie staat er niet bij, en de gewone partnerclouds zoals AWS Bedrock en Google Vertex AI bieden Managed Agents niet aan. Meer daarover in [Claude-data in de EU houden](/compliance/eu-hosting).
 
-## Agentic AI MKB: wanneer Managed Agents inzetten
+Voor de AVG betekent dit: neem de agent op in je verwerkingsregister, geef hem alleen toegang tot de data die hij nodig heeft en doe een DPIA als er persoonsgegevens doorheen gaan. Persoonsgegevens die je kunt weglaten of pseudonimiseren, laat je weg.
 
-Managed Agents zijn zinvol als aan drie voorwaarden wordt voldaan:
+Ook de EU AI Act telt mee. De transparantieregels van artikel 50 gelden sinds 2 augustus 2026. De regels voor hoog-risicosystemen uit bijlage III zijn door de AI Omnibus uitgesteld naar 2 december 2027. Gebruik je een agent voor beslissingen over mensen, zoals sollicitanten of kredietaanvragen, dan val je in die categorie. Voor rapporten maken of data controleren meestal niet. De volledige tijdlijn staat in ons artikel over de [AI Act voor het MKB](/compliance/ai-act-mkb).
 
-1. **De taak is herhaalbaar.** Agents zijn niet geschikt voor eenmalige projecten. Ze worden geconfigureerd voor taken die regelmatig terugkomen.
-2. **De taak heeft duidelijke grenzen.** Een agent moet weten wanneer hij klaar is. "Analyseer alle data" is geen goede opdracht. "Genereer een rapportage voor klant X met metrics A, B en C" wel.
-3. **De foutkosten zijn beheersbaar.** Als een agent een fout maakt, moet dat te corrigeren zijn. Agents zijn niet geschikt voor onomkeerbare acties (geld overmaken, contracten ondertekenen) zonder menselijke goedkeuring.
+Let op één standaardinstelling. Een nieuwe agent krijgt de permission policy `always_allow`: hij voert elke toolaanroep uit zonder te vragen. Wil je dat een mens een stap goedkeurt, dan stel je zelf in dat bepaalde tools bevestiging nodig hebben.
 
-Goede use cases:
-- Rapportage genereren op basis van bedrijfsdata
-- [E-mail automatiseren](/use-cases/e-mail-automatiseren) voor sales outreach
-- Data-kwaliteitscontroles draaien op databases
-- Klantvragen routeren en beantwoorden
-- Systemen monitoren en alerts genereren
+## Wanneer zet je Claude Managed Agents in?
 
-Slechte use cases:
-- Strategische beslissingen nemen
-- Creatief werk dat oorspronkelijkheid vereist
-- Taken met hoge foutkosten en geen undo-mogelijkheid
-- Werk dat context vereist die niet in tools beschikbaar is
+Managed Agents past bij werk dat lang duurt, vaak terugkomt en zonder iemand ernaast kan draaien. Denk aan een wekelijkse controle van je data, een nachtelijke inventarisatie van scripts of een rapport dat elke ochtend klaar moet staan. De ingebouwde planning en de opslag van sessies besparen je dan echt bouwwerk.
 
-## Kosten: wat verwachten
+Het past minder goed als je data de EU niet mag verlaten, als je klanten ZDR eisen of als een medewerker de taak gewoon in een chat kan doen. Dat laatste lukt vaak al met Claude Team. Voor ontwikkelwerk op je eigen machine is Claude Code vaak de logischere keuze. Dat verschil leggen we uit in de [gids Claude Code voor bedrijven](/gids/claude-code-voor-bedrijven).
 
-De kosten van Managed Agents hangen af van drie factoren:
+Onze eigen ervaring komt uit zulk agent-werk, al draaide het niet op Managed Agents. Ons team lichtte bij een Nederlands softwarebedrijf alle [38 achtergrondprocessen door](/cases/automation-audit). Van die 38 waren er 9 stilgevallen of fout, en na 2 dagen draaiden ze alle 38 weer, gedocumenteerd. Dat deden we met Claude Code, op de twee machines van het bedrijf zelf. Bij een MSP-softwarebedrijf bouwden we een [agent die rapportages op aanvraag maakt](/cases/copilot-studio-agent) uit Power BI: van 30 tot 45 minuten handwerk per rapport naar 2 minuten. Die agent draait achter een eigen endpoint met bedrijfs-SSO. Geen van onze gepubliceerde cases draait op Managed Agents.
 
-**Token-verbruik per taak**
-Elke stap verbruikt tokens. Een eenvoudige taak (5 stappen, Sonnet-model) kost circa EUR 0,05 tot EUR 0,15. Een complexe taak (30 stappen, Opus-model) kost EUR 0,50 tot EUR 2,00.
+## Hoe begin je met Claude Managed Agents?
 
-**Frequentie**
-Een agent die 10 taken per dag uitvoert kost anders dan een agent die 200 taken per dag uitvoert. Check de [credits en limieten](/prijs/credits-en-limieten) voor de huidige volume-tarieven.
+Wil je het proberen, volg dan deze stappen:
 
-**Model-keuze**
-Opus is circa 5x duurder per token dan Sonnet, maar betrouwbaarder bij complexe taken. Haiku is circa 10x goedkoper dan Opus maar alleen geschikt voor eenvoudige routing en classificatie.
+1. Kies één taak die vaak terugkomt en een duidelijk eindpunt heeft. "Maak elke maandag het overzicht van openstaande tickets" werkt beter dan "analyseer alles".
+2. Bepaal welke data de agent nodig heeft en of daar persoonsgegevens in zitten. Zitten die erin, doe dan eerst de AVG-check uit de vorige sectie.
+3. Maak in de Claude Console een API-sleutel aan en maak een agent met het goedkoopste model dat de taak aankan. Begin met Sonnet 5.5 en stap pas over op Opus 5.5 als de kwaliteit tekortschiet.
+4. Zet bevestiging aan voor tools die iets veranderen of versturen, en stel een budget per sessie in.
+5. Draai de taak een paar keer met de hand voordat je een schema instelt. Kijk na elke run naar het tokengebruik.
+6. Zet daarna de geplande deployment aan en controleer de eerste twee weken elke run.
 
-Indicatie maandkosten per type agent:
-
-| Agent type | Taken per dag | Model | Geschatte maandkosten |
-|------------|---------------|-------|-----------------------|
-| Rapportage-agent | 10 | Sonnet | EUR 30 - 60 |
-| Sales e-mail agent | 25 | Opus | EUR 90 - 180 |
-| Data-kwaliteitscheck | 50 | Haiku + Sonnet | EUR 40 - 80 |
-| Klantenservice-routing | 100 | Haiku | EUR 25 - 50 |
-
-## Compliance en AVG
-
-Managed Agents verwerken data op Anthropic's servers. Dat betekent dat je dezelfde AVG-overwegingen hebt als bij regulier Claude-gebruik, plus een extra laag: de agent handelt autonoom. Je moet documenteren welke data de agent verwerkt, op basis van welke rechtsgrond, en welke maatregelen je neemt tegen fouten.
-
-Drie specifieke aandachtspunten:
-
-1. **Data minimalisatie.** Geef de agent alleen toegang tot de data die hij nodig heeft. Geen brede database-toegang als hij maar drie tabellen nodig heeft.
-2. **Logging en audit trail.** Managed Agents loggen elke stap. Bewaar die logs conform de [AI Act-eisen](/compliance/ai-act-mkb) voor transparantie.
-3. **Menselijke controle.** De AI Act vereist voor hoog-risico AI-systemen een human-in-the-loop. Voor de meeste MKB-toepassingen is dat geen vereiste, maar het is verstandig om een goedkeuringsstap in te bouwen voor consequentierijke acties.
-
-Vergelijk dit met hoe Microsoft [Copilot](/vergelijken/claude-vs-copilot) agents positioneert: dezelfde compliance-uitdagingen, maar met een ander infrastructuurmodel (Azure vs Anthropic's eigen cloud). OpenAI biedt vergelijkbare agent-functionaliteit via ChatGPT Enterprise en de Assistants API. Google Gemini heeft agent-capabilities via Vertex AI. De AVG (GDPR) eisen zijn bij alle drie de aanbieders vergelijkbaar. Claude Pro en Claude Team gebruikers kunnen Claude Code inzetten als lokaal alternatief voor Managed Agents, waarbij de data op je eigen machine blijft.
-
-## Aan de slag
-
-Als je overweegt om Managed Agents in te zetten:
-
-1. Begin met een enkele, afgebakende taak. Niet meteen je hele operatie automatiseren.
-2. Kies het goedkoopste model dat de taak aankan. Start met Sonnet, upgrade naar Opus als de kwaliteit onvoldoende is.
-3. Bouw een goedkeuringsstap in voor de output. Laat een mens het resultaat checken totdat je vertrouwen hebt.
-4. Monitor de kosten dagelijks in de eerste twee weken. De [API-kostencalculator](/prijs/api-kosten-calculator) geeft een schatting, maar de werkelijke kosten ken je pas na productie-gebruik.
-
-## Claude Managed Agents Nederland: de markt
-
-De markt voor claude managed agents nederland groeit snel. Nederlandse bedrijven die al werken met Claude Team of Claude Enterprise stappen logisch door naar agents voor repetitieve taken. Anthropic positioneert Managed Agents als het volgende niveau na de chatinterface.
-
-De AVG (GDPR) en EU AI Act stellen eisen aan transparantie en menselijk toezicht die bij agents extra aandacht verdienen. Een chatgesprek heeft per definitie een mens in de loop. Een agent werkt zelfstandig. Documenteer welke beslissingen de agent zelfstandig mag nemen en waar een goedkeuringsstap zit. Die documentatie is onderdeel van je [AI Act compliance](/compliance/ai-act-mkb).
-
-Lees ook: [e-mail automatiseren](/use-cases/e-mail-automatiseren) voor sales agents. De [API-kostencalculator](/prijs/api-kosten-calculator) helpt bij het inschatten van de maandelijkse kosten.
-
-## Veelgestelde vragen
-
-Zie de FAQ bovenaan deze pagina voor antwoorden over Managed Agents, kosten, AVG-compliance en developer-vereisten.
+Wil je hulp bij de keuze tussen Managed Agents, de gewone API en Claude Code, of bij de afspraken over data? Dat bepalen we in de eerste week van een [Claude-implementatie](/claude-implementatie). Meer achtergrond over Claude en Anthropic vind je in het [nieuwsoverzicht](/nieuws).

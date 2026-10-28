@@ -1,12 +1,14 @@
 name: Deploy site to Cloudflare Pages
 
-# Builds the Astro site and deploys it to Cloudflare Pages with wrangler.
+# Builds the Implementeren.ai site and deploys it to Cloudflare Pages with wrangler.
 # Runs on every push to main, once a day on a schedule, and can be triggered manually.
 #
 # The daily run (05:15 UTC = 06:15 CET / 07:15 CEST) makes scheduled articles go live
 # without a push: an entry with status published and a publishDate in the future is left
 # out of the build until that date (src/lib/publicatie.mjs, decision Max 22 Oct 2026).
 # GitHub runs schedules on the default branch (main) and can start them some minutes late.
+# Keep the schedule as long as articles carry a future publishDate; without this run they
+# would wait for the next unrelated push to main.
 #
 # THIS IS THE ONLY PRODUCTION DEPLOY PATH (since 2026-07-21).
 # The Pages project is still connected to this GitHub repo, but Cloudflare's own
@@ -16,15 +18,19 @@ name: Deploy site to Cloudflare Pages
 # built by Cloudflare and are unaffected.
 # To hand production back to Cloudflare, flip that flag true and delete this file.
 #
-# Required repository secrets (Settings -> Secrets and variables -> Actions):
+# The deploy job runs in the GitHub environment "production" (Settings -> Environments).
+# That environment only allows the main branch, so a run from any other branch or a PR
+# never gets the secrets below. All four secrets live in that environment, not in the repo.
+# Required environment secrets:
 #   CLOUDFLARE_API_TOKEN  - a token with the "Cloudflare Pages: Edit" permission
 #   CLOUDFLARE_ACCOUNT_ID - your Cloudflare account id
 # Optional repository variable:
-#   CLOUDFLARE_PROJECT_NAME - the Pages project name (defaults to "claudezakelijk-site").
-#     Must match the EXISTING project that serves claudezakelijk.nl.
-# Optional repository secrets (A-11). Without them the purge step skips itself with a notice:
-#   CLOUDFLARE_ZONE_ID     - zone claudezakelijk.nl > Overview > API > Zone ID
-#   CLOUDFLARE_PURGE_TOKEN - API token with only Zone > Cache Purge > Purge, zone claudezakelijk.nl
+#   CLOUDFLARE_PROJECT_NAME - the Pages project name (defaults to "implementeren-ai-site").
+#     Must match the EXISTING project that serves implementeren.ai.
+# Optional environment secrets (A-11). Without them the purge step skips itself with a notice:
+#   CLOUDFLARE_ZONE_ID     - zone implementeren.ai > Overview > API > Zone ID
+#   CLOUDFLARE_PURGE_TOKEN - API token with only Zone > Cache Purge > Purge,
+#     zones claudezakelijk.nl + implementeren.ai (the old domain only 301-redirects)
 # IndexNow needs no secret: the key is the public file public/<32 hex>.txt (A-22).
 
 on:
@@ -44,6 +50,7 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment: production
     steps:
       # Volledige geschiedenis: indexnow.mjs --since vergelijkt met de commit van voor de push.
       # persist-credentials: false (S2-05): geen job-stap pusht, dus het GITHUB_TOKEN hoeft
@@ -90,7 +97,7 @@ jobs:
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          CF_PAGES_PROJECT: ${{ vars.CLOUDFLARE_PROJECT_NAME || 'claudezakelijk-site' }}
+          CF_PAGES_PROJECT: ${{ vars.CLOUDFLARE_PROJECT_NAME || 'implementeren-ai-site' }}
         run: >-
           npx --no-install wrangler pages deploy dist
           --project-name="$CF_PAGES_PROJECT"

@@ -5,7 +5,8 @@ import { dienstNode, dienstId } from '../lib/schema';
 import { site } from '../site';
 
 // Stap 1.2 (lead-capture): de scan post naar Web3Forms. De access key is een
-// alias voor het ontvangstadres en hoort bij info@claudezakelijk.nl; hij is
+// alias voor het ontvangstadres en is geregistreerd op info@claudezakelijk.nl;
+// dat adres blijft doorsturen, dus de .nl-mailrouting mag niet weg. De key is
 // publiek en mag in client-code staan (docs.web3forms.com). Zetten als
 // build-variabele WEB3FORMS_KEY in de Cloudflare Pages-projectinstellingen.
 // Productie: zonder build-variabele valt de pagina terug op de key die sinds
@@ -99,33 +100,33 @@ const breadcrumbs = [{ name: 'Home', url: '/' }, { name: 'Gratis AI-check', url:
     nodes: [dienstNode({ pad: '/ai-enablement-scan', naam: 'Gratis AI-check', beschrijving: 'Online check van twee minuten die laat zien of je bedrijf klaar is voor Claude.', serviceType: 'AI-readiness-check', aanbod: { naam: 'Gratis AI-check', prijsTekst: 'Gratis', url: '/ai-enablement-scan' } })],
   }}
 >
-  <div class="hp text-ink-diep bg-papier">
-    <section class="mx-auto max-w-[680px] px-6 pt-16 pb-24">
-      <div class="mb-8 text-left"><Broodkruimel items={breadcrumbs} /></div>
-
-      <!-- Hero -->
-      <header class="text-center">
-        <p class="text-[13px] font-semibold tracking-[0.1em] uppercase text-terracotta">Gratis AI-check · 2 minuten · direct resultaat</p>
-        <h1 class="mt-4 font-newsreader font-medium leading-[1.1] tracking-[-0.015em] text-[clamp(32px,4.6vw,48px)] text-balance">Is jouw bedrijf klaar voor Claude?</h1>
-        <p class="mt-5 text-[17px] leading-[1.6] text-ink-2 text-pretty">Zeven vragen, direct je AI-check-score. Is je score hoog genoeg? Dan bieden we een gratis intro-gesprek aan.</p>
-        <p class="mt-3 text-[14px] text-ink-muted">Dit is de gratis check. Wil je weten wat Claude in jouw bedrijf oplevert, met een rapport en een vaste offerte? Dat doet de betaalde <a href="/claude-readiness-scan" class="link-terra">Claude Readiness Scan</a>.</p>
-        <ul class="list-none m-0 mt-5 p-0 flex justify-center gap-2.5 flex-wrap">
-          <li class="text-[13px] font-semibold border border-border-2 rounded-full px-3.5 py-1.5 bg-white">✓ Direct je score</li>
-          <li class="text-[13px] font-semibold border border-border-2 rounded-full px-3.5 py-1.5 bg-white">✓ Geen account nodig</li>
-          <li class="text-[13px] font-semibold border border-border-2 rounded-full px-3.5 py-1.5 bg-white">✓ Zeven vragen</li>
+  <div class="v2-check-pagina">
+    <section class="v2-check-raster">
+      <!-- Hero (links, blijft staan terwijl je de vragen invult) -->
+      <header class="v2-check-kop">
+        <Broodkruimel items={breadcrumbs} />
+        <p class="v2-chip">Gratis AI-check · 2 minuten · direct resultaat</p>
+        <h1 class="v2-artikel-h1">Is jouw bedrijf klaar voor Claude?</h1>
+        <p class="v2-check-lead">Zeven vragen, direct je AI-check-score. Is je score hoog genoeg? Dan bieden we een gratis intro-gesprek aan.</p>
+        <p class="v2-check-noot">Dit is de gratis check. Wil je weten wat Claude in jouw bedrijf oplevert, met een rapport en een vaste offerte? Dat doet de betaalde <a href="/claude-readiness-scan" >Claude Readiness Scan</a>.</p>
+        <ul class="v2-check-punten">
+          <li>✓ Direct je score</li>
+          <li>✓ Geen account nodig</li>
+          <li>✓ Zeven vragen</li>
         </ul>
       </header>
 
       <!-- De check -->
-      <form id="scanForm" class="mt-10 rounded-[24px] border border-lijn bg-white p-[clamp(24px,4vw,40px)] shadow-[0_1px_2px_rgba(38,34,28,0.04)]">
+      <div class="v2-check-rechts">
+      <form id="scanForm" class="v2-check-form">
         <input type="hidden" name="access_key" value={web3formsKey} />
-        <input type="hidden" name="subject" value="Nieuwe AI-check via claudezakelijk.nl" />
-        <input type="hidden" name="from_name" value="ClaudeZakelijk AI-check" />
+        <input type="hidden" name="subject" value="Nieuwe AI-check via implementeren.ai" />
+        <input type="hidden" name="from_name" value="Implementeren.ai AI-check" />
         <!-- Honeypot (Web3Forms-conventie): onzichtbaar voor mensen, bots vullen hem. -->
         <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
-        <div class="flex items-center gap-3 text-[13px] text-ink-2" aria-hidden="true">
+        <div class="v2-check-voortgang" aria-hidden="true">
           <span id="voortgangLabel">Vraag 1 van {vragen.length}</span>
-          <div class="flex-1 h-1.5 rounded-full bg-paper-tint overflow-hidden">
+          <div class="flex-1 h-2 rounded-full bg-paper-tint overflow-hidden">
             <div id="voortgangBalk" class="h-full w-0 bg-terracotta rounded-full transition-[width] duration-300 motion-reduce:transition-none"></div>
           </div>
         </div>
@@ -133,12 +134,12 @@ const breadcrumbs = [{ name: 'Home', url: '/' }, { name: 'Gratis AI-check', url:
         {vragen.map((v, i) => (
           <fieldset class="scan-vraag border-0 m-0 mt-8 p-0 reveal-target">
             <legend class="flex gap-3.5 items-start p-0">
-              <span class="flex-none grid place-items-center w-[30px] h-[30px] rounded-full bg-terracotta text-papier font-newsreader font-semibold text-[15px]" aria-hidden="true">{i + 1}</span>
-              <span class="font-semibold text-[16px] pt-0.5">{v.vraag}</span>
+              <span class="flex-none grid place-items-center w-[30px] h-[30px] rounded-full bg-terracotta text-papier font-semibold text-[15px]" aria-hidden="true">{i + 1}</span>
+              <span class="v2-check-vraag">{v.vraag}</span>
             </legend>
             <div class="grid gap-2.5 mt-3.5 ml-0 sm:ml-11">
               {v.opties.map((o, j) => (
-                <label class="antwoord relative flex items-center border-[1.5px] border-lijn rounded-[14px] px-4 py-3 text-[15px] bg-papier cursor-pointer transition-colors hover:border-border-2">
+                <label class="antwoord relative flex items-center border-[1.5px] border-lijn rounded-[16px] px-4 py-3.5 text-[15px] bg-papier cursor-pointer transition-colors hover:border-border-2">
                   <input type="radio" name={v.id} value={o.waarde} required={j === 0} class="sr-only" />
                   <span>{o.tekst}</span>
                   <span class="vinkje absolute right-4 text-terracotta font-bold opacity-0" aria-hidden="true">✓</span>
@@ -162,37 +163,37 @@ const breadcrumbs = [{ name: 'Home', url: '/' }, { name: 'Gratis AI-check', url:
             <label for="bedrijf" class="font-semibold block mb-2 text-[14.5px]">Bedrijfsnaam</label>
             <input id="bedrijf" name="bedrijf" type="text" required class="w-full border-[1.5px] border-lijn rounded-[14px] px-4 py-3 bg-papier" />
           </div>
-          <button type="submit" class="mt-1 rounded-full bg-terracotta text-papier px-6 py-4 font-semibold hover:bg-terracotta-h focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta-h">
+          <button type="submit" class="v2-knop v2-knop-olijf justify-center mt-1">
             Bereken mijn score &rarr;
           </button>
           <p id="scanStatus" class="m-0 text-[14px] text-ink-2 min-h-[1.25rem]" role="status" aria-live="polite"></p>
-          <p class="m-0 text-[13px] text-ink-muted">We gebruiken je gegevens alleen om op je aanvraag te reageren. Lees onze <a href="/privacy" class="link-terra">privacyverklaring</a>.</p>
+          <p class="m-0 text-[13px] text-ink-muted">We gebruiken je gegevens alleen om op je aanvraag te reageren. Lees onze <a href="/privacy" >privacyverklaring</a>.</p>
         </div>
       </form>
 
       <!-- Resultaat -->
       <div id="scanResultaat" class="mt-8 hidden" role="status">
-        <div class="rounded-[24px] bg-paper-tint p-[clamp(28px,5vw,44px)] grid gap-7 sm:grid-cols-[auto_1fr] items-center">
+        <div class="rounded-[28px] bg-white border border-lijn p-[clamp(28px,5vw,44px)] grid gap-7 sm:grid-cols-[auto_1fr] items-center">
           <svg class="w-[120px] h-[120px] mx-auto" viewBox="0 0 120 120" aria-hidden="true">
             <circle cx="60" cy="60" r="52" fill="none" stroke="var(--color-lijn)" stroke-width="10" />
             <circle id="scoreRing" cx="60" cy="60" r="52" fill="none" stroke="var(--color-terracotta)" stroke-width="10" stroke-linecap="round" stroke-dasharray="0 327" transform="rotate(-90 60 60)" style="transition: stroke-dasharray 1s ease-out" class="motion-reduce:transition-none" />
-            <text id="scoreRingGetal" x="60" y="70" text-anchor="middle" class="font-newsreader" font-size="30" font-weight="600" fill="var(--color-ink-diep)"></text>
+            <text id="scoreRingGetal" x="60" y="70" text-anchor="middle" font-family="var(--font-v2-kop)" font-size="32" font-weight="600" letter-spacing="-1" fill="var(--color-ink-diep)"></text>
           </svg>
           <div>
-            <h2 class="m-0 font-newsreader font-medium text-[clamp(22px,3vw,27px)] leading-[1.25]">AI-check-score: <span id="scoreGetal"></span>/100</h2>
+            <h2 class="m-0 text-[clamp(24px,3vw,30px)] leading-[1.15]">AI-check-score: <span id="scoreGetal"></span>/100</h2>
             <p id="scoreTekst" class="mt-3 text-[15.5px] leading-[1.6] text-ink-2"></p>
           </div>
         </div>
 
-        <div id="scorePasVak" class="mt-5 rounded-[24px] bg-ink-diep p-[clamp(28px,5vw,40px)] text-papier hidden">
-          <h3 class="m-0 font-newsreader font-medium text-[24px] text-papier">Je bedrijf past bij ons</h3>
+        <div id="scorePasVak" class="mt-5 rounded-[28px] bg-ink-diep p-[clamp(28px,5vw,40px)] text-papier hidden">
+          <h3 class="m-0 text-[26px] text-papier">Je bedrijf past bij ons</h3>
           <p class="mt-3 text-papier/85">Je komt in aanmerking voor een gratis intro-gesprek van 30 minuten. We bespreken de uitkomst, beantwoorden je vragen en kijken of een Readiness Scan past.</p>
-          <a id="introLink" href={site.introLink} class="mt-6 inline-flex items-center rounded-full bg-terracotta text-papier px-6 py-3 font-semibold no-underline hover:bg-terracotta-h">
+          <a id="introLink" href={site.introLink} class="v2-knop v2-knop-fel mt-6">
             Vraag gratis intro-gesprek aan &rarr;
           </a>
         </div>
-        <div id="scorePasNietVak" class="mt-5 rounded-[24px] border border-lijn bg-white p-[clamp(28px,5vw,40px)] hidden">
-          <h3 class="m-0 font-newsreader font-medium text-[24px]">Nu misschien nog niet het juiste moment</h3>
+        <div id="scorePasNietVak" class="mt-5 rounded-[28px] border border-lijn bg-white p-[clamp(28px,5vw,40px)] hidden">
+          <h3 class="m-0 text-[26px]">Nu misschien nog niet het juiste moment</h3>
           <p class="mt-3 text-ink-2">Op basis van je antwoorden is Claude-implementatie waarschijnlijk nog niet de volgende stap. Dat is oké. Drie dingen waarmee je vandaag al kunt beginnen:</p>
           <ul class="mt-4 space-y-3 text-ink-2 list-disc pl-5">
             <li>Laat twee of drie collega's een paar weken gratis experimenteren met <a href="https://claude.ai" target="_blank" rel="noopener" class="text-accent-donkerst underline">claude.ai</a> op taken zonder gevoelige data, zoals e-mails en samenvattingen.</li>
@@ -210,6 +211,7 @@ const breadcrumbs = [{ name: 'Home', url: '/' }, { name: 'Gratis AI-check', url:
           <p class="mt-4 text-ink-2">Toch sparren? Stuur een mailtje naar <a href={`mailto:${site.email}`} class="text-accent-donkerst underline">{site.email}</a>.</p>
         </div>
       </div>
+      </div>
 
     </section>
   </div>
@@ -217,18 +219,18 @@ const breadcrumbs = [{ name: 'Home', url: '/' }, { name: 'Gratis AI-check', url:
 
 <style>
   .scan-vraag input:focus-visible {
-    outline: 2px solid var(--color-terracotta-h);
+    outline: 2px solid var(--color-v2-olijf);
     outline-offset: 2px;
   }
   /* Gekozen antwoord-kaart (radio zit sr-only in het label). */
   .antwoord:has(input:checked) {
-    border-color: var(--color-terracotta);
-    background: #FDF3EF;
+    border-color: var(--color-v2-olijf);
+    background: var(--color-v2-tint);
     font-weight: 600;
   }
   .antwoord:has(input:checked) .vinkje { opacity: 1; }
   .antwoord:has(input:focus-visible) {
-    outline: 2px solid var(--color-terracotta-h);
+    outline: 2px solid var(--color-v2-olijf);
     outline-offset: 2px;
   }
 </style>

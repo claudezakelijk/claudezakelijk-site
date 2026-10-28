@@ -48,7 +48,7 @@ function isZoekmachine(host: string) {
 }
 
 function eigenHost(host: string) {
-  return host === location.hostname || /(^|\.)claudezakelijk\.(nl|pages\.dev)$/.test(host);
+  return host === location.hostname || /(^|\.)(implementeren\.ai|claudezakelijk\.(nl|pages\.dev))$/.test(host);
 }
 
 // Referrer als host + pad. Query alleen bewaren bij een zoekmachine.

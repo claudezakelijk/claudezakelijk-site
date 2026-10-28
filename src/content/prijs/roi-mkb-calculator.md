@@ -1,6 +1,6 @@
 ---
 title: "Claude ROI berekenen MKB"
-titleTag: "Claude ROI berekenen MKB: calculator | ClaudeZakelijk"
+titleTag: "Claude ROI berekenen MKB: calculator | Implementeren.ai"
 metaDescription: "Claude ROI berekenen voor MKB met onze calculator. Tijdsbesparing, kostenreductie en terugverdientijd per use case."
 h1: "Claude ROI berekenen MKB: calculator"
 targetKeywords:
@@ -82,7 +82,7 @@ De claude vs medewerker kosten vergelijking is treffend. Een extra sales medewer
 
 Niet elke Claude-implementatie levert positieve ROI. Bij te weinig volume (3 rapporten per maand = 2 uur besparing) of te veel review (80% herschrijven) werkt het niet. Begin met de taak die de meeste uren kost en het meest repetitief is. De [business case template](/prijs/business-case-template) helpt om de berekening voor jouw situatie te maken. Microsoft Copilot, ChatGPT van OpenAI en andere AI-tools volgen dezelfde ROI-logica. De AVG (GDPR) en BTW-regels gelden voor elke tool.
 
-Bij ClaudeZakelijk adviseren we Claude Pro voor individuele professionals en Claude Team voor teams van 5+. Claude Enterprise is relevant bij 50+ gebruikers. De ROI-berekening is voor alle plannen identiek: bespaarde uren maal uurtarief, minus de Claude-kosten in EUR.
+Bij Implementeren.ai adviseren we Claude Pro voor individuele professionals en Claude Team voor teams van 5+. Claude Enterprise is relevant bij 50+ gebruikers. De ROI-berekening is voor alle plannen identiek: bespaarde uren maal uurtarief, minus de Claude-kosten in EUR.
 
 Bekijk alle [Claude kosten](/prijs), de [API calculator](/prijs/api-kosten-calculator), of vergelijk [Pro vs Team vs Enterprise](/prijs/pro-vs-team-vs-enterprise). Lees hoe [Claude sales outreach](/use-cases/sales-outreach) werkt.
 

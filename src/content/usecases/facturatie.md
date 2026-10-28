@@ -1,6 +1,6 @@
 ---
 title: "Claude facturatie"
-titleTag: "Claude facturatie: facturen verwerken automatiseren | ClaudeZakelijk"
+titleTag: "Claude facturatie: facturen verwerken automatiseren | Implementeren.ai"
 metaDescription: "Claude facturatie voor het verwerken, categoriseren en automatiseren van facturen. Moneybird en Exact Online voorbeelden. Case: 38 scripts, 9 gerepareerd."
 h1: "Claude facturatie: facturen verwerken en automatiseren"
 targetKeywords:
@@ -124,6 +124,6 @@ Facturen bevatten bedrijfsnamen, bedragen, KVK-nummers en soms contactpersonen m
 | Contactpersoon (naam + e-mail) | Rood | Verwijder of pseudonimiseer |
 | Bankgegevens (IBAN) | Rood | Verwijder voor verwerking |
 
-Wij bij ClaudeZakelijk configureren de workflow zo dat alleen de noodzakelijke velden naar Claude gaan. Contactpersonen en bankgegevens worden gestript voor verwerking. De Moneybird-koppeling en Exact Online integratie zijn zo ingericht dat persoonsgegevens je eigen systeem niet verlaten. Anthropic verwerkt de data niet voor modeltraining. De data passeert de Anthropic API, maar wordt na verwerking niet opgeslagen. Bij volumes boven 500 facturen per maand is een lokaal model via Ollama een alternatief dat alle data binnen je eigen netwerk houdt. Meer over privacy: [Claude AVG en GDPR voor MKB](/compliance).
+Wij bij Implementeren.ai configureren de workflow zo dat alleen de noodzakelijke velden naar Claude gaan. Contactpersonen en bankgegevens worden gestript voor verwerking. De Moneybird-koppeling en Exact Online integratie zijn zo ingericht dat persoonsgegevens je eigen systeem niet verlaten. Anthropic verwerkt de data niet voor modeltraining. De data passeert de Anthropic API, maar wordt na verwerking niet opgeslagen. Bij volumes boven 500 facturen per maand is een lokaal model via Ollama een alternatief dat alle data binnen je eigen netwerk houdt. Meer over privacy: [Claude AVG en GDPR voor MKB](/compliance).
 
 ## Veelgestelde vragen

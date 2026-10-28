@@ -1,6 +1,6 @@
 ---
 title: "Claude koppelen aan Autotask"
-titleTag: "Claude Autotask integratie voor MSPs | ClaudeZakelijk"
+titleTag: "Claude Autotask integratie voor MSPs | Implementeren.ai"
 metaDescription: "Hoe MSP's Claude koppelen aan Autotask voor ticket-triage, rapportages en customer-success."
 h1: "Claude Autotask integratie: MSP workflows automatiseren"
 targetKeywords:
@@ -38,7 +38,7 @@ softwareName: "Autotask"
 softwareUrl: "https://www.datto.com/products/autotask-psa"
 ---
 
-MSP's die Autotask PSA gebruiken, kennen het patroon. Ticketdata zit in Autotask, rapportages moeten naar Power BI, klanten willen dashboards, en het team besteedt uren aan het handmatig verbinden van die systemen. Claude Code verandert dat. Met een MCP server die de Autotask REST API aanspreekt, krijgt Claude directe toegang tot je ticketdata, klantinformatie en SLA-metrics. Op ClaudeZakelijk documenteren we de aanpak zodat [MSP's](/claude-voor-msp) het kunnen repliceren.
+MSP's die Autotask PSA gebruiken, kennen het patroon. Ticketdata zit in Autotask, rapportages moeten naar Power BI, klanten willen dashboards, en het team besteedt uren aan het handmatig verbinden van die systemen. Claude Code verandert dat. Met een MCP server die de Autotask REST API aanspreekt, krijgt Claude directe toegang tot je ticketdata, klantinformatie en SLA-metrics. Op Implementeren.ai documenteren we de aanpak zodat [MSP's](/claude-voor-msp) het kunnen repliceren.
 
 ## AI voor Autotask: waarom koppelen aan Claude
 

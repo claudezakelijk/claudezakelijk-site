@@ -1,6 +1,6 @@
 ---
 title: "Claude voor ZZP en freelancers"
-titleTag: "Claude voor ZZP & freelance consultant | ClaudeZakelijk"
+titleTag: "Claude voor ZZP & freelance consultant | Implementeren.ai"
 metaDescription: "ZZP'ers en freelancers gebruiken Claude voor offertes, klantmails en administratie. Case: CRM in een weekend, kennismanagement."
 h1: "Claude voor ZZP en freelance consultant"
 targetKeywords:
@@ -69,7 +69,7 @@ Als ZZP'er is je kennis je product. Maar die kennis zit verspreid over notitiebo
 
 > *Ons team bouwde eerder bij een Nederlands softwarebedrijf Open Brain: een cross-sessie kennismanagementsysteem. Elke beslissing, elk inzicht, elke klantinteractie wordt vastgelegd en is doorzoekbaar. De volgende Claude-sessie begint niet bij nul, maar pikt op waar de vorige stopte.*
 
-Voor een ZZP consultant betekent dat: je legt je projectervaringen vast, je klantspecifieke kennis, je technische oplossingen. Bij een nieuw project met een vergelijkbare uitdaging zoekt Claude in je kennisbank en vindt de aanpak die eerder werkte. Geen heruitvinden van het wiel. Bij ClaudeZakelijk is Open Brain de ruggengraat van onze workflow. ChatGPT heeft geen vergelijkbaar cross-sessie geheugen.
+Voor een ZZP consultant betekent dat: je legt je projectervaringen vast, je klantspecifieke kennis, je technische oplossingen. Bij een nieuw project met een vergelijkbare uitdaging zoekt Claude in je kennisbank en vindt de aanpak die eerder werkte. Geen heruitvinden van het wiel. Bij Implementeren.ai is Open Brain de ruggengraat van onze workflow. ChatGPT heeft geen vergelijkbaar cross-sessie geheugen.
 
 ## Administratie en boekhouding voorbereiden
 
@@ -87,7 +87,7 @@ Als ZZP'er verwerk je klantdata: namen, projectinformatie, e-mailadressen, contr
 
 De praktische aanpak: pseudonimiseer klantgegevens. Vervang "Acme B.V." door "Klant A" en "Jan Jansen" door "Contactpersoon A". Claude verwerkt de geanonimiseerde data, je de-pseudonimiseert de output. Voor projectdocumenten met vertrouwelijke bedrijfsinformatie gebruik je generieke beschrijvingen.
 
-De Autoriteit Persoonsgegevens (AP) maakt geen onderscheid tussen grote bedrijven en ZZP'ers. De regels gelden voor iedereen die persoonsgegevens verwerkt, ongeacht de omvang van de onderneming. De GDPR is van toepassing op elke verwerkingsactiviteit. Bij ClaudeZakelijk helpen we ZZP'ers met het opzetten van die werkwijze. Het kost een uur en voorkomt problemen bij een eventuele controle.
+De Autoriteit Persoonsgegevens (AP) maakt geen onderscheid tussen grote bedrijven en ZZP'ers. De regels gelden voor iedereen die persoonsgegevens verwerkt, ongeacht de omvang van de onderneming. De GDPR is van toepassing op elke verwerkingsactiviteit. Bij Implementeren.ai helpen we ZZP'ers met het opzetten van die werkwijze. Het kost een uur en voorkomt problemen bij een eventuele controle.
 
 ## Wat levert het op
 

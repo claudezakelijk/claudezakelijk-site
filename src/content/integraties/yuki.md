@@ -1,6 +1,6 @@
 ---
 title: "Claude koppelen aan Yuki"
-titleTag: "Claude Yuki: automatische verwerking | ClaudeZakelijk"
+titleTag: "Claude Yuki: automatische verwerking | Implementeren.ai"
 metaDescription: "Hoe Yuki en Claude samen werken voor categorisatie, vragen aan klanten en periodieke rapportages."
 h1: "Claude Yuki boekhouden: koppelen en automatiseren"
 targetKeywords:

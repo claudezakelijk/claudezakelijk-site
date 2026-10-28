@@ -1,6 +1,6 @@
 ---
 title: "Claude koppelen aan HubSpot"
-titleTag: "Claude HubSpot koppelen: CRM-automatisering | ClaudeZakelijk"
+titleTag: "Claude HubSpot koppelen: CRM-automatisering | Implementeren.ai"
 metaDescription: "Claude koppelen aan HubSpot voor lead-enrichment, sales-mails en klantanalyses. Stappenplan met MCP."
 h1: "Claude HubSpot connector Nederlands: CRM automatiseren"
 targetKeywords:
@@ -126,7 +126,7 @@ Als je klantdata verwerkt namens derden, ben je verwerker in de zin van de AVG. 
 
 De investering is beperkt: een HubSpot API token (gratis), Claude Code (20 dollar per maand), en een halve dag tot een dag voor de initiële configuratie. Het rendement zit in de uren die je sales team terugkrijgt. Bij 25 mails per dag en 10 minuten besparing per mail praat je over 4 uur per dag. Dat is een halve FTE aan tijdsbesparing voor een tool die 20 dollar per maand kost.
 
-ClaudeZakelijk begeleidt bedrijven bij het opzetten van deze HubSpot-integratie. Van MCP-configuratie tot schrijfregels, van dataclassificatie tot het trainen van je team. [Neem contact op voor een vrijblijvend gesprek over jouw CRM-automatisering](/use-cases/sales-outreach).
+Implementeren.ai begeleidt bedrijven bij het opzetten van deze HubSpot-integratie. Van MCP-configuratie tot schrijfregels, van dataclassificatie tot het trainen van je team. [Neem contact op voor een vrijblijvend gesprek over jouw CRM-automatisering](/use-cases/sales-outreach).
 
 ## Veelgestelde vragen
 

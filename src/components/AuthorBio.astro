@@ -7,7 +7,7 @@ interface Props {
 const { author } = Astro.props;
 const info = auteurs[author];
 // Besluit M7: een auteur met zichtbaar: false wordt nooit bij naam getoond.
-// ArtikelMeta noemt dan "ClaudeZakelijk"; hier komt dan geen auteursblok.
+// ArtikelMeta noemt dan "Implementeren.ai"; hier komt dan geen auteursblok.
 const tonen = info.zichtbaar;
 const initialen = info.naam
   .split(' ')
@@ -17,13 +17,13 @@ const initialen = info.naam
   .toUpperCase();
 ---
 {tonen && (
-<aside class="mt-12 pt-8 border-t border-lijn flex items-start gap-4">
+<aside class="v2-auteur">
   {info.foto ? (
     <img
       src={info.foto}
       alt={info.naam}
-      width="64"
-      height="64"
+      width="72"
+      height="72"
       class="rounded-full object-cover flex-shrink-0"
       loading="lazy"
     />
@@ -36,7 +36,7 @@ const initialen = info.naam
     </div>
   )}
   <div>
-    <p class="font-semibold text-inkt">{info.naam}</p>
+    <p class="v2-auteur-naam">{info.naam}</p>
     <p class="text-sm text-inkt-zacht">{info.functie}</p>
     <p class="text-sm text-inkt-zacht mt-1">{info.bio}</p>
     {info.linkedin && (

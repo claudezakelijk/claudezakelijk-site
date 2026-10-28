@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" role="img" aria-label="Een ijsberg: de keuze voor een AI-tool is het kleine topje boven water, adoptie in het team is het grote deel eronder en bepaalt de winst" font-family="Inter, system-ui, sans-serif" fill="#23261D"><defs>
+<filter id="wai-g" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 .16  0 0 0 0 .15  0 0 0 0 .14  .16 0 0 0 -.03"/></filter>
+<marker id="wai-a" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#23261D"/></marker>
+</defs><rect width="1200" height="600" fill="#F4F1E8"/>
+<rect x="64" y="48" width="64" height="4" rx="2" fill="#3D5220"/><text x="64" y="92" fill="#565A4C" font-size="22" font-weight="600" letter-spacing="3">WAT DE WINST BEPAALT</text>
+<g>
+<rect x="0" y="262" width="1200" height="338" fill="#E9EBDC"/>
+<path d="M200 262 L150 360 L182 470 L320 548 L470 500 L540 384 L500 262 Z" fill="#CFCDBE" stroke="#23261D" stroke-width="4" stroke-linejoin="round"/>
+<path d="M262 262 L306 168 L334 196 L356 150 L420 262 Z" fill="#FFFFFF" stroke="#23261D" stroke-width="4" stroke-linejoin="round"/>
+<line x1="24" y1="262" x2="1176" y2="262" stroke="#565A4C" stroke-width="4" stroke-linecap="round"/>
+</g>
+<text x="640" y="176" font-family="'Instrument Sans Variable', Inter, system-ui, sans-serif" font-size="56" font-weight="700">de tool</text>
+<text x="640" y="228" font-size="32" fill="#565A4C">klein deel van het succes</text>
+<text x="640" y="366" font-family="'Instrument Sans Variable', Inter, system-ui, sans-serif" font-size="76" font-weight="700" fill="#23261D">adoptie</text>
+<text x="640" y="438" font-size="34" font-weight="600" fill="#23261D">is de rest</text>
+<text x="640" y="496" font-size="26" fill="#565A4C">kennis · use-cases · eigenaar</text>
+<rect width="1200" height="600" filter="url(#wai-g)"/></svg>

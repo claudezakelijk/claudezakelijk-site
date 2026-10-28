@@ -1,6 +1,6 @@
 ---
 title: "Claude Code workshop voor MKB-teams"
-titleTag: "Claude Code workshop voor MKB-teams | ClaudeZakelijk"
+titleTag: "Claude Code workshop voor MKB-teams | Implementeren.ai"
 metaDescription: "Hands-on Claude Code workshop voor developers en tech-leads. Breng je eigen project mee, werk met MCP servers, en leer productiewaardige AI-workflows."
 h1: "Claude Code workshop voor MKB-teams"
 targetKeywords:
@@ -39,7 +39,7 @@ faq:
 
 Claude Code workshop voor developers en tech-leads die AI willen integreren in hun dagelijkse development workflow. Geen slides over wat AI kan. Geen demo met een kant-en-klaar project. Je opent je eigen codebase, start Claude Code, en bouwt iets dat je morgen in productie kunt gebruiken.
 
-Bij ClaudeZakelijk geven we deze claude code training nederlands in-company. Maximaal 8 deelnemers per sessie, minimaal 4. Een dag, hands-on, op jullie locatie of remote. Elke deelnemer werkt op eigen hardware met eigen projecten. Wij zorgen dat iedereen aan het eind van de dag een werkende AI-workflow heeft voor hun specifieke stack.
+Bij Implementeren.ai geven we deze claude code training nederlands in-company. Maximaal 8 deelnemers per sessie, minimaal 4. Een dag, hands-on, op jullie locatie of remote. Elke deelnemer werkt op eigen hardware met eigen projecten. Wij zorgen dat iedereen aan het eind van de dag een werkende AI-workflow heeft voor hun specifieke stack.
 
 ## Waarom een claude code cursus voor je team
 
@@ -88,7 +88,7 @@ Het kernblok. Je bouwt een complete workflow op je eigen project. Niet een speel
 
 Voor teams die al ervaring hebben of snel leren. Hoe je meerdere Claude Code instanties parallel laat werken. Git worktrees voor geisoleerde taken. Slash commands als herbruikbare workflows. Skills en knowledge bases voor teambreed gedeelde context.
 
-Je leert ook de grenzen van Claude Code. Wanneer het model hallucineert en hoe je dat detecteert. Waarom je altijd moet verifieren voor je commit. Hoe je voorkomt dat Claude Code destructieve operaties uitvoert op je codebase. Security-bewustzijn is geen bijzaak in deze workshop, maar een doorlopend thema. We behandelen ook AVG (GDPR) en EU AI Act compliance voor developers, en de dataclassificatie (groen, oranje, rood) die ClaudeZakelijk hanteert.
+Je leert ook de grenzen van Claude Code. Wanneer het model hallucineert en hoe je dat detecteert. Waarom je altijd moet verifieren voor je commit. Hoe je voorkomt dat Claude Code destructieve operaties uitvoert op je codebase. Security-bewustzijn is geen bijzaak in deze workshop, maar een doorlopend thema. We behandelen ook AVG (GDPR) en EU AI Act compliance voor developers, en de dataclassificatie (groen, oranje, rood) die Implementeren.ai hanteert.
 
 ## Voor wie is deze claude code workshop
 

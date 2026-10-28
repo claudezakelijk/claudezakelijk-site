@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" role="img" aria-label="De Anthropic DPA dekt de schakel tussen jou en Anthropic en zit automatisch in de zakelijke voorwaarden; de verwerkersovereenkomst met je eigen klanten regel je zelf, met Anthropic als sub-verwerker" font-family="Inter, system-ui, sans-serif" fill="#23261D"><defs>
+<filter id="dpa-g" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 .16  0 0 0 0 .15  0 0 0 0 .14  .16 0 0 0 -.03"/></filter>
+<pattern id="dpa-ah" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="14" stroke="#3D5220" stroke-width="3" opacity=".45"/></pattern>
+</defs><rect width="1200" height="600" fill="#F4F1E8"/><rect x="64" y="48" width="64" height="4" rx="2" fill="#3D5220"/><text x="64" y="92" fill="#565A4C" font-size="22" font-weight="600" letter-spacing="3">TWEE SCHAKELS IN DEZELFDE KETEN</text>
+<g transform="translate(0 36)">
+<g stroke="#23261D" stroke-width="4" stroke-linecap="round"><line x1="260" y1="300" x2="311" y2="300"/><line x1="385" y1="300" x2="426" y2="300"/><line x1="534" y1="300" x2="568" y2="300"/><line x1="642" y1="300" x2="680" y2="300"/><line x1="880" y1="300" x2="940" y2="300"/></g>
+<rect x="76" y="244" width="196" height="88" rx="14" fill="#E9EBDC" stroke="#23261D" stroke-width="4"/>
+<rect x="64" y="256" width="196" height="88" rx="14" fill="#FFFFFF" stroke="#23261D" stroke-width="4"/>
+<rect x="426" y="256" width="108" height="88" rx="14" fill="#FFFFFF" stroke="#23261D" stroke-width="4"/>
+<rect x="680" y="256" width="200" height="88" rx="14" fill="#FFFFFF" stroke="#23261D" stroke-width="4"/>
+<rect x="964" y="232" width="180" height="88" rx="14" fill="#E9EBDC" stroke="#23261D" stroke-width="4"/>
+<rect x="952" y="244" width="180" height="88" rx="14" fill="#E9EBDC" stroke="#23261D" stroke-width="4"/>
+<rect x="940" y="256" width="180" height="88" rx="14" fill="#FFFFFF" stroke="#23261D" stroke-width="4"/>
+<g stroke-width="8" stroke-linecap="round"><line x1="962" y1="284" x2="1060" y2="284" stroke="#3D5220"/><line x1="962" y1="306" x2="1086" y2="306" stroke="#E1DED2"/><line x1="962" y1="328" x2="1044" y2="328" stroke="#E1DED2"/></g>
+<rect x="311" y="252" width="74" height="96" rx="8" fill="#FFFFFF"/>
+<rect x="311" y="252" width="74" height="96" rx="8" fill="url(#dpa-ah)" stroke="#3D5220" stroke-width="4" stroke-dasharray="10 10"/>
+<g>
+<rect x="568" y="252" width="74" height="96" rx="8" fill="#23261D"/>
+<g stroke="#F4F1E8" stroke-width="6" stroke-linecap="round"><line x1="582" y1="278" x2="626" y2="278"/><line x1="582" y1="300" x2="618" y2="300"/><line x1="582" y1="322" x2="622" y2="322"/></g>
+<text x="655" y="414" text-anchor="middle" font-size="36" font-weight="600" fill="#23261D">Anthropic DPA</text>
+</g>
+<text x="162" y="313" text-anchor="middle" font-size="36" font-weight="600">je klanten</text>
+<text x="480" y="313" text-anchor="middle" font-size="36" font-weight="600">jij</text>
+<text x="780" y="313" text-anchor="middle" font-size="36" font-weight="600">Anthropic</text>
+<text x="340" y="414" text-anchor="middle" font-size="34" font-weight="600" fill="#3D5220">zelf regelen</text>
+<text x="340" y="450" text-anchor="middle" font-size="26" fill="#565A4C">verwerkersovereenkomst</text>
+<text x="340" y="482" text-anchor="middle" font-size="26" fill="#565A4C">met je eigen klanten</text>
+<text x="340" y="514" text-anchor="middle" font-size="26" fill="#565A4C">Anthropic als sub-verwerker</text>
+<text x="655" y="450" text-anchor="middle" font-size="26" fill="#565A4C">zit automatisch in de</text>
+<text x="655" y="482" text-anchor="middle" font-size="26" fill="#565A4C">zakelijke voorwaarden</text>
+<text x="1004" y="414" text-anchor="middle" font-size="34" font-weight="600">sub-verwerkers</text>
+<text x="1004" y="450" text-anchor="middle" font-size="26" fill="#565A4C">bezwaar binnen 15 dagen</text>
+</g>
+<text x="1136" y="566" text-anchor="end" font-size="26" fill="#6E7263">stand oktober 2026</text>
+<rect width="1200" height="600" filter="url(#dpa-g)"/></svg>

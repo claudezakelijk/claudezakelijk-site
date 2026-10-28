@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import '../styles/v2.css';
 import { site } from '../site';
 import SeoMeta from '../components/SeoMeta.astro';
 import type { SchemaInvoer, ArtikelInvoer } from '../lib/schema';
@@ -8,7 +9,7 @@ import Footer from '../components/Footer.astro';
 import { moetNoindex } from '../data/indexering.mjs';
 import BronMeting from '../components/BronMeting.astro';
 import interLatin400 from '@fontsource/inter/files/inter-latin-400-normal.woff2?url';
-import newsreaderLatin from '@fontsource-variable/newsreader/files/newsreader-latin-wght-normal.woff2?url';
+import instrumentLatin from '@fontsource-variable/instrument-sans/files/instrument-sans-latin-wght-normal.woff2?url';
 
 interface Props {
   titel: string;
@@ -52,12 +53,12 @@ const geenIndex = noindex ?? moetNoindex(pad);
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="preload" href={interLatin400} as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href={newsreaderLatin} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={instrumentLatin} as="font" type="font/woff2" crossorigin />
     {geenIndex && <meta name="robots" content="noindex, nofollow" />}
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <SeoMeta titel={titel} beschrijving={beschrijving} pad={pad} ogType={ogType} ogImage={ogImage} ogTitel={ogTitel} ogImageAlt={ogImageAlt} geenIndex={geenIndex} schema={schema} artikel={artikel} geenCanonical={geenCanonical} />
   </head>
-  <body class="bg-papier text-inkt">
+  <body class="v2 bg-papier text-inkt">
     <a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:bg-accent-diep focus:text-papier focus:px-3 focus:py-2 focus:rounded">Naar inhoud</a>
     {toonHeader && <Header />}
     <main id="inhoud" tabindex="-1">

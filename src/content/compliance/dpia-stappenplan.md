@@ -1,6 +1,6 @@
 ---
 title: "DPIA voor Claude"
-titleTag: "DPIA voor Claude: stappenplan voor het MKB | ClaudeZakelijk"
+titleTag: "DPIA voor Claude: stappenplan voor het MKB | Implementeren.ai"
 metaDescription: "Wanneer een DPIA verplicht is als je Claude inzet, wat de AP-lijst en artikel 35 AVG vragen en welke input je uit de voorwaarden van Anthropic haalt."
 h1: "AI DPIA voor Claude: wanneer verplicht en hoe je hem uitvoert"
 targetKeywords:

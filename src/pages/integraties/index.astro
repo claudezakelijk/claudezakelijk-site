@@ -40,7 +40,7 @@ const faq = [
   pad="/integraties"
   schema={{ paginaType: 'CollectionPage', hoofdonderwerp: lijstId('/integraties'), nodes: [itemListNode('/integraties', items.map((i) => ({ url: i.href, naam: i.titel }))), faqNode('/integraties', faq)] }}
 >
-  <Container class="pt-16 pb-12">
+  <Container class="pt-12 pb-20" width="max-w-[1288px]">
     <CollectieHub
       label="Integraties"
       titel="Claude gekoppeld aan je tools"
@@ -51,7 +51,7 @@ const faq = [
     />
 
     {rijen.length > 0 && (
-      <div class="my-10 overflow-x-auto">
+      <div class="my-12 v2-tabelkaart v2-hubtabel">
         <table class="w-full text-sm border-collapse">
           <caption class="caption-top text-left text-sm text-inkt-zacht pb-2">Koppelingen, met datum van de laatste controle</caption>
           <thead>
@@ -65,7 +65,7 @@ const faq = [
             {rijen.map((r) => (
               <tr class="border-b border-lijn">
                 <th scope="row" class="p-3 text-left font-medium">{r.software}</th>
-                <td class="p-3"><a href={r.href} class="text-accent-diep">{r.titel}</a></td>
+                <td class="p-3"><a href={r.href} >{r.titel}</a></td>
                 <td class="p-3 text-inkt-zacht">{r.gecontroleerd && <time datetime={r.gecontroleerd.toISOString().slice(0, 10)}>{nl(r.gecontroleerd)}</time>}</td>
               </tr>
             ))}

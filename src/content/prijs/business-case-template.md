@@ -1,6 +1,6 @@
 ---
 title: "Claude business case template voor MKB"
-titleTag: "Claude business case template voor MKB | ClaudeZakelijk"
+titleTag: "Claude business case template voor MKB | Implementeren.ai"
 metaDescription: "Claude business case template voor MKB: TCO, ROI en risico's in een Excel-format. Twee case studies met concrete cijfers. Download en pas aan."
 h1: "Claude business case template voor MKB"
 targetKeywords:

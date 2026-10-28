@@ -1,6 +1,6 @@
 ---
 title: "Claude koppelen aan Twinfield"
-titleTag: "Claude Twinfield koppelen en automatiseren | ClaudeZakelijk"
+titleTag: "Claude Twinfield koppelen en automatiseren | Implementeren.ai"
 metaDescription: "Twinfield koppelen aan Claude voor automatische verwerking en rapportages. Voor accountantskantoren."
 h1: "Claude Twinfield koppelen voor accountants"
 targetKeywords:
@@ -36,7 +36,7 @@ softwareName: "Twinfield"
 softwareUrl: "https://www.wolterskluwer.com/nl-nl/solutions/twinfield"
 ---
 
-Claude Twinfield koppelen maakt het mogelijk om boekhoudata automatisch te verwerken, analyseren en om te zetten in rapportages. Geen handmatig exporteren, geen copy-paste uit Excel, geen vergeten periodes. In dit stappenplan van ClaudeZakelijk lees je hoe je als accountantskantoor de koppeling opzet tussen Claude en Twinfield van Wolters Kluwer.
+Claude Twinfield koppelen maakt het mogelijk om boekhoudata automatisch te verwerken, analyseren en om te zetten in rapportages. Geen handmatig exporteren, geen copy-paste uit Excel, geen vergeten periodes. In dit stappenplan van Implementeren.ai lees je hoe je als accountantskantoor de koppeling opzet tussen Claude en Twinfield van Wolters Kluwer.
 
 ## Wat is Twinfield en waarom Claude koppelen
 

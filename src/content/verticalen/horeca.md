@@ -1,6 +1,6 @@
 ---
 title: "Claude voor horeca"
-titleTag: "Claude voor horeca en restaurants | ClaudeZakelijk"
+titleTag: "Claude voor horeca en restaurants | Implementeren.ai"
 metaDescription: "Hoe horecaondernemers Claude inzetten voor menu's, gastcommunicatie, social media en reviews. Praktisch en AVG-veilig."
 h1: "Claude voor horeca en restaurants"
 targetKeywords:
@@ -36,7 +36,7 @@ areaServed: NL
 brancheOrganisatie: null
 ---
 
-Claude voor horeca en restaurants richt zich op het werk dat buiten de keuken en de bediening valt: menuomschrijvingen, gastcommunicatie, social media posts, reserveringsbevestigingen, en reviews beantwoorden. Horecaondernemers werken 60 tot 70 uur per week. De administratieve en marketingtaken komen er bovenop. Claude neemt dat schrijfwerk over. Wij bij ClaudeZakelijk begeleiden horecabedrijven door het hele implementatietraject.
+Claude voor horeca en restaurants richt zich op het werk dat buiten de keuken en de bediening valt: menuomschrijvingen, gastcommunicatie, social media posts, reserveringsbevestigingen, en reviews beantwoorden. Horecaondernemers werken 60 tot 70 uur per week. De administratieve en marketingtaken komen er bovenop. Claude neemt dat schrijfwerk over. Wij bij Implementeren.ai begeleiden horecabedrijven door het hele implementatietraject.
 
 ## Claude voor restaurant: menuomschrijvingen en seizoenskaarten
 
@@ -82,7 +82,7 @@ Bij een hotel met conferentieruimtes komen daar offertes en bevestigingen voor z
 
 Horecabedrijven verwerken persoonsgegevens: gastgegevens bij reserveringen, e-mailadressen voor nieuwsbrieven, allergiegegevens (die als medische data kwalificeren). De AVG vereist dat je deze gegevens beschermt.
 
-Claude gebruiken voor gastcommunicatie betekent niet dat je gastdata naar Anthropic stuurt. Pseudonimiseer gastgegevens in prompts. Gebruik Claude voor templates en concepten, niet voor het verwerken van individuele gastprofielen. GDPR-compliance is een kwestie van de juiste workflow, niet van technologie. Bij ClaudeZakelijk helpen we horecabedrijven die workflows op te zetten. Via Ollama draai je desgewenst een lokaal model voor gevoelige gastdata. OpenAI en Microsoft Copilot bieden vergelijkbare AI-tools, maar Claude via Anthropic onderscheidt zich met zakelijke API-garanties: geen dataretentie, geen training op je data. Claude Code integreert direct met je werkomgeving.
+Claude gebruiken voor gastcommunicatie betekent niet dat je gastdata naar Anthropic stuurt. Pseudonimiseer gastgegevens in prompts. Gebruik Claude voor templates en concepten, niet voor het verwerken van individuele gastprofielen. GDPR-compliance is een kwestie van de juiste workflow, niet van technologie. Bij Implementeren.ai helpen we horecabedrijven die workflows op te zetten. Via Ollama draai je desgewenst een lokaal model voor gevoelige gastdata. OpenAI en Microsoft Copilot bieden vergelijkbare AI-tools, maar Claude via Anthropic onderscheidt zich met zakelijke API-garanties: geen dataretentie, geen training op je data. Claude Code integreert direct met je werkomgeving.
 
 ## Wat levert het op
 
@@ -95,7 +95,7 @@ De ROI voor een gemiddeld horecabedrijf (restaurant, hotel of cateringbedrijf):
 - **Evenementen:** 1,5 tot 2,5 uur per evenement.
 - **Claude Pro licenties:** 20 dollar per gebruiker per maand.
 
-Wij bij ClaudeZakelijk begeleiden horecaondernemers door het hele traject. De implementatie kost 1 tot 3 weken. Een horecabedrijf met 2 tot 3 mensen op communicatie en administratie haalt 400 tot 700 uur besparing per jaar. De terugverdientijd: minder dan twee weken.
+Wij bij Implementeren.ai begeleiden horecaondernemers door het hele traject. De implementatie kost 1 tot 3 weken. Een horecabedrijf met 2 tot 3 mensen op communicatie en administratie haalt 400 tot 700 uur besparing per jaar. De terugverdientijd: minder dan twee weken.
 
 ## Veelgestelde vragen
 

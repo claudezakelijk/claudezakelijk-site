@@ -2,6 +2,7 @@
 import BasisLayout from './BasisLayout.astro';
 import { seoVoorEntry } from '../lib/schema';
 import KortAntwoord from '../components/KortAntwoord.astro';
+import ArtikelBeeld from '../components/ArtikelBeeld.astro';
 import ArtikelMeta from '../components/ArtikelMeta.astro';
 import AdviesDisclaimer from '../components/AdviesDisclaimer.astro';
 import Broodkruimel from '../components/Broodkruimel.astro';
@@ -10,6 +11,8 @@ import FaqSectie from '../components/FaqSectie.astro';
 import BronnenBlok from '../components/BronnenBlok.astro';
 import CtaStrook from '../components/CtaStrook.astro';
 import GerelateerdeLinks from '../components/GerelateerdeLinks.astro';
+import ArtikelInhoud from '../components/ArtikelInhoud.astro';
+import type { MarkdownHeading } from 'astro';
 
 interface Props {
   entry: {
@@ -36,9 +39,11 @@ interface Props {
     id: string;
   };
   pagePath: string;
+  /** Koppen uit render(entry), voor de inhoudsopgave. */
+  koppen?: MarkdownHeading[];
 }
 
-const { entry, pagePath } = Astro.props;
+const { entry, pagePath, koppen = [] } = Astro.props;
 const { data } = entry;
 
 const breadcrumbs = [
@@ -49,35 +54,46 @@ const breadcrumbs = [
 const seo = seoVoorEntry({ pad: pagePath, sectie: 'Branches', breadcrumbs, data, serviceType: `Claude-implementatie voor ${data.title.replace(/^Claude voor /, '')}` });
 ---
 <BasisLayout titel={data.titleTag} beschrijving={data.metaDescription} pad={pagePath} schema={seo.schema} artikel={seo.artikel}>
-
-  <article class="max-w-3xl mx-auto px-6 pt-16 pb-8">
-    <Broodkruimel items={breadcrumbs} />
-
-    <header class="mt-6">
-      <div class="flex items-center gap-3 flex-wrap mb-4">
-        <span class="text-[13px] font-semibold uppercase tracking-[0.1em] text-terracotta">
-          Branche
-        </span>
+  <article class="v2-artikel">
+    <div class="v2-voortgang" aria-hidden="true"></div>
+    <header class="v2-artikel-kop">
+      <div class="v2-artikel-kop-binnen">
+        <Broodkruimel items={breadcrumbs} />
+        <div class="v2-chips">
+          <span class="v2-chip">
+            Branche
+          </span>
+        </div>
+        <h1 class="v2-artikel-h1">{data.h1}</h1>
+        <ArtikelMeta publishDate={data.publishDate} updatedDate={data.updatedDate} author={data.author} reviewedBy={data.reviewedBy} reviewedDate={data.reviewedDate} disclaimer={data.disclaimer} />
       </div>
-      <h1 class="font-newsreader font-medium leading-[1.12] tracking-[-0.015em] text-[length:var(--text-h1)] text-balance">{data.h1}</h1>
-      <ArtikelMeta publishDate={data.publishDate} updatedDate={data.updatedDate} author={data.author} reviewedBy={data.reviewedBy} reviewedDate={data.reviewedDate} disclaimer={data.disclaimer} />
-      {data.disclaimer && <AdviesDisclaimer soort={data.disclaimer} />}
     </header>
 
-    <KortAntwoord tekst={data.kortAntwoord} stand={data.updatedDate ?? data.publishDate} />
+    <div class="v2-artikel-raster">
+      <ArtikelInhoud soort="zijkant" koppen={koppen} faq={data.faq.length > 0} />
+      <div class="v2-artikel-tekst">
+        {data.disclaimer && <AdviesDisclaimer soort={data.disclaimer} />}
 
-    <div class="mt-10 prose prose-lg max-w-none">
-      <slot />
+        <ArtikelBeeld collectie="verticalen" id={entry.id} />
+
+        <KortAntwoord tekst={data.kortAntwoord} stand={data.updatedDate ?? data.publishDate} />
+
+        <ArtikelInhoud soort="mobiel" koppen={koppen} faq={data.faq.length > 0} />
+
+        <div class="prose prose-lg max-w-none v2-prose">
+          <slot />
+        </div>
+
+        <BronnenBlok bronnen={data.bronnen} />
+
+        {data.faq.length > 0 && <FaqSectie items={data.faq} />}
+
+        <AuthorBio author={data.author} />
+      </div>
     </div>
-
-    <BronnenBlok bronnen={data.bronnen} />
-
-    {data.faq.length > 0 && <FaqSectie items={data.faq} />}
-
-    <AuthorBio author={data.author} />
   </article>
 
-  <div class="max-w-3xl mx-auto px-6">
+  <div class="v2-artikel-na">
     <CtaStrook dienst="consultant" />
     <GerelateerdeLinks links={data.internalLinks} />
   </div>

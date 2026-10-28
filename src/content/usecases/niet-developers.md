@@ -1,6 +1,6 @@
 ---
 title: "Claude Code voor niet-developers"
-titleTag: "Claude Code voor niet-developers en ondernemers | ClaudeZakelijk"
+titleTag: "Claude Code voor niet-developers en ondernemers | Implementeren.ai"
 metaDescription: "Claude Code voor niet-developers: bouw tools, CRM's en dashboards zonder programmeerkennis. Case: CRM gebouwd in een weekend."
 h1: "Claude Code voor niet-developers en ondernemers"
 targetKeywords:

@@ -1,6 +1,6 @@
 ---
 title: "Claude SEO content schrijven"
-titleTag: "Claude SEO content schrijven zonder straf | ClaudeZakelijk"
+titleTag: "Claude SEO content schrijven zonder straf | Implementeren.ai"
 metaDescription: "Claude voor SEO content die Google niet straft. Case: 311.000 impressies, 14 kannibaliserende pagina's opgelost, 0.09% CTR gediagnosticeerd in 1 uur."
 h1: "Claude voor SEO content schrijven zonder gestraft te worden"
 targetKeywords:

@@ -1,7 +1,7 @@
 ---
 title: "Claude Zero Data Retention: wat het is en wie het krijgt"
-titleTag: "Claude Zero Data Retention (ZDR) uitgelegd | ClaudeZakelijk"
-metaDescription: "Wat Zero Data Retention bij Anthropic inhoudt, welke producten eronder vallen, hoe je het aanvraagt en wat Claude standaard bewaart. Stand: 22 oktober 2026."
+titleTag: "Claude Zero Data Retention (ZDR) uitgelegd | Implementeren.ai"
+metaDescription: "Wat Zero Data Retention bij Anthropic inhoudt, welke producten eronder vallen, hoe je het aanvraagt en wat Claude bewaart. Stand: 22 oktober 2026."
 h1: "Claude Zero Data Retention: wat het is, wat eronder valt en hoe je het aanvraagt"
 targetKeywords:
   - claude zero data retention
@@ -109,7 +109,7 @@ Let op bij metrics logging in Claude Code: productiviteitsdata zoals gebruikssta
 
 Anthropic heeft Claude Fable 5, Fable 5.1 en de Mythos-varianten aangewezen als Covered Models: modellen waarvan de capaciteiten extra waarborgen vragen. Voor die modellen geldt een minimale dataretentie van 30 dagen, op elk platform, juist omdat sommige vormen van misbruik alleen zichtbaar worden over meerdere verzoeken heen. Prompts en antwoorden worden na die 30 dagen automatisch verwijderd, tenzij er een veiligheidsonderzoek loopt.
 
-Voor een organisatie met ZDR betekent dit dat Fable-modellen standaard niet beschikbaar zijn. Er is een tussenweg: je kunt voor één aparte workspace 30 dagen retentie aanzetten en Fable daar gebruiken, terwijl de rest van de organisatie zero data retention houdt. Anthropic werkt daarnaast vanaf najaar 2026 aan Enterprise Frontier Safeguards, een regeling waarbij de bewaarde monitoringdata in cloudomgeving van de klant zelf kan staan.
+Voor een organisatie met ZDR betekent dit dat Fable-modellen standaard niet beschikbaar zijn. Er is een tussenweg: je kunt voor één aparte workspace 30 dagen retentie aanzetten en Fable daar gebruiken, terwijl de rest van de organisatie zero data retention houdt. Anthropic werkt daarnaast vanaf najaar 2026 aan Enterprise Frontier Safeguards, een regeling waarbij de bewaarde monitoringdata in de cloudomgeving van de klant zelf kan staan.
 
 ## Wat bewaart Anthropic standaard, zonder ZDR?
 

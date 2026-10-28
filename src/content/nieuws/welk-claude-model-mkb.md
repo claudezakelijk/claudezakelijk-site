@@ -1,6 +1,6 @@
 ---
 title: "Welk Claude model kies je als MKB?"
-titleTag: "Welk Claude model kiezen? Fable, Opus, Sonnet, Haiku | ClaudeZakelijk"
+titleTag: "Welk Claude model kiezen? Fable, Opus, Sonnet, Haiku"
 metaDescription: "Fable 5.1, Opus 5.5, Sonnet 5.5 of Haiku 5.5: welk Claude model gebruik je waarvoor, wat kost het per miljoen tokens en wat zit er in welk abonnement?"
 h1: "Welk Claude model kies je als MKB: Fable, Opus, Sonnet of Haiku?"
 targetKeywords:

@@ -1,6 +1,6 @@
 ---
 title: "Claude data analyse"
-titleTag: "Claude data analyse: Excel, CSV en databases | ClaudeZakelijk"
+titleTag: "Claude data analyse: Excel, CSV en databases | Implementeren.ai"
 metaDescription: "Claude data analyse voor Excel, CSV en databases. Van ruwe data naar inzichten in minuten. Cases met 872 reports en 4-bronnen klantprofielen."
 h1: "Claude data analyse: Excel, CSV en databases"
 targetKeywords:
@@ -127,6 +127,6 @@ Data-analyse raakt bijna altijd aan persoonsgegevens. Klantlijsten bevatten name
 
 De regel: pseudonimiseer identificerende gegevens voor je data naar Claude stuurt. Vervang namen door codes, verwijder adressen, behoud alleen de analytisch relevante velden. Na de analyse koppel je de resultaten terug in je eigen systeem.
 
-We gebruiken een drielagenmodel: groene data (vrij te gebruiken), oranje data (pseudonimiseren) en rode data (alleen lokaal). Wij bij ClaudeZakelijk helpen bedrijven met het opzetten van die scheiding, inclusief een geautomatiseerde pseudonimiseringslaag die namen en ID's vervangt voor de data naar Claude gaat. Lees meer: [Claude AVG en GDPR voor MKB](/compliance). Voor [facturatiedata](/use-cases/facturatie) en maandrapportages gelden dezelfde regels.
+We gebruiken een drielagenmodel: groene data (vrij te gebruiken), oranje data (pseudonimiseren) en rode data (alleen lokaal). Wij bij Implementeren.ai helpen bedrijven met het opzetten van die scheiding, inclusief een geautomatiseerde pseudonimiseringslaag die namen en ID's vervangt voor de data naar Claude gaat. Lees meer: [Claude AVG en GDPR voor MKB](/compliance). Voor [facturatiedata](/use-cases/facturatie) en maandrapportages gelden dezelfde regels.
 
 ## Veelgestelde vragen

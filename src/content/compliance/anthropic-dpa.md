@@ -18,6 +18,7 @@ internalLinks:
   - /claude-implementatie
   - /compliance/eu-hosting
   - /compliance/is-claude-veilig
+  - /compliance/zero-data-retention
   - /compliance/ai-act-mkb
 schemaTypes:
   - Article
@@ -137,7 +138,7 @@ De belangrijkste onderdelen van de DPA en de zakelijke voorwaarden:
 
 **Verwijdering.** Binnen 30 dagen na het einde van de overeenkomst verwijdert Anthropic de klantdata, behalve waar de wet bewaren eist of waar dat nodig is tegen misbruik.
 
-Daarnaast bestaat Zero Data Retention. Bij die afspraak slaat Anthropic prompts en antwoorden niet op, behalve waar de wet of misbruikbestrijding dat vereist. Anthropic beoordeelt aanvragen per organisatie, via sales. De regeling geldt alleen voor de API en voor Claude Code op Enterprise-abonnementen. Voor sommige modellen blijft een beperkte bewaartermijn gelden.
+Daarnaast bestaat [Zero Data Retention](/compliance/zero-data-retention). Bij die afspraak slaat Anthropic prompts en antwoorden niet op, behalve waar de wet of misbruikbestrijding dat vereist. Anthropic beoordeelt aanvragen per organisatie, via sales. De regeling geldt alleen voor de API en voor Claude Code op Enterprise-abonnementen. Voor sommige modellen blijft een beperkte bewaartermijn gelden.
 
 ## Wat lost de DPA niet voor je op?
 

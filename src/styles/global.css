@@ -1,28 +1,27 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
-@import "@fontsource/source-serif-4/400.css";
-@import "@fontsource/source-serif-4/700.css";
 @import "@fontsource/inter/400.css";
 @import "@fontsource/inter/500.css";
 @import "@fontsource/inter/600.css";
 @import "@fontsource/inter/700.css";
 @import "@fontsource-variable/newsreader/wght.css";
 @import "@fontsource-variable/newsreader/wght-italic.css";
+@import "@fontsource-variable/instrument-sans/wght.css";
 
 @theme {
-  --color-papier: #FAF7F2;
-  --color-papier-dieper: #F2ECE0;
-  --color-inkt: #2A2725;
-  --color-inkt-zacht: #58524C;
-  --color-accent: #CC785C;         /* decoratief, alleen voor vlakken en grote koppen; niet voor tekst en niet voor knop-achtergrond */
-  --color-accent-diep: #A35A41;    /* tekstvariant en knop-achtergrond, voldoet AA (4.80:1) op papier */
-  --color-accent-donkerst: #7B3D2F; /* hover-variant van knoppen, voldoet AAA op papier */
-  --color-teal: #0f766e;            /* primaire actie-kleur voor Readiness Scan CTA; AA (4.8:1) op papier */
-  --color-teal-diep: #115e58;       /* hover-variant; AAA op papier */
-  --color-lijn: #E6DFD2;
+  --color-papier: #F4F1E8;
+  --color-papier-dieper: #E9EBDC;
+  --color-inkt: #23261D;
+  --color-inkt-zacht: #565A4C;
+  --color-accent: #B4C13E;         /* decoratief (olijf-fel), alleen voor vlakken; niet voor tekst op crème */
+  --color-accent-diep: #3D5220;    /* olijf: tekst en knop-achtergrond, 7,7:1 op crème */
+  --color-accent-donkerst: #2C3C16; /* olijf-h: hover en links, AAA op crème */
+  --color-teal: #3D5220;            /* v2: olijf; wit erop 8,7:1 */
+  --color-teal-diep: #2C3C16;       /* v2: olijf-h */
+  --color-lijn: #E1DED2;
 
-  --font-serif: "Source Serif 4", ui-serif, Georgia, serif;
+  --font-serif: "Instrument Sans Variable", "Inter", ui-sans-serif, system-ui, sans-serif; /* v2: koppen schreefloos */
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
 
   --text-h1: clamp(2.75rem, 5vw + 1rem, 4.5rem);
@@ -32,33 +31,55 @@
   --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
   --ease-out-back: cubic-bezier(0.34, 1.56, 0.64, 1);
 
-  /* Redesign 1b — warm & persoonlijk */
-  --color-paper-tint: #F1EBE0;
-  --color-ink-diep: #26221C;
-  --color-ink-2: #6E655A;
-  --color-ink-muted: #A69B8A;
-  --color-terracotta: #C25E3C;
-  --color-terracotta-h: #A84E30;
-  --color-salmon: #E8A288;
-  --color-border-2: #D6CDBD;
+  /* Redesign 1b — namen blijven, waarden zijn sinds de v2-uitrol (27 okt)
+     omgezet naar crème + olijf, zodat alle pagina's meteen meekleuren. */
+  --color-paper-tint: #E9EBDC;
+  --color-ink-diep: #23261D;
+  --color-ink-2: #565A4C;
+  --color-ink-muted: #64685A; /* v2: 5,1:1 op crème (was 2,6:1) */
+  --color-terracotta: #3D5220;
+  --color-terracotta-h: #2C3C16;
+  --color-salmon: #B4C13E;
+  --color-border-2: #CFCDBE;
   /* Voor/na-vergelijking (ontwerpronde 2, 22 juli): gedempt rood/groen op het
      warme palet; tekst op de tinten haalt AA. */
   --color-rood: #A8433B;
   --color-rood-tint: #F6E7E4;
   --color-rood-lijn: #E4C8C3;
-  --color-groen: #3E7C4F;
+  --color-groen: #376E45;
   --color-groen-tint: #E9F1E9;
   --color-groen-lijn: #C6D9C8;
   --font-newsreader: "Newsreader Variable", "Newsreader", Georgia, serif;
+
+  /* Redesign v2 (27 okt) — crème + olijf, schreefloze koppen. Contrast gemeten
+     met WCAG-formule: inkt op crème 13,6:1; inkt-2 op crème 6,3:1; olijf op
+     crème 7,7:1; wit op olijf 8,7:1; inkt op olijf-fel 7,8:1. */
+  --color-v2-creme: #F4F1E8;
+  --color-v2-tint: #E9EBDC;
+  --color-v2-lijn: #E1DED2;
+  --color-v2-inkt: #23261D;
+  --color-v2-inkt-2: #565A4C;
+  --color-v2-olijf: #3D5220;
+  --color-v2-olijf-h: #2C3C16;
+  --color-v2-olijf-fel: #B4C13E;
+  --font-v2-kop: "Instrument Sans Variable", "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Vloeiende overgang tussen pagina's (cross-document View Transitions).
+   Browsers zonder ondersteuning laden gewoon normaal; bij 'verminder
+   beweging' staat de overgang uit. */
+@view-transition { navigation: auto; }
+@media (prefers-reduced-motion: reduce) {
+  @view-transition { navigation: none; }
 }
 
 .prose {
   --tw-prose-body: var(--color-inkt);
   --tw-prose-headings: var(--color-inkt);
-  --tw-prose-links: var(--color-accent-donkerst);
+  --tw-prose-links: var(--color-v2-olijf);
   --tw-prose-bold: var(--color-inkt);
   --tw-prose-counters: var(--color-inkt-zacht);
-  --tw-prose-bullets: var(--color-inkt-zacht);
+  --tw-prose-bullets: var(--color-v2-olijf);
   --tw-prose-hr: var(--color-lijn);
   --tw-prose-quotes: var(--color-inkt);
   --tw-prose-quote-borders: var(--color-lijn);
@@ -68,14 +89,14 @@
   --tw-prose-td-borders: var(--color-lijn);
 }
 
-/* Warme leesstijl: Newsreader-koppen in alle prose-content. Alleen opmaak —
-   de SEO-tekst en koppen-hiërarchie blijven ongewijzigd. */
+/* Leesstijl v2: schreefloze koppen (Instrument Sans) in alle prose-content.
+   Alleen opmaak; de SEO-tekst en koppen-hiërarchie blijven ongewijzigd. */
 .prose :is(h2, h3, h4) {
-  font-family: var(--font-newsreader);
-  letter-spacing: -0.01em;
+  font-family: var(--font-v2-kop);
+  font-weight: 600;
+  letter-spacing: -0.025em;
 }
-.prose :is(h2, h3, h4) { font-weight: 600; }
-.prose h2 { font-weight: 500; }
+.prose h2 { letter-spacing: -0.03em; }
 
 html {
   background-color: var(--color-papier);
@@ -92,19 +113,25 @@ body {
 }
 
 h1, h2, h3 {
-  font-family: var(--font-serif);
-  font-weight: 700;
-  line-height: 1.15;
-  letter-spacing: -0.01em;
+  font-family: var(--font-v2-kop);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
 }
 
 h1 {
-  letter-spacing: -0.035em;
+  letter-spacing: -0.04em;
 }
+
+/* v2: koppen die nog de Newsreader-class dragen worden schreefloos; Newsreader
+   blijft alleen voor cursieve accenten (.hp-italic, .v2-accent). */
+:is(h1, h2, h3, h4).font-newsreader { font-family: var(--font-v2-kop); font-weight: 600; letter-spacing: -0.03em; }
+p { text-wrap: pretty; }
 
 @layer base {
   a {
-    color: var(--color-accent-donkerst);
+    color: var(--color-v2-olijf);
     text-decoration: underline;
     text-underline-offset: 3px;
   }
@@ -119,7 +146,7 @@ h1 {
 .card-shadow:hover {
   box-shadow: 0 4px 12px rgba(0,0,0,0.08), 0 1px 3px rgba(0,0,0,0.06);
   transform: translateY(-2px);
-  border-color: var(--color-accent-diep);
+  border-color: var(--color-v2-olijf);
 }
 
 /* Section accent line */
@@ -138,7 +165,7 @@ h1 {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(250, 247, 242, 0.85);
+  background: rgba(244, 241, 232, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
@@ -277,7 +304,7 @@ html.js .reveal-target.revealed {
   height: 32rem;
   max-width: 90vw;
   border-radius: 9999px;
-  background: radial-gradient(circle, rgba(204, 120, 92, 0.16), transparent 70%);
+  background: radial-gradient(circle, rgba(180, 193, 62, 0.22), transparent 70%);
   pointer-events: none;
   z-index: -1;
   animation: hero-pulse 9s var(--ease-out-soft) infinite;
@@ -440,22 +467,22 @@ html.js .reveal-target.revealed {
    Homepage redesign 1b — warm & persoonlijk
    ============================================================ */
 .hp h1 {
-  font-family: var(--font-newsreader);
-  font-weight: 500;
-  letter-spacing: -0.02em;
+  font-family: var(--font-v2-kop);
+  font-weight: 600;
+  letter-spacing: -0.045em;
   line-height: 1.02;
   font-size: clamp(2.75rem, 5.5vw + 0.5rem, 84px);
 }
 .hp h2 {
-  font-family: var(--font-newsreader);
-  font-weight: 500;
-  letter-spacing: -0.01em;
+  font-family: var(--font-v2-kop);
+  font-weight: 600;
+  letter-spacing: -0.035em;
   line-height: 1.12;
   font-size: clamp(1.9rem, 2.2vw + 1rem, 40px);
 }
 .hp h2.h2-cta { font-size: clamp(2rem, 2.6vw + 1rem, 44px); line-height: 1.15; }
 .hp h2.h2-person { font-size: clamp(1.6rem, 1.5vw + 1rem, 32px); }
-.hp h3 { font-family: var(--font-newsreader); font-weight: 600; }
+.hp h3 { font-family: var(--font-v2-kop); font-weight: 600; letter-spacing: -0.02em; }
 .hp-italic { font-family: var(--font-newsreader); font-style: italic; }
 
 /* Gecentreerde inhoudsbreedte, breder dan de standaard Container (design = 1280) */
@@ -471,13 +498,13 @@ html.js .reveal-target.revealed {
   font-size: 15.5px;
   padding: 16px 30px;
   text-decoration: none;
-  transition: background-color 0.18s var(--ease-out-soft), color 0.18s var(--ease-out-soft), border-color 0.18s var(--ease-out-soft);
+  transition: background-color 0.2s var(--ease-out-soft), color 0.2s var(--ease-out-soft), border-color 0.2s var(--ease-out-soft), transform 0.2s var(--ease-out-soft);
 }
 .pill-sm { padding: 10px 20px; font-size: 14px; }
-.pill-primary { background: var(--color-terracotta); color: #fff; }
-.pill-primary:hover { background: var(--color-terracotta-h); }
-.pill-outline { border: 1.5px solid var(--color-border-2); color: var(--color-ink-diep); }
-.pill-outline:hover { background: var(--color-paper-tint); }
+.pill-primary { background: var(--color-v2-olijf); color: #fff; box-shadow: 0 10px 24px -12px rgba(61,82,32,.7); }
+.pill-primary:hover { background: var(--color-v2-olijf-h); color: #fff; transform: translateY(-1px); }
+.pill-outline { border: 1px solid var(--color-v2-lijn); background: #fff; color: var(--color-v2-inkt); font-weight: 500; }
+.pill-outline:hover { border-color: var(--color-v2-inkt-2); color: var(--color-v2-inkt); }
 
 /* Terracotta tekstlink met onderstreping */
 .link-terra {

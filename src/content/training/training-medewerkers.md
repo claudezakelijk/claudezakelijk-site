@@ -43,7 +43,7 @@ faq:
 
 Claude training medewerkers die werkt op jullie eigen processen. Geen generiek programma met fictieve cases. Geen PowerPoint over wat AI kan. Jullie brengen de werkprocessen, de documenten en de dagelijkse taken. Wij zorgen dat elke medewerker aan het eind van de dag Claude inzet op het werk dat ze morgen toch al moeten doen.
 
-Bij ClaudeZakelijk geven we deze claude workshop in-company door heel Nederland. Van Groningen tot Maastricht, op jullie kantoor, met jullie team. De ervaring bij Nederlandse MKB-bedrijven vertaalt zich in een training die aansluit op hoe jullie werken, niet op hoe een AI-cursus denkt dat jullie werken.
+Bij Implementeren.ai geven we deze claude workshop in-company door heel Nederland. Van Groningen tot Maastricht, op jullie kantoor, met jullie team. De ervaring bij Nederlandse MKB-bedrijven vertaalt zich in een training die aansluit op hoe jullie werken, niet op hoe een AI-cursus denkt dat jullie werken.
 
 ## Claude workshop in-company: waarom geen open training
 

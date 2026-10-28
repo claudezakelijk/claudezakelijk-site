@@ -13,8 +13,8 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
-const { Content } = await render(entry);
+const { Content, headings } = await render(entry);
 ---
-<PrijsLayout entry={entry} pagePath={`/prijs/${entry.id}`}>
+<PrijsLayout entry={entry} pagePath={`/prijs/${entry.id}`} koppen={headings}>
   <Content />
 </PrijsLayout>

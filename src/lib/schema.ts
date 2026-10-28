@@ -88,7 +88,7 @@ export function isoNl(datum: Date | string): string {
 
 // ---- Deelafbeeldingen (B-12 zet OG_GEGENEREERD op true) ----
 export const OG_GEGENEREERD = false;
-export const OG_STANDAARD = { url: `${site.url}/og-claudezakelijk.png`, breedte: 2400, hoogte: 1260 };
+export const OG_STANDAARD = { url: `${site.url}/og-implementeren.png`, breedte: 2400, hoogte: 1260 };
 export const OG_FORMATEN = { og: [1200, 630], '16x9': [1200, 675], '4x3': [1200, 900], '1x1': [1200, 1200] } as const;
 export function ogSlug(pad: string): string {
   const p = pad.replace(/^\/+|\/+$/g, '');
@@ -373,7 +373,7 @@ export function seoVoorEntry(o: {
   }
   if (typen.has('FAQPage') && o.data.faq.length > 0) nodes.push(faqNode(o.pad, o.data.faq));
   // Besluit M7: een auteur met zichtbaar: false wordt nooit genoemd. ArtikelMeta toont dan
-  // "ClaudeZakelijk" en AuthorBio niets, dus het schema noemt de organisatie.
+  // "Implementeren.ai" en AuthorBio niets, dus het schema noemt de organisatie.
   const zichtbareAuteur: AuteurKey | null = auteurs[o.data.author].zichtbaar ? o.data.author : null;
   const artikel =
     typen.has('Article') && o.data.publishDate

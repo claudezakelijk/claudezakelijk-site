@@ -4,7 +4,7 @@ import { dirname, resolve } from 'path';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const htmlPath = resolve(__dirname, 'og-source.html');
-const outPath = resolve(__dirname, '..', 'public', 'og-claudezakelijk.png');
+const outPath = resolve(__dirname, '..', 'public', 'og-implementeren.png');
 
 const browser = await puppeteer.launch({
   headless: true,

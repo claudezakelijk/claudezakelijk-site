@@ -14,6 +14,7 @@ tier: 1
 cases:
   - "automation-audit"
 internalLinks:
+  - "/vergelijken"
   - "/vergelijken/claude-vs-chatgpt"
   - "/vergelijken/claude-vs-copilot"
   - "/ai-enablement-scan"
@@ -29,7 +30,7 @@ status: published
 publishDate: 2026-10-02
 updatedDate: null
 changelogLine: null
-kortAntwoord: "Welke AI past, hangt af van je werk. ChatGPT is de breedste allrounder. ClaudeZakelijk kiest Claude voor schrijven, analyse en code. Copilot past bij Microsoft-organisaties en Gemini zit in Google Workspace. Alle vier trainen in de zakelijke variant standaard niet op je data (stand oktober 2026). Kies één tool en test twee weken op echte taken."
+kortAntwoord: "Welke AI past, hangt af van je werk. ChatGPT is de breedste allrounder. Implementeren.ai kiest Claude voor schrijven, analyse en code. Copilot past bij Microsoft-organisaties en Gemini zit in Google Workspace. Alle vier trainen in de zakelijke variant standaard niet op je data (stand oktober 2026). Kies één tool en test twee weken op echte taken."
 bronnen:
   - titel: "Anthropic, prijzen en abonnementen van Claude"
     url: "https://claude.com/pricing"
@@ -80,7 +81,7 @@ Welke AI moeten we nemen? Voor de meeste MKB-bedrijven is dat de eerste vraag, e
 | Training op je data, zakelijk | Standaard niet | Standaard niet | Niet | Niet zonder toestemming |
 | Prijs per gebruiker per maand | Team: 20 dollar bij jaarbetaling, 25 dollar per maand | Business: verschilt per land | 18,20 euro, jaarabonnement, bovenop Microsoft 365 | Inbegrepen in het Workspace-abonnement |
 
-Prijzen gecontroleerd op 2 oktober 2026, exclusief btw of belasting. Microsoft rekent tot en met 31 december 2026 een actieprijs van 15,60 euro voor het eerste jaar. Google toont de Workspace-prijs in lokale valuta.
+Prijzen gecontroleerd op 2 oktober 2026, exclusief btw of belasting. Microsoft rekent tot en met 31 december 2026 een actieprijs van 15,60 euro voor het eerste jaar. Google toont de Workspace-prijs in lokale valuta. De vergelijkingen per tweetal, zoals Claude tegen ChatGPT, staan uitgewerkt in het [overzicht van vergelijkingen](/vergelijken).
 
 ## Waar wordt je data verwerkt?
 

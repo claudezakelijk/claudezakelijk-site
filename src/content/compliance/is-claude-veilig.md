@@ -20,6 +20,7 @@ internalLinks:
   - /claude-consultant
   - /compliance/anthropic-dpa
   - /compliance/eu-hosting
+  - /compliance/zero-data-retention
   - /compliance/ai-act-mkb
 schemaTypes:
   - Article
@@ -117,7 +118,7 @@ De vraag "is Claude veilig" heeft dus twee antwoorden, afhankelijk van welk acco
 
 Voor de zakelijke producten is de beveiliging extern getoetst. Anthropic meldt SOC 2 Type I en Type II, ISO 27001:2022 en ISO/IEC 42001:2023, de norm voor AI-managementsystemen. De verwerkersovereenkomst noemt versleuteling met minimaal AES-256 voor opgeslagen data en TLS 1.2 of hoger voor transport. Rapporten en certificaten vraag je op via het Trust Center van Anthropic.
 
-Over bewaartermijnen: op de API verwijdert Anthropic invoer en uitvoer standaard binnen 30 dagen. In Claude Team en Enterprise blijven gesprekken staan tot je ze zelf verwijdert. Voor de API en voor Claude Code op Enterprise-abonnementen bestaat zero data retention. Bij die afspraak slaat Anthropic prompts en antwoorden niet op, behalve waar de wet of misbruikbestrijding dat vereist. Anthropic beoordeelt aanvragen per organisatie.
+Over bewaartermijnen: op de API verwijdert Anthropic invoer en uitvoer standaard binnen 30 dagen. In Claude Team en Enterprise blijven gesprekken staan tot je ze zelf verwijdert. Voor de API en voor Claude Code op Enterprise-abonnementen bestaat [zero data retention](/compliance/zero-data-retention). Bij die afspraak slaat Anthropic prompts en antwoorden niet op, behalve waar de wet of misbruikbestrijding dat vereist. Anthropic beoordeelt aanvragen per organisatie.
 
 Waar je bewust mee moet omgaan: op het eigen platform van Anthropic wordt data opgeslagen in de Verenigde Staten. De verwerking kan standaard ook in Europa, Azië en Australië plaatsvinden, of je beperkt die tot de VS. Een EU-optie is er niet. De DPA met SCC's dekt de doorgifte juridisch af onder de AVG (GDPR). Wie een EU-garantie nodig heeft, gebruikt [Claude via AWS Bedrock of Google Vertex AI met een EU-endpoint](/compliance/eu-hosting). Die afweging werken we uit in [Claude en de AVG: wat regel je als bedrijf?](/compliance).
 

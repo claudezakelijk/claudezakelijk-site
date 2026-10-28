@@ -1,6 +1,6 @@
 ---
 title: "Claude voor zorgsector AVG en NEN 7510"
-titleTag: "Claude voor zorgsector AVG en NEN 7510 | ClaudeZakelijk"
+titleTag: "Claude voor zorgsector AVG en NEN 7510 | Implementeren.ai"
 metaDescription: "Hoe zorgorganisaties Claude veilig inzetten binnen AVG, NEN 7510 en de EU AI Act. Praktische gids."
 h1: "Claude voor zorgsector AVG en NEN 7510"
 targetKeywords:
@@ -44,7 +44,7 @@ deadline: null
 hasTemplate: false
 ---
 
-Claude voor zorgsector AVG: de combinatie van AI en medische data raakt de strengste privacywetgeving die Nederland kent. Patientgegevens zijn bijzondere persoonsgegevens onder artikel 9 AVG (GDPR). NEN 7510 stelt aanvullende eisen aan informatiebeveiliging in de zorg. En de EU AI Act voegt daar vanaf 2 augustus 2026 een laag aan toe voor AI-gebruik in medische contexten. Toch is Claude ook in de zorg bruikbaar, mits je de architectuur goed opzet. Bij ClaudeZakelijk hebben wij de kaders uitgewerkt. Dit artikel legt uit wat kan, wat niet kan, en hoe je het veilig doet.
+Claude voor zorgsector AVG: de combinatie van AI en medische data raakt de strengste privacywetgeving die Nederland kent. Patientgegevens zijn bijzondere persoonsgegevens onder artikel 9 AVG (GDPR). NEN 7510 stelt aanvullende eisen aan informatiebeveiliging in de zorg. En de EU AI Act voegt daar vanaf 2 augustus 2026 een laag aan toe voor AI-gebruik in medische contexten. Toch is Claude ook in de zorg bruikbaar, mits je de architectuur goed opzet. Bij Implementeren.ai hebben wij de kaders uitgewerkt. Dit artikel legt uit wat kan, wat niet kan, en hoe je het veilig doet.
 
 ## Waarom de zorgsector extra regels heeft
 
@@ -58,7 +58,7 @@ Combineer deze drie regelgevingen en je begrijpt waarom de zorgsector de strengs
 
 ## De gouden regel: medische data is altijd rood
 
-Bij ClaudeZakelijk hanteren we een driezonensysteem voor dataclassificatie: groen (vrij te gebruiken met cloud-AI), oranje (pseudonimiseren voor gebruik), rood (alleen lokaal model, nooit cloud). Medische data is altijd rood. Geen uitzonderingen. Geen grijsgebieden.
+Bij Implementeren.ai hanteren we een driezonensysteem voor dataclassificatie: groen (vrij te gebruiken met cloud-AI), oranje (pseudonimiseren voor gebruik), rood (alleen lokaal model, nooit cloud). Medische data is altijd rood. Geen uitzonderingen. Geen grijsgebieden.
 
 Dat betekent: patientnamen, diagnoses, behandelplannen, medicatielijsten, BSN-nummers en alles wat een patient identificeerbaar maakt, mag niet naar de Anthropic API, niet naar ChatGPT van OpenAI, niet naar Google Gemini, niet naar Microsoft Copilot. Niet met een verwerkersovereenkomst. Niet met Zero Data Retention. Niet met EU hosting.
 

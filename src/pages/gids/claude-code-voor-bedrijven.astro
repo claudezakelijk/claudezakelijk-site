@@ -6,6 +6,7 @@ import FaqSectie from '../../components/FaqSectie.astro';
 import BronnenBlok from '../../components/BronnenBlok.astro';
 import AuthorBio from '../../components/AuthorBio.astro';
 import CtaStrook from '../../components/CtaStrook.astro';
+import ArtikelInhoud from '../../components/ArtikelInhoud.astro';
 import { faqNode } from '../../lib/schema';
 
 const breadcrumbs = [
@@ -14,7 +15,7 @@ const breadcrumbs = [
   { name: 'Claude Code voor bedrijven', url: '/gids/claude-code-voor-bedrijven' },
 ];
 
-const titel = 'Claude Code voor bedrijven: wat kan het? | ClaudeZakelijk';
+const titel = 'Claude Code voor bedrijven: wat kan het? | Implementeren.ai';
 const headline = 'Claude Code voor bedrijven: wat het is, wat het kost en hoe je het veilig inzet';
 const beschrijving =
   'Claude Code zakelijk inzetten zonder eigen developers: wat het is, wat je ermee bouwt, wat het kost en hoe je de risico\'s beperkt. Met echte cases.';
@@ -62,6 +63,40 @@ const bronnen = [
   { titel: 'Claude Code docs: Data usage', url: 'https://code.claude.com/docs/en/data-usage', geraadpleegd: '2 oktober 2026' },
 ];
 
+
+// Inhoudsopgave: de h2's van deze gids (ids staan op de koppen hieronder).
+const koppen = [
+  {
+    depth: 2,
+    slug: "wat-is-claude-code-in-gewone-taal",
+    text: "Wat is Claude Code, in gewone taal?"
+  },
+  {
+    depth: 2,
+    slug: "wat-kun-je-ermee-als-je-geen-developer-bent",
+    text: "Wat kun je ermee als je geen developer bent?"
+  },
+  {
+    depth: 2,
+    slug: "wat-heb-je-nodig-om-te-beginnen",
+    text: "Wat heb je nodig om te beginnen?"
+  },
+  {
+    depth: 2,
+    slug: "wat-kost-claude-code-zakelijk",
+    text: "Wat kost Claude Code zakelijk?"
+  },
+  {
+    depth: 2,
+    slug: "welke-risicos-zijn-er-en-hoe-houd-je-ze-in-de-hand",
+    text: "Welke risico's zijn er, en hoe houd je ze in de hand?"
+  },
+  {
+    depth: 2,
+    slug: "wanneer-haal-je-hulp-erbij",
+    text: "Wanneer haal je hulp erbij?"
+  }
+];
 ---
 <BasisLayout
   titel={titel}
@@ -70,27 +105,37 @@ const bronnen = [
   schema={{ breadcrumbs, nodes: [faqNode('/gids/claude-code-voor-bedrijven', faq)], personen: ['camiel'] }}
   artikel={{ headline, gepubliceerd, bijgewerkt, auteur: 'camiel', sectie: 'Gids' }}
 >
-  <article class="max-w-3xl mx-auto px-6 pt-16 pb-8">
-    <Broodkruimel items={breadcrumbs} />
-
-    <header class="mt-6">
-      <span class="text-[13px] font-semibold uppercase tracking-[0.1em] text-terracotta">Gids</span>
-      <h1 class="font-newsreader font-medium leading-[1.12] tracking-[-0.015em] text-[length:var(--text-h1)] mt-4 text-balance">{headline}</h1>
-      <p class="text-sm text-inkt-zacht mt-3">
-        Gepubliceerd op <time datetime={gepubliceerd}>{datumTekst(gepubliceerd)}</time>
-        <span aria-hidden="true"> · </span>
-        Bijgewerkt op <time datetime={bijgewerkt}>{datumTekst(bijgewerkt)}</time>
-      </p>
+  <article class="v2-artikel">
+    <div class="v2-voortgang" aria-hidden="true"></div>
+    <header class="v2-artikel-kop">
+      <div class="v2-artikel-kop-binnen">
+        <Broodkruimel items={breadcrumbs} />
+        <span class="v2-chip">Gids</span>
+        <h1 class="v2-artikel-h1">{headline}</h1>
+        <div>
+          <p class="v2-gids-meta">
+            Gepubliceerd op <time datetime={gepubliceerd}>{datumTekst(gepubliceerd)}</time>
+            <span aria-hidden="true"> · </span>
+            Bijgewerkt op <time datetime={bijgewerkt}>{datumTekst(bijgewerkt)}</time>
+          </p>
+        </div>
+      </div>
     </header>
+
+    <div class="v2-artikel-raster">
+      <ArtikelInhoud soort="zijkant" koppen={koppen} faq={faq.length > 0} />
+      <div class="v2-artikel-tekst">
 
     <KortAntwoord tekst={kortAntwoord} />
 
-    <div class="mt-10 prose prose-lg max-w-none">
+    <ArtikelInhoud soort="mobiel" koppen={koppen} faq={faq.length > 0} />
+
+    <div class="prose prose-lg max-w-none v2-prose">
       <p>
         Over Claude Code lees je vooral verhalen van programmeurs. Deze gids is voor bedrijven zonder eigen ontwikkelteam. De voorbeelden komen uit projecten die wij zelf met Claude Code hebben gedaan.
       </p>
 
-      <h2>Wat is Claude Code, in gewone taal?</h2>
+      <h2 id="wat-is-claude-code-in-gewone-taal">Wat is Claude Code, in gewone taal?</h2>
       <p>
         Claude Code is een product van Anthropic, het bedrijf achter Claude. De gewone Claude-chat geeft je tekst terug. Claude Code werkt in een map op je computer of in een omgeving in de cloud. Het leest de bestanden daarin, past ze aan en voert opdrachten uit.
       </p>
@@ -111,7 +156,7 @@ const bronnen = [
       </ul>
       <p>Voor iemand zonder technische achtergrond is de desktop-app meestal het makkelijkste begin.</p>
 
-      <h2>Wat kun je ermee als je geen developer bent?</h2>
+      <h2 id="wat-kun-je-ermee-als-je-geen-developer-bent">Wat kun je ermee als je geen developer bent?</h2>
       <p>
         Hieronder vier soorten werk die ons team eerder met Claude Code bouwde, bij Nederlandse IT-bedrijven. De cijfers komen uit de cases zelf.
       </p>
@@ -151,7 +196,7 @@ const bronnen = [
         In alle voorbeelden ging het om terugkerend werk met duidelijke regels, en kende iemand het proces goed. Dat is ook een goed startpunt voor jouw eerste project. <a href="/cases">Bekijk alle cases</a>.
       </p>
 
-      <h2>Wat heb je nodig om te beginnen?</h2>
+      <h2 id="wat-heb-je-nodig-om-te-beginnen">Wat heb je nodig om te beginnen?</h2>
       <ul>
         <li><strong>Een abonnement met Claude Code.</strong> Het gratis abonnement heeft het niet, de prijzen staan hieronder.</li>
         <li><strong>Een computer.</strong> De desktop-app is er voor Mac en Windows. Op Ubuntu en Debian is de app nog in bèta. De terminalversie werkt ook op Linux. Wil je niets installeren, dan gebruik je de browserversie.</li>
@@ -163,7 +208,7 @@ const bronnen = [
         Een handige gewoonte: leg vaste afspraken vast in een bestand met de naam CLAUDE.md in je projectmap. Claude Code leest dat bestand aan het begin van elke sessie. Een techbedrijf met 36+ projecten liet zo elke sessie met dezelfde teamregels starten. Een nieuw project opzetten ging daar van 30+ naar 5 minuten (<a href="/cases/devops-monorepo">case</a>).
       </p>
 
-      <h2>Wat kost Claude Code zakelijk?</h2>
+      <h2 id="wat-kost-claude-code-zakelijk">Wat kost Claude Code zakelijk?</h2>
       <p>
         Je betaalt niet apart voor Claude Code. Het zit in de abonnementen van Claude. Dit zijn de prijzen zoals Anthropic ze op 2 oktober 2026 op de prijspagina toonde, in dollars en zonder btw:
       </p>
@@ -187,7 +232,7 @@ const bronnen = [
         Reken ook de tijd mee. Iemand moet opdrachten omschrijven, resultaten controleren en de gebouwde tools bijhouden.
       </p>
 
-      <h2>Welke risico's zijn er, en hoe houd je ze in de hand?</h2>
+      <h2 id="welke-risicos-zijn-er-en-hoe-houd-je-ze-in-de-hand">Welke risico's zijn er, en hoe houd je ze in de hand?</h2>
       <p>Claude Code kan meer dan een chatvenster. Daarom zijn er drie risico's waar je vooraf over moet nadenken.</p>
 
       <h3>Toegang tot bestanden en systemen</h3>
@@ -227,7 +272,7 @@ const bronnen = [
         Wat je bouwt, kan de data ook binnen houden. Ons team bouwde eerder bij een Nederlands softwarebedrijf met Claude Code een rapportagesysteem dat op de eigen server draait. De ruwe data verlaat die server niet en alleen de rapporten gaan naar de klant. Twee prospects die eerder afhaakten op de cloud, stapten daardoor alsnog in (<a href="/cases/report-engine">case</a>).
       </p>
 
-      <h2>Wanneer haal je hulp erbij?</h2>
+      <h2 id="wanneer-haal-je-hulp-erbij">Wanneer haal je hulp erbij?</h2>
       <p>
         Een klein script voor je eigen werk kun je prima zelf proberen. Hulp is verstandig zodra een van deze dingen speelt:
       </p>
@@ -248,6 +293,10 @@ const bronnen = [
     <FaqSectie items={faq} />
 
     <AuthorBio author="camiel" />
+      </div>
+    </div>
   </article>
-  <div class="max-w-3xl mx-auto px-6"><CtaStrook /></div>
+  <div class="v2-artikel-na">
+    <CtaStrook />
+  </div>
 </BasisLayout>

@@ -18,7 +18,7 @@ voorJou: "Laat jij je advertenties beheren door een bureau en zie je alleen een 
 
 ## De maandelijkse PDF
 
-Ons team bouwde dit eerder bij een Nederlands softwarebedrijf. Ons team bouwde dit eerder bij een Nederlands softwarebedrijf. Zes maanden lang liet dit SaaS-bedrijf zijn Google Ads beheren door een extern bureau. Elke maand kwam er een PDF binnen met impressies, vertoningen en bereik. Wat er in het account zelf gebeurde, zag niemand. De resultaten waren mager: hoge kosten per click, lage conversieratio's en geen duidelijk overzicht.
+Ons team bouwde dit eerder bij een Nederlands softwarebedrijf. Zes maanden lang liet dit SaaS-bedrijf zijn Google Ads beheren door een extern bureau. Elke maand kwam er een PDF binnen met impressies, vertoningen en bereik. Wat er in het account zelf gebeurde, zag niemand. De resultaten waren mager: hoge kosten per click, lage conversieratio's en geen duidelijk overzicht.
 
 Het bedrijf wilde het beheer in eigen hand nemen. Eén probleem: er was geen Google Ads-expertise in huis.
 

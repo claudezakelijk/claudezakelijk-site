@@ -1,6 +1,6 @@
 ---
 title: "Claude koppelen aan Google Workspace"
-titleTag: "Claude Google Workspace koppelen: Gmail, Drive | ClaudeZakelijk"
+titleTag: "Claude Google Workspace koppelen: Gmail, Drive | Implementeren.ai"
 metaDescription: "Claude koppelen aan Google Workspace: Gmail-triage, Drive-zoekopdrachten en Calendar-automatisering."
 h1: "Claude Google Workspace koppelen: Gmail, Drive en Calendar"
 targetKeywords:
@@ -36,7 +36,7 @@ faq:
     answer: "De Google Cloud API's zijn gratis tot ruime limieten. De MCP server draait lokaal, dus geen extra hosting. De investering zit in de configuratie: OAuth instellen, scopes bepalen, en de workflows bouwen die bij jouw organisatie passen. Rekenen op een dag voor de basisopzet met Gmail, Drive en Calendar samen."
 ---
 
-Claude Google Workspace koppelen geeft je directe toegang tot Gmail, Drive en Calendar vanuit Claude Code. Drie tools die je team constant gebruikt en die constant tijd kosten. Mail sorteren, bestanden zoeken, vergaderingen plannen. Claude kan dat werk overnemen. Niet met een kant-en-klare plugin, maar via MCP servers die de Google API's aanspreken. Op ClaudeZakelijk documenteren we hoe dat werkt.
+Claude Google Workspace koppelen geeft je directe toegang tot Gmail, Drive en Calendar vanuit Claude Code. Drie tools die je team constant gebruikt en die constant tijd kosten. Mail sorteren, bestanden zoeken, vergaderingen plannen. Claude kan dat werk overnemen. Niet met een kant-en-klare plugin, maar via MCP servers die de Google API's aanspreken. Op Implementeren.ai documenteren we hoe dat werkt.
 
 We hebben een vergelijkbare aanpak toegepast bij het [doorlichten van 38 achtergrondprocessen](/cases/automation-audit). Dezelfde systematiek (inventariseren, classificeren, automatiseren) werkt voor het in kaart brengen van je Google Workspace-workflows.
 

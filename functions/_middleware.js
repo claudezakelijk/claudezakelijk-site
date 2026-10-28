@@ -1,4 +1,4 @@
-// Rand-logica voor claudezakelijk.nl. Drie taken, op elk verzoek dat door de Function gaat:
+// Rand-logica voor implementeren.ai. Drie taken, op elk verzoek dat door de Function gaat:
 // (1) statische redirects uit public/_redirects, (2) /404 als echte 404, (3) beveiligingsheaders
 // plus een X-Robots-Tag: noindex op alles wat niet bij de zakelijke site hoort.
 import INDEXERING from './_indexering.json';
@@ -41,8 +41,9 @@ function isIndexeerbaar(pathname) {
 // Alles buiten de zakelijke site krijgt een noindex-header mee. Dat dekt ook de losse
 // bestanden in public/ (html, pdf, afbeeldingen) die geen robots-metatag kunnen dragen.
 // Alleen het hoofddomein mag de index in. *.pages.dev en preview-hosts serveren dezelfde
-// site en blijven daarom altijd noindex.
-const INDEX_HOST = 'claudezakelijk.nl';
+// site en blijven daarom altijd noindex. claudezakelijk.nl stuurt sinds oktober 2026 met een
+// 301 door naar implementeren.ai.
+const INDEX_HOST = 'implementeren.ai';
 
 const BEVEILIGING = {
   'Strict-Transport-Security': 'max-age=15552000',

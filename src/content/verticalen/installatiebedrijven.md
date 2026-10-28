@@ -1,113 +1,170 @@
 ---
 title: "Claude voor installatiebedrijven"
-titleTag: "Claude voor installatiebedrijf: werkbonnen, offertes"
-metaDescription: "Hoe installatiebedrijven Claude inzetten voor werkbonnen, offertes en klantcontact. Praktisch, AVG-veilig."
-h1: "Claude voor installatiebedrijf: werkbonnen en offertes"
+titleTag: "Claude voor installatiebedrijven: werkbon en offerte"
+metaDescription: "Wat Claude kan voor een installatiebedrijf: werkbonnen, offerteteksten en klantmails. Met prijzen per plan, de AVG en de AI Act. Stand: 27 oktober 2026."
+h1: "Claude voor installatiebedrijven: werkbonnen, offertes en klantcontact"
 targetKeywords:
-  - claude voor installatiebedrijf
-  - claude voor elektrotechniek
-  - claude voor loodgieter
-wordCountTarget: 1400
+  - claude voor installatiebedrijven
+  - installatiebedrijf
+  - ai voor installateurs
+wordCountTarget: 1420
 priority: 2
 tier: 2
 cases:
+  - consultant-brief
   - process-portal
-  - automation-audit
 internalLinks:
-  - /claude-voor-bouwbedrijven
-  - /use-cases/offerte-maken
+  - /verticalen
+  - /cases/consultant-brief
+  - /cases/process-portal
+  - /prijs/pro-vs-team-vs-enterprise
+  - /compliance
+  - /compliance/ai-act-mkb
+  - /claude-implementatie
+  - /gids/claude-voor-mkb
+  - /claude-voor-makelaars
 schemaTypes:
   - Service
   - FAQPage
+  - BreadcrumbList
 author: camiel
 competitors: []
-status: draft
+disclaimer: juridisch
+status: review
 publishDate: null
-updatedDate: null
+updatedDate: 2026-10-27
 changelogLine: null
+reviewedBy: null
+reviewedDate: null
+kortAntwoord: "Claude voor installatiebedrijven helpt bij het schrijfwerk na de klus: een werkbon uit de korte notitie van de monteur, de tekst rond een calculatie in de offerte en conceptmails aan klanten. Calculeren en aftekenen blijven mensenwerk. Een Claude Team-seat kost 25 dollar per gebruiker per maand, ongeveer 22 euro exclusief btw (ECB-koers 27 oktober 2026)."
+bronnen:
+  - titel: "Claude, plans en prijzen (claude.com)"
+    url: "https://claude.com/pricing"
+    geraadpleegd: "27 oktober 2026"
+  - titel: "ECB-referentiekoers euro/dollar, 27 oktober 2026 (ecb.europa.eu)"
+    url: "https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml"
+    geraadpleegd: "27 oktober 2026"
+  - titel: "Anthropic Privacy Center: wordt zakelijke data gebruikt voor modeltraining? (18 augustus 2026)"
+    url: "https://privacy.claude.com/en/articles/7996868-is-my-data-used-for-model-training"
+    geraadpleegd: "27 oktober 2026"
+  - titel: "Anthropic Privacy Center: de verwerkersovereenkomst (DPA) is onderdeel van de Commercial Terms (16 maart 2026)"
+    url: "https://privacy.claude.com/en/articles/7996862-how-do-i-view-and-sign-your-data-processing-addendum-dpa"
+    geraadpleegd: "27 oktober 2026"
+  - titel: "Anthropic over modeltraining op Free-, Pro- en Max-accounts (anthropic.com)"
+    url: "https://www.anthropic.com/news/updates-to-our-consumer-terms"
+    geraadpleegd: "27 oktober 2026"
+  - titel: "Claude Help Center: dicteren in de mobiele apps (23 juli 2026)"
+    url: "https://support.claude.com/en/articles/10065434-using-dictation-on-the-claude-mobile-apps"
+    geraadpleegd: "27 oktober 2026"
+  - titel: "Claude Help Center: wat zijn Projects?"
+    url: "https://support.claude.com/en/articles/9517075-what-are-projects"
+    geraadpleegd: "27 oktober 2026"
+  - titel: "Europese Commissie, AI Act Service Desk: tijdlijn invoering AI Act"
+    url: "https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act"
+    geraadpleegd: "27 oktober 2026"
+  - titel: "Techniek Nederland, cijfers over de installatiebranche (technieknederland.nl)"
+    url: "https://www.technieknederland.nl/"
+    geraadpleegd: "27 oktober 2026"
 faq:
-  - question: "Kan Claude werkbonnen genereren voor mijn installatiebedrijf?"
-    answer: "Claude genereert conceptwerkbonnen op basis van je input: uitgevoerde werkzaamheden, gebruikte materialen, arbeidstijd en bijzonderheden. Je dicteert de kernpunten na afloop van de klus, Claude schrijft een professionele werkbon in het format van je bedrijfssoftware. De monteur of projectleider controleert en tekent af."
-  - question: "Hoeveel tijd bespaart Claude op offertes voor installatiebedrijven?"
-    answer: "Op basis van onze projecten: 1 tot 2 uur per offerte. Bij een installatiebedrijf dat 80 offertes per jaar schrijft, is dat 80 tot 160 uur besparing. De winst zit in het samenstellen van de offertekst en voorwaarden, niet in het calculeren. Het rekenwerk blijft in je calculatiesoftware."
-  - question: "Is Claude geschikt voor technische documentatie bij installaties?"
-    answer: "Ja. Claude verwerkt technische specificaties en genereert documentatie: opleverrapporten, inbedrijfstellingsverslagen, onderhoudsinstructies. De installateur levert de technische input, Claude structureert het in een professioneel document. De kwaliteit hangt af van je input: hoe specifieker de gegevens, hoe beter het resultaat."
+  - question: "Kan Claude werkbonnen maken voor mijn installatiebedrijf?"
+    answer: "Ja, als concept. De monteur geeft de kernpunten door: wat er is gedaan, welke materialen, hoeveel tijd en wat er nog moet gebeuren. Claude zet dat in de vaste opbouw van jullie werkbon. De monteur of planner controleert de bon voordat hij naar de klant of de administratie gaat. Claude rekent geen uren of prijzen uit."
+  - question: "Mag ik klantgegevens van mijn installatiebedrijf in Claude zetten?"
+    answer: "Alleen op een zakelijk plan, zoals Claude Team, Enterprise of de API. Daar traint Anthropic standaard niet op je data en is de verwerkersovereenkomst onderdeel van de voorwaarden. Laat namen, adressen en toegangscodes zoveel mogelijk weg. Voor de werkbontekst heeft Claude ze niet nodig, die vul je achteraf in."
+  - question: "Werkt het inspreken van een werkbon in het Nederlands?"
+    answer: "Niet via de dicteerknop van de Claude-app zelf. Nederlands staat op 27 oktober 2026 niet in de lijst met ondersteunde talen. De monteur kan de notitie wel kort typen, of inspreken met de spraakfunctie van het toetsenbord van de telefoon en die tekst plakken. Claude werkt de tekst daarna gewoon in het Nederlands uit."
+  - question: "Wat kost Claude voor een installatiebedrijf met tien medewerkers op kantoor?"
+    answer: "Tien standaard Team-seats kosten 250 dollar per maand bij maandbetaling, ongeveer 224 euro exclusief btw tegen de ECB-koers van 27 oktober 2026. Bij jaarbetaling is het 200 dollar per maand, ongeveer 179 euro. Monteurs die alleen af en toe een werkbon maken, hoeven niet allemaal een eigen seat te hebben."
 areaServed: NL
 brancheOrganisatie: null
 ---
 
-Claude voor installatiebedrijf helpt bij het werk dat na de klus komt: werkbonnen schrijven, offertes opstellen, klantcommunicatie verzorgen, planningen communiceren, en opleverrapporten samenstellen. Installatiebedrijven in elektrotechniek, sanitair, klimaattechniek en verwarming besteden 20 tot 30% van hun omzet aan administratie. Claude brengt dat terug. Wij bij ClaudeZakelijk begeleiden installatiebedrijven door het hele implementatietraject.
+<!--
+  Feiten gecontroleerd 27-10-2026, bronnen in de frontmatter. Koers ECB 1 EUR = 1,1150 USD.
+  Dicteren in de Claude-app: geen Nederlands. AI Act: art. 4 sinds 2-2-2025, art. 50 sinds
+  2-8-2026, hoog-risico 2-12-2027 / 2-8-2028. Ervaring alleen uit cases consultant-brief en
+  process-portal; geen installatiecase. Oude besparingscijfers waren niet onderbouwd en zijn weg.
+-->
 
-## Claude voor installatiebedrijf: werkbonnen en opleverrapporten
+Claude voor installatiebedrijven gaat over het werk dat na de klus komt. De monteur heeft een ketel vervangen of een groepenkast uitgebreid, en daarna moet er nog een werkbon, een mail aan de klant of een offerte voor het vervolg geschreven worden. Dat schrijfwerk volgt bijna altijd hetzelfde patroon. Daar is Claude goed in. Het vakwerk, het calculeren en het aftekenen blijven bij jou en je mensen.
 
-Na elke klus schrijft de monteur een werkbon: welke werkzaamheden zijn uitgevoerd, welke materialen zijn gebruikt, hoeveel tijd is besteed, en welke bijzonderheden zijn er. Bij 10 klussen per dag per monteur is dat een flink volume werkbonnen. Claude genereert die werkbonnen op basis van de input van de monteur.
+De branche is groot. Volgens Techniek Nederland werken er in de installatiesector ruim 46.000 bedrijven en zelfstandigen, met samen 194.000 mensen. Van eenmanszaak tot bedrijf met tientallen monteurs: de administratie rond de klus komt overal terug. Op deze pagina lees je waar Claude helpt, wat het kost, wat er met klantgegevens mag en wat de AI Act van je vraagt. Alle prijzen en regels zijn gecontroleerd op 27 oktober 2026.
 
-De monteur dicteert of typt de kernpunten na afloop van de klus: "CV-ketel Remeha Tzerra, storing E01, gasblok vervangen, 2,5 uur arbeid, gasblok + 3m gasleiding." Claude schrijft daar een professionele werkbon van met de juiste structuur: klantgegevens, werkzaamheden, materialen met artikelnummers, arbeidstijd, en eventuele vervolgacties. De projectleider controleert en de werkbon gaat naar de administratie.
+## Welk werk kan Claude voor installatiebedrijven overnemen?
 
-> *In april 2026 bouwde ons team bij een Nederlands IT-consultancybureau een white-label portaal in 4 weken. Custom applicatie in PHP en Vue.js. Dezelfde aanpak, gestructureerde input vertalen naar professionele output, werkt voor werkbonsystemen bij installatiebedrijven.*
+Claude is een taalmodel van Anthropic. Het schrijft, vat samen en zet rommelige notities in een vaste vorm. Het kijkt niet in je calculatiepakket en weet niet welke onderdelen er op voorraad liggen, tenzij jij dat meegeeft. Voor een installatiebedrijf zijn dit de taken waar het verschil zit.
 
-Bij 10 monteurs die elk 8 werkbonnen per dag schrijven, bespaar je 5 tot 10 minuten per bon. Dat is 7 tot 13 uur per dag. Op maandbasis: 140 tot 260 uur. Dat is het verschil tussen monteurs die tot 18:00 werkbonnen schrijven en monteurs die om 16:30 klaar zijn. Anthropic heeft Claude getraind op technische documentatie, wat de kwaliteit van werkbonnen ten goede komt.
+Tabel: taakverdeling tussen Claude en je team in een installatiebedrijf, stand 27 oktober 2026.
 
-## Claude voor offertes bij installatiebedrijven
+| Taak | Wat Claude doet | Wat jouw mensen doen |
+|------|-----------------|----------------------|
+| Werkbon | Zet de notitie van de monteur in de vaste opbouw | Monteur of planner controleert en tekent af |
+| Offerte | Schrijft inleiding, scope, fasering en voorwaarden rond de calculatie | Calculator maakt de prijs, projectleider leest de tekst |
+| Klantmail | Maakt een concept bij een vraag, klacht of planningswijziging | Binnendienst past aan en verstuurt |
+| Opleverdossier | Ordent meetwaarden en notities tot een leesbaar verslag | Installateur levert de technische gegevens en controleert |
+| Onderhoudsinstructie | Schrijft een uitleg voor de klant in gewone taal | Vakman checkt of het technisch klopt |
 
-Een offerte voor een badkamerrenovatie, een CV-installatie, of een elektrotechnische installatie volgt een vast patroon: werkzaamheden, materialen, prijzen, planning, voorwaarden. Het schrijfwerk kost 1 tot 3 uur per offerte. Claude genereert het tekstuele deel. Lees meer over [offerte maken met Claude](/use-cases/offerte-maken).
+## Hoe maakt een installatiebedrijf een werkbon met Claude?
 
-Je levert de calculatie (materialen, uren, prijzen) en de projectspecificaties. Claude schrijft de offerte: inleiding, scope, werkzaamheden per fase, materiaalspecificaties, planningsindicatie, garantievoorwaarden en algemene voorwaarden. De calculator controleert de prijzen (die blijven in je calculatiesoftware), de projectleider controleert de tekst, en de offerte gaat naar de klant.
+Een werkbon is precies het soort tekst waar Claude snel in is: korte input, vaste opbouw. Zo richt je het in.
 
-Bij een installatiebedrijf dat 80 offertes per jaar schrijft, bespaar je 80 tot 160 uur. Tegen een uurtarief van 65 tot 85 euro is dat 5.200 tot 13.600 euro per jaar aan vrijgemaakte capaciteit. De projectleider besteedt die tijd aan projectbegeleiding in plaats van aan schrijfwerk. Verwant: [bouwbedrijven](/claude-voor-bouwbedrijven) gebruiken dezelfde offerteaanpak.
+1. Leg in een Claude-project de vaste opbouw van jullie werkbon vast, met twee of drie goede voorbeelden. Projects zijn werkruimtes met eigen instructies en documenten, en zitten in elk plan, ook het gratis plan.
+2. De monteur geeft na de klus de kernpunten door. Bijvoorbeeld: "Ketel in storing, gasblok vervangen, 2,5 uur, gasblok en 3 meter leiding, klant wil offerte voor thermostaat."
+3. Claude maakt daar een werkbon van: uitgevoerde werkzaamheden, materialen, tijd en vervolgacties, in jullie vaste volgorde.
+4. De monteur of planner leest de bon na en zet hem in jullie werkbon- of boekhoudsysteem.
 
-## Claude voor loodgieter en elektrotechniek: klantcontact
+Let op bij het inspreken. De Claude-app heeft een dicteerknop, maar Nederlands staat op 27 oktober 2026 niet in de lijst met ondersteunde talen. De monteur typt de notitie dus kort, of spreekt hem in met de spraakfunctie van het telefoontoetsenbord en plakt de tekst in Claude.
 
-Klanten van installatiebedrijven hebben vragen: "Wanneer komen jullie?" "Kan het ook een week eerder?" "Wat kost het als ik ook de badkamer wil laten doen?" "De monteur was vanmorgen, maar de verwarming doet het nog niet." Elke vraag vraagt een antwoord. Claude genereert conceptantwoorden.
+Een volledige koppeling met jullie werkbonsoftware is maatwerk. Dat hangt af van welk pakket je gebruikt en of dat een API heeft. Begin daarom met de handmatige route hierboven en kijk na een paar weken of koppelen de moeite waard is.
 
-Je koppelt Claude aan je veelgestelde vragen en je standaardprocessen: planningswijzigingen, meerwerkverzoeken, klachten, statusupdates. Bij elke klantvraag genereert Claude een conceptantwoord dat de projectleider of administratie controleert en verstuurt. De responstijd daalt van uren naar minuten.
+## Offertes voor een installatiebedrijf: wat doet Claude wel en wat niet?
 
-Bij een installatiebedrijf met 50 lopende klussen en 20 klantvragen per dag bespaar je 1,5 tot 2,5 uur per dag aan e-mailverkeer. De kwaliteit van de communicatie stijgt: professioneel, consistent, en compleet. Geen vergeten antwoorden, geen inconsistente informatie. De integratie werkt met Microsoft Outlook en Teams: de projectleider stuurt de vraag door, Claude genereert het antwoord, de medewerker verstuurt. ChatGPT en Google Gemini bieden vergelijkbare antwoordgeneratie, maar Claude Code integreert direct in je werkomgeving zonder apart chatvenster. OpenAI mist die integratiediepte.
+Een offerte voor een badkamerrenovatie, een warmtepomp of een nieuwe groepenkast heeft een vaste vorm: inleiding, wat je gaat doen, materialen, planning, garantie en voorwaarden. De prijs komt uit je calculatie. De tekst eromheen kost vaak meer tijd dan nodig.
 
-## Planning en capaciteitscommunicatie
+Je geeft Claude de uitkomst van de calculatie, de afspraken uit het klantbezoek en je standaardvoorwaarden. Claude schrijft daar een conceptofferte van in de toon van jullie bedrijf. Rekenen laat je niet aan Claude over. De bedragen neem je over uit je calculatiepakket, en de projectleider leest de tekst na voordat hij de deur uitgaat.
 
-Installatiebedrijven jongleren met planningen: monteurs inplannen, materiaal bestellen, onderaannemers coordineren, klanten informeren. De communicatie rondom planningswijzigingen kost meer tijd dan de wijziging zelf. Claude genereert planningsoverzichten en wijzigingsberichten.
+Een makelaarskantoor werkt met precies dit patroon voor woningteksten. Hoe dat daar gaat, lees je in [Claude voor makelaars](/claude-voor-makelaars).
 
-Een klant krijgt bericht dat de installatie 3 dagen verschuift door leveringsvertraging. Claude schrijft die mail: de reden, de nieuwe planning, de excuses, en de vervolgstappen. De projectleider controleert en verstuurt. Bij 10 planningswijzigingen per week bespaar je 2 tot 3 uur.
+## Hoe helpt AI voor installateurs bij klantcontact?
 
-> *In maart 2026 inventariseerden we 38 achtergrondprocessen voor een SaaS-bedrijf en repareerden er 9 in 2 dagen. Drie waren gestopt na een permissiewijziging. Diezelfde systematische inventarisatie werkt voor installatieprocessen: Claude identificeert waar communicatie handmatig verloopt en waar het geautomatiseerd kan.*
+Klanten mailen en appen veel: wanneer komt de monteur, kan het eerder, de verwarming doet het nog steeds niet. Elk antwoord moet kloppen met de planning en vriendelijk blijven, ook als de klant boos is. Claude maakt een concept op basis van de vraag, jullie standaardafspraken en de stand van de planning die jij meegeeft. Iemand van de binnendienst leest het, past het aan en verstuurt het zelf.
 
-## Voorraadcontrole en materiaaldocumentatie
+Bij een planningswijziging werkt het net zo. Je geeft de reden, de nieuwe datum en wat de klant moet doen. Claude schrijft een korte, duidelijke mail. Laat Claude geen mails versturen zonder dat een mens ze heeft gelezen. Een verkeerde datum in een bevestiging kost je meer dan het schrijven ooit kostte.
 
-Installatiebedrijven werken met honderden materialen. Bestellijsten, materiaalbonnen, retourformulieren, en voorraadtellingen. Claude helpt bij de documentatiekant: bestellijsten genereren op basis van het werkoverzicht, materiaalbonnen opstellen per klus, en afwijkingen documenteren.
+## Wat leert eigen werk ons voor installatiebedrijven?
 
-Bij een groot project met 50 verschillende materialen genereert Claude een gestructureerde bestellijst op basis van het bestek en de werkvoorbereiding. De inkoper controleert en bestelt. Bij retourzendingen schrijft Claude het retourformulier met de reden en het artikelnummer. Dat bespaart 15 tot 20 minuten per retour.
+Op deze site staat nog geen case van een installatiebedrijf. Wel twee projecten met hetzelfde patroon: rommelige input omzetten in een vast document.
 
-De winst is niet alleen tijd maar ook nauwkeurigheid. Minder vergeten bestellingen, minder incomplete materiaalbonnen, minder discussies achteraf over wat er is geleverd en gebruikt. Bij installatiebedrijven die werken met Technische Unie, Rexel of Solar als groothandel genereert Claude bestellijsten in het juiste format. De inkoper hoeft alleen te controleren en te accorderen. Bij retourzendingen naar de groothandel schrijft Claude het retourformulier inclusief de reden, het artikelnummer en de orderreferentie. Dat scheelt de inkoper 10 minuten per retour.
+Bij een Nederlands IT-consultancybureau bouwde ons team een [gespreksverwerker](/cases/consultant-brief). Een opgenomen klantgesprek van een uur wordt daar een gestructureerde brief met actiepunten. Het uitwerken ging van 45 minuten naar 5 minuten per gesprek. Een monteur die na de klus zijn bevindingen doorgeeft, is een kleinere versie van datzelfde probleem.
 
-## AVG en klantgegevens bij installatiebedrijven
+Bij hetzelfde type bureau maakten we in 2 weken een [procesportaal](/cases/process-portal). Procesdiagrammen komen daar automatisch op een vaste link voor de klant, in plaats van in een PDF die snel veroudert. Het opmaakwerk per diagram ging van anderhalf uur naar tien minuten. Voor een installatiebedrijf ligt de vergelijking bij het opleverdossier en de onderhoudsinstructie: één bron, en de klant ziet altijd de actuele versie.
 
-Installatiebedrijven werken met klantadressen, contactgegevens en soms toegangscodes. Die gegevens vallen onder de AVG. Claude gebruiken voor werkbonnen en offertes betekent niet dat je klantdata naar Anthropic stuurt.
+## Welk Claude-plan past bij een installatiebedrijf?
 
-Pseudonimiseer klantgegevens in prompts. Vervang namen en adressen door codes. Claude genereert het document, de administratie vult de echte gegevens in. Bij geautomatiseerde flows bouw je die pseudonimisering in de pipeline. GDPR-compliance is een configuratiekwestie. Bij ClaudeZakelijk helpen we installatiebedrijven die scheiding in te richten. Via Ollama draai je desgewenst een lokaal model voor de meest gevoelige klantdata. Microsoft en Google bieden vergelijkbare AI-tools, maar Anthropic onderscheidt zich met zakelijke API-garanties: geen dataretentie, geen training op je data. De monteur hoeft alleen zijn bevindingen in te spreken, de rest verloopt geautomatiseerd.
+Voor zakelijk gebruik met klantgegevens kies je een zakelijk plan. Claude Team is de logische start voor een installatiebedrijf met een binnendienst. Anthropic rekent in dollars. De euro-bedragen zijn omgerekend met de ECB-koers van 27 oktober 2026 (1 euro is 1,1150 dollar).
 
-## Wat levert het op
+Tabel: Claude-plannen voor een installatiebedrijf, lijstprijzen exclusief btw, stand 27 oktober 2026.
 
-De ROI voor een installatiebedrijf (5 tot 20 monteurs):
+| Plan | Per maand, maandbetaling | Per maand, jaarbetaling | Geschikt voor |
+|------|--------------------------|-------------------------|---------------|
+| Pro | $20 (± €17,94) | $17 (± €15,25) | Eén persoon die het uitprobeert, geen klantdata |
+| Team, standaard seat | $25 per gebruiker (± €22,42) | $20 per gebruiker (± €17,94) | Binnendienst en planning, 2 tot 150 gebruikers |
+| Team, premium seat | $125 per gebruiker (± €112,11) | $100 per gebruiker (± €89,69) | Wie er de hele dag intensief mee werkt |
+| Enterprise | n.v.t. | $20 per seat (± €17,94), minimaal 20 seats, plus verbruik tegen API-tarieven | Grotere bedrijven met eigen IT-eisen |
 
-- **Werkbonnen:** 140 tot 260 uur per maand bij 10 monteurs met 8 klussen per dag.
-- **Offertes:** 80 tot 160 uur per jaar bij 80 offertes.
-- **Klantcontact:** 1,5 tot 2,5 uur per dag bij 20 vragen per dag.
-- **Planning:** 2 tot 3 uur per week bij 10 wijzigingen.
-- **Claude Pro licenties:** 20 dollar per gebruiker per maand.
+Niet elke monteur heeft een eigen seat nodig. Vaak is het genoeg dat de planners en de binnendienst Claude gebruiken, en dat monteurs hun notities aanleveren zoals ze nu al doen. Het verschil tussen de plannen staat uitgebreid in [Claude Pro, Team of Enterprise](/prijs/pro-vs-team-vs-enterprise).
 
-Wij bij ClaudeZakelijk begeleiden installatiebedrijven door het hele traject. De implementatie kost 2 tot 4 weken. Een installatiebedrijf met 10 monteurs haalt 200 tot 400 uur besparing per maand. De terugverdientijd: minder dan een week.
+## AVG en AI Act: wat moet een installatiebedrijf regelen?
 
-## Veelgestelde vragen
+Een installatiebedrijf verwerkt adressen, telefoonnummers en soms sleutelafspraken of alarmcodes. Dat zijn persoonsgegevens onder de AVG. Drie dingen helpen.
 
-### Kan Claude werkbonnen genereren voor mijn installatiebedrijf?
+Ten eerste het plan. Op Free, Pro en Max traint Anthropic op je gesprekken als de gebruiker die instelling aan heeft staan. Op de zakelijke plannen (Claude Team, Claude Enterprise en de API) gebruikt Anthropic je invoer standaard niet voor training. De verwerkersovereenkomst is daar automatisch onderdeel van de Commercial Terms.
 
-Claude genereert conceptwerkbonnen op basis van je input: uitgevoerde werkzaamheden, gebruikte materialen, arbeidstijd en bijzonderheden. Je dicteert de kernpunten na afloop van de klus, Claude schrijft een professionele werkbon in het format van je bedrijfssoftware. De monteur of projectleider controleert en tekent af.
+Ten tweede de invoer. Claude heeft voor een werkbontekst of offerte geen naam en adres nodig. Schrijf "klant A" en vul de echte gegevens in je eigen systeem in. Toegangscodes horen er nooit in. Hoe je dit vastlegt in een AI-beleid en je verwerkingsregister, lees je op onze [compliance-pagina](/compliance).
 
-### Hoeveel tijd bespaart Claude op offertes voor installatiebedrijven?
+Ten derde de AI Act. Sinds 2 februari 2025 moet je zorgen dat je mensen genoeg weten van de AI die ze gebruiken (artikel 4, AI-geletterdheid). Laat je klanten rechtstreeks met een AI-chatbot praten, dan gelden sinds 2 augustus 2026 ook de transparantieregels van artikel 50. De zware regels voor hoog-risicosystemen gelden pas vanaf 2 december 2027 en raken het schrijven van werkbonnen en offertes niet. Meer daarover staat in [de AI Act voor het MKB](/compliance/ai-act-mkb).
 
-Op basis van onze projecten: 1 tot 2 uur per offerte. Bij een installatiebedrijf dat 80 offertes per jaar schrijft, is dat 80 tot 160 uur besparing. De winst zit in het samenstellen van de offertekst en voorwaarden, niet in het calculeren. Het rekenwerk blijft in je calculatiesoftware.
+## Waar begin je als installatiebedrijf?
 
-### Is Claude geschikt voor technische documentatie bij installaties?
+Kies één stroom die elke week terugkomt, zoals werkbonnen of de mails bij planningswijzigingen. Zet daar een Claude-project voor op, met jullie vaste opbouw en een paar goede voorbeelden. Laat twee of drie mensen er een maand mee werken, en meet zelf hoeveel tijd het scheelt. Dan weet je wat het jouw bedrijf oplevert, met je eigen aantallen.
 
-Ja. Claude verwerkt technische specificaties en genereert documentatie: opleverrapporten, inbedrijfstellingsverslagen, onderhoudsinstructies. De installateur levert de technische input, Claude structureert het in een professioneel document. De kwaliteit hangt af van je input: hoe specifieker de gegevens, hoe beter het resultaat.
+Wil je hulp bij die eerste stap, of bij een koppeling met jullie software, kijk dan op onze [implementatiepagina](/claude-implementatie). Hoe Claude in een MKB-bedrijf breder werkt, lees je in de gids [Claude voor bedrijven en mkb](/gids/claude-voor-mkb). Andere branches vind je in het [overzicht per branche](/verticalen).

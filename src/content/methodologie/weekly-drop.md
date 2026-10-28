@@ -1,6 +1,6 @@
 ---
 titel: De Wekelijkse Use-Case Drop
-samenvatting: "Elke maandag een korte Nederlandstalige mail met een nieuwe Claude-use case voor het MKB. Twee vliegen in een klap: retainer-waarde en LinkedIn-content."
+samenvatting: "Elke maandag een korte Nederlandstalige mail met een nieuwe Claude-use case voor het MKB."
 volgorde: 5
 kicker: "Bouwsteen 5 · Ritme"
 vorm: ritme

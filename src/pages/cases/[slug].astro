@@ -5,6 +5,7 @@ import { resolve } from 'node:path';
 import BasisLayout from '../../layouts/BasisLayout.astro';
 import CtaWarm from '../../components/CtaWarm.astro';
 import Broodkruimel from '../../components/Broodkruimel.astro';
+import ArtikelInhoud from '../../components/ArtikelInhoud.astro';
 
 export async function getStaticPaths() {
   const cases = await getCollection('cases');
@@ -15,7 +16,7 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
-const { Content } = await render(entry);
+const { Content, headings } = await render(entry);
 
 const breadcrumbs = [
   { name: 'Home', url: '/' },
@@ -42,190 +43,185 @@ const kw = entry.data.kernwinst;
 const kwParts = kw && kw.includes('→') ? kw.split('→').map((s) => s.trim()) : null;
 const heeftResultaatBlok = entry.data.kernwinst || entry.data.klantprofiel || entry.data.results.length > 0;
 
-// Datum + schema (review Max 23 juli, B5/B9): zichtbare publicatiedatum,
-// Article-schema gekoppeld aan de bestaande entiteiten (@id's uit
-// EntiteitSchema/SchemaInjector) en BreadcrumbList naast het zichtbare kruimelpad.
-const site = 'https://claudezakelijk.nl';
+// Datum + schema (review Max 23 juli, B5/B9): zichtbare publicatiedatum, Article-node
+// en BreadcrumbList via de schema/artikel-props van BasisLayout (src/lib/schema.ts),
+// zodat de pagina precies één JSON-LD-blok heeft met de sitebrede entiteiten erin.
+// Een case heeft geen zichtbare byline, dus het schema noemt de organisatie als auteur.
 const datumNl = entry.data.publishDate.toLocaleDateString('nl-NL', { day: 'numeric', month: 'long', year: 'numeric' });
-const caseSchema = {
-  '@context': 'https://schema.org',
-  '@graph': [
-    {
-      '@type': 'Article',
-      headline: entry.data.title.slice(0, 110),
-      description: entry.data.description,
-      image: `${site}/og-claudezakelijk.png`,
-      datePublished: entry.data.publishDate.toISOString(),
-      dateModified: entry.data.publishDate.toISOString(),
-      inLanguage: 'nl-NL',
-      author: { '@id': `${site}/over#camiel` },
-      publisher: { '@id': `${site}/#organisatie` },
-      mainEntityOfPage: { '@type': 'WebPage', '@id': `${site}/cases/${entry.id}` },
-    },
-    {
-      '@type': 'BreadcrumbList',
-      itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: `${site}/` },
-        { '@type': 'ListItem', position: 2, name: 'Cases', item: `${site}/cases` },
-        { '@type': 'ListItem', position: 3, name: entry.data.title },
-      ],
-    },
-  ],
-};
+const artikel = {
+  headline: entry.data.title,
+  gepubliceerd: entry.data.publishDate,
+  bijgewerkt: null,
+  auteur: 'organisatie',
+  sectie: 'Cases',
+} as const;
 ---
 <BasisLayout
   titel={entry.data.titleTag ?? entry.data.title}
   beschrijving={entry.data.metaDescription ?? entry.data.description}
   pad={`/cases/${entry.id}`}
+  schema={{ breadcrumbs }}
+  artikel={artikel}
 >
-  <script type="application/ld+json" set:html={JSON.stringify(caseSchema)} />
-  <div class="hp text-ink-diep bg-papier">
-    <div class="mx-auto max-w-[1040px] px-6 pt-12 pb-24">
+  <article class="v2-artikel">
+    <div class="v2-voortgang" aria-hidden="true"></div>
 
-      <!-- 1 · Broodkruimel + meta + 2 · H1 + 3 · intro -->
-      <header class="mx-auto max-w-[720px]">
-        <Broodkruimel items={breadcrumbs} />
-        {!heeftResultaatBlok && (
-          <div class="mt-10 flex items-center gap-2.5 text-[13px] font-semibold uppercase tracking-[0.08em] text-accent-diep">
-            <span>{entry.data.sector}</span>
-            <span class="w-[3px] h-[3px] rounded-full bg-ink-muted" aria-hidden="true"></span>
-            <span>{entry.data.duration}</span>
-          </div>
-        )}
-        <h1 class:list={["font-newsreader font-medium leading-[1.12] tracking-[-0.015em] text-[clamp(34px,5vw,52px)] text-balance", heeftResultaatBlok ? "mt-10" : "mt-4"]}>{entry.data.title}</h1>
-        <p class="mt-6 text-[clamp(18px,2.4vw,21px)] leading-[1.6] text-ink-2 text-pretty">{entry.data.description}</p>
-        <p class="mt-4 text-[13.5px] text-ink-muted">Gepubliceerd op <time datetime={entry.data.publishDate.toISOString().slice(0, 10)}>{datumNl}</time></p>
-      </header>
+    <!-- 1 · Broodkruimel + meta + 2 · H1 + 3 · intro, met rechts het resultaat -->
+    <header class="v2-dienst-kop">
+      <div class="v2-dienst-kop-binnen v2-case-kop">
+        <div class="v2-dienst-kop-tekst">
+          <Broodkruimel items={breadcrumbs} />
+          {!heeftResultaatBlok && (
+            <div class="v2-chips">
+              <span class="v2-chip">{entry.data.sector}</span>
+              <span class="v2-chip v2-chip-zacht">{entry.data.duration}</span>
+            </div>
+          )}
+          <h1 class="v2-artikel-h1">{entry.data.title}</h1>
+          <p>{entry.data.description}</p>
+          <p class="v2-case-datum">Gepubliceerd op <time datetime={entry.data.publishDate.toISOString().slice(0, 10)}>{datumNl}</time></p>
+        </div>
 
-      <!-- 4 · In één oogopslag: meta-strip + kernwinst + resultaten + wat dit voor jou betekent -->
-      {heeftResultaatBlok && (
-        <section class="mx-auto max-w-[840px] mt-12 rounded-[24px] bg-paper-tint p-[clamp(28px,5vw,48px)]">
-          <dl class:list={["m-0 grid gap-x-8 gap-y-5", entry.data.klantprofiel ? "sm:grid-cols-[1.6fr_1fr_1fr]" : "grid-cols-2"]}>
-            {entry.data.klantprofiel && (
+        <!-- 4 · In één oogopslag: meta-strip + kernwinst + resultaten -->
+        {heeftResultaatBlok && (
+          <section class="v2-resultaat">
+            <dl class:list={['v2-resultaat-meta', entry.data.klantprofiel && 'v2-met-context']}>
+              {entry.data.klantprofiel && (
+                <div class="v2-resultaat-context">
+                  <dt>Context</dt>
+                  <dd>{entry.data.klantprofiel}</dd>
+                </div>
+              )}
               <div>
-                <dt class="text-xs font-semibold uppercase tracking-[0.1em] text-ink-muted">Context</dt>
-                <dd class="m-0 mt-2 text-[15px] leading-[1.5] text-ink-2">{entry.data.klantprofiel}</dd>
+                <dt>Doorlooptijd</dt>
+                <dd>{entry.data.duration}</dd>
+              </div>
+              <div>
+                <dt>Sector</dt>
+                <dd>{entry.data.sector}</dd>
+              </div>
+            </dl>
+            {entry.data.kernwinst && (
+              <div class="v2-kernwinst">
+                {kwParts ? (
+                  <>
+                    <span class="v2-kernwinst-voor">{kwParts[0]}</span>
+                    <span class="v2-kernwinst-pijl">&rarr;</span>
+                    <span class="v2-kernwinst-na">{kwParts[1]}</span>
+                  </>
+                ) : (
+                  <span class="v2-kernwinst-na">{entry.data.kernwinst}</span>
+                )}
               </div>
             )}
-            <div>
-              <dt class="text-xs font-semibold uppercase tracking-[0.1em] text-ink-muted">Doorlooptijd</dt>
-              <dd class="m-0 mt-2 text-[15px] leading-[1.5] text-ink-diep font-medium">{entry.data.duration}</dd>
-            </div>
-            <div>
-              <dt class="text-xs font-semibold uppercase tracking-[0.1em] text-ink-muted">Sector</dt>
-              <dd class="m-0 mt-2 text-[15px] leading-[1.5] text-ink-diep font-medium">{entry.data.sector}</dd>
-            </div>
-          </dl>
-          {entry.data.kernwinst && (
-            <div class="mt-7 pt-6 border-t border-lijn flex items-baseline gap-3.5 flex-wrap font-newsreader font-medium tracking-[-0.01em]">
-              {kwParts ? (
-                <>
-                  <span class="text-[clamp(30px,4.4vw,44px)] text-ink-2">{kwParts[0]}</span>
-                  <span class="text-[clamp(26px,3.8vw,36px)] text-terracotta">&rarr;</span>
-                  <span class="text-[clamp(30px,4.4vw,44px)] text-ink-diep">{kwParts[1]}</span>
-                </>
-              ) : (
-                <span class="text-[clamp(30px,4.4vw,44px)] text-ink-diep">{entry.data.kernwinst}</span>
-              )}
-            </div>
-          )}
-          {entry.data.results.length > 0 && (
-            <ul class="list-none grid gap-3.5 mt-7 pt-6 border-t border-lijn">
-              {entry.data.results.map((r) => (
-                <li class="flex items-start gap-3 text-[15px] leading-[1.5] text-ink-diep">
-                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" class="flex-none mt-px" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="#C25E3C"/><path d="M6 10.2l2.6 2.6L14 7.4" stroke="#FAF7F2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  <span>{r}</span>
-                </li>
-              ))}
-            </ul>
-          )}
-          {entry.data.voorJou && (
-            <div class="mt-7 pt-6 border-t border-lijn">
-              <h2 class="m-0 font-newsreader font-medium leading-[1.3] tracking-[-0.01em] text-[clamp(20px,2.8vw,24px)]">Wat betekent dit voor jouw bedrijf?</h2>
-              <p class="mt-3 max-w-[600px] text-[15px] leading-[1.6] text-ink-2 text-pretty">{entry.data.voorJou}</p>
-              <a href="/ai-enablement-scan" class="link-terra mt-4 inline-block no-underline">Doe de gratis AI-check <span aria-hidden="true">&rarr;</span></a>
-            </div>
-          )}
-        </section>
-      )}
-
-      <!-- 5 · Tool-chips -->
-      {entry.data.tools.length > 0 && (
-        <div class="mx-auto max-w-[720px] mt-10">
-          <p class="text-xs font-semibold uppercase tracking-[0.1em] text-ink-muted">Gebruikte tools</p>
-          <div class="mt-3.5 flex flex-wrap gap-2.5">
-            {entry.data.tools.map((tool) => (
-              <span class="inline-flex items-center rounded-full border border-lijn bg-white px-4 py-[7px] text-sm font-medium text-ink-diep">{tool}</span>
-            ))}
-          </div>
-        </div>
-      )}
-
-      <!-- 6 · Technisch diagram (alleen als er een schets bestaat) -->
-      {diagramSvg && (
-        <figure class="mx-auto max-w-[960px] mt-12 m-0">
-          <div class="rounded-[20px] border border-lijn bg-white p-[clamp(20px,4vw,40px)] overflow-hidden [&>svg]:w-full [&>svg]:h-auto [&>svg]:block" set:html={diagramSvg} />
-        </figure>
-      )}
-
-      <!-- 7 · Verhalende body -->
-      <article class="case-body mx-auto max-w-[680px] mt-14 text-[17px] leading-[1.75] text-ink-diep">
-        <Content />
-      </article>
-
-      <!-- 7b · Doorverwijzing naar de dienstpagina's (interne links, één plek voor alle cases) -->
-      <p class="mx-auto max-w-[680px] mt-10 pt-6 border-t border-lijn text-[15px] leading-[1.6] text-ink-2">
-        Wil je iets vergelijkbaars in je eigen bedrijf? Lees hoe een <a href="/claude-implementatie" class="link-terra">Claude-implementatie</a> verloopt, of bekijk de rollout <a href="/claude-in-30-dagen" class="link-terra">Claude in 30 dagen</a>.
-      </p>
-
-      <section class="mx-auto max-w-[840px] mt-16">
-        <h2 class="font-newsreader font-medium text-[clamp(22px,3vw,28px)] leading-[1.25]">Meer cases</h2>
-        <ul class="list-none p-0 mt-5 grid gap-3">
-          {meerCases.map((c) => (
-            <li><a href={`/cases/${c.id}`} class="link-terra text-[16px]">{c.data.title}</a></li>
-          ))}
-        </ul>
-      </section>
-
-      <!-- 8 · Afsluitende CTA -->
-      <div class="mt-16">
-        <CtaWarm titel="Herken je deze uitdaging?" secundairLabel="Alle cases" secundairHref="/cases" />
+            {entry.data.results.length > 0 && (
+              <ul class="v2-resultaten">
+                {entry.data.results.map((r) => (
+                  <li><span class="v2-vink" aria-hidden="true">&#10003;</span><span>{r}</span></li>
+                ))}
+              </ul>
+            )}
+          </section>
+        )}
       </div>
+    </header>
 
+    {(entry.data.voorJou || entry.data.tools.length > 0) && (
+      <div class="v2-sectie v2-case-strook">
+        {entry.data.voorJou && (
+          <div class="v2-voorjou">
+            <h2>Wat betekent dit voor jouw bedrijf?</h2>
+            <p>{entry.data.voorJou}</p>
+            <a href="/ai-enablement-scan">Doe de gratis AI-check <span aria-hidden="true">&rarr;</span></a>
+          </div>
+        )}
+        <!-- 5 · Tool-chips -->
+        {entry.data.tools.length > 0 && (
+          <div class="v2-tools">
+            <p>Gebruikte tools</p>
+            <div>
+              {entry.data.tools.map((tool) => (<span>{tool}</span>))}
+            </div>
+          </div>
+        )}
+      </div>
+    )}
+
+    <!-- 6 · Technisch diagram (alleen als er een schets bestaat) -->
+    {diagramSvg && (
+      <figure class="v2-sectie v2-diagram">
+        <div set:html={diagramSvg} />
+      </figure>
+    )}
+
+    <!-- 7 · Verhalende body, met inhoudsopgave rechts -->
+    <div class="v2-artikel-raster v2-case-raster">
+      <ArtikelInhoud soort="zijkant" koppen={headings} />
+      <div class="v2-artikel-tekst">
+        <ArtikelInhoud soort="mobiel" koppen={headings} />
+        <div class="case-body">
+          <Content />
+        </div>
+
+        <!-- 7b · Doorverwijzing naar de dienstpagina's (interne links, één plek voor alle cases) -->
+        <p class="v2-case-door">
+          Wil je iets vergelijkbaars in je eigen bedrijf? Lees hoe een <a href="/claude-implementatie">Claude-implementatie</a> verloopt, of bekijk de rollout <a href="/claude-in-30-dagen">Claude in 30 dagen</a>.
+        </p>
+      </div>
+    </div>
+  </article>
+
+  <div class="v2-artikel-na">
+    <section class="v2-gerelateerd">
+      <h2>Meer cases</h2>
+      <ul class="v2-gerelateerd-raster list-none p-0 m-0">
+        {meerCases.map((c) => (
+          <li><a href={`/cases/${c.id}`}>{c.data.title}</a></li>
+        ))}
+      </ul>
+    </section>
+
+    <!-- 8 · Afsluitende CTA -->
+    <div class="mt-16">
+      <CtaWarm titel="Herken je deze uitdaging?" secundairLabel="Alle cases" secundairHref="/cases" />
     </div>
   </div>
 </BasisLayout>
 
 <style>
-  /* Body van de case in de warme leesstijl: Newsreader-koppen, rustige ritmiek. */
+  /* Body van de case: schreefloze v2-koppen, rustige ritmiek. */
   .case-body :global(h2) {
-    font-family: var(--font-newsreader);
-    font-weight: 500;
-    font-size: 28px;
-    line-height: 1.25;
-    letter-spacing: -0.01em;
-    margin: 40px 0 16px;
+    font-family: var(--font-v2-kop);
+    font-weight: 600;
+    font-size: clamp(1.6rem, 1.4vw + 1rem, 2.1rem);
+    line-height: 1.12;
+    letter-spacing: -0.03em;
+    margin: 56px 0 16px;
   }
   .case-body :global(h2:first-child) { margin-top: 0; }
   .case-body :global(h3) {
-    font-family: var(--font-newsreader);
+    font-family: var(--font-v2-kop);
     font-weight: 600;
+    letter-spacing: -0.02em;
     font-size: 21px;
     line-height: 1.3;
     margin: 32px 0 12px;
   }
+  .case-body { margin-top: 8px; font-size: 18px; line-height: 1.75; }
+  .case-body :global(h2) { scroll-margin-top: 96px; }
   .case-body :global(p) { margin: 0 0 20px; text-wrap: pretty; }
   .case-body :global(ul), .case-body :global(ol) { margin: 0 0 20px; padding-left: 1.25rem; display: grid; gap: 8px; }
-  .case-body :global(a) { color: var(--color-accent-diep); text-decoration: underline; }
+  .case-body :global(a) { color: var(--color-v2-olijf); text-decoration: underline; text-decoration-color: rgba(61, 82, 32, .35); text-underline-offset: 3px; }
   .case-body :global(strong) { font-weight: 600; }
   /* Pull-quote: een blockquote in de body springt eruit als kerncijfer/kernzin. */
   .case-body :global(blockquote) {
     margin: 32px 0;
     padding: 4px 0 4px 24px;
-    border-left: 3px solid var(--color-terracotta);
+    border-left: 3px solid var(--color-v2-olijf-fel);
     font-family: var(--font-newsreader);
-    font-weight: 500;
-    font-size: 24px;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 26px;
     line-height: 1.35;
     letter-spacing: -0.01em;
     color: var(--color-ink-diep);

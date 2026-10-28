@@ -43,13 +43,13 @@ const breadcrumbs = [{ name: 'Home', url: '/' }, { name: 'Branches', url: '/vert
   pad="/verticalen"
   schema={{ paginaType: 'CollectionPage', hoofdonderwerp: lijstId('/verticalen'), breadcrumbs, nodes: [itemListNode('/verticalen', artikelen.map((a) => ({ url: `/claude-voor-${a.id}`, naam: a.data.title }))), faqNode('/verticalen', faq)] }}
 >
-  <Container class="pt-16 pb-12">
+  <Container class="pt-12 pb-20" width="max-w-[1288px]">
     <Broodkruimel items={breadcrumbs} />
-    <p class="mt-6 text-xs uppercase tracking-widest text-inkt-zacht reveal-target">Branches</p>
-    <h1 class="mt-3 text-[length:var(--text-h1)] reveal-target">Claude per branche</h1>
+    <p class="mt-7 v2-chip">Branches</p>
+    <h1 class="v2-artikel-h1">Claude per branche</h1>
 
     <div class="max-w-3xl">
-      <p class="mt-4 text-lg text-inkt-zacht reveal-target">
+      <p class="v2-hub-lead reveal-target">
         Claude werkt in elk vak anders, omdat elk vak eigen taken en eigen regels heeft. Per
         branche lees je welk werk Claude overneemt, wat mensenwerk blijft en welke
         beroepsregels meespelen, zoals de geheimhoudingsplicht van advocaten en de
@@ -60,37 +60,37 @@ const breadcrumbs = [{ name: 'Home', url: '/' }, { name: 'Branches', url: '/vert
       <p class="mt-4 text-inkt-zacht">
         Op een accountantskantoor gaat het om rapportages en samensteldossiers. De
         accountant beoordeelt en tekent zelf. Dat staat in
-        <a href="/claude-voor-accountants" class="text-accent-diep">Claude voor accountants</a>.
-        Bij <a href="/claude-voor-advocaten" class="text-accent-diep">Claude voor advocaten</a>
+        <a href="/claude-voor-accountants">Claude voor accountants</a>.
+        Bij <a href="/claude-voor-advocaten">Claude voor advocaten</a>
         draait het om leeswerk in contracten en dossiers, binnen de geheimhoudingsplicht.
-        <a href="/claude-voor-makelaars" class="text-accent-diep">Claude voor makelaars</a>
+        <a href="/claude-voor-makelaars">Claude voor makelaars</a>
         gaat over woningteksten, klantcontact en marktrapportages. Taxeren en onderhandelen
         blijven mensenwerk. En in
-        <a href="/claude-voor-marketingbureaus" class="text-accent-diep">Claude voor marketingbureaus</a>
+        <a href="/claude-voor-marketingbureaus">Claude voor marketingbureaus</a>
         lees je over Google Ads-audits, SEO-analyses en klantrapportages.
       </p>
     </div>
 
     {artikelen.length > 0 && (
       <>
-        <h2 class="mt-12 text-[length:var(--text-h2)]">Kies je branche</h2>
-        <div class="mt-6 grid gap-6 md:grid-cols-2">
+        <h2 class="v2-hub-h2">Kies je branche</h2>
+        <div class="v2-hub-kaarten">
           {artikelen.map((a) => (
             <a
               href={`/claude-voor-${a.id}`}
-              class="no-underline block rounded-lg border border-lijn bg-papier p-6 card-shadow reveal-target"
+              class="v2-hubkaart reveal-target"
             >
-              <span class="text-xs uppercase tracking-widest text-inkt-zacht bg-papier-dieper rounded-full px-3 py-1">Branche</span>
-              <h3 class="mt-3 font-serif text-xl font-bold text-inkt">{a.data.title}</h3>
-              <p class="mt-2 text-sm text-inkt-zacht">{a.data.metaDescription}</p>
-              <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-accent-donkerst">Bekijk de branche<span class="cta-arrow">&rarr;</span></span>
+              <span class="v2-casekaart-meta">Branche</span>
+              <h3>{a.data.title}</h3>
+              <p>{a.data.metaDescription}</p>
+              <span class="v2-hubkaart-lees">Bekijk de branche<span class="cta-arrow">&rarr;</span></span>
             </a>
           ))}
         </div>
       </>
     )}
 
-    <div class="my-10 overflow-x-auto">
+    <div class="my-12 v2-tabelkaart v2-hubtabel">
       <table class="w-full text-sm border-collapse">
         <caption class="caption-top text-left text-sm text-inkt-zacht pb-2">Claude per branche, stand oktober 2026</caption>
         <thead>
@@ -104,7 +104,7 @@ const breadcrumbs = [{ name: 'Home', url: '/' }, { name: 'Branches', url: '/vert
         <tbody>
           {tabel.map((r) => (
             <tr class="border-b border-lijn">
-              <th scope="row" class="p-3 text-left font-medium"><a href={r.href} class="text-accent-diep">{r.branche}</a></th>
+              <th scope="row" class="p-3 text-left font-medium"><a href={r.href}>{r.branche}</a></th>
               <td class="p-3 text-inkt-zacht">{r.helpt}</td>
               <td class="p-3 text-inkt-zacht">{r.mensenwerk}</td>
               <td class="p-3 text-inkt-zacht">{r.regels}</td>

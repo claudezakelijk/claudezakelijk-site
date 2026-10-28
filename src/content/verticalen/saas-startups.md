@@ -1,6 +1,6 @@
 ---
 title: "Claude voor SaaS en startups"
-titleTag: "Claude voor SaaS & softwarebedrijf | ClaudeZakelijk"
+titleTag: "Claude voor SaaS & softwarebedrijf | Implementeren.ai"
 metaDescription: "SaaS-bedrijven gebruiken Claude voor product development, support en growth. Cases: CRM in een weekend, investor-deck in 1 dag."
 h1: "Claude voor SaaS en softwarebedrijf"
 targetKeywords:

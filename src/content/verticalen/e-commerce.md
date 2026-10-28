@@ -1,6 +1,6 @@
 ---
 title: "Claude voor e-commerce"
-titleTag: "Claude voor webshop en e-commerce ondernemer | ClaudeZakelijk"
+titleTag: "Claude voor webshop en e-commerce ondernemer | Implementeren.ai"
 metaDescription: "Hoe webshops Claude inzetten voor productbeschrijvingen, klantenservice en SEO-content. Shopify, WooCommerce, Magento."
 h1: "Claude voor webshop en e-commerce ondernemer"
 targetKeywords:
@@ -34,7 +34,7 @@ areaServed: NL
 brancheOrganisatie: null
 ---
 
-Claude voor webshop en e-commerce ondernemer pakt de taken aan die de meeste tijd kosten en het minste opleveren: productbeschrijvingen schrijven, klantenservice-mails beantwoorden, SEO-content produceren, retourverzoeken afhandelen, en marketingteksten draaien. E-commerce ondernemers besteden 15 tot 25 uur per week aan schrijfwerk. Claude halveert dat. Wij bij ClaudeZakelijk begeleiden webshopondernemers door het hele traject.
+Claude voor webshop en e-commerce ondernemer pakt de taken aan die de meeste tijd kosten en het minste opleveren: productbeschrijvingen schrijven, klantenservice-mails beantwoorden, SEO-content produceren, retourverzoeken afhandelen, en marketingteksten draaien. E-commerce ondernemers besteden 15 tot 25 uur per week aan schrijfwerk. Claude halveert dat. Wij bij Implementeren.ai begeleiden webshopondernemers door het hele traject.
 
 ## Claude voor webshop: productbeschrijvingen op schaal
 
@@ -52,7 +52,7 @@ Bij 500 producten bespaar je 100 tot 200 uur. Bij een Shopify ondernemer die 50 
 
 Je koppelt Claude aan je kennisbank: verzend- en retourbeleid, productinformatie, veelgestelde vragen. Bij elke binnenkomende mail genereert Claude een conceptantwoord. De klantenservicemedewerker controleert, past aan indien nodig, en verstuurt. De responstijd daalt van uren naar minuten. De tone of voice blijft consistent, ook als verschillende medewerkers antwoorden.
 
-Bij een webshop met 50 klantvragen per dag bespaar je 2 tot 3 uur per dag. Dat is 40 tot 60 uur per maand. De klanttevredenheid stijgt door snellere responstijden. Claude vervangt geen mens, het geeft de mens een voorsprong. Bij ClaudeZakelijk zetten we die e-mailflows op.
+Bij een webshop met 50 klantvragen per dag bespaar je 2 tot 3 uur per dag. Dat is 40 tot 60 uur per maand. De klanttevredenheid stijgt door snellere responstijden. Claude vervangt geen mens, het geeft de mens een voorsprong. Bij Implementeren.ai zetten we die e-mailflows op.
 
 ## Claude voor e-commerce: SEO-content en categorieteksten
 
@@ -95,7 +95,7 @@ De ROI voor een e-commerce onderneming (5.000+ orders per maand):
 - **Marketing:** 12 tot 20 uur per maand aan campagne-content.
 - **Claude Pro licenties:** 20 dollar per gebruiker per maand.
 
-Wij bij ClaudeZakelijk begeleiden e-commerce ondernemers door het hele traject. De implementatie kost 2 tot 4 weken. Een webshop met 3 medewerkers op klantenservice en marketing haalt 600 tot 1.000 uur besparing per jaar. De terugverdientijd: minder dan twee weken.
+Wij bij Implementeren.ai begeleiden e-commerce ondernemers door het hele traject. De implementatie kost 2 tot 4 weken. Een webshop met 3 medewerkers op klantenservice en marketing haalt 600 tot 1.000 uur besparing per jaar. De terugverdientijd: minder dan twee weken.
 
 ## Veelgestelde vragen
 

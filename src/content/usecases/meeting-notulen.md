@@ -1,6 +1,6 @@
 ---
 title: "Claude meeting notulen"
-titleTag: "Claude meeting notulen: vergaderingen samenvatten | ClaudeZakelijk"
+titleTag: "Claude meeting notulen: vergaderingen samenvatten | Implementeren.ai"
 metaDescription: "Automatiseer je claude meeting notulen met AI. Van Teams-opname naar gestructureerde brief in 5 minuten. Bewezen bij IT-consultants."
 h1: "Claude meeting notulen: vergaderingen samenvatten"
 targetKeywords:

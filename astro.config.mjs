@@ -66,7 +66,7 @@ function stripHtmlComments() {
 
 export default defineConfig({
   // Domein ook in src/site.ts — houd synchroon
-  site: 'https://claudezakelijk.nl',
+  site: 'https://implementeren.ai',
   trailingSlash: 'never',
 
   build: {
@@ -93,13 +93,13 @@ export default defineConfig({
     sitemap({
       filter: (page) => inSitemap(page),
       serialize(item) {
-        const url = item.url === 'https://claudezakelijk.nl' ? 'https://claudezakelijk.nl/' : item.url;
+        const url = item.url === 'https://implementeren.ai' ? 'https://implementeren.ai/' : item.url;
         const pad = new URL(url).pathname.replace(/\/$/, '');
         const lastmod = lastmodPerPad.get(pad);
         return lastmod ? { ...item, url, lastmod } : { ...item, url };
       },
     }),
-    // @astrojs/sitemap schrijft bij trailingSlash 'never' de homepage als <loc>https://claudezakelijk.nl</loc>
+    // @astrojs/sitemap schrijft bij trailingSlash 'never' de homepage als <loc>https://implementeren.ai</loc>
     // (write-sitemap.js strips de slash na serialize). De canonical van / heeft wel een slash,
     // dus zet het sitemap-bestand er na het schrijven op gelijk. Staat na sitemap() in de lijst.
     {
@@ -108,8 +108,8 @@ export default defineConfig({
         'astro:build:done': ({ dir, logger }) => {
           const map = fileURLToPath(dir);
           const bestanden = readdirSync(map).filter((f) => /^sitemap-.+\.xml$/.test(f) && f !== 'sitemap-index.xml');
-          const zonder = '<loc>https://claudezakelijk.nl</loc>';
-          const met = '<loc>https://claudezakelijk.nl/</loc>';
+          const zonder = '<loc>https://implementeren.ai</loc>';
+          const met = '<loc>https://implementeren.ai/</loc>';
           let gevonden = false;
           for (const f of bestanden) {
             const xml = readFileSync(join(map, f), 'utf-8');

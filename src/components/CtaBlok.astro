@@ -12,15 +12,15 @@ const {
   linkTekst = 'Doe de gratis AI-check',
 } = Astro.props;
 ---
-<section class="my-12 px-6">
-  <div class="mx-auto w-full max-w-5xl rounded-lg bg-accent-diep p-8 md:p-12">
-    <div class="max-w-2xl">
-      <h2 class="text-3xl text-papier">{kop}</h2>
+<section class="v2-sectie">
+  <div class="v2-band">
+    <div class="v2-band-binnen">
+      <h2 class="v2-band-h2">{kop}</h2>
       {/* volle text-papier: papier/80 op accent-diep haalt maar 3,7:1 (AA vraagt 4,5:1) */}
-      <p class="mt-3 text-papier">{tekst}</p>
+      <p class="mt-3">{tekst}</p>
       <a
         href={link}
-        class="mt-6 inline-flex items-center rounded-full bg-papier text-accent-donkerst px-5 py-3 font-semibold no-underline hover:bg-papier-dieper focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-papier"
+        class="v2-knop v2-knop-wit mt-6"
       >
         {linkTekst}
       </a>

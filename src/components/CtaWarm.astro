@@ -16,9 +16,9 @@ const {
   secundairHref,
 } = Astro.props;
 ---
-<section class="mx-auto max-w-[840px] rounded-[24px] bg-paper-tint p-[clamp(36px,6vw,64px)] text-center">
-  <h2 class="m-0 font-newsreader font-medium leading-[1.2] tracking-[-0.015em] text-[clamp(26px,4vw,36px)]">{titel}</h2>
-  <p class="mt-3.5 text-base leading-[1.6] text-ink-2">{tekst}</p>
+<section class="v2-warm mx-auto max-w-[920px] rounded-[32px] p-[clamp(36px,6vw,72px)] text-center">
+  <h2 class="m-0 leading-[1.05] text-[clamp(28px,4vw,44px)]">{titel}</h2>
+  <p class="mt-3.5 text-base leading-[1.6] text-ink-diep">{tekst}</p>
   <div class="mt-7 flex justify-center gap-3.5 flex-wrap">
     <a href="/ai-enablement-scan" class="pill pill-primary no-underline">Doe de gratis AI-check <span aria-hidden="true">&rarr;</span></a>
     {secundairLabel && secundairHref && (

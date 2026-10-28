@@ -1,0 +1,31 @@
+---
+// Kop-blok voor dienstpagina's (redesign v2): tekst links, beeld rechts.
+// Het beeld (slot "beeld") is versiering; alle inhoud staat in de tekstkolom.
+import Broodkruimel from './Broodkruimel.astro';
+
+interface Props {
+  breadcrumbs: Array<{ name: string; url: string }>;
+  label: string;
+  h1: string;
+  /** Korte feiten onder de kop, bv. prijs en duur. */
+  feiten?: Array<{ term: string; waarde: string }>;
+}
+
+const { breadcrumbs, label, h1, feiten = [] } = Astro.props;
+---
+<header class="v2-dienst-kop">
+  <div class="v2-dienst-kop-binnen">
+    <div class="v2-dienst-kop-tekst">
+      <Broodkruimel items={breadcrumbs} />
+      <p class="v2-chip">{label}</p>
+      <h1 class="v2-artikel-h1">{h1}</h1>
+      <slot />
+      {feiten.length > 0 && (
+        <dl class="v2-feiten">
+          {feiten.map((f) => (<div><dt>{f.term}</dt><dd>{f.waarde}</dd></div>))}
+        </dl>
+      )}
+    </div>
+    {Astro.slots.has('beeld') && <div class="v2-dienst-beeld"><slot name="beeld" /></div>}
+  </div>
+</header>
