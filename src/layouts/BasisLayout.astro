@@ -71,6 +71,9 @@ const geenIndex = noindex ?? moetNoindex(pad);
     </main>
     {toonFooter && <Footer />}
     <BronMeting />
+    {/* Cloudflare Web Analytics. Het oude project kreeg dit automatisch geïnjecteerd, dit project
+        niet; zonder deze tag levert claudezakelijk-tracking (cf_analytics.py) geen bezoekcijfers. */}
+    <script is:inline defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon={JSON.stringify({ token: "c1869cd7f3f84c6c8487060faa0ea770" })}></script>
     <script>
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
