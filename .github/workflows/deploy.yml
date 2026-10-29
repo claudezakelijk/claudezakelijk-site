@@ -36,8 +36,12 @@ name: Deploy site to Cloudflare Pages
 on:
   push:
     branches: [main]
+  # Ingeplande artikelen gaan live bij de eerste geplande run op hun publishDate. GitHub start
+  # geplande runs soms uren te laat of slaat er een over; de tweede run is het vangnet. Een
+  # dubbele deploy is onschuldig (zelfde build, concurrency hieronder), IndexNow ook.
   schedule:
     - cron: '15 5 * * *'
+    - cron: '45 9 * * *'
   workflow_dispatch: {}
 
 permissions:
