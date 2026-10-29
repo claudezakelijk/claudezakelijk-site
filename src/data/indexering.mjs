@@ -67,7 +67,7 @@ export const zakelijk = {
 // /llms.txt (A-21) en /_routes.json (A-15) staan er al in, zodat die taken dit bestand niet
 // hoeven aan te raken.
 export const rootBestanden = {
-  zakelijk: ['/favicon.svg', '/favicon.ico', '/apple-touch-icon.png', '/site.webmanifest', '/og-implementeren.png', '/robots.txt', '/sitemap-index.xml', '/sitemap-0.xml'],
+  zakelijk: ['/favicon.svg', '/favicon.ico', '/apple-touch-icon.png', '/site.webmanifest', '/og-implementeren.png', '/robots.txt', '/sitemap-index.xml', '/sitemap-0.xml', '/sitemap-claudezakelijk-nl.xml'],
   bewustNoindex: ['/386ecd4c13fe57021749388a72d3ac44.txt', '/llms.txt', '/_headers', '/_redirects', '/_routes.json'],
 };
 
