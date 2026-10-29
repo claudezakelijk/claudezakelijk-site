@@ -30,8 +30,8 @@ schemaTypes:
 author: camiel
 competitors: []
 disclaimer: juridisch
-status: review
-publishDate: null
+status: published
+publishDate: 2026-11-23
 updatedDate: 2026-10-27
 changelogLine: null
 reviewedBy: null
@@ -42,8 +42,8 @@ bronnen:
     url: "https://claude.com/pricing"
     geraadpleegd: "27 oktober 2026"
   - titel: "ECB-referentiekoers euro/dollar, 27 oktober 2026 (ecb.europa.eu)"
-    url: "https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml"
-    geraadpleegd: "27 oktober 2026"
+    url: "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/eurofxref-graph-usd.en.html"
+    geraadpleegd: "29 oktober 2026"
   - titel: "Anthropic Privacy Center: wordt zakelijke data gebruikt voor modeltraining? (18 augustus 2026)"
     url: "https://privacy.claude.com/en/articles/7996868-is-my-data-used-for-model-training"
     geraadpleegd: "27 oktober 2026"

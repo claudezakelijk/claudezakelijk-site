@@ -15,6 +15,8 @@ cases:
   - consultant-brief
   - knowledge-base
 internalLinks:
+  - /compliance/ai-geletterdheid
+  - /verticalen
   - /compliance
   - /compliance/zero-data-retention
   - /compliance/dpia-stappenplan
@@ -75,8 +77,8 @@ bronnen:
     url: "https://privacy.claude.com/en/articles/8956058-i-have-a-zero-data-retention-agreement-with-anthropic-what-products-does-it-apply-to"
     geraadpleegd: "2026-10-22"
   - titel: "Europese Centrale Bank, referentiekoers euro/dollar van 22 oktober 2026"
-    url: "https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml"
-    geraadpleegd: "2026-10-22"
+    url: "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/eurofxref-graph-usd.en.html"
+    geraadpleegd: "2026-10-29"
 faq:
   - question: "Mag een notaris cliëntgegevens in Claude invoeren?"
     answer: "Het beroepsgeheim van artikel 22 Wna geldt voor elk hulpmiddel. De KNB kende in oktober 2025 nog geen AI-systeem dat veilig genoeg is voor vertrouwelijk werk binnen een zaak, en zij raadt gratis openbare AI-tools af. Gebruik dus nooit een consumentenaccount. Werk op Claude Team of Enterprise, pseudonimiseer namen en nummers, en maak de afweging voor werk binnen een zaak bewust en schriftelijk."
@@ -104,6 +106,8 @@ Deel 2 maakt een onderscheid dat voor elk notariskantoor bruikbaar is:
 Voor de eerste groep is de KNB voorzichtig. Bij versie 1.0 van het kader (oktober 2025) waren bij de KNB nog geen AI-systemen bekend die "veilig, met voldoende waarborgen en in lijn met huidige wet- en regelgeving" kunnen ondersteunen bij de vertrouwelijke werkzaamheden. Gratis tools die voor iedereen open staan raadt de KNB af. Die worden vaak doorgetraind op wat gebruikers invoeren, en dan loop je het risico je geheimhoudingsplicht te schenden.
 
 Het kader noemt ook toepassingen die wel kunnen, mits de waarborgen kloppen: een chatbot op de website, speech-to-text voor gespreksverslagen, concepten van e-mails en brieven aan cliënten, ondersteuning bij onderzoek en het bijhouden van wetswijzigingen. Taalmodellen kunnen hallucineren, schrijft de KNB. Elke uitkomst moet je dus controleren.
+
+<!-- figuur:1 -->
 
 Of Claude Team of Claude Enterprise met verwerkersovereenkomst genoeg waarborgen biedt voor werk binnen een zaak, beslist de notaris zelf. Wij nemen die afweging niet over. Wel kunnen we laten zien welke waarborgen Anthropic biedt, zodat je die afweging met feiten maakt.
 
@@ -154,7 +158,7 @@ Tabel: bewaartermijnen die voor een notariskantoor met Claude spelen, stand 22 o
 | Claude Enterprise: instelbare termijn | Minimaal 30 dagen, standaard onbeperkt |
 | Zero data retention | Alleen voor de API en Claude Code op Enterprise, na goedkeuring |
 
-Voor de strengste eisen bestaat zero data retention. Die geldt niet voor de chatomgeving van Team of Enterprise. Hoe het werkt staat in [Claude zero data retention uitgelegd](/compliance/zero-data-retention). Wil je Claude inzetten voor werk binnen een zaak, maak dan eerst een DPIA met ons [DPIA-stappenplan](/compliance/dpia-stappenplan). Voor de AI Act geldt al sinds 2 februari 2025 de plicht tot AI-geletterdheid (artikel 4) voor iedereen op kantoor die met AI werkt. Zie [de AI Act voor het mkb](/compliance/ai-act-mkb) en het [overzicht van compliance-onderwerpen](/compliance).
+Voor de strengste eisen bestaat zero data retention. Die geldt niet voor de chatomgeving van Team of Enterprise. Hoe het werkt staat in [Claude zero data retention uitgelegd](/compliance/zero-data-retention). Wil je Claude inzetten voor werk binnen een zaak, maak dan eerst een DPIA met ons [DPIA-stappenplan](/compliance/dpia-stappenplan). Voor de AI Act geldt al sinds 2 februari 2025 de plicht tot AI-geletterdheid (artikel 4) voor iedereen op kantoor die met AI werkt. Hoe je dat met je team aanpakt, staat in [AI-geletterdheid voor je team](/compliance/ai-geletterdheid). Zie [de AI Act voor het mkb](/compliance/ai-act-mkb) en het [overzicht van compliance-onderwerpen](/compliance).
 
 ## Welk Claude-abonnement past bij een notariskantoor?
 
@@ -181,4 +185,4 @@ Implementeren.ai heeft nog geen notariskantoor begeleid. De aanpak hieronder vol
 4. Maak een DPIA voordat je taken binnen een zaak toevoegt.
 5. Voeg daarna gespreksverslagen en akte-concepten toe. Bij een IT-consultancybureau ging het uitwerken van een opgenomen gesprek van 45 naar 5 minuten ([gespreksverwerker-case](/cases/consultant-brief)).
 
-Wil je weten welke taken op jouw kantoor geschikt zijn, dan brengt de [Claude Readiness Scan](/claude-readiness-scan) dat in kaart. Voor advocaten, met een vergelijkbaar geheimhoudingskader, staat de aanpak in [Claude voor advocaten](/claude-voor-advocaten).
+Wil je weten welke taken op jouw kantoor geschikt zijn, dan brengt de [Claude Readiness Scan](/claude-readiness-scan) dat in kaart. Voor advocaten, met een vergelijkbaar geheimhoudingskader, staat de aanpak in [Claude voor advocaten](/claude-voor-advocaten). Andere vakgebieden vind je in het [overzicht per branche](/verticalen).

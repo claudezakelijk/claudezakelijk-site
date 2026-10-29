@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" role="img" aria-label="Staafdiagram: duizend taken per maand van 2.000 input- en 500 output-tokens kosten op Haiku 5.5 0,45 dollar, op Sonnet 5.5 9 dollar en op Opus 5.5 18 dollar" data-bijschrift="Wat 1.000 taken per maand kosten per model, bij 2.000 input- en 500 output-tokens per taak. Stand 22 oktober 2026." font-family="Inter, system-ui, sans-serif" fill="#23261D"><defs>
+<filter id="wcm1-g" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 .14  0 0 0 0 .15  0 0 0 0 .11  .16 0 0 0 -.03"/></filter>
+</defs><rect width="1200" height="500" fill="#F4F1E8"/><rect x="64" y="48" width="64" height="4" rx="2" fill="#B4C13E"/><text x="64" y="92" fill="#565A4C" font-size="22" font-weight="600" letter-spacing="3">1.000 TAKEN PER MAAND · USD</text>
+<text x="64" y="166" font-size="34" font-weight="600">Haiku 5.5</text><text x="64" y="200" font-size="26" fill="#565A4C">bulkwerk</text>
+<rect x="346" y="136" width="18" height="64" rx="4" fill="#CFCDBE"/>
+<text x="382" y="183" font-family="'Instrument Sans Variable', Inter, system-ui, sans-serif" font-size="44" font-weight="600" letter-spacing="-1">$0,45</text>
+<text x="64" y="266" font-size="34" font-weight="600">Sonnet 5.5</text><text x="64" y="300" font-size="26" fill="#565A4C">dagelijks werk</text>
+<rect x="346" y="236" width="350" height="64" rx="10" fill="#CFCDBE"/>
+<text x="714" y="283" font-family="'Instrument Sans Variable', Inter, system-ui, sans-serif" font-size="44" font-weight="600" letter-spacing="-1">$9</text>
+<text x="64" y="366" font-size="34" font-weight="600">Opus 5.5</text><text x="64" y="400" font-size="26" fill="#565A4C">kenniswerk</text>
+<rect x="346" y="336" width="700" height="64" rx="10" fill="#3D5220"/>
+<text x="1064" y="383" font-family="'Instrument Sans Variable', Inter, system-ui, sans-serif" font-size="44" font-weight="600" letter-spacing="-1" fill="#3D5220">$18</text>
+<line x1="346" y1="116" x2="346" y2="420" stroke="#23261D" stroke-width="3"/>
+<text x="1136" y="466" text-anchor="end" font-size="26" fill="#64685A">per taak 2.000 tokens in, 500 uit · stand 22 okt 2026</text>
+<rect width="1200" height="500" filter="url(#wcm1-g)"/></svg>

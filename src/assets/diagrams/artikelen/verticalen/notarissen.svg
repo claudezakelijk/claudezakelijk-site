@@ -1,21 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" role="img" aria-label="Claude maakt uit het eigen model van het kantoor een concept; het toetsen en verlijden van de akte blijven bij de notaris" font-family="Inter, system-ui, sans-serif" fill="#23261D"><defs>
-<filter id="not-g" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 .16  0 0 0 0 .15  0 0 0 0 .14  .16 0 0 0 -.03"/></filter>
+<filter id="not-g" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 .14  0 0 0 0 .15  0 0 0 0 .11  .16 0 0 0 -.03"/></filter>
 <marker id="not-a" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#23261D"/></marker>
-</defs><rect width="1200" height="600" fill="#F4F1E8"/><rect x="64" y="48" width="64" height="4" rx="2" fill="#3D5220"/><text x="64" y="92" fill="#565A4C" font-size="22" font-weight="600" letter-spacing="3">WIE DOET WAT ROND DE AKTE?</text>
+</defs><rect width="1200" height="600" fill="#F4F1E8"/><rect x="64" y="48" width="64" height="4" rx="2" fill="#B4C13E"/><text x="64" y="92" fill="#565A4C" font-size="22" font-weight="600" letter-spacing="3">WIE DOET WAT ROND DE AKTE?</text>
 <g>
 <rect x="96" y="214" width="150" height="190" rx="12" fill="#E9EBDC" stroke="#23261D" stroke-width="4" transform="rotate(-7 171 309)"/>
 <rect x="84" y="226" width="150" height="190" rx="12" fill="#FFFFFF" stroke="#23261D" stroke-width="4"/>
-<g stroke-width="9" stroke-linecap="round"><line x1="110" y1="266" x2="200" y2="266" stroke="#3D5220"/><line x1="110" y1="296" x2="208" y2="296" stroke="#E1DED2"/><line x1="110" y1="326" x2="186" y2="326" stroke="#E1DED2"/><line x1="110" y1="356" x2="200" y2="356" stroke="#E1DED2"/></g>
+<g stroke-width="9" stroke-linecap="round"><line x1="110" y1="266" x2="200" y2="266" stroke="#B4C13E"/><line x1="110" y1="296" x2="208" y2="296" stroke="#E1DED2"/><line x1="110" y1="326" x2="186" y2="326" stroke="#E1DED2"/><line x1="110" y1="356" x2="200" y2="356" stroke="#E1DED2"/></g>
 <line x1="250" y1="321" x2="392" y2="321" stroke="#23261D" stroke-width="4" stroke-linecap="round" marker-end="url(#not-a)"/>
 <rect x="410" y="236" width="150" height="170" rx="12" fill="#FFFFFF" stroke="#23261D" stroke-width="4" stroke-dasharray="14 12" stroke-linecap="round"/>
-<g stroke-width="9" stroke-linecap="round"><line x1="436" y1="276" x2="526" y2="276" stroke="#3D5220"/><line x1="436" y1="306" x2="534" y2="306" stroke="#E1DED2"/><line x1="436" y1="336" x2="512" y2="336" stroke="#E1DED2"/><line x1="436" y1="366" x2="526" y2="366" stroke="#E1DED2"/></g>
-<line x1="660" y1="150" x2="660" y2="510" stroke="#6E7263" stroke-width="4" stroke-dasharray="2 14" stroke-linecap="round"/>
+<g stroke-width="9" stroke-linecap="round"><line x1="436" y1="276" x2="526" y2="276" stroke="#B4C13E"/><line x1="436" y1="306" x2="534" y2="306" stroke="#E1DED2"/><line x1="436" y1="336" x2="512" y2="336" stroke="#E1DED2"/><line x1="436" y1="366" x2="526" y2="366" stroke="#E1DED2"/></g>
+<line x1="660" y1="150" x2="660" y2="510" stroke="#64685A" stroke-width="4" stroke-dasharray="2 14" stroke-linecap="round"/>
 <line x1="578" y1="321" x2="735" y2="321" stroke="#23261D" stroke-width="4" stroke-linecap="round" marker-end="url(#not-a)"/>
 <circle cx="800" cy="321" r="46" fill="#FFFFFF" stroke="#23261D" stroke-width="4"/>
 <path d="M780 322 L794 336 L820 306" fill="none" stroke="#23261D" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
 <line x1="858" y1="321" x2="908" y2="321" stroke="#23261D" stroke-width="4" stroke-linecap="round" marker-end="url(#not-a)"/>
 <g>
-<rect x="930" y="226" width="170" height="190" rx="12" fill="#23261D"/>
+<rect x="930" y="226" width="170" height="190" rx="12" fill="#3D5220"/>
 <g stroke-width="9" stroke-linecap="round" stroke="#F4F1E8" opacity=".55"><line x1="956" y1="266" x2="1060" y2="266"/><line x1="956" y1="296" x2="1072" y2="296"/><line x1="956" y1="326" x2="1040" y2="326"/></g>
 <circle cx="1058" cy="374" r="22" fill="none" stroke="#F4F1E8" stroke-width="4"/><circle cx="1058" cy="374" r="10" fill="#F4F1E8"/>
 </g>
@@ -26,5 +26,5 @@
 <text x="485" y="470" text-anchor="middle" font-size="34" font-weight="600">concept</text>
 <text x="800" y="470" text-anchor="middle" font-size="34" font-weight="600">toetsen</text>
 <text x="1015" y="470" text-anchor="middle" font-size="34" font-weight="600">verlijden</text>
-<text x="1136" y="566" text-anchor="end" font-size="26" fill="#6E7263">stand 22 okt 2026</text>
+<text x="1136" y="566" text-anchor="end" font-size="26" fill="#64685A">stand 22 okt 2026</text>
 <rect width="1200" height="600" filter="url(#not-g)"/></svg>

@@ -14,6 +14,7 @@ tier: 2
 cases:
   - sdr-sales-agent
 internalLinks:
+  - /verticalen
   - /compliance/ai-act-mkb
   - /compliance/anthropic-dpa
   - /cases/sdr-sales-agent
@@ -27,8 +28,8 @@ schemaTypes:
 author: camiel
 competitors: []
 disclaimer: juridisch
-status: review
-publishDate: null
+status: published
+publishDate: 2026-11-26
 updatedDate: 2026-10-27
 changelogLine: null
 reviewedBy: null
@@ -84,7 +85,7 @@ faq:
   - question: "Vervangt Claude de recruiter?"
     answer: "Nee. Claude maakt concepten: een vacaturetekst, een samenvatting van een CV naast jouw criteria, een eerste versie van een mail. De recruiter voert de gesprekken, beoordeelt de kandidaat en neemt het besluit. Dat volgt ook uit de AVG, de AI Act en de gebruiksvoorwaarden van Anthropic, die alle drie een mens bij het besluit eisen."
   - question: "Wat kost Claude voor een uitzendbureau?"
-    answer: "Claude Team kost 25 dollar per gebruiker per maand bij maandelijkse betaling, of 20 dollar per maand bij een jaarcontract. Dat is ongeveer 22,42 euro en 17,94 euro (ECB-koers 27 oktober 2026), exclusief btw. Team is er voor 2 tot 150 gebruikers. Begeleiding bij de inrichting rekenen wij apart."
+    answer: "Claude Team kost 25 dollar per gebruiker per maand bij maandelijkse betaling, of 20 dollar per maand bij een jaarcontract. Dat is ongeveer 22,42 euro en 17,94 euro (ECB-koers 27 oktober 2026), exclusief btw. Team is er voor 2 tot 150 gebruikers. De licenties neem je rechtstreeks af bij Anthropic. Hulp bij de inrichting zit in onze rollout van 30 dagen, vanaf 7.500 euro exclusief btw."
 areaServed: NL
 brancheOrganisatie: null
 ---
@@ -181,4 +182,4 @@ Claude Team is er voor 2 tot 150 gebruikers. Een standaardplek kost 25 dollar pe
 
 ## Waar begin je met Claude voor recruitment?
 
-Begin met vacatureteksten, want daar zitten geen persoonsgegevens in en je ziet snel of de toon klopt. Daarna volgen gespreksverslagen en outreach. CV-screening komt pas als de DPIA, het abonnement en de werkafspraken rond zijn. Zo'n traject richten we samen in, zie [Claude-implementatie](/claude-implementatie). Meer over privacy en wetgeving lees je in [Claude en de AVG](/compliance).
+Begin met vacatureteksten, want daar zitten geen persoonsgegevens in en je ziet snel of de toon klopt. Daarna volgen gespreksverslagen en outreach. CV-screening komt pas als de DPIA, het abonnement en de werkafspraken rond zijn. Zo'n traject richten we samen in, zie [Claude-implementatie](/claude-implementatie). Meer over privacy en wetgeving lees je in [Claude en de AVG](/compliance). Hoe Claude in andere branches werkt, zie je in het [overzicht per branche](/verticalen).

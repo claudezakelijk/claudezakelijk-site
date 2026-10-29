@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" role="img" aria-label="De DPIA in negen stappen: stap 4 tot en met 7 beschrijven en beoordelen de verwerking, bij een hoog restrisico in stap 8 raadpleeg je de AP, in stap 9 leg je vast en bij een nieuwe toepassing of een nieuw model begin je opnieuw" data-bijschrift="De negen stappen van een DPIA voor Claude. Blijft er in stap 8 een hoog restrisico, dan raadpleeg je de AP vóór je start." font-family="Inter, system-ui, sans-serif" fill="#23261D"><defs>
+<filter id="dpia1-g" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 .14  0 0 0 0 .15  0 0 0 0 .11  .16 0 0 0 -.03"/></filter>
+<marker id="dpia1-r" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#A8433B"/></marker>
+<marker id="dpia1-i" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#565A4C"/></marker>
+</defs><rect width="1200" height="600" fill="#F4F1E8"/><rect x="64" y="48" width="64" height="4" rx="2" fill="#B4C13E"/><text x="64" y="92" fill="#565A4C" font-size="22" font-weight="600" letter-spacing="3">DPIA IN NEGEN STAPPEN · ARTIKEL 35 EN 36 AVG</text>
+<g>
+<line x1="110" y1="300" x2="1054" y2="300" stroke="#CFCDBE" stroke-width="4"/>
+<g fill="#FFFFFF" stroke="#CFCDBE" stroke-width="4"><circle cx="110" cy="300" r="28"/><circle cx="228" cy="300" r="28"/><circle cx="346" cy="300" r="28"/></g>
+<g fill="#E9EBDC" stroke="#565A4C" stroke-width="4"><circle cx="464" cy="300" r="28"/><circle cx="582" cy="300" r="28"/><circle cx="700" cy="300" r="28"/><circle cx="818" cy="300" r="28"/></g>
+<circle cx="936" cy="300" r="28" fill="#FFFFFF" stroke="#A8433B" stroke-width="4"/>
+<circle cx="1054" cy="300" r="28" fill="#3D5220"/>
+<path d="M464 344 v14 h354 v-14" fill="none" stroke="#565A4C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M936 270 L 936 226" fill="none" stroke="#A8433B" stroke-width="5" stroke-linecap="round" marker-end="url(#dpia1-r)"/>
+<rect x="850" y="112" width="286" height="100" rx="18" fill="#F6E7E4" stroke="#A8433B" stroke-width="3"/>
+<path d="M1054 384 C 1054 470, 1010 484, 950 484 L 200 484 C 130 484, 110 450, 110 350" fill="none" stroke="#565A4C" stroke-width="4" stroke-linecap="round" stroke-dasharray="2 12" marker-end="url(#dpia1-i)"/>
+</g>
+<g font-family="'Instrument Sans Variable', Inter, system-ui, sans-serif" font-size="28" font-weight="600" text-anchor="middle"><text x="110" y="310">1</text><text x="228" y="310">2</text><text x="346" y="310">3</text><text x="464" y="310">4</text><text x="582" y="310">5</text><text x="700" y="310">6</text><text x="818" y="310">7</text><text x="936" y="310">8</text><text x="1054" y="310" fill="#FFFFFF">9</text></g>
+<text x="874" y="154" font-size="34" font-weight="600" fill="#A8433B">AP raadplegen</text>
+<text x="874" y="190" font-size="26" fill="#565A4C">binnen acht weken</text>
+<text x="916" y="252" text-anchor="end" font-size="30" font-weight="600" fill="#A8433B">hoog restrisico</text>
+<text x="641" y="400" text-anchor="middle" font-size="32" font-weight="600">beschrijven en beoordelen</text>
+<text x="1054" y="364" text-anchor="middle" font-size="32" font-weight="600" fill="#3D5220">vastleggen</text>
+<text x="570" y="526" text-anchor="middle" font-size="26" fill="#565A4C">opnieuw bij een nieuwe toepassing of een nieuw model</text>
+<text x="1136" y="566" text-anchor="end" font-size="26" fill="#64685A">stand 22 okt 2026</text>
+<rect width="1200" height="600" filter="url(#dpia1-g)"/></svg>

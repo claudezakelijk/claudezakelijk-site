@@ -148,6 +148,8 @@ Je mag de methode zelf kiezen, zegt Ondernemersplein, zolang de DPIA voldoet aan
 8. **Bepaal het restrisico.** Blijft er een hoog risico over dat je niet genoeg verkleint, dan raadpleeg je de AP vóór je start (artikel 36). De AP adviseert binnen acht weken, met een mogelijke verlenging van zes weken.
 9. **Leg vast, laat besluiten en plan een herziening.** Iemand met beslissingsbevoegdheid tekent. Toets opnieuw als het risico verandert (lid 11), bijvoorbeeld bij een nieuwe toepassing of een nieuw model.
 
+<!-- figuur:1 -->
+
 ## Wat haal je uit de voorwaarden van Anthropic voor je DPIA?
 
 Voor stap 4 en 6 heb je feiten over de verwerker nodig. De meeste staan in de DPA, de Commercial Terms en het Privacy Center van Anthropic. De DPA is automatisch onderdeel van de Commercial Terms. Hoe die DPA in elkaar zit, lees je in [Anthropic verwerkersovereenkomst: wat de DPA dekt](/compliance/anthropic-dpa).

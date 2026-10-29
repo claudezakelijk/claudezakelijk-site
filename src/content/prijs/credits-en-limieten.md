@@ -13,6 +13,7 @@ tier: 2
 cases:
   - powerbi-reporting
 internalLinks:
+  - /nieuws/welk-claude-model-mkb
   - /prijs
   - /claude-implementatie
   - /cases/powerbi-reporting
@@ -51,6 +52,9 @@ bronnen:
   - titel: "Anthropic supportartikel: Claude Fable models on your plan"
     url: "https://support.claude.com/en/articles/15424964-claude-fable-models-on-your-plan"
     geraadpleegd: "2 oktober 2026"
+  - titel: "Anthropic supportartikel: Models and usage limits in Claude Code"
+    url: "https://support.claude.com/en/articles/14552983-models-usage-limits-in-claude-code"
+    geraadpleegd: "29 oktober 2026"
   - titel: "Anthropic-aankondiging van hogere limieten voor Claude Code (6 mei 2026)"
     url: "https://www.anthropic.com/news/higher-limits-spacex"
     geraadpleegd: "2 oktober 2026"
@@ -136,7 +140,7 @@ De limieten zijn geen vast gegeven. Op 6 mei 2026 verdubbelde Anthropic bijvoorb
 
 Loop je vast, dan heb je vier routes, van gratis naar structureel:
 
-**1. Wachten of afschalen.** Het venster loopt vanzelf af, en vaak kan de taak ook op een lichter model. Anthropic raadt zelf aan om voor de meeste taken Claude Haiku of de nieuwste Claude Sonnet te kiezen. Bewaar Claude Opus voor het zware denkwerk.
+**1. Wachten of afschalen.** Het venster loopt vanzelf af, en vaak kan de taak ook op een lichter model. Anthropic noemt Sonnet de juiste keuze voor het grootste deel van het werk in Claude Code, Opus voor lastiger problemen en Haiku voor snel, mechanisch werk. Fable verbruikt je limiet het snelst: zet het in voor het zware werk en niet voor routine. Een overzicht per model en taak staat in [welk Claude-model kies je als MKB](/nieuws/welk-claude-model-mkb).
 
 **2. Usage credits aanzetten.** Je kunt bijkopen. Anthropic noemt dit usage credits, en op de prijspagina staat het bij Team ook als extra usage. Je zet vooraf tegoed klaar en betaalt na je limiet door tegen standaard API-tarieven. Op Pro en Max zet je dit aan onder Settings en dan Usage. Je kunt er een maandelijks bestedingsplafond op zetten. In een Team-organisatie koopt een Owner de credits en bepaalt hij wie ze mag gebruiken.
 

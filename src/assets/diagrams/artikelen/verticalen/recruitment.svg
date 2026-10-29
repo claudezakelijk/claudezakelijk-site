@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" role="img" aria-label="Recruitmenttaken als trap van risico: een vacaturetekst is geen hoog risico, een gesprek samenvatten vraagt pseudonimiseren, CV's filteren is hoog risico vanaf 2 december 2027 en de recruiter besluit, emotieanalyse van video-sollicitaties is sinds februari 2025 verboden" font-family="Inter, system-ui, sans-serif" fill="#23261D"><defs>
+<filter id="rec-g" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 .14  0 0 0 0 .15  0 0 0 0 .11  .16 0 0 0 -.03"/></filter>
+</defs><rect width="1200" height="600" fill="#F4F1E8"/><rect x="64" y="48" width="64" height="4" rx="2" fill="#B4C13E"/><text x="64" y="92" fill="#565A4C" font-size="22" font-weight="600" letter-spacing="3">WAT DE AI ACT PER TAAK VRAAGT</text>
+<g>
+<rect x="64" y="360" width="232" height="80" rx="14" fill="#FFFFFF" stroke="#23261D" stroke-width="4"/>
+<rect x="340" y="300" width="232" height="140" rx="14" fill="#E9EBDC" stroke="#23261D" stroke-width="4"/>
+<rect x="616" y="226" width="232" height="214" rx="14" fill="#F6E7E4" stroke="#A8433B" stroke-width="4"/>
+<rect x="892" y="150" width="232" height="290" rx="14" fill="#A8433B"/>
+<line x1="64" y1="440" x2="1124" y2="440" stroke="#23261D" stroke-width="4" stroke-linecap="round"/>
+</g>
+<text x="180" y="409" text-anchor="middle" font-size="26" fill="#565A4C">geen hoog risico</text>
+<text x="456" y="379" text-anchor="middle" font-size="26" fill="#565A4C">pseudonimiseer</text>
+<text x="732" y="290" text-anchor="middle" font-size="32" font-weight="600" fill="#A8433B">hoog risico</text>
+<text x="732" y="328" text-anchor="middle" font-size="26" fill="#565A4C">vanaf 2 dec 2027</text>
+<text x="1008" y="232" text-anchor="middle" font-size="34" font-weight="600" fill="#FFFFFF">verboden</text>
+<text x="1008" y="270" text-anchor="middle" font-size="26" fill="#FFFFFF">sinds feb 2025</text>
+<g font-size="30" font-weight="600" text-anchor="middle"><text x="180" y="488">vacaturetekst</text><text x="456" y="488">gesprek</text><text x="456" y="524">samenvatten</text><text x="732" y="488">CV's filteren</text><text x="1008" y="488">emotieanalyse</text></g>
+<text x="732" y="524" text-anchor="middle" font-size="26" font-weight="600" fill="#3D5220">recruiter besluit</text>
+<text x="1136" y="566" text-anchor="end" font-size="26" fill="#64685A">stand 27 okt 2026</text>
+<rect width="1200" height="600" filter="url(#rec-g)"/></svg>

@@ -14,6 +14,7 @@ tier: 1
 cases:
   - copilot-studio-agent
 internalLinks:
+  - /nieuws/welk-claude-model-mkb
   - /prijs
   - /claude-implementatie
   - /compliance
@@ -28,7 +29,7 @@ author: camiel
 competitors: []
 status: published
 publishDate: 2026-10-02
-updatedDate: 2026-10-22
+updatedDate: 2026-10-29
 changelogLine: null
 kortAntwoord: "Claude Pro (20 dollar per maand) volstaat voor wie alleen werkt. Claude Team (25 dollar per gebruiker per maand, minimaal 2 seats) is de keuze zodra er klantdata in Claude gaat of collega's meedoen. Je krijgt Projects, SSO, centraal beheer en standaard geen training op je data. Enterprise (minimaal 20 seats) past bij grote of gereguleerde organisaties. Stand: 22 oktober 2026."
 bronnen:
@@ -60,8 +61,8 @@ bronnen:
     url: "https://platform.claude.com/docs/en/api/rate-limits"
     geraadpleegd: "2 oktober 2026"
   - titel: "ECB-referentiekoers euro/dollar (1 oktober 2026)"
-    url: "https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml"
-    geraadpleegd: "2 oktober 2026"
+    url: "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/eurofxref-graph-usd.en.html"
+    geraadpleegd: "29 oktober 2026"
 hasCalculator: false
 faq:
   - question: "Wat is het verschil tussen Claude Pro en Claude Team?"
@@ -134,7 +135,7 @@ Twee dingen vallen op voor wie oudere vergelijkingen kent. SSO zit tegenwoordig 
 
 ## Claude Pro: prima start, geen fundament
 
-Voor een individuele professional is Pro uitstekend: Projects, Research en Claude Code erbij, voor ongeveer €17,70 per maand exclusief btw. De zwaarste modellen, Claude Fable 5 en 5.1, vallen buiten het Pro-budget. Die gebruik je op Pro alleen met usage credits. Wie zeer intensief werkt kan doorgroeien naar Claude Max, met vijf of twintig keer de gebruiksruimte voor $100 of $200 per maand. Daar zit evenveel aan API-credits bij.
+Voor een individuele professional is Pro uitstekend: Projects, Research en Claude Code erbij, voor ongeveer €17,70 per maand exclusief btw. De zwaarste modellen, Claude Fable 5 en 5.1, vallen buiten het Pro-budget. Die gebruik je op Pro alleen met usage credits. Of je die zwaarste modellen nodig hebt, lees je in [welk Claude-model kies je als MKB](/nieuws/welk-claude-model-mkb). Wie zeer intensief werkt kan doorgroeien naar Claude Max, met vijf of twintig keer de gebruiksruimte voor $100 of $200 per maand. Daar zit evenveel aan API-credits bij.
 
 Als bedrijfsfundament heeft Pro twee problemen. Het eerste is praktisch: elk account is een eiland. De promptbibliotheek die je beste gebruiker opbouwt, blijft in diens persoonlijke Projects zitten. Het tweede is principieel: Pro is een consumentenproduct. Elke gebruiker beheert zelf de privacy-instelling die bepaalt of gesprekken voor modeltraining gebruikt mogen worden. De verwerkersovereenkomst van Anthropic geldt alleen voor de zakelijke producten. Zodra er klantdata in de chats staat, en dat gebeurt sneller dan elk AI-beleid voorziet, wil je dat niet op een consumentenaccount hebben. Hoe je dit netjes regelt voor de AVG (GDPR), staat in ons [compliance-overzicht](/compliance).
 

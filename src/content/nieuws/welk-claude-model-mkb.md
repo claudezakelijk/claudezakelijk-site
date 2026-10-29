@@ -30,12 +30,12 @@ author: camiel
 competitors: []
 status: published
 publishDate: 2026-10-29
-updatedDate: null
+updatedDate: 2026-10-29
 changelogLine: null
 reviewedBy: null
 reviewedDate: null
 isRecurring: false
-kortAntwoord: "Voor de meeste zakelijke taken is Claude Opus 5.5 het beste startpunt: 4 dollar per miljoen input-tokens en 20 dollar per miljoen output-tokens. Sonnet 5.5 kost de helft en is sneller, Haiku 5.5 is het goedkoopst voor bulkwerk, en Fable 5.1 is het zwaarste model voor complexe, lang lopende taken. Stand: 22 oktober 2026."
+kortAntwoord: "Voor de meeste zakelijke taken is Claude Opus 5.5 het beste startpunt: 4 dollar per miljoen input-tokens en 20 dollar per miljoen output-tokens. Sonnet 5.5 kost de helft en is sneller, Haiku 5.5 is het goedkoopst voor bulkwerk, en Fable 5.1 is het model voor zwaar werk: complexe analyses en lang lopende agent-taken. Stand: 22 oktober 2026."
 bronnen:
   - titel: "Claude Platform Docs, Models overview (modellen, API-ID's, contextwindow)"
     url: "https://platform.claude.com/docs/en/models/overview"
@@ -50,8 +50,8 @@ bronnen:
     url: "https://support.claude.com/en/articles/15425695-covered-models"
     geraadpleegd: "22 oktober 2026"
   - titel: "ECB-referentiekoers euro/dollar (21 oktober 2026)"
-    url: "https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml"
-    geraadpleegd: "22 oktober 2026"
+    url: "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/eurofxref-graph-usd.en.html"
+    geraadpleegd: "29 oktober 2026"
 faq:
   - question: "Wat is het verschil tussen Claude Sonnet en Opus?"
     answer: "Opus 5.5 is het sterkere model en de keuze van Anthropic zelf als startpunt voor de meeste taken. Sonnet 5.5 is sneller en kost de helft: 2 tegenover 4 dollar per miljoen input-tokens. Het oude beeld dat Opus vijf keer zo duur is klopt sinds de 5.5-generatie niet meer. Kies Sonnet als snelheid en volume zwaarder wegen dan maximale kwaliteit."
@@ -65,7 +65,7 @@ faq:
     answer: "Ja. In de Claude-apps kies je per gesprek een model, via de API geef je per request een model-ID mee, en in Claude Code wissel je tussen modellen binnen een sessie. Zo kun je het dure model beperken tot de stappen die het nodig hebben en de rest op een goedkoper model draaien. Dat scheelt direct in je tokenkosten."
 ---
 
-Welk Claude model je kiest, bepaalt wat je betaalt en wat je terugkrijgt. Het korte antwoord: begin met Claude Opus 5.5, dat is sinds de 5.5-generatie het aanbevolen startpunt van Anthropic zelf. Pak Sonnet 5.5 voor snel dagelijks werk tegen de halve prijs, Haiku 5.5 voor bulkwerk als classificatie en routering, en Fable 5.1 alleen voor het zwaarste reken- en redeneerwerk. Hieronder staan de actuele prijzen, de verschillen per taak en wat er in welk abonnement zit. Alle cijfers zijn gecheckt op 22 oktober 2026 bij de bronnen onderaan.
+Welk Claude model je kiest, bepaalt wat je betaalt en wat je terugkrijgt. Het korte antwoord: begin met Claude Opus 5.5, dat is sinds de 5.5-generatie het aanbevolen startpunt van Anthropic zelf. Pak Sonnet 5.5 voor snel dagelijks werk tegen de halve prijs, Haiku 5.5 voor bulkwerk als classificatie en routering, en Fable 5.1 voor het zware werk: complexe analyses en agents die lang zelfstandig doorwerken. Hieronder staan de actuele prijzen, de verschillen per taak en wat er in welk abonnement zit. Alle cijfers zijn gecheckt op 22 oktober 2026 bij de bronnen onderaan.
 
 ## De vier actuele Claude modellen
 
@@ -90,7 +90,7 @@ De vraag claude sonnet vs opus komt uit een tijd waarin Opus vijf keer zo duur w
 
 De praktische afweging is daarmee verschoven. Vroeger was Opus de uitzondering die je bewust inzette; nu is Opus de standaard en is Sonnet de bewuste keuze als je optimaliseert op snelheid en volume. Sonnet 5.5 reageert sneller en is voor e-mails, samenvattingen, standaardteksten en routinecode ruim voldoende. Bij hoog volume telt de halve prijs bovendien hard door.
 
-Fable 5.1 staat daarboven: 10 dollar input, 50 dollar output per miljoen tokens. Dat is 2,5 keer de prijs van Opus 5.5, en je betaalt het alleen terug op taken waar Opus aantoonbaar tekortschiet, zoals zeer complexe analyses of agents die urenlang zelfstandig doorwerken.
+Fable 5.1 staat daarboven: 10 dollar input, 50 dollar output per miljoen tokens. Dat is 2,5 keer de prijs van Opus 5.5. Anthropic zet Fable zelf neer voor veeleisend redeneerwerk en lange agent-taken, en daar hoort het ook: zeer complexe analyses, meerstapsredeneringen en agents die urenlang zelfstandig doorwerken. Voor gewoon kenniswerk betaal je die meerprijs niet terug.
 
 ## Welk Claude model voor welke taak?
 
@@ -99,11 +99,13 @@ Een praktische verdeling voor een MKB-organisatie:
 1. **Dagelijks kantoorwerk** (e-mails, samenvattingen, vertalingen, offerteteksten): Sonnet 5.5. Snel en goedkoop genoeg om niet over na te denken.
 2. **Analyse- en kenniswerk** (rapporten doornemen, contracten vergelijken, code schrijven): Opus 5.5. Het aanbevolen startpunt; pas afschalen naar Sonnet als de kwaliteit ook daar goed blijkt.
 3. **Bulkwerk** (duizenden tickets classificeren, data extraheren uit documenten, berichten routeren): Haiku 5.5. Bij dit soort volumes is de prijs per taak belangrijker dan redeneerdiepte.
-4. **Het zwaarste werk** (lang lopende agents, complexe meerstapsanalyses): Fable 5.1, en alleen als een test laat zien dat Opus 5.5 het niet redt.
+4. **Het zwaarste werk** (lang lopende agents, complexe meerstapsanalyses): Fable 5.1.
 
-Begin bij twijfel met Opus 5.5 en meet. Schaal per taak af naar Sonnet of Haiku zodra de uitkomst daar even goed is, en op naar Fable alleen met een aantoonbare reden. De [API-kostencalculator](/tools/claude-api-kosten-calculator) rekent je volume door per model.
+Begin bij twijfel met Opus 5.5 en meet. Schaal per taak af naar Sonnet of Haiku zodra de uitkomst daar even goed is. Zwaar werk zet je meteen op Fable. Werk je binnen een abonnement, dan telt ook je limiet: Sonnet rekt die het langst op en Fable verbruikt hem het snelst, zie [credits en limieten](/prijs/credits-en-limieten). De [API-kostencalculator](/tools/claude-api-kosten-calculator) rekent je volume door per model.
 
 Een rekenvoorbeeld om de verhoudingen te voelen. Stel, een taak kost 2.000 input-tokens en 500 output-tokens. Op Sonnet 5.5 is dat (2.000 x 2 + 500 x 10) / 1.000.000 = 0,009 dollar, ofwel 0,8 eurocent. Duizend van die taken per maand kosten 9 dollar (ongeveer 8 euro). Op Opus 5.5 is dat 18 dollar, op Haiku 5.5 0,45 dollar. Het model bepaalt je kosten dus meer dan het aantal taken.
+
+<!-- figuur:1 -->
 
 Vergelijk je Claude nog breder met andere aanbieders, kijk dan bij [welke AI voor het MKB](/vergelijken/welke-ai-voor-mkb).
 
@@ -127,6 +129,8 @@ Opvallend aan deze lijst: Opus 5.5 zit al in Pro, het instapabonnement van 17 do
 ## Fable 5.1 heeft een eigen bewaarplicht
 
 Eén compliance-detail hoort bij deze modelkeuze. Anthropic heeft Fable 5 en Fable 5.1 aangewezen als Covered Models: modellen met capaciteiten die extra waarborgen vragen. Prompts en antwoorden van die modellen worden daarom minimaal 30 dagen bewaard en daarna automatisch verwijderd, op elk platform. Zero data retention is voor deze modellen standaard niet beschikbaar. Voor Opus, Sonnet en Haiku geldt die verplichting niet. Werk je met strenge interne datarichtlijnen, weeg dit dan mee; meer context over bewaartermijnen en de verwerkersovereenkomst vind je op onze [compliance-pagina's](/compliance).
+
+<!-- figuur:2 -->
 
 ## Wat we er in de praktijk van zien
 

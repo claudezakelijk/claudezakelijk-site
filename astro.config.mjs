@@ -9,6 +9,7 @@ import sitemap from '@astrojs/sitemap';
 // bron: sitemap, robots-metatag en header mogen niet uit elkaar lopen.
 import { inSitemap, collectieRoutes, isIndexeerbaarPad } from './src/data/indexering.mjs';
 import rehypeTabelCaption from './src/lib/rehype-tabel-caption.mjs';
+import remarkFiguren from './src/lib/remark-figuren.mjs';
 
 import { existsSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
@@ -79,7 +80,8 @@ export default defineConfig({
   // draaien alleen op de unified()-pipeline uit @astrojs/markdown-remark.
   markdown: {
     processor: unified({
-      remarkPlugins: [stripHtmlComments],
+      // remarkFiguren vóór stripHtmlComments: het vervangt de <!-- figuur:n -->-markers.
+      remarkPlugins: [remarkFiguren, stripHtmlComments],
       rehypePlugins: [rehypeTabelCaption],
     }),
   },
