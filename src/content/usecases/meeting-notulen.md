@@ -14,6 +14,9 @@ tier: 2
 cases:
   - consultant-brief
 internalLinks:
+  - /claude-voor-financieel-adviseurs
+  - /use-cases/rapportage-genereren
+  - /use-cases
   - /cases/consultant-brief
   - /claude-voor-it-consultancy
   - /integraties/microsoft-365
@@ -174,4 +177,4 @@ Wil je een skill zoals in de case, met videofragmenten, dan heb je Claude Code n
 
 Kies één vergadering die elke week terugkomt, zoals het teamoverleg of de wekelijkse klantcall. Zet de transcriptie aan, meld dat aan het begin, en maak een maand lang de notulen met de zes stappen hierboven. Daarna weet je hoeveel tijd het jou scheelt, en of een eigen skill met videofragmenten de moeite waard is.
 
-Wil je hulp bij die skill of bij het inrichten van Claude in je team, kijk dan op onze [implementatiepagina](/claude-implementatie). Andere taken die je met Claude doet, vind je in het [overzicht van use cases](/use-cases).
+Wil je hulp bij die skill of bij het inrichten van Claude in je team, kijk dan op onze [implementatiepagina](/claude-implementatie). Werk je in een advieskantoor waar elk gesprek in het dossier moet, lees dan [Claude voor financieel adviseurs](/claude-voor-financieel-adviseurs). Rapporten die elke maand terugkomen, maak je op een vergelijkbare manier: zie [rapportage genereren met Claude](/use-cases/rapportage-genereren). Andere taken die je met Claude doet, vind je in het [overzicht van use cases](/use-cases).

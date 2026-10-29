@@ -15,6 +15,8 @@ tier: 2
 cases:
   - sdr-sales-agent
 internalLinks:
+  - /use-cases/meeting-notulen
+  - /use-cases
   - /cases/sdr-sales-agent
   - /integraties/hubspot
   - /claude-voor-it-consultancy
@@ -164,4 +166,4 @@ Voor offertes is de les dezelfde. Leg vast wat je bij het nalezen steeds verande
 
 Kies een type offerte dat vaak terugkomt en weinig variatie heeft. Maak er een project voor met je beste voorbeelden en werk er een maand mee. Houd zelf bij hoeveel tijd een offerte kost, voor en na. Dan weet je wat het jouw bedrijf oplevert, met je eigen aantallen.
 
-Hoe een IT-bureau voorstellen schrijft, lees je in [Claude voor IT-consultancy](/claude-voor-it-consultancy). Voor offertes rond een calculatie van materiaal en uren staat een uitwerking in [Claude voor installatiebedrijven](/claude-voor-installatiebedrijven). Wil je hulp bij het inrichten van projecten, sjablonen of de HubSpot-koppeling, kijk dan op onze [implementatiepagina](/claude-implementatie).
+Begint een offerte bij een klantgesprek, maak dan eerst [notulen van dat gesprek met Claude](/use-cases/meeting-notulen) en gebruik die als invoer. Hoe een IT-bureau voorstellen schrijft, lees je in [Claude voor IT-consultancy](/claude-voor-it-consultancy). Voor offertes rond een calculatie van materiaal en uren staat een uitwerking in [Claude voor installatiebedrijven](/claude-voor-installatiebedrijven). Wil je hulp bij het inrichten van projecten, sjablonen of de HubSpot-koppeling, kijk dan op onze [implementatiepagina](/claude-implementatie).

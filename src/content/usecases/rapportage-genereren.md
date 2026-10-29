@@ -16,6 +16,7 @@ cases:
   - powerbi-reporting
   - dashboard-automation
 internalLinks:
+  - /use-cases
   - /cases/powerbi-reporting
   - /cases/dashboard-automation
   - /integraties/microsoft-365
