@@ -34,7 +34,7 @@ competitors:
 disclaimer: juridisch
 status: published
 publishDate: 2026-11-30
-updatedDate: 2026-10-27
+updatedDate: null
 changelogLine: null
 reviewedBy: null
 reviewedDate: null
