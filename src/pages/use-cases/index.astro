@@ -4,6 +4,7 @@ import { itemListNode, lijstId } from '../../lib/schema';
 import BasisLayout from '../../layouts/BasisLayout.astro';
 import Container from '../../components/Container.astro';
 import CollectieHub from '../../components/CollectieHub.astro';
+import Broodkruimel from '../../components/Broodkruimel.astro';
 import { getPublished } from '../../lib/content';
 
 const artikelen = (await getPublished('usecases'))
@@ -25,14 +26,16 @@ const rijen = artikelen.map((a) => {
     project: slug && caseTitels.has(slug) ? { href: `/cases/${slug}`, titel: caseTitels.get(slug) } : null,
   };
 });
+const breadcrumbs = [{ name: 'Home', url: '/' }, { name: 'Use cases', url: '/use-cases' }];
 ---
 <BasisLayout
   titel="Use cases"
   beschrijving="Concrete Claude-toepassingen voor het Nederlandse MKB: van offertes en rapportages tot klantcommunicatie, met praktijkvoorbeelden."
   pad="/use-cases"
-  schema={{ paginaType: 'CollectionPage', hoofdonderwerp: lijstId('/use-cases'), nodes: [itemListNode('/use-cases', items.map((i) => ({ url: i.href, naam: i.titel })))] }}
+  schema={{ paginaType: 'CollectionPage', hoofdonderwerp: lijstId('/use-cases'), breadcrumbs, nodes: [itemListNode('/use-cases', items.map((i) => ({ url: i.href, naam: i.titel })))] }}
 >
   <Container class="pt-12 pb-20" width="max-w-[1288px]">
+    <Broodkruimel items={breadcrumbs} />
     <CollectieHub
       label="Use cases"
       titel="Wat je met Claude doet"
