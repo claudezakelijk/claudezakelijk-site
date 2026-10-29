@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" role="img" aria-label="Hoe de Autoriteit Persoonsgegevens AI-chatbotgebruik met persoonsgegevens beoordeelt: op eigen initiatief tegen de afspraken in is een datalek, chatbotgebruik als beleid van de organisatie is geen datalek maar vraagt een grondslag, en als er niets is afgesproken gelden beide risico's" font-family="Inter, system-ui, sans-serif" fill="#23261D"><defs>
+<filter id="sha-g" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 .14  0 0 0 0 .15  0 0 0 0 .11  .16 0 0 0 -.03"/></filter>
+<marker id="sha-a" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#565A4C"/></marker>
+</defs><rect width="1200" height="600" fill="#F4F1E8"/><rect x="64" y="48" width="64" height="4" rx="2" fill="#B4C13E"/><text x="64" y="92" fill="#565A4C" font-size="22" font-weight="600" letter-spacing="3">PERSOONSGEGEVENS IN EEN CHATBOT · OORDEEL VAN DE AP</text>
+<g>
+<g fill="none" stroke="#565A4C" stroke-width="4" stroke-linecap="round"><path d="M520 186 L 640 186" marker-end="url(#sha-a)"/><path d="M520 306 L 640 306" marker-end="url(#sha-a)"/><path d="M520 426 L 640 426" marker-end="url(#sha-a)"/></g>
+<rect x="668" y="140" width="468" height="92" rx="18" fill="#A8433B"/>
+<rect x="668" y="260" width="468" height="92" rx="18" fill="#FFFFFF" stroke="#3D5220" stroke-width="4"/>
+<rect x="668" y="380" width="468" height="92" rx="18" fill="#F6E7E4" stroke="#A8433B" stroke-width="3" stroke-dasharray="10 10"/>
+</g>
+<text x="64" y="198" font-size="34" font-weight="600">op eigen initiatief</text>
+<text x="64" y="318" font-size="34" font-weight="600">beleid van de organisatie</text>
+<text x="64" y="438" font-size="34" font-weight="600">niets afgesproken</text>
+<text x="696" y="182" font-size="34" font-weight="600" fill="#FFFFFF">datalek</text>
+<text x="696" y="216" font-size="26" fill="#FFFFFF">vaak melden bij de AP</text>
+<text x="696" y="302" font-size="34" font-weight="600" fill="#3D5220">geen datalek</text>
+<text x="696" y="336" font-size="26" fill="#565A4C">wel grondslag en afspraken</text>
+<text x="696" y="422" font-size="34" font-weight="600" fill="#A8433B">beide risico's</text>
+<text x="696" y="456" font-size="26" fill="#565A4C">tegelijk</text>
+<text x="1136" y="566" text-anchor="end" font-size="26" fill="#64685A">AP, 6 aug 2024 · stand 27 okt 2026</text>
+<rect width="1200" height="600" filter="url(#sha-g)"/></svg>

@@ -107,6 +107,8 @@ Voor de eerste groep is de KNB voorzichtig. Bij versie 1.0 van het kader (oktobe
 
 Het kader noemt ook toepassingen die wel kunnen, mits de waarborgen kloppen: een chatbot op de website, speech-to-text voor gespreksverslagen, concepten van e-mails en brieven aan cliënten, ondersteuning bij onderzoek en het bijhouden van wetswijzigingen. Taalmodellen kunnen hallucineren, schrijft de KNB. Elke uitkomst moet je dus controleren.
 
+<!-- figuur:1 -->
+
 Of Claude Team of Claude Enterprise met verwerkersovereenkomst genoeg waarborgen biedt voor werk binnen een zaak, beslist de notaris zelf. Wij nemen die afweging niet over. Wel kunnen we laten zien welke waarborgen Anthropic biedt, zodat je die afweging met feiten maakt.
 
 ## Welke taken kan een notariskantoor aan Claude geven?

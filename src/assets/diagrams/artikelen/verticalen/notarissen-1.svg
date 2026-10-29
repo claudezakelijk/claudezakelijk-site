@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" role="img" aria-label="Taken op een notariskantoor volgens het KNB-kader: buiten een zaak vallen modelaktes, de Wwft-procedure en de kennisbank, daar begin je; binnen een zaak vallen akte-concepten en dossiervoorbereiding, daarvoor maak je eerst een DPIA; cliëntbrieven vallen in beide" data-bijschrift="Begin met taken buiten een zaak. Voor taken binnen een zaak maak je eerst een DPIA." font-family="Inter, system-ui, sans-serif" fill="#23261D"><defs>
+<filter id="not1-g" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 .14  0 0 0 0 .15  0 0 0 0 .11  .16 0 0 0 -.03"/></filter>
+</defs><rect width="1200" height="600" fill="#F4F1E8"/><rect x="64" y="48" width="64" height="4" rx="2" fill="#B4C13E"/><text x="64" y="92" fill="#565A4C" font-size="22" font-weight="600" letter-spacing="3">KNB-KADER · WELKE TAAK VALT WAAR?</text>
+<g>
+<rect x="64" y="130" width="520" height="396" rx="22" fill="#FFFFFF" stroke="#3D5220" stroke-width="4"/>
+<rect x="616" y="130" width="520" height="396" rx="22" fill="#E9EBDC" stroke="#A8433B" stroke-width="3" stroke-dasharray="10 10"/>
+<g fill="#B4C13E"><circle cx="106" cy="242" r="9"/><circle cx="106" cy="304" r="9"/><circle cx="106" cy="366" r="9"/></g>
+<g fill="#E4C8C3" stroke="#A8433B" stroke-width="3"><circle cx="658" cy="242" r="8"/><circle cx="658" cy="304" r="8"/></g>
+<rect x="464" y="396" width="272" height="60" rx="30" fill="#FFFFFF" stroke="#23261D" stroke-width="4"/>
+<rect x="92" y="470" width="168" height="40" rx="20" fill="#3D5220"/>
+</g>
+<text x="92" y="184" font-size="34" font-weight="600" fill="#3D5220">buiten een zaak</text>
+<text x="644" y="184" font-size="34" font-weight="600" fill="#A8433B">binnen een zaak</text>
+<text x="128" y="253" font-size="32">modelaktes</text>
+<text x="128" y="315" font-size="32">Wwft-procedure</text>
+<text x="128" y="377" font-size="32">kennisbank</text>
+<text x="680" y="253" font-size="32">akte-concept</text>
+<text x="680" y="315" font-size="32">dossiervoorbereiding</text>
+<text x="600" y="437" text-anchor="middle" font-size="32" font-weight="600">cliëntbrieven</text>
+<text x="176" y="499" text-anchor="middle" font-size="26" font-weight="600" fill="#FFFFFF">begin hier</text>
+<text x="1104" y="499" text-anchor="end" font-size="26" font-weight="600" fill="#A8433B">eerst een DPIA</text>
+<text x="1136" y="566" text-anchor="end" font-size="26" fill="#64685A">KNB-kader versie 1.0 · stand 22 okt 2026</text>
+<rect width="1200" height="600" filter="url(#not1-g)"/></svg>

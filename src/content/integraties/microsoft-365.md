@@ -154,6 +154,8 @@ Voor Nederlandse bedrijven is dit belangrijk. Claude-modellen in deze producten 
 
 Voor Copilot in Word, Excel en PowerPoint bestaat in de EU een aparte instelling. Die staat standaard aan bij tenants die na 25 maart 2026 zijn aangemaakt. Bij oudere tenants staat de standaard in het Message Center, dus controleer het zelf. Sommige nieuwe modellen, zoals Fable 5.0, vallen onder "Anthropic models with Data Retention". Die vragen een aparte opt-in en dan gelden de voorwaarden en de DPA van Anthropic, met bewaring tot 30 dagen.
 
+<!-- figuur:1 -->
+
 Wanneer je welke route kiest, lees je in [Claude of Copilot](/vergelijken/claude-vs-copilot).
 
 ## Wat is onze ervaring met Claude en Microsoft 365?

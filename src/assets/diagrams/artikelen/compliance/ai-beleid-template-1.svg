@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" role="img" aria-label="Eén klant uit het Handelsregister van de KvK in drie datazones: de bedrijfsnaam is groen en mag erin, de naam van de contactpersoon is oranje en vervang je eerst, het BSN is rood en komt nooit in een cloud-AI" data-bijschrift="Dezelfde klant levert groene, oranje en rode gegevens op. Bij twijfel kies je de strengste zone." font-family="Inter, system-ui, sans-serif" fill="#23261D"><defs>
+<filter id="abt1-g" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 .14  0 0 0 0 .15  0 0 0 0 .11  .16 0 0 0 -.03"/></filter>
+<marker id="abt1-a" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#565A4C"/></marker>
+</defs><rect width="1200" height="500" fill="#F4F1E8"/><rect x="64" y="48" width="64" height="4" rx="2" fill="#B4C13E"/><text x="64" y="92" fill="#565A4C" font-size="22" font-weight="600" letter-spacing="3">ÉÉN KLANT, DRIE ZONES</text>
+<g>
+<rect x="76" y="140" width="484" height="304" rx="18" fill="#E9EBDC" stroke="#23261D" stroke-width="4" transform="rotate(-2 318 292)"/>
+<rect x="64" y="132" width="484" height="304" rx="18" fill="#FFFFFF" stroke="#23261D" stroke-width="4"/>
+<g stroke="#E1DED2" stroke-width="3"><line x1="88" y1="268" x2="524" y2="268"/><line x1="88" y1="352" x2="524" y2="352"/></g>
+<circle cx="108" cy="228" r="13" fill="#3D5220"/>
+<circle cx="108" cy="312" r="12" fill="#E4C8C3" stroke="#A8433B" stroke-width="4"/>
+<circle cx="108" cy="396" r="13" fill="#A8433B"/>
+<g fill="none" stroke="#565A4C" stroke-width="4" stroke-linecap="round"><path d="M572 228 L 690 228" marker-end="url(#abt1-a)"/><path d="M572 312 L 690 312" marker-end="url(#abt1-a)"/><path d="M572 396 L 690 396" marker-end="url(#abt1-a)"/></g>
+</g>
+<text x="88" y="178" font-size="26" fill="#565A4C">Handelsregister KvK</text>
+<text x="136" y="240" font-size="32" font-weight="600">bedrijfsnaam</text>
+<text x="136" y="324" font-size="32" font-weight="600">contactpersoon</text>
+<text x="136" y="408" font-size="32" font-weight="600">BSN</text>
+<text x="718" y="240" font-size="34" font-weight="600" fill="#3D5220">groen</text><text x="868" y="240" font-size="26" fill="#565A4C">mag erin</text>
+<text x="718" y="324" font-size="34" font-weight="600">oranje</text><text x="868" y="324" font-size="26" fill="#565A4C">eerst vervangen</text>
+<text x="718" y="408" font-size="34" font-weight="600" fill="#A8433B">rood</text><text x="868" y="408" font-size="26" fill="#565A4C">nooit in cloud-AI</text>
+<text x="1136" y="466" text-anchor="end" font-size="26" fill="#64685A">stand 22 okt 2026</text>
+<rect width="1200" height="500" filter="url(#abt1-g)"/></svg>

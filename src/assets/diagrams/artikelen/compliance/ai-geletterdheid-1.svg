@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" role="img" aria-label="Tijdlijn van artikel 4 AI Act: de plicht geldt sinds 2 februari 2025, de AI Omnibus van 27 juli 2026 schrapte het gegarandeerde niveau, en op 2 augustus 2026 begonnen toezicht en handhaving" data-bijschrift="Artikel 4 geldt sinds 2 februari 2025. Op 2 augustus 2026 begon alleen het toezicht." font-family="Inter, system-ui, sans-serif" fill="#23261D"><defs>
+<filter id="agl1-g" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 .14  0 0 0 0 .15  0 0 0 0 .11  .16 0 0 0 -.03"/></filter>
+<marker id="agl1-a" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#565A4C"/></marker>
+</defs><rect width="1200" height="500" fill="#F4F1E8"/><rect x="64" y="48" width="64" height="4" rx="2" fill="#B4C13E"/><text x="64" y="92" fill="#565A4C" font-size="22" font-weight="600" letter-spacing="3">ARTIKEL 4 AI ACT · WAT WANNEER BEGON</text>
+<path d="M118 268 L 1120 268" fill="none" stroke="#565A4C" stroke-width="4" stroke-linecap="round" marker-end="url(#agl1-a)"/>
+<circle cx="118" cy="268" r="18" fill="#B4C13E" stroke="#23261D" stroke-width="4"/>
+<circle cx="538" cy="268" r="18" fill="#FFFFFF" stroke="#23261D" stroke-width="4"/>
+<circle cx="878" cy="268" r="18" fill="#F6E7E4" stroke="#A8433B" stroke-width="4"/>
+<g font-family="'Instrument Sans Variable', Inter, system-ui, sans-serif" font-size="40" font-weight="600" letter-spacing="-1"><text x="100" y="220">2 feb 2025</text><text x="520" y="220">27 juli 2026</text><text x="860" y="220">2 aug 2026</text></g>
+<text x="100" y="336" font-size="34" font-weight="600">plicht geldt</text>
+<text x="100" y="374" font-size="26" fill="#565A4C">ook voor het MKB</text>
+<text x="520" y="336" font-size="34" font-weight="600">omnibus</text>
+<text x="520" y="374" font-size="26" fill="#565A4C">geen niveau garanderen</text>
+<text x="860" y="336" font-size="34" font-weight="600" fill="#A8433B">handhaving</text>
+<text x="860" y="374" font-size="26" fill="#565A4C">niet de startdatum</text>
+<text x="1136" y="466" text-anchor="end" font-size="26" fill="#64685A">stand 22 okt 2026</text>
+<rect width="1200" height="500" filter="url(#agl1-g)"/></svg>

@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" role="img" aria-label="Claude maakt van de proefbalans een conceptrapportage; bij de validatie tegen de bron wordt een cijfer dat niet in de bron staat tegengehouden, de rest komt in het rapport" font-family="Inter, system-ui, sans-serif" fill="#23261D"><defs>
-<filter id="acc-g" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 .16  0 0 0 0 .15  0 0 0 0 .14  .16 0 0 0 -.03"/></filter>
-<marker id="acc-at" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#23261D"/></marker>
+<filter id="acc-g" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 .14  0 0 0 0 .15  0 0 0 0 .11  .16 0 0 0 -.03"/></filter>
+<marker id="acc-at" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#3D5220"/></marker>
 <marker id="acc-ai" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#23261D"/></marker>
-</defs><rect width="1200" height="600" fill="#F4F1E8"/><rect x="64" y="48" width="64" height="4" rx="2" fill="#3D5220"/><text x="64" y="92" fill="#565A4C" font-size="22" font-weight="600" letter-spacing="3">WELK CIJFER HAALT HET RAPPORT?</text>
+</defs><rect width="1200" height="600" fill="#F4F1E8"/><rect x="64" y="48" width="64" height="4" rx="2" fill="#B4C13E"/><text x="64" y="92" fill="#565A4C" font-size="22" font-weight="600" letter-spacing="3">WELK CIJFER HAALT HET RAPPORT?</text>
 <g>
 <rect x="96" y="158" width="150" height="190" rx="12" fill="#E9EBDC" stroke="#23261D" stroke-width="4" transform="rotate(-7 171 253)"/>
 <rect x="84" y="170" width="150" height="190" rx="12" fill="#FFFFFF" stroke="#23261D" stroke-width="4"/>
@@ -10,23 +10,23 @@
 <line x1="252" y1="265" x2="396" y2="265" stroke="#23261D" stroke-width="5" stroke-linecap="round" marker-end="url(#acc-ai)"/>
 <rect x="432" y="158" width="150" height="190" rx="12" fill="#E9EBDC" stroke="#23261D" stroke-width="4" transform="rotate(-7 507 253)"/>
 <rect x="420" y="170" width="150" height="190" rx="12" fill="#FFFFFF" stroke="#23261D" stroke-width="4"/>
-<g stroke-width="9" stroke-linecap="round"><line x1="444" y1="212" x2="536" y2="212" stroke="#E1DED2"/><line x1="444" y1="244" x2="544" y2="244" stroke="#3D5220"/><line x1="444" y1="276" x2="520" y2="276" stroke="#E1DED2"/><line x1="444" y1="308" x2="536" y2="308" stroke="#E1DED2"/></g>
+<g stroke-width="9" stroke-linecap="round"><line x1="444" y1="212" x2="536" y2="212" stroke="#E1DED2"/><line x1="444" y1="244" x2="544" y2="244" stroke="#B4C13E"/><line x1="444" y1="276" x2="520" y2="276" stroke="#E1DED2"/><line x1="444" y1="308" x2="536" y2="308" stroke="#E1DED2"/></g>
 <line x1="760" y1="150" x2="760" y2="400" stroke="#23261D" stroke-width="4" stroke-dasharray="10 10" stroke-linecap="round"/>
 <line x1="760" y1="472" x2="760" y2="540" stroke="#23261D" stroke-width="4" stroke-dasharray="10 10" stroke-linecap="round"/>
-<path d="M578 244 C 655 244, 665 188, 732 188" fill="none" stroke="#3D5220" stroke-width="7" stroke-dasharray="1 18" stroke-linecap="round"/>
-<path d="M746 174 L774 202 M774 174 L746 202" fill="none" stroke="#3D5220" stroke-width="8" stroke-linecap="round"/>
+<path d="M578 244 C 655 244, 665 188, 732 188" fill="none" stroke="#A8433B" stroke-width="7" stroke-dasharray="1 18" stroke-linecap="round"/>
+<path d="M746 174 L774 202 M774 174 L746 202" fill="none" stroke="#A8433B" stroke-width="8" stroke-linecap="round"/>
 </g>
 <text x="159" y="414" text-anchor="middle" font-size="36" font-weight="600">proefbalans</text>
 <text x="325" y="243" text-anchor="middle" font-size="26" fill="#565A4C">export</text>
 <text x="495" y="414" text-anchor="middle" font-size="36" font-weight="600">concept van Claude</text>
-<text x="630" y="148" text-anchor="middle" font-size="34" font-weight="600" fill="#3D5220">niet in de bron</text>
+<text x="630" y="148" text-anchor="middle" font-size="34" font-weight="600" fill="#A8433B">niet in de bron</text>
 <g>
-<path d="M578 330 C 672 330, 690 440, 788 440" fill="none" stroke="#23261D" stroke-width="7" stroke-linecap="round" marker-end="url(#acc-at)"/>
-<text x="678" y="302" text-anchor="middle" font-size="30" font-weight="600" fill="#23261D">in de bron</text>
-<rect x="820" y="360" width="330" height="150" rx="24" fill="#23261D"/>
+<path d="M578 330 C 672 330, 690 440, 788 440" fill="none" stroke="#3D5220" stroke-width="7" stroke-linecap="round" marker-end="url(#acc-at)"/>
+<text x="678" y="302" text-anchor="middle" font-size="30" font-weight="600" fill="#3D5220">in de bron</text>
+<rect x="820" y="360" width="330" height="150" rx="24" fill="#3D5220"/>
 <g stroke="#F4F1E8" stroke-width="8" stroke-linecap="round"><line x1="870" y1="398" x2="1010" y2="398"/><line x1="870" y1="424" x2="1100" y2="424" opacity=".7"/></g>
 <text x="985" y="482" text-anchor="middle" font-size="36" font-weight="600" fill="#F4F1E8">in het rapport</text>
 </g>
 <text x="745" y="566" text-anchor="middle" font-size="26" fill="#565A4C">validatie tegen de bron</text>
-<text x="1136" y="566" text-anchor="end" font-size="26" fill="#6E7263">stand 2 okt 2026</text>
+<text x="1136" y="566" text-anchor="end" font-size="26" fill="#64685A">stand 2 okt 2026</text>
 <rect width="1200" height="600" filter="url(#acc-g)"/></svg>

@@ -1,25 +1,25 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" role="img" aria-label="Een makelaarskantoor begint bij de woningtekst, daar zitten geen persoonsgegevens in; koperscommunicatie en rapportages volgen daarna, met een zakelijk abonnement en gepseudonimiseerde invoer zoals koper A" font-family="Inter, system-ui, sans-serif" fill="#23261D"><defs>
-<filter id="mak-g" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 .16  0 0 0 0 .15  0 0 0 0 .14  .16 0 0 0 -.03"/></filter>
+<filter id="mak-g" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 .14  0 0 0 0 .15  0 0 0 0 .11  .16 0 0 0 -.03"/></filter>
 <marker id="mak-ai" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#23261D"/></marker>
-</defs><rect width="1200" height="600" fill="#F4F1E8"/><rect x="64" y="48" width="64" height="4" rx="2" fill="#3D5220"/><text x="64" y="92" fill="#565A4C" font-size="22" font-weight="600" letter-spacing="3">WAAR BEGINT EEN MAKELAARSKANTOOR?</text>
+</defs><rect width="1200" height="600" fill="#F4F1E8"/><rect x="64" y="48" width="64" height="4" rx="2" fill="#B4C13E"/><text x="64" y="92" fill="#565A4C" font-size="22" font-weight="600" letter-spacing="3">WAAR BEGINT EEN MAKELAARSKANTOOR?</text>
 <g>
-<rect x="104" y="132" width="220" height="56" rx="28" fill="#23261D"/>
+<rect x="104" y="132" width="220" height="56" rx="28" fill="#3D5220"/>
 <rect x="84" y="208" width="260" height="200" rx="14" fill="#FFFFFF" stroke="#23261D" stroke-width="4"/>
 <path d="M146 300 L214 244 L282 300" fill="none" stroke="#23261D" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M162 288 V378 H266 V288" fill="none" stroke="#23261D" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-<rect x="200" y="336" width="28" height="42" rx="4" fill="#3D5220"/>
+<rect x="200" y="336" width="28" height="42" rx="4" fill="#B4C13E"/>
 <line x1="362" y1="308" x2="448" y2="308" stroke="#23261D" stroke-width="5" stroke-linecap="round" marker-end="url(#mak-ai)"/>
-<rect x="476" y="132" width="660" height="340" rx="20" fill="#E9EBDC" stroke="#3D5220" stroke-width="3" stroke-dasharray="10 10"/>
+<rect x="476" y="132" width="660" height="340" rx="20" fill="#E9EBDC" stroke="#A8433B" stroke-width="3" stroke-dasharray="10 10"/>
 <rect x="595" y="190" width="150" height="104" rx="10" fill="#FFFFFF" stroke="#23261D" stroke-width="4"/>
 <path d="M601 198 L670 252 L739 198" fill="none" stroke="#23261D" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
 <rect x="950" y="170" width="120" height="140" rx="10" fill="#FFFFFF" stroke="#23261D" stroke-width="4"/>
-<g stroke-width="14" stroke-linecap="round"><line x1="978" y1="286" x2="978" y2="246" stroke="#CFCDBE"/><line x1="1010" y1="286" x2="1010" y2="226" stroke="#CFCDBE"/><line x1="1042" y1="286" x2="1042" y2="202" stroke="#3D5220"/></g>
+<g stroke-width="14" stroke-linecap="round"><line x1="978" y1="286" x2="978" y2="246" stroke="#CFCDBE"/><line x1="1010" y1="286" x2="1010" y2="226" stroke="#CFCDBE"/><line x1="1042" y1="286" x2="1042" y2="202" stroke="#B4C13E"/></g>
 </g>
 <text x="214" y="171" text-anchor="middle" font-size="32" font-weight="600" fill="#F4F1E8">begin hier</text>
 <text x="214" y="460" text-anchor="middle" font-size="36" font-weight="600">woningtekst</text>
 <text x="214" y="500" text-anchor="middle" font-size="26" fill="#565A4C">geen persoonsgegevens</text>
 <text x="670" y="352" text-anchor="middle" font-size="32" font-weight="600">koperscommunicatie</text>
 <text x="1010" y="352" text-anchor="middle" font-size="32" font-weight="600">rapportages</text>
-<text x="818" y="436" text-anchor="middle" font-size="30" font-weight="600" fill="#3D5220">zakelijk abonnement · 'koper A'</text>
-<text x="1136" y="566" text-anchor="end" font-size="26" fill="#6E7263">stand 2 okt 2026</text>
+<text x="818" y="436" text-anchor="middle" font-size="30" font-weight="600" fill="#A8433B">zakelijk abonnement · 'koper A'</text>
+<text x="1136" y="566" text-anchor="end" font-size="26" fill="#64685A">stand 2 okt 2026</text>
 <rect width="1200" height="600" filter="url(#mak-g)"/></svg>
