@@ -3,6 +3,7 @@ import { itemListNode, lijstId } from '../../lib/schema';
 import BasisLayout from '../../layouts/BasisLayout.astro';
 import Container from '../../components/Container.astro';
 import CollectieHub from '../../components/CollectieHub.astro';
+import Broodkruimel from '../../components/Broodkruimel.astro';
 import { getPublished } from '../../lib/content';
 
 const artikelen = (await getPublished('nieuws'))
@@ -18,14 +19,16 @@ const items = artikelen.map((a) => ({
       beschrijving: a.data.metaDescription,
       datum: a.data.publishDate,
 }));
+const breadcrumbs = [{ name: 'Home', url: '/' }, { name: 'Nieuws', url: '/nieuws' }];
 ---
 <BasisLayout
   titel="Nieuws"
   beschrijving="Nieuws en analyses over Claude voor het Nederlandse MKB: releases, praktijkervaring en wat het voor jouw bedrijf betekent."
   pad="/nieuws"
-  schema={{ paginaType: 'CollectionPage', hoofdonderwerp: lijstId('/nieuws'), nodes: [itemListNode('/nieuws', items.map((i) => ({ url: i.href, naam: i.titel })))] }}
+  schema={{ paginaType: 'CollectionPage', hoofdonderwerp: lijstId('/nieuws'), breadcrumbs, nodes: [itemListNode('/nieuws', items.map((i) => ({ url: i.href, naam: i.titel })))] }}
 >
   <Container class="pt-12 pb-20" width="max-w-[1288px]">
+    <Broodkruimel items={breadcrumbs} />
     <CollectieHub
       label="Nieuws"
       titel="Nieuws & analyses"

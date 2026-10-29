@@ -20,7 +20,7 @@ export const paginaLabels: Record<string, string> = {
   '/gids/overstappen-van-chatgpt-naar-claude': 'Overstappen van ChatGPT naar Claude: zakelijk stappenplan',
   '/hoe-claude-werkt': 'Hoe Claude werkt',
   '/integraties': 'Claude koppelen aan je software',
-  '/nieuws': 'Nieuws over Claude voor het mkb',
+  '/nieuws': 'Nieuws & analyses',
   '/methodologie': 'Onze methode in vijf bouwstenen',
   '/over': 'Over Implementeren.ai: wie we zijn en hoe we werken',
   '/prijs': 'Claude kosten zakelijk: alle prijzen 2026',

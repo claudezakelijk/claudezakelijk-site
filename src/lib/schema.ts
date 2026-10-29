@@ -273,11 +273,12 @@ export function offerNode(a: Aanbod): Node {
     ...(a.dienstPad && { itemOffered: ref(dienstId(a.dienstPad)) }),
   };
   if (bedrag === 0) return { ...basis, price: '0' };
+  const btw = /excl(\.|usief) btw/i.test(a.prijsTekst) ? { valueAddedTaxIncluded: false } : {};
   return {
     ...basis,
     priceSpecification: perMaand
-      ? { '@type': 'UnitPriceSpecification', minPrice: bedrag, priceCurrency: 'EUR', unitCode: 'MON', unitText: 'per maand' }
-      : { '@type': 'PriceSpecification', minPrice: bedrag, priceCurrency: 'EUR' },
+      ? { '@type': 'UnitPriceSpecification', minPrice: bedrag, priceCurrency: 'EUR', unitCode: 'MON', unitText: 'per maand', ...btw }
+      : { '@type': 'PriceSpecification', minPrice: bedrag, priceCurrency: 'EUR', ...btw },
   };
 }
 

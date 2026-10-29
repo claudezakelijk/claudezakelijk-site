@@ -169,7 +169,7 @@ Houd ook rekening met de wisselkoers. Betaal je in dollars, dan beweegt je maand
 
 De licentie is zelden de grootste post. Claude werkend krijgen in een organisatie kost tijd: use-cases kiezen, prompts en workflows inrichten, mensen meenemen. Wie dat overslaat, betaalt elke maand voor seats die na week drie niemand meer opent.
 
-Wij zijn daar transparant in. Onze [Claude Readiness Scan](/claude-readiness-scan) kost vanaf €1.500 en vertelt je waar de waarde zit voordat je iets uitrolt. De volledige rollout in 30 dagen kost vanaf €7.500. Een [complete implementatie](/claude-implementatie) begint dus bij €9.000 eenmalig, naast de licenties. Of die investering uit kan voor jouw team reken je door met de [ROI-calculator voor het MKB](/tools/claude-roi-mkb-calculator).
+Wij zijn daar transparant in. Onze [Claude Readiness Scan](/claude-readiness-scan) kost vanaf €1.500 en vertelt je waar de waarde zit voordat je iets uitrolt. De volledige rollout in 30 dagen kost vanaf €7.500 excl. btw. Een [complete implementatie](/claude-implementatie) begint dus bij €9.000 eenmalig, naast de licenties. Of die investering uit kan voor jouw team reken je door met de [ROI-calculator voor het MKB](/tools/claude-roi-mkb-calculator).
 
 ## Welk abonnement past bij jouw bedrijf?
 
