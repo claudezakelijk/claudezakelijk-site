@@ -38,7 +38,7 @@ updatedDate: 2026-10-27
 changelogLine: null
 reviewedBy: null
 reviewedDate: null
-kortAntwoord: "Shadow AI is AI-gebruik door medewerkers buiten het zicht van de organisatie, zoals klantdata in een privéaccount van ChatGPT of Claude. Volgens de Autoriteit Persoonsgegevens is dat een datalek zodra er persoonsgegevens in gaan. De oplossing is een zakelijk abonnement met verwerkersovereenkomst plus een kort AI-beleid. Stand: 27 oktober 2026."
+kortAntwoord: "Shadow AI is AI-gebruik buiten het zicht van de organisatie, en de Autoriteit Persoonsgegevens meldde op 6 augustus 2024 meerdere datalekken doordat medewerkers persoonsgegevens in een AI-chatbot zetten. Denk aan een klantmail in een privéaccount van ChatGPT of Claude. De oplossing is een zakelijk abonnement met verwerkersovereenkomst plus een kort AI-beleid. Stand: 27 oktober 2026."
 bronnen:
   - titel: "Autoriteit Persoonsgegevens, Caution: use of AI chatbot may lead to data breaches (6 augustus 2024)"
     url: "https://www.autoriteitpersoonsgegevens.nl/en/current/caution-use-of-ai-chatbot-may-lead-to-data-breaches"

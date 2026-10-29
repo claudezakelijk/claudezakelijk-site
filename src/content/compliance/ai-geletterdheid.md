@@ -50,9 +50,9 @@ bronnen:
   - titel: "Europese Commissie, AI Omnibus enters into force (27 juli 2026)"
     url: "https://digital-strategy.ec.europa.eu/en/news/ai-omnibus-enters-force"
     geraadpleegd: "2026-10-22"
-  - titel: "Autoriteit Persoonsgegevens, Aan de slag met AI-geletterdheid (handreiking, januari 2025)"
+  - titel: "Autoriteit Persoonsgegevens, Aan de slag met AI-geletterdheid (handreiking, februari 2025)"
     url: "https://www.autoriteitpersoonsgegevens.nl/system/files?file=2025-01%2FAan+de+slag+met+AI-geletterdheid.pdf"
-    geraadpleegd: "2026-10-22"
+    geraadpleegd: "2026-10-29"
   - titel: "Nederland Digitaal, Autoriteit Persoonsgegevens publiceert vernieuwde AI-handreiking (27 oktober 2025)"
     url: "https://www.nederlanddigitaal.nl/actueel/nieuws/2025/10/27/autoriteit-persoonsgegevens-publiceert-vernieuwde-ai-handreiking"
     geraadpleegd: "2026-10-22"
@@ -114,7 +114,7 @@ Die laatste rij is uitzonderlijk voor het MKB. Gebruik je AI bij sollicitanten o
 
 ## Hoe breng je je team stap voor stap op niveau?
 
-De Autoriteit Persoonsgegevens (AP) heeft twee handreikingen gepubliceerd: "Aan de slag met AI-geletterdheid" (januari 2025) en "Verder bouwen aan AI-geletterdheid" (oktober 2025). De AP beschrijft daarin een meerjarig actieplan met vier fasen: identificeren, doel bepalen, uitvoeren en evalueren. Let op: beide handreikingen zijn van vóór de omnibus en gebruiken nog de oude tekst van artikel 4. De opbouw in fasen blijft bruikbaar. Zo werkt die volgorde uit voor een team dat met Claude werkt:
+De Autoriteit Persoonsgegevens (AP) heeft twee handreikingen gepubliceerd: "Aan de slag met AI-geletterdheid" (februari 2025) en "Verder bouwen aan AI-geletterdheid" (oktober 2025). De AP beschrijft daarin een meerjarig actieplan met vier fasen: identificeren, doel bepalen, uitvoeren en evalueren. Let op: beide handreikingen zijn van vóór de omnibus en gebruiken nog de oude tekst van artikel 4. De opbouw in fasen blijft bruikbaar. Zo werkt die volgorde uit voor een team dat met Claude werkt:
 
 1. **Breng in kaart wie met AI werkt.** Vraag per afdeling welke AI-tools mensen gebruiken, ook gratis accounts die ze zelf hebben aangemaakt. Noteer per tool het doel en welke data erin gaat.
 2. **Bepaal per rol het doel.** Gebruik de tabel hierboven als vertrekpunt. Schrijf per rol in één of twee zinnen op wat iemand moet kunnen.

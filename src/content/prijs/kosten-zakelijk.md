@@ -13,6 +13,7 @@ tier: 1
 cases:
   - powerbi-reporting
 internalLinks:
+  - /nieuws/welk-claude-model-mkb
   - /claude-implementatie
   - /compliance
   - /cases/powerbi-reporting
@@ -30,7 +31,7 @@ competitors: []
 disclaimer: fiscaal
 status: published
 publishDate: 2026-10-02
-updatedDate: 2026-10-22
+updatedDate: 2026-10-29
 changelogLine: null
 kortAntwoord: "Claude Pro kost 20 dollar per maand (17 dollar bij jaarbetaling) en Claude Max 100 of 200 dollar. Een Claude Team-seat kost 25 dollar per gebruiker per maand (20 dollar bij jaarbetaling), vanaf 2 gebruikers. Enterprise kost 20 dollar per seat, vanaf 20 seats, plus verbruik tegen API-tarieven. De API kost vanaf 0,10 dollar per miljoen input-tokens. Prijzen exclusief btw, per 22 oktober 2026."
 bronnen:
@@ -59,8 +60,8 @@ bronnen:
     url: "https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/zakendoen_met_het_buitenland/zakendoen_buiten_de_eu/aangifte_doen_als_u_zakendoet_buiten_de_eu/aangifte_doen_als_u_diensten_afneemt_van_leveranciers_uit_niet_eu_landen"
     geraadpleegd: "2 oktober 2026"
   - titel: "ECB-referentiekoers euro/dollar (1 oktober 2026)"
-    url: "https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml"
-    geraadpleegd: "2 oktober 2026"
+    url: "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/eurofxref-graph-usd.en.html"
+    geraadpleegd: "29 oktober 2026"
 hasCalculator: false
 faq:
   - question: "Hoeveel kost Claude Pro per maand in euro?"
@@ -144,7 +145,7 @@ Naast de abonnementen is er de API, waarmee je Claude in eigen processen en soft
 | Claude Opus 5.5 | $4 | $20 |
 | Claude Fable 5.1 | $10 | $50 |
 
-Eén kanttekening bij Claude Haiku 5.5: deze tarieven gelden voor prompts tot 100.000 tokens. Stuur je in één verzoek een langere prompt mee, dan betaal je $0,50 per miljoen input-tokens en $2,50 per miljoen output-tokens.
+Eén kanttekening bij Claude Haiku 5.5: deze tarieven gelden voor prompts tot 100.000 tokens. Stuur je in één verzoek een langere prompt mee, dan betaal je $0,50 per miljoen input-tokens en $2,50 per miljoen output-tokens. Welk model bij welke taak past, lees je in [welk Claude-model kies je als MKB](/nieuws/welk-claude-model-mkb).
 
 Twee hefbomen drukken die kosten flink. Batchverwerking, voor taken die geen haast hebben, halveert de prijs. Met prompt caching kost herhaalde context een tiende van het input-tarief, en bij Claude Sonnet 5.5, Claude Opus 5.5 en Claude Fable 5.1 nog minder. Met de [API-kostencalculator](/tools/claude-api-kosten-calculator) reken je je eigen scenario door.
 

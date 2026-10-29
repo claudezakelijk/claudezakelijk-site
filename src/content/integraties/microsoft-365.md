@@ -17,6 +17,7 @@ cases:
   - copilot-studio-agent
   - sdr-sales-agent
 internalLinks:
+  - /compliance/dpia-stappenplan
   - /integraties
   - /prijs/pro-vs-team-vs-enterprise
   - /compliance/anthropic-dpa
@@ -47,7 +48,7 @@ kortAntwoord: "Claude heeft een officiële Microsoft 365 connector van Anthropic
 bronnen:
   - titel: "Claude Help Center, Set up the Microsoft 365 connector"
     url: "https://support.claude.com/en/articles/12542951-set-up-the-microsoft-365-connector"
-    geraadpleegd: "2026-10-22"
+    geraadpleegd: "2026-10-29"
   - titel: "Claude Help Center, Microsoft 365 connector security guide"
     url: "https://support.claude.com/en/articles/12684923-microsoft-365-connector-security-guide"
     geraadpleegd: "2026-10-22"
@@ -138,7 +139,7 @@ Elke Graph-aanroep van de connector komt in het Microsoft 365-auditlog van je or
 
 Een punt voor je Conditional Access-beleid: na het inloggen doen de servers van Anthropic de verzoeken. Entra ziet die als afkomstig van het IP-bereik 160.79.104.0/21 van Anthropic. Een locatieregel die alleen je kantoornetwerk toelaat, blokkeert de connector dan voor iedereen. Het Help Center beschrijft hoe je dat bereik als named location toevoegt.
 
-De security guide zegt niet in welke regio de data wordt verwerkt. Op het eigen platform van Anthropic slaat Anthropic data op in de Verenigde Staten, zie [Claude-data in de EU houden](/compliance/eu-hosting). Zet je gevoelige persoonsgegevens in Claude, kijk dan ook naar [zero data retention](/compliance/zero-data-retention) en naar [is Claude veilig voor bedrijfsdata](/compliance/is-claude-veilig).
+De security guide zegt niet in welke regio de data wordt verwerkt. Op het eigen platform van Anthropic slaat Anthropic data op in de Verenigde Staten, zie [Claude-data in de EU houden](/compliance/eu-hosting). Zet je gevoelige persoonsgegevens in Claude, kijk dan ook naar [zero data retention](/compliance/zero-data-retention) en naar [is Claude veilig voor bedrijfsdata](/compliance/is-claude-veilig). Verwerk je via de connector persoonsgegevens met een hoog risico, maak dan eerst een DPIA met het [DPIA-stappenplan voor Claude](/compliance/dpia-stappenplan).
 
 ## Kun je Claude ook in Microsoft Copilot gebruiken?
 

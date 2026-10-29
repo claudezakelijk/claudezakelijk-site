@@ -13,6 +13,7 @@ tier: 2
 cases:
   - powerbi-reporting
 internalLinks:
+  - /nieuws/welk-claude-model-mkb
   - /prijs
   - /claude-implementatie
   - /cases/powerbi-reporting
@@ -136,7 +137,7 @@ De limieten zijn geen vast gegeven. Op 6 mei 2026 verdubbelde Anthropic bijvoorb
 
 Loop je vast, dan heb je vier routes, van gratis naar structureel:
 
-**1. Wachten of afschalen.** Het venster loopt vanzelf af, en vaak kan de taak ook op een lichter model. Anthropic raadt zelf aan om voor de meeste taken Claude Haiku of de nieuwste Claude Sonnet te kiezen. Bewaar Claude Opus voor het zware denkwerk.
+**1. Wachten of afschalen.** Het venster loopt vanzelf af, en vaak kan de taak ook op een lichter model. Anthropic raadt zelf aan om voor de meeste taken Claude Haiku of de nieuwste Claude Sonnet te kiezen. Bewaar Claude Opus voor het zware denkwerk. Een overzicht per model en taak staat in [welk Claude-model kies je als MKB](/nieuws/welk-claude-model-mkb).
 
 **2. Usage credits aanzetten.** Je kunt bijkopen. Anthropic noemt dit usage credits, en op de prijspagina staat het bij Team ook als extra usage. Je zet vooraf tegoed klaar en betaalt na je limiet door tegen standaard API-tarieven. Op Pro en Max zet je dit aan onder Settings en dan Usage. Je kunt er een maandelijks bestedingsplafond op zetten. In een Team-organisatie koopt een Owner de credits en bepaalt hij wie ze mag gebruiken.
 

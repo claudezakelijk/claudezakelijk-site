@@ -23,6 +23,7 @@ internalLinks:
 schemaTypes:
   - Article
   - FAQPage
+  - BreadcrumbList
 author: camiel
 competitors:
   - projectimpact.nl
@@ -46,7 +47,7 @@ bronnen:
     geraadpleegd: "2026-10-22"
   - titel: "Europese Commissie, AI Act Service Desk: tijdlijn invoering AI Act"
     url: "https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act"
-    geraadpleegd: "2026-10-22"
+    geraadpleegd: "2026-10-29"
   - titel: "Europese Commissie, AI Act Service Desk: artikel 4 (AI-geletterdheid)"
     url: "https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-4"
     geraadpleegd: "2026-10-22"
@@ -78,7 +79,7 @@ faq:
   - question: "Kan ik dit beleid ook gebruiken voor ChatGPT of Copilot?"
     answer: "Ja. De opbouw werkt voor elk AI-hulpmiddel. Neem elke tool op in de lijst van goedgekeurde tools en controleer per tool of er een verwerkersovereenkomst is en of de aanbieder je data gebruikt voor training. Die afspraken verschillen per aanbieder en per abonnement."
   - question: "Hoe vaak werk ik het AI-beleid bij?"
-    answer: "Plan minstens twee keer per jaar een controle. Werk het daarnaast bij als je een nieuwe tool toelaat, als een aanbieder zijn voorwaarden wijzigt of als er nieuwe AI Act-regels gaan gelden. De eerstvolgende datum is 2 december 2027, voor hoog-risicosystemen. Houd wijzigingen bij in het versielog onderaan het beleid."
+    answer: "Plan minstens twee keer per jaar een controle. Werk het daarnaast bij als je een nieuwe tool toelaat, als een aanbieder zijn voorwaarden wijzigt of als er nieuwe AI Act-regels gaan gelden. De eerstvolgende datum is 2 december 2026, met een nieuw verbod op AI die zonder toestemming intiem beeld maakt. Houd wijzigingen bij in het versielog onderaan het beleid."
 ---
 
 Je team gebruikt Claude, officieel of op eigen initiatief. Zonder afspraken bepaalt iedereen zelf welke klantdata in een prompt mag. Op deze pagina vind je een ai beleid mkb template voor Claude dat je kopieert en invult. Het is afgestemd op de AI Act zoals die er in oktober 2026 voor staat, na de AI Omnibus.
@@ -181,6 +182,9 @@ Voorbeelden van gebruik dat mag: [teksten herschrijven, interne documenten samen
 3. Dit beleid wordt elke [termijn] geëvalueerd. Wijzigingen staan in het versielog.
 
 **Versielog**
+
+Tabel: versielog van het AI-gebruiksbeleid, stand [datum].
+
 | Versie | Datum | Wijziging | Door |
 |---|---|---|---|
 | [1.0] | [datum] | Eerste versie | [naam] |

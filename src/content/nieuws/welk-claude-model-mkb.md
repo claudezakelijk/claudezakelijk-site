@@ -30,7 +30,7 @@ author: camiel
 competitors: []
 status: published
 publishDate: 2026-10-29
-updatedDate: null
+updatedDate: 2026-10-29
 changelogLine: null
 reviewedBy: null
 reviewedDate: null
@@ -50,8 +50,8 @@ bronnen:
     url: "https://support.claude.com/en/articles/15425695-covered-models"
     geraadpleegd: "22 oktober 2026"
   - titel: "ECB-referentiekoers euro/dollar (21 oktober 2026)"
-    url: "https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml"
-    geraadpleegd: "22 oktober 2026"
+    url: "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/eurofxref-graph-usd.en.html"
+    geraadpleegd: "29 oktober 2026"
 faq:
   - question: "Wat is het verschil tussen Claude Sonnet en Opus?"
     answer: "Opus 5.5 is het sterkere model en de keuze van Anthropic zelf als startpunt voor de meeste taken. Sonnet 5.5 is sneller en kost de helft: 2 tegenover 4 dollar per miljoen input-tokens. Het oude beeld dat Opus vijf keer zo duur is klopt sinds de 5.5-generatie niet meer. Kies Sonnet als snelheid en volume zwaarder wegen dan maximale kwaliteit."

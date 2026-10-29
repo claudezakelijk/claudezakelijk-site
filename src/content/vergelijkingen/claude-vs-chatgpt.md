@@ -28,7 +28,7 @@ author: camiel
 competitors: []
 status: published
 publishDate: 2026-10-02
-updatedDate: null
+updatedDate: 2026-10-29
 changelogLine: null
 kortAntwoord: "Claude en ChatGPT zijn allebei sterke AI-assistenten; welke beter past hangt af van je werk. Implementeren.ai kiest Claude voor lange documenten, schrijfwerk en code. ChatGPT is breder, met beeldgeneratie en spraak, en bekender. Beide hebben een zakelijk abonnement vanaf 2 gebruikers dat standaard niet traint op je data (stand 2 oktober 2026). Test beide twee weken op eigen taken."
 bronnen:
@@ -50,6 +50,9 @@ bronnen:
   - titel: "Anthropic-documentatie, modeloverzicht en contextvenster"
     url: "https://platform.claude.com/docs/en/about-claude/models/overview"
     geraadpleegd: "2 oktober 2026"
+  - titel: "Claude Help Center, Set up the Microsoft 365 connector (beschikbaar op alle abonnementen)"
+    url: "https://support.claude.com/en/articles/12542951-set-up-the-microsoft-365-connector"
+    geraadpleegd: "29 oktober 2026"
 faq:
   - question: "Is Claude beter dan ChatGPT?"
     answer: "Dat verschilt per taak. In ons eigen werk levert Claude het beste resultaat bij lange documenten, schrijfwerk en code. ChatGPT is breder, met extra's zoals beeldgeneratie en spraak. Vraag je dus af welke tool het beste past bij jouw belangrijkste taken. Test beide op je echte werk."
@@ -75,7 +78,7 @@ Voor het MKB is het onderscheid zelden "welke is slimmer". De betere vraag: welk
 | Lange documenten in één keer | Huidige topmodellen hebben volgens Anthropic een contextvenster van 1 miljoen tokens | Contextvenster verschilt per abonnement |
 | Code en automatisering | Claude Code zit in elk betaald abonnement | Codex zit in de betaalde abonnementen |
 | Beeld en spraak | Geen beeldgeneratie, wel grafieken en diagrammen | Beeldgeneratie en spraak |
-| Koppeling met Microsoft 365 | Ja, in Team en Enterprise | Ja, in Business |
+| Koppeling met Microsoft 365 | Ja, in alle abonnementen: Free, Pro, Max, Team en Enterprise | Ja, in Business |
 | Bekendheid bij je team | Kleiner, verwacht een korte introductie | Bijna iedereen kent het al |
 | Zakelijk abonnement | Team: 2 tot 150 gebruikers, 20 dollar per gebruiker per maand bij jaarbetaling, 25 dollar per maand | Business: vanaf 2 gebruikers, goedkoper bij jaarbetaling |
 | Training op je data | Standaard niet in Team en Enterprise | Standaard niet in Business |

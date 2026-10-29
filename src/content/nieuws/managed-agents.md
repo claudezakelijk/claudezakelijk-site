@@ -1,7 +1,7 @@
 ---
 title: "Claude Managed Agents: wat het is, wat het kost en wanneer je het inzet"
 titleTag: "Claude Managed Agents uitgelegd: kosten en inzet | Implementeren.ai"
-metaDescription: "Wat Claude Managed Agents is, hoe je betaalt (tokens plus 0,08 dollar per sessie-uur), wat er met je data gebeurt en wanneer het past. Stand: 27 oktober 2026."
+metaDescription: "Wat Claude Managed Agents is, wat het kost (tokens plus 0,08 dollar per sessie-uur), wat er met je data gebeurt en wanneer het past. Stand: oktober 2026."
 h1: "Claude Managed Agents voor bedrijven: wat het is, wat het kost en wanneer je het inzet"
 targetKeywords:
   - claude managed agents
@@ -50,6 +50,9 @@ bronnen:
   - titel: "Claude Platform Docs, Define your agent (ondersteunde modellen, standaard permission policy)"
     url: "https://platform.claude.com/docs/en/managed-agents/agent-setup"
     geraadpleegd: "27 oktober 2026"
+  - titel: "Claude Platform Docs, Permission policies (standaard always_allow voor de ingebouwde tools, always_ask voor MCP-tools)"
+    url: "https://platform.claude.com/docs/en/managed-agents/permission-policies"
+    geraadpleegd: "29 oktober 2026"
   - titel: "Claude Platform Docs, Scheduled deployments (geplande runs en budget per run)"
     url: "https://platform.claude.com/docs/en/managed-agents/scheduled-deployments"
     geraadpleegd: "27 oktober 2026"
@@ -145,7 +148,7 @@ Voor de AVG betekent dit: neem de agent op in je verwerkingsregister, geef hem a
 
 Ook de EU AI Act telt mee. De transparantieregels van artikel 50 gelden sinds 2 augustus 2026. De regels voor hoog-risicosystemen uit bijlage III zijn door de AI Omnibus uitgesteld naar 2 december 2027. Gebruik je een agent voor beslissingen over mensen, zoals sollicitanten of kredietaanvragen, dan val je in die categorie. Voor rapporten maken of data controleren meestal niet. De volledige tijdlijn staat in ons artikel over de [AI Act voor het MKB](/compliance/ai-act-mkb).
 
-Let op één standaardinstelling. Een nieuwe agent krijgt de permission policy `always_allow`: hij voert elke toolaanroep uit zonder te vragen. Wil je dat een mens een stap goedkeurt, dan stel je zelf in dat bepaalde tools bevestiging nodig hebben.
+Let op de standaardinstellingen voor goedkeuring. De ingebouwde tools, zoals de bash-shell en bestandsbewerking, staan standaard op de permission policy `always_allow`. Die draaien dus zonder dat iemand ze goedkeurt. Tools van een MCP-server staan standaard op `always_ask`: de sessie pauzeert tot jij een aanroep goedkeurt. Wil je dat een mens ook de ingebouwde tools goedkeurt, dan zet je die zelf op `always_ask`.
 
 ## Wanneer zet je Claude Managed Agents in?
 
