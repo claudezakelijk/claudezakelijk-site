@@ -1,127 +1,188 @@
 ---
-title: "Claude voor IT consultancy"
-titleTag: "Claude voor IT consultancy en adviseurs | Implementeren.ai"
-metaDescription: "Hoe IT-consultants Claude inzetten voor klantgesprekken, proposals en kennismanagement."
-h1: "Claude voor IT consultancy en adviseurs"
+title: "Claude voor IT-consultancy"
+titleTag: "Claude voor IT-consultancy: verslagen, voorstellen en Jira"
+metaDescription: "Claude voor IT consultancy: van klantgesprek naar verslag, voorstelteksten, documentatie en Jira. Met prijzen per plan en de AVG. Stand 29 oktober 2026."
+h1: "Claude voor IT-consultancy: verslagen, voorstellen en documentatie"
 targetKeywords:
-  - claude voor it consultancy
-  - claude voor consultants
-  - claude voor adviseurs
+  - claude voor it-consultancy
+  - it-consultancy
+  - it-consultant
 wordCountTarget: 1500
 priority: 1
 tier: 2
 cases:
   - consultant-brief
   - process-portal
-  - open-brain
 internalLinks:
-  - /use-cases/meeting-notulen
-  - /claude-voor-msp
+  - /verticalen
+  - /cases/consultant-brief
+  - /cases/process-portal
+  - /gids/claude-code-voor-bedrijven
+  - /prijs/pro-vs-team-vs-enterprise
+  - /compliance/anthropic-dpa
+  - /compliance/ai-geletterdheid
+  - /claude-voor-marketingbureaus
+  - /claude-implementatie
 schemaTypes:
   - Service
   - FAQPage
+  - BreadcrumbList
 author: camiel
 competitors: []
-status: draft
-publishDate: null
-updatedDate: null
+disclaimer: juridisch
+status: published
+publishDate: 2026-12-03
 changelogLine: null
+reviewedBy: null
+reviewedDate: null
+kortAntwoord: "Claude voor IT-consultancy helpt bij het schrijfwerk rond je advies: een verslag uit het transcript van een klantgesprek, de tekst van een voorstel, documentatie en statusupdates uit Jira. Het advies zelf en de prijs blijven bij de consultant. Een Claude Team-seat kost 25 dollar per gebruiker per maand, ongeveer 22 euro exclusief btw (ECB-koers 28 oktober 2026)."
+bronnen:
+  - titel: "Claude, plans en prijzen (claude.com)"
+    url: "https://claude.com/pricing"
+    geraadpleegd: "29 oktober 2026"
+  - titel: "Europese Centrale Bank, referentiekoers euro/dollar (28 oktober 2026: 1,1133)"
+    url: "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/eurofxref-graph-usd.en.html"
+    geraadpleegd: "29 oktober 2026"
+  - titel: "Claude Code-documentatie, overzicht (code.claude.com)"
+    url: "https://code.claude.com/docs/en/overview"
+    geraadpleegd: "29 oktober 2026"
+  - titel: "Claude-connectors: Atlassian MCP, gemaakt door Atlassian (claude.com)"
+    url: "https://claude.com/connectors/atlassian"
+    geraadpleegd: "29 oktober 2026"
+  - titel: "Microsoft Support: transcriptie in Teams-vergaderingen bekijken en downloaden"
+    url: "https://support.microsoft.com/en-us/office/view-live-transcription-in-microsoft-teams-meetings-dc1a8f23-2e20-4684-885e-2152e06a4a8b"
+    geraadpleegd: "29 oktober 2026"
+  - titel: "Claude Help Center: wat zijn Projects?"
+    url: "https://support.claude.com/en/articles/9517075-what-are-projects"
+    geraadpleegd: "29 oktober 2026"
+  - titel: "Anthropic Privacy Center: wordt zakelijke data gebruikt voor modeltraining? (18 augustus 2026)"
+    url: "https://privacy.claude.com/en/articles/7996868-is-my-data-used-for-model-training"
+    geraadpleegd: "29 oktober 2026"
+  - titel: "Anthropic Privacy Center: hoe lang bewaart Anthropic de data van je organisatie? (1 juli 2026)"
+    url: "https://privacy.claude.com/en/articles/7996866-how-long-do-you-store-my-organization-s-data"
+    geraadpleegd: "29 oktober 2026"
+  - titel: "Anthropic Privacy Center: de verwerkersovereenkomst (DPA) is onderdeel van de Commercial Terms (16 maart 2026)"
+    url: "https://privacy.claude.com/en/articles/7996862-how-do-i-view-and-sign-your-data-processing-addendum-dpa"
+    geraadpleegd: "29 oktober 2026"
+  - titel: "Europese Commissie, AI Act Service Desk: tijdlijn invoering AI Act"
+    url: "https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act"
+    geraadpleegd: "29 oktober 2026"
 faq:
-  - question: "Hoe verwerkt Claude klantgesprekken?"
-    answer: "Je neemt het gesprek op (Teams, Zoom, dictaat) en voert de opname in. Claude genereert een gestructureerde brief met per onderwerp een samenvatting, de afspraken, en de actiepunten met eigenaar en deadline. Verwerking van een uur vergadering in 5 minuten. De consultant controleert en verstuurt. Wij hebben dit gebouwd als de consultant-brief case."
-  - question: "Is Claude veilig voor vertrouwelijke klantprojecten?"
-    answer: "Claude (Anthropic) bewaart geen prompts na de sessie bij zakelijk gebruik via de API. Pseudonimiseer klantgegevens, projectnamen en bedrijfsinformatie voordat je ze invoert. Wij helpen consultancybureaus die scheiding in te richten zodat je AVG-conform werkt en klantvertrouwen behoudt."
-  - question: "Kan Claude proposals en offertes schrijven voor IT-consultancy?"
-    answer: "Claude genereert conceptproposals op basis van je eerdere proposals, de klantcontext en de gevraagde scope. De consultant vult de strategische analyse en het onderscheidend vermogen aan. Bij 20 proposals per jaar bespaar je 40 tot 60 uur schrijfwerk. De kwaliteit stijgt door consistente structuur en complete dekking van alle gevraagde onderdelen."
-  - question: "Wat is het verschil met ChatGPT voor IT-consultancy?"
-    answer: "Claude's context window is tot 1 miljoen tokens bij de nieuwste modellen, dat is 4x meer dan ChatGPT-4. Voor consultancy maakt dat het verschil: je kunt een volledig klantdossier, drie eerdere proposals en de briefing in een enkele sessie verwerken. Claude Code biedt directe integratie met je development-omgeving. ChatGPT heeft die integratiediepte niet."
+  - question: "Kan Claude een opname van een klantgesprek verwerken?"
+    answer: "Werk met het transcript, de tekstversie van het gesprek. Teams maakt bij een opname vanzelf een transcript, dat de organisator kan downloaden. Plak die tekst in een Claude-project met je vaste opbouw voor verslagen. Claude maakt er een concept van met afspraken, actiepunten en open vragen. De consultant leest het na en stuurt het zelf naar de klant."
+  - question: "Mag ik klantdocumenten van mijn IT-consultancy in Claude zetten?"
+    answer: "Gebruik daarvoor een zakelijk plan, zoals Claude Team, Enterprise of de API. Daar traint Anthropic standaard niet op je invoer en is de verwerkersovereenkomst onderdeel van de voorwaarden. Kijk ook in je contract met de klant wat je met hun documenten mag. Laat wachtwoorden, sleutels en namen weg die Claude voor de taak niet nodig heeft."
+  - question: "Werkt Claude met Jira en Confluence?"
+    answer: "Ja, via de connector van Atlassian. Die is gemaakt door Atlassian en door Anthropic geverifieerd. Claude kan daarmee issues en pagina's zoeken, lezen, aanmaken en bijwerken. Alles gebeurt met de rechten die je in Atlassian al hebt. Verwijderen in Jira staat uit tot de beheerder van je organisatie het aanzet."
+  - question: "Wat kost Claude voor een IT-consultancy met tien consultants?"
+    answer: "Tien standaard Team-seats kosten 250 dollar per maand bij maandbetaling, ongeveer 224,56 euro exclusief btw tegen de ECB-koers van 28 oktober 2026. Bij jaarbetaling is het 200 dollar per maand, ongeveer 179,65 euro. Claude Code zit bij die seats inbegrepen. Wie de hele dag met Claude werkt, kan een premium seat krijgen."
 areaServed: NL
 brancheOrganisatie: null
 ---
 
-Claude voor IT consultancy en adviseurs is geen theoretisch verhaal. Wij gebruiken het zelf. Elke dag. De consultant-brief case, het vergaderverwerksysteem, het kennismanagementsysteem: dat zijn tools die we voor onszelf hebben gebouwd en nu beschikbaar maken voor andere consultancybureaus. IT-consultants boeken het snelste resultaat omdat ze al gewend zijn aan tooling en gestructureerd werken.
+<!--
+  Feiten gecontroleerd 29-10-2026, bronnen in de frontmatter. Koers ECB 28-10-2026: 1 EUR = 1,1133 USD.
+  Ervaring alleen uit de cases consultant-brief en process-portal (beide IT-consultancy).
+  Uit de draft weggelaten: alle besparingscijfers zonder bron, de verzonnen 4-weken-PHP-claim,
+  de ChatGPT-vergelijking en "geen bewaring na de sessie".
+-->
 
-## Claude voor consultants: klantgesprekken verwerken
+Claude voor IT-consultancy gaat over het schrijfwerk rond je advies. Na een klantgesprek moet er een verslag komen, en aan het eind van een opdracht schrijf je de documentatie voor de overdracht. Dat werk volgt vaak een vaste opbouw, en daar is Claude snel in. Het advies, de inschatting van het risico en de prijs blijven bij de consultant.
 
-Dit is de case waar alles begon. Een consultant heeft een klantgesprek van een uur. Daarna schrijft die consultant 45 minuten aan een gespreksverslag, actiepunten en een conceptbrief. Met Claude is dat 5 minuten.
+Op deze pagina lees je welk werk Claude kan doen, wat we zelf bij een IT-consultancy bouwden, wat het kost en wat je regelt voor de gegevens van je klanten.
 
-> *In mei 2026 bouwde ons team bij een Nederlands IT-consultancybureau de consultant-brief: een systeem dat vergadernotities in 5 minuten verwerkt tot gestructureerde briefs. Een uur vergadering, 5 minuten verwerking. Was 45 minuten. Consultants starten voorbereid aan het vervolgtraject.*
+## Welk werk kan Claude in een IT-consultancy overnemen?
 
-Het werkt zo: je neemt het gesprek op via Teams of Zoom, of je dicteert je aantekeningen na afloop. Claude verwerkt de opname tot een gestructureerd verslag. Per onderwerp een samenvatting, de afspraken, de actiepunten met eigenaar en deadline, en openstaande vragen voor het volgende gesprek. De output is een brief die je direct naar de klant kunt sturen na controle.
+Claude is een taalmodel van Anthropic. Het schrijft, vat samen en zet notities in een vaste vorm. Het ziet alleen wat jij meegeeft of wat je via een koppeling openzet. Dit zijn de taken waar een IT-consultant het verschil merkt.
 
-Bij een consultant met 3 klantgesprekken per dag bespaar je 2 uur per dag. Dat is 40 uur per maand. Die 40 uur gaan naar billable werk in plaats van naar administratie. Lees meer over [vergadernotities met Claude](/use-cases/meeting-notulen). Anthropic heeft Claude getraind op het verwerken van gespreksdata en het genereren van gestructureerde samenvattingen.
+Tabel: taakverdeling tussen Claude en je consultants in een IT-consultancy, stand 29 oktober 2026.
 
-## Diagrammen en architectuurdocumentatie
+| Taak | Wat Claude doet | Wat de consultant doet |
+|------|-----------------|------------------------|
+| Verslag van een klantgesprek | Zet het transcript om in afspraken, actiepunten en open vragen | Leest na, vult aan en stuurt het naar de klant |
+| Voorstel of offerte | Schrijft aanleiding, aanpak, fasering en voorwaarden | Bepaalt scope, uren en prijs |
+| Technische documentatie | Beschrijft een bestaande codebase of omgeving voor de overdracht | Controleert of het technisch klopt |
+| Statusupdate | Vat issues uit Jira samen in de vorm die de klant gewend is | Voegt de duiding en de risico's toe |
+| Kennisbank | Maakt van losse notities en tickets leesbare artikelen | Bepaalt wat erin hoort en houdt het actueel |
 
-IT-consultants maken architectuurdiagrammen, processchema's, migratieplannen en technische documentatie. Claude Code genereert die documentatie op basis van je technische input. Mermaid-diagrammen voor architectuurvisualisaties, Markdown voor technische specificaties, en gestructureerde migratieplannen.
+## Hoe maak je van een klantgesprek een verslag met Claude?
 
-Je beschrijft de huidige situatie (legacy systeem X, database Y, 3 microservices) en de gewenste situatie (cloud-native, containerized, CI/CD). Claude genereert een migratieplan met fases, afhankelijkheden, risico's en tijdsinschatting. Het diagram visualiseert de architectuur in Mermaid, dat je direct kunt embedden in Confluence of een presentatie.
+Een opgenomen gesprek van een uur kijkt bijna niemand helemaal terug. Met het transcript gaat het sneller. Zo richt je het in.
 
-Bij een consultancytraject van 3 maanden bespaart dit 15 tot 25 uur aan documentatiewerk. De consultant besteedt die tijd aan analyse en advies. De documentatie is consistent en compleet, elk diagram heeft dezelfde stijl, elk plan dezelfde structuur. Microsoft Copilot en Google Gemini bieden vergelijkbare documentatiefunctionaliteit, maar Claude Code integreert direct in je development-omgeving. De output gaat naar je Git-repository, niet naar een chatvenster. We gebruiken deze workflow dagelijks: architectuurdiagrammen in Mermaid, technische specificaties in Markdown, alles versioneerd in Git.
+1. Maak in Claude een project voor verslagen. Projects zijn werkruimtes met eigen instructies en documenten, en zitten in elk plan. Op Team en Enterprise kun je een project met collega's delen.
+2. Zet in de instructies de vaste opbouw: aanleiding, huidige situatie, gewenste situatie, afspraken, actiepunten met wie en wanneer, en open vragen.
+3. Neem het gesprek op in Teams. Volgens Microsoft start de transcriptie dan vanzelf. De organisator downloadt het transcript als .docx- of .vtt-bestand.
+4. Plak die tekst in het project. Claude maakt een concept in jullie opbouw.
+5. De consultant leest het concept, haalt fouten eruit en stuurt het zelf naar de klant.
 
-## Proposals en deliverables schrijven met Claude
+Laat namen en details weg die het verslag niet nodig heeft.
 
-Een proposal schrijven kost een senior consultant 4 tot 8 uur. De klantcontext analyseren, de scope definiëren, de aanpak beschrijven, het team presenteren, de planning uitwerken, de prijs onderbouwen. Claude genereert het concept.
+## Kan Claude een voorstel of offerte voor een IT-opdracht schrijven?
 
-Je voert de klantbriefing in, je eerdere proposals als referentie, en de gewenste scope. Claude schrijft een conceptproposal met alle standaardonderdelen: managementsamenvatting, probleemanalyse, aanpak, deliverables, planning, team, en investering. De consultant vult de strategische analyse aan, scherpt het onderscheidend vermogen aan, en controleert de scope.
+Een voorstel heeft bijna altijd dezelfde delen: aanleiding, aanpak, fasering, team, planning en voorwaarden. Zet twee of drie goede voorstellen van je bureau in een project, samen met je vaste voorwaarden. Geef Claude daarna de aanvraag van de klant en je eigen aantekeningen. Claude schrijft een concept in de toon van jullie eerdere stukken.
 
-> *In april 2026 bouwde ons team bij een Nederlands IT-consultancybureau een white-label portaal in 4 weken. Custom applicatie in PHP en Vue.js. Dat project begon met een proposal dat Claude in 2 uur genereerde op basis van de klantbriefing en drie eerdere vergelijkbare proposals.*
+De scope, de uren en de prijs bepaal je zelf. Laat Claude niet rekenen en neem de bedragen over uit je eigen calculatie. Bij marketingbureaus werkt het volgens hetzelfde patroon voor offertes en campagneplannen. Dat lees je in [Claude voor marketingbureaus](/claude-voor-marketingbureaus).
 
-Bij 20 proposals per jaar bespaar je 40 tot 60 uur. De hitrate stijgt ook: consistente, complete proposals met een professionele uitstraling. Geen vergeten onderdelen, geen inconsistenties tussen secties. Claude's context window tot 1 miljoen tokens bij de nieuwste modellen maakt het mogelijk om meerdere referentieproposals in een enkele sessie te verwerken.
+## Hoe helpt Claude Code een IT-consultant bij documentatie?
 
-## Claude voor adviseurs: kennismanagement
+Claude Code is de variant van Claude voor technisch werk. Volgens de documentatie van Anthropic leest het een codebase, past het bestanden aan, voert het commando's uit en werkt het met git. Het draait in de terminal, in VS Code en JetBrains, in de desktop-app en in de browser.
 
-IT-consultancybureaus zitten op een goudmijn aan kennis: projectervaringen, technische oplossingen, klantinzichten, branchekennis. Maar die kennis zit in de hoofden van consultants, in verspreide documenten, en in oude e-mails. Claude bouwt daar structuur omheen.
+Voor een IT-consultant is dat handig bij de overdracht. Laat Claude Code een bestaande repository doorlopen en een eerste versie schrijven van de README, een document voor de overdracht of een uitleg van de opbouw. Het resultaat staat als bestand in de repository, en Claude Code kan er een pull request van maken die een collega beoordeelt. Wil je weten hoe een team daarmee begint, lees dan [Claude Code voor bedrijven](/gids/claude-code-voor-bedrijven).
 
-> *In 2026 bouwde ons team bij een Nederlands softwarebedrijf Open Brain: een kennismanagementsysteem met AI. Cross-session context, gestructureerd geheugen, doorzoekbaar per onderwerp. Wat een consultant vorige maand bij klant A leerde, is beschikbaar wanneer collega B een vergelijkbaar vraagstuk bij klant C tegenkomt.*
+## Werkt Claude met Jira en Confluence?
 
-Het patroon: na elk project of elke belangrijke beslissing leg je de kernpunten vast. Claude structureert die input tot doorzoekbare kennisartikelen. Bij een nieuwe klantvraag doorzoek je de kennisbank: "Hoe hebben we vorig jaar de Azure-migratie bij klant X aangepakt?" Claude levert het antwoord op basis van de vastgelegde projectervaring. Vergelijkbare IT-dienstverleners zoals [MSP's](/claude-voor-msp) gebruiken dezelfde kennisbankaanpak.
+Ja. In de lijst met connectors van Claude staat de connector van Atlassian, gemaakt door Atlassian en door Anthropic geverifieerd. Volgens die pagina kan Claude daarmee Jira, Confluence en andere Atlassian-apps doorzoeken, lezen en bijwerken.
 
-Bij een bureau met 10 consultants en 50 projecten per jaar voorkom je dat kennis verloren gaat bij personeelswisselingen. Nieuwe consultants komen sneller op snelheid. Senioren besteden minder tijd aan het beantwoorden van dezelfde vragen.
+Een paar dingen om te weten voor je hem aanzet:
 
-## Klantrapportages en statusupdates
+- Claude werkt met de rechten die de gebruiker in Atlassian al heeft.
+- Verwijderen en projectbeheer in Jira staan uit, tot de beheerder van je organisatie ze aanzet.
+- Elke actie komt in het auditlog van je organisatie in Atlassian.
 
-Wekelijkse statusrapporten, maandelijkse steeringcommittee-presentaties, kwartaalreviews, eindrapportages. Consultancyprojecten genereren een constante stroom rapportages. Claude genereert die rapporten op basis van je weeknotities en projectdata.
+Met die koppeling vraag je Claude om de issues van deze sprint samen te vatten tot een statusupdate voor de klant. Lees het resultaat na voordat de klant het ziet.
 
-Je voert de weekstatus in (wat is gedaan, wat staat gepland, welke risico's, welke beslissingen), Claude schrijft het rapport in het format dat de klant verwacht. Per project consistent, per consultant professioneel. Bij 5 lopende projecten met wekelijkse rapportages bespaar je 5 tot 8 uur per week. Over een jaar: 250 tot 400 uur.
+## Wat hebben we zelf voor IT-consultancy gebouwd?
 
-De kwaliteit stijgt: geen haastig geschreven vrijdagmiddag-rapporten, maar gestructureerde updates met de juiste diepte. De klant merkt het verschil. Bij consultancybureaus die werken met Jira of Azure DevOps voor projectmanagement genereert Claude het statusrapport direct uit de sprintdata. De projectmanager voegt de strategische duiding toe, Claude doet het structureerwerk. Combineer dat met de GDPR-compliance die we bij elk project standaard inrichten, en je hebt een complete rapportage-workflow die veilig, snel en consistent is.
+Twee projecten op deze site zijn gebouwd bij een Nederlandse IT-consultancy. Ze laten zien wat er met dit soort schrijfwerk kan.
 
-## AVG en klantvertrouwelijkheid
+De eerste is de [gespreksbrief](/cases/consultant-brief). Het bureau voert elke week een gesprek voor een assessment met een klant en neemt dat op in Teams. Ons team bouwde met Claude Code een skill die de opname en het bestand met ondertitels omzet in een brief, met per onderwerp een korte samenvatting en het passende videofragment. Het uitwerken van een gesprek van een uur ging van 45 minuten naar 5 minuten.
 
-IT-consultants werken met vertrouwelijke klantinformatie: architectuurdiagrammen, security-assessments, migratieplanning, contractgegevens. Die informatie is commercieel gevoelig en soms AVG-relevant (bij persoonsgegevens in scope).
+De tweede is het [procesportaal](/cases/process-portal), gebouwd in 2 weken. De consultants tekenen de processen van hun klanten in Lucidchart. Vroeger ging elk diagram met uitleg per stap in een PDF naar de klant. Nu staat het automatisch op een eigen pagina per klant, die altijd de actuele versie toont. Het opmaakwerk per diagram ging van anderhalf uur (90 minuten) naar 10 minuten.
 
-Pseudonimiseer klantgegevens en projectnamen voordat ze Claude bereiken. Vervang "Acme Corp" door "Klant A", "Azure-migratie Rotterdam" door "Cloud-migratie Project X". Claude verwerkt de gepseudonimiseerde tekst, de consultant vertaalt terug. We hanteren die discipline zelf: alle Claude-sessies werken met gepseudonimiseerde data. GDPR-compliance is een werkwijze, geen belemmering.
+<!-- figuur:1 -->
 
-## Wat levert het op
+Een voorstel- of Jira-project hebben we nog niet als case op de site staan. De stappen daarvoor op deze pagina komen uit de documentatie van Anthropic en Atlassian.
 
-De ROI voor een IT-consultancybureau (3 tot 15 consultants):
+## Welk Claude-plan past bij een IT-consultancy?
 
-- **Klantgesprekken:** 2 uur per consultant per dag bij 3 gesprekken. Bij 10 consultants: 400 uur per maand.
-- **Proposals:** 40 tot 60 uur per jaar bij 20 proposals.
-- **Documentatie:** 15 tot 25 uur per project van 3 maanden.
-- **Kennismanagement:** 50 tot 100 uur besparing per jaar door snellere kennisdeling.
-- **Statusrapporten:** 250 tot 400 uur per jaar bij 5 projecten met wekelijkse rapportages.
-- **Claude Pro licenties:** 20 dollar per consultant per maand.
+Werk je met documenten van klanten, kies dan een zakelijk plan. Claude Team is de logische start voor een bureau. Claude Code zit volgens de prijspagina in elk betaald plan. Anthropic rekent in dollars. De euro-bedragen zijn omgerekend met de ECB-koers van 28 oktober 2026 (1 euro is 1,1133 dollar).
 
-Wij bij Implementeren.ai hebben dit traject zelf doorlopen. De implementatie kost 2 tot 4 weken. Een bureau met 5 consultants haalt 200 tot 300 uur besparing per maand. Tegen een gemiddeld consultancy-uurtarief van 120 tot 175 euro is de ROI niet in weken maar in dagen zichtbaar. De terugverdientijd: minder dan een week.
+Tabel: Claude-plannen voor een IT-consultancy, lijstprijzen exclusief btw, stand 29 oktober 2026.
 
-ChatGPT levert vergelijkbare conceptteksten, maar Claude's grotere context window en Claude Code-integratie geven IT-consultants een voorsprong. Je werkt in je development-omgeving, niet in een chatvenster.
+| Plan | Per maand, maandbetaling | Per maand, jaarbetaling | Geschikt voor |
+|------|--------------------------|-------------------------|---------------|
+| Pro | $20 (± €17,96) | $17 (± €15,27) | Eén consultant die het uitprobeert, zonder klantdata |
+| Team, standaard seat | $25 per gebruiker (± €22,46) | $20 per gebruiker (± €17,96) | Een bureau van 2 tot 150 gebruikers |
+| Team, premium seat | $125 per gebruiker (± €112,28) | $100 per gebruiker (± €89,82) | Wie de hele dag met Claude Code werkt |
+| Enterprise | n.v.t. | $20 per seat (± €17,96), minimaal 20 seats, plus verbruik tegen API-tarieven | Grotere bureaus met eigen IT-eisen |
 
-## Veelgestelde vragen
+Het contextvenster is volgens de prijspagina tot 1 miljoen tokens, afhankelijk van het model. Een lang transcript plus een paar eerdere voorstellen past daar ruim in. Het verschil tussen de plannen staat uitgebreid in [Claude Pro, Team of Enterprise](/prijs/pro-vs-team-vs-enterprise).
 
-### Hoe verwerkt Claude klantgesprekken?
+## Wat regel je voor klantgegevens en de AI Act?
 
-Je neemt het gesprek op (Teams, Zoom, dictaat) en voert de opname in. Claude genereert een gestructureerde brief met per onderwerp een samenvatting, de afspraken, en de actiepunten met eigenaar en deadline. Verwerking van een uur vergadering in 5 minuten. De consultant controleert en verstuurt. Wij hebben dit gebouwd als de consultant-brief case.
+Een IT-consultant ziet veel gevoelige informatie: netwerkschema's, rapporten over beveiliging, contracten en soms persoonsgegevens. Drie punten helpen.
 
-### Is Claude veilig voor vertrouwelijke klantprojecten?
+Ten eerste het plan. Op de zakelijke plannen (Claude Team, Enterprise en de API) gebruikt Anthropic je invoer en uitvoer standaard niet voor training. De verwerkersovereenkomst is daar automatisch onderdeel van de Commercial Terms. Bij de API verwijdert Anthropic invoer en uitvoer standaard binnen 30 dagen, tenzij je iets anders hebt afgesproken. Meer daarover in [de verwerkersovereenkomst van Anthropic](/compliance/anthropic-dpa).
 
-Claude (Anthropic) bewaart geen prompts na de sessie bij zakelijk gebruik via de API. Pseudonimiseer klantgegevens, projectnamen en bedrijfsinformatie voordat je ze invoert. Wij helpen consultancybureaus die scheiding in te richten zodat je AVG-conform werkt en klantvertrouwen behoudt.
+Ten tweede de invoer. Lees in je contract met de klant wat je met hun documenten mag doen. Wachtwoorden, API-sleutels en toegangsgegevens horen nooit in een prompt. Vervang namen van klanten en personen als de taak ze niet nodig heeft.
 
-### Kan Claude proposals en offertes schrijven voor IT-consultancy?
+Ten derde de AI Act. Sinds 2 februari 2025 moet je zorgen dat je mensen genoeg weten van de AI die ze gebruiken (artikel 4). Hoe je dat aanpakt, staat in [AI-geletterdheid](/compliance/ai-geletterdheid). De zware regels voor AI met een hoog risico uit bijlage III gelden vanaf 2 december 2027 en raken het schrijven van verslagen en voorstellen niet.
 
-Claude genereert conceptproposals op basis van je eerdere proposals, de klantcontext en de gevraagde scope. De consultant vult de strategische analyse en het onderscheidend vermogen aan. Bij 20 proposals per jaar bespaar je 40 tot 60 uur schrijfwerk. De kwaliteit stijgt door consistente structuur en complete dekking van alle gevraagde onderdelen.
+## Waar begin je als IT-consultancy?
 
-### Wat is het verschil met ChatGPT voor IT-consultancy?
+1. Kies één stroom die elke week terugkomt, zoals verslagen van gesprekken of statusupdates.
+2. Zet daar een gedeeld project voor op, met jullie vaste opbouw en twee of drie goede voorbeelden.
+3. Laat twee of drie consultants er een maand mee werken.
+4. Meet zelf hoeveel tijd het per stuk scheelt, en beslis dan of koppelen met Jira of Confluence de moeite waard is.
 
-Claude's context window is tot 1 miljoen tokens bij de nieuwste modellen, dat is 4x meer dan ChatGPT-4. Voor consultancy maakt dat het verschil: je kunt een volledig klantdossier, drie eerdere proposals en de briefing in een enkele sessie verwerken. Claude Code biedt directe integratie met je development-omgeving. ChatGPT heeft die integratiediepte niet.
+Wil je hulp bij die eerste stap of bij een koppeling met jullie eigen systemen, kijk dan op onze [pagina over implementatie](/claude-implementatie). Andere branches vind je in het [overzicht per branche](/verticalen).
