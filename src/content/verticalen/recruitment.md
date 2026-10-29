@@ -28,8 +28,8 @@ schemaTypes:
 author: camiel
 competitors: []
 disclaimer: juridisch
-status: review
-publishDate: null
+status: published
+publishDate: 2026-11-26
 updatedDate: 2026-10-27
 changelogLine: null
 reviewedBy: null
