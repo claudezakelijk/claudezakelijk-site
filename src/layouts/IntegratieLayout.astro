@@ -4,6 +4,7 @@ import { seoVoorEntry } from '../lib/schema';
 import KortAntwoord from '../components/KortAntwoord.astro';
 import ArtikelBeeld from '../components/ArtikelBeeld.astro';
 import ArtikelMeta from '../components/ArtikelMeta.astro';
+import AdviesDisclaimer from '../components/AdviesDisclaimer.astro';
 import Broodkruimel from '../components/Broodkruimel.astro';
 import AuthorBio from '../components/AuthorBio.astro';
 import FaqSectie from '../components/FaqSectie.astro';
@@ -74,6 +75,8 @@ const seo = seoVoorEntry({ pad: pagePath, sectie: 'Integraties', breadcrumbs, da
     <div class="v2-artikel-raster">
       <ArtikelInhoud soort="zijkant" koppen={koppen} faq={data.faq.length > 0} />
       <div class="v2-artikel-tekst">
+        {data.disclaimer && <AdviesDisclaimer soort={data.disclaimer} />}
+
         <ArtikelBeeld collectie="integraties" id={entry.id} />
 
         <KortAntwoord tekst={data.kortAntwoord} stand={data.updatedDate ?? data.publishDate} />

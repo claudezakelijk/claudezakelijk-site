@@ -1,8 +1,10 @@
 ---
+import { getCollection } from 'astro:content';
 import { itemListNode, lijstId } from '../../lib/schema';
 import BasisLayout from '../../layouts/BasisLayout.astro';
 import Container from '../../components/Container.astro';
 import CollectieHub from '../../components/CollectieHub.astro';
+import Broodkruimel from '../../components/Broodkruimel.astro';
 import { getPublished } from '../../lib/content';
 
 const artikelen = (await getPublished('usecases'))
@@ -12,21 +14,57 @@ const items = artikelen.map((a) => ({
       titel: a.data.title,
       beschrijving: a.data.metaDescription,
 }));
+
+// Tabel volgens spec E, R-8 "/use-cases" (E-15). De tabel komt uit de live entries, met per
+// use case het eerste project uit `cases`. Een FAQ komt er pas bij drie gepubliceerde use cases.
+const caseTitels = new Map((await getCollection('cases')).map((c) => [c.id, c.data.title]));
+const rijen = artikelen.map((a) => {
+  const slug = a.data.cases[0];
+  return {
+    href: `/use-cases/${a.id}`,
+    titel: a.data.title,
+    project: slug && caseTitels.has(slug) ? { href: `/cases/${slug}`, titel: caseTitels.get(slug) } : null,
+  };
+});
+const breadcrumbs = [{ name: 'Home', url: '/' }, { name: 'Use cases', url: '/use-cases' }];
 ---
 <BasisLayout
   titel="Use cases"
   beschrijving="Concrete Claude-toepassingen voor het Nederlandse MKB: van offertes en rapportages tot klantcommunicatie, met praktijkvoorbeelden."
   pad="/use-cases"
-  schema={{ paginaType: 'CollectionPage', hoofdonderwerp: lijstId('/use-cases'), nodes: [itemListNode('/use-cases', items.map((i) => ({ url: i.href, naam: i.titel })))] }}
+  schema={{ paginaType: 'CollectionPage', hoofdonderwerp: lijstId('/use-cases'), breadcrumbs, nodes: [itemListNode('/use-cases', items.map((i) => ({ url: i.href, naam: i.titel })))] }}
 >
   <Container class="pt-12 pb-20" width="max-w-[1288px]">
+    <Broodkruimel items={breadcrumbs} />
     <CollectieHub
       label="Use cases"
       titel="Wat je met Claude doet"
-      intro="Concrete toepassingen per taak: offertes, rapportages, klantcommunicatie, analyse. Per use case zie je wat het oplevert en hoe je ermee begint."
+      intro="Een use case beschrijft één taak die je met Claude sneller of beter doet, zoals rapportages maken, offertes schrijven of vergaderingen samenvatten. Per taak lees je hoe het werkt, welk abonnement of welke koppeling je nodig hebt, wat het in een echt project opleverde en waar de grenzen liggen. De voorbeelden komen uit projecten die ons team zelf bouwde."
       leesTekst="Bekijk de use case"
       leegTekst="Binnenkort meer: de eerste use cases worden op dit moment geredigeerd."
       items={items}
     />
+
+    {rijen.length > 0 && (
+      <div class="my-12 v2-tabelkaart v2-hubtabel">
+        <table class="w-full text-sm border-collapse">
+          <caption class="caption-top text-left text-sm text-inkt-zacht pb-2">Use cases</caption>
+          <thead>
+            <tr class="border-b-2 border-lijn">
+              <th scope="col" class="text-left p-3 font-semibold">Taak</th>
+              <th scope="col" class="text-left p-3 font-semibold">Gebaseerd op project</th>
+            </tr>
+          </thead>
+          <tbody>
+            {rijen.map((r) => (
+              <tr class="border-b border-lijn">
+                <th scope="row" class="p-3 text-left font-medium"><a href={r.href} >{r.titel}</a></th>
+                <td class="p-3 text-inkt-zacht">{r.project && <a href={r.project.href} >{r.project.titel}</a>}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    )}
   </Container>
 </BasisLayout>

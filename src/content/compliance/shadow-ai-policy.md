@@ -22,6 +22,8 @@ internalLinks:
   - /prijs/pro-vs-team-vs-enterprise
   - /cases/automation-audit
   - /claude-readiness-scan
+  - /compliance/ai-beleid-template
+  - /claude-voor-recruitment
 schemaTypes:
   - Article
   - FAQPage
@@ -89,8 +91,8 @@ hasTemplate: false
   - Anthropic: geen training op commerciële producten (Privacy Center, 18 aug 2026); DPA met SCC's automatisch in Commercial Terms
     (16 mrt 2026); consumentenaccounts: training als instelling aan staat, dan 5 jaar retentie, anders 30 dagen (28 aug 2025).
   - Ervaringspassage komt uitsluitend uit src/content/cases/automation-audit.md.
-  - Niet gelinkt omdat ze op 27 okt 2026 nog niet live zijn: /compliance/ai-beleid-template (12 nov),
-    /compliance/dpia-stappenplan (2 nov), /compliance/ai-geletterdheid (5 nov). /compliance/hallucinatie-voorkomen bestaat niet live.
+  - Links (29 okt 2026): /compliance/ai-beleid-template (12 nov) is gelinkt. /compliance/dpia-stappenplan (2 nov) en
+    /compliance/ai-geletterdheid (5 nov) staan voor 30 nov live en mogen gelinkt worden. /compliance/hallucinatie-voorkomen bestaat niet live.
 -->
 
 Shadow AI in het MKB is AI-gebruik waar de directie geen zicht op heeft. Een medewerker plakt een klantmail in een privéaccount van ChatGPT. Een collega laat Claude een offerte samenvatten op een gratis account. Dat gebeurt meestal met goede bedoelingen, want het werk gaat sneller. Het risico zit in wat er in die tools terechtkomt en wie dat controleert. Op deze pagina lees je wat de Autoriteit Persoonsgegevens (AP) en de EU AI Act erover zeggen, en hoe je met een kort AI-beleid grip krijgt. Alle feiten zijn gecontroleerd op 27 oktober 2026 bij de bronnen onderaan.
@@ -145,7 +147,7 @@ Oudere artikelen over shadow AI noemen 2 augustus 2026 als grote deadline voor a
 
 Voor shadow AI is artikel 4 over AI-geletterdheid het belangrijkste. Dat artikel geldt sinds 2 februari 2025. Na de omnibus luidt de kern: aanbieders en gebruikers van AI-systemen nemen maatregelen om de AI-geletterdheid van hun personeel te ondersteunen. Je houdt rekening met kennis, ervaring en opleiding, en met de context waarin het systeem wordt gebruikt. Je hoeft geen bepaald niveau per persoon te garanderen. De Europese Commissie en de lidstaten moeten vooral het MKB hierbij helpen met praktische voorbeelden.
 
-Volgens de tijdlijn van de Commissie begint het toezicht op onder meer AI-geletterdheid vanaf 2 augustus 2026. De zwaardere regels voor hoog-risicosystemen, zoals AI bij werving of kredietbeoordeling, zijn uitgesteld naar 2 december 2027. Voor een MKB-bedrijf dat Claude gebruikt om teksten en analyses te maken, is artikel 4 dus de verplichting die er nu toe doet. Een medewerker die in het geheim een tool gebruikt, valt buiten elke training en elke afspraak. Daarom raakt shadow AI direct aan artikel 4. De volledige tijdlijn staat in [Claude en de EU AI Act voor het MKB](/compliance/ai-act-mkb).
+Volgens de tijdlijn van de Commissie begint het toezicht op onder meer AI-geletterdheid vanaf 2 augustus 2026. De zwaardere regels voor hoog-risicosystemen, zoals [AI bij werving](/claude-voor-recruitment) of kredietbeoordeling, zijn uitgesteld naar 2 december 2027. Voor een MKB-bedrijf dat Claude gebruikt om teksten en analyses te maken, is artikel 4 dus de verplichting die er nu toe doet. Een medewerker die in het geheim een tool gebruikt, valt buiten elke training en elke afspraak. Daarom raakt shadow AI direct aan artikel 4. De volledige tijdlijn staat in [Claude en de EU AI Act voor het MKB](/compliance/ai-act-mkb).
 
 ## Hoe breng je shadow AI in het MKB in kaart?
 
@@ -169,7 +171,7 @@ Met het overzicht in de hand schrijf je een kort beleid. Een paar pagina's die m
 4. **Wie is aanspreekpunt?** Wijs één persoon aan. In een klein bedrijf is dat vaak de directeur of degene die IT regelt.
 5. **Wat doe je bij twijfel of een fout?** Bij twijfel eerst vragen. Is er toch iets misgegaan met persoonsgegevens, meld het dan direct intern, zodat jij binnen de termijn een datalek kunt melden.
 
-Vul dit aan met een korte uitleg of training over hoe de tools werken en waar ze fouten maken. Dat is ook je bewijs voor artikel 4 van de AI Act. Een uitgewerkt sjabloon voor zo'n AI-beleid verschijnt binnenkort als apart artikel op deze site.
+Vul dit aan met een korte uitleg of training over hoe de tools werken en waar ze fouten maken. Dat is ook je bewijs voor artikel 4 van de AI Act. Een uitgewerkt sjabloon voor zo'n AI-beleid vind je in [het AI-beleid template](/compliance/ai-beleid-template).
 
 ## Werkt een verbod op AI-tools?
 

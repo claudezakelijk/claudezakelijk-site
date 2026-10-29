@@ -3,6 +3,7 @@ import { itemListNode, lijstId, faqNode } from '../../lib/schema';
 import BasisLayout from '../../layouts/BasisLayout.astro';
 import Container from '../../components/Container.astro';
 import CollectieHub from '../../components/CollectieHub.astro';
+import Broodkruimel from '../../components/Broodkruimel.astro';
 import FaqSectie from '../../components/FaqSectie.astro';
 import { getPublished } from '../../lib/content';
 
@@ -33,14 +34,16 @@ const faq = [
     answer: 'Dat hangt af van de koppeling. Moneybird heeft bijvoorbeeld een variant die alleen leest en een variant die ook schrijft. Kies waar het kan de variant die alleen leest.',
   },
 ];
+const breadcrumbs = [{ name: 'Home', url: '/' }, { name: 'Integraties', url: '/integraties' }];
 ---
 <BasisLayout
   titel="Integraties"
   beschrijving="Claude koppelen aan de tools die je al gebruikt: Microsoft 365, Exact Online, HubSpot en meer. Praktische integratiegidsen voor het MKB."
   pad="/integraties"
-  schema={{ paginaType: 'CollectionPage', hoofdonderwerp: lijstId('/integraties'), nodes: [itemListNode('/integraties', items.map((i) => ({ url: i.href, naam: i.titel }))), faqNode('/integraties', faq)] }}
+  schema={{ paginaType: 'CollectionPage', hoofdonderwerp: lijstId('/integraties'), breadcrumbs, nodes: [itemListNode('/integraties', items.map((i) => ({ url: i.href, naam: i.titel }))), faqNode('/integraties', faq)] }}
 >
   <Container class="pt-12 pb-20" width="max-w-[1288px]">
+    <Broodkruimel items={breadcrumbs} />
     <CollectieHub
       label="Integraties"
       titel="Claude gekoppeld aan je tools"

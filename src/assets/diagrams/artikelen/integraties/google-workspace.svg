@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" role="img" aria-label="Lezen en zoeken in je Google-account gaat direct naar Claude; versturen en delen gaan standaard eerst langs jouw goedkeuring, en de Google-beheerder zet Claude op Trusted" font-family="Inter, system-ui, sans-serif" fill="#23261D"><defs>
+<filter id="gw-g" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 .14  0 0 0 0 .15  0 0 0 0 .11  .16 0 0 0 -.03"/></filter>
+<marker id="gw-aa" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#3D5220"/></marker>
+<marker id="gw-ai" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#23261D"/></marker>
+</defs><rect width="1200" height="600" fill="#F4F1E8"/><rect x="64" y="48" width="64" height="4" rx="2" fill="#B4C13E"/><text x="64" y="92" fill="#565A4C" font-size="22" font-weight="600" letter-spacing="3">WAT CLAUDE MAG IN GOOGLE WORKSPACE</text>
+<g>
+<rect x="64" y="130" width="440" height="410" rx="24" fill="#FFFFFF" stroke="#23261D" stroke-width="4"/>
+<rect x="100" y="250" width="150" height="104" rx="10" fill="#FFFFFF" stroke="#23261D" stroke-width="4"/>
+<path d="M106 258 L175 308 L244 258" fill="none" stroke="#23261D" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="320" y="224" width="130" height="160" rx="12" fill="#E9EBDC" stroke="#23261D" stroke-width="4" transform="rotate(-7 385 304)"/>
+<rect x="310" y="234" width="130" height="160" rx="12" fill="#FFFFFF" stroke="#23261D" stroke-width="4"/>
+<g stroke-width="9" stroke-linecap="round"><line x1="334" y1="270" x2="410" y2="270" stroke="#B4C13E"/><line x1="334" y1="298" x2="416" y2="298" stroke="#E1DED2"/><line x1="334" y1="326" x2="398" y2="326" stroke="#E1DED2"/><line x1="334" y1="354" x2="410" y2="354" stroke="#E1DED2"/></g>
+<path d="M516 270 L 846 270" fill="none" stroke="#3D5220" stroke-width="7" stroke-linecap="round" marker-end="url(#gw-aa)"/>
+<path d="M516 410 L 846 410" fill="none" stroke="#23261D" stroke-width="4" stroke-linecap="round" marker-end="url(#gw-ai)"/>
+<rect x="668" y="356" width="26" height="40" rx="6" fill="#23261D"/><rect x="668" y="424" width="26" height="40" rx="6" fill="#23261D"/>
+<rect x="862" y="220" width="268" height="240" rx="24" fill="#FFFFFF" stroke="#23261D" stroke-width="4"/>
+</g>
+<text x="96" y="186" font-size="34" font-weight="600">jouw Google-account</text>
+<text x="96" y="480" font-size="32" font-weight="600" fill="#565A4C">beheerder: Trusted</text>
+<text x="681" y="242" text-anchor="middle" font-size="32" font-weight="600" fill="#3D5220">lezen en zoeken</text>
+<text x="681" y="336" text-anchor="middle" font-size="32" font-weight="600">versturen · delen</text>
+<text x="681" y="510" text-anchor="middle" font-size="32" font-weight="600">jouw goedkeuring</text>
+<text font-style="italic" font-weight="500" x="996" y="358" text-anchor="middle" font-size="56" font-family="'Newsreader Variable', Newsreader, Georgia, serif">Claude</text>
+<text x="1136" y="566" text-anchor="end" font-size="26" fill="#64685A">stand 29 oktober 2026</text>
+<rect width="1200" height="600" filter="url(#gw-g)"/></svg>

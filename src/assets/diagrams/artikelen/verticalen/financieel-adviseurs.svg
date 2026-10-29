@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" role="img" aria-label="Gespreksnotities zonder namen gaan naar Claude, dat er een concept van het adviesrapport van maakt waarover de adviseur beslist; gezondheidsgegevens en een kredietscore blijven buiten Claude" font-family="Inter, system-ui, sans-serif" fill="#23261D"><defs>
+<filter id="fin-g" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 .14  0 0 0 0 .15  0 0 0 0 .11  .16 0 0 0 -.03"/></filter>
+<marker id="fin-a" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#23261D"/></marker>
+</defs><rect width="1200" height="600" fill="#F4F1E8"/><rect x="64" y="48" width="64" height="4" rx="2" fill="#B4C13E"/><text x="64" y="92" fill="#565A4C" font-size="22" font-weight="600" letter-spacing="3">FINANCIEEL ADVIES · WAT GAAT NAAR CLAUDE?</text>
+<g>
+<rect x="64" y="160" width="290" height="200" rx="14" fill="#FFFFFF" stroke="#23261D" stroke-width="4" transform="rotate(-2 209 260)"/>
+<path d="M370 262 L 444 262" fill="none" stroke="#23261D" stroke-width="5" stroke-linecap="round" marker-end="url(#fin-a)"/>
+<rect x="462" y="209" width="180" height="106" rx="18" fill="#FFFFFF" stroke="#23261D" stroke-width="4"/>
+<path d="M656 262 L 746 262" fill="none" stroke="#23261D" stroke-width="5" stroke-linecap="round" marker-end="url(#fin-a)"/>
+<rect x="764" y="140" width="290" height="250" rx="14" fill="#FFFFFF" stroke="#23261D" stroke-width="4"/>
+<line x1="792" y1="178" x2="900" y2="178" stroke="#B4C13E" stroke-width="9" stroke-linecap="round"/>
+<g stroke="#E1DED2" stroke-width="9" stroke-linecap="round"><line x1="792" y1="222" x2="1020" y2="222"/><line x1="792" y1="260" x2="1000" y2="260"/><line x1="792" y1="298" x2="1024" y2="298"/><line x1="792" y1="336" x2="960" y2="336"/></g>
+<circle cx="1054" cy="390" r="38" fill="#3D5220"/>
+<path d="M1036 390 l12 12 l22 -26" fill="none" stroke="#F4F1E8" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M480 446 C 500 400, 530 360, 548 330" fill="none" stroke="#A8433B" stroke-width="5" stroke-dasharray="2 14" stroke-linecap="round"/>
+<g stroke="#A8433B" stroke-width="6" stroke-linecap="round"><line x1="500" y1="372" x2="530" y2="402"/><line x1="530" y1="372" x2="500" y2="402"/></g>
+<rect x="64" y="446" width="440" height="100" rx="18" fill="#F6E7E4" stroke="#E4C8C3" stroke-width="3"/>
+</g>
+<g font-size="26" fill="#565A4C"><text x="92" y="214">klant A</text><text x="92" y="254">vast dienstverband</text><text x="92" y="294">20 jaar rentevast</text></g>
+<text x="209" y="410" text-anchor="middle" font-size="32" font-weight="600">notities zonder namen</text>
+<text x="552" y="277" text-anchor="middle" font-family="'Newsreader Variable', Newsreader, Georgia, serif" font-style="italic" font-size="48" font-weight="500">Claude</text>
+<text x="900" y="446" text-anchor="middle" font-size="34" font-weight="600">concept</text>
+<text x="900" y="488" text-anchor="middle" font-size="30" font-weight="600" fill="#3D5220">adviseur beslist</text>
+<text x="92" y="486" font-size="30" font-weight="600" fill="#A8433B">gezondheid · kredietscore</text>
+<text x="92" y="526" font-size="30" fill="#A8433B">blijven buiten</text>
+<text x="1136" y="566" text-anchor="end" font-size="26" fill="#64685A">stand 29 okt 2026</text>
+<rect width="1200" height="600" filter="url(#fin-g)"/></svg>
