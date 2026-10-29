@@ -12,7 +12,7 @@ export const paginaLabels: Record<string, string> = {
   '/claude-implementatie': 'Claude-implementatie voor het Nederlandse MKB',
   '/claude-in-30-dagen': 'Claude inrichten voor je bedrijf in 30 dagen',
   '/claude-readiness-scan': 'Claude Readiness Scan: AI-audit voor je MKB',
-  '/compliance': 'Claude en de AVG: is Claude AVG-proof?',
+  '/compliance': 'Is Claude AVG-proof? Niet met Free of Pro',
   '/contact': 'Contact',
   '/gids': 'Claude gidsen voor bedrijven',
   '/gids/claude-voor-mkb': 'Claude voor bedrijven en mkb',

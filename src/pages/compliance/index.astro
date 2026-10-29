@@ -17,9 +17,9 @@ import { getPublished } from '../../lib/content';
 const artikelen = (await getPublished('compliance'))
   .sort((a, b) => b.data.priority - a.data.priority || a.data.title.localeCompare(b.data.title));
 
-const titel = 'Claude en de AVG: is Claude AVG-proof?';
+const titel = 'Is Claude AVG-proof? Niet met Free of Pro';
 const beschrijving =
-  'Is Claude AVG-proof? Welk abonnement je nodig hebt, wat de verwerkersovereenkomst regelt, waar je data staat en wat je intern regelt. Met checklist.';
+  'Wel met Team, Enterprise of de API: verwerkersovereenkomst erbij, standaard geen training op je data. EU-verwerking via Bedrock of Vertex. Met checklist.';
 const gepubliceerd = '2026-10-02';
 const bijgewerkt = '2026-10-06';
 const datumNl = (iso: string) =>
