@@ -23,6 +23,8 @@ internalLinks:
   - /claude-implementatie
   - /claude-voor-installatiebedrijven
   - /gids/claude-voor-mkb
+  - /compliance/shadow-ai-policy
+  - /claude-voor-notarissen
 schemaTypes:
   - Service
   - FAQPage
@@ -176,9 +178,9 @@ Niet iedereen op het bureau heeft een seat nodig. Begin met de mensen die de mee
 
 Een bureau werkt met adressen, budgetten en namen van opdrachtgevers die nog niet openbaar zijn. Gaat het om personen, dan geldt de AVG. Drie punten helpen.
 
-Kies eerst het juiste plan. Op Free, Pro en Max traint Anthropic op je gesprekken als de gebruiker die instelling aan heeft staan. Op Claude Team, Claude Enterprise en de API gebruikt Anthropic je invoer standaard niet voor training. De verwerkersovereenkomst is daar automatisch onderdeel van de Commercial Terms. Hoe die overeenkomst werkt, lees je in [de verwerkersovereenkomst van Anthropic](/compliance/anthropic-dpa).
+Kies eerst het juiste plan. Op Free, Pro en Max traint Anthropic op je gesprekken als de gebruiker die instelling aan heeft staan. Op Claude Team, Claude Enterprise en de API gebruikt Anthropic je invoer standaard niet voor training. De verwerkersovereenkomst is daar automatisch onderdeel van de Commercial Terms. Hoe die overeenkomst werkt, lees je in [de verwerkersovereenkomst van Anthropic](/compliance/anthropic-dpa). Werken collega's nu al met een privéaccount, dan lees je in [shadow AI in het MKB](/compliance/shadow-ai-policy) hoe je dat in kaart brengt.
 
-Beperk daarna de invoer. Voor een PvE of verslag heeft Claude de naam van de opdrachtgever meestal niet nodig. Schrijf "opdrachtgever A" en vul de echte gegevens later in. Bij de API verwijdert Anthropic invoer en uitvoer standaard binnen 30 dagen. Staat er in je opdracht een geheimhoudingsafspraak, dan gaat die voor.
+Beperk daarna de invoer. Voor een PvE of verslag heeft Claude de naam van de opdrachtgever meestal niet nodig. Schrijf "opdrachtgever A" en vul de echte gegevens later in. Bij de API verwijdert Anthropic invoer en uitvoer standaard binnen 30 dagen. Staat er in je opdracht een geheimhoudingsafspraak, dan gaat die voor. Hoe een beroep met een strenge geheimhoudingsplicht hiermee omgaat, lees je in [Claude voor notarissen](/claude-voor-notarissen).
 
 Denk ten slotte aan de AI Act. Sinds 2 februari 2025 geldt artikel 4 over AI-geletterdheid. Sinds de wijziging van 27 juli 2026 moet je maatregelen nemen die de AI-kennis van je mensen ondersteunen. Een vast niveau per persoon is niet verplicht. Laat je opdrachtgevers rechtstreeks met een chatbot praten, dan gelden sinds 2 augustus 2026 ook de transparantieregels van artikel 50. Meer daarover staat in [de AI Act voor het MKB](/compliance/ai-act-mkb).
 

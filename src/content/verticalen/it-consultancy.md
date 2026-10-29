@@ -23,6 +23,8 @@ internalLinks:
   - /compliance/ai-geletterdheid
   - /claude-voor-marketingbureaus
   - /claude-implementatie
+  - /nieuws/managed-agents
+  - /claude-voor-recruitment
 schemaTypes:
   - Service
   - FAQPage
@@ -127,7 +129,7 @@ De scope, de uren en de prijs bepaal je zelf. Laat Claude niet rekenen en neem d
 
 Claude Code is de variant van Claude voor technisch werk. Volgens de documentatie van Anthropic leest het een codebase, past het bestanden aan, voert het commando's uit en werkt het met git. Het draait in de terminal, in VS Code en JetBrains, in de desktop-app en in de browser.
 
-Voor een IT-consultant is dat handig bij de overdracht. Laat Claude Code een bestaande repository doorlopen en een eerste versie schrijven van de README, een document voor de overdracht of een uitleg van de opbouw. Het resultaat staat als bestand in de repository, en Claude Code kan er een pull request van maken die een collega beoordeelt. Wil je weten hoe een team daarmee begint, lees dan [Claude Code voor bedrijven](/gids/claude-code-voor-bedrijven).
+Voor een IT-consultant is dat handig bij de overdracht. Laat Claude Code een bestaande repository doorlopen en een eerste versie schrijven van de README, een document voor de overdracht of een uitleg van de opbouw. Het resultaat staat als bestand in de repository, en Claude Code kan er een pull request van maken die een collega beoordeelt. Wil je weten hoe een team daarmee begint, lees dan [Claude Code voor bedrijven](/gids/claude-code-voor-bedrijven). Bouw je voor een klant een agent die zelfstandig taken uitvoert, lees dan ook over [Claude Managed Agents](/nieuws/managed-agents).
 
 ## Werkt Claude met Jira en Confluence?
 
@@ -176,7 +178,7 @@ Ten eerste het plan. Op de zakelijke plannen (Claude Team, Enterprise en de API)
 
 Ten tweede de invoer. Lees in je contract met de klant wat je met hun documenten mag doen. Wachtwoorden, API-sleutels en toegangsgegevens horen nooit in een prompt. Vervang namen van klanten en personen als de taak ze niet nodig heeft.
 
-Ten derde de AI Act. Sinds 2 februari 2025 moet je zorgen dat je mensen genoeg weten van de AI die ze gebruiken (artikel 4). Hoe je dat aanpakt, staat in [AI-geletterdheid](/compliance/ai-geletterdheid). De zware regels voor AI met een hoog risico uit bijlage III gelden vanaf 2 december 2027 en raken het schrijven van verslagen en voorstellen niet.
+Ten derde de AI Act. Sinds 2 februari 2025 moet je zorgen dat je mensen genoeg weten van de AI die ze gebruiken (artikel 4). Hoe je dat aanpakt, staat in [AI-geletterdheid](/compliance/ai-geletterdheid). De zware regels voor AI met een hoog risico uit bijlage III gelden vanaf 2 december 2027 en raken het schrijven van verslagen en voorstellen niet. Werving en selectie valt daar wel onder, zie [Claude voor recruitment](/claude-voor-recruitment).
 
 ## Waar begin je als IT-consultancy?
 

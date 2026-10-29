@@ -27,6 +27,8 @@ internalLinks:
   - /claude-implementatie
   - /claude-voor-accountants
   - /claude-voor-notarissen
+  - /use-cases/rapportage-genereren
+  - /compliance/shadow-ai-policy
 schemaTypes:
   - Service
   - FAQPage
@@ -132,7 +134,7 @@ Begin bij het gespreksverslag. Dat is de basis van elk dossier en het is werk da
 5. Laat Claude de motivering voor het rapport uitschrijven en lees die kritisch na.
 6. Zet de tekst in je adviessoftware en vul daar de echte klantgegevens en bedragen in.
 
-Bedragen, leennormen en premies neem je altijd over uit je adviessoftware of van de aanbieder. Claude rekent ze niet uit.
+Bedragen, leennormen en premies neem je altijd over uit je adviessoftware of van de aanbieder. Claude rekent ze niet uit. Hoe je voorkomt dat er verzonnen cijfers in een rapport komen, lees je in [rapportage genereren met Claude](/use-cases/rapportage-genereren).
 
 ## Wat zegt de AFM over AI voor financieel advies?
 
@@ -155,7 +157,7 @@ Bij een klacht ligt het gevoeliger. Kifid, de Stichting Klachteninstituut financ
 
 Een advieskantoor werkt met inkomens, schulden, polissen en soms medische informatie. Dat zijn persoonsgegevens onder de AVG. Drie dingen zijn belangrijk.
 
-Ten eerste het plan. Op Claude Free, Pro en Max kan Anthropic gesprekken gebruiken voor training als de gebruiker dat toestaat. Op de zakelijke producten (Claude Team, Claude Enterprise en de API) gebruikt Anthropic je invoer standaard niet voor training. De verwerkersovereenkomst is daar automatisch onderdeel van de Commercial Terms. Hoe die werkt, lees je in [de Anthropic-verwerkersovereenkomst uitgelegd](/compliance/anthropic-dpa).
+Ten eerste het plan. Op Claude Free, Pro en Max kan Anthropic gesprekken gebruiken voor training als de gebruiker dat toestaat. Op de zakelijke producten (Claude Team, Claude Enterprise en de API) gebruikt Anthropic je invoer standaard niet voor training. De verwerkersovereenkomst is daar automatisch onderdeel van de Commercial Terms. Hoe die werkt, lees je in [de Anthropic-verwerkersovereenkomst uitgelegd](/compliance/anthropic-dpa). Gebruiken adviseurs nu nog een eigen gratis account voor werk, lees dan hoe je [shadow AI aanpakt](/compliance/shadow-ai-policy).
 
 Ten tweede de invoer. Claude heeft voor een gespreksverslag of motivering geen naam, BSN of polisnummer nodig. Werk met codes en vul de echte gegevens in je eigen systeem in.
 

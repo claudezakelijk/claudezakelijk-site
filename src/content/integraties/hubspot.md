@@ -24,6 +24,8 @@ internalLinks:
   - /cases/customer-intelligence
   - /claude-voor-marketingbureaus
   - /claude-implementatie
+  - /integraties/google-workspace
+  - /nieuws/managed-agents
 schemaTypes:
   - Article
   - FAQPage
@@ -96,7 +98,7 @@ Claude koppelen aan HubSpot doe je met de officiële HubSpot connector. HubSpot 
 
 Ja. HubSpot bracht de connector uit op 29 juli 2025 en noemde zichzelf toen het eerste CRM met een connector voor Claude. In die eerste versie kon Claude alleen lezen. Volgens de HubSpot Knowledge Base, bijgewerkt op 19 oktober 2026, kan Claude nu ook records maken en wijzigen.
 
-HubSpot zit ook in Claude for Small Business. Anthropic noemde HubSpot op 13 mei 2026 als een van de zeven connectors bij de start van dat pakket, naast onder meer QuickBooks, Google Workspace en Microsoft 365. Werk je met Microsoft 365, dan lees je in [Claude koppelen aan Microsoft 365](/integraties/microsoft-365) hoe die connector werkt.
+HubSpot zit ook in Claude for Small Business. Anthropic noemde HubSpot op 13 mei 2026 als een van de zeven connectors bij de start van dat pakket, naast onder meer QuickBooks, [Google Workspace](/integraties/google-workspace) en Microsoft 365. Werk je met Microsoft 365, dan lees je in [Claude koppelen aan Microsoft 365](/integraties/microsoft-365) hoe die connector werkt.
 
 Oudere handleidingen laten je een eigen MCP server bouwen met een private app token. De officiële connector werkt zonder eigen server. Volgens de FAQ van HubSpot koppel je je HubSpot-account via OAuth.
 
@@ -172,7 +174,7 @@ Een koppeling verbreken doe je zo:
 
 ## Heb je nog een eigen MCP server nodig?
 
-Voor gesprekken in Claude werkt de officiële connector zonder eigen server. Bouw je zelf een agent of een vast proces zonder chat, dan heeft HubSpot daarnaast een remote MCP server op mcp.hubspot.com. Je maakt daarvoor in HubSpot een MCP connector aan onder **Development** > **MCP Connectors** en logt in via OAuth. Ook die server volgt de rechten van de gebruiker en kan lezen en schrijven.
+Voor gesprekken in Claude werkt de officiële connector zonder eigen server. Bouw je zelf een agent of een vast proces zonder chat, dan heeft HubSpot daarnaast een remote MCP server op mcp.hubspot.com. Je maakt daarvoor in HubSpot een MCP connector aan onder **Development** > **MCP Connectors** en logt in via OAuth. Ook die server volgt de rechten van de gebruiker en kan lezen en schrijven. Wil je zo'n agent in een beheerde omgeving van Anthropic laten draaien, lees dan over [Claude Managed Agents](/nieuws/managed-agents).
 
 ## Wat is onze ervaring met Claude en HubSpot?
 

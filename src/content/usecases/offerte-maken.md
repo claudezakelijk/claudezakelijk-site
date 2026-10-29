@@ -24,6 +24,8 @@ internalLinks:
   - /prijs/pro-vs-team-vs-enterprise
   - /compliance/anthropic-dpa
   - /claude-implementatie
+  - /claude-voor-architecten
+  - /claude-voor-financieel-adviseurs
 schemaTypes:
   - Article
   - FAQPage
@@ -152,7 +154,7 @@ Wil je offertes met collega's maken uit hetzelfde project, dan heb je Team nodig
 
 Een offerte bevat namen, adressen en prijsafspraken van je klant. Op de zakelijke plannen (Team, Enterprise en de API) gebruikt Anthropic je invoer en uitvoer standaard niet voor training. Op Free, Pro en Max hangt dat af van een instelling van de gebruiker.
 
-Claude heeft voor de tekst van een offerte de naam en het adres van je contactpersoon niet nodig. Schrijf "de klant" en vul de gegevens in je eigen sjabloon in. Wat de verwerkersovereenkomst van Anthropic regelt, lees je in [de Anthropic verwerkersovereenkomst](/compliance/anthropic-dpa).
+Claude heeft voor de tekst van een offerte de naam en het adres van je contactpersoon niet nodig. Schrijf "de klant" en vul de gegevens in je eigen sjabloon in. Een advieskantoor werkt op dezelfde manier met codes in plaats van namen, zie [Claude voor financieel adviseurs](/claude-voor-financieel-adviseurs). Wat de verwerkersovereenkomst van Anthropic regelt, lees je in [de Anthropic verwerkersovereenkomst](/compliance/anthropic-dpa).
 
 ## Wat leert eigen werk ons over offertes met Claude?
 
@@ -166,4 +168,4 @@ Voor offertes is de les dezelfde. Leg vast wat je bij het nalezen steeds verande
 
 Kies een type offerte dat vaak terugkomt en weinig variatie heeft. Maak er een project voor met je beste voorbeelden en werk er een maand mee. Houd zelf bij hoeveel tijd een offerte kost, voor en na. Dan weet je wat het jouw bedrijf oplevert, met je eigen aantallen.
 
-Begint een offerte bij een klantgesprek, maak dan eerst [notulen van dat gesprek met Claude](/use-cases/meeting-notulen) en gebruik die als invoer. Hoe een IT-bureau voorstellen schrijft, lees je in [Claude voor IT-consultancy](/claude-voor-it-consultancy). Voor offertes rond een calculatie van materiaal en uren staat een uitwerking in [Claude voor installatiebedrijven](/claude-voor-installatiebedrijven). Wil je hulp bij het inrichten van projecten, sjablonen of de HubSpot-koppeling, kijk dan op onze [implementatiepagina](/claude-implementatie).
+Begint een offerte bij een klantgesprek, maak dan eerst [notulen van dat gesprek met Claude](/use-cases/meeting-notulen) en gebruik die als invoer. Hoe een IT-bureau voorstellen schrijft, lees je in [Claude voor IT-consultancy](/claude-voor-it-consultancy). Voor offertes rond een calculatie van materiaal en uren staat een uitwerking in [Claude voor installatiebedrijven](/claude-voor-installatiebedrijven). Een architectenbureau werkt met hetzelfde patroon bij PvE's en bestekteksten, zie [Claude voor architecten](/claude-voor-architecten). Wil je hulp bij het inrichten van projecten, sjablonen of de HubSpot-koppeling, kijk dan op onze [implementatiepagina](/claude-implementatie).

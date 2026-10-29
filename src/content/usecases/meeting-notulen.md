@@ -25,6 +25,8 @@ internalLinks:
   - /compliance/dpia-stappenplan
   - /prijs/pro-vs-team-vs-enterprise
   - /claude-implementatie
+  - /integraties/hubspot
+  - /claude-voor-architecten
 schemaTypes:
   - Article
   - FAQPage
@@ -124,7 +126,7 @@ Tabel: transcript en AI-samenvatting in Teams, Zoom en Google Meet, stand 29 okt
 
 Bij Teams zie je tijdens de vergadering een melding dat er wordt getranscribeerd, voor alle deelnemers. Google Meet meldt het ook als Take notes for me aanstaat. Zoom heeft de naam AI Companion in juni 2026 laten vallen. De ingebouwde functies, zoals de meeting summary, zitten volgens Zoom nog steeds zonder meerprijs in geschikte betaalde plannen.
 
-Waarom dan nog Claude, als Teams of Zoom al samenvat? Omdat je bij Claude zelf de opbouw bepaalt. Je legt in een project vast welke kopjes je verslag heeft, hoe je actiepunten noteert en in welke toon de mail aan de klant gaat. De samenvatting van de vergadersoftware heeft een vaste vorm. Werk je in Microsoft 365, lees dan ook hoe je [Claude koppelt aan Microsoft 365](/integraties/microsoft-365). Voor Google lees je [Claude met Google Workspace](/integraties/google-workspace).
+Waarom dan nog Claude, als Teams of Zoom al samenvat? Omdat je bij Claude zelf de opbouw bepaalt. Je legt in een project vast welke kopjes je verslag heeft, hoe je actiepunten noteert en in welke toon de mail aan de klant gaat. De samenvatting van de vergadersoftware heeft een vaste vorm. Werk je in Microsoft 365, lees dan ook hoe je [Claude koppelt aan Microsoft 365](/integraties/microsoft-365). Voor Google lees je [Claude met Google Workspace](/integraties/google-workspace). Leg je afspraken met klanten vast in HubSpot, dan lees je in [Claude koppelen aan HubSpot](/integraties/hubspot) wat Claude daar kan bijwerken.
 
 ## Hoe maak je meeting notulen met Claude?
 
@@ -177,4 +179,4 @@ Wil je een skill zoals in de case, met videofragmenten, dan heb je Claude Code n
 
 Kies één vergadering die elke week terugkomt, zoals het teamoverleg of de wekelijkse klantcall. Zet de transcriptie aan, meld dat aan het begin, en maak een maand lang de notulen met de zes stappen hierboven. Daarna weet je hoeveel tijd het jou scheelt, en of een eigen skill met videofragmenten de moeite waard is.
 
-Wil je hulp bij die skill of bij het inrichten van Claude in je team, kijk dan op onze [implementatiepagina](/claude-implementatie). Werk je in een advieskantoor waar elk gesprek in het dossier moet, lees dan [Claude voor financieel adviseurs](/claude-voor-financieel-adviseurs). Rapporten die elke maand terugkomen, maak je op een vergelijkbare manier: zie [rapportage genereren met Claude](/use-cases/rapportage-genereren). Andere taken die je met Claude doet, vind je in het [overzicht van use cases](/use-cases).
+Wil je hulp bij die skill of bij het inrichten van Claude in je team, kijk dan op onze [implementatiepagina](/claude-implementatie). Werk je in een advieskantoor waar elk gesprek in het dossier moet, lees dan [Claude voor financieel adviseurs](/claude-voor-financieel-adviseurs). Voor het verslag van een bouwteamoverleg staat een uitwerking in [Claude voor architecten](/claude-voor-architecten). Rapporten die elke maand terugkomen, maak je op een vergelijkbare manier: zie [rapportage genereren met Claude](/use-cases/rapportage-genereren). Andere taken die je met Claude doet, vind je in het [overzicht van use cases](/use-cases).
