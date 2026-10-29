@@ -1,17 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" role="img" aria-label="Een bureau bouwt één workflow, zoals de Ads-audit, de GSC-analyse of het maandrapport, bij de klant waar de meeste uren weglekken en zet dezelfde workflow daarna bij elke volgende klant opnieuw in" font-family="Inter, system-ui, sans-serif" fill="#23261D"><defs>
-<filter id="mb-g" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 .16  0 0 0 0 .15  0 0 0 0 .14  .16 0 0 0 -.03"/></filter>
-<marker id="mb-a" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#23261D"/></marker>
+<filter id="mb-g" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 .14  0 0 0 0 .15  0 0 0 0 .11  .16 0 0 0 -.03"/></filter>
+<marker id="mb-a" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#3D5220"/></marker>
 <marker id="mb-ai" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#23261D"/></marker>
-</defs><rect width="1200" height="600" fill="#F4F1E8"/><rect x="64" y="48" width="64" height="4" rx="2" fill="#3D5220"/><text x="64" y="92" fill="#565A4C" font-size="22" font-weight="600" letter-spacing="3">ÉÉN WORKFLOW, ELKE KLANT</text>
+</defs><rect width="1200" height="600" fill="#F4F1E8"/><rect x="64" y="48" width="64" height="4" rx="2" fill="#B4C13E"/><text x="64" y="92" fill="#565A4C" font-size="22" font-weight="600" letter-spacing="3">ÉÉN WORKFLOW, ELKE KLANT</text>
 <g>
 <rect x="84" y="206" width="318" height="276" rx="16" fill="#E9EBDC" stroke="#23261D" stroke-width="4" transform="rotate(-4 243 344)"/>
 <rect x="72" y="200" width="318" height="276" rx="16" fill="#FFFFFF" stroke="#23261D" stroke-width="4"/>
 <line x1="104" y1="280" x2="358" y2="280" stroke="#E1DED2" stroke-width="4" stroke-linecap="round"/>
-<circle cx="114" cy="330" r="7" fill="#3D5220"/><circle cx="114" cy="380" r="7" fill="#3D5220"/><circle cx="114" cy="430" r="7" fill="#3D5220"/>
+<circle cx="114" cy="330" r="8" fill="#B4C13E"/><circle cx="114" cy="380" r="8" fill="#B4C13E"/><circle cx="114" cy="430" r="8" fill="#B4C13E"/>
 <path d="M422 308 C 540 308, 540 199, 658 199" fill="none" stroke="#23261D" stroke-width="7" stroke-linecap="round" marker-end="url(#mb-ai)"/>
-<path d="M422 354 C 540 354, 540 339, 658 339" fill="none" stroke="#23261D" stroke-width="7" stroke-linecap="round" marker-end="url(#mb-a)"/>
-<path d="M422 400 C 540 400, 540 479, 658 479" fill="none" stroke="#23261D" stroke-width="7" stroke-linecap="round" marker-end="url(#mb-a)"/>
-<rect x="672" y="144" width="476" height="110" rx="16" fill="#FFFFFF" stroke="#3D5220" stroke-width="4"/>
+<path d="M422 354 C 540 354, 540 339, 658 339" fill="none" stroke="#3D5220" stroke-width="7" stroke-linecap="round" marker-end="url(#mb-a)"/>
+<path d="M422 400 C 540 400, 540 479, 658 479" fill="none" stroke="#3D5220" stroke-width="7" stroke-linecap="round" marker-end="url(#mb-a)"/>
+<rect x="672" y="144" width="476" height="110" rx="16" fill="#FFFFFF" stroke="#A8433B" stroke-width="4"/>
 <rect x="672" y="284" width="476" height="110" rx="16" fill="#FFFFFF" stroke="#23261D" stroke-width="4"/>
 <rect x="672" y="424" width="476" height="110" rx="16" fill="#FFFFFF" stroke="#23261D" stroke-width="4"/>
 </g>
@@ -19,8 +19,8 @@
 <text x="138" y="339" font-size="26" fill="#565A4C">Ads-audit</text>
 <text x="138" y="389" font-size="26" fill="#565A4C">GSC-analyse</text>
 <text x="138" y="439" font-size="26" fill="#565A4C">maandrapport</text>
-<text x="231" y="544" text-anchor="middle" font-size="34" font-weight="600" fill="#23261D">opnieuw inzetbaar</text>
-<text x="700" y="192" font-size="34" font-weight="600" fill="#3D5220">begin hier</text>
+<text x="231" y="544" text-anchor="middle" font-size="34" font-weight="600" fill="#3D5220">opnieuw inzetbaar</text>
+<text x="700" y="192" font-size="34" font-weight="600" fill="#A8433B">begin hier</text>
 <text x="700" y="232" font-size="26" fill="#565A4C">waar de meeste uren weglekken</text>
 <text x="700" y="332" font-size="34" font-weight="600">volgende klant</text>
 <text x="700" y="372" font-size="26" fill="#565A4C">dezelfde workflow</text>

@@ -702,3 +702,9 @@ nav + .mt-6 > .v2-hub-kop, nav + .v2-hub-kop { margin-top: 28px; }
 .v2-kopbeeld { margin: 0 0 24px; }
 .v2-kopbeeld > div { overflow: hidden; border-radius: 24px; border: 1px solid var(--color-v2-lijn); background: #fff; }
 .v2-kopbeeld svg { display: block; width: 100%; height: auto; }
+
+/* Figuur in de tekst van een artikel (src/lib/remark-figuren.mjs) */
+.v2-prose .v2-figuur { margin: 2em 0; }
+.v2-figuur > div { overflow: hidden; border-radius: 24px; border: 1px solid var(--color-v2-lijn); background: #fff; }
+.v2-figuur svg { display: block; width: 100%; height: auto; }
+.v2-prose .v2-figuur figcaption { margin-top: 10px; font-size: 14px; line-height: 1.5; color: var(--color-v2-inkt-2); }

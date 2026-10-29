@@ -130,6 +130,8 @@ Tabel: datazones voor Claude-gebruik, stand 22 oktober 2026.
 
 Twijfel je tussen twee zones, kies dan de strengste. Een voorbeeld: de bedrijfsnaam van een klant uit het Handelsregister van de KvK is groen, de naam van je contactpersoon daar is oranje en zijn BSN is rood.
 
+<!-- figuur:1 -->
+
 ## Het ai gebruiksbeleid claude om te kopiëren
 
 Kopieer de tekst hieronder naar Microsoft 365 of Google Workspace. Vervang alles tussen vierkante haken. Een eigen case van een AI-beleid dat we bij een klant hebben ingevoerd, hebben we nog niet. Het model met drie datazones is ons eigen werkmodel.

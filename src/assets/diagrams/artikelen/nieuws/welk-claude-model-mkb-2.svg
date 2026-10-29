@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" role="img" aria-label="Prompts en antwoorden van Fable 5.1 worden minimaal 30 dagen bewaard en daarna automatisch verwijderd; voor Opus, Sonnet en Haiku geldt die bewaarplicht niet" data-bijschrift="Fable 5.1 is een Covered Model: prompts en antwoorden blijven minimaal 30 dagen staan. Voor Opus, Sonnet en Haiku geldt dat niet." font-family="Inter, system-ui, sans-serif" fill="#23261D"><defs>
+<filter id="wcm2-g" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 .14  0 0 0 0 .15  0 0 0 0 .11  .16 0 0 0 -.03"/></filter>
+<marker id="wcm2-r" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#A8433B"/></marker>
+<marker id="wcm2-o" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#3D5220"/></marker>
+</defs><rect width="1200" height="500" fill="#F4F1E8"/><rect x="64" y="48" width="64" height="4" rx="2" fill="#B4C13E"/><text x="64" y="92" fill="#565A4C" font-size="22" font-weight="600" letter-spacing="3">BEWAARPLICHT PER MODEL</text>
+<text x="64" y="196" font-size="34" font-weight="600">Fable 5.1</text><text x="64" y="232" font-size="26" fill="#565A4C">Covered Model</text>
+<path d="M260 184 L 566 184" fill="none" stroke="#A8433B" stroke-width="7" stroke-linecap="round" marker-end="url(#wcm2-r)"/>
+<g fill="#F6E7E4" stroke="#A8433B" stroke-width="4" stroke-linejoin="round"><path d="M604 154 v64 a44 12 0 0 0 88 0 v-64"/><ellipse cx="648" cy="154" rx="44" ry="12"/></g>
+<g stroke="#A8433B" stroke-width="6" stroke-linecap="round"><line x1="626" y1="186" x2="670" y2="186"/><line x1="626" y1="206" x2="670" y2="206"/></g>
+<text x="732" y="196" font-size="34" font-weight="600" fill="#A8433B">minimaal 30 dagen</text><text x="732" y="232" font-size="26" fill="#565A4C">daarna automatisch verwijderd</text>
+<line x1="64" y1="290" x2="1136" y2="290" stroke="#E1DED2" stroke-width="3"/>
+<text x="64" y="376" font-size="34" font-weight="600">Opus · Sonnet · Haiku</text>
+<path d="M440 364 L 566 364" fill="none" stroke="#3D5220" stroke-width="7" stroke-linecap="round" marker-end="url(#wcm2-o)"/>
+<g fill="none" stroke="#3D5220" stroke-width="4" stroke-linejoin="round" stroke-dasharray="10 10"><path d="M604 334 v64 a44 12 0 0 0 88 0 v-64"/><ellipse cx="648" cy="334" rx="44" ry="12"/></g>
+<text x="732" y="376" font-size="34" font-weight="600" fill="#3D5220">geen bewaarplicht</text>
+<text x="1136" y="466" text-anchor="end" font-size="26" fill="#64685A">stand 22 okt 2026</text>
+<rect width="1200" height="500" filter="url(#wcm2-g)"/></svg>

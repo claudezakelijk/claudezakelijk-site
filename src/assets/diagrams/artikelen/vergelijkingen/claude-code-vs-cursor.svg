@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" role="img" aria-label="Bij Cursor zit jij bij elke stap zelf aan het werk met AI-hulp; bij Claude Code geef jij de opdracht, voert de agent de tussenstappen zelfstandig uit en beoordeel jij het resultaat" font-family="Inter, system-ui, sans-serif" fill="#23261D"><defs>
-<filter id="ccg" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 .16  0 0 0 0 .15  0 0 0 0 .14  .16 0 0 0 -.03"/></filter>
+<filter id="ccg" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 .14  0 0 0 0 .15  0 0 0 0 .11  .16 0 0 0 -.03"/></filter>
 <marker id="cca" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#23261D"/></marker>
-</defs><rect width="1200" height="600" fill="#F4F1E8"/><rect x="64" y="48" width="64" height="4" rx="2" fill="#3D5220"/><text x="64" y="92" fill="#565A4C" font-size="22" font-weight="600" letter-spacing="3">WIE DOET DE STAPPEN?</text>
+</defs><rect width="1200" height="600" fill="#F4F1E8"/><rect x="64" y="48" width="64" height="4" rx="2" fill="#B4C13E"/><text x="64" y="92" fill="#565A4C" font-size="22" font-weight="600" letter-spacing="3">WIE DOET DE STAPPEN?</text>
 <g fill="none" stroke="#23261D" stroke-width="4" stroke-linecap="round" marker-end="url(#cca)">
 <path d="M480 222 H549"/>
 <path d="M635 222 H704"/>
@@ -14,15 +14,15 @@
 <rect x="873" y="190" width="64" height="64" rx="12" fill="#23261D"/><circle cx="905" cy="213" r="9" fill="#F4F1E8"/><path d="M890 242 a15 15 0 0 1 30 0 z" fill="#F4F1E8"/>
 <rect x="1028" y="190" width="64" height="64" rx="12" fill="#23261D"/><circle cx="1060" cy="213" r="9" fill="#F4F1E8"/><path d="M1045 242 a15 15 0 0 1 30 0 z" fill="#F4F1E8"/>
 <g fill="none" stroke="#23261D" stroke-width="4" stroke-linecap="round" marker-end="url(#cca)"><path d="M480 434 H508"/><path d="M992 434 H1014"/></g>
-<rect x="516" y="390" width="468" height="88" rx="44" fill="#3D5220" fill-opacity=".14" stroke="#3D5220" stroke-width="3"/>
+<rect x="516" y="390" width="468" height="88" rx="44" fill="#B4C13E" fill-opacity=".35" stroke="#3D5220" stroke-width="3"/>
 <rect x="408" y="402" width="64" height="64" rx="12" fill="#23261D"/><circle cx="440" cy="425" r="9" fill="#F4F1E8"/><path d="M425 454 a15 15 0 0 1 30 0 z" fill="#F4F1E8"/>
 <rect x="1028" y="402" width="64" height="64" rx="12" fill="#23261D"/><circle cx="1060" cy="425" r="9" fill="#F4F1E8"/><path d="M1045 454 a15 15 0 0 1 30 0 z" fill="#F4F1E8"/>
 <g fill="none" stroke="#23261D" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" transform="translate(600,434)"><path d="M-16 -22 h22 l10 10 v34 h-32 z"/><path d="M-9 -4 h18 M-9 6 h18"/></g>
 <g fill="none" stroke="#23261D" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" transform="translate(700,434)"><path d="M-20 20 l6 -16 l24 -24 l10 10 l-24 24 z"/><path d="M4 -14 l10 10"/></g>
 <g fill="none" stroke="#23261D" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" transform="translate(800,434)"><rect x="-22" y="-18" width="44" height="36" rx="6"/><path d="M-12 -6 l8 6 l-8 6 M2 8 h10"/></g>
 <g fill="none" stroke="#23261D" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" transform="translate(900,434)"><rect x="-18" y="-18" width="36" height="36" rx="6"/><path d="M-9 0 l8 8 l16 -17"/></g>
-<text x="64" y="238" font-family="'Instrument Sans Variable', Inter, system-ui, sans-serif" font-size="48" font-weight="700">Cursor</text>
-<text x="64" y="450" font-family="'Instrument Sans Variable', Inter, system-ui, sans-serif" font-size="48" font-weight="700" fill="#3D5220">Claude Code</text>
+<text font-style="italic" x="64" y="238" font-family="'Newsreader Variable', Newsreader, Georgia, serif" font-size="48" font-weight="500">Cursor</text>
+<text font-style="italic" x="64" y="450" font-family="'Newsreader Variable', Newsreader, Georgia, serif" font-size="48" font-weight="500">Claude Code</text>
 <text x="750" y="310" text-anchor="middle" font-size="32" fill="#565A4C">jij codeert, AI helpt</text>
 <text x="440" y="526" text-anchor="middle" font-size="32" font-weight="600">opdracht</text>
 <text x="750" y="526" text-anchor="middle" font-size="32" font-weight="600" fill="#3D5220">agent werkt zelfstandig</text>

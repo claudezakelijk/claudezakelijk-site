@@ -77,6 +77,8 @@ hasTemplate: false
 
 AI geletterdheid verplicht? Ja. Artikel 4 van de AI Act geldt sinds 2 februari 2025, ook voor een MKB-bedrijf dat alleen Claude gebruikt. Er gaan nog teksten rond die 2 augustus 2026 als startdatum noemen. Dat klopt niet: op die datum begonnen het toezicht en de handhaving, de plicht zelf bestond al. In de zomer van 2026 is de tekst van artikel 4 wel versoepeld. Dit artikel legt uit wat er nu van je gevraagd wordt, hoe je een team op niveau brengt en hoe je dat vastlegt. Voor de rest van de AI Act lees je [Claude en de EU AI Act voor het MKB](/compliance/ai-act-mkb).
 
+<!-- figuur:1 -->
+
 ## Wat vraagt artikel 4 AI Act sinds de omnibus?
 
 De AI Omnibus is op 27 juli 2026 in werking getreden en heeft artikel 4 aangepast. De huidige tekst zegt het volgende. Aanbieders en gebruikers van AI-systemen nemen maatregelen die de AI-geletterdheid ondersteunen van hun personeel en van anderen die namens hen met AI werken. Je houdt daarbij rekening met hun technische kennis, ervaring, opleiding en training, met de context van het gebruik en met de mensen op wie de AI effect heeft.

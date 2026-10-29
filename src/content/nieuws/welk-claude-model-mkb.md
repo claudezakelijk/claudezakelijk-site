@@ -105,6 +105,8 @@ Begin bij twijfel met Opus 5.5 en meet. Schaal per taak af naar Sonnet of Haiku 
 
 Een rekenvoorbeeld om de verhoudingen te voelen. Stel, een taak kost 2.000 input-tokens en 500 output-tokens. Op Sonnet 5.5 is dat (2.000 x 2 + 500 x 10) / 1.000.000 = 0,009 dollar, ofwel 0,8 eurocent. Duizend van die taken per maand kosten 9 dollar (ongeveer 8 euro). Op Opus 5.5 is dat 18 dollar, op Haiku 5.5 0,45 dollar. Het model bepaalt je kosten dus meer dan het aantal taken.
 
+<!-- figuur:1 -->
+
 Vergelijk je Claude nog breder met andere aanbieders, kijk dan bij [welke AI voor het MKB](/vergelijken/welke-ai-voor-mkb).
 
 ## Welk model zit in welk abonnement?
@@ -127,6 +129,8 @@ Opvallend aan deze lijst: Opus 5.5 zit al in Pro, het instapabonnement van 17 do
 ## Fable 5.1 heeft een eigen bewaarplicht
 
 Eén compliance-detail hoort bij deze modelkeuze. Anthropic heeft Fable 5 en Fable 5.1 aangewezen als Covered Models: modellen met capaciteiten die extra waarborgen vragen. Prompts en antwoorden van die modellen worden daarom minimaal 30 dagen bewaard en daarna automatisch verwijderd, op elk platform. Zero data retention is voor deze modellen standaard niet beschikbaar. Voor Opus, Sonnet en Haiku geldt die verplichting niet. Werk je met strenge interne datarichtlijnen, weeg dit dan mee; meer context over bewaartermijnen en de verwerkersovereenkomst vind je op onze [compliance-pagina's](/compliance).
+
+<!-- figuur:2 -->
 
 ## Wat we er in de praktijk van zien
 

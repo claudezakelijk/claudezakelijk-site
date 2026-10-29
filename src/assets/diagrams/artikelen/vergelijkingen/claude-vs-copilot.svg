@@ -1,22 +1,22 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" role="img" aria-label="Claude en Microsoft Copilot als twee overlappende cirkels: Claude sterk in rapporten, analyses en automatiseren, Copilot in Microsoft 365, centrale uitrol en korte taken; samen inzetbaar, per rol" font-family="Inter, system-ui, sans-serif" fill="#23261D">
-<defs><filter id="vsc-g" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 .16  0 0 0 0 .15  0 0 0 0 .14  .16 0 0 0 -.03"/></filter>
+<defs><filter id="vsc-g" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 .14  0 0 0 0 .15  0 0 0 0 .11  .16 0 0 0 -.03"/></filter>
 <clipPath id="vsc-ec"><ellipse cx="430" cy="350" rx="290" ry="220"/></clipPath></defs>
 <rect width="1200" height="600" fill="#F4F1E8"/>
-<rect x="64" y="48" width="64" height="4" rx="2" fill="#3D5220"/><text x="64" y="92" fill="#565A4C" font-size="22" font-weight="600" letter-spacing="3">WAAR ZE VERSCHILLEN</text>
-<ellipse cx="430" cy="350" rx="290" ry="220" fill="#3D5220" fill-opacity=".14" stroke="#3D5220" stroke-width="3"/>
-<ellipse cx="770" cy="350" rx="290" ry="220" fill="#6E7263" fill-opacity=".12" stroke="#6E7263" stroke-width="3"/>
-<ellipse cx="770" cy="350" rx="290" ry="220" fill="#23261D" fill-opacity=".16" clip-path="url(#vsc-ec)"/>
-<text x="330" y="222" text-anchor="middle" font-family="'Instrument Sans Variable', Inter, system-ui, sans-serif" font-size="48" font-weight="700" fill="#3D5220">Claude</text>
-<text x="858" y="222" text-anchor="middle" font-family="'Instrument Sans Variable', Inter, system-ui, sans-serif" font-size="48" font-weight="700">Copilot</text>
+<rect x="64" y="48" width="64" height="4" rx="2" fill="#B4C13E"/><text x="64" y="92" fill="#565A4C" font-size="22" font-weight="600" letter-spacing="3">WAAR ZE VERSCHILLEN</text>
+<ellipse cx="430" cy="350" rx="290" ry="220" fill="#E9EBDC" stroke="#565A4C" stroke-width="3"/>
+<ellipse cx="770" cy="350" rx="290" ry="220" fill="#FFFFFF" fill-opacity=".6" stroke="#565A4C" stroke-width="3"/>
+<ellipse cx="770" cy="350" rx="290" ry="220" fill="#B4C13E" fill-opacity=".45" clip-path="url(#vsc-ec)"/>
+<text font-style="italic" x="330" y="222" text-anchor="middle" font-family="'Newsreader Variable', Newsreader, Georgia, serif" font-size="48" font-weight="500">Claude</text>
+<text font-style="italic" x="858" y="222" text-anchor="middle" font-family="'Newsreader Variable', Newsreader, Georgia, serif" font-size="48" font-weight="500">Copilot</text>
 <g fill="none" stroke="#23261D" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M208 242 h20 l10 10 v6"/><path d="M198 250 h22 l10 10 v32 h-32 z"/><path d="M205 270 h18 M205 280 h18"/></g><text x="252" y="279" font-size="32">rapporten</text>
 <g fill="none" stroke="#23261D" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M194 358 h52"/><path d="M202 350 v-22 M218 350 v-36 M234 350 v-12"/></g><text x="252" y="349" font-size="32">analyses</text>
 <g fill="none" stroke="#23261D" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><circle cx="218" cy="408" r="12"/><path d="M234 408 h6 M202 408 h-6 M218 424 v6 M218 392 v-6 M229.3 419.3 l4.3 4.3 M206.7 419.3 l-4.3 4.3 M206.7 396.7 l-4.3 -4.3 M229.3 396.7 l4.3 -4.3"/></g><text x="252" y="419" font-size="32">automatiseren</text>
 <g fill="none" stroke="#23261D" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><rect x="740" y="248" width="44" height="40" rx="6"/><path d="M740 261 h44 M750 272 h24 M750 280 h16"/></g><text x="796" y="279" font-size="32">Microsoft 365</text>
 <g fill="none" stroke="#23261D" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><circle cx="762" cy="336" r="7"/><circle cx="762" cy="314" r="5"/><circle cx="744" cy="354" r="5"/><circle cx="780" cy="354" r="5"/><path d="M762 329 v-10 M757 341 L747.5 350.5 M767 341 L776.5 350.5"/></g><text x="796" y="349" font-size="32">centrale uitrol</text>
 <g fill="none" stroke="#23261D" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><rect x="742" y="390" width="36" height="36" rx="6"/><path d="M751 408 l8 8 l16 -17"/></g><text x="796" y="419" font-size="32">korte taken</text>
-<g fill="none" stroke="#23261D" stroke-width="6"><circle cx="588" cy="266" r="14"/><circle cx="612" cy="266" r="14"/></g>
-<text x="600" y="338" text-anchor="middle" font-size="32" font-weight="600" fill="#23261D">samen</text>
-<text x="600" y="376" text-anchor="middle" font-size="32" fill="#23261D">inzetbaar</text>
+<g fill="none" stroke="#3D5220" stroke-width="6"><circle cx="588" cy="266" r="14"/><circle cx="612" cy="266" r="14"/></g>
+<text x="600" y="338" text-anchor="middle" font-size="32" font-weight="600" fill="#3D5220">samen</text>
+<text x="600" y="376" text-anchor="middle" font-size="32" fill="#3D5220">inzetbaar</text>
 <text x="600" y="430" text-anchor="middle" font-size="26" fill="#565A4C">per rol</text>
-<text x="1136" y="566" text-anchor="end" font-size="26" fill="#6E7263">stand 2 okt 2026</text>
+<text x="1136" y="566" text-anchor="end" font-size="26" fill="#64685A">stand 2 okt 2026</text>
 <rect width="1200" height="600" filter="url(#vsc-g)"/></svg>

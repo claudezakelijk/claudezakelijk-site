@@ -1,29 +1,29 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" role="img" aria-label="Namen, partijen en dossiernummers blijven op kantoor; het dossier gaat met placeholders naar Claude en de analyse komt terug, waarna de namen er achteraf weer in gaan" font-family="Inter, system-ui, sans-serif" fill="#23261D"><defs>
-<filter id="adv-g" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 .16  0 0 0 0 .15  0 0 0 0 .14  .16 0 0 0 -.03"/></filter>
-<marker id="adv-a" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#23261D"/></marker>
+<filter id="adv-g" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 .14  0 0 0 0 .15  0 0 0 0 .11  .16 0 0 0 -.03"/></filter>
+<marker id="adv-a" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#3D5220"/></marker>
 <marker id="adv-ai" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#23261D"/></marker>
-<pattern id="adv-h" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="14" stroke="#3D5220" stroke-width="3" opacity=".45"/></pattern>
-</defs><rect width="1200" height="600" fill="#F4F1E8"/><rect x="64" y="48" width="64" height="4" rx="2" fill="#3D5220"/><text x="64" y="92" fill="#565A4C" font-size="22" font-weight="600" letter-spacing="3">WAT VERLAAT HET KANTOOR RICHTING CLAUDE?</text>
-<line x1="580" y1="128" x2="580" y2="544" stroke="#6E7263" stroke-width="3" stroke-dasharray="10 10"/>
+<pattern id="adv-h" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="14" stroke="#A8433B" stroke-width="3" opacity=".45"/></pattern>
+</defs><rect width="1200" height="600" fill="#F4F1E8"/><rect x="64" y="48" width="64" height="4" rx="2" fill="#B4C13E"/><text x="64" y="92" fill="#565A4C" font-size="22" font-weight="600" letter-spacing="3">WAT VERLAAT HET KANTOOR RICHTING CLAUDE?</text>
+<line x1="580" y1="128" x2="580" y2="544" stroke="#64685A" stroke-width="3" stroke-dasharray="10 10"/>
 <g>
 <rect x="96" y="158" width="150" height="190" rx="12" fill="#E9EBDC" stroke="#23261D" stroke-width="4" transform="rotate(-7 171 253)"/>
 <rect x="84" y="170" width="150" height="190" rx="12" fill="#FFFFFF" stroke="#23261D" stroke-width="4"/>
-<g stroke-width="9" stroke-linecap="round"><line x1="110" y1="205" x2="196" y2="205" stroke="#3D5220"/><line x1="110" y1="235" x2="208" y2="235" stroke="#E1DED2"/><line x1="110" y1="265" x2="186" y2="265" stroke="#3D5220"/><line x1="110" y1="295" x2="200" y2="295" stroke="#E1DED2"/><line x1="110" y1="325" x2="178" y2="325" stroke="#3D5220"/></g>
+<g stroke-width="9" stroke-linecap="round"><line x1="110" y1="205" x2="196" y2="205" stroke="#B4C13E"/><line x1="110" y1="235" x2="208" y2="235" stroke="#E1DED2"/><line x1="110" y1="265" x2="186" y2="265" stroke="#B4C13E"/><line x1="110" y1="295" x2="200" y2="295" stroke="#E1DED2"/><line x1="110" y1="325" x2="178" y2="325" stroke="#A8433B"/></g>
 <rect x="290" y="177" width="162" height="164" rx="14" fill="#E9EBDC"/>
-<rect x="306" y="197" width="130" height="16" rx="8" fill="#3D5220"/><rect x="306" y="257" width="130" height="16" rx="8" fill="#3D5220"/><rect x="306" y="317" width="130" height="16" rx="8" fill="#3D5220"/>
+<rect x="306" y="197" width="130" height="16" rx="8" fill="#A8433B"/><rect x="306" y="257" width="130" height="16" rx="8" fill="#A8433B"/><rect x="306" y="317" width="130" height="16" rx="8" fill="#A8433B"/>
 <path d="M196 164 C 300 116, 490 112, 640 164" fill="none" stroke="#23261D" stroke-width="6" stroke-linecap="round" marker-end="url(#adv-ai)"/>
 <rect x="672" y="148" width="150" height="190" rx="12" fill="#E9EBDC" stroke="#23261D" stroke-width="4" transform="rotate(-7 747 243)"/>
 <rect x="660" y="160" width="150" height="190" rx="12" fill="#FFFFFF" stroke="#23261D" stroke-width="4"/>
 <g stroke-width="9" stroke-linecap="round"><line x1="686" y1="196" x2="784" y2="196" stroke="#E1DED2"/><line x1="686" y1="256" x2="760" y2="256" stroke="#E1DED2"/><line x1="686" y1="316" x2="776" y2="316" stroke="#E1DED2"/></g>
-<rect x="686" y="218" width="98" height="16" rx="8" fill="#E9EBDC" stroke="#6E7263" stroke-width="2"/><rect x="686" y="278" width="80" height="16" rx="8" fill="#E9EBDC" stroke="#6E7263" stroke-width="2"/>
-<path d="M818 292 C 995 332, 1005 452, 845 494 C 710 522, 500 506, 350 470" fill="none" stroke="#23261D" stroke-width="7" stroke-linecap="round" marker-end="url(#adv-a)"/>
+<rect x="686" y="218" width="98" height="16" rx="8" fill="#E9EBDC" stroke="#64685A" stroke-width="2"/><rect x="686" y="278" width="80" height="16" rx="8" fill="#E9EBDC" stroke="#64685A" stroke-width="2"/>
+<path d="M818 292 C 995 332, 1005 452, 845 494 C 710 522, 500 506, 350 470" fill="none" stroke="#3D5220" stroke-width="7" stroke-linecap="round" marker-end="url(#adv-a)"/>
 </g>
 <text x="159" y="408" text-anchor="middle" font-size="36" font-weight="600">dossier</text>
-<text x="371" y="385" text-anchor="middle" font-size="32" font-weight="600" fill="#3D5220">namen · partijen</text>
-<text x="371" y="425" text-anchor="middle" font-size="32" font-weight="600" fill="#3D5220">dossiernummers</text>
+<text x="371" y="385" text-anchor="middle" font-size="32" font-weight="600" fill="#A8433B">namen · partijen</text>
+<text x="371" y="425" text-anchor="middle" font-size="32" font-weight="600" fill="#A8433B">dossiernummers</text>
 <text x="735" y="400" text-anchor="middle" font-size="36" font-weight="600">placeholders</text>
-<text x="990" y="296" text-anchor="middle" font-size="36" font-weight="600" fill="#23261D">analyse</text>
+<text x="990" y="296" text-anchor="middle" font-size="36" font-weight="600" fill="#3D5220">analyse</text>
 <text x="300" y="552" font-size="32" font-weight="600">namen er achteraf weer in</text>
-<text x="1136" y="566" text-anchor="end" font-size="26" fill="#6E7263">stand 2 okt 2026</text>
+<text x="1136" y="566" text-anchor="end" font-size="26" fill="#64685A">stand 2 okt 2026</text>
 <rect width="1200" height="600" filter="url(#adv-g)"/></svg></content>
 </invoke>
