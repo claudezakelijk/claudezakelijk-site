@@ -1,7 +1,7 @@
 ---
 title: "Claude gebruikslimieten en usage credits uitgelegd"
-titleTag: "Claude gebruikslimieten en usage credits"
-metaDescription: "Hoe de Claude gebruikslimieten werken in 2026: het 5-uursvenster, de weeklimiet, usage credits bijkopen en wat dit betekent voor je zakelijke plankeuze."
+titleTag: "Claude limieten per abonnement en wat je doet bij de limiet"
+metaDescription: "Er is geen vast aantal berichten. Zo werken het 5-uursvenster en de weeklimiet bij Pro, Max en Team, en zo werk je met usage credits door na je limiet."
 h1: "Claude gebruikslimieten: zo werken ze, en dit doe je eraan"
 targetKeywords:
   - claude gebruikslimiet

@@ -167,4 +167,4 @@ Ten derde de AI Act. Sinds 2 februari 2025 moet je zorgen dat je mensen genoeg w
 
 Kies één stroom die elke week terugkomt, zoals werkbonnen of de mails bij planningswijzigingen. Zet daar een Claude-project voor op, met jullie vaste opbouw en een paar goede voorbeelden. Laat twee of drie mensen er een maand mee werken, en meet zelf hoeveel tijd het scheelt. Dan weet je wat het jouw bedrijf oplevert, met je eigen aantallen.
 
-Wil je hulp bij die eerste stap, of bij een koppeling met jullie software, kijk dan op onze [implementatiepagina](/claude-implementatie). Hoe Claude in een MKB-bedrijf breder werkt, lees je in de gids [Claude voor bedrijven en mkb](/gids/claude-voor-mkb). Andere branches vind je in het [overzicht per branche](/verticalen).
+Wil je hulp bij die eerste stap, of bij een koppeling met jullie software, kijk dan op onze [implementatiepagina](/claude-implementatie). Hoe Claude in een MKB-bedrijf breder werkt, lees je in de gids [Zakelijk Claude-account en abonnement voor het mkb](/gids/claude-voor-mkb). Andere branches vind je in het [overzicht per branche](/verticalen).

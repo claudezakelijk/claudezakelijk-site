@@ -102,7 +102,10 @@ function sitemapPaden() {
   const paden = new Set();
   for (const f of bestanden) {
     for (const m of readFileSync(`dist/${f}`, 'utf-8').matchAll(/<loc>\s*([^<\s]+)\s*<\/loc>/g)) {
-      paden.add(new URL(m[1]).pathname.replace(/(.)\/$/, '$1'));
+      const url = new URL(m[1]);
+      // sitemap-claudezakelijk-nl.xml noemt het oude domein voor Search Console: die locs slaan we over.
+      if (url.hostname !== 'implementeren.ai') continue;
+      paden.add(url.pathname.replace(/(.)\/$/, '$1'));
     }
   }
   return paden;
