@@ -15,7 +15,7 @@ export const paginaLabels: Record<string, string> = {
   '/compliance': 'Is Claude AVG-proof? Niet met Free of Pro',
   '/contact': 'Contact',
   '/gids': 'Claude gidsen voor bedrijven',
-  '/gids/claude-voor-mkb': 'Claude voor bedrijven en mkb',
+  '/gids/claude-voor-mkb': 'Zakelijk Claude-account en abonnement voor het mkb',
   '/gids/claude-code-voor-bedrijven': 'Claude Code voor bedrijven: wat kan het?',
   '/gids/overstappen-van-chatgpt-naar-claude': 'Overstappen van ChatGPT naar Claude: zakelijk stappenplan',
   '/hoe-claude-werkt': 'Hoe Claude werkt',

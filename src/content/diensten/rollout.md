@@ -30,7 +30,7 @@ Na de Readiness Scan weet je wat er kan. De rollout zorgt dat het ook echt gebeu
 
 Voor Nederlandse MKB-bedrijven van tien tot tweehonderd mensen die Claude willen inrichten voor het hele bedrijf. Je hoeft niks van AI te weten, want alles wordt uitgelegd in het Nederlands, zonder jargon. We werken met je echte documenten en processen.
 
-De rollout volgt altijd op de [Claude Readiness Scan](/claude-readiness-scan). Uit die scan komen de use cases, de volgorde en een vaste offerte. Je weet dus wat de rollout kost voordat je beslist. Hoe scan en rollout samen een traject vormen, lees je bij [Claude-implementatie](/claude-implementatie). Wil je eerst zelf lezen wat Claude voor een bedrijf kan? Begin dan bij de gids [Claude voor bedrijven en mkb](/gids/claude-voor-mkb).
+De rollout volgt altijd op de [Claude Readiness Scan](/claude-readiness-scan). Uit die scan komen de use cases, de volgorde en een vaste offerte. Je weet dus wat de rollout kost voordat je beslist. Hoe scan en rollout samen een traject vormen, lees je bij [Claude-implementatie](/claude-implementatie). Wil je eerst zelf lezen wat Claude voor een bedrijf kan? Begin dan bij de gids [Zakelijk Claude-account en abonnement voor het mkb](/gids/claude-voor-mkb).
 
 ## Hoe de vier weken lopen
 

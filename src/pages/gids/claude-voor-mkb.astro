@@ -9,10 +9,10 @@ import CtaStrook from '../../components/CtaStrook.astro';
 import ArtikelInhoud from '../../components/ArtikelInhoud.astro';
 import { faqNode } from '../../lib/schema';
 
-const titel = 'Claude voor bedrijven en mkb';
-const titleTag = 'Claude voor bedrijven en mkb: de gids | Implementeren.ai';
+const titel = 'Zakelijk Claude-account en abonnement voor het mkb';
+const titleTag = 'Zakelijk Claude-account en abonnement: Team of Enterprise';
 const beschrijving =
-  'Claude voor bedrijven en mkb: welk abonnement past, wat het kost, wat je team ermee doet, hoe het zit met de AVG en hoe je de invoering aanpakt.';
+  'Een zakelijk Claude-account voor je mkb: kies tussen Team en Enterprise, haal je team van privéaccounts af en leg vast wat er met bedrijfsdata mag.';
 const pad = '/gids/claude-voor-mkb';
 
 const gepubliceerd = new Date('2026-10-02');
@@ -75,7 +75,12 @@ const koppen = [
   {
     depth: 2,
     slug: "welk-abonnement-past-bij-mijn-bedrijf",
-    text: "Welk abonnement past bij mijn bedrijf?"
+    text: "Welk zakelijk abonnement past bij mijn bedrijf?"
+  },
+  {
+    depth: 2,
+    slug: "hoe-maak-je-een-zakelijk-claude-account-aan",
+    text: "Hoe maak je een zakelijk Claude-account aan?"
   },
   {
     depth: 2,
@@ -150,8 +155,9 @@ const koppen = [
     <div class="prose prose-lg max-w-none v2-prose">
       <p>
         Je hebt gehoord dat collega-ondernemers Claude gebruiken. Misschien gebruikt een paar van je eigen
-        mensen het al, op een privéaccount. Nu wil je weten of het iets is voor je hele bedrijf, wat het kost
-        en waar je op moet letten. Deze gids zet dat op een rij voor bedrijven met 5 tot 150 medewerkers.
+        mensen het al, op een privéaccount. Nu wil je <a href="/">Claude zakelijk inzetten</a> voor je hele
+        bedrijf. Dan wil je weten welk abonnement je neemt, hoe je de accounts regelt, wat het kost en wat er
+        met je bedrijfsdata gebeurt. Deze gids zet dat op een rij voor bedrijven met 5 tot 150 medewerkers.
         Alle prijzen en voorwaarden hebben we op 2 oktober 2026 gecontroleerd bij Anthropic zelf.
       </p>
 
@@ -173,7 +179,7 @@ const koppen = [
         <a href="/hoe-claude-werkt">hoe Claude werkt</a>.
       </p>
 
-      <h2 id="welk-abonnement-past-bij-mijn-bedrijf">Welk abonnement past bij mijn bedrijf?</h2>
+      <h2 id="welk-abonnement-past-bij-mijn-bedrijf">Welk zakelijk abonnement past bij mijn bedrijf?</h2>
       <p>
         Anthropic heeft vier abonnementen die voor bedrijven relevant zijn. Ze verschillen vooral in beheer,
         gebruikslimieten en de voorwaarden die gelden voor je data.
@@ -227,6 +233,31 @@ const koppen = [
         Een uitgebreidere vergelijking staat in
         <a href="/prijs/pro-vs-team-vs-enterprise">Claude Pro, Team of Enterprise</a>. Hoe de gebruikslimieten per abonnement werken, lees je in
         <a href="/prijs/credits-en-limieten">Claude gebruikslimieten en usage credits</a>.
+      </p>
+
+      <h2 id="hoe-maak-je-een-zakelijk-claude-account-aan">Hoe maak je een zakelijk Claude-account aan?</h2>
+      <p>
+        Een zakelijk Claude-account is een account binnen een Team- of Enterprise-organisatie van je bedrijf.
+        Voor Claude Team zet je het zo op:
+      </p>
+      <ol>
+        <li>Maak een Team-organisatie aan. Team heeft een minimum van twee seats.</li>
+        <li>Nodig je collega's uit. Met SSO loggen ze in met hun bestaande zakelijke account.</li>
+        <li>
+          Verhuis bestaande privéaccounts. Wie al een persoonlijk account op een werkmailadres heeft, kan dat
+          naar de organisatie verhuizen. Chats, projecten en bestanden gaan mee. Zelfgemaakte skills en koppelingen
+          met andere apps gaan niet mee.
+        </li>
+        <li>
+          Spreek af welke bedrijfsdata wel en niet in Claude mag, voordat iedereen begint. Waar je op let, staat
+          verderop bij <a href="#is-claude-veilig-en-past-het-bij-de-avg">veiligheid en de AVG</a>.
+        </li>
+      </ol>
+      <p>
+        Bij de verhuizing stopt het Pro-abonnement van die medewerker automatisch. Is dat direct bij Anthropic
+        afgesloten, dan krijgt die het resterende bedrag terug. Enterprise heeft een minimum van 20
+        seats en sluit je zelf af of via een offerte van Anthropic. Hoe de overstap van Pro naar Team verder
+        loopt, lees je in <a href="/prijs/pro-vs-team-vs-enterprise">Claude Pro, Team of Enterprise</a>.
       </p>
 
       <h2 id="wat-kost-claude-voor-een-team-van-tien-mensen">Wat kost Claude voor een team van tien mensen?</h2>

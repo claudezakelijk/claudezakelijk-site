@@ -188,4 +188,4 @@ Denk ten slotte aan de AI Act. Sinds 2 februari 2025 geldt artikel 4 over AI-gel
 
 Kies één soort tekst die elke week terugkomt, bijvoorbeeld verslagen van overleg. Zet daar een Claude-project voor op, met jullie vaste opbouw en twee goede voorbeelden. Laat twee mensen er een maand mee werken en houd zelf bij hoeveel tijd het scheelt. Dan weet je wat het jouw bureau oplevert, met je eigen aantallen.
 
-Wil je hulp bij die eerste stap, kijk dan op onze [implementatiepagina](/claude-implementatie). Hoe Claude breder werkt in een MKB-bedrijf, lees je in de gids [Claude voor bedrijven en mkb](/gids/claude-voor-mkb). Andere branches vind je in het [overzicht per branche](/verticalen).
+Wil je hulp bij die eerste stap, kijk dan op onze [implementatiepagina](/claude-implementatie). Hoe Claude breder werkt in een MKB-bedrijf, lees je in de gids [Zakelijk Claude-account en abonnement voor het mkb](/gids/claude-voor-mkb). Andere branches vind je in het [overzicht per branche](/verticalen).
