@@ -91,8 +91,8 @@ hasTemplate: false
   - Anthropic: geen training op commerciële producten (Privacy Center, 18 aug 2026); DPA met SCC's automatisch in Commercial Terms
     (16 mrt 2026); consumentenaccounts: training als instelling aan staat, dan 5 jaar retentie, anders 30 dagen (28 aug 2025).
   - Ervaringspassage komt uitsluitend uit src/content/cases/automation-audit.md.
-  - Niet gelinkt omdat ze op 27 okt 2026 nog niet live zijn: /compliance/ai-beleid-template (12 nov),
-    /compliance/dpia-stappenplan (2 nov), /compliance/ai-geletterdheid (5 nov). /compliance/hallucinatie-voorkomen bestaat niet live.
+  - Links (29 okt 2026): /compliance/ai-beleid-template (12 nov) is gelinkt. /compliance/dpia-stappenplan (2 nov) en
+    /compliance/ai-geletterdheid (5 nov) staan voor 30 nov live en mogen gelinkt worden. /compliance/hallucinatie-voorkomen bestaat niet live.
 -->
 
 Shadow AI in het MKB is AI-gebruik waar de directie geen zicht op heeft. Een medewerker plakt een klantmail in een privéaccount van ChatGPT. Een collega laat Claude een offerte samenvatten op een gratis account. Dat gebeurt meestal met goede bedoelingen, want het werk gaat sneller. Het risico zit in wat er in die tools terechtkomt en wie dat controleert. Op deze pagina lees je wat de Autoriteit Persoonsgegevens (AP) en de EU AI Act erover zeggen, en hoe je met een kort AI-beleid grip krijgt. Alle feiten zijn gecontroleerd op 27 oktober 2026 bij de bronnen onderaan.
