@@ -1,101 +1,167 @@
 ---
 title: "Claude offerte maken"
-titleTag: "Claude offerte maken: sneller schrijven | Implementeren.ai"
-metaDescription: "Claude offerte maken en schrijven: gepersonaliseerde offertes met AI. Case: 10 offertes per week met zelfverbeterende schrijfregels."
-h1: "Claude offerte maken: sneller schrijven, betere conversie"
+titleTag: "Claude offerte maken: zo schrijf je een offerte met AI"
+metaDescription: "Claude offerte maken: de stappen, een voorbeeldprompt, wat Claude wel en niet doet, de HubSpot-koppeling, prijzen en klantdata. Stand: 29 oktober 2026."
+h1: "Claude offerte maken: van aanvraag naar conceptofferte"
 targetKeywords:
   - claude offerte maken
+  - offerte maken met claude
+  - offerte met claude
   - claude offerte schrijven
   - ai offerte schrijven
-wordCountTarget: 1400
+wordCountTarget: 1438
 priority: 1
 tier: 2
 cases:
   - sdr-sales-agent
 internalLinks:
-  - /use-cases/sales-outreach
-  - /use-cases/meeting-notulen
+  - /cases/sdr-sales-agent
+  - /integraties/hubspot
+  - /claude-voor-it-consultancy
+  - /claude-voor-installatiebedrijven
+  - /prijs/pro-vs-team-vs-enterprise
+  - /compliance/anthropic-dpa
+  - /claude-implementatie
 schemaTypes:
   - Article
   - FAQPage
   - BreadcrumbList
 author: camiel
 competitors: []
-status: draft
-publishDate: null
+status: published
+publishDate: 2026-12-28
 updatedDate: null
 changelogLine: null
+reviewedBy: null
+reviewedDate: null
+disclaimer: null
+kortAntwoord: "Een offerte maken met Claude doe je in een project met twee of drie eerdere offertes en je algemene voorwaarden. Je geeft de aanvraag van de klant en je eigen notities mee, Claude schrijft de tekst en maakt er een Word- of pdf-bestand van. De bedragen neem je zelf over uit je calculatie. Claude Pro kost 20 dollar per maand."
+bronnen:
+  - titel: "Ondernemersplein (KVK), Stappenplan offerte maken (gecontroleerd 18 augustus 2026)"
+    url: "https://ondernemersplein.overheid.nl/stappenplan-offerte-maken/"
+    geraadpleegd: "2026-10-29"
+  - titel: "Claude Help Center, Create and edit files with Claude"
+    url: "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude"
+    geraadpleegd: "2026-10-29"
+  - titel: "Claude Help Center, What are projects?"
+    url: "https://support.claude.com/en/articles/9517075-what-are-projects"
+    geraadpleegd: "2026-10-29"
+  - titel: "HubSpot Knowledge Base, Set up and use the HubSpot connector for Claude (bijgewerkt 19 oktober 2026)"
+    url: "https://knowledge.hubspot.com/integrations/set-up-and-use-the-hubspot-connector-for-claude"
+    geraadpleegd: "2026-10-29"
+  - titel: "Claude, plans en prijzen (claude.com)"
+    url: "https://claude.com/pricing"
+    geraadpleegd: "2026-10-29"
+  - titel: "ECB-referentiekoers euro/dollar, 28 oktober 2026: 1,1133 (ecb.europa.eu)"
+    url: "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/eurofxref-graph-usd.en.html"
+    geraadpleegd: "2026-10-29"
+  - titel: "Anthropic Privacy Center, wordt zakelijke data gebruikt voor modeltraining? (18 augustus 2026)"
+    url: "https://privacy.claude.com/en/articles/7996868-is-my-data-used-for-model-training"
+    geraadpleegd: "2026-10-29"
+  - titel: "Anthropic Privacy Center, wordt mijn data gebruikt voor modeltraining? Free, Pro en Max (16 maart 2026)"
+    url: "https://privacy.claude.com/en/articles/10023580-is-my-data-used-for-model-training"
+    geraadpleegd: "2026-10-29"
 faq:
-  - question: "Hoe lang duurt het om een offerte te maken met Claude?"
-    answer: "Een standaard offerte van 3 tot 5 pagina's kost 10 tot 15 minuten met Claude, inclusief personalisatie en controle. Zonder Claude is dat 45 minuten tot anderhalf uur. Het verschil zit in de eerste versie: Claude genereert die op basis van je template en de klantcontext, jij hoeft alleen de strategische onderdelen te schrijven."
-  - question: "Worden mijn offertes niet generiek als ik AI gebruik?"
-    answer: "Alleen als je Claude als een tekstgenerator gebruikt. De sdr-sales-agent case laat het tegenovergestelde zien: door feedback te verwerken in schrijfregels werd de output steeds specifieker. Van 10 generieke regels naar 23 regels die de toon, lengte en haak per type klant bepalen. De personalisatie verbetert met elke offerte die je goedkeurt of afwijst."
-  - question: "Kan Claude offertes schrijven in mijn huisstijl?"
-    answer: "Ja. Je voert je bestaande offertes en proposals in als referentiemateriaal. Claude leert de structuur, de toon, de woordkeuze en het format. Na 5 tot 10 referentie-offertes produceert Claude output die nauwelijks van je eigen schrijfstijl te onderscheiden is."
+  - question: "Kan Claude een offerte maken als Word- of pdf-bestand?"
+    answer: "Ja. Claude kan Word-, pdf-, Excel- en PowerPoint-bestanden maken, op elk plan, ook het gratis plan. Je vraagt in het gesprek om een .docx of een pdf en downloadt het bestand. Een bestand mag maximaal 30 MB zijn. Controleer logo, lettertype en opmaak zelf voordat je de offerte verstuurt."
+  - question: "Kan ik Claude de prijs van een offerte laten uitrekenen?"
+    answer: "Dat raden we af. Claude kan een getal verkeerd overnemen of een optelling missen, en een offerte is na ondertekening een bindende afspraak. Maak de prijs in je calculatie of boekhoudpakket en zet de bedragen er zelf in. Laat Claude wel controleren of elk onderdeel van de scope een regel in de prijs heeft."
+  - question: "Kan Claude een offerte direct in HubSpot zetten?"
+    answer: "Ja, met de officiële HubSpot connector. Volgens HubSpot kan Claude offertes en offertesjablonen lezen, maken en bijwerken, al staat dat op 29 oktober 2026 nog in bèta. Producten en regelitems kan Claude ook maken en bijwerken. Verwijderen kan niet. Zet de schrijftools op Needs Approval, dan keur je elke wijziging eerst goed."
+  - question: "Welk Claude-plan heb ik nodig om offertes te maken?"
+    answer: "Projecten en het maken van bestanden zitten in elk plan. Zet je klantgegevens of prijsafspraken in Claude, kies dan Claude Team: 25 dollar per gebruiker per maand, ongeveer 22 euro exclusief btw tegen de ECB-koers van 28 oktober 2026. Op de zakelijke plannen traint Anthropic standaard niet op je data."
 ---
 
-Claude offerte maken bespaart je de helft van de schrijftijd en levert betere output op. Niet omdat AI beter schrijft dan jij. Omdat je de saaie structuurarbeid uitbesteedt en je eigen tijd besteedt aan het deel dat conversie bepaalt: de strategische analyse, het onderscheidend vermogen, de haak die aansluit bij precies deze klant. Ons team schreef eerder bij een Nederlands IT-consultancybureau 10 offertes per week met een systeem dat zichzelf verbetert op basis van feedback. Elke offerte die het sales team goedkeurt of afwijst maakt de volgende beter.
+<!--
+  Feiten gecontroleerd 29-10-2026, bronnen in de frontmatter. ECB 28-10-2026: 1 EUR = 1,1133 USD.
+  Er is geen offerte-case. Ervaring alleen uit sdr-sales-agent (review-scherm, schrijfregels 10 naar 23,
+  open rate 8% naar 34%). De oude draft-cijfers (10 offertes per week, 75 naar 20 minuten, 80%
+  productie-klaar, voorbeeldbedragen) waren niet onderbouwd en zijn weg.
+-->
 
-## Ai offerte schrijven: het probleem met handmatig werk
+Een offerte maken met Claude gaat over het schrijfwerk rond je prijs. Je hebt een aanvraag binnen, een gesprek gevoerd en een calculatie gemaakt. Daarna moet er nog een stuk tekst komen dat de vraag van de klant samenvat, je aanpak uitlegt en de voorwaarden noemt. Dat deel kost vaak meer tijd dan nodig, en daar helpt Claude bij. De prijs, de scope en de handtekening blijven bij jou.
 
-De meeste ondernemers en salesmensen schrijven offertes op dezelfde manier. Open de vorige offerte, verwijder de klantspecifieke delen, vul de nieuwe klantgegevens in, pas de scope aan, controleer de prijzen. Kopieer-plak met aanpassingen. Dat kost 45 minuten tot anderhalf uur per offerte.
+Op deze pagina lees je hoe je dat inricht, met een voorbeeldprompt, de koppeling met HubSpot, wat het kost en wat er met klantgegevens mag. De bronnen staan onderaan de pagina, met de datum waarop we ze lazen. Andere taken die je met Claude sneller doet, vind je in het overzicht [use cases](/use-cases).
 
-Het probleem is niet de tijd. Het probleem is de kwaliteit. Bij kopieer-plakwerk vergeet je een sectie aan te passen. De naam van de vorige klant staat nog in de bijlage. De scope van het vorige project lekt door in het nieuwe voorstel. En de personalisatie beperkt zich tot het vervangen van de bedrijfsnaam. De klant leest een generieke offerte met zijn naam erop. Die wint geen deals.
+## Wat staat er in een offerte en wat schrijft Claude daarvan?
 
-Bij IT-consultancybureaus, MSP's en zakelijke dienstverleners is dit een structureel probleem. Of je nu werkt met Salesforce, HubSpot of een spreadsheet in Excel: de pipeline heeft 10 tot 20 prospects tegelijk. Elk met een ander probleem, een andere context, een ander budget. Elke offerte zou uniek moeten zijn. Maar de realiteit is dat je na offerte nummer 5 begint te bezuinigen op personalisatie omdat je er simpelweg de uren niet voor hebt.
+Ondernemersplein, de site van KVK en de overheid, noemt de onderdelen van een offerte. Een deel daarvan is vaste tekst die Claude kan schrijven. Een ander deel zijn gegevens en afspraken die alleen jij kunt invullen.
 
-## Claude offerte schrijven: hoe het werkt
+Tabel: onderdelen van een offerte volgens Ondernemersplein en wie ze maakt, stand 29 oktober 2026.
 
-Het systeem dat ons team daar gebruikte, combineert drie elementen: templates, klantcontext en zelfverbeterende schrijfregels.
+| Onderdeel | Wat Claude doet | Wat jij doet |
+|---|---|---|
+| Bedrijfsgegevens en gegevens van de klant | Zet ze op de vaste plek in je sjabloon | Levert de juiste gegevens aan en controleert ze |
+| Datum en offertenummer | Niets, dit komt uit je eigen administratie | Vult ze in |
+| Samenvatting van de werkzaamheden | Schrijft de aanleiding, aanpak en planning uit je notities | Bepaalt de scope en leest na |
+| Tarief of projectprijs | Zet de bedragen in de tabel die jij aanlevert | Maakt de prijs in je calculatie |
+| Geldigheidsduur en aanbetaling | Neemt je vaste afspraken over | Kiest de termijn per klant |
+| Verwijzing naar de algemene voorwaarden | Zet de vaste zin erin | Stuurt de voorwaarden mee |
 
-**Templates.** Je definieert de structuur van je offerte: introductie, probleemanalyse, voorgestelde aanpak, scope, planning, investering, over ons, bijlagen. Elk onderdeel heeft een template met variabelen. Claude vult die in op basis van de klantgegevens.
+Die verdeling is belangrijk. Volgens Ondernemersplein is een offerte een voorstel aan je klant en nog geen opdracht. Accepteert de klant de offerte en stuurt hij hem ondertekend terug, dan is het juridisch een bindend contract. Een fout bedrag of een vergeten voorwaarde in een concept van Claude wordt dan jouw afspraak.
 
-**Klantcontext.** Uit je CRM (HubSpot, Autotask, Exact) haalt Claude de bedrijfsgegevens, eerdere contactmomenten, de branche en de omvang. Uit het intakegesprek of de RFP haalt Claude de vraag, de pijnpunten en de randvoorwaarden. Die context maakt het verschil tussen "wij bieden u onze dienstverlening aan" en "uw huidige Autotask-configuratie met 14 technicians en 3.200 tickets per maand vraagt om een triage-automatisering die SLA-overschrijdingen met 40% vermindert."
+## Hoe maak je een offerte met Claude?
 
-**Schrijfregels.** Dit is het stuk dat het systeem uniek maakt, en het komt direct uit de sdr-sales-agent case. Het systeem begon met 10 basisregels. "Maximaal zes zinnen per alinea." "Altijd een concreet resultaat noemen in de introductie." "Geen bullets in de probleemanalyse." Na vier weken waren er 23 regels, allemaal gebaseerd op feedback van het sales team. Regels over toon per branche, over de lengte van de investering-sectie, over wanneer wel en niet een case study op te nemen. Het systeem leert welke offertes worden goedgekeurd en past de output daarop aan.
+Je richt het één keer in en gebruikt het daarna bij elke aanvraag. Een project in Claude is een werkruimte met eigen instructies en documenten. Projecten zitten in elk plan. Op het gratis plan maak je er maximaal vijf.
 
-## De sdr-sales-agent case: zelfverbeterend schrijven
+1. Maak een project "Offertes" en zet er twee of drie goede offertes in die je eerder verstuurde, plus je algemene voorwaarden.
+2. Schrijf in de projectinstructies de vaste opbouw, je toon en wat Claude niet mag doen, zoals bedragen bedenken.
+3. Plak bij een nieuwe aanvraag de vraag van de klant en je eigen notities uit het gesprek in een nieuw gesprek binnen het project.
+4. Geef de bedragen uit je calculatie mee als losse tabel en laat Claude ze ongewijzigd overnemen.
+5. Vraag Claude om een conceptofferte als Word-bestand of pdf. Claude maakt Word-, pdf-, Excel- en PowerPoint-bestanden, tot 30 MB per bestand.
+6. Lees het concept na, vul datum en offertenummer in en verstuur de offerte zelf.
 
-De sdr-sales-agent is gebouwd als sales development systeem. 25 gepersonaliseerde emails per dag, gegenereerd op basis van CRM-data via de MS Graph API. De backend draait op Laravel met een SQL-database. Het sales team reviewt elke email via een Vue dashboard gebouwd in Vue.js. Goedkeuren, afwijzen, bewerken of uitstellen. Bij afwijzing geeft de reviewer een reden op.
+Het maken van bestanden staat standaard aan. Bij Claude Team en Enterprise kan de eigenaar van de organisatie het uitzetten onder **Organization settings** > **Capabilities**.
 
-De resultaten: open rate van 8% naar 34%. Dat is een 4x verbetering door betere personalisatie. De schrijfregels groeiden van 10 naar 23 op basis van vier weken feedback. Het systeem registreerde welke e-mails werden goedgekeurd, welke werden bewerkt, en welke werden afgewezen. Patronen in die feedback werden omgezet naar nieuwe regels.
+## Welke prompt gebruik je voor een offerte?
 
-Datzelfde principe passen we toe op offertes. De offerte die je goedkeurt met minimale wijzigingen bevestigt de aanpak. De offerte die je zwaar bewerkt levert nieuwe regels op. Na 30 offertes produceert het systeem concepten die 80% productie-klaar zijn. Jij schrijft de strategische analyse en de onderscheidende haak. Claude doet de structuur, de consistentie en de personalisatie op basis van data.
+Een goede prompt geeft Claude de context en de grenzen. Dit is een voorbeeld dat je in je project kunt gebruiken:
 
-## Wat het oplevert
+> Schrijf een conceptofferte voor de aanvraag hieronder. Volg de opbouw en de toon van de offertes in dit project. Gebruik alleen de bedragen uit de tabel die ik meegeef en verander ze niet. Zet bij elk onderdeel van de scope de bijbehorende regel uit de tabel. Noem een geldigheid van 30 dagen en verwijs naar onze algemene voorwaarden. Ontbreekt er informatie, zet dan [NAVRAGEN] in de tekst en verzin niets. Lever het concept als Word-bestand.
 
-Bij dat IT-consultancybureau produceerden we 10 offertes per week. Elke offerte kostte voorheen gemiddeld 75 minuten. Nu kost het 20 minuten, waarvan 15 minuten review en strategische toevoeging. Dat is een besparing van 9 uur per week op offertewerk alleen al.
+De markering voor ontbrekende informatie helpt bij het nalezen. Je ziet in één keer waar je nog iets moet vragen of invullen. De geldigheid van 30 dagen is een voorbeeld: kies zelf de termijn die bij je werk past.
 
-Maar de grotere winst zit in conversie. Een offerte die specifiek ingaat op de situatie van de klant, met concrete cijfers en een duidelijke scope, wint vaker dan een generieke variant. Wij tracken dat niet openbaar, maar de trend is duidelijk: gepersonaliseerde offertes converteren beter dan templates met een naam erop.
+Laat Claude na het schrijven ook een controle doen. Vraag bijvoorbeeld of elk onderdeel uit de aanvraag van de klant in de offerte terugkomt, en of de scope en de prijstabel op elkaar aansluiten. Je eigen controle blijft nodig, maar zo vind je sneller een gemist punt.
 
-Voor een consultancybureau, [MSP](/claude-voor-msp) of zakelijke dienstverlener met een pipeline van 20+ prospects is dit het verschil tussen "we komen er niet aan toe" en "elke prospect krijgt een offerte op maat." Zeker in combinatie met geautomatiseerde [meeting-notulen](/use-cases/meeting-notulen) bespaar je structureel uren per week op administratief werk dat direct impact heeft op omzet.
+## Kan Claude een offerte in HubSpot maken?
 
-## De offerte-structuur die converteert
+Werk je met HubSpot, dan kan Claude via de officiële HubSpot connector ook in je CRM werken. Volgens de HubSpot Knowledge Base, bijgewerkt op 19 oktober 2026, kan Claude offertes en offertesjablonen lezen, maken en bijwerken. Die functie staat nog in bèta. Producten en regelitems kan Claude ook maken en bijwerken, zonder bèta-label.
 
-Een offerte die wint heeft een herkenbare structuur. Die structuur is niet willekeurig gekozen. Het is het resultaat van honderden offertes analyseren op wat wordt goedgekeurd en wat in de prullenbak belandt.
+Er gelden een paar grenzen. Claude maakt of wijzigt maximaal 10 records per keer en kan niets verwijderen. De API-limieten van je HubSpot-account gelden ook voor Claude. Zet de schrijftools op **Needs Approval**, dan toont Claude een wijziging eerst en keur je die zelf goed. Hoe je de connector aanzet en wat Claude verder ziet, lees je in [Claude koppelen aan HubSpot](/integraties/hubspot).
 
-**De haak in de eerste alinea.** Geen "bedankt voor het prettige gesprek." Begin met het probleem dat de klant heeft en het resultaat dat je levert. "Jullie triage-proces kost 25 uur per week aan handmatig categoriseren. Wij automatiseren dat naar 2 uur." De klant leest verder omdat je zijn probleem benoemt.
+Werk je niet met HubSpot, dan blijft de route via het project en een Word-bestand het eenvoudigst. Je plakt de tekst daarna in je eigen offertesoftware of boekhoudpakket.
 
-**Probleemanalyse voor de oplossing.** Beschrijf het probleem van de klant concreter dan de klant het zelf kan. Dat bewijst dat je luistert en begrijpt. Claude haalt die details uit het intakegesprek of de RFP. "Jullie 3.200 tickets per maand worden handmatig gecategoriseerd door 3 dispatchers. Bij piekdagen in Q4 loopt de backlog op tot 48 uur." De klant herkent zijn eigen situatie en vertrouwt je analyse.
+## Wat kost een offerte maken met Claude?
 
-**Concrete scope met leverables.** Geen "wij leveren een oplossing op maat." Wel: "wij leveren een MCP server die Autotask-tickets automatisch categoriseert, een Vue dashboard voor handmatige override, en een maandelijkse accuratesse-rapportage. Doorlooptijd: 4 weken. Vijf sprint reviews met uw team." De klant weet precies wat hij krijgt.
+Claude rekent in dollars. De euro-bedragen zijn omgerekend met de ECB-koers van 28 oktober 2026 (1 euro is 1,1133 dollar) en zijn exclusief btw.
 
-**Investering met context.** Noem het bedrag en zet het af tegen de besparing. "Investering: 12.500 euro. Bij een besparing van 23 uur per week aan dispatching is de terugverdientijd 6 weken." Geen verborgen kosten, geen "op aanvraag." Transparantie wint.
+Tabel: Claude-plannen voor offertewerk, lijstprijzen, stand 29 oktober 2026.
 
-Claude genereert die structuur consistent, elke keer. De output is een HTML-document of PDF, afhankelijk van je voorkeur. Jij vult de strategische analyse en het onderscheidend vermogen in. Dat kost 15 minuten in plaats van 75 minuten alles zelf schrijven. En via MCP servers koppelt Claude Code aan Jira, Microsoft Teams, SharePoint en andere tools in je workflow.
+| Plan | Per maand, maandbetaling | Per maand, jaarbetaling | Geschikt voor |
+|---|---|---|---|
+| Free | $0 | $0 | Uitproberen zonder klantgegevens, maximaal 5 projecten |
+| Pro | $20 (± €18) | $17 (± €15) | Eén persoon |
+| Team, standaard seat | $25 per gebruiker (± €22) | $20 per gebruiker (± €18) | Teams van 2 tot 150 mensen, projecten delen |
+| Enterprise | n.v.t. | $20 per seat (± €18), minimaal 20 seats, plus verbruik tegen API-tarieven | Grotere organisaties |
 
-Offerte-automatisering is een van de snelste implementaties: 1 tot 2 weken doorlooptijd, directe ROI meetbaar in uren en conversie.
+Wil je offertes met collega's maken uit hetzelfde project, dan heb je Team nodig. Alleen in Team en Enterprise kun je projecten delen. Het verschil tussen de plannen staat in [Claude Pro, Team of Enterprise](/prijs/pro-vs-team-vs-enterprise).
 
-## Veelgestelde vragen
+## Mag je klantgegevens in Claude zetten voor een offerte?
 
-### Hoe lang duurt het om een offerte te maken met Claude?
+Een offerte bevat namen, adressen en prijsafspraken van je klant. Op de zakelijke plannen (Team, Enterprise en de API) gebruikt Anthropic je invoer en uitvoer standaard niet voor training. Op Free, Pro en Max hangt dat af van een instelling van de gebruiker.
 
-Een standaard offerte van 3 tot 5 pagina's kost 10 tot 15 minuten met Claude, inclusief personalisatie en controle. Zonder Claude is dat 45 minuten tot anderhalf uur. Het verschil zit in de eerste versie: Claude genereert die op basis van je template en de klantcontext, jij hoeft alleen de strategische onderdelen te schrijven en de finale check te doen.
+Claude heeft voor de tekst van een offerte de naam en het adres van je contactpersoon niet nodig. Schrijf "de klant" en vul de gegevens in je eigen sjabloon in. Wat de verwerkersovereenkomst van Anthropic regelt, lees je in [de Anthropic verwerkersovereenkomst](/compliance/anthropic-dpa).
 
-### Worden mijn offertes niet generiek als ik AI gebruik?
+## Wat leert eigen werk ons over offertes met Claude?
 
-Alleen als je Claude als een tekstgenerator gebruikt. De sdr-sales-agent case laat het tegenovergestelde zien: door feedback te verwerken in schrijfregels werd de output steeds specifieker. Van 10 generieke regels naar 23 regels die de toon, lengte en haak per type klant bepalen. De personalisatie verbetert met elke offerte die je goedkeurt of afwijst. Het is een feedbackloop, geen one-shot generator.
+Een systeem dat offertes schrijft, hebben we nog niet gebouwd. Er staat op deze site dus geen offerte-case. Wel bouwden we met Claude Code een [sales-agent](/cases/sdr-sales-agent) bij een Nederlands softwarebedrijf, met hetzelfde patroon: Claude schrijft het concept, een mens beslist.
 
-### Kan Claude offertes schrijven in mijn huisstijl?
+Daar maakt het systeem elke ochtend 25 persoonlijke sales-e-mails klaar. Het salesteam keurt elke e-mail goed, past hem aan, stelt hem uit of wijst hem af met een reden. Uit die feedback groeiden de schrijfregels in vier weken van tien naar 23. De open rate steeg van 8% naar 34%. Er gaat niets de deur uit zonder dat een mens het heeft gelezen.
 
-Ja. Je voert je bestaande offertes en proposals in als referentiemateriaal. Claude leert de structuur, de toon, de woordkeuze en het format. Na 5 tot 10 referentie-offertes produceert Claude output die nauwelijks van je eigen schrijfstijl te onderscheiden is. Wij bij Implementeren.ai bouwen dit soort workflows met Claude Code en Anthropic's API. ChatGPT of OpenAI alternatieven missen het grote context window dat je nodig hebt voor complete referentie-offertes. De AVG (GDPR) stelt eisen aan klantdata in prompts. Wij helpen bedrijven via Microsoft 365 en [sales-workflows](/use-cases/sales-outreach) om die scheiding goed in te richten. Lees ook ons [DPIA-stappenplan](/compliance/dpia-stappenplan) als je klantdata verwerkt.
+Voor offertes is de les dezelfde. Leg vast wat je bij het nalezen steeds verandert en zet dat als regel in je projectinstructies. Zo wordt het volgende concept beter, en de controle blijft bij jou.
+
+## Waar begin je met offertes in Claude?
+
+Kies een type offerte dat vaak terugkomt en weinig variatie heeft. Maak er een project voor met je beste voorbeelden en werk er een maand mee. Houd zelf bij hoeveel tijd een offerte kost, voor en na. Dan weet je wat het jouw bedrijf oplevert, met je eigen aantallen.
+
+Hoe een IT-bureau voorstellen schrijft, lees je in [Claude voor IT-consultancy](/claude-voor-it-consultancy). Voor offertes rond een calculatie van materiaal en uren staat een uitwerking in [Claude voor installatiebedrijven](/claude-voor-installatiebedrijven). Wil je hulp bij het inrichten van projecten, sjablonen of de HubSpot-koppeling, kijk dan op onze [implementatiepagina](/claude-implementatie).
