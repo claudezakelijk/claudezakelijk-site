@@ -60,6 +60,12 @@ bronnen:
   - titel: "Anthropic Privacy Center, waarvoor geldt zero data retention?"
     url: "https://privacy.claude.com/en/articles/8956058-i-have-a-zero-data-retention-agreement-with-anthropic-what-products-does-it-apply-to"
     geraadpleegd: "30 oktober 2026"
+  - titel: "Anthropic Privacy Center, bewaartermijn van 30 dagen voor Mythos-modellen"
+    url: "https://privacy.claude.com/en/articles/15425996"
+    geraadpleegd: "30 oktober 2026"
+  - titel: "Anthropic Privacy Center, hoe lang bewaart Anthropic consumentendata?"
+    url: "https://privacy.claude.com/en/articles/10023548-how-long-do-you-store-my-data"
+    geraadpleegd: "30 oktober 2026"
   - titel: "Anthropic Privacy Center, waar staan de servers en host Anthropic in de EU?"
     url: "https://privacy.claude.com/en/articles/7996890-where-are-your-servers-located-do-you-host-your-models-on-eu-servers"
     geraadpleegd: "30 oktober 2026"
@@ -75,11 +81,11 @@ faq:
   - question: "Heeft Anthropic een DPA en waar vind je die?"
     answer: "Ja. Anthropic publiceert de DPA onder de officiële Engelse naam Anthropic Data Processing Addendum op anthropic.com/legal/data-processing-addendum. De huidige versie geldt sinds 24 februari 2025. Hij is automatisch onderdeel van de Commercial Terms of Service, de zakelijke voorwaarden van Anthropic. Voor klanten in de Europese Economische Ruimte is Anthropic Ireland, Limited de contractpartij."
   - question: "Waar download ik de Anthropic DPA?"
-    answer: "Anthropic biedt geen apart downloadbestand of tekenproces aan. De DPA staat als webpagina op anthropic.com/legal/data-processing-addendum en is automatisch onderdeel van de Commercial Terms. Wil je een kopie voor je AVG-documentatie, sla de pagina dan op als PDF via de printfunctie van je browser en noteer de datum waarop je hem opsloeg."
+    answer: "Het Privacy Center van Anthropic noemt geen apart downloadbestand of tekenproces; de DPA staat als webpagina op anthropic.com/legal/data-processing-addendum en is automatisch onderdeel van de Commercial Terms. Grotere klanten kunnen via sales een ondertekende versie afspreken. Wil je een kopie voor je AVG-documentatie, sla de pagina dan op als PDF via de printfunctie van je browser en noteer de datum waarop je hem opsloeg."
   - question: "Is de Anthropic DPA hetzelfde als een verwerkersovereenkomst onder de AVG?"
     answer: "Ja, de Anthropic DPA is de verwerkersovereenkomst tussen jou en Anthropic. In de DPA staat Anthropic als verwerker en jouw organisatie als verwerkingsverantwoordelijke, de rolverdeling die de AVG vraagt. Hij geldt alleen voor de zakelijke producten (de API, Claude Team en Claude Enterprise), dus niet voor Claude Free, Pro en Max."
   - question: "Geldt de Anthropic DPA ook voor Claude Pro?"
-    answer: "Nee. De DPA hoort bij de zakelijke voorwaarden van Anthropic en dekt de zakelijke producten, zoals de API en Claude Team en Enterprise. Claude Free, Pro en Max vallen onder de consumentenvoorwaarden. Daar geldt geen verwerkersovereenkomst, en Anthropic mag gesprekken gebruiken voor modeltraining als de gebruiker die instelling aan heeft staan."
+    answer: "Nee. De DPA hoort bij de zakelijke voorwaarden van Anthropic en dekt de zakelijke producten, zoals de API en Claude Team en Enterprise. Claude Free, Pro en Max vallen onder de consumentenvoorwaarden. Daar geldt geen verwerkersovereenkomst, en Anthropic mag gesprekken gebruiken voor modeltraining als de gebruiker die instelling aan heeft staan. Staat die aan, dan bewaart Anthropic de gesprekken tot vijf jaar; staat die uit, dan blijven ze in het account staan tot de gebruiker ze verwijdert, en zijn verwijderde chats binnen 30 dagen uit de systemen van Anthropic."
   - question: "Moet ik de Anthropic DPA apart ondertekenen?"
     answer: "Nee. Volgens Anthropic is de DPA met Standard Contractual Clauses automatisch onderdeel van de Commercial Terms of Service. Wie die voorwaarden accepteert, accepteert ook de DPA. Bewaar wel een kopie van de geldende versie in je AVG-documentatie en houd bij wanneer Anthropic de tekst wijzigt."
   - question: "Wat staat er in de Anthropic DPA?"
@@ -103,8 +109,9 @@ hasTemplate: false
     Uitzonderingen feedback en eigen keuze: privacy.claude.com artikel 7996868 (update 18 aug 2026).
   - DPA: SCC's module 2 en 3 (I.1), sub-verwerkers bezwaar binnen 15 dagen (C.3), datalekmelding binnen 48 uur (G.1),
     verwijdering binnen 30 dagen na einde overeenkomst (H.1), AES-256 en TLS 1.2+ (Schedule 2).
-  - Consumentenvoorwaarden: uitrol 28 aug 2025, keuze uiterlijk 8 okt 2025, 5 jaar bij toestemming, anders 30 dagen:
-    anthropic.com/news/updates-to-our-consumer-terms.
+  - Consumentenvoorwaarden: uitrol 28 aug 2025, keuze uiterlijk 8 okt 2025, 5 jaar bij toestemming, anders blijven chats
+    staan tot de gebruiker ze verwijdert (verwijderde chats binnen 30 dagen uit de systemen):
+    anthropic.com/news/updates-to-our-consumer-terms en privacy.claude.com artikel 10023548 (update 1 juli 2026).
   - Certificeringen: SOC 2 Type I & II, ISO 27001:2022, ISO/IEC 42001:2023: privacy.claude.com artikel 10015870.
   - ZDR alleen voor de API en Claude Code op Enterprise: privacy.claude.com artikel 8956058 (update 9 juni 2026).
   - Opslag in de VS: privacy.claude.com artikel 7996890 (update 15 juni 2026).
@@ -134,9 +141,9 @@ De verplichting rust op jou als verwerkingsverantwoordelijke. De verwerkersovere
 Hier gaat het in de praktijk het vaakst mis. Voor klanten in de Europese Economische Ruimte is Anthropic Ireland, Limited de contractpartij. De DPA dekt de zakelijke producten:
 
 - **De Anthropic API**, dus ook tools die daarop draaien, zoals Claude Code met een API-sleutel.
-- **Claude Team en Enterprise** (voorheen Claude for Work): de zakelijke abonnementen.
+- **Claude Team en Enterprise** (in de juridische teksten van Anthropic samen 'Claude for Work' genoemd): de zakelijke abonnementen.
 
-Claude Free, Pro en Max vallen erbuiten. Dat zijn consumentenproducten onder consumentenvoorwaarden, zonder verwerkersovereenkomst. Sinds de [wijziging van die voorwaarden op 28 augustus 2025](https://www.anthropic.com/news/updates-to-our-consumer-terms) kiest elke gebruiker of Anthropic de gesprekken mag gebruiken voor modeltraining. Staat die instelling aan, dan bewaart Anthropic de data tot vijf jaar. Staat hij uit, dan blijft de termijn 30 dagen.
+Claude Free, Pro en Max vallen erbuiten. Dat zijn consumentenproducten onder consumentenvoorwaarden, zonder verwerkersovereenkomst. Sinds de [wijziging van die voorwaarden op 28 augustus 2025](https://www.anthropic.com/news/updates-to-our-consumer-terms) kiest elke gebruiker of Anthropic de gesprekken mag gebruiken voor modeltraining. Staat die instelling aan, dan bewaart Anthropic de data tot vijf jaar. Staat hij uit, dan blijven chats in het account staan tot de gebruiker ze verwijdert; verwijderde chats zijn volgens het [Privacy Center](https://privacy.claude.com/en/articles/10023548-how-long-do-you-store-my-data) binnen 30 dagen uit de systemen van Anthropic.
 
 Eén collega die klantdossiers in een persoonlijk Pro-account plakt, werkt dus buiten de DPA om. Inventariseer daarom ook de privé-accounts die medewerkers zelf hebben aangemaakt.
 
@@ -147,7 +154,7 @@ Op een rij:
 | API (ook Claude Code met API-sleutel) | Ja | Nee, behalve feedback of als je er zelf voor kiest | Commercial Terms |
 | Claude Team | Ja | Nee, behalve feedback of als je er zelf voor kiest | Commercial Terms |
 | Claude Enterprise | Ja | Nee, behalve feedback of als je er zelf voor kiest | Commercial Terms |
-| Claude Free, Pro en Max | Nee | Ja, als de gebruiker die instelling aan heeft | Consumentenvoorwaarden |
+| Claude Free, Pro en Max (ook Claude Code op die accounts) | Nee | Ja, als de gebruiker die instelling aan heeft | Consumentenvoorwaarden |
 
 Bronnen voor de tabel: het [Privacy Center over de DPA](https://privacy.claude.com/en/articles/7996862-how-do-i-view-and-sign-your-data-processing-addendum-dpa), het [Privacy Center over modeltraining](https://privacy.claude.com/en/articles/7996868-is-my-data-used-for-model-training) en de [aankondiging van de consumentenvoorwaarden](https://www.anthropic.com/news/updates-to-our-consumer-terms).
 
@@ -169,7 +176,7 @@ De belangrijkste onderdelen van de DPA en de zakelijke voorwaarden:
 
 **Verwijdering.** Binnen 30 dagen na het einde van de overeenkomst verwijdert Anthropic de klantdata, behalve waar de wet bewaren eist, bij een geschil tussen partijen of waar dat nodig is tegen misbruik.
 
-Daarnaast bestaat [Zero Data Retention](/compliance/zero-data-retention). Bij die afspraak slaat Anthropic prompts en antwoorden niet op, behalve waar de wet of misbruikbestrijding dat vereist. Anthropic beoordeelt aanvragen per organisatie, via sales. De regeling geldt [alleen voor de API en voor Claude Code op Enterprise-abonnementen](https://privacy.claude.com/en/articles/8956058-i-have-a-zero-data-retention-agreement-with-anthropic-what-products-does-it-apply-to). Voor sommige modellen blijft een beperkte bewaartermijn gelden.
+Daarnaast bestaat [Zero Data Retention](/compliance/zero-data-retention). Bij die afspraak slaat Anthropic prompts en antwoorden niet op, behalve waar de wet of misbruikbestrijding dat vereist. Anthropic beoordeelt aanvragen per organisatie, via sales. De regeling geldt [alleen voor de API en voor Claude Code op Enterprise-abonnementen](https://privacy.claude.com/en/articles/8956058-i-have-a-zero-data-retention-agreement-with-anthropic-what-products-does-it-apply-to). Voor modellen van de Mythos-klasse geldt sinds 9 juni 2026 een [bewaartermijn van 30 dagen](https://privacy.claude.com/en/articles/15425996), ook in workspaces met ZDR.
 
 ## Wat lost de DPA niet voor je op?
 
