@@ -176,7 +176,7 @@ const schemaFaq = faqItems.map(({ question, answer }) => ({ question, answer }))
 
     <section class="v2-sectie">
       <div class="v2-persoon">
-        {/* FOTO: definitieve portretfoto van Camiel (staand, min. ~440×520; weergave 220×260, object-fit: cover) — nu de bestaande avatarfoto als stand-in. */}
+        {/* FOTO: definitieve portretfoto van Camiel (staand, min. ~440×520; weergave 220×260, object-fit: cover), nu de bestaande avatarfoto als stand-in. */}
         <img
           src="/team/camiel-avatar.jpg"
           alt="Portret van Camiel Wits"
@@ -205,7 +205,7 @@ const schemaFaq = faqItems.map(({ question, answer }) => ({ question, answer }))
             </a>
           </p>
         </div>
-        {/* MENS: (voor Camiel) één zin over waarom klanten meestal bellen — welke vraag stellen ze letterlijk als ze een "Claude consultant" zoeken? Dat maakt deze sectie herkenbaar. */}
+        {/* MENS: (voor Camiel) één zin over waarom klanten meestal bellen: welke vraag stellen ze letterlijk als ze een "Claude consultant" zoeken? Dat maakt deze sectie herkenbaar. */}
       </div>
     </section>
 
@@ -240,7 +240,8 @@ const schemaFaq = faqItems.map(({ question, answer }) => ({ question, answer }))
         of integratie-coaching per uur. De Claude-licenties zelf lopen rechtstreeks
         via Anthropic; zie het <a href="/prijs">prijzenoverzicht</a>.
         Meer over wat een compleet traject inhoudt staat op de pagina over
-        <a href="/claude-implementatie">Claude-implementatie</a>.
+        <a href="/claude-implementatie">Claude-implementatie</a>. Wat een
+        <a href="/ai-implementatie">AI-implementatie</a> in totaal kost, lees je op een aparte pagina.
       </p>
     </section>
 
@@ -250,7 +251,7 @@ const schemaFaq = faqItems.map(({ question, answer }) => ({ question, answer }))
       <div class="v2-bewijs">
         {voorbeelden.map((v) => (
           <article>
-            {/* FOTO: eigen foto of screenshot van het project (liggend 16:9, min. ~700×400; weergave 150px hoog, object-fit: cover) — nu het SVG-diagram van de case als stand-in. */}
+            {/* FOTO: eigen foto of screenshot van het project (liggend 16:9, min. ~700×400; weergave 150px hoog, object-fit: cover), nu het SVG-diagram van de case als stand-in. */}
             <div class="v2-bewijs-beeld" set:html={diagrams[v.slug]} />
             <span class="v2-bewijs-cijfer">{v.cijfer}</span>
             <h3>{v.kop}</h3>

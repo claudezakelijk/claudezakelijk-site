@@ -1,0 +1,460 @@
+---
+import { getEntry } from 'astro:content';
+import BasisLayout from '../layouts/BasisLayout.astro';
+import DienstKop from '../components/DienstKop.astro';
+import KortAntwoord from '../components/KortAntwoord.astro';
+import BronnenBlok from '../components/BronnenBlok.astro';
+import CtaBlok from '../components/CtaBlok.astro';
+import DienstBeeld from '../components/DienstBeeld.astro';
+import { dienstNode, dienstId, faqNode } from '../lib/schema';
+import { auteurs, site } from '../site';
+import kostenSchema from '../assets/diagrams/ai-implementatie-kosten.svg?raw';
+
+// Prijzen en duur komen rechtstreeks uit de diensten-content, net als op /claude-implementatie.
+const scan = await getEntry('diensten', 'readiness-scan');
+const rollout = await getEntry('diensten', 'rollout');
+const retainer = await getEntry('diensten', 'retainer');
+if (!scan || !rollout || !retainer) throw new Error('Diensten-content ontbreekt');
+
+const stand = '30 oktober 2026';
+
+const breadcrumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'AI-implementatie', url: '/ai-implementatie' },
+];
+
+const kortAntwoord = `Een AI-implementatie zorgt dat je team AI elke dag gebruikt in echt werk. Bij implementeren.ai doen we dat met één tool: Claude. Je begint met een Readiness Scan ${scan.data.prijs.toLowerCase()}. Daarna volgt een rollout van vier weken ${rollout.data.prijs.toLowerCase()}. Van eerste gesprek tot zelfstandig team duurt het zes tot acht weken.`;
+
+const prijzen = [
+  { naam: scan.data.titel, prijs: scan.data.prijs, doel: 'Uitzoeken waar AI in jouw bedrijf tijd oplevert, met een vaste offerte voor de rollout', duur: '1 dag bij jou, 1 week uitwerken, 1 uur bespreken', link: '/claude-readiness-scan' },
+  { naam: rollout.data.titel, prijs: rollout.data.prijs, doel: 'Claude inrichten en je team trainen tot het dagelijks werk is', duur: rollout.data.duur, link: '/claude-in-30-dagen' },
+  { naam: retainer.data.titel, prijs: retainer.data.prijs, doel: 'Begeleiding na de rollout, alleen als je dat wilt', duur: retainer.data.duur, link: '/claude-compagnon' },
+];
+
+// ECB-referentiekoers van 29 oktober 2026 (gecontroleerd op 30 oktober 2026).
+const koers = 1.113;
+const euro = (dollar: number) => `ongeveer €${(dollar / koers).toFixed(2).replace('.', ',')}`;
+const licenties = [
+  { seat: 'Team Standard', jaar: 20, maand: 25 },
+  { seat: 'Team Premium', jaar: 100, maand: 125 },
+];
+
+const faqItems = [
+  {
+    question: 'Wat kost AI implementeren voor een MKB-bedrijf?',
+    answer: `Je hebt twee soorten kosten. De implementatie betaal je aan ons: de Readiness Scan ${scan.data.prijs.toLowerCase()} en de rollout ${rollout.data.prijs.toLowerCase()}, samen vanaf €9.000. De licenties betaal je per gebruiker aan Anthropic: Team Standard kost $20 per maand bij jaarbetaling. De prijs van de rollout ligt vast zodra de scan klaar is.`,
+  },
+  {
+    question: 'Hoe lang duurt een AI-implementatie?',
+    answer: 'Reken op zes tot acht weken, van het eerste gesprek tot een team dat zelf verder kan. De scan duurt ruim een week. Daarna begeleiden we je team vier weken lang, ongeveer twee dagen per week.',
+  },
+  {
+    question: 'Hoe begin je met AI implementeren in je bedrijf?',
+    answer: 'Begin met de vraag welk werk zich ervoor leent. Daarvoor is de gratis AI-check: zeven vragen, twee minuten, en je ziet direct een score. Is de score goed, dan plannen we een gratis intro-gesprek en kan daarna de Readiness Scan beginnen.',
+    linkHref: '/ai-enablement-scan',
+    linkTekst: 'Doe de gratis AI-check',
+  },
+  {
+    question: 'Wat is het verschil tussen een AI-consultant en een implementatiepartner?',
+    answer: 'Een AI-consultant adviseert meestal over meerdere tools tegelijk en levert een roadmap op. Wij kiezen vooraf één tool, Claude, en blijven tot je team er dagelijks mee werkt. Elke stap heeft een vaste prijs, en na de scan weet je precies wat de rollout kost.',
+    linkHref: '/claude-consultant',
+    linkTekst: 'Lees wie het werk doet',
+  },
+  {
+    question: 'Werken jullie ook met ChatGPT of Copilot?',
+    answer: 'Nee, we implementeren alleen Claude. Je team leert zo één omgeving, en wij kennen die omgeving door en door. Twijfel je nog welke tool bij je bedrijf past, vergelijk dan eerst de opties voordat je een partij kiest.',
+    linkHref: '/vergelijken/welke-ai-voor-mkb',
+    linkTekst: 'Lees welke AI past bij het MKB',
+  },
+  {
+    question: 'Moeten we zelf technische kennis in huis hebben?',
+    answer: 'Nee. We leggen alles uit in gewoon Nederlands en werken met jouw eigen documenten. Tijdens de rollout trainen we twee tot vier collega’s als champions. Zij zijn na afloop het aanspreekpunt voor de rest, zodat je niet van ons afhankelijk blijft.',
+  },
+];
+
+const schemaFaq = faqItems.map(({ question, answer }) => ({ question, answer }));
+
+const bronnen = [
+  { titel: 'Claude, Plans & Pricing', url: 'https://claude.com/pricing', geraadpleegd: stand },
+  { titel: 'Claude Help Center, What is the Team plan?', url: 'https://support.claude.com/en/articles/9266767-what-is-the-team-plan', geraadpleegd: stand },
+  { titel: 'Claude Help Center, Purchase and manage seats on Team plans', url: 'https://support.claude.com/en/articles/12004354-purchase-and-manage-seats-on-team-plans', geraadpleegd: stand },
+  { titel: 'Claude Help Center, Deploy Claude Desktop for Windows', url: 'https://support.claude.com/en/articles/12622703-deploy-claude-desktop-for-windows', geraadpleegd: stand },
+  { titel: 'Claude Help Center, Set up single sign-on (SSO)', url: 'https://support.claude.com/en/articles/13132885-set-up-single-sign-on-sso', geraadpleegd: stand },
+  { titel: 'Claude Help Center, Set up JIT or SCIM provisioning', url: 'https://support.claude.com/en/articles/13133195-set-up-jit-or-scim-provisioning', geraadpleegd: stand },
+  { titel: 'Claude Help Center, Access audit logs', url: 'https://support.claude.com/en/articles/9970975-access-audit-logs', geraadpleegd: stand },
+  { titel: 'Claude Help Center, Get started with custom connectors using remote MCP', url: 'https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp', geraadpleegd: stand },
+  { titel: 'Claude Help Center, How to create custom skills', url: 'https://support.claude.com/en/articles/12512198-how-to-create-custom-skills', geraadpleegd: stand },
+  { titel: 'Claude Code Docs, Hooks reference', url: 'https://code.claude.com/docs/en/hooks', geraadpleegd: stand },
+  { titel: 'Anthropic Privacy Center, Is my data used for model training?', url: 'https://privacy.claude.com/en/articles/7996868-is-my-data-used-for-model-training', geraadpleegd: stand },
+  { titel: 'Anthropic Privacy Center, Does Anthropic act as a data processor or controller?', url: 'https://privacy.claude.com/en/articles/9267385-does-anthropic-act-as-a-data-processor-or-controller', geraadpleegd: stand },
+  { titel: 'Anthropic, Commercial Terms of Service (ingang 17 juni 2025)', url: 'https://www.anthropic.com/legal/commercial-terms', geraadpleegd: stand },
+  { titel: 'Anthropic, Data Processing Addendum (ingang 24 februari 2025)', url: 'https://www.anthropic.com/legal/data-processing-addendum', geraadpleegd: stand },
+  { titel: 'CBS, Digitalisering en kenniseconomie 2025, hoofdstuk 3: ICT-gebruik bij bedrijven (10 februari 2026)', url: 'https://www.cbs.nl/nl-nl/longread/rapportages/2026/digitalisering-en-kenniseconomie-2025/3-ict-gebruik-bij-bedrijven', geraadpleegd: stand },
+  { titel: 'Dialogic, Onderzoek AI-gebruik in het mkb. Ambitie of aarzeling? In opdracht van het ministerie van Economische Zaken (29 september 2025, publicatienummer 2025.035-2531)', url: 'https://open.overheid.nl/documenten/30ab7be6-a0ea-4e4f-bf86-91157c56ccc8/file', geraadpleegd: stand },
+  { titel: 'Europese Centrale Bank, euro-referentiekoersen (koers van 29 oktober 2026)', url: 'https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml', geraadpleegd: stand },
+];
+---
+<BasisLayout
+  titel="AI implementatie voor het MKB: aanpak, kosten en duur"
+  beschrijving="AI implementeren in je bedrijf met Claude: scan vanaf €1.500, rollout in 4 weken vanaf €7.500 excl. btw. Vaste prijzen en AVG-afspraken."
+  pad="/ai-implementatie"
+  schema={{
+    breadcrumbs,
+    hoofdonderwerp: dienstId('/ai-implementatie'),
+    nodes: [
+      dienstNode({
+        pad: '/ai-implementatie',
+        naam: 'AI-implementatie',
+        beschrijving: 'AI-implementatie voor het Nederlandse MKB met Claude: van gratis AI-check en Readiness Scan tot een rollout van vier weken, met vaste prijzen.',
+        serviceType: 'AI-implementatie',
+        catalogus: prijzen.map((r) => ({ naam: r.naam, prijsTekst: r.prijs, url: r.link, dienstPad: r.link })),
+      }),
+      faqNode('/ai-implementatie', schemaFaq),
+    ],
+  }}
+>
+
+  <article class="v2-artikel">
+    <DienstKop
+      breadcrumbs={breadcrumbs}
+      label="Dienst"
+      h1="AI-implementatie voor het MKB, met Claude"
+      feiten={[
+        { term: 'Vanaf', waarde: `${scan.data.prijs.replace('Vanaf ', '')} (scan), ${rollout.data.prijs.replace('Vanaf ', '')} (rollout)` },
+        { term: 'Duur', waarde: '6 tot 8 weken' },
+      ]}
+    >
+      <KortAntwoord tekst={kortAntwoord} stand={stand} />
+      <p>
+        Een paar AI-accounts aanmaken doe je in een middag. Lastiger is zorgen dat je
+        collega’s er over drie maanden nog steeds mee werken. Daar gaat AI-implementatie
+        in het mkb over: je kiest het werk waar AI tijd scheelt en spreekt af welke data
+        erin mag. Daarna train je mensen tot het gewoonte is.
+      </p>
+      <p>
+        Ons gereedschap daarbij is Claude, en we werken voor Nederlandse MKB-bedrijven met tien tot tweehonderd mensen. Implementeren.ai is onafhankelijk: we zijn geen partner of
+        onderdeel van Anthropic, het bedrijf dat Claude maakt. Je licenties sluit je zelf af bij Anthropic: de eigenaar van je account <a href="https://support.claude.com/en/articles/12004354-purchase-and-manage-seats-on-team-plans" target="_blank" rel="noopener">koopt de seats in de beheeromgeving van Claude</a>.
+      </p>
+      <p class="v2-sectie-noot text-sm">Gepubliceerd op 30 oktober 2026.</p>
+      <DienstBeeld slot="beeld" soort="route" />
+    </DienstKop>
+
+    <section class="v2-sectie">
+      <h2>Wat houdt een AI-implementatie in?</h2>
+      <div class="v2-prose">
+        <p>
+          Een implementatie is de stap van losse proeven naar vast werk. Collega’s oefenen met
+          hun eigen documenten, en je blijft bijsturen tot ze er uit zichzelf mee werken.
+        </p>
+        <p>
+          In 2025 gebruikte 33 procent van de bedrijven met 10 of meer werkzame personen een of
+          meer AI-technologieën, volgens
+          <a href="https://www.cbs.nl/nl-nl/longread/rapportages/2026/digitalisering-en-kenniseconomie-2025/3-ict-gebruik-bij-bedrijven" target="_blank" rel="noopener">het CBS</a>.
+          Een jaar eerder was dat 23 procent; beide cijfers zijn voorlopig.
+        </p>
+        <p>
+          Bij veel bedrijven blijft het gebruik klein. Onderzoeksbureau
+          <a href="https://open.overheid.nl/documenten/30ab7be6-a0ea-4e4f-bf86-91157c56ccc8/file" target="_blank" rel="noopener">Dialogic</a>
+          sprak voor het ministerie van Economische Zaken met 25 mkb’ers en 9 experts. De
+          onderzoekers schrijven dat AI
+          “in de meeste mkb-bedrijven beperkt [blijft] tot losse toepassingen, zoals tekst- of
+          beeldgeneratie”. Als drempel noemen ze onder meer een gebrek aan kennis en vaardigheden.
+        </p>
+      </div>
+      <p class="v2-sectie-noot text-sm">
+        Bronnen: CBS (10 februari 2026) en Dialogic (29 september 2025), allebei geraadpleegd op {stand}.
+      </p>
+    </section>
+
+    <section class="v2-sectie">
+      <h2>AI implementeren met één tool: waarom kiezen wij Claude?</h2>
+      <div class="v2-prose">
+        <p>
+          Elke AI-implementatie begint met de keuze voor één omgeving. Werkt je team in drie
+          tools tegelijk, dan leert niemand er één goed en regel je de afspraken over data drie keer.
+        </p>
+        <p>
+          Wij kozen Claude en doen niets anders. Voor bedrijven heeft Anthropic
+          <a href="https://support.claude.com/en/articles/9266767-what-is-the-team-plan" target="_blank" rel="noopener">het Team-abonnement van Claude</a>, voor teams van 2 tot 150 mensen.
+        </p>
+        <p>
+          Volgens de
+          <a href="https://claude.com/pricing" target="_blank" rel="noopener">prijspagina van Claude</a>
+          krijg je daarmee centrale facturering en beheer, één login via je bestaande accounts
+          (single sign-on) en een
+          <a href="https://support.claude.com/en/articles/12622703-deploy-claude-desktop-for-windows" target="_blank" rel="noopener">bedrijfsbrede uitrol van de desktop-app</a>.
+          Anthropic <a href="https://privacy.claude.com/en/articles/7996868-is-my-data-used-for-model-training" target="_blank" rel="noopener">gebruikt de input en output van zakelijke producten standaard niet om modellen te trainen</a>.
+        </p>
+        <p>
+          Grotere organisaties kunnen kiezen voor Enterprise, met onder meer
+          <a href="https://support.claude.com/en/articles/13133195-set-up-jit-or-scim-provisioning" target="_blank" rel="noopener">automatisch gebruikersbeheer via SCIM</a>,
+          <a href="https://support.claude.com/en/articles/9970975-access-audit-logs" target="_blank" rel="noopener">auditlogs van onder meer inlogs en wijzigingen</a> en rechten per rol.
+        </p>
+        <p>
+          Dat staat ook in de
+          <a href="https://www.anthropic.com/legal/commercial-terms" target="_blank" rel="noopener">zakelijke voorwaarden van Anthropic</a>:
+          “Anthropic may not train models on Customer Content from Services.” De
+          <a href="https://www.anthropic.com/legal/data-processing-addendum" target="_blank" rel="noopener">verwerkersovereenkomst (DPA)</a>
+          hoort bij die voorwaarden en neemt de modelcontractbepalingen van de EU (Standard
+          Contractual Clauses) op.
+        </p>
+        <p>
+          Werkt je bedrijf al met Microsoft 365 Copilot of een andere tool? Lees dan eerst
+          <a href="/vergelijken/claude-vs-copilot">Claude of Copilot</a> of
+          <a href="/vergelijken/welke-ai-voor-mkb">welke AI past bij het MKB</a>.
+        </p>
+      </div>
+    </section>
+
+    <section class="v2-sectie">
+      <h2>Hoe verloopt een AI-implementatie bij ons?</h2>
+      <div class="v2-prose">
+        <p>
+          Je doorloopt vier stappen. Elke stap neem je los af.
+        </p>
+        <ol>
+          <li>
+            <strong><a href="/ai-enablement-scan">Gratis AI-check</a>.</strong> Je beantwoordt in twee
+            minuten zeven vragen, en als AI bij je bedrijf past volgt een gratis intro-gesprek.
+          </li>
+          <li>
+            <strong><a href="/claude-readiness-scan">Claude Readiness Scan</a>.</strong> Een dag
+            bij jou, een week uitwerken en een uur bespreken. Je krijgt 5 tot 10 use cases op
+            volgorde van opbrengst en een vaste prijs voor de rollout.
+          </li>
+          <li>
+            <strong><a href="/claude-in-30-dagen">Claude in 30 dagen</a>.</strong> Vier weken
+            waarin we Claude inrichten en je team traint op het eigen werk.
+          </li>
+          <li>
+            <strong><a href="/claude-compagnon">Claude Compagnon</a> (optioneel).</strong>
+            Begeleiding per maand voor wie na de rollout nieuwe toepassingen wil toevoegen.
+          </li>
+        </ol>
+        <p>
+          Wat er per stap precies gebeurt, staat bij <a href="/claude-implementatie">het Claude-traject met alle prijzen</a>.
+          De werkwijze erachter beschrijven we in <a href="/methodologie">onze methode in vijf bouwstenen</a>.
+        </p>
+      </div>
+    </section>
+
+    <section id="kosten" class="v2-sectie">
+      <h2>Wat kost een AI-implementatie?</h2>
+      <div class="v2-prose">
+        <p>
+          Je betaalt twee rekeningen: de implementatie aan ons, in euro, en de licenties aan
+          Anthropic, in dollar.
+        </p>
+        <p>
+          De Readiness Scan en de rollout samen beginnen bij €9.000. Een eigen koppeling tussen
+          Claude en je systemen (technisch: een MCP-server, die je in Claude als
+          <a href="https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp" target="_blank" rel="noopener">eigen connector</a> toevoegt) kost €2.000 tot €5.000 extra. Die
+          bouwen we alleen als de scan laat zien dat het zin heeft.
+        </p>
+      </div>
+      <div class="v2-tabelkaart">
+        <table>
+          <caption class="caption-top text-left text-sm text-inkt-zacht pt-4 pb-2">Kosten van een AI-implementatie bij implementeren.ai, stand {stand}.</caption>
+          <thead>
+            <tr>
+              <th>Stap</th>
+              <th>Prijs</th>
+              <th>Duur</th>
+            </tr>
+          </thead>
+          <tbody>
+            {prijzen.map((r) => (
+              <tr>
+                <td><a href={r.link}>{r.naam}</a></td>
+                <td>{r.prijs}</td>
+                <td>{r.duur}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <figure class="v2-figuur mt-8">
+        <div set:html={kostenSchema} />
+        <figcaption class="mt-2 text-sm text-inkt-zacht">Figuur 1: de implementatie en de licenties zijn twee aparte rekeningen, stand {stand}.</figcaption>
+      </figure>
+      <div class="v2-tabelkaart">
+        <table>
+          <caption class="caption-top text-left text-sm text-inkt-zacht pt-4 pb-2">Claude Team-licenties per gebruiker per maand, stand {stand} (ECB-koers 29 oktober 2026: 1 euro = 1,1130 dollar).</caption>
+          <thead>
+            <tr>
+              <th>Seat</th>
+              <th>Jaarlijks betaald</th>
+              <th>Maandelijks betaald</th>
+            </tr>
+          </thead>
+          <tbody>
+            {licenties.map((l) => (
+              <tr>
+                <td>{l.seat}</td>
+                <td>${l.jaar} <span class="text-sm font-normal">({euro(l.jaar)})</span></td>
+                <td>${l.maand} <span class="text-sm font-normal">({euro(l.maand)})</span></td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="v2-sectie-noot">
+        Anthropic vermeldt bij de prijzen dat belasting er niet in zit. Alle abonnementen staan bij <a href="/prijs">Claude kosten zakelijk</a>, en de plannen vergelijk je bij <a href="/prijs/pro-vs-team-vs-enterprise">Claude Pro, Team of Enterprise</a>.
+      </p>
+      <p class="v2-sectie-noot text-sm">
+        Bronnen: <a href="https://claude.com/pricing" target="_blank" rel="noopener">Claude, Plans &amp; Pricing</a>
+        en <a href="https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml" target="_blank" rel="noopener">ECB-referentiekoersen</a>,
+        geraadpleegd op {stand}. Onze eigen prijzen komen uit onze dienstbeschrijvingen.
+      </p>
+    </section>
+
+    <section class="v2-sectie">
+      <h2>Hoe blijft je bedrijfsdata veilig tijdens de implementatie?</h2>
+      <div class="v2-prose">
+        <p>
+          Aan het begin van de rollout richten we de omgeving in. Je werkt onder de zakelijke
+          voorwaarden van Anthropic, met een <a href="/compliance/anthropic-dpa">verwerkersovereenkomst</a>
+          en <a href="https://support.claude.com/en/articles/13132885-set-up-single-sign-on-sso" target="_blank" rel="noopener">één login via je bestaande accounts (SSO)</a>. Anthropic is bij Team en
+          Enterprise <a href="https://privacy.claude.com/en/articles/9267385-does-anthropic-act-as-a-data-processor-or-controller" target="_blank" rel="noopener">verwerker van je data en volgt jouw instructies</a>.
+          Samen leggen we vast welke data wel en niet in Claude gaat.
+        </p>
+        <p>
+          Nieuwe toepassingen draaien eerst in een aparte testomgeving, waar iemand de uitkomst
+          controleert. In je systemen verandert niets zonder jouw akkoord. Werkt Claude met je
+          documenten, dan zetten we versiebeheer aan, zodat je altijd terug kunt naar een
+          eerdere versie.
+        </p>
+        <p>
+          Meer lees je bij <a href="/compliance">Claude en de AVG</a>, <a href="/compliance/eu-hosting">Claude-data in de EU houden</a>
+          en <a href="/compliance/is-claude-veilig">is Claude veilig voor je bedrijf</a>.
+          De AI Act vraagt ook dat je maatregelen neemt voor de AI-kennis van je medewerkers, zie <a href="/compliance/ai-act-mkb">Claude en de EU AI Act voor het MKB</a>.
+        </p>
+      </div>
+    </section>
+
+    <section class="v2-sectie">
+      <h2>Wat heb je na de implementatie zelf in handen?</h2>
+      <div class="v2-prose">
+        <p>
+          Na de rollout heb je twee tot vier champions in je eigen team. Zij zijn het eerste
+          aanspreekpunt voor collega’s en beheren de promptbibliotheek. Die bibliotheek is
+          geordend op rol, bijvoorbeeld sales of finance, en staat in gewone tekstbestanden die
+          je zelf kunt meenemen.
+        </p>
+        <p>
+          Afspraken hebben een eigenaar nodig. Dat merkten we in augustus 2026 in onze eigen
+          Claude-omgeving: onze schrijfregels stonden netjes vastgelegd, maar niets controleerde
+          of ze werden gevolgd. We voegden een <a href="https://code.claude.com/docs/en/hooks" target="_blank" rel="noopener">automatische controle (een hook in Claude Code)</a> toe
+          en verwezen in 17 van de 86 <a href="https://support.claude.com/en/articles/12512198-how-to-create-custom-skills" target="_blank" rel="noopener">vaste werkinstructies (skills)</a> die we
+          Claude meegeven naar dezelfde regels, waar dat er 7 waren. Bij jou zijn de champions die eigenaar. Dit komt uit onze eigen werklogboeken.
+        </p>
+      </div>
+    </section>
+
+    <section class="v2-sectie">
+      <h2>Wanneer is een AI-implementatie (nog) niet zinvol?</h2>
+      <div class="v2-prose">
+        <p>
+          Soms is het te vroeg. Blijkt uit de gratis AI-check dat AI nu niet past, dan hoor je
+          dat ook van ons. Wil je met AI vooral op personeel besparen, dan moet je bij een andere partij zijn. Ons werk is bedoeld om je huidige team meer te laten doen, en niemand raakt er z’n baan door kwijt.
+        </p>
+        <p>
+          We werken voor bedrijven van 10 tot 200 mensen. Wil je ChatGPT, Copilot of Gemini
+          invoeren, dan kunnen we je niet helpen, want wij doen alleen Claude. We werken met
+          maximaal drie klanten tegelijk, zodat je persoonlijke aandacht krijgt.
+        </p>
+      </div>
+    </section>
+
+    <section class="v2-sectie">
+      <h2>Een AI-consultant of een implementatiepartner: wat heb je nodig?</h2>
+      <p class="v2-sectie-intro">
+        Een AI-consultant past als je nog wilt uitzoeken welke tool je kiest. Heb je die keuze
+        gemaakt, of wil je met Claude werken, dan heb je meer aan een partij die het inricht en
+        blijft tot je team zelfstandig werkt.
+      </p>
+      <div class="v2-tabelkaart">
+        <table>
+          <caption class="caption-top text-left text-sm text-inkt-zacht pt-4 pb-2">Een generieke AI-consultant naast onze werkwijze, stand {stand}.</caption>
+          <thead>
+            <tr>
+              <th>Vraag</th>
+              <th>Generieke AI-consultant</th>
+              <th>Implementeren.ai</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Welke tools?</td>
+              <td class="!font-sans !text-base !font-normal !whitespace-normal">Advies over elke tool tegelijk</td>
+              <td>Eén tool: Claude</td>
+            </tr>
+            <tr>
+              <td>Wat lever je op?</td>
+              <td class="!font-sans !text-base !font-normal !whitespace-normal">Presentatie en roadmap</td>
+              <td>Installatie tot en met dagelijks gebruik</td>
+            </tr>
+            <tr>
+              <td>Hoe reken je af?</td>
+              <td class="!font-sans !text-base !font-normal !whitespace-normal">Per uur</td>
+              <td>Vaste prijs per stap</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="v2-sectie-noot">
+        Het werk doet {auteurs.camiel.naam}, met meer dan 8 jaar ervaring met data en AI. Je ziet
+        hem bij de scan, in de workshops en bij elke kwartaalreview; een ander gezicht krijg je
+        niet. Lees meer over
+        <a href="/claude-consultant">wie het werk doet</a>.
+      </p>
+    </section>
+
+    <section class="v2-sectie">
+      <h2>Werk dat ons team eerder bouwde</h2>
+      <div class="v2-prose">
+        <p>
+          Bij een MSP-softwarebedrijf bouwde ons team een chat waarin klanten hun kwartaalrapport
+          binnen twee minuten zelf opvragen, waar het eerst 30 tot 45 minuten handwerk was
+          (<a href="/cases/copilot-studio-agent">lees de case</a>). Een supportteam zonder
+          kennisbank had binnen vijf werkdagen 13 artikelen online
+          (<a href="/cases/knowledge-base">lees de case</a>). Meer voorbeelden staan op de
+          pagina over <a href="/claude-implementatie">Claude-implementatie</a>.
+        </p>
+      </div>
+    </section>
+
+    <section class="v2-sectie v2-dienst-faq">
+      <h2>Veelgestelde vragen over AI-implementatie</h2>
+      <div class="v2-faq-lijst">
+        {faqItems.map(item => (
+          <details class="v2-faq-item">
+            <summary class="v2-faq-vraag">
+              {item.question}
+              <span class="v2-faq-plus" aria-hidden="true">+</span>
+            </summary>
+            <div class="v2-faq-antwoord">
+              {item.answer}
+              {item.linkHref && (
+                <a href={item.linkHref}>{item.linkTekst} &rarr;</a>
+              )}
+            </div>
+          </details>
+        ))}
+      </div>
+      <p class="v2-sectie-noot">
+        Liever meteen praten zonder eerst de AI-check te doen?
+        <a href={site.introLink} target="_blank" rel="noopener">Plan direct een gratis intro-gesprek</a>.
+      </p>
+    </section>
+
+    <BronnenBlok bronnen={bronnen} peildatum={stand} />
+  </article>
+
+  <CtaBlok
+    kop="Past een AI-implementatie bij jouw bedrijf?"
+    tekst="Zeven vragen, twee minuten, en je ziet direct waar je bedrijf staat. Past het, dan volgt een gratis intro-gesprek."
+    link="/ai-enablement-scan"
+    linkTekst="Doe de gratis AI-check"
+  />
+</BasisLayout>
