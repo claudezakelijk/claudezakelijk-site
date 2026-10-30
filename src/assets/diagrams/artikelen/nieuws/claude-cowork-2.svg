@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" role="img" aria-label="Een Cowork-taak draait standaard in de cloud en loopt door als je laptop dicht is; werk met lokale mappen of Claude in Chrome draait op je eigen computer en vraagt een open desktop-app; een sessie blijft in één modus" data-bijschrift="Standaard draait een Cowork-sessie in de cloud en loopt die door als je laptop dicht is. Lokale mappen en Claude in Chrome vragen een open desktop-app." font-family="Inter, system-ui, sans-serif" fill="#23261D"><defs>
+<filter id="cw2-g" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 .14  0 0 0 0 .15  0 0 0 0 .11  .16 0 0 0 -.03"/></filter>
+<marker id="cw2-a" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#3D5220"/></marker>
+<marker id="cw2-b" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#23261D"/></marker>
+</defs><rect width="1200" height="600" fill="#F4F1E8"/><rect x="64" y="48" width="64" height="4" rx="2" fill="#B4C13E"/><text x="64" y="92" fill="#565A4C" font-size="22" font-weight="600" letter-spacing="3">WAAR DRAAIT EEN COWORK-SESSIE?</text>
+<g>
+<rect x="96" y="228" width="130" height="164" rx="12" fill="#E9EBDC" stroke="#23261D" stroke-width="4" transform="rotate(-7 161 310)"/>
+<rect x="84" y="240" width="130" height="164" rx="12" fill="#FFFFFF" stroke="#23261D" stroke-width="4"/>
+<g stroke-width="9" stroke-linecap="round"><line x1="108" y1="278" x2="180" y2="278" stroke="#B4C13E"/><line x1="108" y1="308" x2="188" y2="308" stroke="#E1DED2"/><line x1="108" y1="338" x2="170" y2="338" stroke="#E1DED2"/><line x1="108" y1="368" x2="182" y2="368" stroke="#E1DED2"/></g>
+<path d="M232 300 C 352 300, 372 196, 492 196 L 532 196" fill="none" stroke="#3D5220" stroke-width="7" stroke-linecap="round" marker-end="url(#cw2-a)"/>
+<path d="M232 346 C 352 346, 372 440, 492 440 L 520 440" fill="none" stroke="#23261D" stroke-width="5" stroke-linecap="round" marker-end="url(#cw2-b)"/>
+<path d="M590 250 a 40 40 0 0 1 10 -78 a 60 60 0 0 1 110 -20 a 50 50 0 0 1 80 40 a 40 40 0 0 1 0 58 Z" fill="#E9EBDC" stroke="#23261D" stroke-width="4" stroke-linejoin="round"/>
+<rect x="560" y="382" width="200" height="112" rx="10" fill="#FFFFFF" stroke="#23261D" stroke-width="4"/>
+<g fill="none" stroke="#23261D" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M626 416 h18 l6 8 h24 v32 h-48 z"/></g>
+<rect x="538" y="494" width="244" height="18" rx="9" fill="#E9EBDC" stroke="#23261D" stroke-width="4"/>
+<line x1="560" y1="318" x2="1136" y2="318" stroke="#CFCDBE" stroke-width="3" stroke-dasharray="10 10"/>
+<rect x="722" y="296" width="318" height="44" fill="#F4F1E8"/>
+</g>
+<text x="149" y="456" text-anchor="middle" font-size="34" font-weight="600">jouw taak</text>
+<text x="692" y="230" text-anchor="middle" font-size="34" font-weight="600">cloud</text>
+<text x="840" y="196" font-size="36" font-weight="600" fill="#3D5220">loopt door</text>
+<text x="840" y="236" font-size="26" fill="#565A4C">laptop mag dicht</text>
+<text x="881" y="327" text-anchor="middle" font-size="26" fill="#565A4C">één modus per sessie</text>
+<text x="840" y="420" font-size="34" font-weight="600">eigen computer</text>
+<text x="840" y="462" font-size="32">desktop-app open</text>
+<text x="840" y="500" font-size="26" fill="#565A4C">lokale mappen, Chrome</text>
+<text x="1136" y="566" text-anchor="end" font-size="26" fill="#64685A">stand 30 okt 2026</text>
+<rect width="1200" height="600" filter="url(#cw2-g)"/></svg>

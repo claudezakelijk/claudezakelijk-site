@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" role="img" aria-label="Het invoerveld van Claude: voorheen koos je vooraf tussen de knoppen Chat en Cowork, in de nieuwe ervaring begint alles in één veld en kan een taak nog steeds met bestanden, mappen en websites werken" font-family="Inter, system-ui, sans-serif" fill="#23261D"><defs>
+<filter id="cw-g" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 .14  0 0 0 0 .15  0 0 0 0 .11  .16 0 0 0 -.03"/></filter>
+<marker id="cw-a" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#F4F1E8"/></marker>
+</defs><rect width="1200" height="600" fill="#F4F1E8"/><rect x="64" y="48" width="64" height="4" rx="2" fill="#B4C13E"/><text x="64" y="92" fill="#565A4C" font-size="22" font-weight="600" letter-spacing="3">HERKEN JE HET? · JE INVOERVELD</text>
+<g>
+<rect x="96" y="150" width="440" height="200" rx="20" fill="#FFFFFF" stroke="#23261D" stroke-width="4"/>
+<line x1="134" y1="200" x2="380" y2="200" stroke="#E1DED2" stroke-width="9" stroke-linecap="round"/>
+<rect x="130" y="256" width="120" height="58" rx="29" fill="#E9EBDC" stroke="#23261D" stroke-width="4"/>
+<rect x="268" y="256" width="170" height="58" rx="29" fill="#FFFFFF" stroke="#23261D" stroke-width="4"/>
+<rect x="664" y="150" width="440" height="200" rx="20" fill="#FFFFFF" stroke="#23261D" stroke-width="4"/>
+<line x1="702" y1="200" x2="900" y2="200" stroke="#B4C13E" stroke-width="9" stroke-linecap="round"/>
+<line x1="922" y1="180" x2="922" y2="220" stroke="#23261D" stroke-width="4" stroke-linecap="round"/>
+<g fill="none" stroke="#23261D" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M704 264 h26 l12 12 v38 h-38 z"/><path d="M712 288 h22 M712 300 h22"/><path d="M774 274 h18 l6 8 h24 v32 h-48 z"/><circle cx="878" cy="290" r="24"/><ellipse cx="878" cy="290" rx="10" ry="24"/><path d="M854 290 h48"/></g>
+<circle cx="1052" cy="290" r="30" fill="#3D5220"/>
+<line x1="1052" y1="308" x2="1052" y2="282" stroke="#F4F1E8" stroke-width="6" stroke-linecap="round" marker-end="url(#cw-a)"/>
+</g>
+<text x="190" y="296" text-anchor="middle" font-size="32" font-weight="600">Chat</text>
+<text x="353" y="296" text-anchor="middle" font-size="32" font-weight="600">Cowork</text>
+<text x="316" y="418" text-anchor="middle" font-size="22" font-weight="600" letter-spacing="3" fill="#565A4C">VOORHEEN</text>
+<text font-style="italic" x="316" y="504" text-anchor="middle" font-family="'Newsreader Variable', Newsreader, Georgia, serif" font-size="64" font-weight="500">twee knoppen</text>
+<text x="884" y="418" text-anchor="middle" font-size="22" font-weight="600" letter-spacing="3" fill="#565A4C">NIEUWE ERVARING</text>
+<text font-style="italic" x="884" y="504" text-anchor="middle" font-family="'Newsreader Variable', Newsreader, Georgia, serif" font-size="64" font-weight="500" fill="#3D5220">één veld</text>
+<text x="1136" y="566" text-anchor="end" font-size="26" fill="#64685A">stand 30 oktober 2026</text>
+<rect width="1200" height="600" filter="url(#cw-g)"/></svg>
