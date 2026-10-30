@@ -64,8 +64,8 @@ bronnen:
     url: "https://privacy.claude.com/en/articles/7996890-where-are-your-servers-located-do-you-host-your-models-on-eu-servers"
     geraadpleegd: "30 oktober 2026"
   - titel: "Anthropic, lijst van sub-verwerkers"
-    url: "https://www.anthropic.com/subprocessors"
-    geraadpleegd: "2 oktober 2026"
+    url: "https://trust.anthropic.com/subprocessors"
+    geraadpleegd: "30 oktober 2026"
   - titel: "Anthropic Trust Center (rapporten en compliance-documentatie)"
     url: "https://trust.anthropic.com/"
     geraadpleegd: "30 oktober 2026"
@@ -83,7 +83,7 @@ faq:
   - question: "Moet ik de Anthropic DPA apart ondertekenen?"
     answer: "Nee. Volgens Anthropic is de DPA met Standard Contractual Clauses automatisch onderdeel van de Commercial Terms of Service. Wie die voorwaarden accepteert, accepteert ook de DPA. Bewaar wel een kopie van de geldende versie in je AVG-documentatie en houd bij wanneer Anthropic de tekst wijzigt."
   - question: "Wat staat er in de Anthropic DPA?"
-    answer: "De DPA regelt onder meer doorgifte buiten de EER, sub-verwerkers, beveiliging, datalekken en verwijdering. Anthropic slaat data op in de Verenigde Staten, en die doorgifte is afgedekt met Standard Contractual Clauses (module 2 en 3). Een datalek meldt Anthropic uiterlijk binnen 48 uur nadat het ervan weet. Na het einde van de overeenkomst verwijdert Anthropic de klantdata binnen 30 dagen, behalve waar de wet bewaren eist of waar dat nodig is tegen misbruik."
+    answer: "De DPA regelt onder meer doorgifte buiten de EER, sub-verwerkers, beveiliging, datalekken en verwijdering. Anthropic slaat data op in de Verenigde Staten, en die doorgifte is afgedekt met Standard Contractual Clauses (module 2 en 3). Een datalek meldt Anthropic uiterlijk binnen 48 uur nadat het ervan weet. Na het einde van de overeenkomst verwijdert Anthropic de klantdata binnen 30 dagen, behalve waar de wet bewaren eist, bij een geschil tussen partijen of waar dat nodig is tegen misbruik."
   - question: "Wat als Anthropic sub-verwerkers buiten de EU inzet?"
     answer: "Anthropic gebruikt sub-verwerkers en publiceert de lijst op anthropic.com/subprocessors. Voor doorgifte van persoonsgegevens buiten de EU bevat de DPA Standard Contractual Clauses (module 2 en 3). Bij een nieuwe sub-verwerker krijg je vooraf bericht en kun je binnen 15 dagen schriftelijk bezwaar maken."
   - question: "Vervangt de Anthropic DPA een verwerkersovereenkomst met mijn eigen klanten?"
@@ -118,10 +118,10 @@ Dit artikel legt uit wat de Anthropic DPA is, voor welke abonnementen hij geldt,
 
 ## De Anthropic DPA downloaden of tekenen
 
-1. **Open de DPA** op [anthropic.com/legal/data-processing-addendum](https://www.anthropic.com/legal/data-processing-addendum). Daar staat de geldende versie, met bovenaan de datum waarop hij van kracht werd (nu 24 februari 2025).
+1. **Open de DPA** op [anthropic.com/legal/data-processing-addendum](https://www.anthropic.com/legal/data-processing-addendum). Daar staat de geldende versie, met bovenaan de datum waarop hij van kracht werd.
 2. **Je hoeft niets te tekenen.** Volgens het [Privacy Center van Anthropic](https://privacy.claude.com/en/articles/7996862-how-do-i-view-and-sign-your-data-processing-addendum-dpa) is de DPA automatisch onderdeel van de Commercial Terms of Service. Wie die voorwaarden accepteert, accepteert ook de DPA.
 3. **Bewaar zelf een kopie.** Het Privacy Center noemt geen aparte PDF of ondertekend exemplaar. Sla de pagina op als PDF via de printfunctie van je browser, zet de datum erbij en leg hem bij je AVG-documentatie.
-4. **Werk je via AWS Bedrock of Google Vertex AI?** Dan gelden volgens Anthropic de voorwaarden van dat platform, en zoek je de verwerkersovereenkomst daar.
+4. **Werk je via een ander platform, zoals AWS Bedrock of Google Vertex AI?** Dan gelden volgens Anthropic de voorwaarden van dat platform, en zoek je de verwerkersovereenkomst daar.
 
 ## Waarom heb je een verwerkersovereenkomst nodig?
 
@@ -131,7 +131,7 @@ De verplichting rust op jou als verwerkingsverantwoordelijke. De verwerkersovere
 
 ## Voor welke Claude-abonnementen geldt de DPA?
 
-Hier gaat het in de praktijk het vaakst mis. De Anthropic DPA (officieel het Data Processing Addendum) is automatisch onderdeel van de [Commercial Terms of Service](https://www.anthropic.com/legal/commercial-terms). Wie die voorwaarden accepteert, accepteert ook de DPA. Voor klanten in de Europese Economische Ruimte is Anthropic Ireland, Limited de contractpartij. De DPA dekt de zakelijke producten:
+Hier gaat het in de praktijk het vaakst mis. Voor klanten in de Europese Economische Ruimte is Anthropic Ireland, Limited de contractpartij. De DPA dekt de zakelijke producten:
 
 - **De Anthropic API**, dus ook tools die daarop draaien, zoals Claude Code met een API-sleutel.
 - **Claude Team en Enterprise** (voorheen Claude for Work): de zakelijke abonnementen.
@@ -159,15 +159,15 @@ De belangrijkste onderdelen van de DPA en de zakelijke voorwaarden:
 
 **Beveiliging.** De DPA noemt de technische en organisatorische maatregelen, waaronder versleuteling met minimaal AES-256 voor opgeslagen data en TLS 1.2 of hoger voor transport. Anthropic meldt de volgende [certificeringen](https://privacy.claude.com/en/articles/10015870-what-certifications-has-anthropic-obtained): SOC 2 Type I en Type II, ISO 27001:2022 en ISO/IEC 42001:2023 (de norm voor AI-managementsystemen). Rapporten vraag je op via het [Trust Center van Anthropic](https://trust.anthropic.com/).
 
-**Sub-verwerkers.** Anthropic publiceert de [lijst van sub-verwerkers](https://www.anthropic.com/subprocessors) online. Bij een nieuwe sub-verwerker krijg je vooraf bericht en kun je binnen 15 dagen schriftelijk bezwaar maken.
+**Sub-verwerkers.** Anthropic publiceert de [lijst van sub-verwerkers](https://trust.anthropic.com/subprocessors) online. Bij een nieuwe sub-verwerker krijg je vooraf bericht en kun je binnen 15 dagen schriftelijk bezwaar maken.
 
-**Doorgifte buiten de EU.** De DPA bevat Standard Contractual Clauses (SCC's), de standaardclausules van de Europese Commissie, in de varianten module 2 en module 3. Anthropic slaat data op in de [Verenigde Staten](https://privacy.claude.com/en/articles/7996890-where-are-your-servers-located-do-you-host-your-models-on-eu-servers).
+**Doorgifte buiten de EU.** De DPA bevat Standard Contractual Clauses (SCC's), de standaardclausules van de Europese Commissie, in de varianten module 2 en module 3. Anthropic slaat data op in de [Verenigde Staten](https://privacy.claude.com/en/articles/7996890-where-are-your-servers-located-do-you-host-your-models-on-eu-servers). De verwerking zelf kan ook in Europa, Azië of Australië plaatsvinden.
 
 **Datalekken.** Anthropic meldt een beveiligingsinbreuk zonder onnodige vertraging en uiterlijk binnen 48 uur nadat het ervan weet.
 
 **Rechten van betrokkenen.** Anthropic stuurt verzoeken van betrokkenen aan je door en helpt je om eraan te voldoen.
 
-**Verwijdering.** Binnen 30 dagen na het einde van de overeenkomst verwijdert Anthropic de klantdata, behalve waar de wet bewaren eist of waar dat nodig is tegen misbruik.
+**Verwijdering.** Binnen 30 dagen na het einde van de overeenkomst verwijdert Anthropic de klantdata, behalve waar de wet bewaren eist, bij een geschil tussen partijen of waar dat nodig is tegen misbruik.
 
 Daarnaast bestaat [Zero Data Retention](/compliance/zero-data-retention). Bij die afspraak slaat Anthropic prompts en antwoorden niet op, behalve waar de wet of misbruikbestrijding dat vereist. Anthropic beoordeelt aanvragen per organisatie, via sales. De regeling geldt [alleen voor de API en voor Claude Code op Enterprise-abonnementen](https://privacy.claude.com/en/articles/8956058-i-have-a-zero-data-retention-agreement-with-anthropic-what-products-does-it-apply-to). Voor sommige modellen blijft een beperkte bewaartermijn gelden.
 
@@ -181,7 +181,7 @@ Deze punten blijven jouw verantwoordelijkheid.
 
 **Datalocatie.** De DPA geeft geen garantie dat data binnen de EU blijft. Op het eigen platform van Anthropic is er geen EU-dataresidentie. Juridisch is de doorgifte afgedekt via de SCC's, maar sommige klanten of sectoren eisen meer. De routes daarvoor, zoals Claude via AWS Bedrock met een EU-endpoint, staan in [Claude-data in de EU houden](/compliance/eu-hosting).
 
-Wil je deze punten niet zelf uitzoeken? In een [Claude-implementatie](/claude-implementatie) leggen we samen met je vast welke data erin mag, wat eerst wordt gepseudonimiseerd en hoe de keten in je verwerkingsregister staat.
+Hulp nodig bij deze drie punten? In een [Claude-implementatie](/claude-implementatie) leggen we samen met je vast welke data erin mag, wat eerst wordt gepseudonimiseerd en hoe de keten in je verwerkingsregister staat.
 
 ## Eén verwerkersovereenkomst is niet genoeg: de praktijk
 
