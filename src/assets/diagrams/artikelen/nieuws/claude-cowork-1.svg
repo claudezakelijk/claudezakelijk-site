@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" role="img" aria-label="Tijdlijn van de samenvoeging van chat en Cowork: op 16 september 2026 begint de uitrol op Pro en Max, sinds 6 oktober draaien nieuwe taken op Pro en Max in de cloud, op 23 oktober is het op Enterprise beschikbaar maar staat het nog uit, op 16 november gaat het op Enterprise standaard aan; Team test het in bèta en Free heeft geen datum" data-bijschrift="Wanneer chat en Cowork per abonnement samengaan. Team test het in bèta, Free heeft geen datum. Stand 30 oktober 2026." font-family="Inter, system-ui, sans-serif" fill="#23261D"><defs>
+<filter id="cw1-g" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 .14  0 0 0 0 .15  0 0 0 0 .11  .16 0 0 0 -.03"/></filter>
+<marker id="cw1-a" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#565A4C"/></marker>
+</defs><rect width="1200" height="500" fill="#F4F1E8"/><rect x="64" y="48" width="64" height="4" rx="2" fill="#B4C13E"/><text x="64" y="92" fill="#565A4C" font-size="22" font-weight="600" letter-spacing="3">CHAT EN COWORK SAMEN · PER ABONNEMENT</text>
+<path d="M108 268 L 1120 268" fill="none" stroke="#565A4C" stroke-width="4" stroke-linecap="round" marker-end="url(#cw1-a)"/>
+<line x1="834" y1="236" x2="834" y2="300" stroke="#565A4C" stroke-width="4" stroke-dasharray="2 10" stroke-linecap="round"/>
+<text x="834" y="220" text-anchor="middle" font-size="26" fill="#565A4C">nu</text>
+<circle cx="108" cy="268" r="18" fill="#B4C13E" stroke="#23261D" stroke-width="4"/>
+<circle cx="378" cy="268" r="18" fill="#FFFFFF" stroke="#23261D" stroke-width="4"/>
+<circle cx="648" cy="268" r="18" fill="#FFFFFF" stroke="#23261D" stroke-width="4"/>
+<circle cx="918" cy="268" r="18" fill="#F6E7E4" stroke="#A8433B" stroke-width="4"/>
+<g font-family="'Instrument Sans Variable', Inter, system-ui, sans-serif" font-size="40" font-weight="600" letter-spacing="-1"><text x="90" y="220">16 sep</text><text x="360" y="220">6 okt</text><text x="630" y="220">23 okt</text><text x="900" y="220">16 nov</text></g>
+<text x="90" y="336" font-size="34" font-weight="600">Pro · Max</text>
+<text x="90" y="374" font-size="26" fill="#565A4C">uitrol begint</text>
+<text x="360" y="336" font-size="34" font-weight="600">cloud</text>
+<text x="360" y="374" font-size="26" fill="#565A4C">nieuwe taken</text>
+<text x="360" y="408" font-size="26" fill="#565A4C">op Pro en Max</text>
+<text x="630" y="336" font-size="34" font-weight="600">Enterprise</text>
+<text x="630" y="374" font-size="26" fill="#565A4C">beschikbaar,</text>
+<text x="630" y="408" font-size="26" fill="#565A4C">staat nog uit</text>
+<text x="900" y="336" font-size="34" font-weight="600" fill="#A8433B">standaard aan</text>
+<text x="900" y="374" font-size="26" fill="#565A4C">Enterprise</text>
+<text x="64" y="466" font-size="26" fill="#565A4C">Team: bèta · Free: geen datum</text>
+<text x="1136" y="466" text-anchor="end" font-size="26" fill="#64685A">stand 30 okt 2026</text>
+<rect width="1200" height="500" filter="url(#cw1-g)"/></svg>
