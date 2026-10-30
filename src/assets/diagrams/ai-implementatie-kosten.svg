@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img" aria-labelledby="aik-titel aik-uitleg" font-family="Inter, system-ui, sans-serif" fill="#23261D">
+  <title id="aik-titel">Twee aparte rekeningen bij een AI-implementatie</title>
+  <desc id="aik-uitleg">Links de implementatie, die je in euro aan implementeren.ai betaalt: Readiness Scan vanaf 1.500 euro, Claude in 30 dagen vanaf 7.500 euro exclusief btw, optioneel de Claude Compagnon vanaf 1.500 euro per maand. Rechts de licenties, die je in dollar rechtstreeks aan Anthropic betaalt: Team Standard 20 dollar en Team Premium 100 dollar per gebruiker per maand bij jaarbetaling. Stand 30 oktober 2026.</desc>
+  <defs>
+    <filter id="aik-schaduw" x="-5%" y="-10%" width="110%" height="125%">
+      <feDropShadow dx="0" dy="1" stdDeviation="1.5" flood-color="#23261D" flood-opacity=".08"></feDropShadow>
+    </filter>
+  </defs>
+
+  <rect width="800" height="400" fill="#F4F1E8"></rect>
+
+  <rect x="40" y="36" width="48" height="2" rx="1" fill="#3D5220"></rect>
+  <text x="40" y="62" fill="#565A4C" font-size="11" font-weight="600" letter-spacing="1.65">WAAR JE GELD NAARTOE GAAT</text>
+  <text x="760" y="62" text-anchor="end" font-size="13" fill="#565A4C">stand 30 oktober 2026</text>
+
+  <rect x="40" y="92" width="350" height="250" rx="12" fill="#FFFFFF" stroke="#E1DED2" stroke-width="1" filter="url(#aik-schaduw)"></rect>
+  <text x="64" y="128" font-size="12" font-weight="600" letter-spacing="1.2" fill="#3D5220">REKENING 1 · IN EURO</text>
+  <text x="64" y="156" font-size="20" font-weight="600">Implementatie</text>
+  <text x="64" y="178" font-size="13" fill="#565A4C">aan implementeren.ai</text>
+  <line x1="64" y1="196" x2="366" y2="196" stroke="#E1DED2"></line>
+  <text x="64" y="224" font-size="14">Readiness Scan</text>
+  <text x="366" y="224" font-size="14" font-weight="600" text-anchor="end">vanaf €1.500</text>
+  <text x="64" y="256" font-size="14">Claude in 30 dagen</text>
+  <text x="366" y="256" font-size="14" font-weight="600" text-anchor="end">vanaf €7.500 excl. btw</text>
+  <text x="64" y="288" font-size="14" fill="#565A4C">Compagnon (optioneel)</text>
+  <text x="366" y="288" font-size="14" font-weight="600" text-anchor="end" fill="#565A4C">vanaf €1.500 p/m</text>
+  <text x="64" y="320" font-size="12" fill="#565A4C">scan en rollout eenmalig, Compagnon per maand</text>
+
+  <text x="400" y="222" font-size="22" font-weight="600" text-anchor="middle" fill="#565A4C">+</text>
+
+  <rect x="410" y="92" width="350" height="250" rx="12" fill="#E9EBDC" stroke="#E1DED2" stroke-width="1" filter="url(#aik-schaduw)"></rect>
+  <text x="434" y="128" font-size="12" font-weight="600" letter-spacing="1.2" fill="#3D5220">REKENING 2 · IN DOLLAR</text>
+  <text x="434" y="156" font-size="20" font-weight="600">Licenties</text>
+  <text x="434" y="178" font-size="13" fill="#565A4C">rechtstreeks aan Anthropic</text>
+  <line x1="434" y1="196" x2="736" y2="196" stroke="#D5D8C4"></line>
+  <text x="434" y="224" font-size="14">Team Standard</text>
+  <text x="736" y="224" font-size="14" font-weight="600" text-anchor="end">$20 p.p. p/m</text>
+  <text x="434" y="256" font-size="14">Team Premium</text>
+  <text x="736" y="256" font-size="14" font-weight="600" text-anchor="end">$100 p.p. p/m</text>
+  <text x="434" y="288" font-size="12" fill="#565A4C">bij jaarbetaling, zonder belasting</text>
+  <text x="434" y="320" font-size="12" fill="#565A4C">doorlopend, zolang je Claude gebruikt</text>
+</svg>
