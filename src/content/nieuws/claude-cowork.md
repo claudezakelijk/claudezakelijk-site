@@ -8,7 +8,7 @@ targetKeywords:
   - wat is claude cowork
   - hoe werkt claude cowork
   - claude cowork prijs
-wordCountTarget: 1649
+wordCountTarget: 1842
 priority: 1
 tier: 1
 cases:
@@ -42,16 +42,16 @@ isRecurring: false
 kortAntwoord: "Claude Cowork is de modus waarin Claude meerstapstaken uitvoert met bestanden, apps en connectors. Op 16 september 2026 kondigde Anthropic aan dat chat en Cowork één Claude worden, met één invoerveld voor beide. Pro en Max krijgen dat eerst, Team test het in bèta, Enterprise volgt standaard op 16 november 2026. Free heeft geen Cowork."
 bronnen:
   - titel: "Anthropic, Claude Cowork and chat are now one Claude (16 september 2026, update 23 oktober 2026)"
-    url: "https://claude.com/blog/cowork-is-now-claude"
+    url: "https://claude.com/resources/articles/cowork-is-now-claude"
     geraadpleegd: "30 oktober 2026"
   - titel: "Anthropic, Claude Cowork and chat come together for Enterprise (23 oktober 2026)"
-    url: "https://claude.com/blog/unified-claude-enterprise"
+    url: "https://claude.com/resources/articles/unified-claude-enterprise"
     geraadpleegd: "30 oktober 2026"
   - titel: "Claude Help Center: set up and manage the new unified Claude experience for your Enterprise organization (zonder datum, 'Updated this week')"
     url: "https://support.claude.com/en/articles/17444462-set-up-and-manage-the-new-unified-claude-experience-for-your-enterprise-organization"
     geraadpleegd: "30 oktober 2026"
   - titel: "Claude Help Center: use Claude Cowork on Team and Enterprise plans (zonder datum)"
-    url: "https://support.claude.com/en/articles/13455879"
+    url: "https://support.claude.com/en/articles/13455879-use-claude-cowork-on-team-and-enterprise-plans"
     geraadpleegd: "30 oktober 2026"
   - titel: "Claude Help Center: use Claude Cowork on web, desktop, and mobile (zonder datum)"
     url: "https://support.claude.com/en/articles/15520349-use-claude-cowork-on-web-desktop-and-mobile"
@@ -63,7 +63,7 @@ bronnen:
     url: "https://support.claude.com/en/articles/14479288-claude-cowork-architecture-overview"
     geraadpleegd: "30 oktober 2026"
   - titel: "Claude Help Center: get started with Claude Cowork (zonder datum)"
-    url: "https://support.claude.com/en/articles/13345190-getting-started-with-cowork"
+    url: "https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork"
     geraadpleegd: "30 oktober 2026"
   - titel: "Claude, plans en prijzen (claude.com)"
     url: "https://claude.com/pricing"
@@ -73,6 +73,12 @@ bronnen:
     geraadpleegd: "30 oktober 2026"
   - titel: "Download Claude (claude.com)"
     url: "https://claude.com/download"
+    geraadpleegd: "30 oktober 2026"
+  - titel: "Claude Code, productpagina (claude.com)"
+    url: "https://claude.com/product/claude-code"
+    geraadpleegd: "30 oktober 2026"
+  - titel: "Anthropic Privacy Center: is my data used for model training? (commercial customers, zonder datum)"
+    url: "https://privacy.claude.com/en/articles/7996868-is-my-data-used-for-model-training"
     geraadpleegd: "30 oktober 2026"
   - titel: "ECB-referentiekoers euro/dollar, 29 oktober 2026 (ecb.europa.eu)"
     url: "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/eurofxref-graph-usd.en.html"
@@ -92,11 +98,11 @@ faq:
     answer: "Voor werk in de cloud niet: die sessie loopt door als je de app sluit. Alleen taken met lokale mappen, een lokale koppeling, browserbesturing via Claude in Chrome of schermbediening hebben de desktop-app open en online nodig."
 ---
 
-Op 16 september 2026 kondigde Anthropic aan dat Claude Cowork en chat samengaan in één Claude. "You don't have to choose where a task goes", schrijft Anthropic. De functie bestaat dus nog, je kiest er alleen niet meer vooraf voor. Hieronder lees je wat Cowork is, wat er per abonnement verandert, waar het werk nu draait en wat je team er deze maand mee moet. Alles is gecontroleerd op 30 oktober 2026 bij de bronnen van Anthropic onderaan de pagina.
+Op 16 september 2026 kondigde Anthropic aan dat [Claude Cowork en chat samengaan in één Claude](https://claude.com/resources/articles/cowork-is-now-claude). "You don't have to choose where a task goes", schrijft Anthropic. De functie bestaat dus nog, je kiest er alleen niet meer vooraf voor. Hieronder lees je wat Cowork is, wat er per abonnement verandert, waar het werk nu draait en wat je team er deze maand mee moet. Alles is gecontroleerd op 30 oktober 2026 bij de bronnen van Anthropic onderaan de pagina.
 
 ## Wat is Claude Cowork?
 
-Met Cowork voert Claude een taak in meerdere stappen uit, in plaats van één vraag per keer te beantwoorden. Volgens Anthropic gebruikt het dezelfde aanpak als Claude Code, de programmeertool van Anthropic. Je werkt in de gewone Claude-app, dus een opdrachtregel heb je er niet voor nodig.
+Met Cowork voert Claude een taak in meerdere stappen uit, in plaats van één vraag per keer te beantwoorden. Volgens [de startgids van Anthropic voor Claude Cowork](https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork) gebruikt het dezelfde aanpak als [Claude Code](https://claude.com/product/claude-code), de programmeertool van Anthropic. Je werkt in de gewone Claude-app, dus een opdrachtregel heb je er niet voor nodig.
 
 Een voorbeeld: je koppelt de map met offertes van dit kwartaal, vraagt om een overzicht per klant in Excel en laat dat elke maandag om 8 uur opnieuw draaien. Claude leest de bestanden, maakt de spreadsheet en zet de taak in de planning.
 
@@ -132,11 +138,11 @@ Tabel: Claude Cowork en de samengevoegde Claude per abonnement, stand 30 oktober
 | Claude Team | ja, standaard aan | bèta, waar "Chat and Cowork unified" aan staat | cloud staat standaard aan | $25 per seat, of $20 bij jaarbetaling |
 | Claude Enterprise | ja, standaard aan | beschikbaar sinds 23 okt 2026, standaard aan 16 nov 2026 | cloud staat standaard uit; een owner zet het aan | $20 per seat bij jaarbetaling plus API-verbruik, minimaal 20 seats |
 
-**Pro en Max.** De uitrol loopt sinds 16 september "over de komende weken". Je hoeft niets aan te zetten. Volgens het helpcenterartikel over Cowork op web, desktop en mobiel draaien nieuwe Cowork-taken op deze plannen sinds 6 oktober 2026 in de cloud. Hetzelfde artikel zegt dat de instelling "Only on your computer" is verwijderd en dat terugzetten niet kan. Een taak die je daarvoor op je computer startte, kun je daar afmaken.
+**Pro en Max.** De uitrol loopt sinds 16 september "over de komende weken". Je hoeft niets aan te zetten. Volgens [het helpcenterartikel over Cowork op web, desktop en mobiel](https://support.claude.com/en/articles/15520349-use-claude-cowork-on-web-desktop-and-mobile) draaien nieuwe Cowork-taken op deze plannen sinds 6 oktober 2026 in de cloud. Hetzelfde artikel zegt dat de instelling "Only on your computer" is verwijderd en dat terugzetten niet kan. Een taak die je daarvoor op je computer startte, kun je daar afmaken.
 
-**Team.** Volgens de productpagina is Team het plan voor teams van 2 tot 150 seats. Cowork zelf staat op Team standaard aan, en werken in de cloud ook. Een owner kan Cowork uitzetten, maar dan geldt dat voor de hele organisatie: per groep of afdeling beperken kan alleen op Enterprise. Volgens het helpcenter is de samengevoegde ervaring op Team nog bèta en werkt die waar de instelling "Chat and Cowork unified" aan staat. Een datum voor de volledige overstap geeft Anthropic niet. Het helpcenter beschrijft de verplichte overstap naar de cloud van 6 oktober voor Pro en Max, zonder Team of Enterprise daarbij te noemen.
+**Team.** Volgens de productpagina is Team het plan voor teams van 2 tot 150 seats. Cowork zelf staat op Team standaard aan, en werken in de cloud ook. Een owner kan Cowork uitzetten, maar dan geldt dat voor de hele organisatie: per groep of afdeling beperken kan alleen op Enterprise. Volgens [het helpartikel over Cowork op Team en Enterprise](https://support.claude.com/en/articles/13455879-use-claude-cowork-on-team-and-enterprise-plans) is de samengevoegde ervaring op Team nog bèta en werkt die waar de instelling "Chat and Cowork unified" aan staat. Een datum voor de volledige overstap geeft Anthropic niet. Het helpcenter beschrijft de verplichte overstap naar de cloud van 6 oktober voor Pro en Max, zonder Team of Enterprise daarbij te noemen.
 
-**Enterprise.** Op 23 oktober 2026 meldde Anthropic in een eigen aankondiging dat de samengevoegde ervaring algemeen beschikbaar is voor Enterprise. Volgens het beheerartikel staat ze in bestaande organisaties nog uit, en op 16 november 2026 gaat ze standaard aan. Daarvoor moeten chat en het uitvoeren van code en maken van bestanden in de cloud aanstaan. Een beheerder kan de nieuwe ervaring per rol toewijzen. Cowork in de cloud is een aparte instelling. Volgens het helpartikel over Cowork op Team en Enterprise staat die op Enterprise standaard uit. Een owner zet "Run Cowork in the cloud" aan en geeft die mogelijkheid via een eigen rol aan een groep. Organisaties met [zero data retention](/compliance/zero-data-retention), de HIPAA-configuratie of eigen encryptiesleutels kunnen de nieuwe ervaring nog niet gebruiken.
+**Enterprise.** Op 23 oktober 2026 meldde Anthropic in [een eigen aankondiging voor Enterprise](https://claude.com/resources/articles/unified-claude-enterprise) dat de samengevoegde ervaring algemeen beschikbaar is voor Enterprise. Volgens het beheerartikel staat ze in bestaande organisaties nog uit, en op 16 november 2026 gaat ze standaard aan. Daarvoor moeten chat en het uitvoeren van code en maken van bestanden in de cloud aanstaan. Een beheerder kan de nieuwe ervaring per rol toewijzen. Cowork in de cloud is een aparte instelling. Volgens het helpartikel over Cowork op Team en Enterprise staat die op Enterprise standaard uit. Een owner zet "Run Cowork in the cloud" aan en geeft die mogelijkheid via een eigen rol aan een groep. Organisaties met [zero data retention](/compliance/zero-data-retention), de HIPAA-configuratie of eigen encryptiesleutels kunnen de nieuwe ervaring nog niet gebruiken.
 
 **Free.** Cowork zit niet in het gratis plan. Anthropic schrijft alleen dat Free "soon" volgt.
 
@@ -144,7 +150,7 @@ Tabel: Claude Cowork en de samengevoegde Claude per abonnement, stand 30 oktober
 
 ## Hoe werkt Claude Cowork: in de cloud of op je eigen computer?
 
-Volgens het helpcenter draait Cowork je taken in de cloud, op servers van Anthropic. Op Team staat dat standaard aan, op Enterprise pas als een owner het aanzet. Het architectuuroverzicht van Anthropic zegt dat elke cloudsessie een eigen sandbox krijgt, die start met de sessie en daarna wordt verwijderd. Werkbestanden die Claude niet aan je teruggeeft, bewaart Anthropic volgens het helpartikel over Cowork in de cloud na de sessie niet. Het werk loopt door als je de desktop-app sluit of je computer dichtklapt, en je kunt Cowork ook via web en mobiel gebruiken.
+Volgens het helpcenter draait Cowork je taken in de cloud, op servers van Anthropic. Op Team staat dat standaard aan, op Enterprise pas als een owner het aanzet. [Het architectuuroverzicht van Claude Cowork](https://support.claude.com/en/articles/14479288-claude-cowork-architecture-overview) zegt dat elke cloudsessie een eigen sandbox krijgt, die start met de sessie en daarna wordt verwijderd. Werkbestanden die Claude niet aan je teruggeeft, bewaart Anthropic volgens [het helpartikel over Cowork in de cloud](https://support.claude.com/en/articles/15811196-what-to-expect-with-claude-cowork-in-the-cloud) na de sessie niet. Het werk loopt door als je de desktop-app sluit of je computer dichtklapt, en je kunt Cowork ook via web en mobiel gebruiken.
 
 Sommig werk heeft je eigen computer nodig. Dan moet de desktop-app open zijn en verbinding hebben. Dat geldt voor:
 
@@ -157,17 +163,17 @@ Een geplande taak die je in de cloud maakt, kan niet bij lokale mappen of lokale
 
 <!-- figuur:2 -->
 
-De desktop-app is er voor macOS en Windows (ook via de Microsoft Store), en voor Linux in bèta. Via web en mobiel werkt Cowork op Pro, Max en Team (bèta op Team), en op Enterprise als een owner het aanzet. Hoe je de app in een team uitrolt, valt buiten dit artikel.
+[De desktop-app van Claude](https://claude.com/download) is er voor macOS en Windows (ook via de Microsoft Store), en voor Linux in bèta. Via web en mobiel werkt Cowork op Pro, Max en Team (bèta op Team), en op Enterprise als een owner het aanzet. Hoe je de app in een team uitrolt, valt buiten dit artikel.
 
 ## Wat is de prijs van Claude Cowork?
 
-Volgens de productpagina zit Claude Cowork inbegrepen in Pro, Max, Team en Enterprise. Een losse Cowork-prijs staat niet op de prijspagina. De dollarprijzen staan in de tabel hierboven, exclusief btw. Bij maandbetaling noemt de prijspagina $20 voor Pro en $25 per seat voor Team. Omgerekend met de ECB-koers van 29 oktober 2026 (1 euro is 1,1130 dollar) is dat ongeveer 18 euro per maand voor Pro en ongeveer 22 euro per seat per maand voor Team.
+Volgens [de productpagina van Claude Cowork](https://claude.com/product/cowork) zit Claude Cowork inbegrepen in Pro, Max, Team en Enterprise. Een losse Cowork-prijs staat niet op [de prijspagina van Claude](https://claude.com/pricing). De dollarprijzen staan in de tabel hierboven, exclusief btw. Bij maandbetaling noemt de prijspagina $20 voor Pro en $25 per seat voor Team. Omgerekend met de ECB-koers van 29 oktober 2026 (1 euro is 1,1130 dollar) is dat ongeveer 18 euro per maand voor Pro en ongeveer 22 euro per seat per maand voor Team.
 
 Het verschil zit in het verbruik. Op de productpagina schrijft Anthropic dat Cowork je limiet sneller verbruikt dan chat, en het helpcenter legt uit waarom: elke stap van een taak kost tokens. Een team dat veel meerstapstaken draait, loopt dus eerder tegen de limiet aan. Lees [hoe de gebruikslimieten werken](/prijs/credits-en-limieten) voordat je een plan kiest. De afweging tussen de plannen staat in [Claude Pro, Team of Enterprise vergelijken](/prijs/pro-vs-team-vs-enterprise).
 
 ## Wat gebeurt er met je klantdata?
 
-Volgens het architectuuroverzicht van Anthropic worden ook lokale bestanden die een cloudsessie via de desktop-app opent op die servers verwerkt. Hetzelfde overzicht zegt dat de gespreksdata onder dezelfde zakelijke afspraken valt als je andere Team- en Enterprise-data, en dat Anthropic die data niet gebruikt om Claude te trainen. Een beheerder kan Cowork-sessies uit de web-app, de desktop-app en de mobiele app opvragen via de Compliance API. Die geeft volgens het helpcenter de sessies van de laatste 30 dagen.
+Volgens het architectuuroverzicht van Anthropic worden ook lokale bestanden die een cloudsessie via de desktop-app opent op die servers verwerkt. Hetzelfde overzicht zegt dat de gespreksdata onder dezelfde zakelijke afspraken valt als je andere Team- en Enterprise-data, en dat Anthropic die data niet gebruikt om Claude te trainen. Het privacycentrum van Anthropic zegt het iets voorzichtiger: zakelijke data wordt [standaard niet gebruikt voor training](https://privacy.claude.com/en/articles/7996868-is-my-data-used-for-model-training), tenzij je zelf feedback instuurt of toestemming geeft. Een beheerder kan Cowork-sessies uit de web-app, de desktop-app en de mobiele app opvragen via de Compliance API. Die geeft volgens het helpcenter de sessies van de laatste 30 dagen.
 
 Wij lazen op 30 oktober 2026 drie helpartikelen na: over Cowork in de cloud, het architectuuroverzicht en het artikel over Cowork op Team en Enterprise. Geen van de drie noemt een regio waar cloudsessies draaien of worden opgeslagen. Wat er bekend is over EU-hosting staat in [Claude en EU-hosting](/compliance/eu-hosting). Let ook op lokale sessies. Volgens het helpcenter over Team en Enterprise slaat Cowork die geschiedenis op de computer van de gebruiker op. Die valt buiten het standaard bewaarbeleid van Anthropic, en een beheerder kan die niet centraal beheren of verwijderen. Een breder overzicht vind je in [is Claude veilig voor bedrijfsdata](/compliance/is-claude-veilig).
 
@@ -178,7 +184,7 @@ Zoek je eerst een breder beeld van Claude in een klein bedrijf, lees dan [Claude
 1. Kijk in het invoerveld. Zie je geen aparte keuze meer tussen "Chat" en "Cowork", dan zit je op de nieuwe ervaring.
 2. Check welk plan iedereen heeft. Op een los Pro-account draait nieuw werk sinds 6 oktober in de cloud, zonder dat een beheerder dat beslist. Werk je met klantdata, dan is dat een reden om het team op Team te zetten (zie de [vergelijking van de plannen](/prijs/pro-vs-team-vs-enterprise)).
 3. Spreek af welke mappen collega's koppelen. Claude kan alleen lezen en schrijven in mappen die iemand zelf heeft gekoppeld. Dit soort afspraken leggen wij met een team vast in [Claude in 30 dagen inrichten](/claude-in-30-dagen).
-4. Zit je op Enterprise, besluit dan vóór 16 november 2026 of je de nieuwe ervaring per rol wilt beperken.
+4. Zit je op Enterprise, besluit dan vóór 16 november 2026 of je de nieuwe ervaring per rol wilt beperken. Die datum en de rolinstelling staan in [het beheerartikel voor Enterprise-organisaties](https://support.claude.com/en/articles/17444462-set-up-and-manage-the-new-unified-claude-experience-for-your-enterprise-organization).
 
 ## Waar dit artikel op rust
 
