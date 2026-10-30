@@ -76,6 +76,17 @@ const schemaFaq = faqItems.map(({ question, answer }) => ({ question, answer }))
 
 const bronnen = [
   { titel: 'Claude, Plans & Pricing', url: 'https://claude.com/pricing', geraadpleegd: stand },
+  { titel: 'Claude Help Center, What is the Team plan?', url: 'https://support.claude.com/en/articles/9266767-what-is-the-team-plan', geraadpleegd: stand },
+  { titel: 'Claude Help Center, Purchase and manage seats on Team plans', url: 'https://support.claude.com/en/articles/12004354-purchase-and-manage-seats-on-team-plans', geraadpleegd: stand },
+  { titel: 'Claude Help Center, Deploy Claude Desktop for Windows', url: 'https://support.claude.com/en/articles/12622703-deploy-claude-desktop-for-windows', geraadpleegd: stand },
+  { titel: 'Claude Help Center, Set up single sign-on (SSO)', url: 'https://support.claude.com/en/articles/13132885-set-up-single-sign-on-sso', geraadpleegd: stand },
+  { titel: 'Claude Help Center, Set up JIT or SCIM provisioning', url: 'https://support.claude.com/en/articles/13133195-set-up-jit-or-scim-provisioning', geraadpleegd: stand },
+  { titel: 'Claude Help Center, Access audit logs', url: 'https://support.claude.com/en/articles/9970975-access-audit-logs', geraadpleegd: stand },
+  { titel: 'Claude Help Center, Get started with custom connectors using remote MCP', url: 'https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp', geraadpleegd: stand },
+  { titel: 'Claude Help Center, How to create custom skills', url: 'https://support.claude.com/en/articles/12512198-how-to-create-custom-skills', geraadpleegd: stand },
+  { titel: 'Claude Code Docs, Hooks reference', url: 'https://code.claude.com/docs/en/hooks', geraadpleegd: stand },
+  { titel: 'Anthropic Privacy Center, Is my data used for model training?', url: 'https://privacy.claude.com/en/articles/7996868-is-my-data-used-for-model-training', geraadpleegd: stand },
+  { titel: 'Anthropic Privacy Center, Does Anthropic act as a data processor or controller?', url: 'https://privacy.claude.com/en/articles/9267385-does-anthropic-act-as-a-data-processor-or-controller', geraadpleegd: stand },
   { titel: 'Anthropic, Commercial Terms of Service (ingang 17 juni 2025)', url: 'https://www.anthropic.com/legal/commercial-terms', geraadpleegd: stand },
   { titel: 'Anthropic, Data Processing Addendum (ingang 24 februari 2025)', url: 'https://www.anthropic.com/legal/data-processing-addendum', geraadpleegd: stand },
   { titel: 'CBS, Digitalisering en kenniseconomie 2025, hoofdstuk 3: ICT-gebruik bij bedrijven (10 februari 2026)', url: 'https://www.cbs.nl/nl-nl/longread/rapportages/2026/digitalisering-en-kenniseconomie-2025/3-ict-gebruik-bij-bedrijven', geraadpleegd: stand },
@@ -122,7 +133,7 @@ const bronnen = [
       </p>
       <p>
         Ons gereedschap daarbij is Claude, en we werken voor Nederlandse MKB-bedrijven met tien tot tweehonderd mensen. Implementeren.ai is onafhankelijk: we zijn geen partner of
-        onderdeel van Anthropic, het bedrijf dat Claude maakt. Je licenties sluit je zelf af bij Anthropic.
+        onderdeel van Anthropic, het bedrijf dat Claude maakt. Je licenties sluit je zelf af bij Anthropic: de eigenaar van je account <a href="https://support.claude.com/en/articles/12004354-purchase-and-manage-seats-on-team-plans" target="_blank" rel="noopener">koopt de seats in de beheeromgeving van Claude</a>.
       </p>
       <p class="v2-sectie-noot text-sm">Gepubliceerd op 30 oktober 2026.</p>
       <DienstBeeld slot="beeld" soort="route" />
@@ -164,13 +175,20 @@ const bronnen = [
         </p>
         <p>
           Wij kozen Claude en doen niets anders. Voor bedrijven heeft Anthropic
-          Claude Team, voor teams van 2 tot 150 mensen. Volgens de
+          <a href="https://support.claude.com/en/articles/9266767-what-is-the-team-plan" target="_blank" rel="noopener">het Team-abonnement van Claude</a>, voor teams van 2 tot 150 mensen.
+        </p>
+        <p>
+          Volgens de
           <a href="https://claude.com/pricing" target="_blank" rel="noopener">prijspagina van Claude</a>
           krijg je daarmee centrale facturering en beheer, één login via je bestaande accounts
-          (single sign-on) en een bedrijfsbrede uitrol van de desktop-app. Anthropic traint
-          standaard geen modellen op je content. Grotere organisaties kunnen kiezen voor
-          Enterprise, met onder meer automatisch gebruikersbeheer, een logboek van alle acties
-          en rechten per rol.
+          (single sign-on) en een
+          <a href="https://support.claude.com/en/articles/12622703-deploy-claude-desktop-for-windows" target="_blank" rel="noopener">bedrijfsbrede uitrol van de desktop-app</a>.
+          Anthropic <a href="https://privacy.claude.com/en/articles/7996868-is-my-data-used-for-model-training" target="_blank" rel="noopener">gebruikt de input en output van zakelijke producten standaard niet om modellen te trainen</a>.
+        </p>
+        <p>
+          Grotere organisaties kunnen kiezen voor Enterprise, met onder meer
+          <a href="https://support.claude.com/en/articles/13133195-set-up-jit-or-scim-provisioning" target="_blank" rel="noopener">automatisch gebruikersbeheer via SCIM</a>,
+          <a href="https://support.claude.com/en/articles/9970975-access-audit-logs" target="_blank" rel="noopener">auditlogs van onder meer inlogs en wijzigingen</a> en rechten per rol.
         </p>
         <p>
           Dat staat ook in de
@@ -229,7 +247,8 @@ const bronnen = [
         </p>
         <p>
           De Readiness Scan en de rollout samen beginnen bij €9.000. Een eigen koppeling tussen
-          Claude en je systemen (technisch: een MCP-server) kost €2.000 tot €5.000 extra. Die
+          Claude en je systemen (technisch: een MCP-server, die je in Claude als
+          <a href="https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp" target="_blank" rel="noopener">eigen connector</a> toevoegt) kost €2.000 tot €5.000 extra. Die
           bouwen we alleen als de scan laat zien dat het zin heeft.
         </p>
       </div>
@@ -295,7 +314,9 @@ const bronnen = [
         <p>
           Aan het begin van de rollout richten we de omgeving in. Je werkt onder de zakelijke
           voorwaarden van Anthropic, met een <a href="/compliance/anthropic-dpa">verwerkersovereenkomst</a>
-          en één login via je bestaande accounts (SSO). Samen leggen we vast welke data wel en niet in Claude gaat.
+          en <a href="https://support.claude.com/en/articles/13132885-set-up-single-sign-on-sso" target="_blank" rel="noopener">één login via je bestaande accounts (SSO)</a>. Anthropic is bij Team en
+          Enterprise <a href="https://privacy.claude.com/en/articles/9267385-does-anthropic-act-as-a-data-processor-or-controller" target="_blank" rel="noopener">verwerker van je data en volgt jouw instructies</a>.
+          Samen leggen we vast welke data wel en niet in Claude gaat.
         </p>
         <p>
           Nieuwe toepassingen draaien eerst in een aparte testomgeving, waar iemand de uitkomst
@@ -323,9 +344,9 @@ const bronnen = [
         <p>
           Afspraken hebben een eigenaar nodig. Dat merkten we in augustus 2026 in onze eigen
           Claude-omgeving: onze schrijfregels stonden netjes vastgelegd, maar niets controleerde
-          of ze werden gevolgd. We voegden een automatische controle toe en verwezen in 17 van de
-          86 vaste werkinstructies die we Claude meegeven naar dezelfde regels, waar dat er 7
-          waren. Bij jou zijn de champions die eigenaar. Dit komt uit onze eigen werklogboeken.
+          of ze werden gevolgd. We voegden een <a href="https://code.claude.com/docs/en/hooks" target="_blank" rel="noopener">automatische controle (een hook in Claude Code)</a> toe
+          en verwezen in 17 van de 86 <a href="https://support.claude.com/en/articles/12512198-how-to-create-custom-skills" target="_blank" rel="noopener">vaste werkinstructies (skills)</a> die we
+          Claude meegeven naar dezelfde regels, waar dat er 7 waren. Bij jou zijn de champions die eigenaar. Dit komt uit onze eigen werklogboeken.
         </p>
       </div>
     </section>
