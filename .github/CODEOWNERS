@@ -1,3 +1,3 @@
-# Code owners of the Implementeren.ai site. Every PR to main needs 2 approvals, at least one
-# from a code owner here who is not the PR author.
-* @maxkwaaste @Camielwits
+# Code owners of the Implementeren.ai site. Every PR to main needs 1 approval from a code owner
+# who is not the PR author. Repo admins can merge their own PRs via the ruleset bypass.
+* @maxkwaaste
