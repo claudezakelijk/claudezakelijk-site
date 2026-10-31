@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" role="img" aria-label="Twee tijdlijnen van een jaar voor 10 standaard seats op Claude Team: het maandplan kost 250 dollar per maand en afbouwen gaat na elke maand in; het jaarplan kost 2.400 dollar vooraf en afbouwen gaat pas op de jaardatum in" data-bijschrift="Maand- of jaarplan voor 10 standaard seats: bedragen uit het rekenvoorbeeld van Anthropic, exclusief btw, stand 31 oktober 2026." font-family="Inter, system-ui, sans-serif" fill="#23261D"><defs>
+<filter id="lic2-g" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 .14  0 0 0 0 .15  0 0 0 0 .11  .16 0 0 0 -.03"/></filter>
+</defs><rect width="1200" height="500" fill="#F4F1E8"/><rect x="64" y="48" width="64" height="4" rx="2" fill="#B4C13E"/><text x="64" y="92" fill="#565A4C" font-size="22" font-weight="600" letter-spacing="3">MAAND OF JAAR · 10 STANDAARD SEATS</text>
+<text x="64" y="172" font-size="34" font-weight="600">maandplan</text>
+<text x="64" y="210" font-size="26" fill="#565A4C">$250 per maand</text>
+<g fill="#FFFFFF" stroke="#23261D" stroke-width="4" stroke-linejoin="round">
+<rect x="340" y="146" width="62" height="56" rx="8"/><rect x="408" y="146" width="62" height="56" rx="8"/><rect x="476" y="146" width="62" height="56" rx="8"/><rect x="544" y="146" width="62" height="56" rx="8"/><rect x="612" y="146" width="62" height="56" rx="8"/><rect x="680" y="146" width="62" height="56" rx="8"/><rect x="748" y="146" width="62" height="56" rx="8"/><rect x="816" y="146" width="62" height="56" rx="8"/><rect x="884" y="146" width="62" height="56" rx="8"/><rect x="952" y="146" width="62" height="56" rx="8"/><rect x="1020" y="146" width="62" height="56" rx="8"/><rect x="1088" y="146" width="62" height="56" rx="8"/>
+</g>
+<text x="340" y="246" font-size="26" fill="#3D5220" font-weight="600">afbouwen gaat na elke maand in</text>
+<text x="64" y="338" font-size="34" font-weight="600">jaarplan</text>
+<text x="64" y="376" font-size="26" fill="#565A4C">$2.400 vooraf</text>
+<rect x="340" y="312" width="810" height="56" rx="8" fill="#E9EBDC" stroke="#23261D" stroke-width="4"/>
+<line x1="1150" y1="296" x2="1150" y2="384" stroke="#A8433B" stroke-width="6" stroke-linecap="round"/>
+<text x="1136" y="412" text-anchor="end" font-size="26" fill="#A8433B" font-weight="600">afbouwen gaat pas op de jaardatum in</text>
+<text x="1136" y="466" text-anchor="end" font-size="26" fill="#64685A">stand 31 okt 2026</text>
+<rect width="1200" height="500" filter="url(#lic2-g)"/></svg>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" role="img" aria-label="Vier seatwijzigingen op Claude Team en wat ze met de factuur doen: een seat erbij en een upgrade naar premium betaal je direct naar rato, iemand uit het team halen levert geen geld op, en minder seats gaat pas in bij de verlenging, zonder teruggave" data-bijschrift="Wat een seatwijziging op Claude Team met je factuur doet, stand 31 oktober 2026." font-family="Inter, system-ui, sans-serif" fill="#23261D"><defs>
+<filter id="lic1-g" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 .14  0 0 0 0 .15  0 0 0 0 .11  .16 0 0 0 -.03"/></filter>
+</defs><rect width="1200" height="500" fill="#F4F1E8"/><rect x="64" y="48" width="64" height="4" rx="2" fill="#B4C13E"/><text x="64" y="92" fill="#565A4C" font-size="22" font-weight="600" letter-spacing="3">WAT EEN SEATWIJZIGING MET JE FACTUUR DOET</text>
+<line x1="180" y1="196" x2="1020" y2="196" stroke="#CFCDBE" stroke-width="4"/>
+<g stroke-width="4">
+<circle cx="180" cy="196" r="30" fill="#3D5220" stroke="#3D5220"/>
+<circle cx="460" cy="196" r="30" fill="#3D5220" stroke="#3D5220"/>
+<circle cx="740" cy="196" r="30" fill="#F6E7E4" stroke="#A8433B"/>
+<circle cx="1020" cy="196" r="30" fill="#E9EBDC" stroke="#565A4C"/>
+</g>
+<g font-family="'Instrument Sans Variable', Inter, system-ui, sans-serif" font-size="28" font-weight="600" text-anchor="middle"><text x="180" y="206" fill="#FFFFFF">1</text><text x="460" y="206" fill="#FFFFFF">2</text><text x="740" y="206">3</text><text x="1020" y="206">4</text></g>
+<g font-size="32" font-weight="600" text-anchor="middle"><text x="180" y="290">seat erbij</text><text x="460" y="290">naar premium</text><text x="740" y="290" fill="#A8433B">iemand eruit</text><text x="1020" y="290">minder seats</text></g>
+<g font-size="26" fill="#565A4C" text-anchor="middle">
+<text x="180" y="334">direct betalen</text><text x="180" y="368">naar rato</text>
+<text x="460" y="334">verschil direct</text><text x="460" y="368">naar rato</text>
+<text x="740" y="334">geen geld terug</text><text x="740" y="368">seat komt vrij</text>
+<text x="1020" y="334">bij de verlenging</text><text x="1020" y="368">geen teruggave</text>
+</g>
+<text x="1136" y="466" text-anchor="end" font-size="26" fill="#64685A">stand 31 okt 2026</text>
+<rect width="1200" height="500" filter="url(#lic1-g)"/></svg>
