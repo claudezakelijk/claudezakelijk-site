@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" role="img" aria-label="Claude Cowork uitrollen regel je op drie lagen die samen bepalen wat er op een Windows-laptop gebeurt: de organisatie via een Owner in Organization settings, de pc via beleid in het register, en de medewerker die een map koppelt en acties goedkeurt" font-family="Inter, system-ui, sans-serif" fill="#23261D"><defs>
+<filter id="cwu-g" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 .14  0 0 0 0 .15  0 0 0 0 .11  .16 0 0 0 -.03"/></filter>
+<marker id="cwu-a" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#565A4C"/></marker>
+</defs><rect width="1200" height="600" fill="#F4F1E8"/><rect x="64" y="48" width="64" height="4" rx="2" fill="#B4C13E"/><text x="64" y="92" fill="#565A4C" font-size="22" font-weight="600" letter-spacing="3">COWORK UITROLLEN · DRIE LAGEN</text>
+<g>
+<rect x="64" y="132" width="560" height="104" rx="18" fill="#3D5220"/>
+<rect x="64" y="260" width="560" height="104" rx="18" fill="#FFFFFF" stroke="#23261D" stroke-width="4"/>
+<rect x="64" y="388" width="560" height="104" rx="18" fill="#E9EBDC" stroke="#23261D" stroke-width="4"/>
+<path d="M632 184 C 700 184, 700 256, 754 262" fill="none" stroke="#565A4C" stroke-width="4" stroke-linecap="round" marker-end="url(#cwu-a)"/>
+<path d="M632 312 L 754 312" fill="none" stroke="#565A4C" stroke-width="4" stroke-linecap="round" marker-end="url(#cwu-a)"/>
+<path d="M632 440 C 700 440, 700 368, 754 362" fill="none" stroke="#565A4C" stroke-width="4" stroke-linecap="round" marker-end="url(#cwu-a)"/>
+<rect x="760" y="170" width="360" height="248" rx="16" fill="#FFFFFF" stroke="#23261D" stroke-width="4" stroke-linejoin="round"/>
+<rect x="784" y="194" width="312" height="200" rx="8" fill="#E9EBDC"/>
+<path d="M716 434 L1164 434 L1136 470 L744 470 Z" fill="#CFCDBE" stroke="#23261D" stroke-width="4" stroke-linejoin="round"/>
+<path d="M872 238 L918 238 L932 254 L1008 254 L1008 330 L872 330 Z" fill="#FFFFFF" stroke="#23261D" stroke-width="4" stroke-linejoin="round"/>
+<line x1="892" y1="282" x2="988" y2="282" stroke="#B4C13E" stroke-width="9" stroke-linecap="round"/>
+<line x1="892" y1="306" x2="960" y2="306" stroke="#E1DED2" stroke-width="9" stroke-linecap="round"/>
+</g>
+<text x="96" y="182" font-size="36" font-weight="600" fill="#F4F1E8">organisatie</text>
+<text x="96" y="220" font-size="26" fill="#F4F1E8">Owner · Organization settings</text>
+<text x="96" y="310" font-size="36" font-weight="600">pc</text>
+<text x="96" y="348" font-size="26" fill="#565A4C">beleid in het register</text>
+<text x="96" y="438" font-size="36" font-weight="600">medewerker</text>
+<text x="96" y="476" font-size="26" fill="#565A4C">koppelt een map · keurt goed</text>
+<text x="940" y="372" text-anchor="middle" font-size="26" fill="#565A4C">Claude-werk</text>
+<text x="1136" y="566" text-anchor="end" font-size="26" fill="#64685A">stand 31 okt 2026</text>
+<rect width="1200" height="600" filter="url(#cwu-g)"/></svg>
