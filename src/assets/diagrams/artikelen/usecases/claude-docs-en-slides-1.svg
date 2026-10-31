@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" role="img" aria-label="Keuzeboom voor een PowerPoint- of Word-bestand met Claude: werk je in je eigen bedrijfstemplate, kies dan de add-in in PowerPoint. Zo niet, en wil je samen schrijven en later bijwerken, kies dan Claude Docs of Claude Slides. Wil je alleen één los bestand, vraag het dan in de chat" data-bijschrift="Figuur 1: welke route past, in de volgorde waarin je de vragen stelt. Stand 31 oktober 2026." font-family="Inter, system-ui, sans-serif" fill="#23261D"><defs>
+<filter id="ds1-g" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 .14  0 0 0 0 .15  0 0 0 0 .11  .16 0 0 0 -.03"/></filter>
+<marker id="ds1-a" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#565A4C"/></marker>
+</defs><rect width="1200" height="600" fill="#F4F1E8"/><rect x="64" y="48" width="64" height="4" rx="2" fill="#B4C13E"/><text x="64" y="92" fill="#565A4C" font-size="22" font-weight="600" letter-spacing="3">WELKE ROUTE PAST?</text>
+<g>
+<g fill="none" stroke="#565A4C" stroke-width="4" stroke-linecap="round"><path d="M480 186 L 640 186" marker-end="url(#ds1-a)"/><path d="M480 306 L 640 306" marker-end="url(#ds1-a)"/><path d="M480 426 L 640 426" marker-end="url(#ds1-a)"/><path d="M84 216 L 84 270" marker-end="url(#ds1-a)"/><path d="M84 336 L 84 390" marker-end="url(#ds1-a)"/></g>
+<rect x="668" y="140" width="468" height="92" rx="18" fill="#FFFFFF" stroke="#23261D" stroke-width="4"/>
+<rect x="668" y="260" width="468" height="92" rx="18" fill="#3D5220"/>
+<rect x="668" y="380" width="468" height="92" rx="18" fill="#FFFFFF" stroke="#23261D" stroke-width="4"/>
+</g>
+<text x="64" y="198" font-size="34" font-weight="600">eigen bedrijfstemplate?</text>
+<text x="64" y="318" font-size="34" font-weight="600">later bijwerken?</text>
+<text x="64" y="438" font-size="34" font-weight="600">los bestand?</text>
+<text x="560" y="172" text-anchor="middle" font-size="26" fill="#565A4C">ja</text>
+<text x="560" y="292" text-anchor="middle" font-size="26" fill="#565A4C">ja</text>
+<text x="560" y="412" text-anchor="middle" font-size="26" fill="#565A4C">ja</text>
+<text x="104" y="252" font-size="26" fill="#565A4C">nee</text>
+<text x="104" y="372" font-size="26" fill="#565A4C">nee</text>
+<text x="696" y="182" font-size="34" font-weight="600">add-in</text>
+<text x="696" y="216" font-size="26" fill="#565A4C">in PowerPoint zelf</text>
+<text x="696" y="302" font-size="34" font-weight="600" fill="#FFFFFF">Docs of Slides</text>
+<text x="696" y="336" font-size="26" fill="#F4F1E8">export naar Word of PowerPoint</text>
+<text x="696" y="422" font-size="34" font-weight="600">in de chat</text>
+<text x="696" y="456" font-size="26" fill="#565A4C">.pptx of .docx downloaden</text>
+<text x="1136" y="566" text-anchor="end" font-size="26" fill="#64685A">stand 31 oktober 2026</text>
+<rect width="1200" height="600" filter="url(#ds1-g)"/></svg>
