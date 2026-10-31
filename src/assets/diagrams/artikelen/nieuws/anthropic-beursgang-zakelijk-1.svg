@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" role="img" aria-label="Tijdlijn van de Anthropic IPO: vertrouwelijke indiening op 1 juni 2026, openbare S-1 op 26 oktober 2026 zonder prijs en aantal aandelen, nieuwe Usage Policy op 12 november 2026, en een notering waarvan de datum nog open is" data-bijschrift="Tijdlijn van de Anthropic IPO. De notering heeft nog geen datum, stand 31 oktober 2026." font-family="Inter, system-ui, sans-serif" fill="#23261D"><defs>
+<filter id="ipo1-g" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 .14  0 0 0 0 .15  0 0 0 0 .11  .16 0 0 0 -.03"/></filter>
+<marker id="ipo1-a" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#565A4C"/></marker>
+</defs><rect width="1200" height="500" fill="#F4F1E8"/><rect x="64" y="48" width="64" height="4" rx="2" fill="#B4C13E"/><text x="64" y="92" fill="#565A4C" font-size="22" font-weight="600" letter-spacing="3">ANTHROPIC IPO · WAT WANNEER</text>
+<path d="M130 268 L 1120 268" fill="none" stroke="#565A4C" stroke-width="4" stroke-linecap="round" marker-end="url(#ipo1-a)"/>
+<circle cx="130" cy="268" r="18" fill="#FFFFFF" stroke="#23261D" stroke-width="4"/>
+<circle cx="420" cy="268" r="18" fill="#B4C13E" stroke="#23261D" stroke-width="4"/>
+<circle cx="710" cy="268" r="18" fill="#FFFFFF" stroke="#23261D" stroke-width="4"/>
+<circle cx="970" cy="268" r="18" fill="#F6E7E4" stroke="#A8433B" stroke-width="4" stroke-dasharray="8 7"/>
+<g font-family="'Instrument Sans Variable', Inter, system-ui, sans-serif" font-size="40" font-weight="600" letter-spacing="-1"><text x="112" y="220">1 juni</text><text x="402" y="220">26 okt</text><text x="692" y="220">12 nov</text></g>
+<text x="952" y="220" font-size="40" font-weight="600" fill="#A8433B">nog open</text>
+<text x="112" y="336" font-size="34" font-weight="600">vertrouwelijk</text>
+<text x="112" y="374" font-size="26" fill="#565A4C">eerste indiening</text>
+<text x="402" y="336" font-size="34" font-weight="600">S-1 openbaar</text>
+<text x="402" y="374" font-size="26" fill="#565A4C">prijs en aantal leeg</text>
+<text x="692" y="336" font-size="34" font-weight="600">nieuwe regels</text>
+<text x="692" y="374" font-size="26" fill="#565A4C">Usage Policy geldt</text>
+<text x="952" y="336" font-size="34" font-weight="600" fill="#A8433B">notering</text>
+<text x="1136" y="466" text-anchor="end" font-size="26" fill="#64685A">stand 31 okt 2026</text>
+<rect width="1200" height="500" filter="url(#ipo1-g)"/></svg>
