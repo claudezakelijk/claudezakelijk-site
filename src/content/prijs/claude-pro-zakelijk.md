@@ -8,7 +8,7 @@ targetKeywords:
   - claude pro zakelijk
   - claude max
   - claude pro vs max
-wordCountTarget: 1661
+wordCountTarget: 1679
 priority: 1
 tier: 1
 cases:
@@ -40,82 +40,85 @@ reviewedBy: null
 reviewedDate: null
 disclaimer: juridisch-fiscaal
 hasCalculator: false
-kortAntwoord: "Claude Pro kost $20 per maand en is een abonnement voor één persoon. In Nederland vallen Pro, Max en Ultra onder de consumentenvoorwaarden van Anthropic, en die sluiten zakelijk gebruik uit. Er hoort geen verwerkersovereenkomst bij en elke gebruiker regelt zelf of chats voor training gebruikt worden. Werk je met klantdata, dan past Claude Team."
+kortAntwoord: "Claude Pro kost $20 per maand en is voor één persoon. In Nederland vallen Pro, Max en Ultra onder de consumentenvoorwaarden van Anthropic. Daarin spreek je af dat je ze niet voor zakelijke doelen gebruikt. Er hoort geen verwerkersovereenkomst bij en elke gebruiker regelt zelf of chats voor training gebruikt worden. Werk je met klantdata, dan past Claude Team."
 bronnen:
   - titel: "Claude, Plans & Pricing (claude.com)"
     url: "https://claude.com/pricing"
-    geraadpleegd: "2026-10-31"
+    geraadpleegd: "31 oktober 2026"
   - titel: "Claude Help Center: What is the Pro plan?"
     url: "https://support.claude.com/en/articles/8325606-what-is-the-pro-plan"
-    geraadpleegd: "2026-10-31"
+    geraadpleegd: "31 oktober 2026"
   - titel: "Claude Help Center: What is the Max plan?"
     url: "https://support.claude.com/en/articles/11049741-what-is-the-max-plan"
-    geraadpleegd: "2026-10-31"
+    geraadpleegd: "31 oktober 2026"
   - titel: "Claude Help Center: What is the Ultra plan?"
     url: "https://support.claude.com/en/articles/17728952-what-is-the-ultra-plan"
-    geraadpleegd: "2026-10-31"
-  - titel: "Anthropic, Consumer Terms of Service, versie voor de EER en Zwitserland (ingang 8 oktober 2025)"
+    geraadpleegd: "31 oktober 2026"
+  - titel: "Anthropic, Consumer Terms of Service, versie voor de EER en Zwitserland (ingang 8 oktober 2025, met de versiegeschiedenis voor de EER)"
     url: "https://www.anthropic.com/legal/archive/cbf30172-78ac-43b7-8161-bd230de7cec9"
-    geraadpleegd: "2026-10-31"
+    geraadpleegd: "31 oktober 2026"
   - titel: "Anthropic, Consumer Terms of Service met versiegeschiedenis (toont de versie per land; vanuit Nederland de Britse versie)"
     url: "https://www.anthropic.com/legal/consumer-terms"
-    geraadpleegd: "2026-10-31"
+    geraadpleegd: "31 oktober 2026"
   - titel: "Anthropic, Commercial Terms of Service (ingang 17 juni 2025)"
     url: "https://www.anthropic.com/legal/commercial-terms"
-    geraadpleegd: "2026-10-31"
+    geraadpleegd: "31 oktober 2026"
   - titel: "Anthropic, Updates to Consumer Terms and Privacy Policy (28 augustus 2025)"
     url: "https://www.anthropic.com/news/updates-to-our-consumer-terms"
-    geraadpleegd: "2026-10-31"
+    geraadpleegd: "31 oktober 2026"
   - titel: "Anthropic Privacy Center: Is my data used for model training? (consumentenproducten, 16 maart 2026)"
     url: "https://privacy.claude.com/en/articles/10023580-is-my-data-used-for-model-training"
-    geraadpleegd: "2026-10-31"
+    geraadpleegd: "31 oktober 2026"
   - titel: "Anthropic Privacy Center: How long do you store my data? (consumentenproducten, 1 juli 2026)"
     url: "https://privacy.claude.com/en/articles/10023548-how-long-do-you-store-my-data"
-    geraadpleegd: "2026-10-31"
+    geraadpleegd: "31 oktober 2026"
   - titel: "Anthropic Privacy Center: How do I view and sign your Data Processing Addendum (DPA)? (16 maart 2026)"
     url: "https://privacy.claude.com/en/articles/7996862-how-do-i-view-and-sign-your-data-processing-addendum-dpa"
-    geraadpleegd: "2026-10-31"
+    geraadpleegd: "31 oktober 2026"
   - titel: "Claude Help Center: Add or update your paid Claude account's Tax or VAT ID"
     url: "https://support.claude.com/en/articles/9889408-add-or-update-your-paid-claude-account-s-tax-or-vat-id"
-    geraadpleegd: "2026-10-31"
+    geraadpleegd: "31 oktober 2026"
   - titel: "Claude Help Center: Understanding your billing address and tax calculation"
     url: "https://support.claude.com/en/articles/12997130-understanding-your-billing-address-and-tax-calculation"
-    geraadpleegd: "2026-10-31"
+    geraadpleegd: "31 oktober 2026"
   - titel: "Claude Help Center: Use Claude Code with your Pro, Max, or Ultra plan"
     url: "https://support.claude.com/en/articles/11145838-use-claude-code-with-your-pro-max-or-ultra-plan"
-    geraadpleegd: "2026-10-31"
+    geraadpleegd: "31 oktober 2026"
   - titel: "Claude Code Docs: Advanced setup (Authenticate)"
     url: "https://code.claude.com/docs/en/setup"
-    geraadpleegd: "2026-10-31"
+    geraadpleegd: "31 oktober 2026"
   - titel: "Claude Help Center: Claude Fable models on your plan"
     url: "https://support.claude.com/en/articles/15424964-claude-fable-models-on-your-plan"
-    geraadpleegd: "2026-10-31"
+    geraadpleegd: "31 oktober 2026"
   - titel: "Claude Help Center: Manage usage credits for paid Claude plans"
     url: "https://support.claude.com/en/articles/12429409-manage-usage-credits-for-paid-claude-plans"
-    geraadpleegd: "2026-10-31"
+    geraadpleegd: "31 oktober 2026"
   - titel: "Claude Help Center: Monthly API credits for Max, Ultra, and Team plans"
     url: "https://support.claude.com/en/articles/17154008-monthly-api-credits-for-max-ultra-and-team-plans"
-    geraadpleegd: "2026-10-31"
+    geraadpleegd: "31 oktober 2026"
   - titel: "Claude Help Center: What is the Team plan?"
     url: "https://support.claude.com/en/articles/9266767-what-is-the-team-plan"
-    geraadpleegd: "2026-10-31"
+    geraadpleegd: "31 oktober 2026"
+  - titel: "Claude Help Center: Use Claude Code with your Team or Enterprise plan"
+    url: "https://support.claude.com/en/articles/11845131-use-claude-code-with-your-team-or-enterprise-plan"
+    geraadpleegd: "31 oktober 2026"
   - titel: "Claude Help Center: Get started with the Team plan"
     url: "https://support.claude.com/en/articles/9267247-get-started-with-the-team-plan"
-    geraadpleegd: "2026-10-31"
+    geraadpleegd: "31 oktober 2026"
   - titel: "Claude Help Center: Move your personal Claude account to a Team or Enterprise organization"
     url: "https://support.claude.com/en/articles/9267400-move-your-personal-claude-account-to-a-team-or-enterprise-organization"
-    geraadpleegd: "2026-10-31"
+    geraadpleegd: "31 oktober 2026"
   - titel: "Autoriteit Persoonsgegevens, Let op: gebruik AI-chatbot kan leiden tot datalekken (6 augustus 2024)"
     url: "https://www.autoriteitpersoonsgegevens.nl/actueel/let-op-gebruik-ai-chatbot-kan-leiden-tot-datalekken"
-    geraadpleegd: "2026-10-31"
+    geraadpleegd: "31 oktober 2026"
   - titel: "Europese Centrale Bank, euro-referentiekoersen (koers van 30 oktober 2026)"
     url: "https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml"
-    geraadpleegd: "2026-10-31"
+    geraadpleegd: "31 oktober 2026"
 faq:
   - question: "Mag ik mijn Claude Pro-account delen met een collega?"
     answer: "Nee. De consumentenvoorwaarden van Anthropic verbieden dat je je inloggegevens deelt of je account voor iemand anders beschikbaar maakt. Wil een collega ook met Claude werken, dan heeft die een eigen account nodig. Werken jullie samen met klantgegevens, dan ligt een Team-organisatie meer voor de hand. Daar heeft iedereen een eigen seat onder de zakelijke voorwaarden."
   - question: "Kan ik voor Claude Pro een factuur op mijn bedrijfsnaam krijgen?"
-    answer: "Ja. Je btw-nummer vul je in bij het afsluiten, of later via Settings > Billing en de knop Update. Je bedrijfsnaam zet je op de factuur met het vakje 'Use a different name on invoices' en het veld 'Bill to'. Dat geldt alleen voor volgende facturen. Welke belasting je betaalt, hangt af van je factuuradres."
+    answer: "Ja. Je btw-nummer vul je in bij het afsluiten als je adres daarvoor in aanmerking komt, of later via Settings > Billing en de knop Update. Je bedrijfsnaam zet je op de factuur met het vakje 'Use a different name on invoices' en het veld 'Bill to'. Dat geldt alleen voor volgende facturen. Welke belasting je betaalt, hangt af van je factuuradres."
   - question: "Wat kost Claude Pro in euro?"
     answer: "Claude Pro kost $20 per maand, of $17 per maand bij een jaarabonnement. Met de ECB-koers van 30 oktober 2026 (1 euro is 1,1172 dollar) is dat €17,90 of €15,22 per maand, zonder btw. Anthropic toont waar mogelijk een prijs in je eigen valuta. Het bedrag dat je echt betaalt, zie je bij het afrekenen."
   - question: "Bestaat Claude Max 20x nog?"
@@ -123,10 +126,10 @@ faq:
   - question: "Gebruikt Anthropic mijn Claude Pro-chats voor training?"
     answer: "Alleen als de instelling Model Improvement aan staat in je privacy-instellingen. Ook als die uit staat, mag Anthropic volgens de voorwaarden gesprekken gebruiken waarop je feedback gaf met de duim, en gesprekken die voor een veiligheidscontrole zijn gemarkeerd. Incognito-chats gebruikt Anthropic niet. Op Team traint Anthropic standaard niet op je inhoud."
   - question: "Is Claude Pro beter dan ChatGPT Plus?"
-    answer: "Dat hangt af van je werk. Claude Pro kost $20 per maand, Claude Code zit erbij en het valt onder de consumentenvoorwaarden van Anthropic. Voor werk met klantgegevens kijk je daarom naar de zakelijke varianten. De prijs en voorwaarden van ChatGPT Plus noemen we hier niet, omdat we die op 31 oktober 2026 niet bij OpenAI konden controleren."
+    answer: "Dat hangt af van je werk. Claude Pro kost $20 per maand, Claude Code zit erbij en het valt onder de consumentenvoorwaarden van Anthropic. Voor werk met klantgegevens kijk je daarom naar de zakelijke varianten. De prijs en voorwaarden van ChatGPT Plus staan bij OpenAI. De vergelijking van de tools staat in Claude vs ChatGPT voor zakelijk gebruik."
 ---
 
-Claude Pro is voor veel ondernemers de eerste stap: een account op de eigen creditcard, met Claude Code erbij. Wie meer ruimte nodig heeft, kiest Max of Ultra. Daarna komt de vraag of je zo'n abonnement voor je werk mag gebruiken.
+Claude Pro is vaak de eerste stap: een account op de eigen creditcard, met Claude Code erbij. Wie meer ruimte nodig heeft, kiest Max of Ultra. Daarna komt de vraag of je zo'n abonnement voor je werk mag gebruiken.
 
 Hieronder staat wat Anthropic daarover publiceert. Dit komt niet uit eigen klantwerk. Alles is gecontroleerd op 31 oktober 2026 bij de bronnen onderaan de pagina.
 
@@ -136,13 +139,15 @@ Volgens de [prijspagina van Claude](https://claude.com/pricing) kost Claude Pro 
 
 Met de ECB-koers van 30 oktober 2026 (1 euro is 1,1172 dollar) zijn die dollarprijzen €17,90 of €15,22 voor Pro, €89,51 voor Max en €179,02 voor Ultra, zonder btw. Volgens [het helpartikel over het Pro-abonnement](https://support.claude.com/en/articles/8325606-what-is-the-pro-plan) toont Anthropic waar mogelijk je eigen valuta. Het echte bedrag zie je bij het afrekenen.
 
-Pro geeft meer gebruik dan het gratis plan, per vijf uur en per week. Op de prijspagina staan bij Pro onder meer Projects en Claude Code. API-gebruik hoort er niet bij: "The Pro plan does not include API usage through the Claude Console." Fable 5 en 5.1 gebruik je op Pro alleen met usage credits. Of je die modellen nodig hebt, lees je in [welk Claude-model je kiest](/nieuws/welk-claude-model-mkb).
+Pro geeft per sessie meer gebruik dan het gratis plan, met een limiet per vijf uur en per week. Op de prijspagina staan bij Pro onder meer Projects en Claude Code. API-gebruik hoort er niet bij: "The Pro plan does not include API usage through the Claude Console." Fable 5 en 5.1 gebruik je op Pro alleen met usage credits. Of je die modellen nodig hebt, lees je in [welk Claude-model je kiest](/nieuws/welk-claude-model-mkb).
 
 ## Mag je Claude Pro zakelijk gebruiken?
 
-Anthropic werkt met twee sets voorwaarden. In de [Commercial Terms van Anthropic](https://www.anthropic.com/legal/commercial-terms) staat: "Our consumer offerings (e.g., Claude.ai) are governed by our Consumer Terms of Service instead." Team, Enterprise en de API vallen onder de Commercial Terms, schreef Anthropic bij de [aankondiging van nieuwe consumentenvoorwaarden](https://www.anthropic.com/news/updates-to-our-consumer-terms) in augustus 2025. Die nieuwe consumentenvoorwaarden gelden volgens dezelfde aankondiging voor "Claude Free, Pro, and Max plans". Ultra is de nieuwe naam van Max 20x: "The Max 20x plan is now called the Ultra plan."
+Anthropic werkt met twee sets voorwaarden. In de [Commercial Terms van Anthropic](https://www.anthropic.com/legal/commercial-terms) staat: "Our consumer offerings (e.g., Claude.ai) are governed by our Consumer Terms of Service instead." Team, Enterprise en de API vallen onder de Commercial Terms, schreef Anthropic bij de [aankondiging van nieuwe consumentenvoorwaarden](https://www.anthropic.com/news/updates-to-our-consumer-terms) in augustus 2025. Die nieuwe consumentenvoorwaarden gelden volgens dezelfde aankondiging voor "Claude Free, Pro, and Max plans".
 
-Woon je in de EER of Zwitserland, dan sluit je de consumentenvoorwaarden af met Anthropic Ireland, Limited. [De consumentenvoorwaarden voor de EER en Zwitserland](https://www.anthropic.com/legal/archive/cbf30172-78ac-43b7-8161-bd230de7cec9) gelden sinds 8 oktober 2025. Volgens de versiegeschiedenis is dat nog de nieuwste versie. Voor zakelijk gebruik tellen deze passages:
+Ultra is de nieuwe naam van Max 20x, zegt [het helpartikel over Ultra](https://support.claude.com/en/articles/17728952-what-is-the-ultra-plan): "The Max 20x plan is now called the Ultra plan." Wie Max 20x had, is zonder prijswijziging overgezet.
+
+Woon je in de EER of Zwitserland, dan sluit je de consumentenvoorwaarden af met Anthropic Ireland, Limited. [De consumentenvoorwaarden voor de EER en Zwitserland](https://www.anthropic.com/legal/archive/cbf30172-78ac-43b7-8161-bd230de7cec9) gelden sinds 8 oktober 2025. Op 31 oktober 2026 stond in de versiegeschiedenis van die pagina geen nieuwere versie voor de EER. Voor zakelijk gebruik tellen deze passages:
 
 - Je bent consument als je handelt "wholly or mainly outside your trade, business, craft or profession", dus helemaal of vooral buiten je werk.
 - Over de Commercial Terms zeggen de consumentenvoorwaarden: "For clarity, this does not include Claude.ai or Claude Pro use for individuals or entities." Ook voor een bedrijf vallen Claude.ai en Pro dus buiten de Commercial Terms.
@@ -164,17 +169,17 @@ In gewone woorden: de voorwaarden van Pro, Max en Ultra zijn geschreven voor pri
 
 **Geen beheer.** In de vergelijkingstabel op de prijspagina staan single sign-on en centrale facturering en beheer bij Pro, Max en Ultra op "No". Chats en Projects van een medewerker blijven in diens persoonlijke account.
 
-**Factuur en btw.** Je btw-nummer vul je in bij het afsluiten, of later via Settings > Billing, en het geldt alleen voor volgende facturen. Je factuuradres volgt het adres van je betaalmiddel en bepaalt de belasting. Of Anthropic btw verlegt, staat er niet bij. Zie [btw en wisselkoers bij Claude](/prijs).
+**Factuur en btw.** Je btw-nummer vul je in bij het afsluiten als je adres daarvoor in aanmerking komt, of later via Settings > Billing. Het geldt alleen voor volgende facturen. Je factuuradres volgt het adres van je betaalmiddel en bepaalt de belasting. Of Anthropic btw verlegt, staat er niet bij. Zie [btw en wisselkoers bij Claude](/prijs).
 
 **Eén limiet voor chat en Claude Code.** Volgens [het helpartikel over Claude Code bij je abonnement](https://support.claude.com/en/articles/11145838-use-claude-code-with-your-pro-max-or-ultra-plan) geldt: "These limits are shared across Claude and Claude Code." Lees ook [hoe de gebruikslimieten werken](/prijs/credits-en-limieten).
 
 **Wat de Autoriteit Persoonsgegevens zegt.** Op 6 augustus 2024 meldde de [Autoriteit Persoonsgegevens](https://www.autoriteitpersoonsgegevens.nl/actueel/let-op-gebruik-ai-chatbot-kan-leiden-tot-datalekken) dat medewerkers persoonsgegevens van bijvoorbeeld klanten in AI-chatbots hadden gezet, vaak "op eigen initiatief en tegen de afspraken met de werkgever in". De AP raadt aan om af te spreken welke gegevens wel en niet in een chatbot mogen, en met de aanbieder te regelen dat die de ingevoerde gegevens niet opslaat. De AP noemt ChatGPT en Copilot als voorbeeld, Claude niet. Zie ook [is Claude veilig voor bedrijfsdata](/compliance/is-claude-veilig).
 
-Een voorbeeld van werk met klantdata: ons team bouwde eerder bij een IT-consultancybureau een skill voor [opnames van klantgesprekken omzetten naar een brief](/cases/consultant-brief). De verwerking van een gesprek van een uur ging van 45 naar 5 minuten. Zulk werk met klantgesprekken hoort onder de zakelijke voorwaarden.
+Een voorbeeld van werk met klantdata: ons team bouwde eerder bij een IT-consultancybureau een skill die [opnames van klantgesprekken omzet naar een brief](/cases/consultant-brief). De verwerking van een gesprek van een uur ging van 45 naar 5 minuten. Zulk werk met klantgesprekken hoort onder de zakelijke voorwaarden.
 
 ## Claude Pro vs Max vs Ultra: welk abonnement past bij jou?
 
-Max en Ultra zijn grotere versies van Pro, ook voor één persoon. [Het helpartikel over Ultra](https://support.claude.com/en/articles/17728952-what-is-the-ultra-plan) zegt: "This article is about paid Ultra plans for individual consumers." Voor de zakelijke vraag maakt dat geen verschil.
+Max en Ultra zijn grotere versies van Pro, ook voor één persoon. De helpartikelen over beide plannen gaan over "individual consumers". Voor de zakelijke vraag maakt dat geen verschil.
 
 Tabel: Claude Pro, Max en Ultra naast een standaard Team-seat, stand 31 oktober 2026.
 
@@ -191,7 +196,11 @@ Tabel: Claude Pro, Max en Ultra naast een standaard Team-seat, stand 31 oktober 
 | Training op je chats | keuze per gebruiker | keuze per gebruiker | keuze per gebruiker | standaard niet |
 | Account delen | niet toegestaan | niet toegestaan | niet toegestaan | seat per persoon |
 
-Op Max krijg je volgens de prijspagina ook voorrang als het druk is, en volgens [het helpartikel over Max](https://support.claude.com/en/articles/11049741-what-is-the-max-plan) betaal je alleen per maand. Op Ultra heeft een geverifieerd account geen limiet per vijf uur. Anthropic verifieert automatisch, onder meer op account- en betaalgeschiedenis. Abonnees van Max 20x zijn zonder prijswijziging overgezet naar Ultra. Volgens de helpartikelen over Max en Ultra gelden die prijzen alleen voor het web; via een app store kan het anders zijn.
+Het privacycentrum noemt bij training alleen Free, Pro en Max. Voor Ultra staat in de vergelijkingstabel op de prijspagina dezelfde keuze als bij Pro en Max: "Opt-out".
+
+<!-- figuur:2 -->
+
+Op Max en Ultra krijg je volgens de prijspagina ook voorrang als het druk is. Volgens [het helpartikel over Max](https://support.claude.com/en/articles/11049741-what-is-the-max-plan) en het helpartikel over Ultra gelden die prijzen alleen voor het web; via een app store kan het anders zijn.
 
 Loop je af en toe tegen de limiet aan, dan zijn [usage credits voor je abonnement](https://support.claude.com/en/articles/12429409-manage-usage-credits-for-paid-claude-plans) een alternatief. Die betaal je "at standard API rates", met een maandplafond dat je zelf instelt. De afweging tussen de zakelijke plannen staat in [Claude Pro, Team of Enterprise](/prijs/pro-vs-team-vs-enterprise). Twijfel je tussen Claude en ChatGPT, lees dan [Claude vs ChatGPT voor zakelijk gebruik](/vergelijken/claude-vs-chatgpt).
 
