@@ -7,7 +7,7 @@ targetKeywords:
   - claude in chrome
   - claude in chrome extensie
   - claude browser
-wordCountTarget: 1798
+wordCountTarget: 1794
 priority: 1
 tier: 1
 cases:
@@ -92,7 +92,7 @@ faq:
   - question: "Is Claude in Chrome gratis?"
     answer: "Nee. Je hebt een betaald plan nodig: Pro, Max, Ultra, Team of Enterprise. Op de prijspagina van Anthropic staat Free in de rij Claude in Chrome op 'No'. Het goedkoopste plan met de extensie is Pro, voor $20 per maand of $17 per maand bij jaarbetaling, exclusief btw."
   - question: "Werkt Claude in Chrome ook in Edge of Firefox?"
-    answer: "Het zijpaneel werkt alleen in Google Chrome op een computer, niet in andere Chromium-browsers en niet op mobiel. Via Claude Code werkt de koppeling met de extensie ook in Microsoft Edge en in Chromium-browsers zoals Brave, Arc, Vivaldi en Opera. Firefox en Safari zijn geen Chromium-browsers en vallen daarmee buiten beide routes."
+    answer: "Het zijpaneel werkt alleen in Google Chrome op een computer, niet in andere Chromium-browsers en niet op mobiel. Via Claude Code werkt de koppeling met de extensie ook in Microsoft Edge en in Chromium-browsers zoals Brave, Arc, Vivaldi en Opera. De startgids en de documentatie van Claude Code noemen Firefox en Safari niet. De route via Claude Code vraagt een Chromium-browser."
   - question: "Staat Claude in Chrome standaard aan bij Claude Team?"
     answer: "Ja. Bij Team staat de extensie standaard aan voor de organisatie. Een Owner of Primary Owner zet hem uit onder Organization settings, Claude in Chrome. Bij Enterprise staat hij ook aan, tenzij iemand hem eerder heeft uitgezet. Organisaties met HIPAA zijn de uitzondering: daar blijft de extensie uit tot een Owner hem aanzet."
   - question: "Kan Claude in Chrome mijn wachtwoorden zien?"
@@ -100,7 +100,7 @@ faq:
   - question: "Wat is het verschil met de browser in Claude Cowork?"
     answer: "De ingebouwde browser zit in de desktop-app van Claude en ziet je opgeslagen logins niet, tenzij je ze per site importeert. Claude in Chrome werkt in je eigen browser, met de accounts waarop je daar al bent ingelogd. In Team en Enterprise gelden de allowlist en blocklist van de beheerder voor allebei."
   - question: "Is Claude in Chrome veilig?"
-    answer: "Anthropic noemt prompt injection het grootste risico: verborgen opdrachten in een webpagina of e-mail. In interne tests zakt het aanvalssucces volgens Anthropic tot onder 0,08%, en Anthropic schrijft er zelf bij dat het risico niet nul is. Anthropic raadt de extensie af voor sites met persoonsgegevens van anderen. Meer lees je in is Claude veilig voor bedrijfsdata."
+    answer: "Anthropic noemt prompt injection het grootste risico: verborgen opdrachten in een webpagina of e-mail. In interne tests zakt het aanvalssucces volgens Anthropic tot onder 0,08%, en Anthropic schrijft er zelf bij dat het risico niet nul is. Anthropic raadt de extensie af voor sites met persoonsgegevens van anderen."
 ---
 
 Claude in Chrome is een extensie voor Google Chrome. Claude leest daarmee pagina's in je eigen browser, klikt en vult formulieren in, met de accounts waarop je al bent ingelogd. Alles is op 31 oktober 2026 gecontroleerd bij de bronnen van Anthropic onderaan de pagina. Ander nieuws over Claude staat in [het nieuwsoverzicht](/nieuws).
@@ -136,7 +136,7 @@ Omgerekend van [de dollarprijzen van Anthropic](https://claude.com/pricing) met 
 
 Met een gratis account werkt de extensie niet. [De pagina met oplossingen voor Claude in Chrome](https://support.claude.com/en/articles/12902405-claude-in-chrome-troubleshooting) zegt bij inlogproblemen: "Verify you have an active paid plan subscription (Pro, Max, Ultra, Team, or Enterprise)." Toen we dit in oktober 2026 nagingen, spraken blogs elkaar tegen. De prijspagina van Anthropic gaf uitsluitsel: Free staat in de rij Claude in Chrome op "No".
 
-Volgens een notitie bij de pilotaankondiging toont Anthropic sinds 30 oktober 2026 twee plannen waar eerder "Max" stond: Max en Ultra. Gebruikt je bedrijf Claude alleen via Amazon Bedrock, Google Cloud of Microsoft Foundry, dan heb je voor de Chrome-koppeling van Claude Code een apart claude.ai-account nodig. In de extensie zijn alle publieke modellen beschikbaar. Welk plan bij je team past, lees je in [Claude Pro, Team of Enterprise vergelijken](/prijs/pro-vs-team-vs-enterprise).
+Waar de pilotaankondiging vóór 30 oktober 2026 "Max" schrijft, valt daar volgens [een notitie van Anthropic bij dat bericht](https://claude.com/resources/articles/claude-for-chrome) ook het huidige Ultra-plan onder. Gebruikt je bedrijf Claude alleen via Amazon Bedrock, Google Cloud of Microsoft Foundry, dan heb je voor de Chrome-koppeling van Claude Code een apart claude.ai-account nodig. In de extensie zijn alle publieke modellen beschikbaar. Welk plan bij je team past, lees je in [Claude Pro, Team of Enterprise vergelijken](/prijs/pro-vs-team-vs-enterprise).
 
 ## Wie kan er via jouw account bij je browser?
 
@@ -146,16 +146,16 @@ Volgens de documentatie van Claude Code deelt Claude de inlogstatus van je brows
 
 Ook andere ingangen komen bij dezelfde extensie uit:
 
-- Cowork-sessies op web en mobiel kunnen Claude in Chrome gebruiken als ze verbonden zijn met je computer. Of de desktop-app dan open moet staan, spreken twee helpartikelen elkaar tegen: het Cowork-artikel zegt nee, de startgids ja.
+- Cowork-sessies op web en mobiel kunnen Claude in Chrome gebruiken als ze verbonden zijn met je computer. Of de desktop-app daarbij open moet staan, is onduidelijk: het helpartikel over browsergebruik in Cowork zegt van niet, de startgids zegt dat de app open en verbonden moet zijn.
 - Claude Code gebruikt de extensie als die is ingelogd op hetzelfde claude.ai-account en dezelfde organisatie. Log je in Claude Code in met een API-sleutel, dan blijft de koppeling met Chrome uit.
 
-Wie jouw Claude-account gebruikt, kan via de extensie werken in de accounts waarop jouw Chrome is ingelogd. De grens is de login van de extensie en het Chrome-profiel waarin hij draait. Op welke computer iemand de vraag typt, maakt daarvoor niet uit.
+Wie jouw Claude-account gebruikt, kan via de extensie werken in de accounts waarop jouw Chrome is ingelogd. De grens is de login van de extensie en het Chrome-profiel waarin hij draait, ongeacht op welke computer iemand de vraag typt.
 
 <!-- figuur:1 -->
 
-In oktober 2026 wilden we Claude in Chrome alleen vanaf onze twee werkcomputers laten werken. Onze controle vóór elke browseractie koos alleen welke browser Claude bedient, en draait alleen op computers met dezelfde instellingen. De toegang hangt af van de login van de extensie, dus die controle bleef zoals hij was.
+In oktober 2026 wilden we Claude in Chrome alleen vanaf onze twee werkcomputers laten werken. Dat lukt niet met een instelling op die computers. De toegang loopt via de login van de extensie, en daar kan elke Claude-app bij die met ons account is ingelogd. Ons eigen script dat vóór elke browseractie draait, hebben we daarom niet aangepast.
 
-Anthropic raadt een apart browserprofiel aan, zonder toegang tot gevoelige accounts. In augustus 2026 stonden op een tweede laptop van ons team ineens 5 tabgroepen van Claude in Chrome. Niets had die browser bestuurd: de tabgroepen gingen via Chrome Sync mee vanaf de computer met de extensie. De oplossing in die sessie was "Saved tab groups" uitzetten in Chrome Sync, met als nadeel dat eigen tabgroepen ook niet meer synchroniseren.
+Anthropic raadt een apart browserprofiel aan, zonder toegang tot gevoelige accounts. In augustus 2026 stonden op een tweede laptop van ons team ineens 5 tabgroepen van Claude in Chrome, die via Chrome Sync waren meegekomen vanaf de computer met de extensie. "Saved tab groups" uitzetten in Chrome Sync hielp, alleen synchroniseren je eigen tabgroepen dan ook niet meer.
 
 ## Wat doet Claude zelf en waar klik jij?
 
@@ -176,7 +176,7 @@ Wij gebruiken Claude in Chrome zelf vooral via Claude Code. Wat hier over het zi
 
 De koppeling van Search Console aan Cloudflare was een autorisatie bij Google: die klik deden we zelf. Een gebruiker toevoegen aan Search Console telde als rechten geven en werd ook tegengehouden. Aan het eind stonden alle 9 controles in het logboek. De blokkades kwamen van Claude Code, en Anthropic beschrijft voor de extensie hetzelfde: autorisaties en rechten geven vraagt altijd een mens.
 
-Heeft een systeem een API, dan werken we liever via die API. Zo zette ons team eerder bij een IT-dienstverlener 13 artikelen met 27 screenshots in vijf werkdagen online via een REST API (lees [de kennisbank-case](/cases/knowledge-base)). De browser gebruiken we voor wat alleen met een klik kan.
+Heeft een systeem een API, dan werken we liever via die API, zoals bij [de kennisbank van een IT-dienstverlener](/cases/knowledge-base): 13 artikelen met 27 screenshots in vijf werkdagen. De browser gebruiken we voor wat alleen met een klik kan.
 
 ## Hoe zet je Claude in Chrome aan of uit voor je team?
 
