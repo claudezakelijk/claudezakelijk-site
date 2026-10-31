@@ -9,7 +9,7 @@ targetKeywords:
   - claude powerpoint maken
   - claude slides
   - claude docs
-wordCountTarget: 1731
+wordCountTarget: 1723
 priority: 1
 tier: 1
 cases:
@@ -60,9 +60,6 @@ bronnen:
   - titel: "Claude docs: use Claude for PowerPoint (office agents)"
     url: "https://claude.com/docs/office-agents/powerpoint"
     geraadpleegd: "2026-10-31"
-  - titel: "Claude for Microsoft 365, productpagina (claude.com)"
-    url: "https://claude.com/claude-for-microsoft-365"
-    geraadpleegd: "2026-10-31"
   - titel: "Anthropic, Build live dashboards and animate explainers with Claude (8 oktober 2026)"
     url: "https://claude.com/resources/articles/dashboards-and-motion"
     geraadpleegd: "2026-10-31"
@@ -91,9 +88,9 @@ faq:
   - question: "Kan Claude PowerPoints maken?"
     answer: "Ja. In Claude zelf kan dat op drie manieren: met Claude Slides, door een document uit Claude Docs om te laten zetten in een presentatie, of door in een gesprek om een .pptx-bestand te vragen. Daarnaast is er de add-in Claude for PowerPoint, waarmee je in PowerPoint zelf werkt. Die add-in vraagt een betaald plan."
   - question: "Is Claude Slides gratis?"
-    answer: "Ja. Sinds 8 oktober 2026 zitten Claude Slides en Claude Docs in elk plan, ook het gratis plan. Volgens Anthropic tellen documenten en presentaties wel mee voor je gebruikslimiet. De add-in voor PowerPoint werkt alleen op een betaald plan. Pro kost $20 per maand, ongeveer €17,90 zonder btw (ECB-koers van 30 oktober 2026)."
+    answer: "Ja. Sinds 8 oktober 2026 zitten Claude Slides en Claude Docs in elk plan, ook het gratis plan. Volgens Anthropic tellen documenten wel mee voor je gebruikslimiet. De add-in voor PowerPoint werkt alleen op een betaald plan. Pro kost $20 per maand, ongeveer €17,90 zonder btw (ECB-koers van 30 oktober 2026)."
   - question: "Kan Claude met mijn eigen PowerPoint-template werken?"
-    answer: "In de add-in wel: Claude leest het diamodel, de lay-outs, de lettertypen en de kleuren van je presentatie en gebruikt die voor nieuwe dia's. In Claude Slides gebruik je daarvoor een design system met je kleuren, lettertypen en onderdelen. Design systems zijn volgens Anthropic nog bèta en zitten niet in het gratis plan."
+    answer: "In de add-in wel: Claude leest het diamodel, de lay-outs, de lettertypen en de kleuren van je presentatie en gebruikt die voor nieuwe dia's. In Claude Slides gebruik je daarvoor een design system met je kleuren, lettertypen en onderdelen. Design systems zijn volgens Anthropic nog bèta op Pro, Max, Ultra, Team en Enterprise. Free staat niet in die lijst."
   - question: "Wat is het verschil tussen Claude Slides en de PowerPoint-add-in?"
     answer: "Met Slides maak je de presentatie in Claude en exporteer je hem naar PowerPoint, PDF of Google Slides. De add-in werkt in je bestaande PowerPoint-bestand, in je eigen template, en past losse dia's aan. Slides zit in elk plan. De add-in zit in Pro, Max, Team en Enterprise."
   - question: "Werkt Claude in PowerPoint op een Mac of iPad?"
@@ -110,7 +107,7 @@ Hieronder lees je welke route past en hoe je een rapport in Docs schrijft, naar 
 
 Docs en Slides zijn sjablonen in Claude voor werk dat je met anderen deelt. Volgens [het helpartikel van Anthropic over artifacts](https://support.claude.com/en/articles/17153992-what-are-artifacts-and-how-do-i-use-them) is Docs bedoeld voor documenten die je samen met Claude en je team blijft bijwerken. Slides maakt presentaties uit je notities, je rapporten of het werk dat al in het gesprek staat. Je bewerkt een dia direct, presenteert zonder Claude te verlaten en exporteert naar PowerPoint of PDF.
 
-Anthropic noemt wat je zo maakt een artifact. Het opent naast je gesprek, staat daarna in het tabblad Artifacts en is eerst alleen voor jou zichtbaar. Maken, bewerken en delen doe je in Claude op het web en in de desktop-app.
+Anthropic noemt wat je zo maakt een artifact. Het opent naast je gesprek, staat daarna in het tabblad Artifacts en is eerst alleen voor jou zichtbaar. De deelinstellingen pas je aan op het web of in de desktop-app.
 
 Docs en Slides kwamen op 16 september 2026, tegelijk met de samenvoeging van chat en Cowork. Toen waren ze nog bèta en alleen voor betaalde plannen. Op 8 oktober 2026 schreef Anthropic dat [Docs, Slides en Design uit de bèta zijn](https://claude.com/resources/articles/dashboards-and-motion) en op elk plan staan, ook Free. Op Enterprise gingen ze op 15 oktober 2026 standaard aan.
 
@@ -139,8 +136,8 @@ Volgens [de startgids voor Claude Docs](https://support.claude.com/en/articles/1
 
 1. Vraag in een gesprek om een document, of begin je vraag met `/docs`. Via "Output" en dan "Docs" bij het invoerveld kan het ook, net als met een sjabloon in het tabblad Artifacts.
 2. Beschrijf waarvoor het rapport is, wie het leest en welk bestand of welke gekoppelde app de cijfers heeft. Claude stelt eerst een paar vragen en zet daarna een concept op het scherm.
-3. Klik in de tekst en typ om iets aan te passen; wijzigingen worden vanzelf bewaard. Je kunt ook in het gesprek om een wijziging vragen, of tekst selecteren en "Edit with Claude" kiezen.
-4. Collega's met bewerkrechten werken tegelijk in het document en zien wijzigingen direct. Zet "@Claude" in een opmerking als Claude iets moet aanpassen.
+3. Klik in de tekst en typ om iets aan te passen; wijzigingen worden vanzelf bewaard. Je kunt ook in het gesprek om een wijziging vragen, of "@Claude" in een opmerking zetten als Claude iets moet aanpassen.
+4. Collega's met bewerkrechten werken tegelijk in het document en zien wijzigingen direct.
 5. Klik op "Export" en kies Word (.docx), of exporteer naar PDF, Markdown of Google Docs.
 
 De startgids noemt ook grenzen. Een document verwijderen is definitief: er is geen prullenbak, en ook wie het gedeeld kreeg, kan er daarna niet meer bij. Grafieken en diagrammen werken niet vanzelf bij, dus voor nieuwe cijfers vraag je Claude ze opnieuw op te halen. Een rol voor alleen opmerkingen bestaat nog niet.
@@ -153,7 +150,7 @@ Volgens de startgids zet Claude een document ook om in een presentatie met Claud
 
 1. Vraag in hetzelfde gesprek om een presentatie op basis van het rapport, bijvoorbeeld: "Maak hiervan 8 dia's voor het managementoverleg."
 2. Bewerk een dia direct, of vraag een wijziging in het gesprek. Je kunt ook een opmerking voor Claude op een dia zetten.
-3. Wil je je eigen kleuren, lettertypen en onderdelen, gebruik dan een design system. Volgens het artifacts-artikel kunnen presentaties daarop gebouwd worden. Design systems zijn volgens het helpartikel over artifacts met toetsenbord en schermlezer nog bèta op Pro, Max, Ultra, Team en Enterprise.
+3. Wil je je eigen kleuren, lettertypen en onderdelen, gebruik dan een design system. Volgens het artifacts-artikel kunnen presentaties daarop gebouwd worden. Design systems zijn volgens [het helpartikel over artifacts met toetsenbord en schermlezer](https://support.claude.com/en/articles/17457950-use-artifacts-with-a-keyboard-or-screen-reader) nog bèta op Pro, Max, Ultra, Team en Enterprise.
 4. Presenteer vanuit Claude, of klik op "Export" en kies PowerPoint. PDF kan ook, en naar Google Slides gaat de presentatie als bewerkbaar bestand.
 5. Open het bestand in PowerPoint en loop elke dia na voordat je hem deelt.
 
@@ -163,7 +160,7 @@ Volgens [de aankondiging van 8 oktober 2026](https://claude.com/resources/articl
 
 Volgens [de documentatie van de add-in Claude for PowerPoint](https://claude.com/docs/office-agents/powerpoint) leest Claude het diamodel, de lay-outs, de lettertypen en de kleuren van je presentatie. Die gebruikt Claude voor nieuwe dia's. Je selecteert een dia en vraagt een aanpassing, zonder het hele deck opnieuw te maken. Opsommingen zet je om in diagrammen of in bewerkbare PowerPoint-grafieken.
 
-De add-in is algemeen beschikbaar op Pro, Max, Team en Enterprise, en werkt dus niet op Free. [De productpagina van Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365) zegt het korter: "all paid plans". De goedkoopste route is Pro. Volgens [de prijspagina van Claude](https://claude.com/pricing) kost dat $20 per maand, of $17 per maand bij jaarbetaling. Met de ECB-koers van 30 oktober 2026 (1 euro is 1,1172 dollar) is dat ongeveer €17,90 of €15,22, zonder btw.
+De add-in is algemeen beschikbaar op Pro, Max, Team en Enterprise, en werkt dus niet op Free. De goedkoopste route is Pro. Volgens [de prijspagina van Claude](https://claude.com/pricing) kost dat $20 per maand, of $17 per maand bij jaarbetaling. Met de ECB-koers van 30 oktober 2026 (1 euro is 1,1172 dollar) is dat ongeveer €17,90 of €15,22, zonder btw.
 
 De add-in werkt in PowerPoint op het web, op Windows met een Microsoft 365-abonnement (build 16.0.13127.20296 of later) en op de Mac vanaf versie 16.46. In PowerPoint 2016 en 2019 met een losse licentie werkt hij niet, en ook niet op de iPad of Android. Je installeert hem via de vermelding "Claude for Microsoft 365" in Microsoft AppSource. Een beheerder kan hem ook voor de hele organisatie uitrollen.
 
@@ -174,11 +171,13 @@ Anthropic waarschuwt zelf: gebruik de add-in alleen met bestanden die je vertrou
 Op Team en Enterprise beslist een eigenaar (Owner of Primary Owner) wat collega's mogen. Volgens [de beheergids voor artifacts op Team en Enterprise](https://support.claude.com/en/articles/16994751-artifacts-admin-guide-for-team-and-enterprise-plans) loop je deze stappen door:
 
 1. Zet onder Organization settings > Capabilities eerst "Cloud code execution and file creation" aan, anders werken artifacts niet.
-2. Kies onder Organization settings > Artifacts, bij Templates, welke sjablonen collega's mogen gebruiken. Docs, Slides en Design staan op Team standaard aan, op Enterprise sinds 15 oktober 2026.
+2. Kies onder Organization settings > Artifacts, bij Templates, welke sjablonen collega's mogen gebruiken. Docs en Slides staan op Team standaard aan, op Enterprise sinds 15 oktober 2026.
 3. Bepaal of collega's buiten de organisatie mogen delen. Een openbare link ("External sharing") en uitnodigen per e-mail zijn twee aparte instellingen.
 4. Op Enterprise geef je met eigen rollen alleen bepaalde groepen toegang tot een sjabloon.
 
-Twee grenzen tellen voor compliance. Volgens [het helpartikel over artifacts delen](https://support.claude.com/en/articles/9547008-share-artifacts) kun je Docs op Team en Enterprise nog niet buiten de organisatie delen, ook niet via een link. Ook staat wat er binnen een document gebeurt, zoals bewerkingen en opmerkingen, nog niet in de Compliance API. Sessies van de PowerPoint-add-in staan daar wel in, maar niet in de audit logs van Enterprise. De add-in volgt ook geen eigen bewaartermijn van je organisatie.
+Voor compliance gelden bij Docs twee grenzen. Volgens [het helpartikel over artifacts delen](https://support.claude.com/en/articles/9547008-share-artifacts) kun je Docs op Team en Enterprise nog niet buiten de organisatie delen, ook niet via een link. Volgens de beheergids staat ook wat er binnen een document gebeurt, zoals bewerkingen en opmerkingen, nog niet in de Compliance API.
+
+Bij de add-in ligt het anders. Volgens de documentatie van de add-in staan sessies wel in de Compliance API, maar niet in de audit logs van Enterprise. De add-in volgt ook geen eigen bewaartermijn van je organisatie.
 
 ## Wat gebeurt er met je bedrijfsgegevens?
 
