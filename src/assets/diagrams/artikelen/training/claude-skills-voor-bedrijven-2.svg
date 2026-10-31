@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" role="img" aria-label="Opbouw van een SKILL.md: bovenin tussen twee regels met streepjes staan name en description, en Claude vergelijkt je vraag met die beschrijving; daaronder staat de werkwijze, die pas laadt als je vraag past" data-bijschrift="Bovenin een SKILL.md staan de naam en de beschrijving. Claude vergelijkt je vraag met de beschrijving; de werkwijze eronder laadt pas als die past." font-family="Inter, system-ui, sans-serif" fill="#23261D"><defs>
+<filter id="sk2-g" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 .14  0 0 0 0 .15  0 0 0 0 .11  .16 0 0 0 -.03"/></filter>
+<marker id="sk2-a" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#3D5220"/></marker>
+</defs><rect width="1200" height="600" fill="#F4F1E8"/><rect x="64" y="48" width="64" height="4" rx="2" fill="#B4C13E"/><text x="64" y="92" fill="#565A4C" font-size="22" font-weight="600" letter-spacing="3">OPBOUW VAN EEN SKILL.MD</text>
+<g>
+<rect x="64" y="128" width="620" height="420" rx="12" fill="#FFFFFF" stroke="#23261D" stroke-width="4"/>
+<path d="M66 300 V140 a10 10 0 0 1 10 -10 H672 a10 10 0 0 1 10 10 V300 Z" fill="#E9EBDC"/>
+<line x1="64" y1="300" x2="684" y2="300" stroke="#23261D" stroke-width="4"/>
+<rect x="84" y="226" width="530" height="40" rx="6" fill="#B4C13E"/>
+<g stroke-width="9" stroke-linecap="round" stroke="#E1DED2"><line x1="96" y1="394" x2="560" y2="394"/><line x1="96" y1="428" x2="600" y2="428"/><line x1="96" y1="462" x2="520" y2="462"/><line x1="96" y1="496" x2="580" y2="496"/></g>
+<path d="M760 246 L 640 246" fill="none" stroke="#3D5220" stroke-width="6" stroke-linecap="round" marker-end="url(#sk2-a)"/>
+<path d="M712 324 H724 V522 H712" fill="none" stroke="#23261D" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="724" y1="423" x2="752" y2="423" stroke="#23261D" stroke-width="4" stroke-linecap="round"/>
+</g>
+<text x="96" y="176" font-size="26" fill="#565A4C">---</text>
+<text x="96" y="214" font-size="26">name: offerte-opstellen</text>
+<text x="96" y="255" font-size="26">description: Stelt een offerte op ...</text>
+<text x="96" y="290" font-size="26" fill="#565A4C">---</text>
+<text x="96" y="352" font-size="26" font-weight="600"># Offerte opstellen</text>
+<text x="784" y="236" font-size="34" font-weight="600" fill="#3D5220">hierop vergelijkt</text>
+<text x="784" y="276" font-size="34" font-weight="600" fill="#3D5220">Claude je vraag</text>
+<text x="772" y="416" font-size="34" font-weight="600">de werkwijze</text>
+<text x="772" y="454" font-size="26" fill="#565A4C">laadt pas als je vraag past</text>
+<rect width="1200" height="600" filter="url(#sk2-g)"/></svg>
