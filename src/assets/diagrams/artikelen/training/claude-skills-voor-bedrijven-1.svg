@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" role="img" aria-label="Drie lagen van een skill: naam en beschrijving zijn altijd geladen voor ongeveer 100 tokens per skill, de rest van SKILL.md laadt als je vraag past met een aanbevolen grens van 5.000 tokens, en extra bestanden en scripts kosten niets tot ze nodig zijn" data-bijschrift="Wat Claude per laag van een skill laadt, volgens de documentatie van Anthropic, stand 31 oktober 2026." font-family="Inter, system-ui, sans-serif" fill="#23261D"><defs>
+<filter id="sk1-g" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 .14  0 0 0 0 .15  0 0 0 0 .11  .16 0 0 0 -.03"/></filter>
+</defs><rect width="1200" height="600" fill="#F4F1E8"/><rect x="64" y="48" width="64" height="4" rx="2" fill="#B4C13E"/><text x="64" y="92" fill="#565A4C" font-size="22" font-weight="600" letter-spacing="3">WANNEER LAADT CLAUDE WAT?</text>
+<g>
+<path d="M84 168 H150 l22 22 l-22 22 H84 a8 8 0 0 1 -8 -8 V176 a8 8 0 0 1 8 -8 Z" fill="#B4C13E" stroke="#23261D" stroke-width="4" stroke-linejoin="round"/>
+<circle cx="146" cy="190" r="6" fill="#F4F1E8" stroke="#23261D" stroke-width="3"/>
+<line x1="64" y1="252" x2="1136" y2="252" stroke="#CFCDBE" stroke-width="3" stroke-dasharray="10 10"/>
+<rect x="92" y="272" width="70" height="88" rx="6" fill="#FFFFFF" stroke="#23261D" stroke-width="4"/>
+<g stroke-width="7" stroke-linecap="round"><line x1="106" y1="296" x2="138" y2="296" stroke="#B4C13E"/><line x1="106" y1="318" x2="148" y2="318" stroke="#E1DED2"/><line x1="106" y1="338" x2="140" y2="338" stroke="#E1DED2"/></g>
+<line x1="64" y1="382" x2="1136" y2="382" stroke="#CFCDBE" stroke-width="3" stroke-dasharray="10 10"/>
+<path d="M80 430 V412 a8 8 0 0 1 8 -8 H118 l12 14 H168 a8 8 0 0 1 8 8 V522 a8 8 0 0 1 -8 8 H88 a8 8 0 0 1 -8 -8 Z" fill="none" stroke="#CFCDBE" stroke-width="4" stroke-dasharray="10 8" stroke-linejoin="round"/>
+</g>
+<text x="210" y="190" font-size="34" font-weight="600">naam en beschrijving</text>
+<text x="210" y="228" font-size="26" fill="#565A4C">altijd geladen</text>
+<text x="210" y="310" font-size="34" font-weight="600">rest van SKILL.md</text>
+<text x="210" y="348" font-size="26" fill="#565A4C">laadt als je vraag past</text>
+<text x="210" y="440" font-size="34" font-weight="600">extra bestanden en scripts</text>
+<text x="210" y="478" font-size="26" fill="#565A4C">alleen als ze nodig zijn</text>
+<text x="1136" y="180" text-anchor="end" font-family="'Instrument Sans Variable', Inter, system-ui, sans-serif" font-weight="600" letter-spacing="-1" font-size="56">100</text>
+<text x="1136" y="238" text-anchor="end" font-size="26" fill="#565A4C">tokens per skill</text>
+<text x="1136" y="300" text-anchor="end" font-family="'Instrument Sans Variable', Inter, system-ui, sans-serif" font-weight="600" letter-spacing="-1" font-size="56">5.000</text>
+<text x="1136" y="358" text-anchor="end" font-size="26" fill="#565A4C">tokens, aanbevolen grens</text>
+<text font-style="italic" x="1136" y="428" text-anchor="end" font-family="'Newsreader Variable', Newsreader, Georgia, serif" font-size="56" font-weight="500" fill="#3D5220">niets</text>
+<text x="1136" y="486" text-anchor="end" font-size="26" fill="#565A4C">tot het nodig is</text>
+<text x="1136" y="566" text-anchor="end" font-size="26" fill="#64685A">stand 31 okt 2026</text>
+<rect width="1200" height="600" filter="url(#sk1-g)"/></svg>
