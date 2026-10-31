@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" role="img" aria-label="Staafdiagram van de gebruiksruimte als veelvoud van Pro: Pro 1x voor $20 per maand, Max 5x per 5 uur en per week voor $100 per maand, Ultra 10x per week zonder 5-uurslimiet als het account geverifieerd is, voor $200 per maand. Apart een stip voor een standaard Team-seat: 1,25x per sessie voor $25 per seat" data-bijschrift="Gebruiksruimte als veelvoud van Pro, met de prijs per maand. Team staat apart, omdat die ruimte per sessie geldt. Stand 31 oktober 2026." font-family="Inter, system-ui, sans-serif" fill="#23261D"><defs>
+<filter id="cpz2-g" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 .14  0 0 0 0 .15  0 0 0 0 .11  .16 0 0 0 -.03"/></filter>
+</defs><rect width="1200" height="600" fill="#F4F1E8"/><rect x="64" y="48" width="64" height="4" rx="2" fill="#B4C13E"/><text x="64" y="92" fill="#565A4C" font-size="22" font-weight="600" letter-spacing="3">GEBRUIKSRUIMTE · VEELVOUD VAN PRO</text>
+<text x="64" y="166" font-size="34" font-weight="600">Pro</text><text x="64" y="200" font-size="26" fill="#565A4C">$20 per maand</text>
+<rect x="346" y="136" width="70" height="64" rx="10" fill="#CFCDBE"/>
+<text x="434" y="183" font-family="'Instrument Sans Variable', Inter, system-ui, sans-serif" font-size="44" font-weight="600" letter-spacing="-1">1x</text>
+<text x="64" y="266" font-size="34" font-weight="600">Max</text><text x="64" y="300" font-size="26" fill="#565A4C">$100 per maand</text>
+<rect x="346" y="236" width="350" height="64" rx="10" fill="#CFCDBE"/>
+<text x="366" y="277" font-size="26">per 5 uur en per week</text>
+<text x="714" y="283" font-family="'Instrument Sans Variable', Inter, system-ui, sans-serif" font-size="44" font-weight="600" letter-spacing="-1">5x</text>
+<text x="64" y="366" font-size="34" font-weight="600">Ultra</text><text x="64" y="400" font-size="26" fill="#565A4C">$200 per maand</text>
+<rect x="346" y="336" width="700" height="64" rx="10" fill="#CFCDBE"/>
+<text x="366" y="377" font-size="26">per week · geen 5-uurslimiet als geverifieerd</text>
+<text x="1064" y="383" font-family="'Instrument Sans Variable', Inter, system-ui, sans-serif" font-size="44" font-weight="600" letter-spacing="-1">10x</text>
+<line x1="346" y1="116" x2="346" y2="420" stroke="#23261D" stroke-width="3"/>
+<line x1="64" y1="440" x2="1136" y2="440" stroke="#CFCDBE" stroke-width="3" stroke-dasharray="8 10" stroke-linecap="round"/>
+<text x="64" y="496" font-size="34" font-weight="600">Team</text><text x="64" y="530" font-size="26" fill="#565A4C">$25 per seat</text>
+<circle cx="433" cy="496" r="16" fill="#3D5220"/>
+<text x="470" y="513" font-family="'Instrument Sans Variable', Inter, system-ui, sans-serif" font-size="44" font-weight="600" letter-spacing="-1" fill="#3D5220">1,25x</text>
+<text x="608" y="508" font-size="26" fill="#565A4C">per sessie · standaard seat</text>
+<text x="1136" y="566" text-anchor="end" font-size="26" fill="#64685A">bron: claude.com, helpcentrum · stand 31 okt 2026</text>
+<rect width="1200" height="600" filter="url(#cpz2-g)"/></svg>
