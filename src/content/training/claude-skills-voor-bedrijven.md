@@ -8,7 +8,7 @@ targetKeywords:
   - claude skills maken
   - hoe werkt claude skills
   - claude skills voorbeelden
-wordCountTarget: 2104
+wordCountTarget: 1850
 priority: 1
 tier: 1
 cases:
@@ -99,31 +99,31 @@ faq:
     answer: "Alleen als je ze eerst helemaal leest. Een skill kan scripts en instructies bevatten die gegevens naar buiten sturen of Claude iets anders laten doen dan de beschrijving belooft. Anthropic raadt aan alleen skills uit vertrouwde bronnen te installeren, en een skill van een collega ook eerst te lezen."
 ---
 
-Leg je Claude elke week opnieuw uit hoe jouw offerte eruitziet? Met Claude Skills leg je zo'n werkwijze één keer vast in een gewoon tekstbestand, en je hele team werkt daarna met dezelfde versie. Hieronder lees je hoe skills werken, wie ze kan gebruiken en hoe je er zelf een maakt. Je krijgt vijf sjablonen voor gewone MKB-taken om te kopiëren.
+Leg je Claude elke week opnieuw uit hoe jouw offerte eruitziet? Met Claude Skills leg je zo'n werkwijze één keer vast in een gewoon tekstbestand. Op Team en Enterprise werkt je hele team daarna met dezelfde versie. Je krijgt ook vijf MKB-sjablonen om te kopiëren.
 
-Op 22 oktober 2026 heeft Anthropic [de open standaard achter Skills overgedragen aan de Agentic AI Foundation](https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation). Wat dat betekent, staat onderaan. Alles is op 31 oktober 2026 gecontroleerd bij de bronnen van Anthropic.
+Op 22 oktober 2026 heeft Anthropic [de open standaard achter Skills overgedragen aan de Agentic AI Foundation](https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation). Alles is op 31 oktober 2026 gecontroleerd bij de bronnen van Anthropic.
 
 ## Wat zijn Claude Skills?
 
-Een skill is een map met instructies, scripts en hulpbestanden die Claude laadt voor een bepaalde taak. Zo staat het in [het helpartikel van Anthropic over Skills](https://support.claude.com/en/articles/12512176-what-are-skills). De kleinste skill is een map met één bestand, `SKILL.md`, waarin je in gewone tekst beschrijft hoe een taak moet. Anthropic vergelijkt het met een inwerkmap voor een nieuwe collega.
+Volgens [het helpartikel van Anthropic over Skills](https://support.claude.com/en/articles/12512176-what-are-skills) is een skill een map met instructies, scripts en hulpbestanden die Claude laadt voor een bepaalde taak. De kleinste skill is een map met één bestand, `SKILL.md`, waarin je in gewone tekst beschrijft hoe een taak moet.
 
-Anthropic levert zelf skills voor Word, Excel, PowerPoint en PDF, en die zet Claude automatisch in als ze bij je vraag passen. Dit artikel gaat over eigen skills, die jij of je organisatie maakt. Skills werken alleen als code-uitvoering aanstaat. Volgens de aankondiging van 22 oktober 2026 ontstonden skills tijdens het werk aan Claude Code en kwamen ze in oktober 2025 uit. Op 16 oktober 2025 verscheen [de technische uitleg op de blog van Anthropic](https://www.anthropic.com/research/equipping-agents-for-the-real-world-with-agent-skills).
+Anthropic levert zelf skills voor Word, Excel, PowerPoint en PDF. Dit artikel gaat over eigen skills. Skills werken alleen als code-uitvoering aanstaat. Op 16 oktober 2025 verscheen [de technische uitleg op de blog van Anthropic](https://www.anthropic.com/research/equipping-agents-for-the-real-world-with-agent-skills). Daarin vergelijkt Anthropic een skill met een inwerkmap voor een nieuwe collega.
 
 ## Hoe werken Claude Skills?
 
 Claude laadt een skill in drie lagen. [De documentatie over Agent Skills](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview) noemt dat progressive disclosure:
 
 1. De naam en de beschrijving van elke skill staan altijd klaar. Dat kost ongeveer 100 tokens per skill.
-2. De rest van `SKILL.md` laadt pas als je vraag past bij de beschrijving. De documentatie noemt daarvoor minder dan 5.000 tokens, en de specificatie van Agent Skills raadt dat aan.
+2. De rest van `SKILL.md` laadt pas als je vraag past bij de beschrijving. Houd dat onder de 5.000 tokens.
 3. Extra bestanden en scripts in de map kosten niets tot Claude ze nodig heeft.
 
-Daardoor kun je veel skills installeren zonder dat je gesprek volloopt. Wat tokens en context zijn, lees je bij [hoe Claude werkt](/hoe-claude-werkt).
+Wat tokens en context zijn, lees je bij [hoe Claude werkt](/hoe-claude-werkt).
 
 <!-- figuur:1 -->
 
-De beschrijving is dus het belangrijkste stuk tekst in een skill. Claude vergelijkt je vraag met die beschrijving. Staat er niet in wanneer de skill van toepassing is, dan blijft hij liggen.
+De beschrijving is dus het belangrijkste stuk tekst in een skill. Staat er niet in wanneer de skill van toepassing is, dan blijft hij liggen.
 
-Dat merkten we in augustus 2026 bij een controle van onze eigen Claude-omgeving, met 86 skills. Onze schrijfregels stonden als checklist van 468 regels in één skill. Die laadde alleen als iemand de skill aanriep, en de beschrijving was zo smal dat dat zelden gebeurde. We voegden een automatische controle na elk antwoord toe. Ook kregen meer skills voor schrijfwerk een verwijzing naar de regels: eerst 7, daarna 17 van de 86. Dit komt uit onze eigen werklogboeken.
+In augustus 2026 telden we 86 skills in onze eigen Claude-omgeving. Onze schrijfregels stonden als checklist van 468 regels in één daarvan. Die skill laadde alleen als iemand hem aanriep, en door de smalle beschrijving gebeurde dat zelden. We voegden een automatische controle na elk antwoord toe. Ook verwezen meer skills voor schrijfwerk naar de regels: eerst 7, daarna 17 van de 86. Bron: onze sessielogboeken van augustus 2026.
 
 ## In welk abonnement zitten Claude Skills, en wie ziet jouw skill?
 
@@ -135,23 +135,21 @@ Tabel: Claude Skills per abonnement en per plek, stand 31 oktober 2026.
 |---|---|---|---|---|
 | claude.ai Free, Pro, Max, Ultra | ja, volgens het helpcenter | nee | nee | nee |
 | claude.ai Team (2 tot 150 seats) | ja | met personen, als de owner dat toestaat | ja, voor iedereen | nee |
-| claude.ai Enterprise | ja | met personen of groepen | ja, voor iedereen of per groep | ja, behalve bij CMEK, ZDR of HIPAA |
-| Claude Code | ja, als map | via Git of een plugin | via beheerde instellingen | niet genoemd |
+| claude.ai Enterprise | ja | met personen of groepen | ja, voor iedereen of per groep | standaard aan, behalve bij CMEK, ZDR of HIPAA |
+| Claude Code | ja, als map | via Git, een plugin of de sync vanuit claude.ai | via beheerde instellingen | niet genoemd |
 | Claude API | ja, via de Skills API | hele workspace | n.v.t. | nee |
 
-Overal geldt: code-uitvoering moet aanstaan. Eigen skills gaan niet vanzelf mee naar een andere plek. Een skill uit claude.ai upload je apart naar de API, en Claude Code leest alleen zijn eigen mappen. Bewaar daarom één bronversie, bijvoorbeeld in Git. Werkt je team met Claude Code, lees dan [Claude Code voor bedrijven](/gids/claude-code-voor-bedrijven). Wat de abonnementen kosten, staat bij [Claude Pro, Team of Enterprise vergelijken](/prijs/pro-vs-team-vs-enterprise).
+Een skill die in claude.ai aanstaat, laadt volgens [het helpartikel over skills gebruiken](https://support.claude.com/en/articles/12512180-use-skills-in-claude) ook in Claude Code als je daar met hetzelfde account inlogt. Andersom gaat het niet, en naar de API upload je een skill apart. Bewaar daarom één bronversie, bijvoorbeeld in Git. Werkt je team met Claude Code, lees dan [Claude Code voor bedrijven](/gids/claude-code-voor-bedrijven). Wat de abonnementen kosten, staat bij [Claude Pro, Team of Enterprise vergelijken](/prijs/pro-vs-team-vs-enterprise).
 
 ## Claude Skills maken: hoe doe je dat zelf?
 
-Er zijn twee routes.
-
 **Route A: laat Claude de skill schrijven.** Deze stappen komen uit [de cursus van Anthropic over werkwijzen in skills](https://academy.claude.com/tutorials/teach-claude-your-way-of-working-using-skills).
 
-1. Zet code-uitvoering aan. Op Free, Pro, Max en Ultra doe je dat via Settings > Capabilities > "Code execution and file creation" (in de nieuwe indeling "Create and edit files"). Op Team en Enterprise doet de owner het in Organization settings > Plugins & skills, tabblad Policy. Beide paden staan in [het helpartikel over skills gebruiken](https://support.claude.com/en/articles/12512180-use-skills-in-claude).
+1. Zet code-uitvoering aan via Settings > Capabilities > "Code execution and file creation" (in de nieuwe indeling "Create and edit files"). Op Team en Enterprise regelt de owner dat in Organization settings > Plugins & skills. Beide paden staan in het helpartikel over skills gebruiken.
 2. Kies een taak die je Claude al vaker hebt uitgelegd.
 3. Beschrijf die taak in één bericht: het format, de toon en één voorbeeld waar je tevreden over was. Vraag Claude er een skill van te maken.
-4. Vraag in een nieuw gesprek om de taak zoals je dat normaal doet. Laadt de skill, dan zie je in het denkproces van Claude "Reading" met de naam van je skill. Zo niet, pas dan de naam of beschrijving aan, of noem de skill bij naam.
-5. Leg het resultaat naast je voorbeeld. Wat je nog met de hand verbetert, zet je in de skill.
+4. Vraag in een nieuw gesprek om de taak en kijk of in het denkproces "Reading" met de naam van je skill staat. Zo niet, pas dan de beschrijving aan.
+5. Leg het resultaat naast je voorbeeld en zet in de skill wat je nog met de hand verbetert.
 
 **Route B: schrijf de skill zelf.** Dit volgt [het helpartikel over eigen skills maken](https://support.claude.com/en/articles/12512198-how-to-create-custom-skills).
 
@@ -160,16 +158,16 @@ Er zijn twee routes.
 3. Zet in de beschrijving wat de skill doet en wanneer hij van toepassing is, in de derde persoon, zoals [de schrijfadviezen van Anthropic](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices) voorschrijven. Het helpcenter houdt 200 tekens aan.
 4. Schrijf daaronder de werkwijze: de stappen, de vorm van het resultaat en een voorbeeld. Blijf onder de 500 regels.
 5. Pak de map in als ZIP, met de map zelf als bovenste laag.
-6. Kies in Customize > Skills "+", dan "+ Create skill" en "Upload a skill", en selecteer de ZIP. Dit pad staat in het helpartikel over skills gebruiken.
+6. Kies in Customize > Skills "+", dan "+ Create skill" en "Upload a skill", en selecteer de ZIP. Ook dat pad staat in het helpartikel over skills gebruiken.
 7. Zet de skill aan en test hem met een paar passende vragen.
 
 <!-- figuur:2 -->
 
-Begin met alleen tekst, zonder scripts. Dat adviseert het helpartikel over eigen skills maken, en volgens hetzelfde artikel kun je op de Mac in Cowork ook een werkwijze van ongeveer 10 minuten opnemen, waarna Claude er een skill van voorstelt (Pro, Max, Ultra en Team).
+Begin met alleen tekst, zonder scripts, zoals het helpartikel over eigen skills maken adviseert. Op de Mac kun je in Cowork ook een werkwijze van ongeveer 10 minuten opnemen, waarna Claude er een skill van voorstelt (Pro, Max, Ultra en Team).
 
 ## Vijf voorbeelden van Claude Skills voor het MKB
 
-Deze vijf sjablonen schreven wij volgens de regels van Anthropic. Ze zijn nog bij geen klant ingezet. Op 31 oktober 2026 controleerden we de naam en de beschrijving van elk sjabloon op die regels. Test een sjabloon zelf met een paar vragen voordat je team ermee werkt. Vul de plekken tussen vierkante haken zelf in. De beschrijving staat tussen aanhalingstekens, omdat er een dubbele punt in kan staan.
+Deze vijf sjablonen schreven wij volgens de regels van Anthropic. Op 31 oktober 2026 controleerden we naam en beschrijving van elk sjabloon daarop. Ze zijn nog bij geen klant ingezet. Test een sjabloon zelf met een paar vragen voordat je team ermee werkt. Vul de plekken tussen vierkante haken zelf in.
 
 ### 1. Een offerte opstellen
 
@@ -209,11 +207,11 @@ Verzin nooit een prijs. Gebruik alleen prijzen die de gebruiker geeft of die in 
 Vraagt de gebruiker om een Word-bestand, maak de offerte dan als .docx.
 ```
 
-Pas de geldigheid, de voorwaarden en de aanspreekvorm aan. Zet vaste prijzen in een bestand `prijzen.md` in dezelfde map, of haal die regel weg. Vraag je om Word, dan kan Claude er ook de Word-skill van Anthropic bij gebruiken. Volgens het helpartikel over eigen skills maken gebruikt Claude meerdere skills automatisch samen.
+Pas de geldigheid, de voorwaarden en de aanspreekvorm aan. Zet vaste prijzen in een bestand `prijzen.md` in dezelfde map, of haal die regel weg.
 
 ### 2. Notulen met actiepunten
 
-Na een overleg wil je vooral weten wie wat doet en wanneer. Met deze skill zet Claude aantekeningen of een transcript steeds om in dezelfde vorm.
+Na een overleg wil je weten wie wat doet en wanneer. Deze skill geeft notulen steeds dezelfde vorm.
 
 ```markdown
 ---
@@ -282,7 +280,7 @@ Een tabel met drie kolommen: gegeven, staat erop (ja of nee), opmerking. Daarond
 Keur nooit een betaling goed. Die beslissing ligt bij [de administratie].
 ```
 
-Bij twijfel over een factuur vraag je de Belastingdienst of je boekhouder.
+Twijfel je, vraag dan de Belastingdienst of je boekhouder.
 
 ### 4. Een klantmail beantwoorden
 
@@ -315,7 +313,7 @@ Lever een concept op. Verstuur nooit zelf een mail, ook niet als er een mailkopp
 
 ### 5. De wekelijkse teamupdate
 
-Anthropic gebruikt in die cursus een weekupdate als voorbeeld: drie delen met elk hooguit drie punten, geschreven om snel te scannen. Dit is een Nederlandse versie.
+Anthropic gebruikt in de cursus van Claude Academy over skills een weekupdate als voorbeeld: drie delen met elk hooguit drie punten. Dit is een Nederlandse versie.
 
 ```markdown
 ---
@@ -349,17 +347,17 @@ Zet in geen enkele skill klantnamen, wachtwoorden of API-sleutels, en ook geen d
 
 Op Team en Enterprise zet een owner een skill klaar via Organization settings > Plugins & skills > "Add", en dan "Upload a skill" of "Create a skill". Volgens [het helpartikel over skills voor je organisatie](https://support.claude.com/en/articles/13119606-provision-and-manage-skills-for-your-organization) staat hij dan meteen voor iedereen aan. Collega's kunnen hem voor zichzelf uitzetten, maar niet verwijderen. Alleen Enterprise kan een skill aan een groep geven, via een plugin.
 
-Collega's delen hun eigen skills via Customize > Skills, het menu "..." en "Share". Een gedeelde skill is alleen-lezen. Of delen mag, stelt de owner in, dus vraag het na als je "Share" niet ziet.
+Volgens het helpartikel over skills gebruiken delen collega's hun eigen skills via Customize > Skills, het menu "..." en "Share". Een gedeelde skill is alleen-lezen. Of delen mag, stelt de owner in.
 
-Anthropic raadt in [de handleiding Skills for enterprise](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/enterprise) aan per skill bij te houden wat hij doet, wie hem onderhoudt, welke versie in gebruik is en wanneer hij voor het laatst getest is, met de bronbestanden in Git. Voor een MKB-team volstaat één lijst met één eigenaar per skill en één vaste map voor de bestanden. Begin smal: liever drie kleine skills met elk één taak dan één grote voor alles.
+Anthropic raadt in [de handleiding Skills for enterprise](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/enterprise) een register per skill aan, met de bronbestanden in Git. Voor een MKB-team volstaat één lijst met één eigenaar per skill. Begin smal: één taak per skill.
 
-Ons team bouwde eerder bij een Nederlands softwarebedrijf in 3 weken [32 herbruikbare skills voor advertentiebeheer](/cases/google-ads-skills): 20 voor Google Ads, 6 voor Meta en 6 voor LinkedIn. Daarna was het bureau van 2.000 tot 4.000 euro per maand niet meer nodig. Die skills zijn met Claude Code gebouwd.
+Een softwarebedrijf zonder advertentiespecialist betaalde een bureau 2.000 tot 4.000 euro per maand. Ons team schreef daar met Claude Code in 3 weken [32 herbruikbare skills voor advertentiebeheer](/cases/google-ads-skills): 20 voor Google Ads, 6 voor Meta en 6 voor LinkedIn. Het bureau was daarna niet meer nodig.
 
-Zonder eigenaar veroudert een werkwijze. In onze aanpak beheren twee tot vier champions uit het team [onze promptbibliotheek](/methodologie). Hulp daarbij vind je bij [Claude in 30 dagen inrichten](/claude-in-30-dagen).
+Zonder eigenaar veroudert een werkwijze. In onze aanpak beheren twee tot vier champions uit het team [onze promptbibliotheek](/methodologie). Zie ook [Claude in 30 dagen inrichten](/claude-in-30-dagen).
 
 ## Waar let je op bij skills van anderen?
 
-Installeer alleen skills uit bronnen die je vertrouwt, en lees ze eerst, ook als een collega ze deelt. Het helpartikel over skills gebruiken noemt verborgen instructies (prompt injection) en het weglekken van gegevens als grootste risico's. Vijf controles uit de checklist in Skills for enterprise:
+Installeer alleen skills uit bronnen die je vertrouwt, en lees ze eerst, ook als een collega ze deelt. Het helpartikel over skills gebruiken noemt verborgen instructies (prompt injection) en het weglekken van gegevens als risico's. Vijf controles uit de checklist in Skills for enterprise:
 
 1. Lees alle bestanden in de map.
 2. Kijk of er scripts in zitten, zoals `.py`, `.sh` of `.js`.
@@ -367,14 +365,14 @@ Installeer alleen skills uit bronnen die je vertrouwt, en lees ze eerst, ook als
 4. Zoek naar instructies om regels te negeren of acties te verbergen.
 5. Controleer dat er geen wachtwoorden, sleutels of tokens in staan.
 
-In juli 2026 kocht ons team een pakket met 6 skills voor schermontwerp in Claude Code. Voor we iets installeerden, lazen we alle 29 bestanden van de ZIP van 37 KB. Er zaten geen scripts in en niets dat contact met internet zocht. Wel stond in de beschrijvingen "MUST USE" en "Do NOT skip this skill". Daardoor zou ongeveer 50 KB tekst bij bijna elke vraag over schermontwerp laden. We herschreven elke beschrijving, zodat de skills alleen laden als iemand erom vraagt.
+In juli 2026 kocht ons team een pakket met 6 skills voor schermontwerp in Claude Code. Eerst lazen we alle 29 bestanden van de ZIP van 37 KB. Er zaten geen scripts in en niets dat contact met internet zocht. Wel stond in de beschrijvingen "MUST USE" en "Do NOT skip this skill". Daardoor zou ongeveer 50 KB tekst bij bijna elke vraag over schermontwerp laden. We herschreven elke beschrijving, zodat de skills alleen laden als iemand erom vraagt.
 
-Op Team en Enterprise bepaalt de owner of de omgeving waarin Claude programmacode draait het internet op mag. De opties staan in [het helpartikel over bestanden maken met Claude](https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude), van uit tot alle domeinen. Een skill valt onder die instelling.
+Op Team en Enterprise bepaalt de owner of een skill het internet op mag, via [de netwerkinstelling voor code-uitvoering](https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude).
 
-Op Enterprise kan een owner skill scanning aanzetten voor nieuwe eigen skills. Volgens Skills for enterprise werkt die niet bij eigen encryptiesleutels (CMEK), [zero data retention](/compliance/zero-data-retention) of HIPAA, en niet voor de API. Anthropic raadt aan de checklist ook dan te gebruiken. Zet geen klantgegevens in een skill: voor de API vallen Skills niet onder zero data retention. Meer over data lees je in [is Claude veilig voor bedrijfsdata](/compliance/is-claude-veilig).
+Op Enterprise staat skill scanning volgens [het helpartikel over skills voor je organisatie](https://support.claude.com/en/articles/13119606-provision-and-manage-skills-for-your-organization) standaard aan waar het beschikbaar is. Een owner kan het uitzetten. Het werkt niet bij eigen encryptiesleutels (CMEK), [zero data retention](/compliance/zero-data-retention) of HIPAA. Voor de API geldt het volgens Skills for enterprise ook niet. Ook met scanning raadt Anthropic de checklist aan. Zet geen klantgegevens in een skill: volgens de documentatie over Agent Skills vallen Skills in de API niet onder zero data retention. Meer over data lees je in [is Claude veilig voor bedrijfsdata](/compliance/is-claude-veilig).
 
 ## Wat betekent de overdracht aan de Agentic AI Foundation?
 
-Op 22 oktober 2026 droeg Anthropic Agent Skills over aan de Agentic AI Foundation, die onder de Linux Foundation valt. Daar zit ook MCP, de standaard voor koppelingen. Het gaat om de standaard, de naam en het logo, de GitHub-organisatie en de website agentskills.io. Volgens Anthropic hebben meer dan 70 platforms de standaard ingebouwd, onder meer ChatGPT, Cursor, GitHub Copilot en VS Code.
+Op 22 oktober 2026 droeg Anthropic Agent Skills over aan de Agentic AI Foundation, die onder de Linux Foundation valt. Volgens Anthropic hebben meer dan 70 platforms de standaard ingebouwd, onder meer ChatGPT, Cursor, GitHub Copilot en VS Code.
 
-Voor een MKB-team betekent het dat een skill een tekstbestand in een open formaat is. Gebruik je alleen de velden uit de standaard (`name`, `description`, `license`, `compatibility`, `metadata` en `allowed-tools`), dan kun je hem volgens [de Claude Code-documentatie over skills](https://code.claude.com/docs/en/skills) ook buiten Claude Code gebruiken. Of een ander platform je skill net zo uitvoert, test je per platform. In de bediening van Claude verandert er voor jou niets.
+Voor een MKB-team betekent het dat een skill een tekstbestand in een open formaat is. Gebruik je alleen de velden uit de standaard (`name`, `description`, `license`, `compatibility`, `metadata` en `allowed-tools`), dan accepteren claude.ai en de API hem volgens [de Claude Code-documentatie over skills](https://code.claude.com/docs/en/skills) ook. Andere platforms volgen volgens Anthropic dezelfde standaard. Of ze je skill net zo uitvoeren, test je per platform. In de bediening van Claude verandert er voor jou niets.
