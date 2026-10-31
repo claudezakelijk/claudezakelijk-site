@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" role="img" aria-label="Een Chrome-venster met een zijpaneel en een eigen tabgroep van Claude: de extensie werkt in je eigen browser, met de logins die daar al openstaan" font-family="Inter, system-ui, sans-serif" fill="#23261D"><defs>
+<filter id="cic-g" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 .14  0 0 0 0 .15  0 0 0 0 .11  .16 0 0 0 -.03"/></filter>
+</defs><rect width="1200" height="600" fill="#F4F1E8"/><rect x="64" y="48" width="64" height="4" rx="2" fill="#B4C13E"/><text x="64" y="92" fill="#565A4C" font-size="22" font-weight="600" letter-spacing="3">CLAUDE IN CHROME · JOUW BROWSER</text>
+<g>
+<rect x="84" y="134" width="700" height="380" rx="20" fill="#FFFFFF" stroke="#23261D" stroke-width="4"/>
+<line x1="84" y1="196" x2="784" y2="196" stroke="#23261D" stroke-width="4"/>
+<rect x="108" y="150" width="96" height="34" rx="10" fill="#E9EBDC" stroke="#CFCDBE" stroke-width="3"/>
+<rect x="216" y="150" width="96" height="34" rx="10" fill="#E9EBDC" stroke="#CFCDBE" stroke-width="3"/>
+<rect x="330" y="148" width="120" height="38" rx="19" fill="#B4C13E"/>
+<rect x="462" y="150" width="104" height="34" rx="10" fill="#FFFFFF" stroke="#23261D" stroke-width="3"/>
+<rect x="578" y="150" width="104" height="34" rx="10" fill="#FFFFFF" stroke="#23261D" stroke-width="3"/>
+<rect x="462" y="184" width="220" height="8" rx="4" fill="#B4C13E"/>
+<rect x="108" y="214" width="420" height="34" rx="17" fill="#E9EBDC"/>
+<g stroke-width="9" stroke-linecap="round"><line x1="112" y1="290" x2="420" y2="290" stroke="#E1DED2"/><line x1="112" y1="320" x2="480" y2="320" stroke="#E1DED2"/><line x1="112" y1="350" x2="380" y2="350" stroke="#E1DED2"/></g>
+<rect x="110" y="388" width="300" height="48" rx="10" fill="#FFFFFF" stroke="#23261D" stroke-width="4"/>
+<line x1="128" y1="412" x2="250" y2="412" stroke="#B4C13E" stroke-width="9" stroke-linecap="round"/>
+<line x1="266" y1="398" x2="266" y2="426" stroke="#23261D" stroke-width="4" stroke-linecap="round"/>
+<rect x="110" y="452" width="130" height="40" rx="20" fill="#23261D"/>
+<path d="M560 196 V514 H764 a20 20 0 0 0 20 -20 V196 Z" fill="#E9EBDC" stroke="#23261D" stroke-width="4" stroke-linejoin="round"/>
+<rect x="584" y="226" width="160" height="44" rx="14" fill="#FFFFFF" stroke="#CFCDBE" stroke-width="3"/>
+<rect x="608" y="290" width="152" height="60" rx="14" fill="#FFFFFF" stroke="#CFCDBE" stroke-width="3"/>
+<rect x="584" y="370" width="140" height="44" rx="14" fill="#FFFFFF" stroke="#CFCDBE" stroke-width="3"/>
+<rect x="584" y="452" width="176" height="40" rx="20" fill="#FFFFFF" stroke="#23261D" stroke-width="3"/>
+</g>
+<text x="390" y="176" text-anchor="middle" font-size="26" font-weight="600">Claude</text>
+<text x="840" y="300" font-family="'Newsreader Variable', Newsreader, Georgia, serif" font-style="italic" font-weight="500" font-size="64" fill="#3D5220">jouw logins</text>
+<rect x="840" y="384" width="26" height="26" rx="6" fill="#B4C13E"/>
+<text x="884" y="408" font-size="32" font-weight="600">eigen tabgroep</text>
+<rect x="840" y="444" width="26" height="26" rx="6" fill="#E9EBDC" stroke="#23261D" stroke-width="3"/>
+<text x="884" y="468" font-size="32" font-weight="600">zijpaneel</text>
+<text x="1136" y="566" text-anchor="end" font-size="26" fill="#64685A">stand 31 oktober 2026</text>
+<rect width="1200" height="600" filter="url(#cic-g)"/></svg>

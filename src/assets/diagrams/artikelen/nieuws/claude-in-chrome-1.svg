@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-label="Het zijpaneel, Cowork op web en mobiel, Claude Desktop en Claude Code komen allemaal uit bij jouw Claude-account en de extensie in je Chrome-profiel, en via die extensie bij de sites waarop je al bent ingelogd; een API-sleutel en toegang via Bedrock, Google Cloud of Foundry geven geen koppeling" data-bijschrift="Elke ingang met jouw Claude-account komt uit bij dezelfde extensie, en daarmee bij de sites waarop je Chrome al is ingelogd. Stand 31 oktober 2026, volgens het helpcenter van Anthropic en de documentatie van Claude Code." font-family="Inter, system-ui, sans-serif" fill="#23261D"><defs>
+<filter id="cic1-g" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 .14  0 0 0 0 .15  0 0 0 0 .11  .16 0 0 0 -.03"/></filter>
+<marker id="cic1-a" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#23261D"/></marker>
+</defs><rect width="1200" height="700" fill="#F4F1E8"/><rect x="64" y="48" width="64" height="4" rx="2" fill="#B4C13E"/><text x="64" y="92" fill="#565A4C" font-size="22" font-weight="600" letter-spacing="3">WIE KOMT VIA JOUW ACCOUNT BIJ DE EXTENSIE?</text>
+<g fill="none" stroke="#23261D" stroke-width="4" stroke-linecap="round" marker-end="url(#cic1-a)">
+<path d="M524 210 C 566 210, 560 302, 588 302"/>
+<path d="M524 310 C 556 310, 560 340, 588 340"/>
+<path d="M524 410 C 556 410, 560 380, 588 380"/>
+<path d="M524 510 C 566 510, 560 418, 588 418"/>
+<path d="M876 360 L 936 360"/>
+</g>
+<rect x="600" y="250" width="270" height="220" rx="20" fill="#FFFFFF" stroke="#23261D" stroke-width="4"/>
+<rect x="630" y="282" width="56" height="8" rx="4" fill="#B4C13E"/>
+<rect x="956" y="214" width="84" height="30" rx="8" fill="#E9EBDC" stroke="#23261D" stroke-width="3"/>
+<rect x="1050" y="214" width="84" height="30" rx="8" fill="#E9EBDC" stroke="#23261D" stroke-width="3"/>
+<rect x="956" y="252" width="178" height="8" rx="4" fill="#CFCDBE"/>
+<rect x="600" y="538" width="536" height="88" rx="16" fill="#F6E7E4" stroke="#E4C8C3" stroke-width="3"/>
+<g stroke="#A8433B" stroke-width="5" stroke-linecap="round"><line x1="624" y1="566" x2="652" y2="594"/><line x1="652" y1="566" x2="624" y2="594"/></g>
+<line x1="735" y1="478" x2="735" y2="530" stroke="#A8433B" stroke-width="4" stroke-dasharray="8 10" stroke-linecap="round"/>
+<text x="64" y="196" font-size="32" font-weight="600">zijpaneel</text>
+<text x="64" y="230" font-size="26" fill="#565A4C">in Chrome</text>
+<text x="64" y="296" font-size="32" font-weight="600">Cowork</text>
+<text x="64" y="330" font-size="26" fill="#565A4C">web en mobiel, via je computer</text>
+<text x="64" y="396" font-size="32" font-weight="600">Claude Desktop</text>
+<text x="64" y="430" font-size="26" fill="#565A4C">met connector</text>
+<text x="64" y="496" font-size="32" font-weight="600">Claude Code</text>
+<text x="64" y="530" font-size="26" fill="#565A4C">zelfde account en organisatie</text>
+<text x="735" y="336" text-anchor="middle" font-size="34" font-weight="600">jouw account</text>
+<text x="735" y="388" text-anchor="middle" font-size="26" fill="#565A4C">extensie in je</text>
+<text x="735" y="422" text-anchor="middle" font-size="26" fill="#565A4C">Chrome-profiel</text>
+<text x="956" y="350" font-size="34" font-weight="600">ingelogde</text>
+<text x="956" y="392" font-size="34" font-weight="600">sites</text>
+<text x="672" y="574" font-size="26" fill="#A8433B" font-weight="600">geen koppeling: API-sleutel,</text>
+<text x="672" y="608" font-size="26" fill="#A8433B">Bedrock · Google Cloud · Foundry</text>
+<text x="1136" y="666" text-anchor="end" font-size="26" fill="#64685A">stand 31 okt 2026</text>
+<rect width="1200" height="700" filter="url(#cic1-g)"/></svg>
