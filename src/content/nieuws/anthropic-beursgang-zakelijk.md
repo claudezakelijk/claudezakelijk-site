@@ -1,13 +1,13 @@
 ---
 title: "Anthropic naar de beurs: wat verandert er voor zakelijke Claude-gebruikers?"
-titleTag: "Anthropic IPO: wat verandert er voor zakelijke klanten?"
+titleTag: "Anthropic IPO: wat verandert voor zakelijke Claude-klanten?"
 metaDescription: "Anthropic diende op 26 oktober 2026 de S-1 in voor een notering aan Nasdaq. Wat de Anthropic IPO betekent voor je contract, prijs, data en modellen."
 h1: "Anthropic IPO en beursgang: wat verandert er voor zakelijke Claude-gebruikers?"
 targetKeywords:
   - anthropic ipo
   - anthropic beursgang
   - anthropic aandelen
-wordCountTarget: 1606
+wordCountTarget: 1667
 priority: 1
 tier: 1
 cases:
@@ -39,59 +39,59 @@ reviewedBy: null
 reviewedDate: null
 disclaimer: juridisch
 isRecurring: false
-kortAntwoord: "Voor de Anthropic IPO diende Anthropic op 26 oktober 2026 de S-1 in bij de SEC, voor een notering aan Nasdaq onder de ticker ANT. De prijs en het aantal aandelen staan er nog niet in. Voor zakelijke klanten in de EER blijft Anthropic Ireland volgens de voorwaarden de contractpartij, met de DPA erbij. De S-1 noemt geen wijziging daarvan."
+kortAntwoord: "Anthropic diende op 26 oktober 2026 de S-1 in bij de SEC voor zijn IPO: een notering aan Nasdaq onder de ticker ANT. De prijs en het aantal aandelen staan er nog niet in. Voor zakelijke klanten in de EER blijft Anthropic Ireland volgens de voorwaarden de contractpartij, met de DPA erbij. De S-1 noemt geen wijziging daarvan."
 bronnen:
   - titel: "Anthropic, Anthropic files S-1 with the SEC for proposed initial public offering (26 oktober 2026)"
     url: "https://www.anthropic.com/news/s1-sec"
-    geraadpleegd: "2026-10-31"
+    geraadpleegd: "31 oktober 2026"
   - titel: "SEC, Form S-1 van Anthropic, PBC (26 oktober 2026)"
     url: "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm"
-    geraadpleegd: "2026-10-31"
+    geraadpleegd: "31 oktober 2026"
   - titel: "SEC EDGAR, filings van Anthropic, PBC (CIK 0002130357)"
-    url: "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0002130357"
-    geraadpleegd: "2026-10-31"
+    url: "https://www.sec.gov/edgar/browse/?CIK=0002130357"
+    geraadpleegd: "31 oktober 2026"
   - titel: "Anthropic, Commercial Terms of Service (ingang 17 juni 2025)"
     url: "https://www.anthropic.com/legal/commercial-terms"
-    geraadpleegd: "2026-10-31"
+    geraadpleegd: "31 oktober 2026"
   - titel: "Anthropic, Data Processing Addendum (ingang 24 februari 2025)"
     url: "https://www.anthropic.com/legal/data-processing-addendum"
-    geraadpleegd: "2026-10-31"
+    geraadpleegd: "31 oktober 2026"
   - titel: "Anthropic, Consumer Terms of Service (ingang 8 oktober 2025)"
     url: "https://www.anthropic.com/legal/consumer-terms"
-    geraadpleegd: "2026-10-31"
+    geraadpleegd: "31 oktober 2026"
   - titel: "Anthropic Privacy Center, How do I view and sign your Data Processing Addendum (DPA)? (16 maart 2026)"
     url: "https://privacy.claude.com/en/articles/7996862-how-do-i-view-and-sign-your-data-processing-addendum-dpa"
-    geraadpleegd: "2026-10-31"
+    geraadpleegd: "31 oktober 2026"
   - titel: "Anthropic Privacy Center, Is my data used for model training? (18 augustus 2026)"
     url: "https://privacy.claude.com/en/articles/7996868-is-my-data-used-for-model-training"
-    geraadpleegd: "2026-10-31"
+    geraadpleegd: "31 oktober 2026"
   - titel: "Anthropic Privacy Center, Where are your servers located? (15 juni 2026)"
     url: "https://privacy.claude.com/en/articles/7996890-where-are-your-servers-located-do-you-host-your-models-on-eu-servers"
-    geraadpleegd: "2026-10-31"
+    geraadpleegd: "31 oktober 2026"
   - titel: "Claude, Plans & Pricing"
     url: "https://claude.com/pricing"
-    geraadpleegd: "2026-10-31"
+    geraadpleegd: "31 oktober 2026"
   - titel: "Claude Platform Docs, Model deprecations"
     url: "https://platform.claude.com/docs/en/about-claude/model-deprecations"
-    geraadpleegd: "2026-10-31"
+    geraadpleegd: "31 oktober 2026"
   - titel: "Anthropic, Commitments on model deprecation and preservation (4 november 2025)"
     url: "https://www.anthropic.com/news/deprecation-commitments"
-    geraadpleegd: "2026-10-31"
+    geraadpleegd: "31 oktober 2026"
   - titel: "Claude Help Center, Export your organization's data (zonder datum, 'Updated today')"
     url: "https://support.claude.com/en/articles/13346720-export-your-organization-s-data"
-    geraadpleegd: "2026-10-31"
+    geraadpleegd: "31 oktober 2026"
   - titel: "Anthropic, 2026 Usage Policy update (8 oktober 2026)"
     url: "https://www.anthropic.com/news/2026-usage-policy-update"
-    geraadpleegd: "2026-10-31"
+    geraadpleegd: "31 oktober 2026"
   - titel: "Anthropic, Supported Regions Policy (ingang 12 november 2026)"
     url: "https://www.anthropic.com/legal/supported-regions"
-    geraadpleegd: "2026-10-31"
+    geraadpleegd: "31 oktober 2026"
   - titel: "Anthropic, Investing in the public benefit (18 oktober 2026)"
     url: "https://www.anthropic.com/news/public-benefit-fund"
-    geraadpleegd: "2026-10-31"
+    geraadpleegd: "31 oktober 2026"
   - titel: "Europese Centrale Bank, euro-referentiekoersen (koers van 30 oktober 2026)"
     url: "https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml"
-    geraadpleegd: "2026-10-31"
+    geraadpleegd: "31 oktober 2026"
 faq:
   - question: "Wanneer gaat Anthropic naar de beurs?"
     answer: "Anthropic diende de S-1 op 26 oktober 2026 openbaar in, voor een notering aan de Nasdaq Global Select Market onder de ticker ANT. Een datum voor de notering, de prijs per aandeel en het aantal aandelen staan er nog niet in. Anthropic heeft zelf nog geen datum genoemd."
@@ -158,18 +158,18 @@ Tabel: Kerncijfers uit de S-1 van Anthropic, in dollars, stand 26 oktober 2026.
 | Cijfer | Waarde | Periode |
 |---|---|---|
 | Omzet | $16,3 miljard (een jaar eerder $1,2 miljard) | eerste halfjaar 2026 |
-| Bedrijfsresultaat | verlies van $693 miljoen | eerste halfjaar 2026 |
-| Bedrijfsresultaat | winst van $1,0 miljard, marge 8% | tweede kwartaal 2026 |
+| Bedrijfsresultaat halfjaar | verlies van $693 miljoen | eerste halfjaar 2026 |
+| Bedrijfsresultaat kwartaal | winst van $974 miljoen op $11,6 miljard omzet, marge 8% | tweede kwartaal 2026 |
 | Nettoverlies | $80,7 miljard, waarvan $72,4 miljard herwaardering | eerste halfjaar 2026 |
 | Aandeel verbruiksomzet | 80% van de omzet | eerste halfjaar 2026 |
 | Vastgelegde toekomstige omzet | $10,8 miljard, ongeveer 75% binnen 12 maanden | per 30 juni 2026 |
-| Grootste klant | geen klant boven 10% van de omzet | eerste negen maanden 2026 |
+| Grootste klant | geen klant boven 10% van de omzet (in het eerste halfjaar één klant op 11%) | eerste negen maanden 2026 |
 
 Van het nettoverlies is $72,4 miljard een herwaardering van converteerbare leningen, derivaten en SAFEs (afspraken over toekomstige aandelen). Die schulden werden in de boeken meer waard omdat de waardering van Anthropic steeg. Dat geld is dus niet uitgegeven.
 
 De rekenkracht komt volgens de S-1 van een klein aantal cloudpartijen: Amazon, Google en Microsoft. Overstappen naar een andere partij noemt Anthropic "costly, time-consuming, and operationally complex".
 
-Op 26 oktober, de dag van de indiening, lieten we Claude de S-1 ophalen. De SEC publiceert die als webpagina met losse afbeeldingen, en Claude zette die om in één pdf van 318 pagina's. Daarna vroegen we wat het verlies van $80,7 miljard betekent. Zo kwamen we bij de $72,4 miljard herwaardering. In het eerste antwoord kwamen een paar cijfers nog uit de pers. Daarom hebben we elk cijfer in dit artikel zelf in de S-1 opgezocht. Dit komt uit onze eigen werklogboeken en ging niet over een klant. Financiële scenario's doorrekenen deden we eerder in [een case met scenario's voor investeerders](/cases/investor-pitch).
+Op 26 oktober, de dag van de indiening, lieten we Claude de S-1 ophalen. De SEC publiceert die als webpagina met losse afbeeldingen, en Claude zette die om in één pdf van 318 pagina's. Daarna vroegen we wat het verlies van $80,7 miljard betekent. Zo kwamen we bij de $72,4 miljard herwaardering. In het eerste antwoord kwamen een paar cijfers nog uit de pers. Daarom hebben we elk cijfer in dit artikel zelf in de S-1 opgezocht. Dit komt uit onze eigen werklogboeken en ging niet over een klant. Eerder rekenden we al [scenario's voor investeerders](/cases/investor-pitch) door.
 
 ## Wie heeft de zeggenschap als Anthropic aandelen op de beurs brengt?
 
@@ -178,20 +178,24 @@ Anthropic is een public benefit corporation (PBC). Het bestuur weegt daarom de b
 De S-1 beschrijft vijf soorten aandelen. Voor de zeggenschap tellen er drie:
 
 - Class A gaat naar de beurs, met één stem per aandeel.
-- Class T ligt bij het Long-Term Benefit Trust, met vijf financieel onafhankelijke trustees. Het trust kiest de meerderheid van het bestuur.
+- Class T ligt bij het Long-Term Benefit Trust. Dat heeft vijf zetels voor financieel onafhankelijke trustees, waarvan er nu één leeg is. Het trust kiest de meerderheid van het bestuur.
 - Class F is één aandeel voor een vennootschap van de zeven oprichters, met 50,1% van de stemmen, onder meer over de andere bestuurders.
 
-Omdat het trust de meerderheid van het bestuur kiest, is Anthropic onder de regels van Nasdaq een "controlled company". Op 18 oktober 2026 [beloofde Anthropic 5% van de aandelen aan een Public Benefit Fund](https://www.anthropic.com/news/public-benefit-fund), als de aandeelhouders dat goedkeuren. Voor jou als klant betekent dit vooral dat nieuwe beleggers het bestuur niet op eigen kracht kunnen vervangen.
+De andere twee: Class N is vooral voor strategische partners en heeft geen stemrecht. Class E gaat naar medewerkers en stemt alleen over enkele onderwerpen.
+
+<!-- figuur:2 -->
+
+Omdat het trust de meerderheid van het bestuur kiest, is Anthropic onder de regels van Nasdaq een "controlled company". Zo'n bedrijf mag afwijken van een paar Nasdaq-regels over onafhankelijke bestuurders. Op 18 oktober 2026 [beloofde Anthropic 5% van de aandelen aan een Public Benefit Fund](https://www.anthropic.com/news/public-benefit-fund), als de aandeelhouders dat goedkeuren. Voor jou als klant betekent dit vooral dat nieuwe beleggers het bestuur niet op eigen kracht kunnen vervangen.
 
 ## Wat gebeurt er als een Claude-model verdwijnt?
 
 Volgens [de pagina over het uitfaseren van modellen](https://platform.claude.com/docs/en/about-claude/model-deprecations) geeft Anthropic minstens 60 dagen vooraf bericht voordat een publiek uitgebracht model stopt. Je krijgt dan een e-mail. Een voorbeeld van nu: claude-sonnet-4-5-20250929 stopt op 30 november 2026. Anthropic meldde dat op 30 september en raadt Sonnet 5.5 aan als opvolger. Amazon Bedrock en de door Google beheerde versie op Google Cloud hebben eigen datums.
 
-Anthropic [bewaart de gewichten van alle publiek uitgebrachte modellen](https://www.anthropic.com/news/deprecation-commitments) minstens zolang het bedrijf bestaat. Gebruiken kun je een gestopt model daardoor nog niet. De S-1 noemt dat risico zelf: klanten die oudere modellen in hun werk hebben ingebouwd, willen soms niet overstappen. Welk model nu past, lees je in [welk Claude-model je kiest](/nieuws/welk-claude-model-mkb).
+Anthropic [bewaart de gewichten van alle publiek uitgebrachte modellen](https://www.anthropic.com/news/deprecation-commitments) minstens zolang het bedrijf bestaat. Dat betekent niet dat je een gestopt model kunt blijven gebruiken. De S-1 noemt dat risico zelf: klanten die oudere modellen in hun werk hebben ingebouwd, willen soms niet overstappen. Welk model nu past, lees je in [welk Claude-model je kiest](/nieuws/welk-claude-model-mkb).
 
 ## Wat regel je nu als MKB-klant?
 
-Deze stappen komen uit de bronnen van Anthropic, niet uit klantwerk na de beursgang.
+Deze stappen komen uit de bronnen van Anthropic. Klanten hebben we hier nog niet mee geholpen.
 
 1. Kijk onder welke voorwaarden je werkt. Team, Enterprise en de API vallen onder de Commercial Terms met de DPA. Een los Pro-abonnement valt daar buiten.
 2. Sla de Commercial Terms en de DPA op als pdf, met de datum erbij. Zo zie je later wat er veranderd is.
