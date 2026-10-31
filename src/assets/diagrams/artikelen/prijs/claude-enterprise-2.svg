@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-label="Beslisboom met vijf vragen: meer dan 150 gebruikers, audit logs, SCIM of een Compliance API nodig, een eigen bewaartermijn nodig, andere rechten per afdeling, betalen op factuur of in euro; elk ja wijst naar Claude Enterprise, vijf keer nee wijst naar Claude Team" data-bijschrift="Elk ja op een van de vijf vragen wijst naar Enterprise. Is het vijf keer nee, dan past Team. Stand 31 oktober 2026." font-family="Inter, system-ui, sans-serif" fill="#23261D"><defs>
+<filter id="ent2-g" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 .14  0 0 0 0 .15  0 0 0 0 .11  .16 0 0 0 -.03"/></filter>
+<marker id="ent2-a" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#565A4C"/></marker>
+<marker id="ent2-b" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#3D5220"/></marker>
+</defs><rect width="1200" height="700" fill="#F4F1E8"/><rect x="64" y="48" width="64" height="4" rx="2" fill="#B4C13E"/><text x="64" y="92" fill="#565A4C" font-size="22" font-weight="600" letter-spacing="3">TEAM OF ENTERPRISE · VIJF VRAGEN</text>
+<g>
+<g stroke="#CFCDBE" stroke-width="4" stroke-linecap="round"><line x1="96" y1="184" x2="96" y2="221"/><line x1="96" y1="269" x2="96" y2="306"/><line x1="96" y1="354" x2="96" y2="391"/><line x1="96" y1="439" x2="96" y2="476"/></g>
+<g fill="#FFFFFF" stroke="#23261D" stroke-width="4"><circle cx="96" cy="160" r="24"/><circle cx="96" cy="245" r="24"/><circle cx="96" cy="330" r="24"/><circle cx="96" cy="415" r="24"/><circle cx="96" cy="500" r="24"/></g>
+<g fill="none" stroke="#565A4C" stroke-width="4" stroke-linecap="round"><path d="M560 160 L 734 160" marker-end="url(#ent2-a)"/><path d="M560 245 L 734 245" marker-end="url(#ent2-a)"/><path d="M560 330 L 734 330" marker-end="url(#ent2-a)"/><path d="M560 415 L 734 415" marker-end="url(#ent2-a)"/><path d="M560 500 L 734 500" marker-end="url(#ent2-a)"/></g>
+<rect x="760" y="120" width="376" height="420" rx="22" fill="#E9EBDC" stroke="#23261D" stroke-width="4"/>
+<path d="M96 528 L 96 566" fill="none" stroke="#3D5220" stroke-width="5" stroke-linecap="round" marker-end="url(#ent2-b)"/>
+<rect x="64" y="584" width="200" height="64" rx="32" fill="#3D5220"/>
+</g>
+<g font-size="28" font-weight="600" text-anchor="middle"><text x="96" y="170">1</text><text x="96" y="255">2</text><text x="96" y="340">3</text><text x="96" y="425">4</text><text x="96" y="510">5</text></g>
+<text x="140" y="171" font-size="32">boven 150 gebruikers</text>
+<text x="140" y="256" font-size="32">audit logs, SCIM</text>
+<text x="140" y="341" font-size="32">eigen bewaartermijn</text>
+<text x="140" y="426" font-size="32">rechten per afdeling</text>
+<text x="140" y="511" font-size="32">factuur of euro</text>
+<text x="647" y="146" text-anchor="middle" font-size="26" fill="#565A4C">ja</text>
+<text x="948" y="350" text-anchor="middle" font-family="'Newsreader Variable', Newsreader, Georgia, serif" font-style="italic" font-weight="500" font-size="64">Enterprise</text>
+<text x="164" y="630" text-anchor="middle" font-family="'Newsreader Variable', Newsreader, Georgia, serif" font-style="italic" font-weight="500" font-size="44" fill="#F4F1E8">Team</text>
+<text x="128" y="556" font-size="26" fill="#565A4C">vijf keer nee</text>
+<text x="1136" y="666" text-anchor="end" font-size="26" fill="#64685A">stand 31 okt 2026</text>
+<rect width="1200" height="700" filter="url(#ent2-g)"/></svg>

@@ -8,7 +8,7 @@ targetKeywords:
   - wat kost claude enterprise
   - claude enterprise kosten
   - claude enterprise eu
-wordCountTarget: 1751
+wordCountTarget: 1781
 priority: 1
 tier: 1
 cases:
@@ -49,67 +49,67 @@ kortAntwoord: "Claude Enterprise kost 20 dollar per seat per maand, per jaar gef
 bronnen:
   - titel: "Claude, Plans & Pricing (claude.com/pricing)"
     url: "https://claude.com/pricing"
-    geraadpleegd: "2026-10-31"
+    geraadpleegd: "31 oktober 2026"
   - titel: "Claude Help Center: What is the Enterprise plan? (bijgewerkt 1 september 2026)"
     url: "https://support.claude.com/en/articles/9797531-what-is-the-enterprise-plan"
-    geraadpleegd: "2026-10-31"
+    geraadpleegd: "31 oktober 2026"
   - titel: "Claude Help Center: Purchase and manage seats on Enterprise plans"
     url: "https://support.claude.com/en/articles/13393991-purchase-and-manage-seats-on-enterprise-plans"
-    geraadpleegd: "2026-10-31"
+    geraadpleegd: "31 oktober 2026"
   - titel: "Claude Help Center: How am I billed for my Enterprise plan?"
     url: "https://support.claude.com/en/articles/11526368-how-am-i-billed-for-my-enterprise-plan"
-    geraadpleegd: "2026-10-31"
+    geraadpleegd: "31 oktober 2026"
   - titel: "Claude Help Center: Migrate your organization from Team to Enterprise"
     url: "https://support.claude.com/en/articles/13779868-migrate-your-organization-from-team-to-enterprise"
-    geraadpleegd: "2026-10-31"
+    geraadpleegd: "31 oktober 2026"
   - titel: "Claude Help Center: Access the Compliance API"
     url: "https://support.claude.com/en/articles/13015708-access-the-compliance-api"
-    geraadpleegd: "2026-10-31"
+    geraadpleegd: "31 oktober 2026"
   - titel: "Claude Help Center: Configure custom data retention controls for Enterprise plans"
     url: "https://support.claude.com/en/articles/10440198-configure-custom-data-retention-controls-for-enterprise-plans"
-    geraadpleegd: "2026-10-31"
+    geraadpleegd: "31 oktober 2026"
   - titel: "Claude Help Center: Enable US-only inference for your organization (bijgewerkt 15 juni 2026)"
     url: "https://support.claude.com/en/articles/15422948-enable-us-only-inference-for-your-organization"
-    geraadpleegd: "2026-10-31"
+    geraadpleegd: "31 oktober 2026"
   - titel: "Anthropic Privacy Center: Is my data used for model training? (bijgewerkt 18 augustus 2026)"
     url: "https://privacy.claude.com/en/articles/7996868-is-my-data-used-for-model-training"
-    geraadpleegd: "2026-10-31"
+    geraadpleegd: "31 oktober 2026"
   - titel: "Anthropic Privacy Center: How long do you store my organization's data? (bijgewerkt 1 juli 2026)"
     url: "https://privacy.claude.com/en/articles/7996866-how-long-do-you-store-my-organization-s-data"
-    geraadpleegd: "2026-10-31"
+    geraadpleegd: "31 oktober 2026"
   - titel: "Anthropic Privacy Center: Where are your servers located? (bijgewerkt 15 juni 2026)"
     url: "https://privacy.claude.com/en/articles/7996890-where-are-your-servers-located-do-you-host-your-models-on-eu-servers"
-    geraadpleegd: "2026-10-31"
+    geraadpleegd: "31 oktober 2026"
   - titel: "Anthropic Privacy Center: What certifications has Anthropic obtained?"
     url: "https://privacy.claude.com/en/articles/10015870-what-certifications-has-anthropic-obtained"
-    geraadpleegd: "2026-10-31"
+    geraadpleegd: "31 oktober 2026"
   - titel: "Claude Code Docs: Zero data retention"
     url: "https://code.claude.com/docs/en/zero-data-retention"
-    geraadpleegd: "2026-10-31"
+    geraadpleegd: "31 oktober 2026"
   - titel: "Claude Platform Docs: Pricing (API-tarieven per model)"
     url: "https://platform.claude.com/docs/en/about-claude/pricing"
-    geraadpleegd: "2026-10-31"
+    geraadpleegd: "31 oktober 2026"
   - titel: "Claude Enterprise, productpagina (claude.com)"
     url: "https://claude.com/solutions/enterprise"
-    geraadpleegd: "2026-10-31"
+    geraadpleegd: "31 oktober 2026"
   - titel: "Anthropic, Claude Enterprise, now available self-serve (12 februari 2026)"
     url: "https://claude.com/resources/articles/self-serve-enterprise"
-    geraadpleegd: "2026-10-31"
+    geraadpleegd: "31 oktober 2026"
   - titel: "Anthropic, Claude for Enterprise (aankondiging, 10 september 2024)"
     url: "https://claude.com/resources/articles/claude-for-enterprise"
-    geraadpleegd: "2026-10-31"
+    geraadpleegd: "31 oktober 2026"
   - titel: "Anthropic, Commercial Terms of Service (ingangsdatum 17 juni 2025)"
     url: "https://www.anthropic.com/legal/commercial-terms"
-    geraadpleegd: "2026-10-31"
+    geraadpleegd: "31 oktober 2026"
   - titel: "Anthropic, Consumer Terms of Service (ingangsdatum 8 oktober 2025)"
     url: "https://www.anthropic.com/legal/consumer-terms"
-    geraadpleegd: "2026-10-31"
+    geraadpleegd: "31 oktober 2026"
   - titel: "Anthropic, Data Processing Addendum (ingangsdatum 24 februari 2025)"
     url: "https://www.anthropic.com/legal/data-processing-addendum"
-    geraadpleegd: "2026-10-31"
+    geraadpleegd: "31 oktober 2026"
   - titel: "ECB-referentiekoers euro/dollar, 30 oktober 2026 (ecb.europa.eu)"
     url: "https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml"
-    geraadpleegd: "2026-10-31"
+    geraadpleegd: "31 oktober 2026"
 faq:
   - question: "Wat kost Claude Enterprise per maand?"
     answer: "Een seat kost 20 dollar per maand, maar je betaalt per jaar en neemt minimaal 20 seats. Dat is minimaal 400 dollar per maand, ongeveer 358 euro, exclusief btw. Daar komt al het gebruik bij, tegen de API-tarieven van het model dat je team kiest. Het totaal hangt dus af van hoeveel je team met Claude doet."
@@ -120,7 +120,7 @@ faq:
   - question: "Wat is het verschil tussen Claude Pro en Claude Enterprise?"
     answer: "Pro is een abonnement voor één persoon, onder de voorwaarden voor consumenten. Enterprise is een organisatie met centraal beheer, zakelijke voorwaarden en betaling per gebruik. Bij Enterprise gebruikt Anthropic je data standaard niet voor training. De volledige afweging tussen de drie plannen staat op onze pagina over Claude Pro, Team of Enterprise."
   - question: "Wat is het verschil tussen Claude Enterprise en ChatGPT Enterprise?"
-    answer: "De pagina's van OpenAI over ChatGPT Enterprise konden we op 31 oktober 2026 niet openen, dus we vergelijken hier geen prijzen. Voor Claude Enterprise is de seatprijs openbaar: 20 dollar per seat per maand bij jaarbetaling, en het gebruik betaal je apart tegen API-tarieven. Een bredere vergelijking staat op onze pagina Claude of ChatGPT voor je bedrijf."
+    answer: "Voor Claude Enterprise is de seatprijs openbaar: 20 dollar per seat per maand bij jaarbetaling, en het gebruik betaal je apart tegen API-tarieven. Een prijs voor ChatGPT Enterprise noemen we niet, omdat we die op 31 oktober 2026 niet bij OpenAI konden nalezen. Een bredere vergelijking staat op onze pagina Claude of ChatGPT voor je bedrijf."
 ---
 
 Claude Enterprise is het zakelijke plan van Anthropic boven Claude Team. Het bestaat sinds september 2024 en was toen alleen via het salesteam te krijgen. Sinds 12 februari 2026 kun je [Claude Enterprise zelf online afsluiten](https://claude.com/resources/articles/self-serve-enterprise), zonder gesprek met sales. De seatprijs staat nu gewoon op de prijspagina.
@@ -142,6 +142,8 @@ De rekening bestaat uit twee delen: een vaste prijs per seat en het gebruik apar
 [De prijspagina van Claude](https://claude.com/pricing) noemt 20 dollar per seat per maand, per jaar gefactureerd, met minimaal 20 seats. Prijzen zijn exclusief btw. Het gebruik reken je af tegen de API-tarieven per model, in dollars per miljoen tokens. Twee voorbeelden uit [de API-prijslijst van Anthropic](https://platform.claude.com/docs/en/about-claude/pricing): Sonnet 5.5 kost $2 voor input en $10 voor output, Opus 5.5 kost $4 en $20. Welk model bij welk werk past, lees je in [welk Claude-model je kiest](/nieuws/welk-claude-model-mkb).
 
 Het minimum reken je zo uit: 20 seats x $20 x 12 maanden is $4.800 per jaar. Met de ECB-koers van 30 oktober 2026 (1 euro is 1,1172 dollar) is dat ongeveer €4.296. Per maand is het $400, ongeveer €358. Eén seat is ongeveer €17,90.
+
+<!-- figuur:1 -->
 
 Anthropic geeft geen gemiddeld gebruik per medewerker. Een voorbeeld om de tarieven te voelen: 1 miljoen input-tokens en 200.000 output-tokens op Sonnet 5.5 kosten $2 plus $2, samen $4. Hoeveel tokens jouw team per maand gebruikt, hangt af van het werk. Een eigen schatting maak je met [API-kosten berekenen](/tools/claude-api-kosten-calculator). Hoe gebruik op de andere plannen werkt, staat bij [hoe de gebruikslimieten werken](/prijs/credits-en-limieten).
 
@@ -179,7 +181,7 @@ Tabel: Wat Claude Enterprise toevoegt boven Claude Team, stand 31 oktober 2026. 
 | IP-allowlisting | niet genoemd | ja |
 | Betalen op factuur | nee | alleen via sales |
 
-Wat betekent dat in de praktijk? Met SCIM koppel je de gebruikers van Claude aan je identity provider, het systeem waarin IT de accounts beheert. Gaat iemand uit dienst en zet IT het account uit, dan verdwijnt de toegang tot Claude mee. In de audit logs zie je wie wat deed, bijvoorbeeld wie een bewaartermijn wijzigde. Via de Compliance API haalt je IT-afdeling activiteit, chats en bestanden op voor eigen controle. Met eigen rollen geef je een afdeling andere rechten dan de rest.
+Wat betekent dat in de praktijk? Met SCIM koppel je de gebruikers van Claude aan je identity provider, het systeem waarin IT de accounts beheert. Gaat iemand uit dienst en zet IT het account uit, dan verdwijnt de toegang tot Claude mee. In de audit logs zie je wie wat deed, bijvoorbeeld wie een bewaartermijn wijzigde. Via de Compliance API haalt je IT-afdeling activiteit, chats en bestanden op voor eigen controle, en met eigen rollen geef je een afdeling andere rechten dan de rest.
 
 SSO hoeft geen reden te zijn voor Enterprise, want dat zit al in Team. Enterprise heeft ook een HIPAA-configuratie voor de Amerikaanse zorgwet, eigen encryptiesleutels en US-only inference. Voor de meeste Nederlandse MKB-bedrijven speelt dat zelden.
 
@@ -212,15 +214,19 @@ Er is één uitzondering, want Enterprise heeft geen gebruikslimiet per seat. He
 
 Loop deze vragen langs:
 
-1. Gebruiken meer dan 150 mensen Claude? Team gaat tot 150 gebruikers.
+1. Gebruiken meer dan 150 mensen Claude? Team gaat tot 150 gebruikers, voor meer mensen heb je Enterprise nodig.
 2. Vraagt je IT of je accountant om audit logs, SCIM of een Compliance API? Die vind je alleen in Enterprise.
-3. Moeten gesprekken na een vaste termijn weg, omdat je bewaarbeleid dat eist? Een eigen bewaartermijn instellen kan alleen in Enterprise.
-4. Wil je per afdeling andere rechten geven? Daarvoor heb je eigen rollen nodig.
+3. Moeten gesprekken na een vaste termijn weg, omdat je bewaarbeleid dat eist? Een eigen bewaartermijn van minimaal 30 dagen stel je alleen in Enterprise in.
+4. Wil je per afdeling andere rechten geven? Daarvoor heb je eigen rollen nodig, en die heeft Team niet.
 5. Wil je op factuur of in euro's betalen? Dat regel je via sales, en daar is het minimum 50 seats.
 
-Is het antwoord op alle vijf nee, dan is Team de logische keuze. De volledige afweging tussen de plannen staat bij [Claude Pro, Team of Enterprise](/prijs/pro-vs-team-vs-enterprise). Een breder beeld van Claude in een klein bedrijf vind je in [Claude voor het MKB](/gids/claude-voor-mkb). Leg je Claude naast ChatGPT, lees dan [Claude of ChatGPT voor je bedrijf](/vergelijken/claude-vs-chatgpt).
+Is het antwoord op alle vijf nee, dan is Team de logische keuze.
 
-Tel bij het aantal seats alleen mensen die zelf met Claude werken. Een geautomatiseerd proces hoort daar niet bij. Bij [een rapportage-agent die ons team eerder bouwde](/cases/copilot-studio-agent) vragen klanten hun rapport zelf op in een chat, in 2 minuten in plaats van 45.
+<!-- figuur:2 -->
+
+De volledige afweging tussen de plannen staat bij [Claude Pro, Team of Enterprise](/prijs/pro-vs-team-vs-enterprise). Een breder beeld van Claude in een klein bedrijf vind je in [Claude voor het MKB](/gids/claude-voor-mkb). Leg je Claude naast ChatGPT, lees dan [Claude of ChatGPT voor je bedrijf](/vergelijken/claude-vs-chatgpt).
+
+Tel bij het aantal seats alleen mensen die zelf met Claude werken. Een geautomatiseerd proces hoort daar niet bij. Bij [een rapportage-agent die ons team eerder bouwde](/cases/copilot-studio-agent) vragen klanten hun rapport zelf op in een chat, in 2 minuten in plaats van 30 tot 45.
 
 Implementeren.ai heeft nog geen Enterprise-organisatie bij een klant ingericht. Dit artikel beschrijft wat Anthropic publiceert, gecontroleerd op 31 oktober 2026.
 
@@ -228,8 +234,8 @@ Implementeren.ai heeft nog geen Enterprise-organisatie bij een klant ingericht. 
 
 1. Kies tussen zelf afsluiten (vanaf 20 seats) en sales (vanaf 50 seats).
 2. Heb je al Team, upgrade dan via claude.ai/upgrade met "Get Enterprise plan" en "Upgrade an existing organization". Chats, projecten en rollen gaan mee. Bij deze overstap betaal je alleen met een creditcard, en je kunt hem niet terugdraaien. Zonder Team start je op claude.ai/create/enterprise.
-3. Wijs iedereen een seat toe. Wie na de overstap geen seat heeft, kan niet meer bij Claude. Volgens [het helpartikel over seats](https://support.claude.com/en/articles/13393991-purchase-and-manage-seats-on-enterprise-plans) koop je seats altijd bij, naar rato van de resterende looptijd. Minder seats kan pas bij de verlenging, dus koop niet te veel in.
-4. Zet bestedingslimieten voor de organisatie en per persoon. Controleer limieten die uit Team zijn meegekomen.
+3. Wijs iedereen die met Claude werkt een seat toe. Wie na de overstap geen seat heeft, kan niet meer bij Claude. Volgens [het helpartikel over seats](https://support.claude.com/en/articles/13393991-purchase-and-manage-seats-on-enterprise-plans) koop je seats altijd bij, naar rato van de resterende looptijd. Minder seats kan pas bij de verlenging, dus koop niet te veel in.
+4. Zet bestedingslimieten voor de organisatie en per persoon, en controleer de limieten die uit Team zijn meegekomen.
 5. Zet weer aan wat op Enterprise standaard uit staat. Volgens [het helpartikel over de overstap van Team](https://support.claude.com/en/articles/13779868-migrate-your-organization-from-team-to-enterprise) zijn dat skills, code uitvoeren en bestanden maken, Claude Design, Slides en Docs, en Claude in Chrome.
 6. Stel een bewaartermijn in als je beleid dat vraagt, van minimaal 30 dagen. Zet de feedbackknop uit als je niet wilt dat gesprekken naar Anthropic gaan.
 
