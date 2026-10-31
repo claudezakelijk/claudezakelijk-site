@@ -8,7 +8,7 @@ targetKeywords:
   - claude team abonnement
   - claude team vs enterprise
   - claude team premium seat
-wordCountTarget: 1590
+wordCountTarget: 1603
 priority: 1
 tier: 1
 cases:
@@ -106,24 +106,24 @@ bronnen:
     geraadpleegd: "31 oktober 2026"
 faq:
   - question: "Kan ik Claude Team alleen gebruiken?"
-    answer: "Nee. Team vraagt minimaal twee leden, en Anthropic schrijft dat het plan 'not intended for individual use' is. De Primary Owner gebruikt zelf een van die seats. Werk je alleen, dan zijn Pro, Max en Ultra de plannen voor één persoon. Met jezelf en één collega kun je Team wel starten."
+    answer: "Nee. Anthropic vraagt voor Team minimaal twee leden en schrijft dat het plan 'not intended for individual use' is. De Primary Owner gebruikt zelf een van die seats. Werk je alleen, dan zijn Pro, Max en Ultra de plannen voor één persoon. Met jezelf en één collega kun je Team wel starten."
   - question: "Zit Claude Code in Claude Team?"
-    answer: "Ja, in elke seat, dus ook in de standaard seat. Dat meldde Anthropic bij de prijswijziging van 28 januari 2026. Werkt iemand er de hele dag mee, dan geeft een premium seat vijf keer zoveel gebruiksruimte. Interactief werken met Claude Code betaal je niet met de maandelijkse API-credits van Team."
+    answer: "Ja, in elke seat, dus ook in de standaard seat. Dat meldde Anthropic bij de prijswijziging van 28 januari 2026. Voor lange Claude Code-sessies geeft een premium seat vijf keer zoveel gebruiksruimte als een standaard seat. Interactief werken met Claude Code betaal je niet met de maandelijkse API-credits van Team."
   - question: "Gebruikt Anthropic mijn data voor training bij Claude Team?"
     answer: "Standaard niet. Volgens het privacycentrum gebruikt Anthropic de input en output van zakelijke producten niet om modellen te trainen. De uitzondering is feedback: stuurt iemand een gesprek in met de duim omhoog of omlaag, dan mag Anthropic dat gesprek gebruiken. Een Owner kan die feedback voor de hele organisatie uitzetten."
   - question: "Heeft Claude Team een verwerkersovereenkomst?"
-    answer: "Ja. Het privacycentrum van Anthropic behandelt Team bij de zakelijke producten. Voor de zakelijke producten is de verwerkersovereenkomst (DPA) automatisch onderdeel van de Commercial Terms of Service. Wie die voorwaarden accepteert, accepteert volgens Anthropic ook de DPA. Wat er in de DPA staat, lees je op onze pagina over de verwerkersovereenkomst van Anthropic."
+    answer: "Ja. Het privacycentrum noemt Claude for Work als zakelijk product en beschrijft instellingen voor Owners van Team. Voor zakelijke producten is de verwerkersovereenkomst (DPA) automatisch onderdeel van de Commercial Terms of Service. Wie die voorwaarden accepteert, accepteert volgens Anthropic ook de DPA. Wat de DPA regelt, lees je op onze pagina over de verwerkersovereenkomst van Anthropic."
   - question: "Wat kost Claude Team in euro?"
     answer: "Anthropic noemt de prijzen in dollars. Een standaard seat kost $25 per maand (ongeveer €22,38) of $20 bij jaarbetaling (ongeveer €17,90). Een premium seat kost $125 (ongeveer €111,89) of $100 (ongeveer €89,51). Dat is omgerekend met de ECB-koers van 30 oktober 2026, exclusief btw. De prijs in je eigen valuta zie je op claude.ai/upgrade."
 ---
 
-Veel Nederlandse pagina's over Claude Team noemen nog een minimum van 5 gebruikers en een prijs van $30 per persoon. Dat waren de regels toen het plan in mei 2024 begon. Dit artikel beschrijft wat Anthropic zelf over het plan publiceert, gecontroleerd op 31 oktober 2026. Implementeren.ai is onafhankelijk van Anthropic, het bedrijf dat Claude maakt.
+Veel Nederlandse pagina's over Claude Team noemen nog een minimum van 5 gebruikers en een prijs van $30 per persoon. Dat waren de regels toen het plan begon, volgens [de aankondiging van mei 2024](https://claude.com/resources/articles/team-plan-and-ios). Dit artikel beschrijft wat Anthropic zelf over het plan publiceert, gecontroleerd op 31 oktober 2026. Implementeren.ai is onafhankelijk van Anthropic, het bedrijf dat Claude maakt.
 
 ## Wat is Claude Team?
 
-Claude Team is het zakelijke abonnement van Anthropic. Het zit tussen de plannen voor één persoon (Pro, Max en Ultra) en Enterprise. Je sluit het zelf af op claude.ai, met een zakelijk mailadres. Volgens [de startgids voor het Team-abonnement](https://support.claude.com/en/articles/9267247-get-started-with-the-team-plan) vraagt Team minimaal twee leden en is het "not intended for individual use".
+Claude Team is het zakelijke abonnement van Anthropic. Het zit tussen de plannen voor één persoon (Pro, Max en Ultra) en Enterprise. Je sluit het zelf af op claude.ai, met een zakelijk mailadres. Volgens [de startgids voor het Team-abonnement](https://support.claude.com/en/articles/9267247-get-started-with-the-team-plan) vraagt Anthropic voor Team minimaal twee leden en is het plan "not intended for individual use".
 
-Sinds de start zijn de regels veranderd. In [de aankondiging van mei 2024](https://claude.com/resources/articles/team-plan-and-ios) kostte Team $30 per gebruiker per maand, met minimaal 5 seats. Op 28 januari 2026 kwamen [de huidige prijzen voor Claude Team](https://claude.com/resources/articles/claude-team-updates). In diezelfde aankondiging staat dat Claude Code in elke seat zit. Inmiddels is het minimum 2 gebruikers. Op welke datum dat veranderde, staat op geen pagina van Anthropic die wij konden openen.
+Op 28 januari 2026 kwamen [de huidige prijzen voor Claude Team](https://claude.com/resources/articles/claude-team-updates). In diezelfde aankondiging staat dat Claude Code in elke seat zit. Inmiddels is het minimum 2 gebruikers. Op welke datum dat veranderde, staat op geen pagina van Anthropic die wij konden openen.
 
 Werk je alleen, dan is Team niet voor jou bedoeld. Werk je met collega's of met klantdata, dan helpt de vergelijking [Claude Pro, Team of Enterprise](/prijs/pro-vs-team-vs-enterprise).
 
@@ -144,19 +144,17 @@ Tabel: Claude Team-seats en wat je per seat krijgt, stand 31 oktober 2026. Prijz
 
 Omgerekend met de ECB-koers van 30 oktober 2026 (1 euro is 1,1172 dollar) kost een standaard seat ongeveer €22,38 per maand, of €17,90 bij jaarbetaling. Een premium seat kost ongeveer €111,89, of €89,51 bij jaarbetaling. Je eigen prijs zie je op claude.ai/upgrade, want volgens [het helpartikel over het Team-abonnement](https://support.claude.com/en/articles/9266767-what-is-the-team-plan) verschillen prijs, valuta en btw per regio. Voor [alle Claude-prijzen met btw en wisselkoers](/prijs) hebben we een eigen overzicht.
 
-Het kleinste team bestaat uit twee standaard seats. Dat kost $50 per maand (ongeveer €44,75), of $40 per maand bij jaarbetaling (ongeveer €35,80). Kies je voor jaarbetaling, dan betaal je het hele jaar in één keer op de startdatum. Dat staat in [het rekenvoorbeeld van Anthropic voor de Team-factuur](https://support.claude.com/en/articles/9267289-how-is-my-team-plan-bill-calculated). Minder seats nemen kan bij een jaarplan pas bij de verlenging.
+Het kleinste team bestaat uit twee standaard seats. Dat kost $50 per maand (ongeveer €44,75), of $40 per maand bij jaarbetaling (ongeveer €35,80). Kies je voor jaarbetaling, dan betaal je het hele jaar in één keer op de startdatum. Dat staat in [het rekenvoorbeeld van Anthropic voor de Team-factuur](https://support.claude.com/en/articles/9267289-how-is-my-team-plan-bill-calculated). Minder seats gaat op elk plan pas in bij de volgende verlenging. Bij maandbetaling is dat de volgende maand, bij jaarbetaling pas na een jaar.
 
-Team krijgt ook elke maand tegoed voor de Claude API, waarmee je Claude in eigen software gebruikt. Volgens [het helpartikel over API-credits](https://support.claude.com/en/articles/17154008-monthly-api-credits-for-max-ultra-and-team-plans) is dat $20 per standaard seat en $100 per premium seat, samen in één pot van maximaal $500. Drie standaard en twee premium seats geven zo $260 per maand. Het tegoed vervalt aan het eind van elke periode. Interactief werken met Claude Code en extra gebruik in Claude betaal je er niet mee.
+Bij Team krijg je ook elke maand tegoed voor de Claude API, waarmee je Claude in eigen software gebruikt. Volgens [het helpartikel over API-credits](https://support.claude.com/en/articles/17154008-monthly-api-credits-for-max-ultra-and-team-plans) is dat $20 per standaard seat en $100 per premium seat, samen in één pot van maximaal $500. Drie standaard en twee premium seats geven zo $260 per maand. Een Owner kan het tegoed claimen zodra je zeven dagen op het plan zit. Het tegoed vervalt aan het eind van elke periode. Interactief werken met Claude Code en extra gebruik in Claude betaal je er niet mee.
 
-## Wat is het minimum aantal gebruikers voor Claude Team?
+## Wat is het minimum aantal gebruikers?
 
-Claude Team vraagt minimaal 2 en maximaal 150 seats. Heb je er meer nodig, dan kun je volgens Anthropic overstappen naar Enterprise. De hoofdeigenaar telt mee: volgens [het helpartikel over rollen](https://support.claude.com/en/articles/9267276-roles-and-permissions) gebruikt de Primary Owner zelf een van de licenties. Met jezelf en één collega zit je dus op het minimum.
+Anthropic stelt voor Claude Team een minimum van 2 en een maximum van 150 seats. Heb je er meer nodig, dan kun je volgens Anthropic overstappen naar Enterprise. De hoofdeigenaar telt mee: volgens [het helpartikel over rollen](https://support.claude.com/en/articles/9267276-roles-and-permissions) gebruikt de Primary Owner zelf een van de licenties. Met jezelf en één collega zit je dus op het minimum.
 
 Een seat hoort bij één persoon. Inloggegevens delen mag niet, staat in [het helpartikel over seats kopen en beheren](https://support.claude.com/en/articles/12004354-purchase-and-manage-seats-on-team-plans). Openstaande uitnodigingen tellen ook mee voor je aantal seats.
 
-De gebruikslimieten gelden per persoon. Bereikt één collega de eigen limiet, dan kan de rest gewoon doorwerken. Meer daarover lees je in [hoe de gebruikslimieten werken](/prijs/credits-en-limieten).
-
-<!-- figuur:1 -->
+Elke seat heeft een eigen limiet. Lees daarvoor [hoe de gebruikslimieten werken](/prijs/credits-en-limieten).
 
 ## Wat krijg je met Claude Team?
 
@@ -171,17 +169,19 @@ Voor het beheer noemt de prijspagina bij Team:
 
 SSO stelt een Owner in, nadat je domein is geverifieerd. Volgens het helpartikel over rollen heeft Team vier vaste rollen: User, Admin, Owner en Primary Owner. Eigen rollen per groep zijn er alleen op Enterprise.
 
-Over data schrijft Anthropic op de prijspagina: "No model training on your content by default". [Het privacycentrum van Anthropic over training](https://privacy.claude.com/en/articles/7996868-is-my-data-used-for-model-training) noemt één uitzondering. Geeft iemand expliciet feedback op een gesprek, dan mag Anthropic dat gesprek voor training gebruiken. Owners kunnen die feedback voor de organisatie uitzetten.
+Over data schrijft Anthropic op de prijspagina: "No model training on your content by default". [Het privacycentrum van Anthropic over training](https://privacy.claude.com/en/articles/7996868-is-my-data-used-for-model-training) noemt één uitzondering. Geeft iemand expliciet feedback op een gesprek, dan mag Anthropic dat gesprek voor training gebruiken. Owners van Team en Enterprise kunnen die feedback voor de organisatie uitzetten.
 
-Het privacyartikel over training gaat over de zakelijke producten van Anthropic en noemt daarbij Team. Voor de zakelijke producten is [de verwerkersovereenkomst (DPA) van Anthropic](https://privacy.claude.com/en/articles/7996862-how-do-i-view-and-sign-your-data-processing-addendum-dpa) automatisch onderdeel van de Commercial Terms of Service. Wie die voorwaarden accepteert, accepteert ook de DPA. Klanten in de Europese Economische Ruimte sluiten de voorwaarden af met Anthropic Ireland, Limited. Wat de DPA regelt, staat bij [de verwerkersovereenkomst van Anthropic](/compliance/anthropic-dpa). Een breder beeld geeft [is Claude veilig voor bedrijfsdata](/compliance/is-claude-veilig). Waar je data wordt opgeslagen, lees je bij [Claude-data in de EU houden](/compliance/eu-hosting).
+Het privacyartikel noemt Claude for Work als zakelijk product. Voor de zakelijke producten is [de verwerkersovereenkomst (DPA) van Anthropic](https://privacy.claude.com/en/articles/7996862-how-do-i-view-and-sign-your-data-processing-addendum-dpa) automatisch onderdeel van de Commercial Terms of Service. Wie die voorwaarden accepteert, accepteert ook de DPA. Klanten in de Europese Economische Ruimte sluiten [de Commercial Terms of Service](https://www.anthropic.com/legal/commercial-terms) af met Anthropic Ireland, Limited. Wat de DPA regelt, staat bij [de verwerkersovereenkomst van Anthropic](/compliance/anthropic-dpa). Een breder beeld geeft [is Claude veilig voor bedrijfsdata](/compliance/is-claude-veilig). Waar je data wordt opgeslagen, lees je bij [Claude-data in de EU houden](/compliance/eu-hosting).
 
-## Wanneer heb je een Claude Team premium seat nodig?
+## Standaard of premium seat: wie heeft wat nodig?
 
 Een premium seat geeft vijf keer de gebruiksruimte van een standaard seat. Per sessie is dat 6,25 keer Pro, tegenover 1,25 keer voor standaard, volgens [het helpartikel over het Team-abonnement](https://support.claude.com/en/articles/9266767-what-is-the-team-plan). Op premium zijn ook Fable 5 en Fable 5.1 inbegrepen, tot de helft van je weeklimiet. Op een standaard seat gebruik je die modellen alleen met usage credits, volgens [het helpartikel over Fable-modellen](https://support.claude.com/en/articles/15424964-claude-fable-models-on-your-plan). Lees ook [welk Claude-model je kiest](/nieuws/welk-claude-model-mkb) voor je eigen werk.
 
-Je mag beide soorten seats in één team combineren. Ons advies: zet iedereen eerst op standaard. Geef alleen een premium seat aan wie de hele dag met Claude Code werkt of lange taken draait. Naar premium gaat direct, en je betaalt dan meteen het verschil. Terug naar standaard gaat pas in bij de verlenging.
+<!-- figuur:1 -->
 
-Komen nieuwe gebruikers automatisch via SSO binnen (JIT of SCIM), dan krijgen ze volgens Anthropic het hoogste seattype dat nog vrij is. Kijk daarna dus in de ledenlijst welke seat iedereen heeft.
+Je mag beide soorten seats in één team combineren. Ons advies: zet iedereen eerst op standaard. Een premium seat past bij lange Claude Code-sessies of taken die uren draaien. Naar premium gaat direct, en je betaalt dan meteen het verschil. Terug naar standaard gaat pas in bij de verlenging.
+
+Komen nieuwe gebruikers automatisch via SSO binnen (JIT-provisioning), dan krijgen ze volgens Anthropic het hoogste seattype dat nog vrij is. Kijk daarna dus in de ledenlijst welke seat iedereen heeft.
 
 Een voorbeeld van het soort werk waarvoor een premium seat bedoeld is. Ons team bouwde eerder met Claude Code [een kennisbank in een week](/cases/knowledge-base) voor een Nederlandse IT-dienstverlener: 13 artikelen met 27 screenshots in vijf werkdagen. Het supportteam bespaart nu 6 uur per week aan herhaalde vragen. Op welk abonnement dat werk liep, staat niet in de case.
 
@@ -201,15 +201,17 @@ Tabel: Claude Team en Enterprise naast elkaar, stand 31 oktober 2026. Bron: clau
 
 Enterprise kies je als je meer dan 150 mensen hebt, of als je IT-afdeling om SCIM, audit logs of eigen bewaartermijnen vraagt. Volgens [het helpartikel over het Enterprise-abonnement](https://support.claude.com/en/articles/9797531-what-is-the-enterprise-plan) dekt de seatprijs alleen de toegang: "all usage is billed separately at API rates". Wat je per maand betaalt, hangt dus af van hoeveel je team gebruikt.
 
+<!-- figuur:2 -->
+
 Zelf overstappen kan via claude.ai/upgrade. Volgens [het helpartikel over de overstap van Team naar Enterprise](https://support.claude.com/en/articles/13779868-migrate-your-organization-from-team-to-enterprise) kan dat alleen met een creditcard, en is de stap "not reversible". Chats, projecten en rollen gaan mee. Een aantal functies die op Team aan staan, staan op Enterprise standaard uit. De volledige afweging tussen de plannen staat bij [Claude Pro, Team of Enterprise](/prijs/pro-vs-team-vs-enterprise).
 
-## Wat beslis je voordat je Claude Team afsluit?
+## Wat beslis je voordat je afsluit?
 
 1. **Hoeveel seats.** Minimaal 2, en de Primary Owner telt mee. Openstaande uitnodigingen tellen ook.
 2. **Standaard of premium per persoon.** Begin met standaard en geef premium alleen aan wie Claude het zwaarst gebruikt.
-3. **Maand of jaar.** Jaarbetaling is $5 per seat per maand goedkoper, maar minder seats kan dan pas bij de verlenging. Weet je nog niet hoeveel collega's Claude echt gaan gebruiken, dan raden we aan per maand te beginnen.
+3. **Maand of jaar.** Jaarbetaling is $5 per seat per maand goedkoper. Minder seats gaat pas in bij de volgende verlenging, en die komt bij jaarbetaling pas na een jaar. Weet je nog niet hoeveel collega's Claude echt gaan gebruiken, dan raden we aan per maand te beginnen.
 4. **Wie wordt Owner.** Alleen Owners en de Primary Owner kunnen seats kopen. Ons advies: zorg voor minstens twee Owners, zodat het beheer niet van één persoon afhangt.
 5. **Persoonlijke accounts.** Heb je zelf al Pro, Max of Ultra, dan kies je bij het aanmaken van de Team-organisatie of dat account meegaat of apart blijft ("Keep your personal account separate"). Gaat het mee, dan stopt het individuele abonnement. Het ongebruikte deel komt ongeveer 24 uur na de Team-betaling terug.
-6. **Betaalmiddel.** Team betaal je met een creditcard, debitcard of prepaid card. Een bankoverschrijving (ACH) of betalen op factuur kan niet.
+6. **Betaalmiddel.** Volgens [de veelgestelde vragen over de Team-factuur](https://support.claude.com/en/articles/12997503-team-plan-billing-faqs) betaal je Team met een creditcard, debitcard of prepaid card. Een bankoverschrijving (ACH) of betalen op factuur kan niet.
 
 In de rollout [Claude in 30 dagen](/claude-in-30-dagen) helpen we bij het opzetten van de seats voor Claude Team. Zoek je de stappen om het account aan te maken, lees dan [zakelijk Claude-account en abonnement](/gids/claude-voor-mkb).
