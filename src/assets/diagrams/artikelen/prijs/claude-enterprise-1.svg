@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" role="img" aria-label="Opbouw van de rekening van Claude Enterprise: links het vaste deel, 20 seats maal 20 dollar maal 12 maanden is 4.800 dollar per jaar, ongeveer 4.296 euro tegen de ECB-koers van 30 oktober 2026; rechts het gebruik, dat je apart betaalt tegen API-tarieven per model, begrensd door een bestedingslimiet per organisatie en per persoon" data-bijschrift="Het minimum van Claude Enterprise is 4.800 dollar per jaar voor 20 seats. Al het gebruik komt daarbij, tegen API-tarieven, tot de bestedingslimieten die je zelf zet. Stand 31 oktober 2026." font-family="Inter, system-ui, sans-serif" fill="#23261D"><defs>
+<filter id="ent1-g" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 .14  0 0 0 0 .15  0 0 0 0 .11  .16 0 0 0 -.03"/></filter>
+</defs><rect width="1200" height="600" fill="#F4F1E8"/><rect x="64" y="48" width="64" height="4" rx="2" fill="#B4C13E"/><text x="64" y="92" fill="#565A4C" font-size="22" font-weight="600" letter-spacing="3">DE REKENING · USD · EXCL. BTW</text>
+<g>
+<rect x="64" y="130" width="480" height="380" rx="22" fill="#FFFFFF" stroke="#23261D" stroke-width="4"/>
+<rect x="575" y="314" width="50" height="12" rx="6" fill="#23261D"/>
+<rect x="594" y="295" width="12" height="50" rx="6" fill="#23261D"/>
+<rect x="656" y="130" width="480" height="380" rx="22" fill="#F6E7E4" stroke="#A8433B" stroke-width="3" stroke-dasharray="10 10"/>
+<rect x="692" y="300" width="408" height="44" rx="22" fill="#FFFFFF" stroke="#23261D" stroke-width="4"/>
+<rect x="696" y="304" width="220" height="36" rx="18" fill="#E4C8C3"/>
+<line x1="1020" y1="284" x2="1020" y2="360" stroke="#A8433B" stroke-width="6" stroke-linecap="round"/>
+</g>
+<text x="96" y="190" font-size="34" font-weight="600">vaste seatprijs</text>
+<text x="96" y="232" font-size="26" fill="#565A4C">20 seats x $20 x 12 maanden</text>
+<text x="96" y="340" font-family="'Instrument Sans Variable', Inter, system-ui, sans-serif" font-weight="600" letter-spacing="-1" font-size="76">$4.800</text>
+<text x="96" y="384" font-size="26" fill="#565A4C">per jaar · ongeveer 4.296 euro</text>
+<text x="96" y="470" font-size="26" fill="#565A4C">ECB-koers 30 okt 2026: 1,1172</text>
+<text x="688" y="190" font-size="34" font-weight="600" fill="#A8433B">gebruik apart</text>
+<text x="688" y="232" font-size="26" fill="#565A4C">tegen API-tarieven, per model</text>
+<text x="1020" y="270" text-anchor="middle" font-size="32" font-weight="600" fill="#A8433B">limiet</text>
+<text x="688" y="420" font-size="26" fill="#565A4C">bestedingslimiet per organisatie</text>
+<text x="688" y="456" font-size="26" fill="#565A4C">en per persoon</text>
+<text x="1136" y="566" text-anchor="end" font-size="26" fill="#64685A">stand 31 okt 2026</text>
+<rect width="1200" height="600" filter="url(#ent1-g)"/></svg>
