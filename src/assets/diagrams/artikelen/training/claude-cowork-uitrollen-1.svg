@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" role="img" aria-label="Zes stappen per Windows-pc voor Cowork: Windows 10 vanaf build 19041, Virtual Machine Platform aanzetten, opnieuw opstarten, installeren als beheerder of voor de hele machine, beleid zetten in het register of via Intune, en eerst op één pc testen; zonder beheerdersrechten is er geen Cowork" data-bijschrift="Wat elke Windows-pc nodig heeft voor Cowork, in deze volgorde. Stand 31 oktober 2026." font-family="Inter, system-ui, sans-serif" fill="#23261D"><defs>
+<filter id="cwu1-g" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 .14  0 0 0 0 .15  0 0 0 0 .11  .16 0 0 0 -.03"/></filter>
+</defs><rect width="1200" height="500" fill="#F4F1E8"/><rect x="64" y="48" width="64" height="4" rx="2" fill="#B4C13E"/><text x="64" y="92" fill="#565A4C" font-size="22" font-weight="600" letter-spacing="3">PER WINDOWS-PC · IN DEZE VOLGORDE</text>
+<g>
+<line x1="120" y1="250" x2="1080" y2="250" stroke="#CFCDBE" stroke-width="4"/>
+<g fill="#FFFFFF" stroke="#23261D" stroke-width="4"><circle cx="120" cy="250" r="28"/><circle cx="312" cy="250" r="28"/><circle cx="504" cy="250" r="28"/><circle cx="888" cy="250" r="28"/></g>
+<circle cx="696" cy="250" r="28" fill="#FFFFFF" stroke="#A8433B" stroke-width="4"/>
+<circle cx="1080" cy="250" r="28" fill="#3D5220"/>
+</g>
+<g font-family="'Instrument Sans Variable', Inter, system-ui, sans-serif" font-size="28" font-weight="600" text-anchor="middle"><text x="120" y="260">1</text><text x="312" y="260">2</text><text x="504" y="260">3</text><text x="696" y="260">4</text><text x="888" y="260">5</text><text x="1080" y="260" fill="#FFFFFF">6</text></g>
+<text x="92" y="166" font-size="32" font-weight="600">Windows-versie</text>
+<text x="92" y="202" font-size="26" fill="#565A4C">vanaf build 19041</text>
+<text x="504" y="166" text-anchor="middle" font-size="32" font-weight="600">herstarten</text>
+<text x="504" y="202" text-anchor="middle" font-size="26" fill="#565A4C">opnieuw opstarten</text>
+<text x="888" y="166" text-anchor="middle" font-size="32" font-weight="600">beleid</text>
+<text x="888" y="202" text-anchor="middle" font-size="26" fill="#565A4C">register of Intune</text>
+<text x="312" y="322" text-anchor="middle" font-size="32" font-weight="600">VM-onderdeel aan</text>
+<text x="312" y="358" text-anchor="middle" font-size="26" fill="#565A4C">Virtual Machine Platform</text>
+<text x="696" y="322" text-anchor="middle" font-size="32" font-weight="600">installeren</text>
+<text x="696" y="358" text-anchor="middle" font-size="26" fill="#565A4C">als beheerder of per machine</text>
+<text x="1136" y="322" text-anchor="end" font-size="32" font-weight="600" fill="#3D5220">testen</text>
+<text x="1136" y="358" text-anchor="end" font-size="26" fill="#565A4C">eerst één pc</text>
+<text x="696" y="414" text-anchor="middle" font-size="26" font-weight="600" fill="#A8433B">zonder beheerdersrechten geen Cowork</text>
+<text x="1136" y="466" text-anchor="end" font-size="26" fill="#64685A">stand 31 okt 2026</text>
+<rect width="1200" height="500" filter="url(#cwu1-g)"/></svg>
