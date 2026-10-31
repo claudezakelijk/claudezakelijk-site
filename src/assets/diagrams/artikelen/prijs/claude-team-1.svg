@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" role="img" aria-label="Lijn van het aantal seats: voor één persoon zijn Pro, Max en Ultra bedoeld, Claude Team past bij 2 tot 150 seats, en Enterprise kan vanaf 20 seats zelf of vanaf 50 seats via sales" data-bijschrift="Claude Team past bij 2 tot 150 seats. Enterprise kan vanaf 20 seats, of vanaf 50 via sales. Stand 31 oktober 2026." font-family="Inter, system-ui, sans-serif" fill="#23261D"><defs>
+<filter id="ct1-g" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 .14  0 0 0 0 .15  0 0 0 0 .11  .16 0 0 0 -.03"/></filter>
+<marker id="ct1-a" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#23261D"/></marker>
+</defs><rect width="1200" height="600" fill="#F4F1E8"/><rect x="64" y="48" width="64" height="4" rx="2" fill="#B4C13E"/><text x="64" y="92" fill="#565A4C" font-size="22" font-weight="600" letter-spacing="3">AANTAL SEATS · WELK PLAN PAST</text>
+<rect x="290" y="168" width="690" height="72" rx="14" fill="#3D5220"/><text x="314" y="216" font-size="34" font-weight="600" fill="#F4F1E8">Team · 2 tot 150</text>
+<path d="M110 300 L 1104 300" fill="none" stroke="#23261D" stroke-width="4" stroke-linecap="round" marker-end="url(#ct1-a)"/>
+<g stroke="#23261D" stroke-width="4" stroke-linecap="round"><line x1="150" y1="286" x2="150" y2="314"/><line x1="290" y1="286" x2="290" y2="314"/><line x1="560" y1="286" x2="560" y2="314"/><line x1="760" y1="286" x2="760" y2="314"/><line x1="980" y1="286" x2="980" y2="314"/></g>
+<g font-family="'Instrument Sans Variable', Inter, system-ui, sans-serif" font-weight="600" font-size="26" text-anchor="middle" fill="#565A4C"><text x="150" y="352">1</text><text x="290" y="352">2</text><text x="560" y="352">20</text><text x="760" y="352">50</text><text x="980" y="352">150</text></g>
+<text x="64" y="428" font-size="32" font-weight="600">Pro, Max of Ultra</text><text x="64" y="464" font-size="26" fill="#565A4C">één persoon</text>
+<rect x="560" y="390" width="560" height="72" rx="14" fill="#FFFFFF" stroke="#23261D" stroke-width="4"/><text x="584" y="438" font-size="32" font-weight="600">Enterprise · vanaf 20</text>
+<text x="584" y="500" font-size="26" fill="#565A4C">via sales vanaf 50 seats</text>
+<text x="1136" y="566" text-anchor="end" font-size="26" fill="#64685A">stand 31 okt 2026 · niet op schaal</text>
+<rect width="1200" height="600" filter="url(#ct1-g)"/></svg>
